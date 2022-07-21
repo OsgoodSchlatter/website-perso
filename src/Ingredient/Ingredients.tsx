@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "../Single/Button";
 import { Ingredient } from "../Ingredient/Ingredient";
 import { IngredientModal } from "../Ingredient/IngredientModal";
+import Modal from "../Single/Modal";
 
 export const Ingredients = () => {
   const allItems = [
@@ -26,9 +27,7 @@ export const Ingredients = () => {
           <Ingredient label={ingr.label} unit={ingr.unit} />
         ))}
         {newItems ? (
-          <div className="items-center ">
-            <IngredientModal label={""} unit={""} />
-          </div>
+          <Modal />
         ) : (
           <div className="p-2">
             <Button
