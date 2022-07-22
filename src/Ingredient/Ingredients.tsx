@@ -11,7 +11,6 @@ export const Ingredients = () => {
     { id: uuidv4(), label: "Fromage", unit: "kg" },
     { id: uuidv4(), label: "Boeuf", unit: "kg" },
     { id: uuidv4(), label: "Chocolat", unit: "kg" },
-    { id: uuidv4(), label: "Boeuf", unit: "kg" },
   ]);
 
   function handleAdd(el: IngredientProps) {
@@ -19,11 +18,24 @@ export const Ingredients = () => {
     setList(newList);
   }
 
+  function handleDelete(id: any) {
+    let newList = [...list];
+    newList = newList.filter((item) => item.id !== id);
+    setList(newList);
+  }
+
   return (
-    <div className="flex-fill flex-col items-center">
+    <div className="flex-fill items-center">
       <div className="p-2">
         {list.map((ingr) => (
-          <Ingredient id={ingr.id} label={ingr.label} unit={ingr.unit} />
+          <div className="flex-col flex-fill">
+            <Ingredient
+              id={ingr.id}
+              label={ingr.label}
+              unit={ingr.unit}
+              handleDelete={handleDelete}
+            />
+          </div>
         ))}
         <div className="p-2">
           <Button label="Ajouter" onClick={() => setOpen(true)} />
