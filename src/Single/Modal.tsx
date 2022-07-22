@@ -22,16 +22,6 @@ export default function MyModal({
 
   return (
     <>
-      <div className="fixed inset-0 flex items-center justify-center">
-        <button
-          type="button"
-          onClick={openModal}
-          className="rounded-md bg-black bg-opacity-20 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-        >
-          Open dialog
-        </button>
-      </div>
-
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
           <Transition.Child
@@ -64,13 +54,8 @@ export default function MyModal({
                   >
                     Choisir un ingrédient
                   </Dialog.Title>
-                  <div className="mt-2">
-                    <p className="text-sm text-gray-500 p-1">
-                      Rentrez l'ingrédient et l'unité.
-                    </p>
-                  </div>
-                  <div className="">
-                    <div className="flex p-2 mr-2 w-full">
+                  <div className="flex-col">
+                    <div className="flex p-2 w-full">
                       Nom de l'ingrédient
                       <input
                         type="text"
@@ -80,29 +65,29 @@ export default function MyModal({
                         }
                       />
                     </div>
-                    <div className="flex w-full">
+                    <div className="flex p-2 w-full">
                       Unité
                       <input
                         type="text"
-                        className="bg-slate-200"
+                        className="ml-[92px] bg-slate-200"
                         onChange={(el) =>
                           setIngr({ label: ingr.label, unit: el.target.value })
                         }
                       />
                     </div>
-                  </div>
 
-                  <div className="mt-4">
-                    <button
-                      type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                      onClick={() => {
-                        close(false);
-                        item(ingr);
-                      }}
-                    >
-                      OK !
-                    </button>
+                    <div className="mt-4">
+                      <button
+                        type="button"
+                        className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                        onClick={() => {
+                          close(false);
+                          item(ingr);
+                        }}
+                      >
+                        OK !
+                      </button>
+                    </div>
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
