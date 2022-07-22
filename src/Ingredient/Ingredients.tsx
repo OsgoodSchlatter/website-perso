@@ -8,15 +8,21 @@ export const Ingredients = () => {
   const [open, setOpen] = useState(false);
 
   const [list, setList] = useState(() => [
-    { id: uuidv4(), label: "Fromage", unit: "kg" },
-    { id: uuidv4(), label: "Boeuf", unit: "kg" },
-    { id: uuidv4(), label: "Chocolat", unit: "kg" },
+    { id: uuidv4(), label: "Fromage", value: 0, unit: "kg" },
+    { id: uuidv4(), label: "Boeuf", value: 0, unit: "kg" },
+    { id: uuidv4(), label: "Chocolat", value: 0, unit: "kg" },
   ]);
+
+  function count(list: [IngredientProps]) {
+    //WIP
+  }
 
   function handleAdd(el: IngredientProps) {
     const newList = list.concat(el);
     setList(newList);
   }
+
+  function handleEdit(el: IngredientProps) {}
 
   function handleDelete(id: any) {
     let newList = [...list];
@@ -32,6 +38,7 @@ export const Ingredients = () => {
             <Ingredient
               id={ingr.id}
               label={ingr.label}
+              value={ingr.value}
               unit={ingr.unit}
               handleDelete={handleDelete}
             />

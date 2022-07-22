@@ -14,6 +14,7 @@ export default function MyModal({
     id: "",
     label: "",
     unit: "",
+    value: 0,
   });
 
   function closeModal() {
@@ -62,9 +63,22 @@ export default function MyModal({
                         className="bg-slate-200 "
                         onChange={(el) =>
                           setIngr({
-                            id: ingr.id,
+                            ...ingr,
                             label: el.target.value,
-                            unit: ingr.unit,
+                          })
+                        }
+                      />
+                    </div>
+
+                    <div className="flex p-2 w-full">
+                      Valeur
+                      <input
+                        type="text"
+                        className="ml-[92px] bg-slate-200"
+                        onChange={(el) =>
+                          setIngr({
+                            ...ingr,
+                            value: el.target.valueAsNumber,
                           })
                         }
                       />
@@ -76,8 +90,7 @@ export default function MyModal({
                         className="ml-[92px] bg-slate-200"
                         onChange={(el) =>
                           setIngr({
-                            id: ingr.id,
-                            label: ingr.label,
+                            ...ingr,
                             unit: el.target.value,
                           })
                         }
