@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "../Single/Button";
 import { Ingredient, IngredientProps } from "../Ingredient/Ingredient";
 import Modal from "../Single/Modal";
@@ -13,15 +13,9 @@ export const Ingredients = () => {
     { id: uuidv4(), label: "Chocolat", unit: "kg" },
     { id: uuidv4(), label: "Boeuf", unit: "kg" },
   ]);
-  const [newItem, setNewItem] = useState<IngredientProps>({
-    id: uuidv4(),
-    label: "",
-    unit: "",
-  });
 
   function handleAdd(el: IngredientProps) {
-    setNewItem(el);
-    const newList = list.concat(newItem);
+    const newList = list.concat(el);
     setList(newList);
   }
 
