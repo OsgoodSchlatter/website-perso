@@ -1,8 +1,16 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
+import { IngredientProps } from "../Ingredient/Ingredient";
 
-export default function MyModal() {
+export default function MyModal({
+  close,
+  item,
+}: {
+  close: any;
+  item: (arg0: IngredientProps) => void;
+}) {
   let [isOpen, setIsOpen] = useState(true);
+  const [ingr, setIngr] = useState<IngredientProps>({ label: "", unit: "" });
 
   function closeModal() {
     setIsOpen(false);
@@ -61,14 +69,26 @@ export default function MyModal() {
                       Rentrez l'ingrédient et l'unité.
                     </p>
                   </div>
-                  <div className="flex-col justify-between">
-                    <div className="flex mr-2 w-full">
+                  <div className="">
+                    <div className="flex p-2 mr-2 w-full">
                       Nom de l'ingrédient
-                      <input type="text" className="bg-slate-200" />
+                      <input
+                        type="text"
+                        className="bg-slate-200 "
+                        onChange={(el) =>
+                          setIngr({ label: el.target.value, unit: ingr.unit })
+                        }
+                      />
                     </div>
                     <div className="flex w-full">
-                      Quantité
-                      <input type="text" className="bg-slate-200" />
+                      Unité
+                      <input
+                        type="text"
+                        className="bg-slate-200"
+                        onChange={(el) =>
+                          setIngr({ label: ingr.label, unit: el.target.value })
+                        }
+                      />
                     </div>
                   </div>
 
@@ -76,7 +96,10 @@ export default function MyModal() {
                     <button
                       type="button"
                       className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                      onClick={closeModal}
+                      onClick={() => {
+                        close(false);
+                        item(ingr);
+                      }}
                     >
                       OK !
                     </button>

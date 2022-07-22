@@ -1,24 +1,29 @@
 import { useState } from "react";
 import { Button } from "../Single/Button";
-import { Ingredient } from "../Ingredient/Ingredient";
-import { IngredientModal } from "../Ingredient/IngredientModal";
+import { Ingredient, IngredientProps } from "../Ingredient/Ingredient";
 import Modal from "../Single/Modal";
 
-export const Ingredients = () => {
-  const allItems = [
-    { label: "Fromage", unit: "kg" },
-    { label: "Boeuf", unit: "kg" },
-    { label: "Chocolat", unit: "kg" },
-    { label: "Boeuf", unit: "kg" },
-  ];
+const allItems = [
+  { label: "Fromage", unit: "kg" },
+  { label: "Boeuf", unit: "kg" },
+  { label: "Chocolat", unit: "kg" },
+  { label: "Boeuf", unit: "kg" },
+];
 
-  const [newItems, setNewItems] = useState<{
-    label: string;
-    unit: string;
-  }>();
-  const addItems = (newItem: { label: string; unit: string }) => {
-    allItems.concat(newItem);
-  };
+export const Ingredients = () => {
+  const [open, setOpen] = useState(false);
+
+  const [list, setList] = useState(allItems);
+  const [newItem, setNewItem] = useState<IngredientProps>({
+    label: "",
+    unit: "",
+  });
+
+  function handleAdd(el: IngredientProps) {
+    setNewItem(el);
+    setList(list.concat(...list, newItem));
+    console.log(allItems);
+  }
 
   return (
     <div className="flex-fill flex-col items-center">
@@ -26,16 +31,10 @@ export const Ingredients = () => {
         {allItems.map((ingr) => (
           <Ingredient label={ingr.label} unit={ingr.unit} />
         ))}
-        {newItems ? (
-          <Modal />
-        ) : (
-          <div className="p-2">
-            <Button
-              label="Ajouter"
-              onClick={() => setNewItems({ label: "", unit: "" })}
-            />
-          </div>
-        )}
+        <div className="p-2">
+          <Button label="Ajouter" onClick={() => setOpen(true)} />
+        </div>
+        {open && <Modal close={setOpen} item={handleAdd} />}
       </div>
     </div>
   );
