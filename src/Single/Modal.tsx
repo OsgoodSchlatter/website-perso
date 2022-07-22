@@ -10,7 +10,11 @@ export default function MyModal({
   item: (arg0: IngredientProps) => void;
 }) {
   let [isOpen, setIsOpen] = useState(true);
-  const [ingr, setIngr] = useState<IngredientProps>({ label: "", unit: "" });
+  const [ingr, setIngr] = useState<IngredientProps>({
+    id: "",
+    label: "",
+    unit: "",
+  });
 
   function closeModal() {
     setIsOpen(false);
@@ -61,7 +65,11 @@ export default function MyModal({
                         type="text"
                         className="bg-slate-200 "
                         onChange={(el) =>
-                          setIngr({ label: el.target.value, unit: ingr.unit })
+                          setIngr({
+                            id: ingr.id,
+                            label: el.target.value,
+                            unit: ingr.unit,
+                          })
                         }
                       />
                     </div>
@@ -71,7 +79,11 @@ export default function MyModal({
                         type="text"
                         className="ml-[92px] bg-slate-200"
                         onChange={(el) =>
-                          setIngr({ label: ingr.label, unit: el.target.value })
+                          setIngr({
+                            id: ingr.id,
+                            label: ingr.label,
+                            unit: el.target.value,
+                          })
                         }
                       />
                     </div>

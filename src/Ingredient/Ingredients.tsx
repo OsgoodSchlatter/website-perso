@@ -2,34 +2,34 @@ import { useState } from "react";
 import { Button } from "../Single/Button";
 import { Ingredient, IngredientProps } from "../Ingredient/Ingredient";
 import Modal from "../Single/Modal";
-
-const allItems = [
-  { label: "Fromage", unit: "kg" },
-  { label: "Boeuf", unit: "kg" },
-  { label: "Chocolat", unit: "kg" },
-  { label: "Boeuf", unit: "kg" },
-];
+import { v4 as uuidv4 } from "uuid";
 
 export const Ingredients = () => {
   const [open, setOpen] = useState(false);
 
-  const [list, setList] = useState(allItems);
+  const [list, setList] = useState(() => [
+    { id: uuidv4(), label: "Fromage", unit: "kg" },
+    { id: uuidv4(), label: "Boeuf", unit: "kg" },
+    { id: uuidv4(), label: "Chocolat", unit: "kg" },
+    { id: uuidv4(), label: "Boeuf", unit: "kg" },
+  ]);
   const [newItem, setNewItem] = useState<IngredientProps>({
+    id: uuidv4(),
     label: "",
     unit: "",
   });
 
   function handleAdd(el: IngredientProps) {
     setNewItem(el);
-    setList(list.concat(...list, newItem));
-    console.log(allItems);
+    const newList = list.concat(newItem);
+    setList(newList);
   }
 
   return (
     <div className="flex-fill flex-col items-center">
       <div className="p-2">
-        {allItems.map((ingr) => (
-          <Ingredient label={ingr.label} unit={ingr.unit} />
+        {list.map((ingr) => (
+          <Ingredient id={ingr.id} label={ingr.label} unit={ingr.unit} />
         ))}
         <div className="p-2">
           <Button label="Ajouter" onClick={() => setOpen(true)} />
