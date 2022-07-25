@@ -1,6 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import { IngredientProps } from "../Ingredient/Ingredient";
+import { v4 as uuidv4 } from "uuid";
 
 export default function MyModal({
   close,
@@ -11,10 +12,10 @@ export default function MyModal({
 }) {
   let [isOpen, setIsOpen] = useState(true);
   const [ingr, setIngr] = useState<IngredientProps>({
-    id: "",
+    id: uuidv4(),
     label: "",
     unit: "",
-    value: 0,
+    value: "0",
   });
 
   function closeModal() {
@@ -78,7 +79,7 @@ export default function MyModal({
                         onChange={(el) =>
                           setIngr({
                             ...ingr,
-                            value: el.target.valueAsNumber,
+                            value: el.target.value,
                           })
                         }
                       />

@@ -8,9 +8,9 @@ export const Ingredients = () => {
   const [open, setOpen] = useState(false);
 
   const [list, setList] = useState(() => [
-    { id: uuidv4(), label: "Fromage", value: 0, unit: "kg" },
-    { id: uuidv4(), label: "Boeuf", value: 0, unit: "kg" },
-    { id: uuidv4(), label: "Chocolat", value: 0, unit: "kg" },
+    { id: uuidv4(), label: "Fromage", value: "0", unit: "kg" },
+    { id: uuidv4(), label: "Boeuf", value: "0", unit: "kg" },
+    { id: uuidv4(), label: "Chocolat", value: "0", unit: "kg" },
   ]);
 
   function count(list: [IngredientProps]) {
@@ -26,6 +26,7 @@ export const Ingredients = () => {
 
   function handleDelete(id: any) {
     let newList = [...list];
+    console.log(newList);
     newList = newList.filter((item) => item.id !== id);
     setList(newList);
   }
