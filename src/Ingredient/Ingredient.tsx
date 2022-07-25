@@ -1,6 +1,6 @@
-import { getValue } from "@testing-library/user-event/dist/utils";
 import { useState } from "react";
 import { Button } from "../Single/Button";
+import Modal from "../Single/Modal";
 
 export type IngredientProps = {
   id: string;
@@ -8,7 +8,7 @@ export type IngredientProps = {
   unit: string;
   value: string;
   handleDelete?: (id: string) => any;
-  handleEdit?: (id: string) => any;
+  handleEdit?: (arg0: IngredientProps) => void;
 };
 
 export const Ingredient = ({
@@ -20,7 +20,6 @@ export const Ingredient = ({
   handleEdit,
   ...rest
 }: IngredientProps) => {
-  const [edit, setEdit] = useState(false);
   return (
     <div className="p-2 mt-2 rounded bg-slate-400 flex items-center" id={id}>
       <h1 className="text-2xl">{label}</h1>
@@ -31,15 +30,14 @@ export const Ingredient = ({
       {unit}
       <Button
         label="Edit"
-        className="bg-green-400 ml-2"
-        onClick={() => setEdit(true)}
+        className="bg-green-500 ml-2"
+        onClick={() => handleEdit?.({ id, label, unit, value })}
       />
       <Button
         label="Suppr"
-        className="bg-red-400 ml-2"
-        onClick={handleDelete ? () => handleDelete(id) : () => ""}
+        className="bg-red-500 ml-2"
+        onClick={() => handleDelete?.(id)}
       />
-      {/* {edit && <Modal close={edit}></Modal>} */}
     </div>
   );
 };

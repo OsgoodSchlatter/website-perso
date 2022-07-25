@@ -3,6 +3,7 @@ import { Button } from "../Single/Button";
 import { Ingredient, IngredientProps } from "../Ingredient/Ingredient";
 import Modal from "../Single/Modal";
 import { v4 as uuidv4 } from "uuid";
+import { render } from "@testing-library/react";
 
 export const Ingredients = () => {
   const [open, setOpen] = useState(false);
@@ -22,11 +23,12 @@ export const Ingredients = () => {
     setList(newList);
   }
 
-  function handleEdit(el: IngredientProps) {}
+  function handleEdit() {
+    render(<Modal item={handleAdd}></Modal>);
+  }
 
   function handleDelete(id: any) {
     let newList = [...list];
-    console.log(newList);
     newList = newList.filter((item) => item.id !== id);
     setList(newList);
   }
@@ -42,6 +44,7 @@ export const Ingredients = () => {
               value={ingr.value}
               unit={ingr.unit}
               handleDelete={handleDelete}
+              handleEdit={handleEdit}
             />
           </div>
         ))}
