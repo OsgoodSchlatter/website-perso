@@ -31,9 +31,7 @@ export const Textarea = ({
   return (
     <TextareaAutosize
       ref={usedInputRef}
-      className={classNames(styles.textarea, className, {
-        [styles.error]: hasError,
-      })}
+      className="bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900"
       autoFocus={autoFocus}
       minRows={minRows}
       {...props}

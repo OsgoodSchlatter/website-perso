@@ -9,14 +9,15 @@ export type IngredientProps = {
   unit: string;
   value: string;
   handleDelete?: (id: string) => any;
-  handleEdit?: (arg0: IngredientProps) => void;
 };
 
-export const Ingredient = (
-  { ingredient }: { ingredient: IngredientProps },
-  { handleDelete }: { handleDelete: (id: string) => any },
-  { handleEdit }: { handleEdit: (arg0: IngredientProps) => void }
-) => {
+export const Ingredient = ({
+  ingredient,
+  handleDelete,
+}: {
+  ingredient: IngredientProps;
+  handleDelete: (id: string) => any;
+}) => {
   const [label, setLabel] = useState(ingredient.label);
   const [value, setValue] = useState(ingredient.value);
   const [unit, setUnit] = useState(ingredient.unit);
@@ -27,17 +28,17 @@ export const Ingredient = (
 
   return (
     <div
-      className="p-2 mt-2 rounded bg-slate-400 flex items-center"
+      className="p-2 mt-2 rounded border-transparent bg-blue-100 px-4 py-2 font-medium text-blue-900 hover:bg-blue-200 flex items-center"
       id={ingredient.id}
     >
       {!nameEdit ? (
         <h1 className="text-2xl" onDoubleClick={() => setNameEdit(true)}>
-          {label}
+          {ingredient.label}
         </h1>
       ) : (
         <Textarea
           placeholder={label}
-          className="text-14 space-x-4"
+          className="text-14 space-x-4 bg-blue-100 px-4 py-2 font-medium text-blue-900"
           onChange={(e) => setLabel(e.currentTarget.value)}
           onBlur={() => {
             setNameEdit(!nameEdit);
@@ -49,25 +50,37 @@ export const Ingredient = (
           className="bg-gray-100 w-20 ml-auto mr-1"
           onDoubleClick={() => setValueEdit(true)}
         >
-          {value}
+          {ingredient.value}
         </div>
       ) : (
         <Textarea
           placeholder={value}
-          className="text-14 space-x-4"
+          className="flex text-14 space-x-4"
           onChange={(e) => setValue(e.currentTarget.value)}
+          onBlur={() => {
+            setValueEdit(!valueEdit);
+          }}
         />
       )}
-      {unit}
-      <Button
-        label="Edit"
-        className="bg-green-400 ml-2"
-        onClick={() => handleEdit({ id: ingredient.id, label, unit, value })}
-      />
+      {!unitEdit ? (
+        <div onDoubleClick={() => setUnitEdit(true)}>{ingredient.unit}</div>
+      ) : (
+        <Textarea
+          placeholder={unit}
+          className="flex text-14 space-x-4"
+          onChange={(e) => setUnit(e.currentTarget.value)}
+          onBlur={() => {
+            setUnitEdit(!unitEdit);
+          }}
+        />
+      )}
       <Button
         label="Suppr"
         className="bg-red-400 ml-2"
-        onClick={() => handleDelete?.(ingredient.id)}
+        onClick={() => {
+          handleDelete?.(ingredient.id);
+          console.log(ingredient.id);
+        }}
       />
     </div>
   );
