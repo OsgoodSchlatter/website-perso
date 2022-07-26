@@ -18,10 +18,7 @@ export const Button = ({
   ...rest
 }: ButtonProps) => {
   return (
-    <button
-      className={classNames(className, "rounded bg-cyan-600")}
-      onClick={onClick}
-    >
+    <button className={className} onClick={onClick}>
       <div className="p-2">{label}</div>
     </button>
   );

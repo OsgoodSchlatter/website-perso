@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Button } from "../Single/Button";
-import Modal from "../Single/Modal";
 import { Textarea } from "../Single/Textarea";
 
 export type IngredientProps = {
@@ -9,14 +8,17 @@ export type IngredientProps = {
   unit: string;
   value: string;
   handleDelete?: (id: string) => any;
+  handleEdit?: (ingr: IngredientProps) => any;
 };
 
 export const Ingredient = ({
   ingredient,
   handleDelete,
+  handleEdit,
 }: {
   ingredient: IngredientProps;
   handleDelete: (id: string) => any;
+  handleEdit: (ingr: IngredientProps) => any;
 }) => {
   const [label, setLabel] = useState(ingredient.label);
   const [value, setValue] = useState(ingredient.value);
@@ -33,15 +35,16 @@ export const Ingredient = ({
     >
       {!nameEdit ? (
         <h1 className="text-2xl" onDoubleClick={() => setNameEdit(true)}>
-          {ingredient.label}
+          {label}
         </h1>
       ) : (
         <Textarea
           placeholder={label}
-          className="text-14 space-x-4 bg-blue-100 px-4 py-2 font-medium text-blue-900"
+          className="text-14 space-x-4 bg-blue-100 w-20 font-medium text-blue-900"
           onChange={(e) => setLabel(e.currentTarget.value)}
           onBlur={() => {
             setNameEdit(!nameEdit);
+            handleEdit({ ...ingredient, label: label });
           }}
         />
       )}
@@ -50,12 +53,12 @@ export const Ingredient = ({
           className="bg-gray-100 w-20 ml-auto mr-1"
           onDoubleClick={() => setValueEdit(true)}
         >
-          {ingredient.value}
+          {value}
         </div>
       ) : (
         <Textarea
           placeholder={value}
-          className="flex text-14 space-x-4"
+          className="w-20 ml-auto mr-1 h-auto"
           onChange={(e) => setValue(e.currentTarget.value)}
           onBlur={() => {
             setValueEdit(!valueEdit);
@@ -67,7 +70,7 @@ export const Ingredient = ({
       ) : (
         <Textarea
           placeholder={unit}
-          className="flex text-14 space-x-4"
+          className="w-20 mr-1 h-auto"
           onChange={(e) => setUnit(e.currentTarget.value)}
           onBlur={() => {
             setUnitEdit(!unitEdit);
@@ -76,7 +79,7 @@ export const Ingredient = ({
       )}
       <Button
         label="Suppr"
-        className="bg-red-400 ml-2"
+        className="rounded-md bg-red-400 hover:bg-red-500 ml-2"
         onClick={() => {
           handleDelete?.(ingredient.id);
           console.log(ingredient.id);
