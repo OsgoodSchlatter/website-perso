@@ -1,0 +1,17 @@
+.textarea {
+  @apply p-8 border-b bg-transparent resize-none;
+  @apply overflow-hidden; /* Avoid tricky issue with scrollbar when using a mouse on a Mac  */
+  min-height: 2px;
+
+  &:focus {
+    @layer border-primary;
+  }
+
+  &:disabled {
+    @layer bg-light-gray;
+  }
+
+  &.error:not(:focus) {
+    @layer border-danger;
+  }
+}

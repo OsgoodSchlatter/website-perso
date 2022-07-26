@@ -6,9 +6,19 @@ import { v4 as uuidv4 } from "uuid";
 export default function MyModal({
   close,
   item,
+  _id,
+  label,
+  unit,
+  value,
+  onEdit,
 }: {
   close?: any;
   item?: (arg0: IngredientProps) => void;
+  _id?: string;
+  label?: string;
+  unit?: string;
+  value?: string;
+  onEdit?: boolean;
 }) {
   let [isOpen, setIsOpen] = useState(true);
   const [ingr, setIngr] = useState<IngredientProps>({
@@ -61,6 +71,7 @@ export default function MyModal({
                       Nom de l'ingrédient
                       <input
                         type="text"
+                        placeholder={onEdit ? label : " "}
                         className="bg-slate-200 "
                         onChange={(el) =>
                           setIngr({
@@ -75,6 +86,7 @@ export default function MyModal({
                       Valeur
                       <input
                         type="text"
+                        placeholder={onEdit ? value : " "}
                         className="ml-[92px] bg-slate-200"
                         onChange={(el) =>
                           setIngr({
@@ -88,6 +100,7 @@ export default function MyModal({
                       Unité
                       <input
                         type="text"
+                        placeholder={onEdit ? unit : " "}
                         className="ml-[92px] bg-slate-200"
                         onChange={(el) =>
                           setIngr({
@@ -104,6 +117,11 @@ export default function MyModal({
                         className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                         onClick={() => {
                           close?.(false);
+                          if (onEdit) {
+                            console.log(ingr);
+                            setIngr({ ...ingr, id: _id!, label: label! });
+                            console.log(ingr);
+                          }
                           item?.(ingr);
                         }}
                       >

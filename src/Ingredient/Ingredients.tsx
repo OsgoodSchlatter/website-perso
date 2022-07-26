@@ -23,8 +23,17 @@ export const Ingredients = () => {
     setList(newList);
   }
 
-  function handleEdit() {
-    render(<Modal item={handleAdd}></Modal>);
+  function handleEdit(el: IngredientProps) {
+    render(
+      <Modal
+        item={handleAdd}
+        _id={el.id}
+        value={el.value}
+        label={el.label}
+        unit={el.unit}
+        onEdit={true}
+      ></Modal>
+    );
   }
 
   function handleDelete(id: any) {
@@ -38,14 +47,7 @@ export const Ingredients = () => {
       <div className="p-2">
         {list.map((ingr) => (
           <div className="flex-col flex-fill">
-            <Ingredient
-              id={ingr.id}
-              label={ingr.label}
-              value={ingr.value}
-              unit={ingr.unit}
-              handleDelete={handleDelete}
-              handleEdit={handleEdit}
-            />
+            <Ingredient handleDelete={handleDelete} handleEdit={handleEdit} />
           </div>
         ))}
         <div className="p-2">
