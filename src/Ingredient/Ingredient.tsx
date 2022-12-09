@@ -34,7 +34,11 @@ export const Ingredient = ({
       id={ingredient.id}
     >
       {!nameEdit ? (
-        <h1 className="text-2xl" onDoubleClick={() => setNameEdit(true)}>
+        <h1
+          className="text-2xl"
+          onDoubleClick={() => setNameEdit(true)}
+          onClick={() => console.log(label)}
+        >
           {label}
         </h1>
       ) : (
