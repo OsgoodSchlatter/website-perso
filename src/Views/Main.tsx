@@ -1,10 +1,16 @@
-import { Ingredients } from "../Ingredient/Ingredients";
+import { Link } from "react-router-dom";
 
 export const Main = () => {
   return (
     <>
       <div>
-        <Ingredients />
+        hey, <Link to="cv">here </Link> you can see my cv
+      </div>
+      <div>
+        and <Link to="carbon">here </Link> you can see my carbon calculator
+      </div>
+      <div>
+        <Link to="tool-mum">here </Link> is for you mum
       </div>
     </>
   );
