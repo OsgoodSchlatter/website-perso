@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button } from "../Single/Button";
 import { Ingredient, IngredientProps } from "../Ingredient/Ingredient";
 import Modal from "../Single/Modal";
 import { v4 as uuidv4 } from "uuid";
-import { render } from "@headlessui/react/dist/utils/render";
 
 export const Ingredients = () => {
   const [open, setOpen] = useState(false);
