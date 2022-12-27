@@ -22,39 +22,34 @@ export const User = ({
 }) => {
   return (
     <div
-      className="p-2 mt-2 rounded border-transparent bg-blue-100 px-4 py-2 font-medium text-blue-900 hover:bg-blue-200 flex items-center"
+      className="p-2 mt-2 rounded border-transparent bg-blue-100 px-4 py-2 font-medium text-blue-900 hover:bg-blue-200 flex items-center justify-evenly"
       id={user.id}
     >
       <div className="w-1/5 text-3xl font-semibold text-black">
         {user.username}{" "}
       </div>
-      <h1 className="text-2xl p-2">
-        {" "}
-        <span role="img" aria-label="pass">
-          💳
-        </span>
-        {user.pass ? " oui " : " non "}
-      </h1>
-      <h1 className="text-2xl p-2">
-        <span role="img" aria-label="aimant">
-          🧲
-        </span>{" "}
-        {user.aimant ? " oui " : " non "}
-      </h1>
-      <h1 className="text-2xl p-2">
-        {" "}
-        <span role="img" aria-label="badge">
-          🪪
-        </span>{" "}
-        {user.badge ? " oui " : " non "}
-      </h1>
-      <h1 className="text-2xl p-2">
-        {" "}
-        <span role="img" aria-label="poste">
-          💼
-        </span>{" "}
-        {user.poste}{" "}
-      </h1>
+      <div className="flex">
+        <h1 className="text-2xl p-2">
+          {" "}
+          <span role="img" aria-label="pass">
+            💳
+          </span>
+          {user.pass ? " oui " : " non "}
+        </h1>
+        <h1 className="text-2xl p-2">
+          <span role="img" aria-label="aimant">
+            🧲
+          </span>{" "}
+          {user.aimant ? " oui " : " non "}
+        </h1>
+        <h1 className="text-2xl p-2">
+          {" "}
+          <span role="img" aria-label="badge">
+            🪪
+          </span>{" "}
+          {user.badge ? " oui " : " non "}
+        </h1>
+      </div>
       <div className=" justify-end">
         <Button
           label="Edit"

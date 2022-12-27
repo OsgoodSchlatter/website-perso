@@ -3,9 +3,19 @@ import { Button } from "../Single/Button";
 import { User, UserProps } from "./User";
 import { v4 as uuidv4 } from "uuid";
 import ModalTool from "../Single/ModalTool";
+import { List } from "./List";
 
 export const ToolMum = () => {
   const [open, setOpen] = useState(false);
+  const [edit, setEdit] = useState(false);
+  const [userToEdit, setUserToEdit] = useState<UserProps>({
+    id: uuidv4(),
+    username: "",
+    pass: false,
+    aimant: false,
+    badge: false,
+    poste: "CDI",
+  });
   const [list, setList] = useState<UserProps[]>(() => [
     {
       id: uuidv4(),
@@ -31,10 +41,10 @@ export const ToolMum = () => {
                       setList(list.filter((user) => user.id !== id))
                     }
                     handleEdit={(el) => {
-                      <ModalTool
-                        close={setOpen}
-                        item={(el) => setList(list.concat(el))}
-                      />;
+                      setUserToEdit(u);
+                      setEdit(true);
+                      setOpen(true);
+                      setList(list.filter((user) => user.id !== el.id));
                     }}
                   ></User>
                 </div>
@@ -49,12 +59,16 @@ export const ToolMum = () => {
               {open && (
                 <ModalTool
                   close={setOpen}
+                  edit={setEdit}
+                  onEdit={edit}
+                  _user={userToEdit}
                   item={(el) => setList(list.concat(el))}
                 />
               )}
             </>
           </div>
         </div>
+        <List />
       </div>
     </>
   );

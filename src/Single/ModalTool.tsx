@@ -5,29 +5,21 @@ import { v4 as uuidv4 } from "uuid";
 
 export default function ModalTool({
   close,
+  edit,
   item,
-  _id,
-  username,
-  pass,
-  aimant,
-  badge,
-  poste,
+  _user,
   onEdit,
 }: {
   close?: any;
+  edit?: any;
   item?: (arg0: UserProps) => void;
-  _id?: string;
-  username?: string;
-  pass?: boolean;
-  aimant?: boolean;
-  badge?: boolean;
-  poste?: string;
+  _user?: UserProps;
   onEdit?: boolean;
 }) {
   let [isOpen, setIsOpen] = useState(true);
   const [user, setUser] = useState<UserProps>({
     id: uuidv4(),
-    username: "",
+    username: _user?.username!,
     pass: false,
     aimant: false,
     badge: false,
@@ -77,14 +69,15 @@ export default function ModalTool({
                       Nom
                       <input
                         type="text"
-                        placeholder={onEdit ? username : " "}
+                        placeholder={onEdit ? _user?.username : " test "}
                         className="bg-slate-200 m-2"
-                        onChange={(el) =>
+                        onChange={(el) => {
                           setUser({
                             ...user,
                             username: el.target.value,
-                          })
-                        }
+                          });
+                          console.log("user name : " + _user?.username);
+                        }}
                       />
                     </div>
 
@@ -99,7 +92,7 @@ export default function ModalTool({
                           setUser({
                             ...user,
                             pass:
-                              el.target.value.toLowerCase() === "true"
+                              el.target.value.toLowerCase() === "on"
                                 ? true
                                 : false,
                           })
@@ -117,7 +110,7 @@ export default function ModalTool({
                           setUser({
                             ...user,
                             aimant:
-                              el.target.value.toLowerCase() === "true"
+                              el.target.value.toLowerCase() === "on"
                                 ? true
                                 : false,
                           })
@@ -136,7 +129,7 @@ export default function ModalTool({
                           setUser({
                             ...user,
                             badge:
-                              el.target.value.toLowerCase() === "true"
+                              el.target.value.toLowerCase() === "on"
                                 ? true
                                 : false,
                           })
@@ -148,7 +141,7 @@ export default function ModalTool({
                       Poste
                       <input
                         type="text"
-                        placeholder={onEdit ? poste : " "}
+                        placeholder={onEdit ? _user?.poste : " "}
                         className="bg-slate-200 m-2"
                         onChange={(el) =>
                           setUser({
@@ -166,7 +159,8 @@ export default function ModalTool({
                         onClick={() => {
                           close?.(false);
                           if (onEdit) {
-                            setUser({ ...user, id: _id! });
+                            setUser({ ...user, id: _user?.id! });
+                            edit?.(false);
                           }
                           item?.(user);
                         }}
