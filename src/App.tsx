@@ -2,13 +2,17 @@ import React from "react";
 import "./App.css";
 import { Navbar } from "./Single/Navbar";
 import { Main } from "./Views/Main";
-import { ToolMum } from "./Tool-mum/Tool";
+import { Link, Route, Router, Routes } from "react-router-dom";
+import { Ingredients } from "./Ingredient/Ingredients";
 
 function App() {
   return (
     <>
       <Navbar />
-      <ToolMum />
+      <div>
+        <hr />
+        <Main />
+      </div>
     </>
   );
 }
