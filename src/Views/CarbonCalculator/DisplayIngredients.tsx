@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Button } from "../Single/Button";
-import { Ingredient, IngredientProps } from "../Ingredient/Ingredient";
-import Modal from "../Single/Modal";
+import { Button } from "../../Single/Button";
+import { Ingredient, IngredientProps } from "./Ingredient";
+import Modal from "../../Single/Modal";
 import { v4 as uuidv4 } from "uuid";
 
-export const Ingredients = () => {
+export const DisplayIngredients = () => {
   const [open, setOpen] = useState(false);
 
   const [list, setList] = useState(() => [

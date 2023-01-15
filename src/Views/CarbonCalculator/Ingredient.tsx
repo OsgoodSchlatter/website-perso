@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Button } from "../Single/Button";
-import { Textarea } from "../Single/Textarea";
+import { Button } from "../../Single/Button";
+import { Textarea } from "../../Single/Textarea";
 
 export type IngredientProps = {
   id: string;

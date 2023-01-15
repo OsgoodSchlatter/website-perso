@@ -1,15 +1,16 @@
-import { Link, Route, Routes } from "react-router-dom";
-import { Home } from "../Component/Home";
-import { Settings } from "../Component/Settings";
-import { Ingredients } from "../Ingredient/Ingredients";
+import { Route, Routes } from "react-router-dom";
+import { Home } from "./Home/Home";
+import { DisplayIngredients } from "./CarbonCalculator/DisplayIngredients";
+import { DisplayConso } from "./SNCFCockpit/DisplayConso";
+import { WIP } from "../Single/WIP";
 
 export const Main = () => {
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/settings" element={<Settings />} />
-        <Route path="/carbon" element={<Ingredients />} />
+        <Route path="/sncf" element={<DisplayConso />} />
+        <Route path="/carbon" element={<WIP />} />
       </Routes>
     </>
   );

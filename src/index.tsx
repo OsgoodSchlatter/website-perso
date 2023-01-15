@@ -5,7 +5,6 @@ import App from "./App";
 import Cv from "./CV/Cv";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Ingredients } from "./Ingredient/Ingredients";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

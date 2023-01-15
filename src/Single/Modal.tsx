@@ -1,6 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
-import { IngredientProps } from "../Ingredient/Ingredient";
+import { IngredientProps } from "../Views/CarbonCalculator/Ingredient";
 import { v4 as uuidv4 } from "uuid";
 
 export default function MyModal({
