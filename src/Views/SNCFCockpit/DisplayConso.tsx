@@ -116,12 +116,6 @@ export const DisplayConso = () => {
                         setList(list.filter((conso) => conso.id !== id))
                       }
                       handleEdit={(el) => {
-                        console.log(
-                          "conso to edit: ",
-                          consoToEdit.id,
-                          "\n name",
-                          consoToEdit.chaineMetier
-                        );
                         setConsoToEdit(c);
                         setEdit(true);
                         setOpen(true);

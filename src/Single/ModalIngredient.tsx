@@ -1,28 +1,26 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
-import { ConsoProps } from "../Views/SNCFCockpit/SingleConso";
+import { IngredientProps } from "../Views/CarbonCalculator/Ingredient";
 import { v4 as uuidv4 } from "uuid";
 
-export default function ModalConso({
+export default function ModalIngredient({
   close,
   edit,
   item,
-  _conso,
+  _ingr,
   onEdit,
 }: {
   close?: any;
   edit?: any;
-  item?: (arg0: ConsoProps) => void;
-  _conso?: ConsoProps;
+  item?: (arg0: IngredientProps) => void;
+  _ingr?: IngredientProps;
   onEdit?: boolean;
 }) {
   let [isOpen, setIsOpen] = useState(true);
-  const [conso, setConso] = useState<ConsoProps>({
+  const [ingr, setIngr] = useState<IngredientProps>({
     id: uuidv4(),
-    chaineMetier: _conso?.chaineMetier!,
-    value: _conso?.value!,
-    url: _conso?.url!,
-    seuil: _conso?.seuil!,
+    value: _ingr?.value!,
+    name: _ingr?.name!,
   });
 
   function closeModal() {
@@ -61,73 +59,52 @@ export default function ModalConso({
                     as="h3"
                     className="text-lg font-medium leading-6 text-gray-900"
                   >
-                    Remplir une conso
+                    Choisir un ingrédient
                   </Dialog.Title>
                   <div className="flex-col">
-                    <div className="flex p-2 w-full items-center">
-                      Nom
-                      <input
-                        type="text"
-                        id="name"
-                        placeholder={onEdit ? _conso?.chaineMetier : " "}
-                        className="bg-slate-200 m-2"
-                        onChange={(el) => {
-                          setConso({
-                            ...conso,
-                            chaineMetier: el.target.value,
-                          });
-                        }}
-                      />
+                    <div className="flex p-2 w-full">
+                      Nom de l'ingrédient
+                      <div className="px-4">
+                        <select
+                          className="p-2 rounded-md border border-transparent"
+                          onChange={(el) =>
+                            setIngr({
+                              ...ingr,
+                              name: el.target.value,
+                            })
+                          }
+                        >
+                          <option value="beef">Beef</option>
+                          <option value="lamb">Lamb</option>
+                          <option value="shrimp">Shrimp</option>
+                          <option value="cheese">Cheese</option>
+                          <option value="pork">Pork</option>
+                          <option value="chicken">Chicken</option>
+                          <option value="egg">Egg</option>
+                          <option value="rice">Rice</option>
+                          <option value="soy">Soy</option>
+                          <option value="fruit">Fruit</option>
+                          <option value="peas">Peas</option>
+                          <option value="vegetable">Vegetable</option>
+                        </select>
+                      </div>
                     </div>
 
-                    <div className="flex p-2 w-full items-center">
-                      Value
+                    <div className="flex p-2 w-full">
+                      Valeur (kg)
                       <input
                         id="value"
                         type="number"
-                        placeholder={onEdit ? _conso?.value.toString() : "0"}
-                        className="bg-slate-200 m-2"
+                        placeholder={onEdit ? _ingr?.value.toString() : "0"}
+                        className="ml-[92px] bg-slate-200"
                         onChange={(el) =>
-                          setConso({
-                            ...conso,
+                          setIngr({
+                            ...ingr,
                             value: el.currentTarget.valueAsNumber,
                           })
                         }
                       />
                     </div>
-
-                    <div className="flex p-2 w-full items-center">
-                      Seuil
-                      <input
-                        id="value"
-                        type="number"
-                        placeholder={onEdit ? _conso?.seuil.toString() : "0"}
-                        className="bg-slate-200 m-2"
-                        onChange={(el) =>
-                          setConso({
-                            ...conso,
-                            seuil: el.currentTarget.valueAsNumber,
-                          })
-                        }
-                      />
-                    </div>
-
-                    <div className="flex p-2 w-full items-center">
-                      URL
-                      <input
-                        id="url"
-                        type="text"
-                        placeholder={onEdit ? _conso?.url : ""}
-                        className="bg-slate-200 m-2"
-                        onChange={(el) =>
-                          setConso({
-                            ...conso,
-                            url: el.currentTarget.value,
-                          })
-                        }
-                      />
-                    </div>
-
                     <div className="mt-4">
                       <button
                         type="button"
@@ -135,10 +112,10 @@ export default function ModalConso({
                         onClick={() => {
                           close?.(false);
                           if (onEdit) {
-                            setConso({ ...conso, id: _conso?.id! });
                             edit?.(false);
+                            setIngr({ ...ingr, id: _ingr?.id! });
                           }
-                          item?.(conso);
+                          item?.(ingr);
                         }}
                       >
                         OK !

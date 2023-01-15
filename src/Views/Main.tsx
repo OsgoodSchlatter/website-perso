@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 import { Home } from "./Home/Home";
 import { DisplayIngredients } from "./CarbonCalculator/DisplayIngredients";
 import { DisplayConso } from "./SNCFCockpit/DisplayConso";
-import { WIP } from "../Single/WIP";
 
 export const Main = () => {
   return (
@@ -10,7 +9,7 @@ export const Main = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sncf" element={<DisplayConso />} />
-        <Route path="/carbon" element={<WIP />} />
+        <Route path="/carbon" element={<DisplayIngredients />} />
       </Routes>
     </>
   );
