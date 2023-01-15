@@ -3,8 +3,8 @@ import { Button } from "../../Single/Button";
 import { v4 as uuidv4 } from "uuid";
 import { Ingredient, IngredientProps } from "./Ingredient";
 import ModalIngredient from "../../Single/ModalIngredient";
-import { Dialog, Transition } from "@headlessui/react";
 import ComputeResult from "../../Single/ComputeResult";
+import { BiInfoCircle } from "react-icons/bi";
 
 export const DisplayIngredients = () => {
   const [open, setOpen] = useState(false);
@@ -17,13 +17,11 @@ export const DisplayIngredients = () => {
     name: "",
     value: 0,
   });
-  const [list, setList] = useState<IngredientProps[]>(() => [
-    {
-      id: uuidv4(),
-      name: "Vegetables",
-      value: 100,
-    },
-  ]);
+
+  const [list, setList] = useState<IngredientProps[]>(() => []);
+  localStorage.setItem("list", JSON.stringify(list));
+  const retrievedList = JSON.parse(localStorage.getItem("list") ?? "[]");
+  console.log(retrievedList);
 
   useEffect(() => {
     const sortArray = (type: string) => {
@@ -69,7 +67,7 @@ export const DisplayIngredients = () => {
                   <div className="text-3xl text-black">Name</div>
                   <div className="text-3xl px-10 text-black">Value (kg)</div>
                 </div>
-                <div className="flex">
+                <div className="flex items-baseline ">
                   <select
                     className="p-2 rounded-md border border-transparent"
                     onChange={(e) => setSortType(e.target.value)}

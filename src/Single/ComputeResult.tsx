@@ -65,17 +65,24 @@ export default function ComputeResult({
                     as="h3"
                     className="text-xl font-medium leading-6 text-gray-900"
                   >
-                    Bilan carbone de votre repas:
+                    Carbon footprint of your meal:
                   </Dialog.Title>
                   <div className="flex-col">
                     <div className="flex p-2 w-full text-3xl items-center">
                       {result >= 2000 ? (
-                        <div className="text-5xl text-red-500"> {result}</div>
+                        <div className="text-5xl p-2 text-red-500">
+                          {" "}
+                          {result}
+                        </div>
                       ) : (
-                        <div className="text-5xl text-green-500"> {result}</div>
+                        <div className="text-5xl p-2 text-green-500">
+                          {" "}
+                          {result}
+                        </div>
                       )}{" "}
                       kgC02eq
                     </div>
+                    <div> The average for a French citizen is 2 kgCO2eq!</div>
 
                     <div className="mt-4">
                       <button

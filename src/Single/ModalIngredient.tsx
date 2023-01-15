@@ -59,11 +59,11 @@ export default function ModalIngredient({
                     as="h3"
                     className="text-lg font-medium leading-6 text-gray-900"
                   >
-                    Choisir un ingrédient
+                    Pick an ingredient
                   </Dialog.Title>
                   <div className="flex-col">
                     <div className="flex p-2 w-full">
-                      Nom de l'ingrédient
+                      Name of the ingredient
                       <div className="px-4">
                         <select
                           className="p-2 rounded-md border border-transparent"
@@ -73,6 +73,7 @@ export default function ModalIngredient({
                               name: el.target.value,
                             })
                           }
+                          defaultValue={"beef"}
                         >
                           <option value="beef">Beef</option>
                           <option value="lamb">Lamb</option>
@@ -91,7 +92,7 @@ export default function ModalIngredient({
                     </div>
 
                     <div className="flex p-2 w-full">
-                      Valeur (kg)
+                      Value (kg)
                       <input
                         id="value"
                         type="number"
