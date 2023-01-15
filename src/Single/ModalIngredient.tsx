@@ -57,41 +57,39 @@ export default function ModalIngredient({
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h3"
-                    className="text-lg font-medium leading-6 text-gray-900"
+                    className="text-lg m-2 font-medium leading-6 text-gray-900"
                   >
                     Pick an ingredient
                   </Dialog.Title>
                   <div className="flex-col">
-                    <div className="flex p-2 w-full">
+                    <div className="flex m-2 justify-between">
                       Name of the ingredient
-                      <div className="px-4">
-                        <select
-                          className="p-2 rounded-md border border-transparent"
-                          onChange={(el) =>
-                            setIngr({
-                              ...ingr,
-                              name: el.target.value,
-                            })
-                          }
-                          defaultValue={"beef"}
-                        >
-                          <option value="beef">Beef</option>
-                          <option value="lamb">Lamb</option>
-                          <option value="shrimp">Shrimp</option>
-                          <option value="cheese">Cheese</option>
-                          <option value="pork">Pork</option>
-                          <option value="chicken">Chicken</option>
-                          <option value="egg">Egg</option>
-                          <option value="rice">Rice</option>
-                          <option value="soy">Soy</option>
-                          <option value="fruit">Fruit</option>
-                          <option value="peas">Peas</option>
-                          <option value="vegetable">Vegetable</option>
-                        </select>
-                      </div>
+                      <select
+                        className="rounded-md p-2 border border-transparent"
+                        onChange={(el) =>
+                          setIngr({
+                            ...ingr,
+                            name: el.target.value,
+                          })
+                        }
+                        defaultValue={"beef"}
+                      >
+                        <option value="beef">Beef</option>
+                        <option value="lamb">Lamb</option>
+                        <option value="shrimp">Shrimp</option>
+                        <option value="cheese">Cheese</option>
+                        <option value="pork">Pork</option>
+                        <option value="chicken">Chicken</option>
+                        <option value="egg">Egg</option>
+                        <option value="rice">Rice</option>
+                        <option value="soy">Soy</option>
+                        <option value="fruit">Fruit</option>
+                        <option value="peas">Peas</option>
+                        <option value="vegetable">Vegetable</option>
+                      </select>
                     </div>
 
-                    <div className="flex p-2 w-full">
+                    <div className="flex m-2 justify-between">
                       Value (kg)
                       <input
                         id="value"

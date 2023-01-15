@@ -16,31 +16,12 @@ export const DisplayConso = () => {
     url: "",
     seuil: 0,
   });
-  const [list, setList] = useState<ConsoProps[]>(() => [
-    {
-      id: uuidv4(),
-      chaineMetier: "Chauffage",
-      value: 380,
-      seuil: 400,
-      url: "",
-      // url: "https://ressources.data.sncf.com/api/datasets/1.0/particularite-dexploitation-des-voies?key=738434a8addc80f7cdf8f7a85ff900e061806b3a2ee3d2fa224b68e9",
-    },
-    {
-      id: uuidv4(),
-      chaineMetier: "Isolation",
-      value: 638,
-      seuil: 1000,
-      url: "",
-      // url: "https://ressources.data.sncf.com/api/datasets/1.0/particularite-dexploitation-des-voies?key=738434a8addc80f7cdf8f7a85ff900e061806b3a2ee3d2fa224b68e9",
-    },
-    {
-      id: uuidv4(),
-      chaineMetier: "Train",
-      value: 1265,
-      seuil: 1000,
-      url: " https://api.sncf.com/v1/coverage/sncf/stop_areas/stop_area:SNCF:87391003/departures?datetime=20230113T083105",
-    },
-  ]);
+  const [list, setList] = useState<ConsoProps[]>(() => {
+    const storedList: ConsoProps[] = JSON.parse(
+      localStorage.getItem("list") ?? ""
+    );
+    return storedList;
+  });
 
   useEffect(() => {
     const sortArray = (type: string) => {
@@ -125,13 +106,14 @@ export const DisplayConso = () => {
                   </div>
                 </>
               ))}
-
-              <div className="p-2 rounded-md border border-transparent flex justify-center space-x-2">
-                <Button
-                  label="Add"
-                  className="rounded-md border border-transparent bg-orange-200 px-4 py-2 text-lg font-medium text-blue-800 hover:bg-orange-300"
-                  onClick={() => setOpen(true)}
-                />
+              <div className="flex">
+                <div className="flex p-2 rounded-md border border-transparent flex justify-center space-x-2">
+                  <Button
+                    label="Add"
+                    className="rounded-md border border-transparent bg-orange-200 px-4 py-2 text-lg font-medium text-blue-800 hover:bg-orange-300"
+                    onClick={() => setOpen(true)}
+                  />
+                </div>
               </div>
               {open && (
                 <ModalConso

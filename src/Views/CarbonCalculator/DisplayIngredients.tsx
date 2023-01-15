@@ -18,10 +18,16 @@ export const DisplayIngredients = () => {
     value: 0,
   });
 
-  const [list, setList] = useState<IngredientProps[]>(() => []);
-  localStorage.setItem("list", JSON.stringify(list));
-  const retrievedList = JSON.parse(localStorage.getItem("list") ?? "[]");
-  console.log(retrievedList);
+  const [list, setList] = useState<IngredientProps[]>(() => {
+    const storedList: IngredientProps[] = JSON.parse(
+      localStorage.getItem("list") ?? ""
+    );
+    return storedList;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("list", JSON.stringify(list));
+  }, [list]);
 
   useEffect(() => {
     const sortArray = (type: string) => {

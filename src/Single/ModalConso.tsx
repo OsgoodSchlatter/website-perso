@@ -64,8 +64,8 @@ export default function ModalConso({
                     Remplir une conso
                   </Dialog.Title>
                   <div className="flex-col">
-                    <div className="flex p-2 w-full items-center">
-                      Nom
+                    <div className="flex p-2 w-full items-center justify-between">
+                      Chaîne métier
                       <input
                         type="text"
                         id="name"
@@ -80,7 +80,7 @@ export default function ModalConso({
                       />
                     </div>
 
-                    <div className="flex p-2 w-full items-center">
+                    <div className="flex p-2 w-full items-center justify-between">
                       Value
                       <input
                         id="value"
@@ -96,7 +96,7 @@ export default function ModalConso({
                       />
                     </div>
 
-                    <div className="flex p-2 w-full items-center">
+                    <div className="flex p-2 w-full items-center justify-between">
                       Seuil
                       <input
                         id="value"
@@ -112,8 +112,8 @@ export default function ModalConso({
                       />
                     </div>
 
-                    <div className="flex p-2 w-full items-center">
-                      URL
+                    <div className="flex p-2 w-full items-center justify-between">
+                      URL API
                       <input
                         id="url"
                         type="text"
