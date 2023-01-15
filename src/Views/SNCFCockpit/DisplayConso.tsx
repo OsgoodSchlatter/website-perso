@@ -18,10 +18,14 @@ export const DisplayConso = () => {
   });
   const [list, setList] = useState<ConsoProps[]>(() => {
     const storedList: ConsoProps[] = JSON.parse(
-      localStorage.getItem("list") ?? "[]"
+      localStorage.getItem("list_conso") ?? "[]"
     );
     return storedList;
   });
+
+  useEffect(() => {
+    localStorage.setItem("list_conso", JSON.stringify(list));
+  }, [list]);
 
   useEffect(() => {
     const sortArray = (type: string) => {
