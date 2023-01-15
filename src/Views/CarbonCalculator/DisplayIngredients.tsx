@@ -20,7 +20,7 @@ export const DisplayIngredients = () => {
 
   const [list, setList] = useState<IngredientProps[]>(() => {
     const storedList: IngredientProps[] = JSON.parse(
-      localStorage.getItem("list") ?? ""
+      localStorage.getItem("list") ?? "[]"
     );
     return storedList;
   });

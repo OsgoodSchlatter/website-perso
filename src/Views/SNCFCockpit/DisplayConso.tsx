@@ -18,7 +18,7 @@ export const DisplayConso = () => {
   });
   const [list, setList] = useState<ConsoProps[]>(() => {
     const storedList: ConsoProps[] = JSON.parse(
-      localStorage.getItem("list") ?? ""
+      localStorage.getItem("list") ?? "[]"
     );
     return storedList;
   });
