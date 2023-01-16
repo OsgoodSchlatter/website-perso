@@ -7,7 +7,6 @@ export const Home = () => {
           <div className="text-xl">Bienvenue sur le site d'Eloi Besnard</div>
         </div>
       </div>
-      <div className="w-full p-2"> hey </div>
     </div>
   );
 };
