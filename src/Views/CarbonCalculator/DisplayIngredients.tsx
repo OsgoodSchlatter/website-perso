@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import { Ingredient, IngredientProps } from "./Ingredient";
 import ModalIngredient from "../../Single/ModalIngredient";
 import ComputeResult from "../../Single/ComputeResult";
+import { BsFillTrashFill } from "react-icons/bs";
 
 export const DisplayIngredients = () => {
   const [open, setOpen] = useState(false);
@@ -72,7 +73,7 @@ export const DisplayIngredients = () => {
                   <div className="text-3xl text-black">Name</div>
                   <div className="text-3xl px-10 text-black">Value (kg)</div>
                 </div>
-                <div className="flex items-baseline ">
+                <div className="flex ">
                   <select
                     className="p-2 rounded-md border border-transparent"
                     onChange={(e) => setSortType(e.target.value)}
@@ -80,6 +81,11 @@ export const DisplayIngredients = () => {
                     <option value="name">Name</option>
                     <option value="value">Value</option>
                   </select>
+                  <Button
+                    label={<BsFillTrashFill />}
+                    className="rounded-md bg-red-400 hover:bg-red-500 ml-2 text-black"
+                    onClick={() => setList([])}
+                  />
                 </div>
               </div>
               {list.map((i: IngredientProps) => (

@@ -1,4 +1,5 @@
 import { Button } from "../../Single/Button";
+import { BsFillTrashFill, BsFillPencilFill } from "react-icons/bs";
 
 export type IngredientProps = {
   id: string;
@@ -31,14 +32,14 @@ export const Ingredient = ({
         </div>
         <div className="w-1/3 text-right">
           <Button
-            label="Edit"
+            label={<BsFillPencilFill />}
             className="rounded-md bg-green-400 hover:bg-green-500 ml-2 text-black"
             onClick={() => handleEdit?.(ingr)}
           >
             Edit
           </Button>
           <Button
-            label="Suppr"
+            label={<BsFillTrashFill />}
             className="rounded-md bg-red-400 hover:bg-red-500 ml-2 text-black"
             onClick={() => handleDelete?.(ingr.id)}
           >

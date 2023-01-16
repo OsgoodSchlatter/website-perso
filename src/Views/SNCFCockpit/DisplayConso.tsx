@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import { Conso, ConsoProps } from "./SingleConso";
 import ModalConso from "../../Single/ModalConso";
 import { FetchData } from "../../Single/Api";
+import { BsFillTrashFill } from "react-icons/bs";
 
 export const DisplayConso = () => {
   const [open, setOpen] = useState(false);
@@ -90,6 +91,11 @@ export const DisplayConso = () => {
                     <option value="seuil">Seuil</option>
                     <option value="chaineMetier">Chaine Métier</option>
                   </select>
+                  <Button
+                    label={<BsFillTrashFill />}
+                    className="rounded-md bg-red-400 hover:bg-red-500 ml-2 text-black"
+                    onClick={() => setList([])}
+                  />
                 </div>
               </div>
               {list.map((c: ConsoProps) => (

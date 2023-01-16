@@ -70,7 +70,7 @@ export default function ComputeResult({
                   </Dialog.Title>
                   <div className="flex-col">
                     <div className="flex p-2 w-full text-3xl items-center">
-                      {result >= 2000 ? (
+                      {result >= 2 ? (
                         <div className="text-5xl p-2 text-red-500">
                           {" "}
                           {result}
