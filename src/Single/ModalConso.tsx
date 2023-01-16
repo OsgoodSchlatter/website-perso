@@ -36,8 +36,8 @@ export default function ModalConso({
             if (onEdit) {
               setConso({ ...conso, id: _conso?.id! });
               edit?.(false);
+              item?.(conso);
             }
-            item?.(conso);
           }}
         >
           <Transition.Child
@@ -157,8 +157,8 @@ export default function ModalConso({
                           if (onEdit) {
                             setConso({ ...conso, id: _conso?.id! });
                             edit?.(false);
+                            item?.(conso);
                           }
-                          item?.(conso);
                         }}
                       >
                         Leave Modal

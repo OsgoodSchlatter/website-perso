@@ -34,8 +34,8 @@ export default function ModalIngredient({
             if (onEdit) {
               edit?.(false);
               setIngr({ ...ingr, id: _ingr?.id! });
+              item?.(ingr);
             }
-            item?.(ingr);
           }}
         >
           <Transition.Child
@@ -134,8 +134,8 @@ export default function ModalIngredient({
                           if (onEdit) {
                             edit?.(false);
                             setIngr({ ...ingr, id: _ingr?.id! });
+                            item?.(ingr);
                           }
-                          item?.(ingr);
                         }}
                       >
                         Leave Modal
