@@ -1,4 +1,3 @@
-import { IngredientProps } from "../Views/CarbonCalculator/Ingredient";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import classNames from "classnames";
@@ -46,26 +45,27 @@ export default function InfoCarbonModal({
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h3"
-                    className="text-xl font-medium leading-6 text-gray-900"
+                    className="text-xl mb-4 font-medium leading-6 text-gray-900"
                   >
-                    The goal is to compute the carbon footprint of your meal.
+                    The goal is to compute the{" "}
+                    <p className="font-bold">carbon footprint</p> of your meal.
                   </Dialog.Title>
                   <div className="flex-col">
                     <div>
                       {Array.from(list.entries()).map(([key, value]) => (
                         <>
-                          <div className="flex">
+                          <div className="flex justify-between">
                             <p className="p-1"> {key}</p>
                             <p
                               className={classNames(
-                                "p-1",
+                                "px-3",
                                 value <= 10
-                                  ? "text-green-400"
+                                  ? "text-green-400 bg-green-100"
                                   : value <= 30
-                                  ? "text-orange-400"
-                                  : "text-red-400"
+                                  ? "text-orange-400 bg-orange-100"
+                                  : "text-red-400 bg-red-100"
                               )}
-                              style={{ width: value }}
+                              style={{ width: value * 5 }}
                             >
                               {" "}
                               {value}
@@ -74,6 +74,7 @@ export default function InfoCarbonModal({
                         </>
                       ))}
                     </div>
+                    <div className="mt-3 font-bold"> (source: IPCC 2018)</div>
                     <div className="mt-4">
                       <button
                         type="button"

@@ -1,11 +1,12 @@
 import classNames from "classnames";
-import { ButtonHTMLAttributes, ReactNode } from "react";
+import { ButtonHTMLAttributes, ReactNode, useState } from "react";
 
 export type ButtonProps = {
   label?: string | ReactNode;
   danger?: boolean;
   loading?: boolean;
   onClick?: () => any;
+  tooltip_content?: string;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button = ({
@@ -18,8 +19,14 @@ export const Button = ({
   ...rest
 }: ButtonProps) => {
   return (
-    <button className={className} onClick={onClick}>
-      <div className="p-2">{label}</div>
-    </button>
+    <>
+      <button
+        className={className}
+        onClick={onClick}
+        data-tooltip-target="tooltip-default"
+      >
+        <div className="p-2">{label}</div>
+      </button>
+    </>
   );
 };

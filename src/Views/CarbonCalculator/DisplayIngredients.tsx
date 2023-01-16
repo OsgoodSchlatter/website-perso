@@ -6,11 +6,12 @@ import ModalIngredient from "../../Single/ModalIngredient";
 import ComputeResult, { MapIngredient } from "../../Single/ComputeResult";
 import { BsFillTrashFill } from "react-icons/bs";
 import InfoCarbonModal from "../../Single/InfoCarbonModal";
+import { Tooltip } from "../../Single/Tooltip";
 
 export const DisplayIngredients = () => {
   const [open, setOpen] = useState(false);
   const [openInfo, setOpenInfo] = useState(false);
-
+  const [hover, setHover] = useState(false);
   const [result, setResult] = useState(false);
 
   const [sortType, setSortType] = useState("value");
@@ -122,11 +123,19 @@ export const DisplayIngredients = () => {
                     onClick={() => setResult(true)}
                   />
                 </div>
-                <Button
-                  label="?"
-                  className="rounded-md border border-transparent bg-blue-200 px-4 py-2 text-lg font-medium text-black hover:bg-blue-300"
-                  onClick={() => setOpenInfo(true)}
-                />
+                <Tooltip content="Info">
+                  {(props) => {
+                    console.log("hey");
+                    return (
+                      <Button
+                        label="?"
+                        className="rounded-md border border-transparent bg-blue-200 px-4 py-2 text-lg font-medium text-black hover:bg-blue-300"
+                        onClick={() => setOpenInfo(true)}
+                        {...props}
+                      />
+                    );
+                  }}
+                </Tooltip>
               </div>
               {open && (
                 <ModalIngredient

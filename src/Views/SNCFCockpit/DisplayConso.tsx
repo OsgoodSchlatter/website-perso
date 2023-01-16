@@ -117,7 +117,7 @@ export const DisplayConso = () => {
                 </>
               ))}
               <div className="flex">
-                <div className="flex p-2 rounded-md border border-transparent flex justify-center space-x-2">
+                <div className="p-2 rounded-md border border-transparent flex justify-center space-x-2">
                   <Button
                     label="Add"
                     className="rounded-md border border-transparent bg-orange-200 px-4 py-2 text-lg font-medium text-blue-800 hover:bg-orange-300"

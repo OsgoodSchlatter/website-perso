@@ -5,4 +5,11 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  zIndex: {
+    1: 1,
+    2: 2,
+    modal: 70,
+    popover: 80,
+    tooltip: 90,
+  },
 };

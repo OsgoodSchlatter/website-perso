@@ -9,12 +9,14 @@ export default function ModalIngredient({
   item,
   _ingr,
   onEdit,
+  list,
 }: {
   close?: any;
   edit?: any;
   item?: (arg0: IngredientProps) => void;
   _ingr?: IngredientProps;
   onEdit?: boolean;
+  list?: Map<string, number>;
 }) {
   let [isOpen, setIsOpen] = useState(true);
   const [ingr, setIngr] = useState<IngredientProps>({
@@ -81,15 +83,28 @@ export default function ModalIngredient({
                         }
                         defaultValue={"beef"}
                       >
-                        <option value="beef">Beef</option>
-                        <option value="lamb">Lamb</option>
-                        <option value="shrimp">Shrimp</option>
-                        <option value="cheese">Cheese</option>
-                        <option value="pork">Pork</option>
-                        <option value="chicken">Chicken</option>
-                        <option value="egg">Egg</option>
-                        <option value="rice">Rice</option>
-                        <option value="soy">Soy</option>
+                        <option value="Beef">Beef</option>
+                        <option value="Chocolate">Chocolate</option>
+                        <option value="Coffee">Coffee</option>
+                        <option value="Chocolate">Chocolate</option>
+                        <option value="Seafood (farmed)">
+                          Seafood (farmed)
+                        </option>
+                        <option value="Lamb">Lamb</option>
+                        <option value="Cheese">Cheese</option>
+                        <option value="Fish (farmed)">Fish</option>
+                        <option value="Pork">Pork</option>
+                        <option value="Poultry">Poultry</option>
+                        <option value="Palm oil">Palm oil</option>
+                        <option value="Soy oil">Soy oil</option>
+                        <option value="Olive oil">Olive oil</option>
+                        <option value="Egg">Egg</option>
+                        <option value="Rice">Rice</option>
+                        <option value="Soy">Soy</option>
+                        <option value="Sugar">Sugar</option>
+                        <option value="Milk">Milk</option>
+                        <option value="Wine">Wine</option>
+
                         <option value="fruit">Fruit</option>
                         <option value="peas">Peas</option>
                         <option value="vegetable">Vegetable</option>
