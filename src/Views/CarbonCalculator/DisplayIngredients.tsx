@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from "uuid";
 import { Ingredient, IngredientProps } from "./Ingredient";
 import ModalIngredient from "../../Single/ModalIngredient";
 import ComputeResult from "../../Single/ComputeResult";
-import { BiInfoCircle } from "react-icons/bi";
 
 export const DisplayIngredients = () => {
   const [open, setOpen] = useState(false);
