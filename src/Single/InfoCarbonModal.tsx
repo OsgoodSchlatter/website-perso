@@ -1,34 +1,16 @@
 import { IngredientProps } from "../Views/CarbonCalculator/Ingredient";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
+import classNames from "classnames";
 
-export const MapIngredient = new Map<string, number>([
-  ["beef", 100],
-  ["lamb", 40],
-  ["shrimp", 27],
-  ["cheese", 23],
-  ["pork", 12],
-  ["chicken", 10],
-  ["egg", 5],
-  ["rice", 4],
-  ["soy", 3],
-  ["fruit", 1],
-  ["peas", 1],
-  ["vegetables", 1],
-]);
-
-export default function ComputeResult({
-  list,
+export default function InfoCarbonModal({
   close,
+  list,
 }: {
-  list: IngredientProps[];
   close: any;
+  list: Map<string, number>;
 }) {
   let [isOpen, setIsOpen] = useState(true);
-  const result = list.reduce(
-    (acc, i) => acc + (MapIngredient.get(i.name) || 0) * i.value,
-    0
-  );
 
   return (
     <>
@@ -66,25 +48,32 @@ export default function ComputeResult({
                     as="h3"
                     className="text-xl font-medium leading-6 text-gray-900"
                   >
-                    Carbon footprint of your meal:
+                    The goal is to compute the carbon footprint of your meal.
                   </Dialog.Title>
                   <div className="flex-col">
-                    <div className="flex p-2 w-full text-3xl items-center">
-                      {result >= 2 ? (
-                        <div className="text-5xl p-2 text-red-500">
-                          {" "}
-                          {result}
-                        </div>
-                      ) : (
-                        <div className="text-5xl p-2 text-green-500">
-                          {" "}
-                          {result}
-                        </div>
-                      )}{" "}
-                      kgC02eq
+                    <div>
+                      {Array.from(list.entries()).map(([key, value]) => (
+                        <>
+                          <div className="flex">
+                            <p className="p-1"> {key}</p>
+                            <p
+                              className={classNames(
+                                "p-1",
+                                value <= 10
+                                  ? "text-green-400"
+                                  : value <= 30
+                                  ? "text-orange-400"
+                                  : "text-red-400"
+                              )}
+                              style={{ width: value }}
+                            >
+                              {" "}
+                              {value}
+                            </p>
+                          </div>
+                        </>
+                      ))}
                     </div>
-                    <div> The average for a French citizen is 2 kgCO2eq!</div>
-
                     <div className="mt-4">
                       <button
                         type="button"

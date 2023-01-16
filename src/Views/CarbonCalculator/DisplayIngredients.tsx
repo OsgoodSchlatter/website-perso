@@ -3,11 +3,14 @@ import { Button } from "../../Single/Button";
 import { v4 as uuidv4 } from "uuid";
 import { Ingredient, IngredientProps } from "./Ingredient";
 import ModalIngredient from "../../Single/ModalIngredient";
-import ComputeResult from "../../Single/ComputeResult";
+import ComputeResult, { MapIngredient } from "../../Single/ComputeResult";
 import { BsFillTrashFill } from "react-icons/bs";
+import InfoCarbonModal from "../../Single/InfoCarbonModal";
 
 export const DisplayIngredients = () => {
   const [open, setOpen] = useState(false);
+  const [openInfo, setOpenInfo] = useState(false);
+
   const [result, setResult] = useState(false);
 
   const [sortType, setSortType] = useState("value");
@@ -83,7 +86,7 @@ export const DisplayIngredients = () => {
                   </select>
                   <Button
                     label={<BsFillTrashFill />}
-                    className="rounded-md bg-red-400 hover:bg-red-500 ml-2 text-black"
+                    className="rounded-md  bg-red-400 hover:bg-red-500 ml-2 text-black"
                     onClick={() => setList([])}
                   />
                 </div>
@@ -106,21 +109,24 @@ export const DisplayIngredients = () => {
                   </div>
                 </>
               ))}
-              <div className="flex items-center">
+              <div className="flex items-center justify-between">
                 <div className="p-2 rounded-md border border-transparent flex justify-center space-x-2">
                   <Button
                     label="Add"
                     className="rounded-md border border-transparent bg-orange-200 px-4 py-2 text-lg font-medium text-blue-800 hover:bg-orange-300"
                     onClick={() => setOpen(true)}
                   />
-                </div>
-                <div className="p-2 rounded-md border border-transparent flex justify-center space-x-2">
                   <Button
                     label="Compute"
                     className="rounded-md border border-transparent bg-green-200 px-4 py-2 text-lg font-medium text-blue-800 hover:bg-green-300"
                     onClick={() => setResult(true)}
                   />
                 </div>
+                <Button
+                  label="?"
+                  className="rounded-md border border-transparent bg-blue-200 px-4 py-2 text-lg font-medium text-black hover:bg-blue-300"
+                  onClick={() => setOpenInfo(true)}
+                />
               </div>
               {open && (
                 <ModalIngredient
@@ -132,6 +138,9 @@ export const DisplayIngredients = () => {
                 />
               )}
               {result && <ComputeResult close={setResult} list={list} />}
+              {openInfo && (
+                <InfoCarbonModal close={setOpenInfo} list={MapIngredient} />
+              )}
             </>
           </div>
         </div>
