@@ -1,5 +1,5 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, useState } from "react";
+import { Fragment, createRef, useEffect, useState } from "react";
 import { ConsoProps } from "../Views/SNCFCockpit/SingleConso";
 import { v4 as uuidv4 } from "uuid";
 
@@ -25,14 +25,14 @@ export default function ModalConso({
     seuil: _conso?.seuil!,
   });
 
-  function closeModal() {
-    setIsOpen(false);
-  }
-
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={closeModal}>
+        <Dialog
+          as="div"
+          className="relative z-10"
+          onClose={() => close?.(false)}
+        >
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -79,7 +79,6 @@ export default function ModalConso({
                         }}
                       />
                     </div>
-
                     <div className="flex p-2 w-full items-center justify-between">
                       Value
                       <input

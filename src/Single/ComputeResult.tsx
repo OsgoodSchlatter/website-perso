@@ -25,9 +25,6 @@ export default function ComputeResult({
   close: any;
 }) {
   let [isOpen, setIsOpen] = useState(true);
-  function closeModal() {
-    setIsOpen(false);
-  }
   const result = list.reduce(
     (acc, i) => acc + (MapIngredient.get(i.name) || 0) * i.value,
     0
@@ -36,7 +33,11 @@ export default function ComputeResult({
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={closeModal}>
+        <Dialog
+          as="div"
+          className="relative z-10"
+          onClose={() => close?.(false)}
+        >
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
