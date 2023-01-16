@@ -31,7 +31,14 @@ export default function ModalConso({
         <Dialog
           as="div"
           className="relative z-10"
-          onClose={() => close?.(false)}
+          onClose={() => {
+            close?.(false);
+            if (onEdit) {
+              setConso({ ...conso, id: _conso?.id! });
+              edit?.(false);
+            }
+            item?.(conso);
+          }}
         >
           <Transition.Child
             as={Fragment}
@@ -147,6 +154,11 @@ export default function ModalConso({
                         className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 m-4 px-4 py-2 text-sm font-medium text-red-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                         onClick={() => {
                           close?.(false);
+                          if (onEdit) {
+                            setConso({ ...conso, id: _conso?.id! });
+                            edit?.(false);
+                          }
+                          item?.(conso);
                         }}
                       >
                         Leave Modal

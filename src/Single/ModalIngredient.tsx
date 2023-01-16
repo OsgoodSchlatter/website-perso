@@ -23,17 +23,20 @@ export default function ModalIngredient({
     name: _ingr?.name!,
   });
 
-  function closeModal() {
-    setIsOpen(false);
-  }
-
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog
           as="div"
           className="relative z-10"
-          onClose={() => close?.(false)}
+          onClose={() => {
+            close?.(false);
+            if (onEdit) {
+              edit?.(false);
+              setIngr({ ...ingr, id: _ingr?.id! });
+            }
+            item?.(ingr);
+          }}
         >
           <Transition.Child
             as={Fragment}
@@ -128,6 +131,11 @@ export default function ModalIngredient({
                         className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 m-4 px-4 py-2 text-sm font-medium text-red-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                         onClick={() => {
                           close?.(false);
+                          if (onEdit) {
+                            edit?.(false);
+                            setIngr({ ...ingr, id: _ingr?.id! });
+                          }
+                          item?.(ingr);
                         }}
                       >
                         Leave Modal
