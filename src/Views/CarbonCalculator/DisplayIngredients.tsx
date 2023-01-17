@@ -6,13 +6,25 @@ import ModalIngredient from "../../Single/ModalIngredient";
 import ComputeResult, { MapIngredient } from "../../Single/ComputeResult";
 import { BsFillTrashFill } from "react-icons/bs";
 import InfoCarbonModal from "../../Single/InfoCarbonModal";
-import { Tooltip } from "../../Single/Tooltip";
+import ModalMeals from "../../Single/ModalMeals";
+
+export type MealProps = {
+  id: string;
+  id_number: number;
+  name: string;
+  meal: IngredientProps[];
+  handleDelete?: (id: string) => any;
+  handleEdit?: (meal: MealProps) => any;
+};
 
 export const DisplayIngredients = () => {
   const [open, setOpen] = useState(false);
   const [openInfo, setOpenInfo] = useState(false);
-  const [hover, setHover] = useState(false);
+  const [openMeal, setOpenMeal] = useState(false);
+
   const [result, setResult] = useState(false);
+
+  const [mealIndex, setMealIndex] = useState(0);
 
   const [sortType, setSortType] = useState("value");
   const [edit, setEdit] = useState(false);
@@ -32,6 +44,17 @@ export const DisplayIngredients = () => {
   useEffect(() => {
     localStorage.setItem("list", JSON.stringify(list));
   }, [list]);
+
+  const [listMeal, setListMeal] = useState<MealProps[]>(() => {
+    const storedList: MealProps[] = JSON.parse(
+      localStorage.getItem("list_meal") ?? "[]"
+    );
+    return storedList;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("list_meal", JSON.stringify(listMeal));
+  }, [listMeal]);
 
   useEffect(() => {
     const sortArray = (type: string) => {
@@ -69,91 +92,97 @@ export const DisplayIngredients = () => {
   return (
     <>
       <div className="flex justify-center">
-        <div className="flex-fill w-[1000px] items-center">
-          <div className="p-2">
-            <>
-              <div className="p-2 mt-2 flex rounded border-transparent bg-blue-100 px-4 py-2 font-medium text-blue-900 hover:bg-blue-200 justify-between">
-                <div className="w-2/3 grid grid-cols-2 gap-[145px]">
-                  <div className="text-3xl text-black">Name</div>
-                  <div className="text-3xl px-10 text-black">Value (kg)</div>
-                </div>
-                <div className="flex ">
-                  <select
-                    className="p-2 rounded-md border border-transparent"
-                    onChange={(e) => setSortType(e.target.value)}
-                  >
-                    <option value="name">Name</option>
-                    <option value="value">Value</option>
-                  </select>
-                  <Button
-                    label={<BsFillTrashFill />}
-                    className="rounded-md  bg-red-400 hover:bg-red-500 ml-2 text-black"
-                    onClick={() => setList([])}
-                  />
-                </div>
+        <div className="flex-col p-2">
+          <div className="flex w-[1000px] items-center">
+            <div className="w-full p-2 mt-2 flex rounded border-transparent bg-blue-100 px-4 py-2 font-medium text-blue-900 hover:bg-blue-200 justify-between items-center">
+              <div className=" grid grid-cols-2">
+                <div className="text-3xl text-black">Name</div>
+                <div className="text-3xl px-10 text-black">Value (kg)</div>
               </div>
-              {list.map((i: IngredientProps) => (
-                <>
-                  <div className="flex-col flex-fill">
-                    <Ingredient
-                      ingr={i}
-                      handleDelete={(id) =>
-                        setList(list.filter((i) => i.id !== id))
-                      }
-                      handleEdit={(el) => {
-                        setIngrToEdit(i);
-                        setEdit(true);
-                        setOpen(true);
-                        setList(list.filter((i) => i.id !== el.id));
-                      }}
-                    ></Ingredient>
-                  </div>
-                </>
-              ))}
-              <div className="flex items-center justify-between">
-                <div className="p-2 rounded-md border border-transparent flex justify-center space-x-2">
-                  <Button
-                    label="Add"
-                    className="rounded-md border border-transparent bg-orange-200 px-4 py-2 text-lg font-medium text-blue-800 hover:bg-orange-300"
-                    onClick={() => setOpen(true)}
-                  />
-                  <Button
-                    label="Compute"
-                    className="rounded-md border border-transparent bg-green-200 px-4 py-2 text-lg font-medium text-blue-800 hover:bg-green-300"
-                    onClick={() => setResult(true)}
-                  />
-                </div>
-                <Tooltip content="Info">
-                  {(props) => {
-                    console.log("hey");
-                    return (
-                      <Button
-                        label="?"
-                        className="rounded-md border border-transparent bg-blue-200 px-4 py-2 text-lg font-medium text-black hover:bg-blue-300"
-                        onClick={() => setOpenInfo(true)}
-                        {...props}
-                      />
-                    );
-                  }}
-                </Tooltip>
-              </div>
-              {open && (
-                <ModalIngredient
-                  close={setOpen}
-                  edit={setEdit}
-                  onEdit={edit}
-                  _ingr={ingrToEdit}
-                  item={(el) => setList(list.concat(el))}
+              <div className="flex">
+                <select
+                  className="p-2 rounded-md border border-transparent"
+                  onChange={(e) => setSortType(e.target.value)}
+                >
+                  <option value="name">Name</option>
+                  <option value="value">Value</option>
+                </select>
+                <Button
+                  label={<BsFillTrashFill />}
+                  className="rounded-md bg-red-400 hover:bg-red-500 ml-2 text-black"
+                  onClick={() => setList([])}
                 />
-              )}
-              {result && <ComputeResult close={setResult} list={list} />}
-              {openInfo && (
-                <InfoCarbonModal close={setOpenInfo} list={MapIngredient} />
-              )}
-            </>
+                <Button
+                  label="?"
+                  className="rounded-xl ml-2 border border-transparent bg-blue-500 h-[50px] w-12 text-lg font-bold text-black hover:bg-blue-300"
+                  onClick={() => setOpenInfo(true)}
+                />
+                <Button
+                  label="My meals"
+                  className="rounded-xl ml-2 border border-transparent bg-violet-300 text-lg font-bold text-black hover:bg-violet-400"
+                  onClick={() => setOpenMeal(true)}
+                />
+              </div>
+            </div>
           </div>
+          {list.map((i: IngredientProps) => (
+            <>
+              <div className="flex-col flex-fill">
+                <Ingredient
+                  ingr={i}
+                  handleDelete={(id) =>
+                    setList(list.filter((i) => i.id !== id))
+                  }
+                  handleEdit={(el) => {
+                    setIngrToEdit(i);
+                    setEdit(true);
+                    setOpen(true);
+                    setList(list.filter((i) => i.id !== el.id));
+                  }}
+                ></Ingredient>
+              </div>
+            </>
+          ))}
         </div>
       </div>
+      <div className="flex justify-center">
+        <div className="p-2 rounded-md border border-transparent flex justify-center space-x-2">
+          <Button
+            label="Add"
+            className="rounded-md border border-transparent bg-orange-200 px-4 py-2 text-lg font-medium text-blue-800 hover:bg-orange-300"
+            onClick={() => setOpen(true)}
+          />
+          <Button
+            label="Compute"
+            className="rounded-md border border-transparent bg-green-200 px-4 py-2 text-lg font-medium text-blue-800 hover:bg-green-300"
+            onClick={() => setResult(true)}
+          />
+          <Button
+            label="Save as a meal"
+            className="rounded-md border border-transparent bg-violet-300 px-4 py-2 text-lg font-medium text-blue-800 hover:bg-violet-400"
+            onClick={() => setResult(true)}
+          />
+        </div>
+      </div>
+      {open && (
+        <ModalIngredient
+          close={setOpen}
+          edit={setEdit}
+          onEdit={edit}
+          _ingr={ingrToEdit}
+          item={(el) => setList(list.concat(el))}
+        />
+      )}
+      {result && <ComputeResult close={setResult} list={list} />}
+      {openInfo && <InfoCarbonModal close={setOpenInfo} list={MapIngredient} />}
+      {openMeal && (
+        <ModalMeals
+          close={setOpenMeal}
+          _listMeal={listMeal}
+          item={(el) => setListMeal(listMeal.concat(el))}
+          pickMeal={(mealIndex) => setMealIndex(mealIndex)}
+        />
+      )}
     </>
   );
 };
