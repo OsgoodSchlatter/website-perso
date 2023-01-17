@@ -68,7 +68,7 @@ export default function InfoCarbonModal({
                               style={{ width: value * 5 }}
                             >
                               {" "}
-                              {value}
+                              {key === "Beef" ? value + " kgCO2/kg" : value}
                             </p>
                           </div>
                         </>
