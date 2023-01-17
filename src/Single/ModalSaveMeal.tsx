@@ -9,22 +9,22 @@ export default function ModalSaveMeal({
   edit,
   item,
   ingrList,
+  id_number,
   onEdit,
-  _meal,
 }: {
   close: any;
   edit?: any;
   item: (arg0: MealProps) => void;
   ingrList: IngredientProps[];
-  _meal?: MealProps;
+  id_number: number;
   onEdit?: boolean;
 }) {
   let [isOpen, setIsOpen] = useState(true);
   const [meal, setMeal] = useState<MealProps>({
     id: uuidv4(),
-    id_number: _meal?.id_number!,
-    name: _meal?.name!,
-    meal: _meal?.meal!,
+    id_number: id_number,
+    name: "",
+    meal: ingrList,
   });
 
   return (
@@ -37,7 +37,6 @@ export default function ModalSaveMeal({
             close?.(false);
             if (onEdit) {
               edit?.(false);
-              setMeal({ ...meal, id: _meal?.id! });
               item?.(meal);
             }
           }}
@@ -87,22 +86,6 @@ export default function ModalSaveMeal({
                         }
                       ></input>
                     </div>
-
-                    <div className="flex m-2 justify-between">
-                      Number
-                      <input
-                        id="number"
-                        type="number"
-                        className="ml-[92px] bg-slate-200"
-                        onChange={(el) =>
-                          setMeal({
-                            ...meal,
-                            id_number: el.currentTarget.valueAsNumber,
-                          })
-                        }
-                      ></input>
-                    </div>
-
                     <div className="mt-4">
                       <button
                         type="button"
@@ -111,7 +94,6 @@ export default function ModalSaveMeal({
                           close?.(false);
                           if (onEdit) {
                             edit?.(false);
-                            setMeal({ ...meal, id: _meal?.id! });
                           }
                           item?.(meal);
                         }}

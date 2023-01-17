@@ -136,9 +136,15 @@ export const DisplayIngredients = () => {
               <div className="flex-col flex-fill">
                 <Ingredient
                   ingr={i}
-                  handleDelete={(id) =>
-                    setList(list.filter((i) => i.id !== id))
-                  }
+                  handleDelete={(id) => {
+                    console.log(listMeal[mealIndex].meal);
+                    setList(
+                      listMeal[mealIndex].meal.filter((i) => i.id !== id)
+                    );
+                    console.log(listMeal[mealIndex].meal);
+
+                    setListMeal(listMeal);
+                  }}
                   handleEdit={(el) => {
                     setIngrToEdit(i);
                     setEdit(true);
@@ -186,6 +192,10 @@ export const DisplayIngredients = () => {
           close={setOpenMeal}
           _listMeal={listMeal}
           item={(listMeal) => setListMeal(listMeal)}
+          handleAllDelete={() => setListMeal([])}
+          handleDelete={(id) =>
+            setListMeal(listMeal.filter((i) => i.id !== id))
+          }
           pickMeal={(mealIndex) => setMealIndex(mealIndex)}
         />
       )}
@@ -194,8 +204,8 @@ export const DisplayIngredients = () => {
           close={setListMealOpen}
           edit={setEdit}
           onEdit={edit}
-          _meal={listMeal[mealIndex]}
           ingrList={list}
+          id_number={listMeal.length}
           item={(meal) => setListMeal(listMeal.concat(meal))}
         />
       )}

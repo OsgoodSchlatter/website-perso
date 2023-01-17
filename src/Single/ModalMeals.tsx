@@ -4,6 +4,8 @@ import { IngredientProps } from "../Views/CarbonCalculator/Ingredient";
 import { v4 as uuidv4 } from "uuid";
 import { MealProps } from "../Views/CarbonCalculator/DisplayIngredients";
 import classNames from "classnames";
+import { BsFillTrashFill } from "react-icons/bs";
+import { Button } from "./Button";
 
 export default function ModalMeals({
   close,
@@ -12,6 +14,8 @@ export default function ModalMeals({
   onEdit,
   _listMeal,
   pickMeal,
+  handleDelete,
+  handleAllDelete,
 }: {
   close?: any;
   edit?: any;
@@ -19,10 +23,10 @@ export default function ModalMeals({
   onEdit?: boolean;
   _listMeal: MealProps[];
   pickMeal: (a: number) => void;
+  handleDelete: (id: string) => any;
+  handleAllDelete: () => any;
 }) {
   let [isOpen, setIsOpen] = useState(true);
-  const [listMeal, setListMeal] = useState<MealProps[]>([]);
-  const [hasClicked, setHasClicked] = useState(false);
 
   return (
     <>
@@ -62,41 +66,38 @@ export default function ModalMeals({
                     as="h3"
                     className="text-lg m-2 font-medium leading-6 text-gray-900"
                   >
-                    Select a meal
+                    <div className="flex justify-between items-center">
+                      Select a meal{" "}
+                      <Button
+                        label={<BsFillTrashFill />}
+                        className="rounded-md bg-red-400 hover:bg-red-500 ml-2 text-black"
+                        onClick={() => handleAllDelete()}
+                      />
+                    </div>
                   </Dialog.Title>
                   <div className="flex-col">
                     {_listMeal.map((meal: MealProps) => (
                       <>
-                        <div
-                          className={classNames(
-                            "rounded-xl m-4 p-2  ",
-                            hasClicked
-                              ? "bg-orange-400"
-                              : "bg-orange-300 hover:bg-orange-400"
-                          )}
-                          id={meal.id}
-                          onClick={() => {
-                            console.log(listMeal);
-                            pickMeal(meal.id_number);
-                            close?.(false);
-                            item?.(_listMeal);
-                          }}
-                        >
-                          {meal.name}
+                        <div className="flex items-center">
+                          <div
+                            className="rounded-xl flex-fill m-4 p-2 bg-orange-300 hover:bg-orange-400"
+                            id={meal.id}
+                            onClick={() => {
+                              pickMeal(meal.id_number);
+                              close?.(false);
+                              item?.(_listMeal);
+                            }}
+                          >
+                            {meal.name}
+                          </div>
+                          <Button
+                            label={<BsFillTrashFill />}
+                            className="rounded-md bg-red-400 hover:bg-red-500 ml-2 text-black"
+                            onClick={() => handleDelete?.(meal.id)}
+                          />
                         </div>
                       </>
                     ))}
-                    <div className="mt-4">
-                      <button
-                        type="button"
-                        className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                        onClick={() => {
-                          close?.(false);
-                        }}
-                      >
-                        OK !
-                      </button>
-                    </div>
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
