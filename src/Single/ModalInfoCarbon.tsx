@@ -1,28 +1,15 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
-import { IngredientProps } from "../Views/CarbonCalculator/Ingredient";
-import { v4 as uuidv4 } from "uuid";
-import { MealProps } from "../Views/CarbonCalculator/DisplayIngredients";
 import classNames from "classnames";
 
-export default function ModalMeals({
+export default function ModalInfoCarbon({
   close,
-  edit,
-  item,
-  onEdit,
-  _listMeal,
-  pickMeal,
+  list,
 }: {
-  close?: any;
-  edit?: any;
-  item?: (arg0: MealProps[]) => void;
-  onEdit?: boolean;
-  _listMeal: MealProps[];
-  pickMeal: (a: number) => void;
+  close: any;
+  list: Map<string, number>;
 }) {
   let [isOpen, setIsOpen] = useState(true);
-  const [listMeal, setListMeal] = useState<MealProps[]>([]);
-  const [hasClicked, setHasClicked] = useState(false);
 
   return (
     <>
@@ -30,9 +17,7 @@ export default function ModalMeals({
         <Dialog
           as="div"
           className="relative z-10"
-          onClose={() => {
-            close?.(false);
-          }}
+          onClose={() => close?.(false)}
         >
           <Transition.Child
             as={Fragment}
@@ -60,32 +45,36 @@ export default function ModalMeals({
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h3"
-                    className="text-lg m-2 font-medium leading-6 text-gray-900"
+                    className="text-xl mb-4 font-medium leading-6 text-gray-900"
                   >
-                    Select a meal
+                    The goal is to compute the{" "}
+                    <p className="font-bold">carbon footprint</p> of your meal.
                   </Dialog.Title>
                   <div className="flex-col">
-                    {_listMeal.map((meal: MealProps) => (
-                      <>
-                        <div
-                          className={classNames(
-                            "rounded-xl m-4 p-2  ",
-                            hasClicked
-                              ? "bg-orange-400"
-                              : "bg-orange-300 hover:bg-orange-400"
-                          )}
-                          id={meal.id}
-                          onClick={() => {
-                            console.log(listMeal);
-                            pickMeal(meal.id_number);
-                            close?.(false);
-                            item?.(_listMeal);
-                          }}
-                        >
-                          {meal.name}
-                        </div>
-                      </>
-                    ))}
+                    <div>
+                      {Array.from(list.entries()).map(([key, value]) => (
+                        <>
+                          <div className="flex justify-between">
+                            <p className="p-1"> {key}</p>
+                            <p
+                              className={classNames(
+                                "px-3",
+                                value <= 10
+                                  ? "text-green-400 bg-green-100"
+                                  : value <= 30
+                                  ? "text-orange-400 bg-orange-100"
+                                  : "text-red-400 bg-red-100"
+                              )}
+                              style={{ width: value * 5 }}
+                            >
+                              {" "}
+                              {key === "Beef" ? value + " kgCO2/kg" : value}
+                            </p>
+                          </div>
+                        </>
+                      ))}
+                    </div>
+                    <div className="mt-3 font-bold"> (source: IPCC 2018)</div>
                     <div className="mt-4">
                       <button
                         type="button"

@@ -3,10 +3,11 @@ import { Button } from "../../Single/Button";
 import { v4 as uuidv4 } from "uuid";
 import { Ingredient, IngredientProps } from "./Ingredient";
 import ModalIngredient from "../../Single/ModalIngredient";
-import ComputeResult, { MapIngredient } from "../../Single/ComputeResult";
+import ComputeResult, { MapIngredient } from "../../Single/ModalComputeResult";
 import { BsFillTrashFill } from "react-icons/bs";
-import InfoCarbonModal from "../../Single/InfoCarbonModal";
+import InfoCarbonModal from "../../Single/ModalInfoCarbon";
 import ModalMeals from "../../Single/ModalMeals";
+import ModalSaveMeal from "../../Single/ModalSaveMeal";
 
 export type MealProps = {
   id: string;
@@ -21,6 +22,7 @@ export const DisplayIngredients = () => {
   const [open, setOpen] = useState(false);
   const [openInfo, setOpenInfo] = useState(false);
   const [openMeal, setOpenMeal] = useState(false);
+  const [listMealOpen, setListMealOpen] = useState(false);
 
   const [result, setResult] = useState(false);
 
@@ -55,6 +57,10 @@ export const DisplayIngredients = () => {
   useEffect(() => {
     localStorage.setItem("list_meal", JSON.stringify(listMeal));
   }, [listMeal]);
+
+  useEffect(() => {
+    setList(listMeal[mealIndex]?.meal! ?? []);
+  }, [mealIndex]);
 
   useEffect(() => {
     const sortArray = (type: string) => {
@@ -160,7 +166,7 @@ export const DisplayIngredients = () => {
           <Button
             label="Save as a meal"
             className="rounded-md border border-transparent bg-violet-300 px-4 py-2 text-lg font-medium text-blue-800 hover:bg-violet-400"
-            onClick={() => setResult(true)}
+            onClick={() => setListMealOpen(true)}
           />
         </div>
       </div>
@@ -179,8 +185,18 @@ export const DisplayIngredients = () => {
         <ModalMeals
           close={setOpenMeal}
           _listMeal={listMeal}
-          item={(el) => setListMeal(listMeal.concat(el))}
+          item={(listMeal) => setListMeal(listMeal)}
           pickMeal={(mealIndex) => setMealIndex(mealIndex)}
+        />
+      )}
+      {listMealOpen && (
+        <ModalSaveMeal
+          close={setListMealOpen}
+          edit={setEdit}
+          onEdit={edit}
+          _meal={listMeal[mealIndex]}
+          ingrList={list}
+          item={(meal) => setListMeal(listMeal.concat(meal))}
         />
       )}
     </>

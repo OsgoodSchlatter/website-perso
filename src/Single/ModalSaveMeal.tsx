@@ -1,15 +1,31 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
-import classNames from "classnames";
+import { IngredientProps } from "../Views/CarbonCalculator/Ingredient";
+import { v4 as uuidv4 } from "uuid";
+import { MealProps } from "../Views/CarbonCalculator/DisplayIngredients";
 
-export default function InfoCarbonModal({
+export default function ModalSaveMeal({
   close,
-  list,
+  edit,
+  item,
+  ingrList,
+  onEdit,
+  _meal,
 }: {
   close: any;
-  list: Map<string, number>;
+  edit?: any;
+  item: (arg0: MealProps) => void;
+  ingrList: IngredientProps[];
+  _meal?: MealProps;
+  onEdit?: boolean;
 }) {
   let [isOpen, setIsOpen] = useState(true);
+  const [meal, setMeal] = useState<MealProps>({
+    id: uuidv4(),
+    id_number: _meal?.id_number!,
+    name: _meal?.name!,
+    meal: _meal?.meal!,
+  });
 
   return (
     <>
@@ -17,7 +33,14 @@ export default function InfoCarbonModal({
         <Dialog
           as="div"
           className="relative z-10"
-          onClose={() => close?.(false)}
+          onClose={() => {
+            close?.(false);
+            if (onEdit) {
+              edit?.(false);
+              setMeal({ ...meal, id: _meal?.id! });
+              item?.(meal);
+            }
+          }}
         >
           <Transition.Child
             as={Fragment}
@@ -45,42 +68,52 @@ export default function InfoCarbonModal({
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h3"
-                    className="text-xl mb-4 font-medium leading-6 text-gray-900"
+                    className="text-lg m-2 font-medium leading-6 text-gray-900"
                   >
-                    The goal is to compute the{" "}
-                    <p className="font-bold">carbon footprint</p> of your meal.
+                    Create your meal !
                   </Dialog.Title>
                   <div className="flex-col">
-                    <div>
-                      {Array.from(list.entries()).map(([key, value]) => (
-                        <>
-                          <div className="flex justify-between">
-                            <p className="p-1"> {key}</p>
-                            <p
-                              className={classNames(
-                                "px-3",
-                                value <= 10
-                                  ? "text-green-400 bg-green-100"
-                                  : value <= 30
-                                  ? "text-orange-400 bg-orange-100"
-                                  : "text-red-400 bg-red-100"
-                              )}
-                              style={{ width: value * 5 }}
-                            >
-                              {" "}
-                              {key === "Beef" ? value + " kgCO2/kg" : value}
-                            </p>
-                          </div>
-                        </>
-                      ))}
+                    <div className="flex m-2 justify-between">
+                      Name of the meal
+                      <input
+                        id="name"
+                        type="text"
+                        className="ml-[92px] bg-slate-200"
+                        onChange={(el) =>
+                          setMeal({
+                            ...meal,
+                            name: el.target.value,
+                          })
+                        }
+                      ></input>
                     </div>
-                    <div className="mt-3 font-bold"> (source: IPCC 2018)</div>
+
+                    <div className="flex m-2 justify-between">
+                      Number
+                      <input
+                        id="number"
+                        type="number"
+                        className="ml-[92px] bg-slate-200"
+                        onChange={(el) =>
+                          setMeal({
+                            ...meal,
+                            id_number: el.currentTarget.valueAsNumber,
+                          })
+                        }
+                      ></input>
+                    </div>
+
                     <div className="mt-4">
                       <button
                         type="button"
                         className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                         onClick={() => {
                           close?.(false);
+                          if (onEdit) {
+                            edit?.(false);
+                            setMeal({ ...meal, id: _meal?.id! });
+                          }
+                          item?.(meal);
                         }}
                       >
                         OK !
