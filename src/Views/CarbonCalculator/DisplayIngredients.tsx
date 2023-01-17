@@ -137,11 +137,7 @@ export const DisplayIngredients = () => {
                 <Ingredient
                   ingr={i}
                   handleDelete={(id) => {
-                    console.log(listMeal[mealIndex].meal);
-                    setList(
-                      listMeal[mealIndex].meal.filter((i) => i.id !== id)
-                    );
-                    console.log(listMeal[mealIndex].meal);
+                    setList(list.filter((i) => i.id !== id));
 
                     setListMeal(listMeal);
                   }}
