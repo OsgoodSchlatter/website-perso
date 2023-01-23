@@ -16,6 +16,7 @@ export const DisplayConso = () => {
     value: 0,
     url: "",
     seuil: 0,
+    dataChart: [],
   });
   const [list, setList] = useState<ConsoProps[]>(() => {
     const storedList: ConsoProps[] = JSON.parse(
@@ -71,17 +72,16 @@ export const DisplayConso = () => {
         <div className="flex-fill w-[1000px] items-center">
           <div className="p-2">
             <>
-              <FetchData
+              {/* <FetchData
                 url={
                   "https://api.sncf.com/v1/coverage/sncf/stop_areas/stop_area:SNCF:87391003/departures?datetime=20230113T083105"
                 }
-              />
+              /> */}
               <div className="p-2 mt-2 flex rounded border-transparent bg-blue-100 px-4 py-2 font-medium text-blue-900 hover:bg-blue-200 justify-between">
-                <div className="w-full grid grid-cols-3 gap-[80px]">
-                  <div className="text-3xl text-black">Chaîne Métier</div>
-                  <div className="text-3xl text-black">Value (kWh)</div>
-                  <div className="text-3xl text-black">Seuil (kWh)</div>
-                </div>{" "}
+                <div className="text-3xl text-black">
+                  {" "}
+                  Cockpit technicentre SNCF
+                </div>
                 <div className="flex">
                   <select
                     className="p-2 rounded-md border border-transparent"
