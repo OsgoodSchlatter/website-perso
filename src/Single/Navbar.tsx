@@ -21,9 +21,9 @@ export const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/sncf" className="text-white">
+            {/* <Link to="/sncf" className="text-white">
               Sncf
-            </Link>
+            </Link> */}
           </li>
         </div>
         <div className="flex bg-white gap-2 m-2 p-2 rounded-md items-end">

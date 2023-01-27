@@ -81,7 +81,7 @@ export default function ModalIngredient({
                             name: el.target.value,
                           })
                         }
-                        defaultValue={"beef"}
+                        defaultValue="Beef"
                       >
                         <option value="Beef">Beef</option>
                         <option value="Chocolate">Chocolate</option>

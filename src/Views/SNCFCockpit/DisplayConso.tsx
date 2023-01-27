@@ -16,7 +16,6 @@ export const DisplayConso = () => {
     value: 0,
     url: "",
     seuil: 0,
-    dataChart: [],
   });
   const [list, setList] = useState<ConsoProps[]>(() => {
     const storedList: ConsoProps[] = JSON.parse(
@@ -74,7 +73,8 @@ export const DisplayConso = () => {
             <>
               {/* <FetchData
                 url={
-                  "https://api.sncf.com/v1/coverage/sncf/stop_areas/stop_area:SNCF:87391003/departures?datetime=20230113T083105"
+                  "https://odre.opendatasoft.com/api/records/1.0/search/?dataset=pic-journalier-consommation-brute&q=&facet=date&rows=20&sort=date"
+                  // "https://odre.opendatasoft.com/api/records/1.0/search/?dataset=consommation-quotidienne-brute-regionale&q=&facet=date_heure&facet=code_insee_region&facet=region"
                 }
               /> */}
               <div className="p-2 mt-2 flex rounded border-transparent bg-blue-100 px-4 py-2 font-medium text-blue-900 hover:bg-blue-200 justify-between">
@@ -82,7 +82,15 @@ export const DisplayConso = () => {
                   {" "}
                   Cockpit technicentre SNCF
                 </div>
+
                 <div className="flex">
+                  <div className="p-2">
+                    <Button
+                      label="Add"
+                      className="rounded-md border border-transparent bg-orange-200 px-4 py-2 text-lg font-medium text-blue-800 hover:bg-orange-300"
+                      onClick={() => setOpen(true)}
+                    />
+                  </div>
                   <select
                     className="p-2 rounded-md border border-transparent"
                     onChange={(e) => setSortType(e.target.value)}
@@ -116,15 +124,6 @@ export const DisplayConso = () => {
                   </div>
                 </>
               ))}
-              <div className="flex">
-                <div className="p-2 rounded-md border border-transparent flex justify-center space-x-2">
-                  <Button
-                    label="Add"
-                    className="rounded-md border border-transparent bg-orange-200 px-4 py-2 text-lg font-medium text-blue-800 hover:bg-orange-300"
-                    onClick={() => setOpen(true)}
-                  />
-                </div>
-              </div>
               {open && (
                 <ModalConso
                   close={setOpen}

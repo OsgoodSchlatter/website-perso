@@ -5,7 +5,7 @@ export type ApiDataType = {
 };
 
 interface Conso {
-  departures: any;
+  records: any;
 }
 
 async function getConvertedData({ url }: ApiDataType): Promise<Conso> {
@@ -24,14 +24,15 @@ async function getConvertedData({ url }: ApiDataType): Promise<Conso> {
 // ajouter un catch
 
 export const FetchData = ({ url }: ApiDataType) => {
-  const [conso, setConso] = useState<Conso>();
+  const [conso, setConso] = useState<any>();
 
   useEffect(() => {
     const interval = setInterval(async () => {
       const res = await getConvertedData({ url });
+      console.log("api énergie");
       console.log(res);
       setConso(res);
-    }, 30000);
+    }, 3000);
     return () => {
       clearInterval(interval);
     };
@@ -39,22 +40,11 @@ export const FetchData = ({ url }: ApiDataType) => {
 
   return (
     <div className="p-2 mt-2 flex rounded border-transparent bg-blue-100 px-4 py-2 font-medium text-blue-900 hover:bg-blue-200 justify-between">
+      <div>API énergie</div>
       <div>
-        Exemple d'utilisation de l'api SNCF (en attendant celle des centres de
-        maintenance): donne les prochain train au départ de Montparnasse (update
-        toutes les 5 minutes)
-      </div>
-      <div className="text-black">
-        {" "}
-        {conso?.departures[0].display_informations.direction}
-      </div>
-      <div className="text-black">
-        {" "}
-        {conso?.departures[1].display_informations.direction}
-      </div>
-      <div className="text-black">
-        {" "}
-        {conso?.departures[2].display_informations.direction}
+        {conso
+          ? conso.records[6].fields.consommation_brute_electricite_rte
+          : ""}
       </div>
     </div>
   );

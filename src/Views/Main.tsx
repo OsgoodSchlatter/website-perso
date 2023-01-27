@@ -8,7 +8,7 @@ export const Main = () => {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/sncf" element={<DisplayConso />} />
+        {/* <Route path="/sncf" element={<DisplayConso />} /> */}
         <Route path="/carbon" element={<DisplayIngredients />} />
       </Routes>
     </>

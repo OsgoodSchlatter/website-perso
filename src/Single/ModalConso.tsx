@@ -123,7 +123,7 @@ export default function ModalConso({
                       <input
                         id="url"
                         type="text"
-                        placeholder={onEdit ? _conso?.url : ""}
+                        placeholder={onEdit ? (_conso?.url as string) : ""}
                         className="bg-slate-200 m-2"
                         onChange={(el) =>
                           setConso({
