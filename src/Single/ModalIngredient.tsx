@@ -22,7 +22,7 @@ export default function ModalIngredient({
   const [ingr, setIngr] = useState<IngredientProps>({
     id: uuidv4(),
     value: _ingr?.value!,
-    name: _ingr?.name!,
+    name: _ingr?.name ? _ingr.name : "Beef",
   });
 
   return (
@@ -75,12 +75,12 @@ export default function ModalIngredient({
                       Name of the ingredient
                       <select
                         className="rounded-md p-2 border border-transparent"
-                        onChange={(el) =>
+                        onChange={(el) => {
                           setIngr({
                             ...ingr,
                             name: el.target.value,
-                          })
-                        }
+                          });
+                        }}
                         defaultValue="Beef"
                       >
                         <option value="Beef">Beef</option>
@@ -131,6 +131,7 @@ export default function ModalIngredient({
                         type="button"
                         className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                         onClick={() => {
+                          console.log("ing = " + ingr.name);
                           close?.(false);
                           if (onEdit) {
                             edit?.(false);
