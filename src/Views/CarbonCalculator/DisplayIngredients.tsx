@@ -60,6 +60,7 @@ export const DisplayIngredients = () => {
 
   useEffect(() => {
     setList(listMeal[mealIndex]?.meal! ?? []);
+    console.log("meal index " + mealIndex);
   }, [mealIndex]);
 
   useEffect(() => {
@@ -102,7 +103,9 @@ export const DisplayIngredients = () => {
           <div className="flex w-[1000px] items-center">
             <div className="w-full p-2 mt-2 flex rounded border-transparent bg-blue-100 px-4 py-2 font-medium text-blue-900 hover:bg-blue-200 justify-between items-center">
               <div className=" grid grid-cols-2">
-                <div className="text-3xl text-black">Name</div>
+                <div className="text-3xl font-bold text-black">
+                  {listMeal?.at(mealIndex)?.name ?? "My first meal"}
+                </div>
                 <div className="text-3xl px-10 text-black">Value (kg)</div>
               </div>
               <div className="flex">
@@ -138,7 +141,6 @@ export const DisplayIngredients = () => {
                   ingr={i}
                   handleDelete={(id) => {
                     setList(list.filter((i) => i.id !== id));
-
                     setListMeal(listMeal);
                   }}
                   handleEdit={(el) => {

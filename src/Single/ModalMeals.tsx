@@ -68,11 +68,11 @@ export default function ModalMeals({
                   >
                     <div className="flex justify-between items-center">
                       Select a meal{" "}
-                      <Button
+                      {/* <Button
                         label={<BsFillTrashFill />}
                         className="rounded-md bg-red-400 hover:bg-red-500 ml-2 text-black"
                         onClick={() => handleAllDelete()}
-                      />
+                      /> */}
                     </div>
                   </Dialog.Title>
                   <div className="flex-col">
