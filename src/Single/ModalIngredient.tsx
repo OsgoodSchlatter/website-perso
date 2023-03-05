@@ -84,7 +84,6 @@ export default function ModalIngredient({
                         defaultValue="Beef"
                       >
                         <option value="Beef">Beef</option>
-                        <option value="Chocolate">Chocolate</option>
                         <option value="Coffee">Coffee</option>
                         <option value="Chocolate">Chocolate</option>
                         <option value="Seafood (farmed)">
@@ -104,6 +103,7 @@ export default function ModalIngredient({
                         <option value="Sugar">Sugar</option>
                         <option value="Milk">Milk</option>
                         <option value="Wine">Wine</option>
+                        <option value="Bread">Bread</option>
 
                         <option value="fruit">Fruit</option>
                         <option value="peas">Peas</option>
@@ -112,7 +112,7 @@ export default function ModalIngredient({
                     </div>
 
                     <div className="flex m-2 justify-between">
-                      Value (kg)
+                      Value (g)
                       <input
                         id="value"
                         type="number"

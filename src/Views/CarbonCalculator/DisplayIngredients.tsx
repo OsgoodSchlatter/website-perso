@@ -6,27 +6,12 @@ import ModalIngredient from "../../Single/ModalIngredient";
 import ComputeResult, { MapIngredient } from "../../Single/ModalComputeResult";
 import { BsFillTrashFill } from "react-icons/bs";
 import InfoCarbonModal from "../../Single/ModalInfoCarbon";
-import ModalMeals from "../../Single/ModalMeals";
-import ModalSaveMeal from "../../Single/ModalSaveMeal";
-
-export type MealProps = {
-  id: string;
-  id_number: number;
-  name: string;
-  meal: IngredientProps[];
-  handleDelete?: (id: string) => any;
-  handleEdit?: (meal: MealProps) => any;
-};
 
 export const DisplayIngredients = () => {
   const [open, setOpen] = useState(false);
   const [openInfo, setOpenInfo] = useState(false);
-  const [openMeal, setOpenMeal] = useState(false);
-  const [listMealOpen, setListMealOpen] = useState(false);
 
   const [result, setResult] = useState(false);
-
-  const [mealIndex, setMealIndex] = useState(0);
 
   const [sortType, setSortType] = useState("value");
   const [edit, setEdit] = useState(false);
@@ -46,22 +31,6 @@ export const DisplayIngredients = () => {
   useEffect(() => {
     localStorage.setItem("list", JSON.stringify(list));
   }, [list]);
-
-  const [listMeal, setListMeal] = useState<MealProps[]>(() => {
-    const storedList: MealProps[] = JSON.parse(
-      localStorage.getItem("list_meal") ?? "[]"
-    );
-    return storedList;
-  });
-
-  useEffect(() => {
-    localStorage.setItem("list_meal", JSON.stringify(listMeal));
-  }, [listMeal]);
-
-  useEffect(() => {
-    setList(listMeal[mealIndex]?.meal! ?? []);
-    console.log("meal index " + mealIndex);
-  }, [mealIndex]);
 
   useEffect(() => {
     const sortArray = (type: string) => {
@@ -103,10 +72,7 @@ export const DisplayIngredients = () => {
           <div className="flex w-[1000px] items-center">
             <div className="w-full p-2 mt-2 flex rounded border-transparent bg-blue-100 px-4 py-2 font-medium text-blue-900 hover:bg-blue-200 justify-between items-center">
               <div className=" grid grid-cols-2">
-                <div className="text-3xl font-bold text-black">
-                  {listMeal?.at(mealIndex)?.name ?? "My first meal"}
-                </div>
-                <div className="text-3xl px-10 text-black">Value (kg)</div>
+                <div className="text-3xl px-10 text-black">Value (g)</div>
               </div>
               <div className="flex">
                 <select
@@ -126,11 +92,6 @@ export const DisplayIngredients = () => {
                   className="rounded-xl ml-2 border border-transparent bg-blue-500 h-[50px] w-12 text-lg font-bold text-black hover:bg-blue-300"
                   onClick={() => setOpenInfo(true)}
                 />
-                <Button
-                  label="My meals"
-                  className="rounded-xl ml-2 border border-transparent bg-violet-300 text-lg font-bold text-black hover:bg-violet-400"
-                  onClick={() => setOpenMeal(true)}
-                />
               </div>
             </div>
           </div>
@@ -141,7 +102,6 @@ export const DisplayIngredients = () => {
                   ingr={i}
                   handleDelete={(id) => {
                     setList(list.filter((i) => i.id !== id));
-                    setListMeal(listMeal);
                   }}
                   handleEdit={(el) => {
                     setIngrToEdit(i);
@@ -167,11 +127,6 @@ export const DisplayIngredients = () => {
             className="rounded-md border border-transparent bg-green-200 px-4 py-2 text-lg font-medium text-blue-800 hover:bg-green-300"
             onClick={() => setResult(true)}
           />
-          <Button
-            label="Save as a meal"
-            className="rounded-md border border-transparent bg-violet-300 px-4 py-2 text-lg font-medium text-blue-800 hover:bg-violet-400"
-            onClick={() => setListMealOpen(true)}
-          />
         </div>
       </div>
       {open && (
@@ -185,28 +140,6 @@ export const DisplayIngredients = () => {
       )}
       {result && <ComputeResult close={setResult} list={list} />}
       {openInfo && <InfoCarbonModal close={setOpenInfo} list={MapIngredient} />}
-      {openMeal && (
-        <ModalMeals
-          close={setOpenMeal}
-          _listMeal={listMeal}
-          item={(listMeal) => setListMeal(listMeal)}
-          handleAllDelete={() => setListMeal([])}
-          handleDelete={(id) =>
-            setListMeal(listMeal.filter((i) => i.id !== id))
-          }
-          pickMeal={(mealIndex) => setMealIndex(mealIndex)}
-        />
-      )}
-      {listMealOpen && (
-        <ModalSaveMeal
-          close={setListMealOpen}
-          edit={setEdit}
-          onEdit={edit}
-          ingrList={list}
-          id_number={listMeal.length}
-          item={(meal) => setListMeal(listMeal.concat(meal))}
-        />
-      )}
     </>
   );
 };

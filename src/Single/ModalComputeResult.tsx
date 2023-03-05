@@ -4,8 +4,8 @@ import { Fragment, useState } from "react";
 
 export const MapIngredient = new Map<string, number>([
   ["Beef", 100],
-  ["Chocolate", 45],
   ["Coffee", 28],
+  ["Chocolate", 45],
   ["Seafood (farmed)", 27],
   ["Lamb", 24],
   ["Cheese", 23],
@@ -37,7 +37,7 @@ export default function ComputeResult({
 }) {
   let [isOpen, setIsOpen] = useState(true);
   const result = list.reduce(
-    (acc, i) => acc + (MapIngredient.get(i.name) || 0) * i.value,
+    (acc, i) => acc + ((MapIngredient.get(i.name) || 0) * i.value) / 1000,
     0
   );
 
@@ -80,21 +80,55 @@ export default function ComputeResult({
                     Carbon footprint of your meal:
                   </Dialog.Title>
                   <div className="flex-col">
+                    <div></div>
                     <div className="flex p-2 w-full text-3xl items-center">
                       {result >= 2 ? (
-                        <div className="text-5xl p-2 text-red-500">
+                        <div className="text-7xl p-2 text-red-500">
                           {" "}
                           {result}
                         </div>
                       ) : (
-                        <div className="text-5xl p-2 text-green-500">
+                        <div className="text-7xl p-2 text-green-500">
                           {" "}
                           {result}
                         </div>
                       )}{" "}
                       kgC02eq
                     </div>
-                    <div> The average for a French citizen is 2 kgCO2eq!</div>
+                    <div> This adds up to:</div>
+                    <div className="flex p-2 w-full text-3xl items-center">
+                      <div className="text-4xl p-2">
+                        {" "}
+                        {Math.round(result * 365)}{" "}
+                      </div>
+                      <div className="text-3xl">kgCO2eq/year</div>
+                    </div>
+                    <div>
+                      if you ate this meal at each lunch. Remember, Paris'
+                      Climate Agreements set a target to curb climate change of
+                      <div className="flex p-2 w-full text-3xl items-center">
+                        <div className="text-3xl">2 tC02eq/year/citizen</div>
+                      </div>
+                      <div className="italic">
+                        (everything included! transport, heating, food, services
+                        ...).
+                      </div>
+                    </div>
+
+                    <div className="flex">
+                      <div
+                        className="h-8 bg-red-400"
+                        style={{ width: result * 365 }}
+                      >
+                        {Math.round(result * 365)} kg
+                      </div>
+                      <div
+                        className="h-8 bg-slate-600 text-right"
+                        style={{ width: 2000 - result * 365 }}
+                      >
+                        2t
+                      </div>
+                    </div>
 
                     <div className="mt-4">
                       <button
