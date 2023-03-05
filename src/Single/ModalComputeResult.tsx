@@ -117,7 +117,7 @@ export default function ComputeResult({
 
                     <div className="flex">
                       <div
-                        className="h-8 bg-red-400"
+                        className="h-8 bg-red-400 overflow-x-visible"
                         style={{ width: result * 365 }}
                       >
                         {Math.round(result * 365)} kg

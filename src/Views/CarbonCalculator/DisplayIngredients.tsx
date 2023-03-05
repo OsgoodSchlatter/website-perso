@@ -72,7 +72,8 @@ export const DisplayIngredients = () => {
           <div className="flex w-[1000px] items-center">
             <div className="w-full p-2 mt-2 flex rounded border-transparent bg-blue-100 px-4 py-2 font-medium text-blue-900 hover:bg-blue-200 justify-between items-center">
               <div className=" grid grid-cols-2">
-                <div className="text-3xl px-10 text-black">Value (g)</div>
+                <div className="text-3xl text-black">My meal </div>
+                <div className="text-3xl px-20 text-black">Value (g)</div>
               </div>
               <div className="flex">
                 <select
@@ -82,11 +83,7 @@ export const DisplayIngredients = () => {
                   <option value="name">Name</option>
                   <option value="value">Value</option>
                 </select>
-                <Button
-                  label={<BsFillTrashFill />}
-                  className="rounded-md bg-red-400 hover:bg-red-500 ml-2 text-black"
-                  onClick={() => setList([])}
-                />
+
                 <Button
                   label="?"
                   className="rounded-xl ml-2 border border-transparent bg-blue-500 h-[50px] w-12 text-lg font-bold text-black hover:bg-blue-300"
@@ -126,6 +123,11 @@ export const DisplayIngredients = () => {
             label="Compute"
             className="rounded-md border border-transparent bg-green-200 px-4 py-2 text-lg font-medium text-blue-800 hover:bg-green-300"
             onClick={() => setResult(true)}
+          />
+          <Button
+            label="Clean"
+            className="rounded-md bg-red-400 hover:bg-red-500 ml-2 text-black"
+            onClick={() => setList([])}
           />
         </div>
       </div>
