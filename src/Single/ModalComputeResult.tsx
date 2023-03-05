@@ -4,8 +4,8 @@ import { Fragment, useState } from "react";
 
 export const MapIngredient = new Map<string, number>([
   ["Beef", 100],
-  ["Coffee", 28],
   ["Chocolate", 45],
+  ["Coffee", 28],
   ["Seafood (farmed)", 27],
   ["Lamb", 24],
   ["Cheese", 23],
