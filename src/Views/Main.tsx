@@ -12,6 +12,7 @@ import { Crypto } from "./Crypto/Crypto";
 import { Maths } from "./Maths/Maths";
 import { Guitar } from "./Guitar/Guitar";
 import { Sport } from "./Sport/Sport";
+import { Climate } from "./Climate/Climate";
 
 export const Main = () => {
   return (
@@ -29,6 +30,7 @@ export const Main = () => {
         <Route path="/guitar" element={<Guitar />} />
         <Route path="/sport" element={<Sport />} />
         <Route path="/maths" element={<Maths />} />
+        <Route path="/climate" element={<Climate />} />
       </Routes>
     </>
   );
