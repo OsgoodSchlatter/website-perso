@@ -9,18 +9,14 @@ export const Navbar = () => {
   const [hoverC, setHoverC] = useState(false);
   return (
     <>
-      <header className="h-20 px-4 bg-black flex items-center overflow-hidden justify-between">
+      <header className="h-20 px-4 bg-slate-100 flex items-center overflow-hidden justify-between">
         <div className="flex">
-          <label htmlFor="" className=" text-white">
-            <Link to="/" className="text-white">
-              Home
-            </Link>
-          </label>
-          <li>
-            <Link to="/carbon" className="text-white">
-              Carbon Calculator
-            </Link>
-          </li>
+          <Link to="/" className="text-black hover:underline">
+            Home
+          </Link>
+          <Link to="/carbon" className="text-black px-10 hover:underline">
+            Carbon Calculator
+          </Link>
         </div>
         <div className="flex items-center">
           <div
