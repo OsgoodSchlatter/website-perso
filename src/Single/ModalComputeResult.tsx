@@ -75,13 +75,13 @@ export default function ComputeResult({
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h3"
-                    className="text-xl font-medium leading-6 text-gray-900"
+                    className="text-xl font-medium leading-6 text-gray-900 p-2"
                   >
                     Carbon footprint of your meal:
                   </Dialog.Title>
                   <div className="flex-col">
                     <div></div>
-                    <div className="flex p-2 w-full text-3xl items-center">
+                    <div className="flex p-2 w-full text-3xl items-center border-2 border-green-300 ">
                       {result >= 2 ? (
                         <div className="text-7xl p-2 text-red-500">
                           {" "}
@@ -95,39 +95,30 @@ export default function ComputeResult({
                       )}{" "}
                       kgC02eq
                     </div>
-                    <div> This adds up to:</div>
-                    <div className="flex p-2 w-full text-3xl items-center">
-                      <div className="text-4xl p-2">
-                        {" "}
-                        {Math.round(result * 365)}{" "}
-                      </div>
-                      <div className="text-3xl">kgCO2eq/year</div>
-                    </div>
-                    <div>
-                      if you ate this meal at each lunch. Remember, Paris'
-                      Climate Agreements set a target to curb climate change of
-                      <div className="flex p-2 w-full text-3xl items-center">
-                        <div className="text-3xl">2 tC02eq/year/citizen</div>
-                      </div>
-                      <div className="italic">
-                        (everything included! transport, heating, food, services
-                        ...).
-                      </div>
-                    </div>
 
-                    <div className="flex">
-                      <div
-                        className="h-8 bg-red-400 overflow-x-visible"
-                        style={{ width: result * 365 }}
-                      >
-                        {Math.round(result * 365)} kg
-                      </div>
-                      <div
-                        className="h-8 bg-slate-600 text-right"
-                        style={{ width: 2000 - result * 365 }}
-                      >
-                        2t
-                      </div>
+                    <div className=" my-2 ">
+                      <p className="py-2">
+                        In order to curb climate change, we should have a
+                        maximum carbon footprint of
+                        <div className="flex p-2 w-full text-3xl items-center">
+                          <div className="text-3xl">2000 kgC02eq/y/pers</div>
+                        </div>
+                        <div className="italic">
+                          (everything included! transport, heating, food,
+                          services ...).
+                        </div>
+                      </p>
+                      <p>
+                        <div className="py-2">
+                          Eating this meal once a day for a year would therefore
+                          adds up to
+                        </div>
+                        <div className="text-4xl p-2">
+                          {Math.trunc(((result * 365) / 2000) * 10000) / 100}
+                          {"%"}
+                        </div>
+                        of your total carbon footprint.
+                      </p>
                     </div>
 
                     <div className="mt-4">

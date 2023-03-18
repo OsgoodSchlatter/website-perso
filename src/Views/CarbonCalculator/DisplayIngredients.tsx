@@ -70,7 +70,7 @@ export const DisplayIngredients = () => {
       <div className="flex justify-center">
         <div className="flex-col p-2">
           <div className="flex w-[1000px] items-center">
-            <div className="w-full p-2 mt-2 flex rounded border-transparent bg-blue-100 px-4 py-2 font-medium text-blue-900 hover:bg-blue-200 justify-between items-center">
+            <div className="w-full p-2 mt-2 flex rounded border-transparent bg-blue-100 px-4 py-2 font-medium  hover:bg-blue-100 justify-between items-center">
               <div className=" grid grid-cols-2">
                 <div className="text-3xl text-black">My meal </div>
                 <div className="text-3xl px-20 text-black">Value (g)</div>
@@ -86,7 +86,7 @@ export const DisplayIngredients = () => {
 
                 <Button
                   label="?"
-                  className="rounded-xl ml-2 border border-transparent bg-blue-500 h-[50px] w-12 text-lg font-bold text-black hover:bg-blue-300"
+                  className="rounded-xl ml-2 border border-transparent bg-blue-300 h-[50px] w-12 text-lg font-bold text-black hover:bg-blue-200"
                   onClick={() => setOpenInfo(true)}
                 />
               </div>
@@ -116,17 +116,17 @@ export const DisplayIngredients = () => {
         <div className="p-2 rounded-md border border-transparent flex justify-center space-x-2">
           <Button
             label="Add"
-            className="rounded-md border border-transparent bg-orange-200 px-4 py-2 text-lg font-medium text-blue-800 hover:bg-orange-300"
+            className="rounded-md border border-transparent bg-orange-100 px-4 py-2 text-lg font-medium  hover:bg-orange-200"
             onClick={() => setOpen(true)}
           />
           <Button
             label="Compute"
-            className="rounded-md border border-transparent bg-green-200 px-4 py-2 text-lg font-medium text-blue-800 hover:bg-green-300"
+            className="rounded-md border border-transparent bg-green-100 px-4 py-2 text-lg font-medium  hover:bg-green-200"
             onClick={() => setResult(true)}
           />
           <Button
             label="Clean"
-            className="rounded-md bg-red-400 hover:bg-red-500 ml-2 text-black"
+            className="rounded-md bg-red-200 hover:bg-red-300 ml-2 text-black"
             onClick={() => setList([])}
           />
         </div>
