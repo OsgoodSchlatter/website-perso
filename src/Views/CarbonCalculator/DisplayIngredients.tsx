@@ -70,7 +70,7 @@ export const DisplayIngredients = () => {
       <div className="flex justify-center">
         <div className="flex-col p-2">
           <div className="flex w-[1000px] items-center">
-            <div className="w-full p-2 mt-2 flex rounded border-transparent bg-blue-100 px-4 py-2 font-medium  hover:bg-blue-100 justify-between items-center">
+            <div className="w-full p-2 mt-2 flex rounded border-transparent bg-slate-100 px-4 py-2 font-medium justify-between items-center">
               <div className=" grid grid-cols-2">
                 <div className="text-3xl text-black">My meal </div>
                 <div className="text-3xl px-20 text-black">Value (g)</div>

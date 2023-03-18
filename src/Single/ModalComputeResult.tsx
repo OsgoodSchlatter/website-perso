@@ -40,7 +40,7 @@ export default function ComputeResult({
     (acc, i) => acc + ((MapIngredient.get(i.name) || 0) * i.value) / 1000,
     0
   );
-
+  const resultYearly = Math.trunc(((result * 365) / 2000) * 10000) / 100;
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
@@ -80,21 +80,23 @@ export default function ComputeResult({
                     Carbon footprint of your meal:
                   </Dialog.Title>
                   <div className="flex-col">
-                    <div></div>
-                    <div className="flex p-2 w-full text-3xl items-center border-2 border-green-300 ">
-                      {result >= 2 ? (
+                    {result >= 2 ? (
+                      <div className="flex p-2 w-full text-3xl items-center border-2 border-red-300 ">
                         <div className="text-7xl p-2 text-red-500">
                           {" "}
                           {result}
                         </div>
-                      ) : (
+                        {" kgCO2eq"}
+                      </div>
+                    ) : (
+                      <div className="flex p-2 w-full text-3xl items-center border-2 border-green-300 ">
                         <div className="text-7xl p-2 text-green-500">
                           {" "}
                           {result}
                         </div>
-                      )}{" "}
-                      kgC02eq
-                    </div>
+                        {"kgCO2eq "}
+                      </div>
+                    )}
 
                     <div className=" my-2 ">
                       <p className="py-2">
@@ -113,11 +115,18 @@ export default function ComputeResult({
                           Eating this meal once a day for a year would therefore
                           adds up to
                         </div>
-                        <div className="text-4xl p-2">
-                          {Math.trunc(((result * 365) / 2000) * 10000) / 100}
-                          {"%"}
-                        </div>
-                        of your total carbon footprint.
+                        {resultYearly > 20 ? (
+                          <div className="text-4xl p-2 text-red-500">
+                            {resultYearly}
+                            {"%"}
+                          </div>
+                        ) : (
+                          <div className="text-4xl p-2 text-green-500">
+                            {resultYearly}
+                            {"%"}
+                          </div>
+                        )}
+                        of the maximum carbon footprint (2OOO kgC02eq/y/pers).
                       </p>
                     </div>
 

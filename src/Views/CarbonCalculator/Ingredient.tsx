@@ -27,7 +27,7 @@ export const Ingredient = ({
         <div className="w-3/5 grid grid-cols-2 items-center justify-between">
           <div className="text-3xl font-semibold text-black">{ingr.name} </div>
           <div className="flex justify-end">
-            <div className="text-5xl px-20 text-green-300">{ingr.value} </div>
+            <div className="text-5xl px-20 text-slate-500">{ingr.value} </div>
           </div>
         </div>
         <div className="w-1/3 text-right">
