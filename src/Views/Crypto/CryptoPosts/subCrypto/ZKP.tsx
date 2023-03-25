@@ -1,7 +1,14 @@
 import React from "react";
+import { HeaderPost } from "../../../../Single/HeaderPost";
 
 const ZKP = () => {
-  return <div className="text-4xl">Hey ZKP</div>;
+  return (
+    <div className="flex justify-center ">
+      <div className="max-w-4xl">
+        <HeaderPost name={"ZKP"} date={"19/03/2023"} back={`/cryptography/`} />
+      </div>
+    </div>
+  );
 };
 
 export default ZKP;
