@@ -1,8 +1,11 @@
-import React from "react";
 import { HeaderPost } from "../../../../Single/HeaderPost";
 import "katex/dist/katex.min.css";
 import Latex from "react-latex-next";
-// import PDFReader from "react-typescript-pdf-reader";
+import ImageViewer from "react-simple-image-viewer";
+import division from "../../../../img/division.png";
+import add from "../../../../img/add.png";
+import sub from "../../../../img/sub.png";
+import mult from "../../../../img/mult.png";
 
 const FHE = ({ postID }: { postID: string }) => {
   return (
@@ -15,14 +18,26 @@ const FHE = ({ postID }: { postID: string }) => {
             back={`/cryptography/`}
           />
           <div className="my-20 justify-center">
+            <div className="text-3xl pt-8 pb-2">[DISCLAIMER]</div>
             <div>
-              [DISCLAIMER] In this article, I wish to introduce people to FHE
-              and to present some of the work I have achieved using this
-              technology. Some of the notions I include in this paper are
-              obviously not from me and I cite their author(s) as soon as I
-              borrow their work.
+              In this article, I wish to introduce people to FHE and to present
+              some of the work I have achieved using this technology. Some of
+              the notions I include in this paper are obviously not from me and
+              I cite their author(s) as soon as I borrow their work. Moreover,
+              visit serious website like{" "}
+              <a
+                className="underline"
+                href="https://en.wikipedia.org/wiki/Homomorphic_encryption"
+              >
+                wikipedia
+              </a>{" "}
+              if you really want to have rigorous information.
             </div>
-            <div className="text-3xl py-2">FHE simply put:</div>
+
+            <div className="text-3xl pt-8 pb-2">
+              Understanding FHE in simple terms:
+            </div>
+
             <div>
               <Latex>
                 {
@@ -32,7 +47,7 @@ const FHE = ({ postID }: { postID: string }) => {
                 together. But you cannot do it yourself, so you ask an online\
                 service to do it for you. Moreover, you do not want the service\
                 that is going to do the addition for you to know what the\
-                numbers are. Therefore, you cipher $A$ and $B$ using FHE with\
+                numbers are. Therefore, you cipher $A$ and $B$ with\
                 your private key into $A_{fhe}$ and $B_{fhe} $. Only you, thanks to your\
                 private key, can do the way back and retrieve $A$ and $B$ from\
                 $A_{fhe}$ and $B_{fhe}$. The private key that we are talking about is\
@@ -47,6 +62,16 @@ const FHE = ({ postID }: { postID: string }) => {
                 from $C_{fhe}$ is the correct one !"
                 }
               </Latex>
+              <div className="text-3xl pt-8 pb-2">My work using FHE:</div>
+
+              <Latex>{"Addition circuit"}</Latex>
+              <img src={add} width="500" alt="Image" />
+              <Latex>{"Substraction circuit"}</Latex>
+              <img src={sub} width="500" alt="Image" />
+              <Latex>{"Multiplication circuit"}</Latex>
+              <img src={mult} width="1000" alt="Image" />
+              <Latex>{"Division circuit"}</Latex>
+              <img src={division} width="1000" alt="Image" />
             </div>
           </div>
         </div>

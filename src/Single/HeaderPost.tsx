@@ -18,7 +18,7 @@ export const HeaderPost = ({
     <div>
       <div className="pt-10 text-4xl font-bold text-center">
         {name}
-        <div className=" py-2 border-b-2 border-slate-500" />
+        <div className="py-2 border-b-2 border-slate-500" />
       </div>
       <div className="flex justify-between">
         {date}

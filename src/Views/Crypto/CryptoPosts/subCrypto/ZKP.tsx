@@ -3,7 +3,11 @@ import { HeaderPost } from "../../../../Single/HeaderPost";
 
 const ZKP = () => {
   return (
-    <HeaderPost name={"ZKP"} date={"19/03/2023"} back={`/cryptography/`} />
+    <div className="flex justify-center ">
+      <div className="max-w-4xl">
+        <HeaderPost name={"ZKP"} date={"19/03/2023"} back={`/cryptography/`} />
+      </div>
+    </div>
   );
 };
 
