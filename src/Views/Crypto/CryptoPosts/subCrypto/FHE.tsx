@@ -6,6 +6,7 @@ import division from "../../../../img/division.png";
 import add from "../../../../img/add.png";
 import sub from "../../../../img/sub.png";
 import mult from "../../../../img/mult.png";
+import React from "react";
 
 const FHE = ({ postID }: { postID: string }) => {
   return (

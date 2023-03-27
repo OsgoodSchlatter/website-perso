@@ -113,7 +113,7 @@ export default function ComputeResult({
                       <p>
                         <div className="py-2">
                           Eating this meal once a day for a year would therefore
-                          adds up to
+                          add up to
                         </div>
                         {resultYearly > 20 ? (
                           <div className="text-4xl p-2 text-red-500">

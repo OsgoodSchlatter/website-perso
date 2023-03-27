@@ -1,6 +1,7 @@
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import { Header } from "../../Single/Header";
 import { blogPosts } from "./CryptoPosts/CryptoPosts";
+import React from "react";
 
 export const PostHeader = ({
   date,

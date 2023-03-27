@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 import { Home } from "./Home/Home";
 import { DisplayIngredients } from "./CarbonCalculator/DisplayIngredients";
 import { CS } from "./ComputerScience/CS";
-import { DisplayConso } from "./SNCFCockpit/DisplayConso";
 import { Chess } from "./Chess/Chess";
 import { Trips } from "./Trips/Trips";
 import { Books } from "./Books/Books";
@@ -14,6 +13,7 @@ import { Guitar } from "./Guitar/Guitar";
 import { Sport } from "./Sport/Sport";
 import { Climate } from "./Climate/Climate";
 import { CryptoPosts } from "./Crypto/CryptoPosts/CryptoPosts";
+import React from "react";
 
 export const Main = () => {
   return (
