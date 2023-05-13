@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import { GoMarkGithub } from "react-icons/go";
 import { GrLinkedin } from "react-icons/gr";
-import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   const [hoverGH, setHoverGH] = useState(false);

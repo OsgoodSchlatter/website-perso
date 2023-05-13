@@ -21,18 +21,24 @@ export const Pages = new Map<string, string>([
 export const Home = () => {
   return (
     <div className="flex justify-center">
-      <div className="flex-fill w-[1050px] items-center">
+      <div className="w-1/2 items-center">
         <div className="p-10 font-bold text-4xl text-center"> Topics</div>
 
         <div className=" border-b-2 border-blue-500 rounded" />
-        <div className="flex justify-evenly p-10 font-bold">
+        <div className="flex flex-wrap justify-evenly p-10 font-bold">
           {Array.from(Pages.entries())
             .sort(() => Math.random() - 0.5)
             .map(([key, value]) => (
               <div className="p-2 hover:underline">
-                <Link to={key} className="text-black">
-                  {value}
-                </Link>
+                {value == "climate" ? (
+                  <Link to={key} className="text-green-400">
+                    {value}
+                  </Link>
+                ) : (
+                  <Link to={key} className="text-black">
+                    {value}
+                  </Link>
+                )}
               </div>
             ))}
         </div>

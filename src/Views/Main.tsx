@@ -6,6 +6,8 @@ import { Chess } from "./Chess/Chess";
 import { Trips } from "./Trips/Trips";
 import { Books } from "./Books/Books";
 import { Physics } from "./Physics/Physics";
+import { PhysicsPosts } from "./Physics/PhysicsPosts/PhysicsPosts";
+
 import { Piano } from "./Piano/Piano";
 import { Crypto } from "./Crypto/Crypto";
 import { Maths } from "./Maths/Maths";
@@ -25,7 +27,8 @@ export const Main = () => {
         <Route path="/chess" element={<Chess />} />
         <Route path="/trips" element={<Trips />} />
         <Route path="/books" element={<Books />} />
-        <Route path="/physics" element={<Physics />} />
+        <Route path="/physics/*" element={<Physics />} />
+        <Route path="/physics/:postID" element={<PhysicsPosts />} />
         <Route path="/piano" element={<Piano />} />
         <Route path="/cryptography/*" element={<Crypto />} />
         <Route path="/cryptography/:postID" element={<CryptoPosts />} />
