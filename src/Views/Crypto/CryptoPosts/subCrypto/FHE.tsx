@@ -1,18 +1,18 @@
 import { HeaderPost } from "../../../../Single/HeaderPost";
 import "katex/dist/katex.min.css";
+import add from "../../../../img/add.png";
+import division from "../../../../img/division.png";
+import mult from "../../../../img/mult.png";
+import sub from "../../../../img/sub.png";
+import React from "react";
 import Latex from "react-latex-next";
 import ImageViewer from "react-simple-image-viewer";
-import division from "../../../../img/division.png";
-import add from "../../../../img/add.png";
-import sub from "../../../../img/sub.png";
-import mult from "../../../../img/mult.png";
-import React from "react";
 
 const FHE = ({ postID }: { postID: string }) => {
   return (
     <>
       <div className="flex justify-center ">
-        <div className="max-w-4xl">
+        <div className="max-w-2xl">
           <HeaderPost
             name={"Fully Homomorphic Encryption Tool"}
             date={"19/03/2023"}

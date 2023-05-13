@@ -1,3 +1,4 @@
+import { Bold } from "../../../Single/Bold";
 import { HeaderPost } from "../../../Single/HeaderPost";
 import "katex/dist/katex.min.css";
 import React from "react";
@@ -8,7 +9,7 @@ const NuclEnergy = ({ postID }: { postID: string }) => {
   return (
     <>
       <div className="flex justify-center ">
-        <div className="max-w-4xl">
+        <div className="max-w-2xl">
           <HeaderPost
             name={"How does Nuclear Energy work"}
             date={"06/05/2023"}
@@ -48,7 +49,8 @@ const NuclEnergy = ({ postID }: { postID: string }) => {
             <div className="rounded-2xl bg-slate-200">
               <div className="flex-col">
                 <div>
-                  - In the world in 2021, nuclear plants supplied
+                  - In the world in 2021, <Bold text={"440 "} />
+                  nuclear plants supplied
                   <span className="font-bold"> 2600 TWh </span> of electricity,
                   which is roughly <span className="font-bold">10% </span> of
                   the world electricity production.
@@ -70,36 +72,40 @@ const NuclEnergy = ({ postID }: { postID: string }) => {
                 </div>
               </div>
             </div>
-            <div className="text-3xl pt-8 pb-6">2/7 Definition & units</div>
-            <div className="text-2xl font-bold"> Definitions: </div>
+            <div className="text-3xl pb-6 pt-6">2/7 Definition & units</div>
+            <div className="text-2xl font-bold pb-4"> Definitions: </div>
             <div>
               {" "}
-              Nuclear energy lies within the energy of the bounds between the
-              components of the nucleus. This nucleus is made of{" "}
-              <span className="font-bold">protons</span>, (electrically
-              positively charged) and{" "}
+              - <span className="font-bold"> Nuclear energy</span> lies within
+              the energy of the bounds between the components of the nucleus.
+              This nucleus is made of <span className="font-bold">protons</span>
+              , (electrically positively charged) and{" "}
               <span className="font-bold">neutrons</span> (without charge). The
               protons, since they have the same charge, repel each other like
               two same poles of two magnets would do. The neutrons are there to
               maintain the whole structure.
             </div>
             <div className="pt-4">
-              <span className="rounded-2xl bg-violet-200">
-                {" "}
-                In heavy atoms{" "}
-              </span>
-              , with a lot of protons and neutrons inside the nucleus, the
+              - <span className="font-bold"> Nuclear fission: </span> in heavy
+              atoms , with a lot of protons and neutrons inside the nucleus, the
               mutual repellency of all the protons can make it go unstable and
               break into two lighter nucleus and release energy at the same
-              time. That is what we call{" "}
-              <span className="font-bold">nuclear fission</span>.
+              time.
             </div>
             <div className="pt-4">
-              <span className="rounded-2xl bg-blue-200"> In light atoms </span>,
-              with few protons and neutrons inside the nucleus, two atoms can
-              merge together and form a bigger and more stabler atom, while also
-              releasing energy. That is what we call{" "}
-              <span className="font-bold">nuclear fusion</span>.
+              - <span className="font-bold"> Nuclear fusion: </span> in light
+              atoms, with few protons and neutrons inside the nucleus, two atoms
+              can merge together and form a bigger and more stabler atom, while
+              also releasing energy.
+            </div>
+            <div className="pt-4">
+              - <span className="font-bold">Radiation: </span>
+              it is the emission of energy in the form of particles or waves.
+            </div>
+            <div className="pt-4">
+              - <span className="font-bold">Radioactivity: </span>
+              it is process by which an atomic nucleus loses energy by
+              radiation.
             </div>
             <div className="text-2xl font-bold pt-4"> Relevant Units: </div>
 
@@ -117,9 +123,9 @@ const NuclEnergy = ({ postID }: { postID: string }) => {
               <span className="font-bold">Power: </span> measured in{" "}
               <span className="font-bold">Watt (W)</span>. The power is derived
               from the energy by dividing it by unit of time. It is the amount
-              of energy transferred by time. I.E. it takes that many J to climb
-              up the Eiffel Tower in an hour, but what if I want to go twice as
-              fast ? then you're talking about power.
+              of energy transferred by time. I.E. it takes that many energy (J)
+              to climb up the Eiffel Tower. But if you want to compare the time
+              you took to climb up, then you're talking about power (W).
             </div>
             <div className="pt-4">
               <span className="font-bold">Radioactivity: </span> measured in{" "}
@@ -136,6 +142,32 @@ const NuclEnergy = ({ postID }: { postID: string }) => {
               <span className="font-bold">Sievert </span>, which is homogenous
               to Gray, but rather focus on the impact it has on the cells (can
               it break DNA, cause cancer ?)
+            </div>
+            <div className="text-3xl pt-6 pb-6 ">
+              3/7 How it works in more details
+            </div>
+            <div className="text-2xl font-bold ">
+              {" "}
+              Binding Energy and missing mass:{" "}
+            </div>
+            <div className="pt-4 pb-4">
+              It is possible to calculate the mass of a single neutron or a
+              single proton, and also the mass of an nucleus. But, when doing
+              the computation, we find that the mass of the{" "}
+              <Latex>{"$Z$"}</Latex> protons + the mass of
+              <Latex>{" $A-Z$"}</Latex> neutrons does not match the total mass
+              of the nucleus. Einstein's famous equation{" "}
+              <Latex>{"$E=mc^2$"}</Latex> solves this problem of missing mass:
+              the mass left is under the form of energy, binding the nucleons
+              together. This energy, if provided, can break apart the nucleus
+              into its nucleons.
+            </div>
+
+            <div className="text-2xl font-bold "> Fission: </div>
+            <div className="pt-4">
+              When a neutron hits the nucleus of certain large atoms, there is a
+              probability that the large atom's nucleus splits in two lighter
+              nucleus.
             </div>
           </div>
         </div>
