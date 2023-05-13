@@ -1,0 +1,15 @@
+.my-link {
+    font-size: 1.25rem; /* equivalent to 20px */
+}
+
+@media (max-width: 640px) {
+    .my-link {
+        font-size: 0.6rem; /* equivalent to 16px */
+    }
+}
+
+@media (max-width: 480px) {
+    .my-link {
+        font-size: 0.7rem; /* equivalent to 14px */
+    }
+}

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-
-export type article = {};
+import "./Home.css";
 
 // todo, do a struct that contains each article in one subdomain
 
@@ -21,7 +20,7 @@ export const Pages = new Map<string, string>([
 export const Home = () => {
   return (
     <div className="flex justify-center">
-      <div className="w-1/2 items-center">
+      <div className="w-3/4 items-center">
         <div className="p-10 font-bold text-4xl text-center"> Topics</div>
 
         <div className=" border-b-2 border-blue-500 rounded" />
@@ -29,13 +28,13 @@ export const Home = () => {
           {Array.from(Pages.entries())
             .sort(() => Math.random() - 0.5)
             .map(([key, value]) => (
-              <div className="p-2 hover:underline">
+              <div className="px-4 pt-1 hover:underline">
                 {value == "climate" ? (
-                  <Link to={key} className="text-green-400">
+                  <Link to={key} className="text-green-400 text-lg my-link">
                     {value}
                   </Link>
                 ) : (
-                  <Link to={key} className="text-black">
+                  <Link to={key} className="text-black text-lg my-link">
                     {value}
                   </Link>
                 )}
