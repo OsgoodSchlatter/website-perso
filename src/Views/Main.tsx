@@ -14,8 +14,8 @@ import { Piano } from "./Piano/Piano";
 import { PianoPosts } from "./Piano/PianoPosts/PianoPosts";
 import { Sport } from "./Sport/Sport";
 import { Trips } from "./Trips/Trips";
-import React from "react";
 import { Route, Routes } from "react-router-dom";
+import { ClimatePosts } from "./Climate/ClimatePosts/ClimatePosts";
 
 export const Main = () => {
   return (
@@ -24,6 +24,8 @@ export const Main = () => {
         <Route path="/" element={<Home />} />
         <Route path="/carbon" element={<DisplayIngredients />} />
         <Route path="/CS" element={<CS />} />
+        <Route path="/climate" element={<Climate />} />
+        <Route path="/climate/:postID" element={<ClimatePosts />} />
         <Route path="/chess" element={<Chess />} />
         <Route path="/trips" element={<Trips />} />
         <Route path="/books" element={<Books />} />
@@ -36,7 +38,6 @@ export const Main = () => {
         <Route path="/guitar" element={<Guitar />} />
         <Route path="/sport" element={<Sport />} />
         <Route path="/maths" element={<Maths />} />
-        <Route path="/climate" element={<Climate />} />
       </Routes>
     </>
   );
