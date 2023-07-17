@@ -1,30 +1,19 @@
 import { HeaderPost } from "../../../Single/HeaderPost";
-import "katex/dist/katex.min.css";
 import Latex from "react-latex-next";
 import "katex/dist/katex.min.css";
 import { useState } from "react";
+import "katex/dist/katex.min.css";
 import classNames from "classnames";
 
 type ArrayItem = [string, number, string];
 
-const OOM = ({ postID }: { postID: string }) => {
-  const initialArray: ArrayItem[] = [
-    ["France 🇫🇷", 80, "70% nuclear, 20% renewable, 10% carbon"],
-    ["Germany 🇩🇪", 400, "40% carbon, 40% renewable,  20% others"],
-    ["UK 🇬🇧", 250, "15% nuclear, 30% renewable, 40% gas"],
-    ["Spain 🇪🇸", 200, "20% nuclear, 45% renewable, 30% carbon, 5% others"],
-    ["Italy 🇮🇹", 400, "20% renewable, 50% carbon, 30% others"],
-    ["Poland 🇵🇱", 900, "65% coal, 15% renewable, 20% others"],
-    ["Switzerland 🇨🇭", 60, "30% nuclear, 40% renewable, almost no carbon"],
-    ["Sweden 🇸🇪", 22, "20% nuclear, 60% renewable, 100% low-carbon"],
-    ["Danemark 🇩🇰", 224, "15% carbon, 60% renewable, 25% others"],
-    ["USA 🇺🇸", 400, "20% coal, 20% nuclear, 20% renewable, 40% gas"],
-    ["China 🇨🇳 ", 600, "N/A"],
-    ["India 🇮🇳 ", 600, "N/A"],
-    ["Australia 🇦🇺", 500, "70% carbon, 30% renewable"],
-    ["Japan 🇯🇵", 500, "45% carbon, 15% renewable, 5% nuclear, 35% N/A"],
-  ];
-  const [myArray, setMyArray] = useState<ArrayItem[]>(initialArray);
+type OOMProps = {
+  postID: string;
+  dataArray: ArrayItem[];
+};
+
+const OOM = ({ postID, dataArray }: OOMProps) => {
+  const [myArray, setMyArray] = useState<ArrayItem[]>(dataArray);
   const [sortOrder, setSortOrder] = useState<
     "ascending" | "descending" | "asc2" | "desc2"
   >("ascending");
@@ -41,6 +30,7 @@ const OOM = ({ postID }: { postID: string }) => {
     setMyArray(sortedArray);
     setSortOrder(sortOrder === "ascending" ? "descending" : "ascending");
   };
+  
   const handleSortName = () => {
     const sortedArray = [...myArray].sort((a, b) => {
       const nameA = a[0].toLowerCase();
@@ -71,9 +61,19 @@ const OOM = ({ postID }: { postID: string }) => {
             back={`/climate/`}
           />
           <div className="my-20 justify-center">
-            <div className="font-bold text-1xl underline mb-4">
-              table 1: Carbon intensity of electricity production (gC02eq/kWh)
-              (2023)
+            <div className="font-bold text-2xl mb-4">
+              Carbon intensity of electricity production (gC02eq/kWh) (2023)
+            </div>
+            <div className="text-l mb-4 underline">
+              {" "}
+              sources:{" "}
+              <a href="https://app.electricitymaps.com/">
+                electricity mapper
+              </a>,{" "}
+              <a href="https://ourworldindata.org/grapher/carbon-intensity-electricity">
+                {" "}
+                ourworldindata
+              </a>
             </div>
             <div className="grid grid-cols-8 gap-2">
               <div className="font-bold text-1xl text-center col-start-1 col-end-3 cold-span-2">
@@ -82,8 +82,9 @@ const OOM = ({ postID }: { postID: string }) => {
                   {sortOrder === "asc2" ? "▲" : "▼"}
                 </button>
               </div>
-              <div className="font-bold text-1xl col-start-3 col-end-4 col-span-1 text-center">
-                kgCO2eq{" "}
+
+              <div className="font-bold text-1xl col-start-3 col-end-5 col-span-2 text-center">
+                gC02eq/kWh{" "}
                 <button onClick={handleSort}>
                   {sortOrder === "ascending" ? "▲" : "▼"}
                 </button>
