@@ -12,7 +12,6 @@ export const Pages = new Map<string, string>([
   ["/piano", "piano"],
   ["/sport", "sport"],
   ["/books", "books"],
-  ["/cryptography", "cryptography"],
   ["/physics", "physics"],
   ["/climate", "climate"],
 ]);

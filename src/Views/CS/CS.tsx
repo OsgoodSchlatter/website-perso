@@ -1,6 +1,6 @@
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import { Header } from "../../Single/Header";
-import { blogPosts } from "./CryptoPosts/CryptoPosts";
+import { blogPosts } from "./CSPosts/CSPosts";
 import React from "react";
 
 export const PostHeader = ({
@@ -29,15 +29,15 @@ export const PostHeader = ({
   );
 };
 
-export const Crypto = () => {
+export const CS = () => {
   const navigate = useNavigate();
 
   const handleClick = (postId: number) => {
-    navigate(`/cryptography/${postId}`);
+    navigate(`/cs/${postId}`);
   };
   return (
     <>
-      <Header name={"cryptography"} posts={2} />
+      <Header name={"computer science"} posts={2} />
       <div className="flex justify-center py-12">
         <div className="grid grid-rows-4 gap-4">
           {Object.keys(blogPosts).map((postID) => {

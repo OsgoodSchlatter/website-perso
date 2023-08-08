@@ -2,9 +2,8 @@ import { Books } from "./Books/Books";
 import { DisplayIngredients } from "./CarbonCalculator/DisplayIngredients";
 import { Chess } from "./Chess/Chess";
 import { Climate } from "./Climate/Climate";
-import { CS } from "./ComputerScience/CS";
-import { Crypto } from "./Crypto/Crypto";
-import { CryptoPosts } from "./Crypto/CryptoPosts/CryptoPosts";
+import  { CSPosts } from "./CS/CSPosts/CSPosts"
+import { CS } from "./CS/CS";
 import { Guitar } from "./Guitar/Guitar";
 import { Home } from "./Home/Home";
 import { Maths } from "./Maths/Maths";
@@ -23,7 +22,6 @@ export const Main = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/carbon" element={<DisplayIngredients />} />
-        <Route path="/CS" element={<CS />} />
         <Route path="/climate" element={<Climate />} />
         <Route path="/climate/:postID" element={<ClimatePosts />} />
         <Route path="/chess" element={<Chess />} />
@@ -33,8 +31,8 @@ export const Main = () => {
         <Route path="/physics/:postID" element={<PhysicsPosts />} />
         <Route path="/piano" element={<Piano />} />
         <Route path="/piano/:postID" element={<PianoPosts />} />
-        <Route path="/cryptography/*" element={<Crypto />} />
-        <Route path="/cryptography/:postID" element={<CryptoPosts />} />
+        <Route path="/cs/*" element={<CS />} />
+        <Route path="/cs/:postID" element={<CSPosts />} />
         <Route path="/guitar" element={<Guitar />} />
         <Route path="/sport" element={<Sport />} />
         <Route path="/maths" element={<Maths />} />

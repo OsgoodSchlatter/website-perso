@@ -16,7 +16,7 @@ const FHE = ({ postID }: { postID: string }) => {
           <HeaderPost
             name={"Fully Homomorphic Encryption Tool"}
             date={"19/03/2023"}
-            back={`/cryptography/`}
+            back={`/cs/`}
           />
           <div className="my-20 justify-center">
             <div className="text-3xl pt-8 pb-2">[DISCLAIMER]</div>

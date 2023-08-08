@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import FHE from "./subCrypto/FHE";
-import ZKP from "./subCrypto/ZKP";
+import FHE from "./subCS/FHE";
+import ZKP from "./subCS/ZKP";
 
 export const blogPosts = {
   "1": {
@@ -19,7 +19,7 @@ export const blogPosts = {
   },
 };
 
-export const CryptoPosts = () => {
+export const CSPosts = () => {
   const { postID } = useParams<{ postID: string }>();
 
   const post = blogPosts[postID as keyof typeof blogPosts];
