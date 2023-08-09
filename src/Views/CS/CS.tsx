@@ -2,32 +2,7 @@ import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import { Header } from "../../Single/Header";
 import { blogPosts } from "./CSPosts/CSPosts";
 import React from "react";
-
-export const PostHeader = ({
-  date,
-  title,
-  choice,
-  handleClick,
-}: {
-  date: string;
-  title: string;
-  choice: number;
-  handleClick: (arg0: number) => any;
-}) => {
-  return (
-    <div>
-      <div>
-        {date}
-        <div
-          className=" text-4xl text-blue-700 hover:underline"
-          onClick={() => handleClick(choice)}
-        >
-          {title}
-        </div>
-      </div>
-    </div>
-  );
-};
+import { HeaderPost } from "../../Single/HeaderPost";
 
 export const CS = () => {
   const navigate = useNavigate();
@@ -38,12 +13,12 @@ export const CS = () => {
   return (
     <>
       <Header name={"computer science"} posts={2} />
-      <div className="flex justify-center py-12">
+      <div className="flex justify-center py-12 px-2">
         <div className="grid grid-rows-4 gap-4">
           {Object.keys(blogPosts).map((postID) => {
             const post = blogPosts[postID as keyof typeof blogPosts];
             return (
-              <PostHeader
+              <HeaderPost
                 choice={post.id}
                 date={post.date}
                 handleClick={handleClick}

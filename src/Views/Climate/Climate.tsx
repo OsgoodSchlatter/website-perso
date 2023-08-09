@@ -1,32 +1,9 @@
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import { Header } from "../../Single/Header";
+import { HeaderPost } from "../../Single/HeaderPost";
 import { blogPosts } from "./ClimatePosts/ClimatePosts";
 
-export const PostHeader = ({
-  date,
-  title,
-  choice,
-  handleClick,
-}: {
-  date: string;
-  title: string;
-  choice: number;
-  handleClick: (arg0: number) => any;
-}) => {
-  return (
-    <div>
-      <div>
-        {date}
-        <div
-          className="text-4xl text-blue-700 hover:underline"
-          onClick={() => handleClick(choice)}
-        >
-          {title}
-        </div>
-      </div>
-    </div>
-  );
-};
+
 
 export const Climate = () => {
   const navigate = useNavigate();
@@ -42,7 +19,7 @@ export const Climate = () => {
           {Object.keys(blogPosts).map((postID) => {
             const post = blogPosts[postID as keyof typeof blogPosts];
             return (
-              <PostHeader
+              <HeaderPost
                 choice={post.id}
                 date={post.date}
                 handleClick={handleClick}

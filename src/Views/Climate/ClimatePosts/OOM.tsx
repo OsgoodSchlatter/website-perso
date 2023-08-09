@@ -1,4 +1,4 @@
-import { HeaderPost } from "../../../Single/HeaderPost";
+import { HeaderCategory } from "../../../Single/HeaderCategory";
 import Latex from "react-latex-next";
 import "katex/dist/katex.min.css";
 import { useState } from "react";
@@ -30,7 +30,7 @@ const OOM = ({ postID, dataArray }: OOMProps) => {
     setMyArray(sortedArray);
     setSortOrder(sortOrder === "ascending" ? "descending" : "ascending");
   };
-  
+
   const handleSortName = () => {
     const sortedArray = [...myArray].sort((a, b) => {
       const nameA = a[0].toLowerCase();
@@ -53,9 +53,9 @@ const OOM = ({ postID, dataArray }: OOMProps) => {
 
   return (
     <>
-      <div className="flex justify-center ">
+      <div className="flex justify-center p-4">
         <div className="max-w-4xl">
-          <HeaderPost
+          <HeaderCategory
             name={"Order of magnitudes"}
             date={"17/07/2023"}
             back={`/climate/`}
@@ -105,10 +105,10 @@ const OOM = ({ postID, dataArray }: OOMProps) => {
                     number1 <= 100
                       ? "text-green-400 "
                       : number1 <= 300
-                      ? "text-orange-400"
-                      : number1 <= 700
-                      ? "text-red-400"
-                      : "text-black-400"
+                        ? "text-orange-400"
+                        : number1 <= 700
+                          ? "text-red-400"
+                          : "text-black-400"
                   )}
                 >
                   {number1}

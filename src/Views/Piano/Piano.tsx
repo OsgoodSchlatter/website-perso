@@ -2,32 +2,9 @@ import { Header } from "../../Single/Header";
 import { blogPosts } from "./PianoPosts/PianoPosts";
 import React from "react";
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
+import { HeaderPost } from "../../Single/HeaderPost";
 
-export const PostHeader = ({
-  date,
-  title,
-  choice,
-  handleClick,
-}: {
-  date: string;
-  title: string;
-  choice: number;
-  handleClick: (arg0: number) => any;
-}) => {
-  return (
-    <div>
-      <div>
-        {date}
-        <div
-          className="text-4xl text-blue-700 hover:underline"
-          onClick={() => handleClick(choice)}
-        >
-          {title}
-        </div>
-      </div>
-    </div>
-  );
-};
+
 
 export const Piano = () => {
   const navigate = useNavigate();
@@ -43,7 +20,7 @@ export const Piano = () => {
           {Object.keys(blogPosts).map((postID) => {
             const post = blogPosts[postID as keyof typeof blogPosts];
             return (
-              <PostHeader
+              <HeaderPost
                 choice={post.id}
                 date={post.date}
                 handleClick={handleClick}

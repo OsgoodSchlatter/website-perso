@@ -1,4 +1,4 @@
-import { HeaderPost } from "../../../Single/HeaderPost";
+import { HeaderCategory } from "../../../Single/HeaderCategory";
 import "katex/dist/katex.min.css";
 import React from "react";
 import Latex from "react-latex-next";
@@ -9,12 +9,12 @@ const EPR = ({ postID }: { postID: string }) => {
     <>
       <div className="flex justify-center ">
         <div className="max-w-4xl">
-          <HeaderPost
+          <HeaderCategory
             name={"How does an EPR work"}
             date={"06/05/2023"}
             back={`/physics/`}
           />
-          <div className="my-20 justify-center">
+          <div className="p-4 my-20 justify-center">
             <div className="text-3xl pt-8 pb-2">Intro</div>
             <div>In this article, I wish to explain how an EPR works</div>
 

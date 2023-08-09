@@ -7,9 +7,11 @@ export const Header = ({ name, posts }: { name: string; posts: number }) => {
       <div>
         <div className="pt-10 text-4xl font-bold text-center">
           {name}
-          <div className="w-[400px] py-2 border-b-2 border-slate-500" />
+          <div className="w-[400px] px-4"> {/* Center the line */}
+            <div className="py-2 border-b-2 border-slate-500"></div>
+          </div>
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between px-4">
           {posts}
           <div className="hover:underline">
             <Link to="/">see all topics</Link>

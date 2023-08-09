@@ -1,4 +1,4 @@
-import { HeaderPost } from "../../../Single/HeaderPost";
+import { HeaderCategory } from "../../../Single/HeaderCategory";
 import "katex/dist/katex.min.css";
 import Latex from "react-latex-next";
 import React from "react";
@@ -11,7 +11,7 @@ const SchroEq = ({ postID }: { postID: string }) => {
         <>
             <div className="flex justify-center ">
                 <div className="max-w-4xl">
-                    <HeaderPost
+                    <HeaderCategory
                         name={"Schrödinger's equation"}
                         date={"19/03/2023"}
                         back={`/physics/`}

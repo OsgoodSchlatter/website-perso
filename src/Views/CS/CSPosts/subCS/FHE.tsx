@@ -1,4 +1,4 @@
-import { HeaderPost } from "../../../../Single/HeaderPost";
+import { HeaderCategory } from "../../../../Single/HeaderCategory";
 import "katex/dist/katex.min.css";
 import add from "../../../../img/add.png";
 import division from "../../../../img/division.png";
@@ -13,12 +13,12 @@ const FHE = ({ postID }: { postID: string }) => {
     <>
       <div className="flex justify-center ">
         <div className="max-w-2xl">
-          <HeaderPost
+          <HeaderCategory
             name={"Fully Homomorphic Encryption Tool"}
             date={"19/03/2023"}
             back={`/cs/`}
           />
-          <div className="my-20 justify-center">
+          <div className="p-4 my-20 justify-center">
             <div className="text-3xl pt-8 pb-2">[DISCLAIMER]</div>
             <div>
               In this article, I wish to introduce people to FHE and to present
