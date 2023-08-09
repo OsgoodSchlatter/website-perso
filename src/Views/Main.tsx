@@ -2,7 +2,7 @@ import { Books } from "./Books/Books";
 import { DisplayIngredients } from "./CarbonCalculator/DisplayIngredients";
 import { Chess } from "./Chess/Chess";
 import { Climate } from "./Climate/Climate";
-import  { CSPosts } from "./CS/CSPosts/CSPosts"
+import { CSPosts } from "./CS/CSPosts/CSPosts"
 import { CS } from "./CS/CS";
 import { Guitar } from "./Guitar/Guitar";
 import { Home } from "./Home/Home";
@@ -15,6 +15,8 @@ import { Sport } from "./Sport/Sport";
 import { Trips } from "./Trips/Trips";
 import { Route, Routes } from "react-router-dom";
 import { ClimatePosts } from "./Climate/ClimatePosts/ClimatePosts";
+import { Languages } from "./Languages/Languages";
+import { LanguagesPosts } from "./Languages/LanguagesPosts/LanguagesPosts";
 
 export const Main = () => {
   return (
@@ -36,6 +38,8 @@ export const Main = () => {
         <Route path="/guitar" element={<Guitar />} />
         <Route path="/sport" element={<Sport />} />
         <Route path="/maths" element={<Maths />} />
+        <Route path="/languages" element={<Languages />} />
+        <Route path="/languages/:postID" element={<LanguagesPosts />} />
       </Routes>
     </>
   );

@@ -14,6 +14,8 @@ export const Pages = new Map<string, string>([
   ["/books", "books"],
   ["/physics", "physics"],
   ["/climate", "climate"],
+  ["/languages", "languages"],
+
 ]);
 
 export const Home = () => {
