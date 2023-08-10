@@ -8,7 +8,7 @@ export const ListOfPostsHeader = ({
     blogPosts,
 }: {
     topic: string;
-    blogPosts: any;
+    blogPosts?: any;
 }) => {
 
     const navigate = useNavigate();
