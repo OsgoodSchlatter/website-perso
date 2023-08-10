@@ -18,6 +18,7 @@ import { ClimatePosts } from "./Climate/ClimatePosts/ClimatePosts";
 import { Languages } from "./Languages/Languages";
 import { LanguagesPosts } from "./Languages/LanguagesPosts/LanguagesPosts";
 import { GuitarPosts } from "./Guitar/GuitarPosts/GuitarPosts";
+import { TripsPosts } from "./Trips/TripsPosts/TripsPosts";
 
 export const Main = () => {
   return (
@@ -29,6 +30,7 @@ export const Main = () => {
         <Route path="/climate/:postID" element={<ClimatePosts />} />
         <Route path="/chess" element={<Chess />} />
         <Route path="/trips" element={<Trips />} />
+        <Route path="/trips/:postID" element={<TripsPosts />} />
         <Route path="/books" element={<Books />} />
         <Route path="/physics/*" element={<Physics />} />
         <Route path="/physics/:postID" element={<PhysicsPosts />} />
