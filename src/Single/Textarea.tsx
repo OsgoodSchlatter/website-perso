@@ -2,9 +2,7 @@ import { RefObject, useLayoutEffect, useRef } from "react";
 import TextareaAutosize, {
   TextareaAutosizeProps,
 } from "react-textarea-autosize";
-import classNames from "classnames";
 
-import styles from "./textarea.module.css";
 
 export type TextareaProps = TextareaAutosizeProps & {
   hasError?: boolean;

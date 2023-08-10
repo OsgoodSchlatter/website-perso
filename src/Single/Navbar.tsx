@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { GoMarkGithub } from "react-icons/go";
+import { GrGithub } from "react-icons/gr";
 import { GrLinkedin } from "react-icons/gr";
 import { Link } from "react-router-dom";
 
@@ -68,13 +68,13 @@ export const Navbar = () => {
               {hoverGH ? (
                 <div className="bg-slate-500 rounded-lg">
                   <a href={"https://github.com/OsgoodSchlatter"}>
-                    <GoMarkGithub size={30} />
+                    <GrGithub size={30} />
                   </a>
                 </div>
               ) : (
                 <div className="rounded-full">
                   <a href={"https://github.com/OsgoodSchlatter"}>
-                    <GoMarkGithub size={30} />
+                    <GrGithub size={30} />
                   </a>
                 </div>
               )}

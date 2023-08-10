@@ -1,9 +1,11 @@
 import { Header } from "../../Single/Header";
+import { ListOfPostsHeader } from "../../Single/ListOfPostsHeader";
+import { blogPosts } from "./GuitarPosts/GuitarPosts";
 
 export const Guitar = () => {
   return (
     <>
-      <Header name={"guitar"} posts={0} />
+      <ListOfPostsHeader topic="guitar" blogPosts={blogPosts} />
     </>
   );
 };

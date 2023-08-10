@@ -17,6 +17,7 @@ import { Route, Routes } from "react-router-dom";
 import { ClimatePosts } from "./Climate/ClimatePosts/ClimatePosts";
 import { Languages } from "./Languages/Languages";
 import { LanguagesPosts } from "./Languages/LanguagesPosts/LanguagesPosts";
+import { GuitarPosts } from "./Guitar/GuitarPosts/GuitarPosts";
 
 export const Main = () => {
   return (
@@ -36,6 +37,7 @@ export const Main = () => {
         <Route path="/cs/*" element={<CS />} />
         <Route path="/cs/:postID" element={<CSPosts />} />
         <Route path="/guitar" element={<Guitar />} />
+        <Route path="/guitar/:postID" element={<GuitarPosts />} />
         <Route path="/sport" element={<Sport />} />
         <Route path="/maths" element={<Maths />} />
         <Route path="/languages" element={<Languages />} />
