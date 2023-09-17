@@ -5,6 +5,6 @@ import { ListOfPostsHeader } from "../../Single/ListOfPostsHeader";
 
 export const Piano = () => (
 
-  <ListOfPostsHeader topic="piano" blogPosts={blogPosts} />
+  <ListOfPostsHeader topic="piano" route="piano" blogPosts={blogPosts} />
 
 );

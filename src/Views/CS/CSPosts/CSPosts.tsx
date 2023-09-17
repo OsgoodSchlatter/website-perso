@@ -11,12 +11,12 @@ export const blogPosts = {
     title: "Fully Homomorphic Encryption Tool",
     content: FHE,
   },
-  "2": {
-    id: 2,
-    date: "19/03/2023",
-    title: "zkPROOF",
-    content: ZKP,
-  },
+  // "2": {
+  //   id: 2,
+  //   date: "19/03/2023",
+  //   title: "zkPROOF",
+  //   content: ZKP,
+  // },
 };
 
 export const CSPosts = () => {

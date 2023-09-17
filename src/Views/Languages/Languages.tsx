@@ -3,7 +3,7 @@ import { blogPosts } from "./LanguagesPosts/LanguagesPosts";
 
 export const Languages = () => (
 
-    <ListOfPostsHeader topic="languages" blogPosts={blogPosts} />
+    <ListOfPostsHeader topic="languages" route="languages" blogPosts={blogPosts} />
 
 );
 

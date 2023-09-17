@@ -5,7 +5,7 @@ import { blogPosts } from "./TripsPosts/TripsPosts";
 export const Trips = () => {
   return (
     <>
-      <ListOfPostsHeader topic="trips" blogPosts={blogPosts} />
+      <ListOfPostsHeader topic="trips" route="trips" blogPosts={blogPosts} />
 
     </>
   );

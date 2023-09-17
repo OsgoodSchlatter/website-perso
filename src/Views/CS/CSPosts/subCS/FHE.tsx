@@ -4,9 +4,8 @@ import add from "../../../../img/add.png";
 import division from "../../../../img/division.png";
 import mult from "../../../../img/mult.png";
 import sub from "../../../../img/sub.png";
-import React from "react";
 import Latex from "react-latex-next";
-import ImageViewer from "react-simple-image-viewer";
+
 
 const FHE = ({ postID }: { postID: string }) => {
   return (

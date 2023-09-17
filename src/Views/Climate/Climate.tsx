@@ -6,6 +6,6 @@ import { blogPosts } from "./ClimatePosts/ClimatePosts";
 
 export const Climate = () => (
 
-  <ListOfPostsHeader topic="climate" blogPosts={blogPosts} />
+  <ListOfPostsHeader topic="climate" route="climate" blogPosts={blogPosts} />
 
 );

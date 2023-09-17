@@ -5,12 +5,12 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 export const blogPosts = {
-  "1": {
-    id: 1,
-    date: "02/05/2023",
-    title: "EPR",
-    content: EPR,
-  },
+  // "1": {
+  //   id: 1,
+  //   date: "02/05/2023",
+  //   title: "EPR",
+  //   content: EPR,
+  // },
   "2": {
     id: 2,
     date: "02/05/2023",

@@ -5,7 +5,7 @@ import { blogPosts } from "./GuitarPosts/GuitarPosts";
 export const Guitar = () => {
   return (
     <>
-      <ListOfPostsHeader topic="guitar" blogPosts={blogPosts} />
+      <ListOfPostsHeader topic="guitar" route="guitar" blogPosts={blogPosts} />
     </>
   );
 };

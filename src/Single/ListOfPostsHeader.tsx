@@ -6,15 +6,17 @@ import { HeaderPost } from "./HeaderPost";
 export const ListOfPostsHeader = ({
     topic,
     blogPosts,
+    route,
 }: {
     topic: string;
     blogPosts?: any;
+    route: string;
 }) => {
 
     const navigate = useNavigate();
 
     const handleClick = (postId: number) => {
-        navigate(`/${topic}/${postId}`);
+        navigate(`/${route}/${postId}`);
     };
     return (
         <>

@@ -3,6 +3,6 @@ import { ListOfPostsHeader } from "../../Single/ListOfPostsHeader";
 
 export const CS = () => (
 
-  <ListOfPostsHeader topic="computer science" blogPosts={blogPosts} />
+  <ListOfPostsHeader topic="computer science" route="cs" blogPosts={blogPosts} />
 
 );
