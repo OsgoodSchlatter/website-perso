@@ -1,11 +1,20 @@
 import { useState } from "react";
 import { GrGithub } from "react-icons/gr";
 import { GrLinkedin } from "react-icons/gr";
+import { FaBookOpen } from "react-icons/fa";
+import { BiSpreadsheet } from "react-icons/bi";
+import Pdf from '../../src/CV_EN.pdf';
+
+
+
 import { Link } from "react-router-dom";
+
 
 export const Navbar = () => {
   const [hoverGH, setHoverGH] = useState(false);
   const [hoverLKD, setHoverLKD] = useState(false);
+  const [hoverCV, setHoverCV] = useState(false);
+  const [hoverArticle, setHoverArticle] = useState(false);
   const [hoverC, setHoverC] = useState(false);
   return (
     <>
@@ -76,6 +85,31 @@ export const Navbar = () => {
                   <a href={"https://github.com/OsgoodSchlatter"}>
                     <GrGithub size={30} />
                   </a>
+                </div>
+              )}
+            </div>
+            <div onMouseOver={() => setHoverArticle(true)}
+              onMouseLeave={() => setHoverArticle(false)}>
+              {hoverArticle ? (
+                <div className="bg-slate-500 rounded-lg">
+                  <FaBookOpen size={30} />
+                </div>
+              ) : (
+                <div className=" rounded-lg">
+                  <FaBookOpen size={30} />
+                </div>
+              )}
+            </div>
+            <div onMouseOver={() => setHoverCV(true)}
+              onMouseLeave={() => setHoverCV(false)}>
+              {hoverCV ? (
+                <div className="bg-slate-500 rounded-lg" >
+                  <a href={Pdf} target="_blank"> <BiSpreadsheet size={30} /></a>
+
+                </div>
+              ) : (
+                <div className=" rounded-lg">
+                  <a href={Pdf} target="_blank"> <BiSpreadsheet size={30} /></a>
                 </div>
               )}
             </div>
