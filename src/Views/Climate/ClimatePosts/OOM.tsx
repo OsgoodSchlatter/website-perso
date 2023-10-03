@@ -97,7 +97,7 @@ const OOM = ({ postID, dataArray }: OOMProps) => {
                 ourworldindata
               </a>
             </div>
-            <div className="grid grid-cols-8 gap-2 ">
+            <div className="grid grid-cols-8 gap-2">
               <div className="font-bold text-1xl text-center col-start-1 col-end-3 cold-span-2 ">
                 Origin{" "}
                 <button onClick={handleSortElecName}>
@@ -116,11 +116,10 @@ const OOM = ({ postID, dataArray }: OOMProps) => {
               </div>
             </div>
             {myElecArray.map(([text1, number1, text2], index) => (
-              <div className="grid grid-cols-8 gap-2 " key={index}>
+              <div className="grid grid-cols-8 gap-2" key={index}>
                 <div className="text-left col-start-1 col-end-3 cold-span-2">
                   {text1}
                 </div>
-
                 <div
                   className={classNames(
                     "col-start-3 col-end-4 col-span-1 text-right",
@@ -135,13 +134,12 @@ const OOM = ({ postID, dataArray }: OOMProps) => {
                 >
                   {number1}
                 </div>
-
                 <div className="text-center col-start-5 cold-end-9 col-span-3">
                   {text2}
                 </div>
               </div>
             ))}
-            <div className="font-bold text-2xl mb-4">
+            <div className="font-bold text-2xl mb-8 mt-8">
               Green House Gases (GHG) emissions of the main energy technologies (g/kWh)
             </div>
             <div className="grid grid-cols-8 gap-2 ">
@@ -151,7 +149,6 @@ const OOM = ({ postID, dataArray }: OOMProps) => {
                   {sortOrder === "asc2" ? "▲" : "▼"}
                 </button>
               </div>
-
               <div className="font-bold text-1xl col-start-3 col-end-5 col-span-2 text-center">
                 <Latex>{"$CO^{}_2$"}</Latex>{" "}
                 <button onClick={() => handleSortGHG(1)}>
@@ -164,44 +161,33 @@ const OOM = ({ postID, dataArray }: OOMProps) => {
               <div className="font-bold text-1xl text-center col-start-7 cold-end-9 col-span-2">
                 <Latex>{"$NO^{}_x$"}</Latex>
               </div>
-              {myGHGArray.map(([text1, number1, number2, number3], index) => (
-                <div className="grid grid-cols-8 gap-2 " key={index}>
-                  <div className="text-left col-start-1 col-end-3 cold-span-2">
-                    {text1}
-                  </div>
+              <div className="flex">
+                {myGHGArray.map(([text1, number1, number2, number3], index) => (
+                  <div className="grid grid-cols-8 gap-2 " key={index}>
+                    <div className="text-center col-start-1 col-end-3 cold-span-2">
+                      {text1}
+                    </div>
 
-                  <div
+                    {/* <div
                     className={classNames(
-                      "col-start-3 col-end-4 col-span-1 text-right",
+                      "col-start-3 col-end-5 col-span-2 text-center",
                       number1 <= 100
-                        ? "text-green-400 "
-                        : number1 <= 300
-                          ? "text-orange-400"
-                          : number1 <= 700
-                            ? "text-red-400"
-                            : "text-black-400"
-                    )}
-                  >
-                    {number1}
-                  </div>
+                      ? "text-green-400 "
+                      : number1 <= 300
+                      ? "text-orange-400"
+                      : number1 <= 700
+                      ? "text-red-400"
+                      : "text-black-400"
+                      )}
+                      >
+                      {number1}
+                    </div> */}
 
 
-                  <div
-                    className={classNames(
-                      "text-center col-start-5 cold-end-9 col-span-3",
-                      number1 <= 100
-                        ? "text-green-400 "
-                        : number1 <= 300
-                          ? "text-orange-400"
-                          : number1 <= 700
-                            ? "text-red-400"
-                            : "text-black-400"
-                    )}
-                  >
-                    {number2}
+                    {/*   */}
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>

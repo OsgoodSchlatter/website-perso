@@ -33,12 +33,13 @@ export const Navbar = () => {
             onMouseLeave={() => setHoverC(false)}
           >
             <div
-              className={
-                "" +
-                (hoverC
-                  ? "bg-green-500 flex gap-2 m-2 p-2 rounded-md items-end"
-                  : "bg-green-400 flex gap-2 m-2 p-2 rounded-md items-end")
-              }
+              className={`${hoverC
+                ? "bg-green-500 flex gap-2 m-2 p-2 rounded-md items-end"
+                : "bg-green-400 flex gap-2 m-2 p-2 rounded-md items-end"
+                } ${window.innerWidth <= 768
+                  ? "hidden md:block" // Hidden on screens smaller or equal to 768px
+                  : ""
+                }`}
             >
               {" "}
               <a href="https://www.websitecarbon.com/website/osgood-on-the-web-ml/">
