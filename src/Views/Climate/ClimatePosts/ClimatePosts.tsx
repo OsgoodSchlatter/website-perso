@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import OOM from "./OOM";
-import electricalArray from "./OOMdata";
+import generalArray from "./OOMdata";
 
 export const blogPosts = {
   "1": {
@@ -21,5 +21,5 @@ export const ClimatePosts = () => {
     return <div>Loading...</div>;
   }
 
-  return <Component postID={postID!} dataArray={electricalArray} />;
+  return <Component postID={postID!} dataArray={generalArray} />;
 };

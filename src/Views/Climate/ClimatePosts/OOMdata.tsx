@@ -1,6 +1,8 @@
 import "katex/dist/katex.min.css";
 
+type generalArray = [ArrayItem[], GHGArrayItem[]]
 type ArrayItem = [string, number, string];
+type GHGArrayItem = [string, number, number, number];
 
 const electricalArray: ArrayItem[] = [
   ["France 🇫🇷", 80, "70% nuclear, 20% renewable, 10% carbon"],
@@ -19,6 +21,20 @@ const electricalArray: ArrayItem[] = [
   ["Japan 🇯🇵", 500, "45% carbon, 15% renewable, 5% nuclear, 35% N/A"],
 ];
 
-// const DataArrays: ArrayItem[] = [electricalArray[]];
 
-export default electricalArray;
+const GHGArray: GHGArrayItem[] = [
+  ["Coal", 955, 11.8, 4.3],
+  ["Oil", 818, 14.2, 4.0],
+  ["Natural Gas", 430, -1, 0.3],
+  ["Small Hydro", 9, 0.03, 0.07],
+  ["Large Hydro", 7, 0.01, 0.01],
+  ["Wind", 7, 0.06, 0.1],
+  ["PV", 125, 0.2, 0.2],
+  ["Solar heat", 30, 0.2, 0.1],
+  ["Geothermal", 79, 0.02, 0.28],
+];
+
+const generalArray: generalArray = [electricalArray, GHGArray];
+
+export default generalArray;
+
