@@ -32,6 +32,8 @@ const GHGArray: GHGArrayItem[] = [
   ["PV", 125, 0.2, 0.2],
   ["Solar heat", 30, 0.2, 0.1],
   ["Geothermal", 79, 0.02, 0.28],
+  ["Nuclear", 12, -1, -1],
+
 ];
 
 const generalArray: generalArray = [electricalArray, GHGArray];

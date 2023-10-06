@@ -13,7 +13,7 @@ export const Russian = ({ postID }: { postID: string }) => {
                         back={`/languages/`}
                     />
                     <div className="my-20 justify-center">
-                        <div className="text-3xl pt-8 pb-2">Intro</div>
+                        <div className="text-3xl pt-8 pb-2 underline">Vocabulary</div>
 
                     </div>
                 </div>
