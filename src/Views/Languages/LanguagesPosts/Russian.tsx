@@ -14,6 +14,10 @@ export const Russian = ({ postID }: { postID: string }) => {
                     />
                     <div className="my-20 justify-center">
                         <div className="text-3xl pt-8 pb-2 underline">Vocabulary</div>
+                        <div> Are you coming ? = Ты пойдешь?</div>
+                        <div> I am late = Я опоздаю</div>
+                        <div> Как это мило = how nice</div>
+                        <div>Сильно=very</div>
 
                     </div>
                 </div>

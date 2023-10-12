@@ -21,7 +21,7 @@ export const blogPosts = {
   "3": {
     id: 3,
     date: "07/10/2023",
-    title: "About the Schrodinger Equation",
+    title: "Quantum Mechanics",
     content: SchroEq,
   },
 };
