@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { GrGithub } from "react-icons/gr";
 import { GrLinkedin } from "react-icons/gr";
-import { FaBookOpen } from "react-icons/fa";
+import { FaBookOpen, FaHome } from "react-icons/fa";
 import { BiSpreadsheet } from "react-icons/bi";
 import Pdf from '../../src/CV_EN.pdf';
 
@@ -19,12 +19,14 @@ export const Navbar = () => {
   return (
     <>
       <header className="h-20 px-4 bg-slate-100 flex items-center overflow-hidden justify-between">
-        <div className="flex">
-          <Link to="/" className="text-black hover:underline">
-            Home
+        <div className="flex md:text-3xl">
+          <Link to="/" className="text-black flex hover:bg-slate-100 bg-white rounded-lg p-2">
+            <FaHome size={30} />
           </Link>
-          <Link to="/carbon" className="text-black px-10 hover:underline">
-            Carbon Calculator
+          <Link to="/carbon" className="text-black px-2 md:px-10 ">
+            <div className="bg-white rounded-lg p-1 hover:bg-slate-100 text-center mt-1">
+              Carbon Calculator
+            </div>
           </Link>
         </div>
         <div className="flex items-center">

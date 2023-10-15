@@ -71,21 +71,25 @@ export const DisplayIngredients = () => {
         <div className="flex-col p-2">
           <div className="justify-center">
             <div className="p-2 mt-2 flex rounded border-transparent bg-slate-100 px-4 py-2 font-medium grid grid-cols-8 gap-2">
-              <div className="text-3xl text-black col-start-1 col-end-3 cold-span-2">My meal </div>
-              <div className="text-3xl text-black col-start-4 col-end-6 cold-span-2">Value (g)</div>
+              <div className="md:text-3xl text-black col-start-1 col-end-3 cold-span-2">My meal </div>
+              <div className="md:text-3xl text-black col-start-4 col-end-6 cold-span-2">Value (g)</div>
               <div
-                className={`${"flex items-center"} ${window.innerWidth <= 768
-                  ? "col-start-6 col-end-7 cold-span-1" // Hidden on screens smaller or equal to 768px
-                  : "col-start-8 col-end-9 cold-span-1"
-                  }`}
+                className={"flex items-center col-start-8 col-end-9 cold-span-1"}
               >
-                <select
-                  className="p-2 rounded-md border border-transparent"
-                  onChange={(e) => setSortType(e.target.value)}
+                <div
+                  className={`${window.innerWidth <= 768
+                    ? "hidden md:block" // Hidden on screens smaller or equal to 768px
+                    : ""
+                    }`}
                 >
-                  <option value="name">Name</option>
-                  <option value="value">Value</option>
-                </select>
+                  <select
+                    className="p-2 rounded-md border border-transparent"
+                    onChange={(e) => setSortType(e.target.value)}
+                  >
+                    <option value="name">Name</option>
+                    <option value="value">Value</option>
+                  </select>
+                </div>
 
                 <Button
                   label="?"
