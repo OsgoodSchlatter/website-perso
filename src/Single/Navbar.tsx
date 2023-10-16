@@ -20,16 +20,14 @@ export const Navbar = () => {
     <>
       <header className="h-20 px-4 bg-slate-100 flex items-center overflow-hidden justify-between">
         <div className="flex md:text-3xl">
-          <Link to="/" className="text-black flex hover:bg-slate-100 bg-white rounded-lg p-2">
+          <Link to="/" className="text-black md:px-4 p-2 flex hover:bg-slate-100 bg-white rounded-lg">
             <FaHome size={30} />
           </Link>
-          <Link to="/carbon" className="text-black px-2 md:px-10 ">
-            <div className="bg-white rounded-lg p-1 hover:bg-slate-100 text-center mt-1">
 
-              <FaUtensilSpoon size={30} />
-
-            </div>
+          <Link to="/carbon" className="text-black md:px-4 p-2 ml-2 flex hover:bg-slate-100 bg-white rounded-lg">
+            <FaUtensilSpoon size={30} />
           </Link>
+
         </div>
         <div className="flex items-center">
           <div
