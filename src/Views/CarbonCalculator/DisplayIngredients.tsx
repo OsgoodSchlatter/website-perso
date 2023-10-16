@@ -68,13 +68,13 @@ export const DisplayIngredients = () => {
   return (
     <>
       <div className="flex justify-center">
-        <div className="flex-col p-2">
+        <div className="flex-col p-2 max-w-2xl">
           <div className="justify-center">
             <div className="p-2 mt-2 flex rounded border-transparent bg-slate-100 px-4 py-2 font-medium grid grid-cols-8 gap-2">
               <div className="md:text-3xl text-black col-start-1 col-end-3 cold-span-2">My meal </div>
               <div className="md:text-3xl text-black col-start-4 col-end-6 cold-span-2">Value (g)</div>
               <div
-                className={"flex items-center col-start-8 col-end-9 cold-span-1"}
+                className={"flex items-center col-start-7 col-end-9 cold-span-1"}
               >
                 <div
                   className={`${window.innerWidth <= 768

@@ -19,7 +19,7 @@ export const Ingredient = ({
   handleEdit?: (ingr: IngredientProps) => any;
 }) => {
   return (
-    <div className="justify-center">
+    <div className="justify-center border p-1 mt-1 rounded">
       <div
         className="p-2 mt-2 rounded border-transparent px-4 py-2 font-medium text-blue-900 items-center border-2 border-slate-200"
         id={ingr.id}
