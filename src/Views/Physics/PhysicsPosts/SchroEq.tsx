@@ -17,7 +17,7 @@ const LineWithCurvedLine = () => {
     const curvedLineEndX = 10 + 3 * legendSpacing;
 
     return (
-        <svg width={svgWidth} height={svgHeight}>
+        <svg width={svgWidth} height={svgHeight} className="w-full sm:w-2/3 md:w-2/3 lg:max-w-2xl xl:max-w-2xl mx-4">
             <defs>
                 <marker
                     id="arrow"
@@ -66,8 +66,8 @@ const LineWithCurvedLine = () => {
 const SchroEq = ({ postID }: { postID: string }) => {
     return (
         <>
-            <div className="flex justify-center ">
-                <div className="max-w-4xl">
+            <div className="flex justify-center">
+                <div className="w-full sm:w-2/3 md:w-2/3 lg:max-w-2xl xl:max-w-2xl mx-4">
                     <HeaderCategory
                         name={"Quantum Mechanics"}
                         date={"19/03/2023"}

@@ -5,7 +5,7 @@ import { HeaderCategory } from "../../../Single/HeaderCategory";
 export const Russian = ({ postID }: { postID: string }) => {
     return (
         <>
-            <div className="flex justify-center ">
+            <div className="flex justify-center m-2">
                 <div className="max-w-4xl">
                     <HeaderCategory
                         name={"Russian 🇷🇺"}
