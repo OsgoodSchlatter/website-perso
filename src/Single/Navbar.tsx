@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { GrGithub } from "react-icons/gr";
 import { GrLinkedin } from "react-icons/gr";
-import { FaBookOpen, FaHome } from "react-icons/fa";
+import { FaBookOpen, FaHome, FaUtensilSpoon } from "react-icons/fa";
 import { BiSpreadsheet } from "react-icons/bi";
 import Pdf from '../../src/CV_EN.pdf';
 
@@ -25,7 +25,9 @@ export const Navbar = () => {
           </Link>
           <Link to="/carbon" className="text-black px-2 md:px-10 ">
             <div className="bg-white rounded-lg p-1 hover:bg-slate-100 text-center mt-1">
-              Carbon Calculator
+
+              <FaUtensilSpoon size={30} />
+
             </div>
           </Link>
         </div>
