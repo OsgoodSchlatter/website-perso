@@ -10,7 +10,7 @@ const LineWithCurvedLine = () => {
     const svgHeight = 200;
     const lineLength = svgWidth - 20; // Adjust the line length as needed
 
-    const legends = ['0', 'hw', '3/2hw', '5/2hw', '7/2hw', '']; // Adjust legends as needed
+    const legends = ['0', '1/2hw', '3/2hw', '5/2hw', '7/2hw', '']; // Adjust legends as needed
 
     const legendSpacing = lineLength / (legends.length - 1);
     const curvedLineStartX = 10 + 2 * legendSpacing;
