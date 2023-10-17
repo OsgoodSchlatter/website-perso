@@ -166,7 +166,7 @@ const OOM = ({ postID, dataArray }: OOMProps) => {
             </div>
             <div className="grid grid-cols-8 gap-2 ">
               <div className="font-bold text-1xl text-center col-start-1 col-end-3 cold-span-2 ">
-                GHG{" "}
+                Energy source{" "}
                 <button onClick={handleSortGHGName}>
                   {sortOrderGHG === "ascNameGHGCO2" ? "▲" : "▼"}
                 </button>
