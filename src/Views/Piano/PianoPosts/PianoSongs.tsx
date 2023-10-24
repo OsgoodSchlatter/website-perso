@@ -15,7 +15,7 @@ const PianoSongs = ({ postID }: { postID: string }) => {
             back={`/piano/`}
           />
           <div className="p-4 my-20 justify-center">
-            <div>- Everglow - Coldplay</div>
+            <a href="https://www.youtube.com/watch?v=TsqSN9k0G40" className="hover:underline">- Everglow - Coldplay</a>
             <div>- Viva La Vida - Coldplay</div>
             <div>- Sky Full Of Stars - Coldplay</div>
             <div>- Feeling Good - Muse</div>
@@ -30,6 +30,8 @@ const PianoSongs = ({ postID }: { postID: string }) => {
             <div>- Nightcall - Kavinsky</div>
             <div>- Varadero - Leon </div>
             <div>- Famille - Goldman</div>
+            <a href="https://www.youtube.com/watch?v=_v75os9sLL0" className="hover:underline">- I belong to you - Muse</a>
+
           </div>
         </div>
       </div>

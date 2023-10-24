@@ -17,10 +17,10 @@ export const GuitarSongs = ({ postID }: { postID: string }) => {
                         <div>- Will we talk - Sam Fender</div>
                         <div>- All is on my side - Sam Fender</div>
                         <div>- Wild Grey Ocean -   Sam Fender</div>
+                        <div>- You're not the only one - Sam Fender </div>
                         <div>- Viva la vida - Coldplay</div>
-                        <div>- Bonne idée - JJG</div>
+                        <a href="https://www.youtube.com/watch?v=g51aivXGbmM&lc=UgyjvgocOKX4n0LIuzh4AaABAg" className="hover:underline">- Bonne idée - JJG</a>
                         <div>- Là-bas - JJG</div>
-                        <div>- Pour que tu m'aimes encore - JJG</div>
                         <div>- Pour que tu m'aimes encore - JJG</div>
                         <div>- Piccola stella senza cielo - Ligabue</div>
                         <div>- I'm yours - Jason Mraz</div>
@@ -29,6 +29,7 @@ export const GuitarSongs = ({ postID }: { postID: string }) => {
                         <div>- Need You Now - Lady A</div>
                         <div>- J'ai demandé à la lune - Indochine</div>
                         <div>- Let it be - the Beatles </div>
+
                     </div>
                 </div>
             </div>

@@ -65,9 +65,7 @@ const Radio = ({ postID }: { postID: string }) => {
 
                         </div>
                     </div>
-                    <div className="font-bold pr-1">
-                        Gamma
-                    </div>
+
 
                 </div>
             </div>
