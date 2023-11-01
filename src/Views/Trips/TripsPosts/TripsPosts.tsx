@@ -31,6 +31,7 @@ export const blogPosts = {
         date: "2005",
         title: "Tunisia 🇹🇳",
         locations: ["Tunisia"],
+        C02: 600,
         content: Tunisia,
     },
     "2": {
@@ -38,6 +39,7 @@ export const blogPosts = {
         date: "2012",
         title: "Turkey 🇹🇷",
         locations: ["Turkey"],
+        C02: 1000,
         content: Turkey,
     },
 
@@ -46,6 +48,7 @@ export const blogPosts = {
         date: "2015",
         title: "Greece 🇬🇷 and Bulgaria 🇧🇬",
         locations: ["Greece", "Bulgaria"],
+        C02: 600,
         content: Greece,
     },
     "4": {
@@ -53,6 +56,7 @@ export const blogPosts = {
         date: "2016",
         title: "Norway 🇳🇴",
         locations: ["Norway"],
+        C02: 500,
         content: Norway,
     },
     "5": {
@@ -60,6 +64,7 @@ export const blogPosts = {
         date: "2016",
         title: "USA 🇺🇸 & Canada 🇨🇦",
         locations: ["USA", "Canada"],
+        C02: 1800,
         content: USA1,
     },
     "6": {
@@ -67,6 +72,7 @@ export const blogPosts = {
         date: "2017",
         title: "Indonesia 🇮🇩",
         locations: ["Indonesia"],
+        C02: 4000,
         content: Indonesia,
     },
     "7": {
@@ -74,6 +80,7 @@ export const blogPosts = {
         date: "2018",
         title: "USA 🇺🇸",
         locations: ["USA"],
+        C02: 3000,
         content: USA2,
     },
     "8": {
@@ -81,6 +88,7 @@ export const blogPosts = {
         date: "2019",
         title: "Marseille 🇫🇷",
         locations: ["Marseille", "France"],
+        C02: 150,
         content: Marseille,
     },
     "9": {
@@ -88,6 +96,7 @@ export const blogPosts = {
         date: "2019",
         title: "Malaga 🇪🇸",
         locations: ["Malaga", "Spain"],
+        C02: 400,
         content: Malaga,
     },
     "10": {
@@ -95,6 +104,7 @@ export const blogPosts = {
         date: "2019",
         title: "Mauritius Island 🇲🇺",
         locations: ["Mauritius"],
+        C02: 3100,
         content: Mauritius,
     },
     "11": {
@@ -102,6 +112,7 @@ export const blogPosts = {
         date: "2019",
         title: "London 🇬🇧",
         locations: ["London", "UK", "Great-Britain", "GB", "Angleterre"],
+        C02: 240,
         content: London,
     },
     "12": {
@@ -109,6 +120,7 @@ export const blogPosts = {
         date: "2019",
         title: "Santorini 🇬🇷",
         locations: ["Greece", "Santorini"],
+        C02: 800,
         content: Santorini,
     },
     "13": {
@@ -116,6 +128,7 @@ export const blogPosts = {
         date: "2020",
         title: "Annecy 🇫🇷",
         locations: ["Annecy", "France"],
+        C02: 278,
         content: Annecy,
     },
     "14": {
@@ -123,6 +136,7 @@ export const blogPosts = {
         date: "2020",
         title: "Royan 🇫🇷",
         locations: ["Royan", "France"],
+        C02: 90,
         content: Royan,
     },
     "15": {
@@ -130,6 +144,7 @@ export const blogPosts = {
         date: "2020",
         title: "Biarritz 🇫🇷 & San Sebastian 🇪🇸",
         locations: ["Biarritz", "France", "San Sebastian", "Spain"],
+        C02: 200,
         content: Biarritz,
     },
     "16": {
@@ -137,6 +152,7 @@ export const blogPosts = {
         date: "2021",
         title: "Ile d'Yeu 🇫🇷",
         locations: ["Ile d'Yeu", "Yeu", "France"],
+        C02: 10,
         content: Yeu,
     },
     "17": {
@@ -144,6 +160,7 @@ export const blogPosts = {
         date: "2021",
         title: "Nice 🇫🇷",
         locations: ["Nice", "France"],
+        C02: 50,
         content: Nice,
     },
     "18": {
@@ -151,6 +168,7 @@ export const blogPosts = {
         date: "2022",
         title: "Luxembourg 🇱🇺, Germany 🇩🇪 & The Netherlands 🇳🇱",
         locations: ["Luxembourg", "Germany", "The Netherlands", "Netherlands"],
+        C02: 20,
         content: LuxGerNeth2022,
     },
     "19": {
@@ -158,6 +176,7 @@ export const blogPosts = {
         date: "2022",
         title: "Lyon",
         locations: ["Lyon", "France"],
+        C02: 5,
         content: Lyon,
     },
     "20": {
@@ -165,6 +184,7 @@ export const blogPosts = {
         date: "2022",
         title: "Anglet 🇫🇷 & San Sebastian 🇪🇸",
         locations: ["Anglet", "France", "San Sebastian", "Spain"],
+        C02: 10,
         content: Anglet,
     },
     "21": {
@@ -172,6 +192,7 @@ export const blogPosts = {
         date: "2022",
         title: "Nice 🇫🇷",
         locations: ["Nice", "France"],
+        C02: 5,
         content: Nice2,
     },
     "22": {
@@ -179,6 +200,7 @@ export const blogPosts = {
         date: "2023",
         title: "Albi 🇫🇷",
         locations: ["Albi", "France"],
+        C02: 30,
         content: Albi,
     },
     "23": {
@@ -186,6 +208,7 @@ export const blogPosts = {
         date: "2023",
         title: "Bruxelles 🇧🇪, The Hague 🇳🇱, Amsterdam 🇳🇱",
         locations: ["Bruxelles", "Belgium", "The Hague", "Amsterdam", "Netherlands"],
+        C02: 10,
         content: BxHayAmst23,
     },
     "24": {
@@ -193,6 +216,7 @@ export const blogPosts = {
         date: "2023",
         title: "Bordeaux 🇫🇷",
         locations: ["Albi", "France"],
+        C02: 5,
         content: Bordeaux,
     },
     "25": {
@@ -200,6 +224,7 @@ export const blogPosts = {
         date: "2023",
         title: "Sweden 🇸🇪 & Denmark 🇩🇰",
         locations: ["Sweden", "Denmark"],
+        C02: 60,
         content: SweDen,
     },
 };
