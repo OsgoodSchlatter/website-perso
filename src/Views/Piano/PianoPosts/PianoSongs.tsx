@@ -15,8 +15,12 @@ const PianoSongs = ({ postID }: { postID: string }) => {
             back={`/piano/`}
           />
           <div className="p-4 my-20 justify-center">
-            <a href="https://www.youtube.com/watch?v=TsqSN9k0G40" className="hover:underline">- Everglow - Coldplay</a>
-            <a href="https://www.youtube.com/watch?v=mIwkXvxOwhw" className="hover:underline">- Viva La Vida - Coldplay</a>
+            <div>
+              <a href="https://www.youtube.com/watch?v=TsqSN9k0G40" className="hover:underline">- Everglow - Coldplay</a>
+            </div>
+            <div>
+              <a href="https://www.youtube.com/watch?v=mIwkXvxOwhw" className="hover:underline">- Viva La Vida - Coldplay</a>
+            </div>
             <div>- Sky Full Of Stars - Coldplay</div>
             <div>- Feeling Good - Muse</div>
             <div>- Every Breath You Take - The Police</div>
@@ -30,6 +34,9 @@ const PianoSongs = ({ postID }: { postID: string }) => {
             <div>- Nightcall - Kavinsky</div>
             <div>- Varadero - Leon </div>
             <div>- Famille - Goldman</div>
+            <div>
+              <a href="https://youtu.be/ujW0PnPbBlE?si=sbxBo0kwUWuiiTfw" className="hover:underline">- Pirates des Caraïbes - Hans Zimmer</a>
+            </div>
             <a href="https://www.youtube.com/watch?v=_v75os9sLL0" className="hover:underline">- I belong to you - Muse</a>
 
           </div>
