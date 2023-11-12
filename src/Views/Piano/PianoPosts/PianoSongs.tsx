@@ -16,7 +16,7 @@ const PianoSongs = ({ postID }: { postID: string }) => {
           />
           <div className="p-4 my-20 justify-center">
             <a href="https://www.youtube.com/watch?v=TsqSN9k0G40" className="hover:underline">- Everglow - Coldplay</a>
-            <div>- Viva La Vida - Coldplay</div>
+            <a href="https://www.youtube.com/watch?v=mIwkXvxOwhw">- Viva La Vida - Coldplay</a>
             <div>- Sky Full Of Stars - Coldplay</div>
             <div>- Feeling Good - Muse</div>
             <div>- Every Breath You Take - The Police</div>
