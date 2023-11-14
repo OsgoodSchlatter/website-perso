@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { HeaderCategory } from "../../Single/HeaderCategory";
-import Pdf2 from "/Users/eloi/dev/website/website-perso/src/Green_Tracking_Article.pdf";
+import Pdf2 from "../../Green_Tracking_Article.pdf";
 
 
 export const PubliArticle = ({ postID }: { postID: string }) => {
