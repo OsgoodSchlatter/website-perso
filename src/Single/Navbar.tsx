@@ -95,11 +95,16 @@ export const Navbar = () => {
               onMouseLeave={() => setHoverArticle(false)}>
               {hoverArticle ? (
                 <div className="bg-slate-500 rounded-lg">
-                  <FaBookOpen size={30} />
+                  <Link to="/publi_talks">
+                    <FaBookOpen size={30} />
+                  </Link>
+
                 </div>
               ) : (
                 <div className=" rounded-lg">
-                  <FaBookOpen size={30} />
+                  <Link to="/publi_talks">
+                    <FaBookOpen size={30} />
+                  </Link>
                 </div>
               )}
             </div>
@@ -111,7 +116,7 @@ export const Navbar = () => {
 
                 </div>
               ) : (
-                <div className=" rounded-lg">
+                <div className="rounded-lg">
                   <a href={Pdf} target="_blank"> <BiSpreadsheet size={30} /></a>
                 </div>
               )}

@@ -18,6 +18,7 @@ export const Russian = ({ postID }: { postID: string }) => {
                         <div> I am late = Я опоздаю</div>
                         <div> Как это мило = how nice</div>
                         <div>Сильно=very</div>
+                        <div>Xочу спать=I want to sleep</div>
 
                     </div>
                 </div>

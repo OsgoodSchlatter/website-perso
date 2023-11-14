@@ -19,6 +19,10 @@ import { Languages } from "./Languages/Languages";
 import { LanguagesPosts } from "./Languages/LanguagesPosts/LanguagesPosts";
 import { GuitarPosts } from "./Guitar/GuitarPosts/GuitarPosts";
 import { TripsPosts } from "./Trips/TripsPosts/TripsPosts";
+import { Publications } from "./Publi/Publications";
+import { PubliPosts } from "./Publi/PublicationsPosts";
+
+
 
 export const Main = () => {
   return (
@@ -44,6 +48,9 @@ export const Main = () => {
         <Route path="/maths" element={<Maths />} />
         <Route path="/languages" element={<Languages />} />
         <Route path="/languages/:postID" element={<LanguagesPosts />} />
+        <Route path="/publi_talks/" element={<Publications />} />
+        <Route path="/publi_talks/:postID" element={<PubliPosts />} />
+
       </Routes>
     </>
   );
