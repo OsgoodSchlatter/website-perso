@@ -23,8 +23,12 @@ const PianoSongs = ({ postID }: { postID: string }) => {
             </div>
             <div>- Sky Full Of Stars - Coldplay</div>
             <div>- Feeling Good - Muse</div>
-            <div>- Every Breath You Take - The Police</div>
-            <div>- Lost in yesterday - Tame Impala</div>
+            <div>
+              <a href="https://www.youtube.com/watch?v=GPMvlTYbns0" className="hover:underline">- Every Breath You Take - The Police</a>
+            </div>
+            <div>
+              <a href="https://www.youtube.com/shorts/ZFbCH9DfzuU" className="hover:underline">- Lost in yesterday - Tame Impala</a>
+            </div>
             <div>- Against all Odds - Phil Collins</div>
             <div>- Another day in paradise - Phil Collins</div>
             <div>- Riptide - Vance Joy</div>
