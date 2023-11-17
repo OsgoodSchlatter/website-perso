@@ -19,7 +19,10 @@ export const GuitarSongs = ({ postID }: { postID: string }) => {
                         <div>- Wild Grey Ocean -   Sam Fender</div>
                         <div>- You're not the only one - Sam Fender </div>
                         <div>- Viva la vida - Coldplay</div>
-                        <a href="https://www.youtube.com/watch?v=g51aivXGbmM&lc=UgyjvgocOKX4n0LIuzh4AaABAg" className="hover:underline">- Bonne idée - JJG</a>
+                        <div>
+                            <a href="https://www.youtube.com/watch?v=g51aivXGbmM&lc=UgyjvgocOKX4n0LIuzh4AaABAg" className="hover:underline"> - Bonne idée - JJG</a>
+                        </div>
+                        <a href="https://www.youtube.com/shorts/l2rZlQEc9WI" className="hover:underline">- Apocalypse - Cigarettes After Sex</a>
                         <div>- Là-bas - JJG</div>
                         <div>- Pour que tu m'aimes encore - JJG</div>
                         <div>- Piccola stella senza cielo - Ligabue</div>
