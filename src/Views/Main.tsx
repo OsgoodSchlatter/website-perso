@@ -21,6 +21,7 @@ import { GuitarPosts } from "./Guitar/GuitarPosts/GuitarPosts";
 import { TripsPosts } from "./Trips/TripsPosts/TripsPosts";
 import { Publications } from "./Publi/Publications";
 import { PubliPosts } from "./Publi/PublicationsPosts";
+import { Recruiter } from "./Recruiter/Recruiter";
 
 
 
@@ -29,6 +30,7 @@ export const Main = () => {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/carbon" element={<DisplayIngredients />} />
         <Route path="/climate" element={<Climate />} />
         <Route path="/climate/:postID" element={<ClimatePosts />} />
@@ -50,7 +52,7 @@ export const Main = () => {
         <Route path="/languages/:postID" element={<LanguagesPosts />} />
         <Route path="/publi_talks/" element={<Publications />} />
         <Route path="/publi_talks/:postID" element={<PubliPosts />} />
-
+        <Route path="/recruiter/" element={<Recruiter />} />
       </Routes>
     </>
   );

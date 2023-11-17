@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { PubliArticle } from "../../Publi/PublicationsPosts";
 
 import FHE from "./subCS/FHE";
 import ZKP from "./subCS/ZKP";
@@ -11,12 +12,12 @@ export const blogPosts = {
     title: "Fully Homomorphic Encryption Tool",
     content: FHE,
   },
-  // "2": {
-  //   id: 2,
-  //   date: "19/03/2023",
-  //   title: "zkPROOF",
-  //   content: ZKP,
-  // },
+  "2": {
+    id: 1,
+    date: "2023",
+    title: "Publications",
+    content: PubliArticle,
+  },
 };
 
 export const CSPosts = () => {
