@@ -5,6 +5,7 @@ import Radio from "./Radioactivity";
 import { useParams } from "react-router-dom";
 import SchroEq from "./SchroEq";
 import Battery from "./Battery";
+import Neutronics from "./Neutronics";
 
 export const blogPosts = {
   "1": {
@@ -30,6 +31,12 @@ export const blogPosts = {
     date: "16/10/2023",
     title: "Battery",
     content: Battery,
+  },
+  "5": {
+    id: 5,
+    date: "17/11/2023",
+    title: "Neutronics",
+    content: Neutronics,
   },
 };
 
