@@ -14,10 +14,14 @@ export const Recruiter = () => {
 
           <div className="p-4 my-20 justify-center">
 
-            <div className="text-xl font-bold p-2 hover:underline">1- See my CV</div>
-            <div className="text-xl font-bold p-2 hover:underline">2- See my publications</div>
-            <div className="text-xl font-bold p-2 hover:underline">3- Explore my website</div>
-            <div className="text-xl font-bold p-2 hover:underline">4- Write me</div>
+            <div className="text-xl font-bold p-2 ">1- See my CV</div>
+            <div className="text-xl font-bold p-2 ">2- See my publications</div>
+            <div className="text-xl font-bold p-2 ">3- Explore my website</div>
+            <div className="text-xl font-bold p-2 ">4- Write me
+              <div className="pl-20 font-normal hover:none">tel: +33 7 83 67 76 20</div>
+              <div className="pl-20 font-normal hover:none">mail: eloiposeidon@gmail.com</div>
+              <div className="pl-20 font-normal hover:none">mail2: eloi.besnard@ensta-paris.fr</div>
+            </div>
           </div>
 
         </div>
