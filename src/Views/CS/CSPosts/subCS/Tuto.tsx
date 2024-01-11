@@ -11,9 +11,22 @@ const Tuto = () => {
                         RESSOURCES:
                     </div>
                     <div>
+                        <a className="hover:underline" href="https://ipn_s2i_enseignement.pages.in2p3.fr/DataProcessing/program/session-2/hands-on-2b/">
+                            Link of TD:
+                        </a>
+                    </div>
+                    <div>
+                        <a className="hover:underline" href="https://chat.openai.com">
+                            ChatGPT (to use with moderation)
+                        </a>
+                    </div>
+                    <div>
                         <a className="hover:underline" href="https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories">
                             GitHub
                         </a>
+                    </div>
+                    <div>
+                        <a className="hover:underline" href="https://docs.github.com/en/get-started/getting-started-with-git"> Getting Started with Git</a>
                     </div>
                     <div>
                         <a className="hover:underline" href="https://docs.github.com/en/get-started/getting-started-with-git"> Getting Started with Git</a>
