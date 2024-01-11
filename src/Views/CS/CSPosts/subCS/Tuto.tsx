@@ -11,12 +11,13 @@ const Tuto = () => {
                         RESSOURCES:
                     </div>
                     <div>
-
+                        <a className="hover:underline" href="https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories">
+                            GitHub
+                        </a>
                     </div>
-                    <a className="hover:underline" href="https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories">
-                        GitHub
-                    </a>
-                    <a href="https://docs.github.com/en/get-started/getting-started-with-git"> Getting Started with Git</a>
+                    <div>
+                        <a href="https://docs.github.com/en/get-started/getting-started-with-git"> Getting Started with Git</a>
+                    </div>
 
                 </div>
                 <div className="mt-2">
