@@ -16,7 +16,7 @@ const Tuto = () => {
                         </a>
                     </div>
                     <div>
-                        <a href="https://docs.github.com/en/get-started/getting-started-with-git"> Getting Started with Git</a>
+                        <a className="hover:underline" href="https://docs.github.com/en/get-started/getting-started-with-git"> Getting Started with Git</a>
                     </div>
 
                 </div>
