@@ -1,0 +1,81 @@
+import React from "react";
+import { HeaderCategory } from "../../../../Single/HeaderCategory";
+
+const Tuto = () => {
+    return (
+        <div className="flex justify-center ">
+            <div className="p-4 max-w-4xl">
+                <HeaderCategory name={"tuto"} date={"2024"} back={`/cs/`} />
+                <div className="font-bold text-xl">
+                    to know:
+                </div>
+                <div>
+                    <div className="font-bold">Linux</div>
+                    linux = windows but for nerd
+                </div>
+                <div>
+                    <div className="font-bold">Git</div>
+
+                    git = version manager, just like google doc enables you to edit a file, git enables you to edit code and track different version
+                </div>
+                <div>
+                    <div className="font-bold">GitHub, GitLab</div>
+
+                    gitHub, gitLab,... = websites that hosts your code online. gitHub is a website, git is a software!!
+                </div>
+                <div>
+                    <div className="font-bold">Editor, VsCode, Atom</div>
+
+                    atom, vscode = software to edit code on.
+                </div>
+                <div>
+                    <div className="font-bold">Progamming Languages</div>
+
+                    C, python, C++, java, python = different programming languages. they all have their different specificities.
+                </div>
+
+                <div>
+                    <div className="font-bold text-l">
+                        Useful commands in the terminal
+                    </div>
+                    terminal is a more direct and shorter way to navigate through your files:
+                    <div>
+                        1 - how to open terminal: CTRL + ALT + t
+                    </div>
+                    <div>
+                        2 - ls (list files) = show the files
+                    </div>
+                    <div>
+                        3 - cd (change directory) = moves through directories. cd .. moves rearward; cd ./directory moves in directory
+                    </div>
+                    <div>
+
+                        4 - mkdir (make directory) = creates a new directory
+                    </div>
+                    <div>
+                        5 - touch your_file.cxx = creates your file
+                    </div>
+                    <div>
+                        6 - run a programm:
+                        <div>
+                            compiling: g++ -o name_of_executable name_of_file.cxx
+                        </div>
+                        <div>
+                            running: ./name_of_executable
+                        </div>
+                        ex: my file in c++ is physics.cxx, I compile it like so: g++ -o physics physics.cxx
+                        and execute like so ./physics
+
+
+                        (compiling = the computer makes the translation from your code (physics) to binary 1010001010101.)
+                        (Executing, running = actually reading the binary and doing the computation)
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    );
+};
+
+export default Tuto;
