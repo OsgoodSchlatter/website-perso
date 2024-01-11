@@ -8,7 +8,7 @@ const Tuto = () => {
                 <HeaderCategory name={"tuto"} date={"2024"} back={`/cs/`} />
                 <div className="mt-2">
                     <div className="font-bold text-3xl">
-                        RESSOURCES:
+                        1 - RESSOURCES:
                     </div>
                     <div>
                         <a className="hover:underline" href="https://ipn_s2i_enseignement.pages.in2p3.fr/DataProcessing/program/session-2/hands-on-2b/">
@@ -34,7 +34,7 @@ const Tuto = () => {
                 <div className="mt-2">
 
                     <div className="font-bold text-3xl">
-                        RESUME:
+                        2 - RESUME:
                     </div>
                     <div>
                         <div className="font-bold">Linux</div>
@@ -121,10 +121,55 @@ const Tuto = () => {
                         </div>
                     </div>
                 </div>
+                <div className="mt-2">
 
+                    <div className="font-bold text-3xl ">
+                        3 - C++
+                    </div>
+                    <div className="font-bold text-xl">
+                        <a className="hover:underline" href="https://www.w3schools.com/cpp/cpp_oop.asp">
+                            what is C++ ? click me
+                        </a>
+                    </div>
+                    <div>
+
+                        <div className="font-bold text-xl ">
+                            Write a variable:
+                        </div>
+                        <div>
+                            As in physics, we use different types of variables (a variable of energy, of power, of voltage, of concentration...). We dont want to say that E = 1 Joules is equal to P = 1 Watt of power. It's not homogenous.
+                            In computer science, it's the same. One int (one integer) is not the same as one string (text). So we define variable this way:
+                        </div>
+                        <div className="ml-1 mr-1 w-fit bg-gray-500 p-1 rounded-md text-white"> type variable; </div>
+                        example: <div className="ml-1 mr-1 w-fit bg-gray-500 p-1 rounded-md text-white"> int my_int; </div>
+                        <div className="text-red-700 font-bold"> DO not forget ";" at the end of each of your line of code! </div>
+                    </div>
+                    <div className="font-bold text-xl ">
+                        Type of variables:
+                    </div>
+                    <div className="flex mt-1 items-center">
+                        <div className="ml-1 mr-1  w-fit bg-gray-500 p-1 rounded-md text-white"> int </div> - stores integers (whole numbers), without decimals, such as 123 or -123
+                    </div>
+                    <div className="flex mt-1 items-center">
+                        <div className="ml-1 mr-1  w-fit bg-gray-500 p-1 rounded-md text-white"> double </div> - stores floating point numbers, with decimals, such as 19.99 or -19.99
+                    </div>
+                    <div className="flex mt-1 items-center">
+                        <div className="ml-1 mr-1  w-fit bg-gray-500 p-1 rounded-md text-white"> char </div> - stores single characters, such as 'a' or 'B'. Char values are surrounded by single quotes
+                    </div>
+                    <div className="flex mt-1 items-center">
+                        <div className="ml-1 mr-1  w-fit bg-gray-500 p-1 rounded-md text-white"> string </div> - stores text, such as "Hello World". String values are surrounded by double quotes
+                    </div>
+                    <div className="flex mt-1 items-center">
+                        <div className="ml-1 mr-1  w-fit bg-gray-500 p-1 rounded-md text-white"> bool </div> - stores values with two states: true or false
+                    </div>
+                </div>
             </div>
+        </div>
 
-        </div >
+
+
+
+
     );
 };
 
