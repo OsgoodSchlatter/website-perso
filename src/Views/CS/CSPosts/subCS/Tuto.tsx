@@ -28,9 +28,7 @@ const Tuto = () => {
                     <div>
                         <a className="hover:underline" href="https://docs.github.com/en/get-started/getting-started-with-git"> Getting Started with Git</a>
                     </div>
-                    <div>
-                        <a className="hover:underline" href="https://docs.github.com/en/get-started/getting-started-with-git"> Getting Started with Git</a>
-                    </div>
+
 
                 </div>
                 <div className="mt-2">
@@ -67,32 +65,35 @@ const Tuto = () => {
                             Useful commands in the terminal
                         </div>
                         terminal is a more direct and shorter way to navigate through your files:
-                        <div>
-                            1 - how to open terminal: CTRL + ALT + t
-                        </div>
-                        <div>
-                            2 - ls (list files) = show the files
-                        </div>
-                        <div>
-                            3 - cd (change directory) = moves through directories. cd .. moves rearward; cd ./directory moves in directory
-                        </div>
-                        <div>
+                        <div className="flex items-center">
+                            1 - how to open terminal:
+                            <div className="ml-1 mr-1  w-fit bg-gray-500 p-1 rounded-md text-white"> CTRL + ALT + t </div>
 
-                            4 - mkdir (make directory) = creates a new directory
+                        </div>
+                        <div className="flex items-center mt-1">
+                            2 - <div className="ml-1 mr-1  w-fit bg-gray-500 p-1 rounded-md text-white"> ls </div> (list files) = show the files
+                        </div>
+                        <div className="flex items-center mt-1">
+                            3 - <div className=" ml-1 mr-1  w-fit bg-gray-500 p-1 rounded-md text-white"> cd </div> (change directory) = moves through directories. cd .. moves rearward; cd ./directory moves in directory
+                        </div>
+                        <div className="flex items-center mt-1">
+                            4 - <div className="ml-1 mr-1  w-fit bg-gray-500 p-1 rounded-md text-white"> mkdir </div> (make directory) = creates a new directory
+                        </div>
+                        <div className="flex items-center mt-1">
+                            5 - <div className="ml-1 mr-1 w-fit bg-gray-500 p-1 rounded-md text-white"> touch your_file.cxx </div>  = creates your c++ file
                         </div>
                         <div>
-                            5 - touch your_file.cxx = creates your file
-                        </div>
-                        <div>
-                            6 - run a programm:
+                            6 - run a program:
                             <div>
-                                compiling: g++ -o name_of_executable name_of_file.cxx
+                                compiling:
+                                <div className="ml-1 mr-1  w-fit bg-gray-500 p-1 rounded-md text-white"> g++ -o name_of_executable name_of_file.cxx</div>
                             </div>
                             <div>
-                                running: ./name_of_executable
+                                running: <div className="w-fit bg-gray-500 p-1 rounded-md text-white"> ./name_of_executable</div>
                             </div>
-                            ex: my file in c++ is physics.cxx, I compile it like so: g++ -o physics physics.cxx
-                            and execute like so ./physics
+                            ex: my file in c++ is physics.cxx, I compile it like so: <div className="w-fit bg-gray-500 p-1 rounded-md text-white">g++ -o physics physics.cxx</div>
+                            and execute like so
+                            <div className="w-fit bg-gray-500 p-1 rounded-md text-white"> ./physics</div>
 
                             <div>
                                 (compiling = the computer makes the translation from your code (physics) to binary 1010001010101.)
@@ -105,14 +106,18 @@ const Tuto = () => {
                         <div className="font-bold text-l">
                             Useful commands for git (still in terminal)
                         </div>
-                        <div>
-                            1 - git add your_file.cxx
+                        <div className="flex mt-1">
+                            <div className="mt-1 w-fit bg-gray-500 p-1 rounded-md text-white"> git add your_file.cxx</div>
+                            This allows you to add a modified file you want to push online to share with your friends.
                         </div>
                         <div>
-                            2 - git commit -m "your message"
+                            <div className="mt-1 w-fit bg-gray-500 p-1 rounded-md text-white"> git commit -m "your message"</div>
+                            This step ensures that your current version of your file is saved and that you commit to this version before sending it online.
                         </div>
                         <div>
-                            3 - git push origin main
+                            <div className="mt-1 w-fit bg-gray-500 p-1 rounded-md text-white"> git push origin main</div>
+                            This step pushes your code online on your repository.
+
                         </div>
                     </div>
                 </div>
