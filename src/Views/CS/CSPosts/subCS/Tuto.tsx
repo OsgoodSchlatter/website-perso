@@ -100,6 +100,12 @@ const Tuto = () => {
                                 (Executing, running = actually reading the binary and doing the computation)
                             </div>
                         </div>
+                        <div className="flex items-center mt-1">
+                            7 - <div className="ml-1 mr-1 w-fit bg-gray-500 p-1 rounded-md text-white"> rm your_file </div>  = delete your file
+                        </div>
+                        <div className="flex items-center mt-1">
+                            8 - <div className="ml-1 mr-1 w-fit bg-gray-500 p-1 rounded-md text-white"> mv your_file directory </div>  = move your_file in your directory
+                        </div>
 
                     </div>
                     <div className="mt-2">
@@ -161,6 +167,9 @@ const Tuto = () => {
                     </div>
                     <div className="flex mt-1 items-center">
                         <div className="ml-1 mr-1  w-fit bg-gray-500 p-1 rounded-md text-white"> bool </div> - stores values with two states: true or false
+                    </div>
+                    <div className="font-bold text-xl ">
+                        Create a function:
                     </div>
                 </div>
             </div>
