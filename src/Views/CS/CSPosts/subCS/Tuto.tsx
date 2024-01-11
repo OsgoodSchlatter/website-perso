@@ -176,11 +176,8 @@ const Tuto = () => {
                     <div className="flex mt-1 items-center"> 2 - a return type: <div className="ml-1 mr-1  w-fit bg-gray-500 p-1 rounded-md text-white">int my_function</div></div>
                     <div className="flex mt-1 items-center"> 3 - arguments: <div className="ml-1 mr-1  w-fit bg-gray-500 p-1 rounded-md text-white">int my_function(int a, int b)</div></div>
                     <div className="flex mt-1 items-center"> 4 - brackets{"{ }"}: <div className="ml-1 mr-1  w-fit bg-gray-500 p-1 rounded-md text-white">int my_function(int a, int b){"{ }"}</div></div>
-
-
-
-
-
+                    <div className="flex mt-1 items-center"> At least one function should be called <div className="ml-1 mr-1  w-fit bg-gray-500 p-1 rounded-md text-white">main</div>. When you run your code, only main is executed</div>
+                    <div className="flex mt-1 items-center"> When you create other functions, they or their parents should be called in main to work </div>
                 </div>
             </div>
         </div>
