@@ -171,6 +171,16 @@ const Tuto = () => {
                     <div className="font-bold text-xl ">
                         Create a function:
                     </div>
+                    <div> A function has 4 main features</div>
+                    <div className="flex mt-1 items-center"> 1 - a name: <div className="ml-1 mr-1  w-fit bg-gray-500 p-1 rounded-md text-white">my_function</div></div>
+                    <div className="flex mt-1 items-center"> 2 - a return type: <div className="ml-1 mr-1  w-fit bg-gray-500 p-1 rounded-md text-white">int my_function</div></div>
+                    <div className="flex mt-1 items-center"> 3 - arguments: <div className="ml-1 mr-1  w-fit bg-gray-500 p-1 rounded-md text-white">int my_function(int a, int b)</div></div>
+                    <div className="flex mt-1 items-center"> 4 - brackets{"{ }"}: <div className="ml-1 mr-1  w-fit bg-gray-500 p-1 rounded-md text-white">int my_function(int a, int b){"{ }"}</div></div>
+
+
+
+
+
                 </div>
             </div>
         </div>
