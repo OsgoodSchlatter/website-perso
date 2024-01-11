@@ -11,6 +11,10 @@ const Tuto = () => {
                         1 - RESSOURCES:
                     </div>
                     <div>
+                        <a className="hover:underline" href="https://github.com/OsgoodSchlatter/mne-DataProcessing/tree/main/Project">answers for the TD: </a>
+
+                    </div>
+                    <div>
                         <a className="hover:underline" href="https://ipn_s2i_enseignement.pages.in2p3.fr/DataProcessing/program/session-2/hands-on-2b/">
                             Link of TD:
                         </a>
