@@ -3,6 +3,7 @@ import "katex/dist/katex.min.css";
 import Latex from "react-latex-next";
 import "katex/dist/katex.min.css";
 import { Tableau } from "../../../Single/Tableau";
+
 const batteryData: (string)[][] = [
   [
     "LCO",
@@ -71,10 +72,6 @@ const combinedLatex = [Li2CO3, K2CO3, Na2CO3];
 const combinedLatex2 = [Zr02, Y2O3];
 const combinedLatex3 = [H2, CO2, CH4];
 
-
-
-
-
 const fuelCellData: (string | JSX.Element | JSX.Element[])[][] = [[
   "Alcaline",
   KOH,
@@ -131,8 +128,8 @@ const Battery_Fuel_Cell = () => {
             date={"16/10/2023"}
             back={`/physics/`}
           />
-          <Tableau content={batteryData} headers={["Battery type", "Cathode", "Anode", "Cell Voltage", "Cost", "Energy Density", "Cycle Life", "Discharge Rate"]} title={"Battery: Lithium-ion technologies"} />
           <Tableau content={fuelCellData} headers={["Type", "Electrolyte", "Temp°C", "Fuel", "Efficiency", "Power", "Maturity"]} title={"Main H2 fuel cell technologies"} />
+          <Tableau content={batteryData} headers={["Battery type", "Cathode", "Anode", "Cell Voltage", "Cost", "Energy Density", "Cycle Life", "Discharge Rate"]} title={"Battery: Lithium-ion technologies"} />
         </div>
       </div>
     </>

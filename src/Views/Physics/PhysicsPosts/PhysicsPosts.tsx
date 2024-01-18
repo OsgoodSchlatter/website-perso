@@ -14,12 +14,7 @@ export const blogPosts = {
     title: "Radioactivity",
     content: Radio,
   },
-  "2": {
-    id: 2,
-    date: "02/05/2023",
-    title: "Nuclear Energy",
-    content: NuclEnergy,
-  },
+
   "3": {
     id: 3,
     date: "07/10/2023",
