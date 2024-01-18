@@ -1,4 +1,3 @@
-# WIP
-## carbon calculator
+# O13R
 
-This carbon calculator is designed to help you calculate the true carbon footprint of your meal. 
+## Welcome to my website
