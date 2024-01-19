@@ -2,7 +2,7 @@
 
 import { HeaderCategory } from "../../../Single/HeaderCategory";
 
-export const Mauritius = ({ title }: { title: string }) => {
+export const Mauritius = ({ title, date }: { title: string, date: string }) => {
     return (
         <>
             <div className="flex justify-center ">

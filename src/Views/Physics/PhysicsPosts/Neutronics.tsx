@@ -81,14 +81,14 @@ const fuelData: Content_Tooltip[][] = [
 ];
 
 
-const Neutronics = ({ title }: { title: string }) => {
+const Neutronics = ({ title, date }: { title: string, date: string }) => {
     return (
         <>
             <div className="flex justify-center m-2">
                 <div className="w-full sm:w-2/3 md:w-2/3 lg:max-w-4xl xl:max-w-5xl mx-4">
                     <HeaderCategory
                         name={title}
-                        date={"16/11/2023"}
+                        date={date}
                         back={`/physics/`}
                     />
                     <div className="my-20 justify-center">

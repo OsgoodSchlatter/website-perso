@@ -1,4 +1,3 @@
-
 import { ListOfPostsHeader } from "../../Single/ListOfPostsHeader";
 
 import { useEffect, useState } from "react";
@@ -40,12 +39,13 @@ export const CSPosts = () => {
     return <div>Loading...</div>;
   }
 
-  return <Component title={post.title} />;
+  return <Component title={post.title} date={post.date} />;
 };
 
-
 export const CS = () => (
-
-  <ListOfPostsHeader topic="computer science" route="cs" blogPosts={blogPosts} />
-
+  <ListOfPostsHeader
+    topic="computer science"
+    route="cs"
+    blogPosts={blogPosts}
+  />
 );

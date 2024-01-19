@@ -13,6 +13,7 @@ type generalArray = [ElecArray[], GHGArray[]]
 type OOMProps = {
   dataArray: generalArray;
   title: string;
+  date: string
 };
 
 const OOM = ({ dataArray, title }: OOMProps) => {
@@ -101,7 +102,7 @@ const OOM = ({ dataArray, title }: OOMProps) => {
         <div className="max-w-4xl">
           <HeaderCategory
             name={title}
-            date={"17/07/2023"}
+            date={"2023"}
             back={`/climate/`}
           />
           <div className="my-20 justify-center">

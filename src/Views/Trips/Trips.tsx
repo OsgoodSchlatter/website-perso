@@ -242,7 +242,7 @@ export const TripsPosts = () => {
     return <div>Loading...</div>;
   }
 
-  return <Component title={post.title} />;
+  return <Component title={post.title} date={post.date} />;
 };
 
 export const Trips = () => {

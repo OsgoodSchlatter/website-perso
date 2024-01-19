@@ -63,14 +63,14 @@ const LineWithCurvedLine = () => {
 
 
 
-const SchroEq = ({ title }: { title: string }) => {
+const SchroEq = ({ title, date }: { title: string, date: string }) => {
     return (
         <>
             <div className="flex justify-center">
                 <div className="w-full sm:w-2/3 md:w-2/3 lg:max-w-2xl xl:max-w-2xl mx-4">
                     <HeaderCategory
                         name={title}
-                        date={"19/03/2023"}
+                        date={date}
                         back={`/physics/`}
                     />
                     <div className="my-20 justify-center m-2">

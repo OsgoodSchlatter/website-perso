@@ -23,7 +23,7 @@ export const PianoPosts = () => {
     return <div>Loading...</div>;
   }
 
-  return <Component title={post.title} />;
+  return <Component title={post.title} date={post.date} />;
 };
 
 

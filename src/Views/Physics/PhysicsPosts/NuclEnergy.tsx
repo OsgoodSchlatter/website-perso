@@ -5,14 +5,14 @@ import React from "react";
 import Latex from "react-latex-next";
 import "katex/dist/katex.min.css";
 
-const NuclEnergy = ({ title }: { title: string }) => {
+const NuclEnergy = ({ title, date }: { title: string, date: string }) => {
   return (
     <>
       <div className="flex justify-center ">
         <div className="max-w-2xl">
           <HeaderCategory
             name={title}
-            date={"06/05/2023"}
+            date={date}
             back={`/physics/`}
           />
           <div className="p-4 my-20 justify-center">

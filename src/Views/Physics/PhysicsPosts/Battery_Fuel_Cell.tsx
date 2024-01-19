@@ -122,14 +122,14 @@ const fuelCellData: (string | JSX.Element | JSX.Element[])[][] = [[
   "Development",
 ]];
 
-const Battery_Fuel_Cell = ({ title }: { title: string }) => {
+const Battery_Fuel_Cell = ({ title, date }: { title: string, date: string }) => {
   return (
     <>
       <div className="flex justify-center m-2">
         <div className="w-full sm:w-2/3 md:w-2/3 lg:max-w-4xl xl:max-w-5xl mx-4">
           <HeaderCategory
             name={title}
-            date={"16/10/2023"}
+            date={date}
             back={`/physics/`}
           />
           [Disclaimer]: Most of the content on this page comes from the course of Didier Dalmazzonne, although I may have added other information on top.

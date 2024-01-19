@@ -1,6 +1,6 @@
 import { HeaderCategory } from "../../../Single/HeaderCategory";
 
-export const Albi = ({ title }: { title: string }) => {
+export const Albi = ({ title, date }: { title: string, date: string }) => {
     return (
         <>
             <div className="flex justify-center ">

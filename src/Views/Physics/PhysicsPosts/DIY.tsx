@@ -1,13 +1,13 @@
 import { HeaderCategory } from "../../../Single/HeaderCategory"
 
-const DIY = ({ title }: { title: string }) => {
+const DIY = ({ title, date }: { title: string, date: string }) => {
     return (
         <>
             <div className="flex justify-center ">
                 <div className="max-w-2xl">
                     <HeaderCategory
                         name={title}
-                        date={"2024"}
+                        date={date}
                         back={`/physics/`}
                     />
                 </div>

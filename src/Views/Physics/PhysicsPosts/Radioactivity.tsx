@@ -3,14 +3,14 @@ import "katex/dist/katex.min.css";
 import Latex from "react-latex-next";
 import 'katex/dist/katex.min.css';
 
-const Radio = ({ title }: { title: string }) => {
+const Radio = ({ title, date }: { title: string, date: string }) => {
     return (
         <>
             <div className="flex justify-center m-2">
                 <div className="max-w-4xl">
                     <HeaderCategory
                         name={title}
-                        date={"02/10/2023"}
+                        date={date}
                         back={`/physics/`}
                     />
                     <div className="my-20 justify-center">

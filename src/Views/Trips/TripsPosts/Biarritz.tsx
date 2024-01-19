@@ -1,6 +1,6 @@
 import { HeaderCategory } from "../../../Single/HeaderCategory";
 
-export const Biarritz = ({ title }: { title: string }) => {
+export const Biarritz = ({ title, date }: { title: string, date: string }) => {
     return (
         <>
             <div className="flex justify-center ">

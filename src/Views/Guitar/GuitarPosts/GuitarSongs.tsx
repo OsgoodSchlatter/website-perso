@@ -1,13 +1,13 @@
 import { HeaderCategory } from "../../../Single/HeaderCategory";
 
-export const GuitarSongs = ({ title }: { title: string }) => {
+export const GuitarSongs = ({ title, date }: { title: string, date: string }) => {
     return (
         <>
             <div className="flex justify-center ">
                 <div className="max-w-4xl">
                     <HeaderCategory
                         name={title}
-                        date={"10/08/2023"}
+                        date={date}
                         back={`/guitar/`}
                     />
                     <div className="p-4 my-20 justify-center">

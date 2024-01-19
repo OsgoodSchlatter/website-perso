@@ -3,14 +3,14 @@ import { HeaderCategory } from "../../Single/HeaderCategory";
 import Pdf2 from "../../Green_Tracking_Article.pdf";
 
 
-export const PubliArticle = ({ title }: { title: string }) => {
+export const PubliArticle = ({ title, date }: { title: string, date: string }) => {
     return (
         <>
             <div className="flex justify-center ">
                 <div className="max-w-4xl">
                     <HeaderCategory
                         name={title}
-                        date={"2023"}
+                        date={date}
                         back={`/publi_talks/`}
                     />
 
@@ -53,7 +53,7 @@ export const PubliPosts = () => {
         return <div>Loading...</div>;
     }
 
-    return <Component title={post.title} />;
+    return <Component title={post.title} date={post.date} />;
 };
 
 

@@ -2,7 +2,7 @@
 
 import { HeaderCategory } from "../../../Single/HeaderCategory";
 
-export const Anglet = ({ title }: { title: string }) => {
+export const Anglet = ({ title, date }: { title: string, date: string }) => {
     return (
         <>
             <div className="flex justify-center ">

@@ -7,14 +7,14 @@ import sub from "../sub.png";
 import Latex from "react-latex-next";
 
 
-const FHE = ({ title }: { title: string }) => {
+const FHE = ({ title, date }: { title: string, date: string }) => {
   return (
     <>
       <div className="flex justify-center ">
         <div className="max-w-2xl">
           <HeaderCategory
             name={title}
-            date={"19/03/2023"}
+            date={date}
             back={`/cs/`}
           />
           <div className="p-4 my-20 justify-center">

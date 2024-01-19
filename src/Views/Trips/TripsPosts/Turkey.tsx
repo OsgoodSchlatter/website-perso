@@ -1,6 +1,6 @@
 import { HeaderCategory } from "../../../Single/HeaderCategory";
 
-export const Turkey = ({ title }: { title: string }) => {
+export const Turkey = ({ title, date }: { title: string, date: string }) => {
     return (
         <>
             <div className="flex justify-center ">

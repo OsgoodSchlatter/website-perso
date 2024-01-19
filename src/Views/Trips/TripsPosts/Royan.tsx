@@ -1,6 +1,6 @@
 import { HeaderCategory } from "../../../Single/HeaderCategory";
 
-export const Royan = ({ title }: { title: string }) => {
+export const Royan = ({ title, date }: { title: string, date: string }) => {
     return (
         <>
             <div className="flex justify-center ">

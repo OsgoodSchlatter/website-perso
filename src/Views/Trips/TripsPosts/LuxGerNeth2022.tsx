@@ -1,6 +1,6 @@
 import { HeaderCategory } from "../../../Single/HeaderCategory";
 
-export const LuxGerNeth2022 = ({ title }: { title: string }) => {
+export const LuxGerNeth2022 = ({ title, date }: { title: string, date: string }) => {
     return (
         <>
             <div className="flex justify-center ">
