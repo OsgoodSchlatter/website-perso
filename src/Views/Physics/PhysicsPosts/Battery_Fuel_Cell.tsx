@@ -133,8 +133,10 @@ const Battery_Fuel_Cell = () => {
             back={`/physics/`}
           />
           [Disclaimer]: Most of the content on this page comes from the course of Didier Dalmazzonne, although I may have added other information on top.
+          <div className="font-bold text-3xl mt-8 mb-3">Battery overview </div>
+
           <Tableau content={batteryData} headers={["Battery type", "Cathode", "Anode", "Cell Voltage", "Cost", "Energy Density", "Cycle Life", "Discharge Rate"]} title={"Battery: Lithium-ion technologies"} />
-          <div className="font-bold text-3xl mb-3">Hydrogen overview </div>
+          <div className="font-bold text-3xl mt-8 mb-3">Hydrogen overview </div>
 
           <div className="font-bold text-xl mb-3 underline">Hydrogen today: </div>
           <div className="font-bold text-l ">Data</div>
@@ -177,7 +179,12 @@ const Battery_Fuel_Cell = () => {
             <li > Fuel Cells </li>
           </ul>
           <Tableau content={fuelCellData} headers={["Type", "Electrolyte", "Temp°C", "Fuel", "Efficiency", "Power", "Maturity"]} title={`Main hydrogen fuel cell technologies`} />
-
+          <div className="font-bold text-xl mb-3 mt-3 underline">Proton Exchange Membrane </div>
+          <div className="mt-2"> A proton exchange membrane is a semipermeable membrane designed to let protons go through but block reactants (for example {H2} and {O2}). It can be used as a fuel cell following this reaction: {reaction} </div>
+          <div className="mt-4">
+            <img src={pem} className="px-2 border-b-2" width="200" alt="Image" />
+            <div className="text-sm">source: wikipédia</div>
+          </div>
 
           <div className="font-bold text-xl mt-3 mb-3 underline">Perspectives for Hydrogen: </div>
           <div className="mt-1 flex"> Hydrogen production should be multiplied by 12 to meet 20% of today's requirements.</div>
@@ -190,23 +197,19 @@ const Battery_Fuel_Cell = () => {
             <li className="font-bold">Global costs (H2): <div className="font-bold">22-135$/GJ</div></li>
             <li className="font-bold">Global costs (oil): <div className="font-bold">7$/GJ</div></li>
           </ul>
-          <div className="mt-1 flex text-red-500"> Conclusion:   Hydrogen is regarded as a solution for long term storage of energy produced from low-carbon sources
-          </div>
-
-
-
-
-
-
-
-
-          <div className="font-bold text-xl mb-3 mt-3 underline">Proton Exchange Membrane </div>
-          <div className="mt-2"> A proton exchange membrane is a semipermeable membrane designed to let protons go through but block reactants (for example {H2} and {O2}). It can be used as a fuel cell following this reaction: {reaction} </div>
-          <div className="mt-4">
-            <img src={pem} className="px-2 border-b-2" width="200" alt="Image" />
-            <div className="text-sm">source: wikipédia</div>
+          <div className="font-bold text-xl mt-3 mb-3 underline"> Conclusion: </div>
+          <div className="mt-1 flex text-red-500"> Hydrogen is regarded as a solution for long term storage of energy produced from low-carbon sources
           </div>
         </div>
+
+
+
+
+
+
+
+
+
       </div>
     </>
   );
