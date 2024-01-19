@@ -24,7 +24,7 @@ export const LanguagesPosts = () => {
         return <div>Loading...</div>;
     }
 
-    return <Component postID={postID!} />;
+    return <Component title={post.title} />;
 };
 
 export const Languages = () => (

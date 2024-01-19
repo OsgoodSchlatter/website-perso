@@ -5,13 +5,13 @@ import React from "react";
 import Latex from "react-latex-next";
 import "katex/dist/katex.min.css";
 
-const NuclEnergy = ({ postID }: { postID: string }) => {
+const NuclEnergy = ({ title }: { title: string }) => {
   return (
     <>
       <div className="flex justify-center ">
         <div className="max-w-2xl">
           <HeaderCategory
-            name={"How does Nuclear Energy work"}
+            name={title}
             date={"06/05/2023"}
             back={`/physics/`}
           />

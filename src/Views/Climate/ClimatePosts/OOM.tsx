@@ -11,11 +11,11 @@ type GHGArray = [string, number, number, number];
 type generalArray = [ElecArray[], GHGArray[]]
 
 type OOMProps = {
-  postID: string;
   dataArray: generalArray;
+  title: string;
 };
 
-const OOM = ({ postID, dataArray }: OOMProps) => {
+const OOM = ({ dataArray, title }: OOMProps) => {
   const [myElecArray, setMyElecArray] = useState<ElecArray[]>(dataArray[0]);
   const [myGHGArray, setMyGHGArray] = useState<GHGArray[]>(dataArray[1]);
 
@@ -100,7 +100,7 @@ const OOM = ({ postID, dataArray }: OOMProps) => {
       <div className="flex justify-center p-4">
         <div className="max-w-4xl">
           <HeaderCategory
-            name={"Order of magnitudes"}
+            name={title}
             date={"17/07/2023"}
             back={`/climate/`}
           />

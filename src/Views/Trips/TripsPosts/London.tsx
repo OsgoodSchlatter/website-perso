@@ -2,7 +2,7 @@
 
 import { HeaderCategory } from "../../../Single/HeaderCategory";
 
-export const London = ({ postID }: { postID: string }) => {
+export const London = ({ title }: { title: string }) => {
     return (
         <>
             <div className="flex justify-center ">

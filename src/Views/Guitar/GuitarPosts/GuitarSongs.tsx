@@ -1,12 +1,12 @@
 import { HeaderCategory } from "../../../Single/HeaderCategory";
 
-export const GuitarSongs = ({ postID }: { postID: string }) => {
+export const GuitarSongs = ({ title }: { title: string }) => {
     return (
         <>
             <div className="flex justify-center ">
                 <div className="max-w-4xl">
                     <HeaderCategory
-                        name={"List of guitar songs I play"}
+                        name={title}
                         date={"10/08/2023"}
                         back={`/guitar/`}
                     />

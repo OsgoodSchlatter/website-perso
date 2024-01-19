@@ -1,6 +1,6 @@
 import { HeaderCategory } from "../../../Single/HeaderCategory";
 
-export const Nice2 = ({ postID }: { postID: string }) => {
+export const Nice2 = ({ title }: { title: string }) => {
     return (
         <>
             <div className="flex justify-center ">

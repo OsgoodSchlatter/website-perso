@@ -3,13 +3,13 @@ import "katex/dist/katex.min.css";
 import Latex from "react-latex-next";
 import 'katex/dist/katex.min.css';
 
-const Radio = ({ postID }: { postID: string }) => {
+const Radio = ({ title }: { title: string }) => {
     return (
         <>
             <div className="flex justify-center m-2">
                 <div className="max-w-4xl">
                     <HeaderCategory
-                        name={"Radioactivity"}
+                        name={title}
                         date={"02/10/2023"}
                         back={`/physics/`}
                     />

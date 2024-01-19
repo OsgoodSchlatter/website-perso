@@ -1,11 +1,11 @@
 import React from "react";
 import { HeaderCategory } from "../../../Single/HeaderCategory";
 
-const Tuto = () => {
+const Tuto = ({ title }: { title: string }) => {
     return (
         <div className="flex justify-center ">
             <div className="p-4 max-w-4xl">
-                <HeaderCategory name={"tuto"} date={"2024"} back={`/cs/`} />
+                <HeaderCategory name={title} date={"2024"} back={`/cs/`} />
                 <div className="mt-2">
                     <div className="font-bold text-3xl">
                         1 - RESSOURCES:

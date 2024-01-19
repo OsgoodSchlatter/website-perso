@@ -3,6 +3,7 @@ import SchroEq from "./PhysicsPosts/SchroEq";
 import Battery from "./PhysicsPosts/Battery_Fuel_Cell";
 import Neutronics from "./PhysicsPosts/Neutronics";
 import Radio from "./PhysicsPosts/Radioactivity";
+import DIY from "./PhysicsPosts/DIY"
 import { useParams } from "react-router-dom";
 
 
@@ -32,6 +33,12 @@ export const blogPosts = {
         title: "Neutronics",
         content: Neutronics,
     },
+    "6": {
+        id: 6,
+        date: "19/01/2024",
+        title: "DIY",
+        content: DIY,
+    },
 };
 
 export const Physics = () => (
@@ -50,6 +57,6 @@ export const PhysicsPosts = () => {
         return <div>Loading...</div>;
     }
 
-    return <Component postID={postID!} />;
+    return <Component title={post.title} />;
 };
 

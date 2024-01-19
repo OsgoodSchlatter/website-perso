@@ -122,13 +122,13 @@ const fuelCellData: (string | JSX.Element | JSX.Element[])[][] = [[
   "Development",
 ]];
 
-const Battery_Fuel_Cell = () => {
+const Battery_Fuel_Cell = ({ title }: { title: string }) => {
   return (
     <>
       <div className="flex justify-center m-2">
         <div className="w-full sm:w-2/3 md:w-2/3 lg:max-w-4xl xl:max-w-5xl mx-4">
           <HeaderCategory
-            name={"Battery and Hydrogen"}
+            name={title}
             date={"16/10/2023"}
             back={`/physics/`}
           />

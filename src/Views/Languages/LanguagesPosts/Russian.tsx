@@ -2,13 +2,13 @@ import { HeaderCategory } from "../../../Single/HeaderCategory";
 
 
 
-export const Russian = ({ postID }: { postID: string }) => {
+export const Russian = ({ title }: { title: string }) => {
     return (
         <>
             <div className="flex justify-center m-2">
                 <div className="max-w-4xl">
                     <HeaderCategory
-                        name={"Russian 🇷🇺"}
+                        name={title}
                         date={"09/08/2023"}
                         back={`/languages/`}
                     />

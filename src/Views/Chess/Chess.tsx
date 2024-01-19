@@ -69,7 +69,7 @@ export const Chess = () => {
         </div>
       </div>
       <div>
-        <Header name={"chess"} posts={0} />
+        <Header name={"Chess"} posts={0} />
       </div>
 
 

@@ -14,7 +14,7 @@ export const Books = () => {
       <div className="flex justify-center ">
         <div className="max-w-4xl">
           <HeaderCategory
-            name={"Books I recommend"}
+            name={"Books"}
             date={"2023"}
             back={`/home/`}
           />

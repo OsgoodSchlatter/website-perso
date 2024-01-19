@@ -4,13 +4,13 @@ import React from "react";
 import Latex from "react-latex-next";
 import "katex/dist/katex.min.css";
 
-const PianoSongs = ({ postID }: { postID: string }) => {
+const PianoSongs = ({ title }: { title: string }) => {
   return (
     <>
       <div className="flex justify-center ">
         <div className="max-w-4xl">
           <HeaderCategory
-            name={"List of piano songs I play"}
+            name={title}
             date={"06/05/2023"}
             back={`/piano/`}
           />

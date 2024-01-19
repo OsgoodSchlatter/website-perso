@@ -2,7 +2,7 @@
 
 import { HeaderCategory } from "../../../Single/HeaderCategory";
 
-export const Anglet = ({ postID }: { postID: string }) => {
+export const Anglet = ({ title }: { title: string }) => {
     return (
         <>
             <div className="flex justify-center ">

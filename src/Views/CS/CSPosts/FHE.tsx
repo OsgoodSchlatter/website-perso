@@ -7,13 +7,13 @@ import sub from "../sub.png";
 import Latex from "react-latex-next";
 
 
-const FHE = ({ postID }: { postID: string }) => {
+const FHE = ({ title }: { title: string }) => {
   return (
     <>
       <div className="flex justify-center ">
         <div className="max-w-2xl">
           <HeaderCategory
-            name={"Fully Homomorphic Encryption Tool"}
+            name={title}
             date={"19/03/2023"}
             back={`/cs/`}
           />

@@ -24,7 +24,7 @@ export const ClimatePosts = () => {
     return <div>Loading...</div>;
   }
 
-  return <Component postID={postID!} dataArray={generalArray} />;
+  return <Component dataArray={generalArray} title={post.title} />;
 };
 
 

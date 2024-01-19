@@ -63,13 +63,13 @@ const LineWithCurvedLine = () => {
 
 
 
-const SchroEq = ({ postID }: { postID: string }) => {
+const SchroEq = ({ title }: { title: string }) => {
     return (
         <>
             <div className="flex justify-center">
                 <div className="w-full sm:w-2/3 md:w-2/3 lg:max-w-2xl xl:max-w-2xl mx-4">
                     <HeaderCategory
-                        name={"Quantum Mechanics"}
+                        name={title}
                         date={"19/03/2023"}
                         back={`/physics/`}
                     />

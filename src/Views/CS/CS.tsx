@@ -40,7 +40,7 @@ export const CSPosts = () => {
     return <div>Loading...</div>;
   }
 
-  return <Component postID={postID!} />;
+  return <Component title={post.title} />;
 };
 
 
