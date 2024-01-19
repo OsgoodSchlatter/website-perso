@@ -1,7 +1,7 @@
 export const Tableau = ({ content, title, headers }: { content: (string | JSX.Element | JSX.Element[])[][], title: string, headers: string[] }) => {
 
     return (
-        <div className="my-20 justify-center">
+        <div className="mt-5 justify-center">
             <div className="font-bold text-xl mb-3 underline">{title}</div>
             <div className="overflow-x-auto">
                 <div className={`grid grid-cols-${content[1].length % 2 == 1 ? content[1].length : content[1].length + 1} gap-1`}>
