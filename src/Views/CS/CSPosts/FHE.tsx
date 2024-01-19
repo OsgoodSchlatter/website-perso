@@ -1,4 +1,4 @@
-import { HeaderCategory } from "../../../../Single/HeaderCategory";
+import { HeaderCategory } from "../../../Single/HeaderCategory";
 import "katex/dist/katex.min.css";
 import add from "../../../../img/add.png";
 import division from "../../../../img/division.png";

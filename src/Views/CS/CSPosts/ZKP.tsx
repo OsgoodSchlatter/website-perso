@@ -1,5 +1,5 @@
 import React from "react";
-import { HeaderCategory } from "../../../../Single/HeaderCategory";
+import { HeaderCategory } from "../../../Single/HeaderCategory";
 
 const ZKP = () => {
   return (
