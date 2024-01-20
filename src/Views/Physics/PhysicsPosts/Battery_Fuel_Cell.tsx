@@ -4,7 +4,43 @@ import Latex from "react-latex-next";
 import "katex/dist/katex.min.css";
 import { Tableau } from "../../../Single/Tableau";
 import pem from "./pem.png"
+import leadacid from "./leadacid.png"
+import { Title2 } from "../../../Single/Styles";
+
 const batteryData: (string)[][] = [
+  [
+    "Li-ion",
+    "4000",
+    "500",
+  ],
+  [
+    "Lead-acid",
+    "800",
+    "100",
+  ],
+  [
+    "NaS",
+    "4500",
+    "450",
+  ],
+  [
+    "Zebra",
+    "4500",
+    "450",
+  ],
+  [
+    "Vanadium",
+    "20 years",
+    "450",
+  ],
+  [
+    "Zn/Be",
+    "4500",
+    "650",
+  ],
+];
+
+const LithitumData: (string)[][] = [
   [
     "LCO",
     "Li Co Oxide",
@@ -71,6 +107,8 @@ const CO2 = <Latex>{"$CO_2$"}</Latex>;
 const CH4 = <Latex>{"$CH_4$"}</Latex>;
 
 const reaction = <Latex>{"$2H_2 + O_2 \\rightarrow 2H_2O + heat + electrical \\ energy $"}</Latex>;
+const reactionLeadAcid = <Latex>{"$Pb(s) + PbO_2(s) + 2H_2OSO_4(aq) \\rightarrow 2PbSO_4(s) + 2H_2O $"}</Latex>;
+
 
 const combinedLatex = [Li2CO3, K2CO3, Na2CO3];
 const combinedLatex2 = [Zr02, Y2O3];
@@ -134,8 +172,14 @@ const Battery_Fuel_Cell = ({ title, date }: { title: string, date: string }) => 
           />
           [Disclaimer]: Most of the content on this page comes from the course of Didier Dalmazzonne, although I may have added other information on top.
           <div className="font-bold text-3xl mt-8 mb-3">Battery overview </div>
+          First battery created by Volta (1782).
+          <Title2 text="Lead-acid battery"></Title2>
+          Invented by Gaston Planté in 1859, represents 80% of installed capacities.
+          <img src={leadacid} width="500" alt="" />
+          <div>Balance: {reactionLeadAcid}</div>
+          <Tableau content={batteryData} headers={["Battery type", "Nb of cycles (at 100% discharge)", "Cost: e/kWh",]} title={"Comparison of battery technologies"} />
 
-          <Tableau content={batteryData} headers={["Battery type", "Cathode", "Anode", "Cell Voltage", "Cost", "Energy Density", "Cycle Life", "Discharge Rate"]} title={"Battery: Lithium-ion technologies"} />
+          <Tableau content={LithitumData} headers={["Battery type", "Cathode", "Anode", "Cell Voltage", "Cost", "Energy Density", "Cycle Life", "Discharge Rate"]} title={"Battery: Lithium-ion technologies"} />
           <div className="font-bold text-3xl mt-8 mb-3">Hydrogen overview </div>
 
           <div className="font-bold text-xl mb-3 underline">Hydrogen today: </div>
