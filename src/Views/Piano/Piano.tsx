@@ -3,6 +3,7 @@ import { ListOfPostsHeader } from "../../Single/ListOfPostsHeader";
 
 import PianoSongs from "./PianoPosts/PianoSongs";
 import { useParams } from "react-router-dom";
+import PianoChords from "./PianoPosts/PianoChords";
 
 export const blogPosts = {
   "1": {
@@ -10,6 +11,12 @@ export const blogPosts = {
     date: "02/05/2023",
     title: "Piano Songs",
     content: PianoSongs,
+  },
+  "2": {
+    id: 2,
+    date: "02/05/2023",
+    title: "Chords of songs",
+    content: PianoChords,
   },
 };
 
