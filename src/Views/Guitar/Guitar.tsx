@@ -3,6 +3,8 @@ import { ListOfPostsHeader } from "../../Single/ListOfPostsHeader";
 
 import { useParams } from "react-router-dom";
 import { GuitarSongs } from "./GuitarPosts/GuitarSongs";
+import { Scales } from "./GuitarPosts/Scales";
+
 
 export const blogPosts = {
   "1": {
@@ -10,6 +12,12 @@ export const blogPosts = {
     date: "10/08/2023",
     title: "Guitar Songs",
     content: GuitarSongs,
+  },
+  "2": {
+    id: 2,
+    date: "2024",
+    title: "Guitar Scales",
+    content: Scales,
   },
 };
 
