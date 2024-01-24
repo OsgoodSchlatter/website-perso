@@ -13,7 +13,7 @@ export const Scales = ({ title, date }: { title: string, date: string }) => {
 
 
     const notes = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#"];
-    const stringOfNote = ["E", "A", "D", "G", "B", "E"];
+    const stringOfNote = ["E", "B", "G", "D", "A", "E"];
 
     function generateNoteFromString(startNote: string) {
         const startIndex = notes.indexOf(startNote);
@@ -25,7 +25,7 @@ export const Scales = ({ title, date }: { title: string, date: string }) => {
 
         // Generate the sequence of notes
         const sequence = [];
-        for (let i = startIndex; i < startIndex + 16; i++) {
+        for (let i = startIndex + 1; i < startIndex + 16; i++) {
             sequence.push(notes[i]);
         }
         return sequence;
@@ -49,8 +49,8 @@ export const Scales = ({ title, date }: { title: string, date: string }) => {
     }
 
     const guitarNeck = [];
+    const noindex = [0, 16, 32, 48, 64];
     const circles = [34, 36, 38, 40, 46];
-
     const doubleCircles = [11, 59];
     const minor = [2, 1, 2, 2, 1, 2, 2];
     const major = [2, 2, 1, 2, 2, 2, 1];
@@ -61,7 +61,6 @@ export const Scales = ({ title, date }: { title: string, date: string }) => {
     const allGuitarNeckNotes = ([] as string[]).concat(
         ...stringOfNote.map((note) => generateNoteFromString(note))
     );
-    // Example usage:
 
     for (let index = 0; index < 8 * 5; index++) {
         guitarNeck.push(
@@ -72,14 +71,25 @@ export const Scales = ({ title, date }: { title: string, date: string }) => {
                 }
                 {
                     doubleCircles.includes(2 * index + 1) ?
-                        <div className="absolute top-full w-4 h-4 bg-slate-500 transform ml-[88px] rounded-full transform ml-[10px] mt-[-6px] z-10" />
+                        <div className="absolute top-full w-4 h-4 bg-slate-500 transform ml-[88px] rounded-full transform ml-[10px] mt-[-6px] z-20" />
                         : null
                 }
 
+
                 <div className="grid grid-flow-row-dense grid-cols-2 gap-x-1 gap-y-1">
-                    <div className="bg-slate-200 text-slate-400">{showNotes ? allGuitarNeckNotes[2 * index] : "."}</div>
-                    <div className="bg-slate-200 text-slate-400">{showNotes ? allGuitarNeckNotes[2 * index + 1] : "."}</div>
+
+                    <div className="bg-slate-200 text-slate-400">{"."}</div>
+                    <div className="bg-slate-200 text-slate-400">{"."}</div>
                 </div>
+                {showNotes ? (
+
+                    <div className="absolute ml-4 top-full grid grid-flow-row-dense grid-cols-2 gap-x-10 gap-y-2 z-10" style={{ top: '-12px' }}>
+                        <div className="text-slate-400 w-6 h-fit rounded-full bg-red-200 text-sm">{allGuitarNeckNotes[2 * index]}</div>
+                        <div className="text-slate-400 w-6 h-fit rounded-full bg-red-200 text-sm">{allGuitarNeckNotes[2 * index + 1]}</div>
+                    </div>
+
+                ) : null}
+
 
             </div >
         );
@@ -117,7 +127,7 @@ export const Scales = ({ title, date }: { title: string, date: string }) => {
 
                         </div>
                         <div className="overflow-x-auto">
-                            <div className="grid grid-flow-row-dense grid-cols-8 grid-rows-5 gap-x-1 gap-y-1">
+                            <div className="mt-4 grid grid-flow-row-dense grid-cols-8 grid-rows-5 gap-x-1 gap-y-1">
                                 {guitarNeck}
                             </div>
                         </div>
