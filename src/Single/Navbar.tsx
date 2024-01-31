@@ -64,7 +64,7 @@ export const Navbar = () => {
           >
             {" "}
             <Tooltip2 text="Website CO2">
-              <a href="https://www.websitecarbon.com/website/osgood-pro/">
+              <a className="text-black" href="https://www.websitecarbon.com/website/osgood-pro/">
                 {" "}
                 0.08 gCO2eq
               </a>

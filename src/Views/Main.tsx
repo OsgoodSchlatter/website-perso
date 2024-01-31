@@ -15,6 +15,7 @@ import { Languages, LanguagesPosts } from "./Languages/Languages";
 import { Publications } from "./Publi/Publications";
 import { PubliPosts } from "./Publi/PublicationsPosts";
 import { Recruiter } from "./Recruiter/Recruiter";
+import { DIYPosts } from "./Physics/PhysicsPosts/DIY";
 
 
 
@@ -33,6 +34,7 @@ export const Main = () => {
         <Route path="/books" element={<Books />} />
         <Route path="/physics/*" element={<Physics />} />
         <Route path="/physics/:postID" element={<PhysicsPosts />} />
+        <Route path="/physics/DIY/:postID" element={<DIYPosts />} />
         <Route path="/piano" element={<Piano />} />
         <Route path="/piano/:postID" element={<PianoPosts />} />
         <Route path="/cs/*" element={<CS />} />

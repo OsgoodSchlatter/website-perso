@@ -9,7 +9,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
   zIndex: {
     1: 1,
     2: 2,

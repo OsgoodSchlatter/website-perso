@@ -1,41 +1,44 @@
-import { HeaderCategory } from "../../../Single/HeaderCategory"
-import { Title1 } from "../../../Single/Styles";
-import diy from "./diy-hydrogen2.png"
-
-const DIY = ({ title, date }: { title: string, date: string }) => {
-    return (
-        <>
-            <div className="flex justify-center m-2">
-                <div className="w-full sm:w-2/3 md:w-2/3 lg:max-w-4xl xl:max-w-5xl mx-4">
-                    <HeaderCategory
-                        name={title}
-                        date={date}
-                        back={`/physics/`}
-                    />
-                    <Title1 text="Hydrogen Generator" />
-                    <a href="https://youtu.be/zrnLRDMs94c?si=dSoyjsgjuIQ9-yBy">
-                        <img src={diy} className="px-2 border-b-2" width="300" alt="Image" />
-                    </a>
-                    List of items:
-                    <ul className="list-disc ml-6">
-                        <li>Hermetic jar ✅ </li>
-                        <li>Nails ✅</li>
-                        <li>Battery (6V) ✅ </li>
-                        <li>Copper wires ✅</li>
-                        <li>Water ✅</li>
-                        <li>Solder iron ✅</li>
-                        <li>Tin ✅</li>
-                        <li>Driller ❌</li>
-                        <li>Potassium hydroxyde ❌</li>
-                        <li>2 handles ❌</li>
-                        <li>Tubes ❌</li>
+import { ListOfPostsHeader } from "../../../Single/ListOfPostsHeader";
+import { useParams } from "react-router-dom";
+import Electrolysis from "./Electrolysis";
+import Geiger from "./Geiger";
 
 
-                    </ul>
-                </div>
-            </div>
+export const blogPosts = {
+    "1": {
+        id: 1,
+        date: "2024",
+        title: "Electrolysis",
+        content: Electrolysis,
+    },
+    "2": {
+        id: 2,
+        date: "2024",
+        title: "Geiger Counter",
+        content: Geiger,
+    },
 
-        </>
-    )
-}
+};
+
+const DIY = () => (
+
+    <ListOfPostsHeader topic="DIY" route="physics/DIY" blogPosts={blogPosts} />
+
+);
+
 export default DIY;
+
+export const DIYPosts = () => {
+    const { postID } = useParams<{ postID: string }>();
+
+    const post = blogPosts[postID as keyof typeof blogPosts];
+    const Component = post ? post.content : null;
+
+    if (!Component) {
+        return <div>Loading...</div>;
+    }
+
+    return <Component title={post.title} date={post.date} />;
+};
+
+

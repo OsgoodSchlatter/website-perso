@@ -5,13 +5,13 @@ import { Main } from "./Views/Main";
 
 function App() {
   return (
-    <>
+    <div className="app-container">
       <Navbar />
-      <div>
+      <div className="content">
         <hr />
         <Main />
       </div>
-    </>
+    </div>
   );
 }
 

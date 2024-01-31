@@ -21,9 +21,9 @@ export const Pages = new Map<string, string>([
 
 export const Home = () => {
   return (
-    <div className="flex justify-center">
+    <div className="flex bg-white justify-center">
       <div className="w-3/4 items-center">
-        <div className="p-10 font-bold text-4xl text-center"> Topics</div>
+        <div className="p-10 font-bold text-4xl text-center"> topics</div>
 
         <div className="border-b-2 border-blue-500 rounded" />
         <div className="flex flex-wrap justify-evenly p-10 font-bold">
@@ -45,7 +45,7 @@ export const Home = () => {
         </div>
         <div className=" border-b-2 border-blue-500 rounded" />
         <div className="mt-8 text-center">
-          
+
         </div>
         <div className="fixed bottom-4 right-4 text-gray-500 text-sm">
           made with love by Eloi and chatgpt
