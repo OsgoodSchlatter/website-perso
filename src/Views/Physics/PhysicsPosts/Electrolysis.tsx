@@ -1,6 +1,25 @@
+import Foldable from "../../../Single/Foldable";
 import { HeaderCategory } from "../../../Single/HeaderCategory"
 import { Title1 } from "../../../Single/Styles";
 import diy from "./diy-hydrogen2.png"
+
+const ListOfItems = () => (
+    < div >
+        < ul className="list-disc ml-6" >
+            <li>Hermetic jar ✅ </li>
+            <li>Nails ✅</li>
+            <li>Battery (6V) ✅ </li>
+            <li>Copper wires ✅</li>
+            <li>Water ✅</li>
+            <li>Solder iron ✅</li>
+            <li>Tin ✅</li>
+            <li>Driller ❌</li>
+            <li>Potassium hydroxyde ❌</li>
+            <li>2 handles ❌</li>
+            <li>Tubes ❌</li>
+        </ul >
+    </div >
+)
 
 
 const Electrolysis = ({ title, date }: { title: string, date: string }) => {
@@ -18,31 +37,8 @@ const Electrolysis = ({ title, date }: { title: string, date: string }) => {
                         <img src={diy} className="px-2 border-b-2" width="300" alt="Image" />
                     </a>
 
-                    <div className="collapse bg-base-200">
-                        <input type="checkbox" />
-                        <div className="collapse-title text-xl font-medium">
-                            Click me to show/hide content
-                        </div>
-                        <div className="collapse-content">
-                            <p>hello</p>
-                        </div>
-                    </div>
-                    List of items:
-                    <ul className="list-disc ml-6">
-                        <li>Hermetic jar ✅ </li>
-                        <li>Nails ✅</li>
-                        <li>Battery (6V) ✅ </li>
-                        <li>Copper wires ✅</li>
-                        <li>Water ✅</li>
-                        <li>Solder iron ✅</li>
-                        <li>Tin ✅</li>
-                        <li>Driller ❌</li>
-                        <li>Potassium hydroxyde ❌</li>
-                        <li>2 handles ❌</li>
-                        <li>Tubes ❌</li>
+                    <Foldable title="List of items" content={<ListOfItems />}></Foldable>
 
-
-                    </ul>
                 </div>
             </div>
 
