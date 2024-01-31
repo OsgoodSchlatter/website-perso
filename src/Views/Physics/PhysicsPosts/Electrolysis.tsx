@@ -13,10 +13,9 @@ const ListOfItems = () => (
             <li>Water ✅</li>
             <li>Solder iron ✅</li>
             <li>Tin ✅</li>
-            <li>Driller ❌</li>
+            <li>Driller ✅</li>
+            <li>Tubes ✅</li>
             <li>Potassium hydroxyde ❌</li>
-            <li>2 handles ❌</li>
-            <li>Tubes ❌</li>
         </ul >
     </div >
 )
