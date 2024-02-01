@@ -70,11 +70,11 @@ export default function ModalIngredient({
                   >
                     Pick an ingredient
                   </Dialog.Title>
-                  <div className="flex-col">
-                    <div className="flex m-2 justify-between">
+                  <div className="flex-col items-center">
+                    <div className="flex m-2 justify-between items-center">
                       Name of the ingredient
                       <select
-                        className="rounded-md p-2 border border-transparent"
+                        className="rounded-md p-2 border border-transparent bg-white"
                         onChange={(el) => {
                           setIngr({
                             ...ingr,
@@ -111,13 +111,13 @@ export default function ModalIngredient({
                       </select>
                     </div>
 
-                    <div className="flex m-2 justify-between">
+                    <div className="flex m-2 justify-between items-center">
                       Value (g)
                       <input
                         id="value"
                         type="number"
                         placeholder={onEdit ? _ingr?.value.toString() : "0"}
-                        className="ml-[92px] bg-slate-200"
+                        className="ml-[92px] bg-slate-200 rounded p-1"
                         onChange={(el) =>
                           setIngr({
                             ...ingr,
