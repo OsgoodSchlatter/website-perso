@@ -47,7 +47,7 @@ export const Chess = () => {
       <div className='border border-gray-200'>
         <div className='p-2 grid grid-cols-2 gap-2'>
           <div className='col-start-1 col-end-2 cold-span-2'>
-            <h2 className='lg:flex items-center'> Lichess ELO of: <div className='bg-red-200 ml-1 p-1 rounded-xl'>osgood_schlatter16</div> </h2>
+            <h2 className='sm:flex items-center'> Lichess ELO of: <div className='bg-red-200 ml-1 p-1 rounded-xl w-fit'>osgood_schlatter16</div> </h2>
             {loading ? (
               <p>Loading...</p>
             ) : (
