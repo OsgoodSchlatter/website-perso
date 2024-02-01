@@ -1,78 +1,93 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import cheerio from 'cheerio';
-import { Header } from '../../Single/Header';
-import { BsArrowReturnRight } from 'react-icons/bs';
+import { forceLink } from 'd3';
+
+
+interface RatingRecord {
+  points: number[][];
+  name: string;
+  // Add more properties as needed based on the actual structure of the rating history record
+}
 
 export const Chess = () => {
-  const [blitzRating, setBlitzRating] = useState<string | null>(null);
-  const [bulletRating, setBulletRating] = useState<string | null>(null);
-  const [problemRating, setProblemRating] = useState<string | null>(null);
+  const [eloHistory, setEloHistory] = useState([]);
+  const [eloHistoryOsgood, setEloHistoryOsgood] = useState([]);
 
+  const [loading, setLoading] = useState(true);
+  const [name, setName] = useState("")
 
-
-  const scrapeRating = async (chessType: string): Promise<string | null> => {
-    try {
-      const url = 'https://lichess.org/@/Osgood_Schlatter16';
-      const response = await axios.get(url);
-      const black = response.data.paginator.currentPageResults[0].players.black;
-      const white = response.data.paginator.currentPageResults[0].players.white;
-      console.log(response.data);
-
-      if (chessType === "Blitz") {
-        if (white.userId == "osgood_schlatter16") {
-          return white.rating;
-        }
-        else {
-          return black.rating;
-        }
-      }
-      else if (chessType === "Puzzles") {
-        return " ";
-      }
-      else return " ";
-    } catch (error) {
-      console.error('Error:', error);
-      return null;
-    }
+  const handleInputChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+    setName(event.target.value);
   };
 
   useEffect(() => {
-    async function fetchRatings() {
-      const newBlitzRating = await scrapeRating("Blitz");
-      setBlitzRating(newBlitzRating);
-
-      const newBulletRating = await scrapeRating("Bullet");
-      setBulletRating(newBulletRating);
-
-      const newProblemRating = await scrapeRating("Puzzles");
-      setProblemRating(newProblemRating);
-    }
-
-    // Fetch initial rating
-    fetchRatings();
-
-    // Update rating every 10 minutes
-    const intervalId = setInterval(fetchRatings, 10 * 60 * 1000);
-
-    return () => {
-      // Clean up the interval when the component unmounts
-      clearInterval(intervalId);
+    const fetchEloHistory = async (name: string) => {
+      try {
+        const responseOsgood = await axios.get(`https://lichess.org/api/user/osgood_schlatter16/rating-history`);
+        const nonEmptyDataOsgood = responseOsgood.data.filter((item: { points: string | any[]; }) => item.points.length > 0);
+        setEloHistoryOsgood(nonEmptyDataOsgood);
+        const response = await axios.get(`https://lichess.org/api/user/${name}/rating-history`);
+        const nonEmptyData = response.data.filter((item: { points: string | any[]; }) => item.points.length > 0);
+        setEloHistory(nonEmptyData);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching ELO history:', error);
+        setLoading(false);
+      }
     };
-  }, []);
+    fetchEloHistory(name);
+  }, [name]); // Add name as a dependency to re-fetch data when it changes
+
 
   return (
-    <div>
-      <div className='flex pl-2 pt-2'>
-        <div>Live lichess rating:
-          <a className='m-2 bg-red-200 p-1 rounded-lg' href="https://lichess.org/@/Osgood_Schlatter16">Blitz: {blitzRating}</a>
-        </div>
-      </div>
-      <div>
-        <Header name={"Chess"} posts={0} />
-      </div>
+    <div className='p-2 grid grid-cols-2 gap-2'>
+      <div className='col-start-1 col-end-2 cold-span-2'>
 
+        <h2 className='flex items-center'>Live Lichess ELO for player: <div className='bg-red-200 ml-1 p-1 rounded-xl'>osgood_schlatter16</div> </h2>
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          <ul className='p-2'>
+            {eloHistoryOsgood.map((record: RatingRecord, index: number) => (
+              <li className='flex' key={index}>
 
+                {record.name}, {record.points[record.points.length - 1][0]},
+                <div className='bg-green-100 w-fit ml-2 rounded'>
+                  {record.points[record.points.length - 1][3]}
+                </div>
+
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+      <div className='col-start-2 col-end-3 cold-span-2'>
+        Compare with player:  <input
+          type="text"
+          value={name}
+          onChange={handleInputChange}
+          placeholder="Type something..."
+          className='bg-slate-100 rounded'
+        />
+        <p>You typed: {name}</p>
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          <ul className='p-2'>
+            {eloHistory.map((record: RatingRecord, index: number) => (
+              <li className='flex' key={index}>
+
+                {record.name}, {record.points[record.points.length - 1][0]},
+                <div className='bg-green-100 w-fit ml-2 rounded'>
+                  {record.points[record.points.length - 1][3]}
+                </div>
+
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
   );
 };
+
