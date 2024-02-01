@@ -38,18 +38,7 @@
 }
 
 /* App.css */
-.app-container {
-  height: 100vh; /* 100% of the viewport height */
-  width: 100vw; /* 100% of the viewport width */
-  overflow: hidden; /* Hide overflow if needed */
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
-}
 
 .content {
-  height: calc(
-    100vh - 50px
-  ); /* Adjust height as needed, considering the Navbar height */
-  overflow-y: auto; /* Add vertical scrollbar if content overflows */
-  /* You can adjust other styles for the content as needed */
+ 
 }

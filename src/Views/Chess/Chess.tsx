@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { forceLink } from 'd3';
+import { SiLichess } from "react-icons/si";
+
 
 
 interface RatingRecord {
@@ -40,52 +41,58 @@ export const Chess = () => {
 
 
   return (
-    <div className='p-2 grid grid-cols-2 gap-2'>
-      <div className='col-start-1 col-end-2 cold-span-2'>
+    <div className='p-2'>
+      <SiLichess />
 
-        <h2 className='flex items-center'>Live Lichess ELO for player: <div className='bg-red-200 ml-1 p-1 rounded-xl'>osgood_schlatter16</div> </h2>
-        {loading ? (
-          <p>Loading...</p>
-        ) : (
-          <ul className='p-2'>
-            {eloHistoryOsgood.map((record: RatingRecord, index: number) => (
-              <li className='flex' key={index}>
+      <div className='border border-gray-200'>
+        <div className='p-2 grid grid-cols-2 gap-2'>
+          <div className='col-start-1 col-end-2 cold-span-2'>
+            <h2 className='lg:flex items-center'> Lichess ELO of: <div className='bg-red-200 ml-1 p-1 rounded-xl'>osgood_schlatter16</div> </h2>
+            {loading ? (
+              <p>Loading...</p>
+            ) : (
+              <ul className='p-2'>
+                {eloHistoryOsgood.map((record: RatingRecord, index: number) => (
+                  <li className='flex' key={index}>
 
-                {record.name}, {record.points[record.points.length - 1][0]},
-                <div className='bg-green-100 w-fit ml-2 rounded'>
-                  {record.points[record.points.length - 1][3]}
-                </div>
+                    {record.name}, {record.points[record.points.length - 1][0]},
+                    <div className='bg-green-100 w-fit ml-2 rounded'>
+                      {record.points[record.points.length - 1][3]}
+                    </div>
 
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-      <div className='col-start-2 col-end-3 cold-span-2'>
-        Compare with player:  <input
-          type="text"
-          value={name}
-          onChange={handleInputChange}
-          placeholder="Type something..."
-          className='bg-slate-100 rounded'
-        />
-        <p>You typed: {name}</p>
-        {loading ? (
-          <p>Loading...</p>
-        ) : (
-          <ul className='p-2'>
-            {eloHistory.map((record: RatingRecord, index: number) => (
-              <li className='flex' key={index}>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+          <div className='col-start-2 col-end-3 cold-span-2'>
+            <div className='p-1'>
+              Compare with player:  <input
+                type="text"
+                value={name}
+                onChange={handleInputChange}
+                placeholder="Type something..."
+                className='bg-slate-100 rounded'
+              />
+            </div>
+            {loading ? (
+              <p>Loading...</p>
+            ) : (
+              <ul className='p-2'>
+                {eloHistory.map((record: RatingRecord, index: number) => (
+                  <li className='flex' key={index}>
 
-                {record.name}, {record.points[record.points.length - 1][0]},
-                <div className='bg-green-100 w-fit ml-2 rounded'>
-                  {record.points[record.points.length - 1][3]}
-                </div>
+                    {record.name}, {record.points[record.points.length - 1][0]},
+                    <div className='bg-green-100 w-fit ml-2 rounded'>
+                      {record.points[record.points.length - 1][3]}
+                    </div>
 
-              </li>
-            ))}
-          </ul>
-        )}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
