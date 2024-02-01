@@ -6,8 +6,9 @@ import ModalIngredient from "../../Single/ModalIngredient";
 import ComputeResult, { MapIngredient } from "../../Single/ModalComputeResult";
 import { BsFillTrashFill } from "react-icons/bs";
 import InfoCarbonModal from "../../Single/ModalInfoCarbon";
+import { HeaderCategory } from "../../Single/HeaderCategory";
 
-export const DisplayIngredients = () => {
+const DisplayIngredients = () => {
   const [open, setOpen] = useState(false);
   const [openInfo, setOpenInfo] = useState(false);
 
@@ -153,3 +154,4 @@ export const DisplayIngredients = () => {
     </>
   );
 };
+export default DisplayIngredients;

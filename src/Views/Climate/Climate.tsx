@@ -1,9 +1,9 @@
-
 import { ListOfPostsHeader } from "../../Single/ListOfPostsHeader";
 
 import { useParams } from "react-router-dom";
 import OOM from "./ClimatePosts/OOM";
 import generalArray from "./ClimatePosts/OOMdata";
+import DisplayIngredients from "../CarbonCalculator/DisplayIngredients";
 
 export const blogPosts = {
   "1": {
@@ -11,6 +11,12 @@ export const blogPosts = {
     date: "17/07/2023",
     title: "Orders of magnitude",
     content: OOM,
+  },
+  "2": {
+    id: 2,
+    date: "2024",
+    title: "Carbon Calculator",
+    content: DisplayIngredients,
   },
 };
 
@@ -24,12 +30,11 @@ export const ClimatePosts = () => {
     return <div>Loading...</div>;
   }
 
-  return <Component dataArray={generalArray} title={post.title} date={post.date} />;
+  return (
+    <Component dataArray={generalArray} title={post.title} date={post.date} />
+  );
 };
 
-
 export const Climate = () => (
-
   <ListOfPostsHeader topic="climate" route="climate" blogPosts={blogPosts} />
-
 );

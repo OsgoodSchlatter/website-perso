@@ -1,5 +1,5 @@
 import { Books } from "./Books/Books";
-import { DisplayIngredients } from "./CarbonCalculator/DisplayIngredients";
+import DisplayIngredients from "./CarbonCalculator/DisplayIngredients";
 import { Chess } from "./Chess/Chess";
 import { Climate, ClimatePosts } from "./Climate/Climate";
 import { CS, CSPosts } from "./CS/CS";
