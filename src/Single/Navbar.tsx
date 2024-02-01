@@ -1,10 +1,15 @@
-import { useEffect, useRef, useState } from "react";
+import { RefObject, useEffect, useRef, useState } from "react";
 import { GrGithub } from "react-icons/gr";
 import { GrLinkedin } from "react-icons/gr";
 import { FaBookOpen, FaHome, FaUtensilSpoon } from "react-icons/fa";
 import { BiSpreadsheet } from "react-icons/bi";
 import Pdf from "../../src/CV_EN.pdf";
 import { TfiWrite } from "react-icons/tfi";
+import { IoIosApps } from "react-icons/io";
+import { SiLichess } from "react-icons/si";
+import { GiGuitarHead } from "react-icons/gi";
+
+
 
 import { Link } from "react-router-dom";
 import Tooltip2 from "./Tooltip_chatgpt";
@@ -12,23 +17,50 @@ import GmailButton from "./Gmailbutton";
 
 export const Navbar = () => {
   const [menuVisible, setMenuVisible] = useState(false);
+  const [toolsVisible, setToolsVisible] = useState(false);
+
   const menuRef = useRef<HTMLDivElement>(null);
+  const toolRef = useRef<HTMLDivElement>(null);
+
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const buttonToolRef = useRef<HTMLButtonElement>(null);
 
   const toggleMenu = () => {
     setMenuVisible((prevMenuVisible) => !prevMenuVisible);
   };
 
-  const handleDocumentClick = (e: MouseEvent) => {
-    if (menuRef.current && buttonRef.current && !menuRef.current.contains(e.target as Node) && !buttonRef.current.contains(e.target as Node)) {
+  const toggleTools = () => {
+    setToolsVisible((prevToolsVisible) => !prevToolsVisible);
+  };
+
+  const handleMenuDocumentClick = (e: MouseEvent) => {
+    if (
+      menuRef.current &&
+      buttonRef.current &&
+      !menuRef.current.contains(e.target as Node) &&
+      !buttonRef.current.contains(e.target as Node)
+    ) {
       setMenuVisible(false);
     }
   };
 
+  const handleToolsDocumentClick = (e: MouseEvent) => {
+    if (
+      toolRef.current &&
+      buttonToolRef.current &&
+      !toolRef.current.contains(e.target as Node) &&
+      !buttonToolRef.current.contains(e.target as Node)
+    ) {
+      setToolsVisible(false);
+    }
+  };
+
   useEffect(() => {
-    document.addEventListener("click", handleDocumentClick);
+    document.addEventListener("click", handleMenuDocumentClick);
+    document.addEventListener("click", handleToolsDocumentClick);
     return () => {
-      document.removeEventListener("click", handleDocumentClick);
+      document.removeEventListener("click", handleMenuDocumentClick);
+      document.removeEventListener("click", handleToolsDocumentClick);
     };
   }, []);
 
@@ -46,14 +78,46 @@ export const Navbar = () => {
             </Link>
           </Tooltip2>
 
-          <Tooltip2 text="Meal CO2">
-            <Link
-              to="/carbon"
-              className="text-black md:px-4 p-2 ml-2 flex hover:bg-slate-100 bg-white rounded-lg"
-            >
-              <FaUtensilSpoon size={30} />
-            </Link>
+          <Tooltip2 text="Apps">
+            <button ref={buttonToolRef}
+              onClick={toggleTools}
+              className="text-black md:px-4 p-2 flex hover:bg-slate-100 bg-white rounded-lg ml-2">
+              <IoIosApps size={30} />
+            </button>
           </Tooltip2>
+          {toolsVisible && (
+            <div ref={toolRef}
+              className="absolute bg-white p-2 left-40 shadow-lg px-4 border-2 border-slate-100 rounded-lg text-right"
+              style={{ display: toolsVisible ? "block" : "none" }}
+            >
+              <div className="hover:bg-slate-100 rounded-lg">
+                <Link
+                  to="/chess"
+                  className="text-black md:px-4 p-2 flex hover:bg-slate-100 bg-white rounded-lg"
+                >
+                  <SiLichess />
+                </Link>
+              </div>
+              <div className="hover:bg-slate-100 rounded-lg mt-2">
+                <Link
+                  to="/carbon"
+                  className="text-black md:px-4 p-2 flex hover:bg-slate-100 bg-white rounded-lg"
+                >
+                  <FaUtensilSpoon />
+                </Link>
+              </div>
+              <div className="hover:bg-slate-100 rounded-lg mt-2">
+                <Link
+                  to="/guitar/2"
+                  className="text-black md:px-4 p-2 flex hover:bg-slate-100 bg-white rounded-lg"
+                >
+                  <GiGuitarHead />
+                </Link>
+              </div>
+
+            </div>
+
+          )}
         </div>
         <div className="flex items-center">
           <div

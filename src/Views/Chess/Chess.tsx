@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { SiLichess } from "react-icons/si";
-
-
-
 interface RatingRecord {
   points: number[][];
   name: string;
@@ -42,8 +38,6 @@ export const Chess = () => {
 
   return (
     <div className='p-2'>
-      <SiLichess />
-
       <div className='border border-gray-200'>
         <div className='p-2 grid grid-cols-2 gap-2'>
           <div className='col-start-1 col-end-2 cold-span-2'>
