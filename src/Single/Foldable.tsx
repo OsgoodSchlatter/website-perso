@@ -2,9 +2,9 @@
 
 const Foldable = ({ title, content }: { title: string, content: JSX.Element }) => {
     return (
-        <div className="collapse mb-20">
+        <div className="collapse">
             <input type="checkbox" />
-            <div className="collapse-title text-xl font-medium">
+            <div className="collapse-title text-lg font-medium">
                 {title}
             </div>
             <div className="collapse-content">

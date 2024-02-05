@@ -173,7 +173,7 @@ const Battery_Fuel_Cell = ({ title, date }: { title: string, date: string }) => 
           [Disclaimer]: Most of the content on this page comes from the course of Didier Dalmazzonne, although I may have added other information on top.
           <div className="font-bold text-3xl mt-8 mb-3">Battery overview </div>
           First battery created by Volta (1782).
-          <Title2 text="Lead-acid battery"></Title2>
+          <Title2 text="Lead-acid battery" mt={0}></Title2>
           Invented by Gaston Planté in 1859, represents 80% of installed capacities.
           <img src={leadacid} width="500" alt="" />
           <div>Balance: {reactionLeadAcid}</div>

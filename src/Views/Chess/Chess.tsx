@@ -73,12 +73,13 @@ export const Chess = () => {
                 </div>
                 <div className='col-start-2 col-end-3 cold-span-2'>
                   <div className='p-1'>
-                    Compare with player:  <input
+                    Compare with player:
+                    <input
                       type="text"
                       value={name}
                       onChange={handleInputChange}
-                      placeholder="Type something..."
-                      className='bg-slate-100 rounded'
+                      placeholder="Type... "
+                      className='ml-2 bg-slate-100 rounded w-20'
                     />
                   </div>
                   {loading ? (
