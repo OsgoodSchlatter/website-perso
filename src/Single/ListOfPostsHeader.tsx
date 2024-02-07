@@ -7,23 +7,24 @@ import { HeaderPostTrips } from "./HeaderPostTrips";
 export const ListOfPostsHeader = ({
     topic,
     blogPosts,
-    route,
     trips,
+    main,
 }: {
-    topic: string;
+    topic?: string;
     blogPosts?: any;
-    route: string;
+
     trips?: boolean;
+    main?: boolean;
 }) => {
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
-    const handleClick = (postId: number) => {
-        navigate(`/${route}/${postId}`);
-    };
+    // const handleClick = (postId: number, route: string) => {
+    //     navigate(`/${route}/${postId}`);
+    // };
     return (
         <>
-            <Header name={topic} posts={Object.keys(blogPosts).length} />
+            {main ?? <Header name={topic ?? ""} posts={Object.keys(blogPosts).length} />}
             <div className="flex justify-center py-12 m-2">
                 <div className="grid grid-rows-4 gap-4">
                     {trips ? Object.keys(blogPosts).map((postID) => {
@@ -33,7 +34,7 @@ export const ListOfPostsHeader = ({
                             <HeaderPostTrips
                                 choice={post.id}
                                 date={post.date}
-                                handleClick={handleClick}
+
                                 title={post.title}
                                 CO2={post.C02}
                             />
@@ -45,8 +46,10 @@ export const ListOfPostsHeader = ({
                             <HeaderPost
                                 choice={post.id}
                                 date={post.date}
-                                handleClick={handleClick}
                                 title={post.title}
+                                category={post.category}
+                                route={post.route}
+                                main={main?.valueOf()}
                             />
                         );
                     })}

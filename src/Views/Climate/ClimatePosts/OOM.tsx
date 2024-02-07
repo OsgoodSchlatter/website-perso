@@ -16,6 +16,8 @@ type OOMProps = {
   date: string
 };
 
+
+
 const OOM = ({ dataArray, title }: OOMProps) => {
   const [myElecArray, setMyElecArray] = useState<ElecArray[]>(dataArray[0]);
   const [myGHGArray, setMyGHGArray] = useState<GHGArray[]>(dataArray[1]);

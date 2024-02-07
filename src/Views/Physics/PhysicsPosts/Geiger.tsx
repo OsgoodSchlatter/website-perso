@@ -1,5 +1,5 @@
 import { HeaderCategory } from "../../../Single/HeaderCategory"
-import { Title1 } from "../../../Single/Styles";
+import { Title1, Title2 } from "../../../Single/Styles";
 import diy from "./diy-hydrogen2.png"
 
 
@@ -13,8 +13,8 @@ const Electrolysis = ({ title, date }: { title: string, date: string }) => {
                         date={date}
                         back={`/physics/6`}
                     />
-                    <Title1 text="Geiger Counter" />
-
+                    <Title1 text="How to build a Geiger Counter" />
+                    <Title2 text="Electronic parts" mt={0} />
                 </div>
             </div>
 

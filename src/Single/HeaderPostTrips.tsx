@@ -1,24 +1,30 @@
+import { useNavigate } from "react-router-dom";
 
 export const HeaderPostTrips = ({
     date,
     title,
     choice,
     CO2,
-    handleClick,
+
 }: {
     date: string;
     title: string;
     choice: number;
     CO2: number;
-    handleClick: (arg0: number) => any;
+
 }) => {
+    const navigate = useNavigate();
+
+    const handleClick = (postId: number, route: string) => {
+        navigate(`/${route}/${postId}`);
+    };
     return (
         <div>
             <div>
                 {date}
                 <div
                     className="text-4xl text-blue-700 hover:underline"
-                    onClick={() => handleClick(choice)}
+                    onClick={() => handleClick(choice, "trips")}
                 >
                     {title}
                 </div>

@@ -8,8 +8,8 @@ import { useParams } from "react-router-dom";
 
 
 export const blogPosts = {
-    "1": {
-        id: 1,
+    "4": {
+        id: 4,
         date: "02/10/2023",
         title: "Radioactivity",
         content: Radio,
@@ -21,8 +21,8 @@ export const blogPosts = {
         title: "Quantum Mechanics",
         content: SchroEq,
     },
-    "4": {
-        id: 4,
+    "1": {
+        id: 1,
         date: "16/10/2023",
         title: "Battery and hydrogen",
         content: Battery,
@@ -33,8 +33,8 @@ export const blogPosts = {
         title: "Neutronics",
         content: Neutronics,
     },
-    "6": {
-        id: 6,
+    "2": {
+        id: 2,
         date: "19/01/2024",
         title: "DIY",
         content: DIY,
