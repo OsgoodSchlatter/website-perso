@@ -10,8 +10,9 @@ import { ListOfPostsHeader } from './ListOfPostsHeader';
 export const CategoryDisplayer = ({ blogPosts, route }: { blogPosts: BlogPostType[], route: string }) => {
 
     const toDisplayBlogPosts = Object.values(blogPosts)
-        .filter((post: BlogPostType) => post.category === Pages2.get(route));
-
+        .filter((post: BlogPostType) => (
+            post.category === Pages2.get(route)
+        ));
     return (
         <ListOfPostsHeader
             topic={toDisplayBlogPosts[0].category}
@@ -26,9 +27,6 @@ export const PostDisplayer = ({ blogPosts, route }: { blogPosts: BlogPostType[],
 
     const toDisplayBlogPosts = Object.values(blogPosts)
         .filter((post: BlogPostType) => post.category === Pages2.get(route));
-
-    console.log(postID);
-
 
     // Find the post with the matching ID
     const post: BlogPostType | undefined = toDisplayBlogPosts.find(post => post.id === parseInt(postID ?? ''));
