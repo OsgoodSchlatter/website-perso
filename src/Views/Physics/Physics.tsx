@@ -43,7 +43,7 @@ export const blogPosts = {
 
 export const Physics = () => (
 
-    <ListOfPostsHeader topic="physics" route="physics" blogPosts={blogPosts} />
+    <ListOfPostsHeader topic="physics" blogPosts={blogPosts} />
 
 );
 

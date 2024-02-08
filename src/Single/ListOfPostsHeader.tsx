@@ -12,7 +12,6 @@ export const ListOfPostsHeader = ({
 }: {
     topic?: string;
     blogPosts?: any;
-
     trips?: boolean;
     main?: boolean;
 }) => {
@@ -30,11 +29,9 @@ export const ListOfPostsHeader = ({
                     {trips ? Object.keys(blogPosts).map((postID) => {
                         const post = blogPosts[postID as keyof typeof blogPosts];
                         return (
-
                             <HeaderPostTrips
                                 choice={post.id}
                                 date={post.date}
-
                                 title={post.title}
                                 CO2={post.C02}
                             />
@@ -42,7 +39,6 @@ export const ListOfPostsHeader = ({
                     }) : Object.keys(blogPosts).map((postID) => {
                         const post = blogPosts[postID as keyof typeof blogPosts];
                         return (
-
                             <HeaderPost
                                 choice={post.id}
                                 date={post.date}

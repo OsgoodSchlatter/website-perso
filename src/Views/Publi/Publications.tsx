@@ -5,7 +5,7 @@ import { ListOfPostsHeader } from "../../Single/ListOfPostsHeader";
 
 export const Publications = () => (
 
-    <ListOfPostsHeader topic="Publications and talks" route="publi_talks" blogPosts={blogPosts} />
+    <ListOfPostsHeader topic="Publications and talks" blogPosts={blogPosts} />
 
 );
 

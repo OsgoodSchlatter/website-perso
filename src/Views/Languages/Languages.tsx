@@ -29,7 +29,7 @@ export const LanguagesPosts = () => {
 
 export const Languages = () => (
 
-    <ListOfPostsHeader topic="languages" route="languages" blogPosts={blogPosts} />
+    <ListOfPostsHeader topic="languages" blogPosts={blogPosts} />
 
 );
 
