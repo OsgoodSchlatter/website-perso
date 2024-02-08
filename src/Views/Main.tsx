@@ -181,7 +181,8 @@ export const Main = () => {
         {Array.from(Pages2.entries()).map(([route, value]) => (
           <>
             <Route key={route} path={`/${route}`} element={<CategoryDisplayer blogPosts={blogPostsArray} route={route} />} />
-            <Route key={route} path={`/${route}/*`} element={<PostDisplayer blogPosts={blogPostsArray} route={route} />} />
+            <Route key={route} path={`/${route}/:postID`} element={<PostDisplayer blogPosts={blogPostsArray} route={route} />} />
+
           </>
         ))}
         {/* <Route path="/physics/DIY/:postID" element={<DIYPosts />} /> */}
