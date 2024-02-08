@@ -248,7 +248,7 @@ export const TripsPosts = () => {
 export const Trips = () => {
   return (
     <>
-      <ListOfPostsHeader topic="trips" route="trips" blogPosts={blogPosts} trips={true} />
+      <ListOfPostsHeader topic="trips" blogPosts={blogPosts} trips={true} />
 
     </>
   );

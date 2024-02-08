@@ -37,7 +37,7 @@ export const GuitarPosts = () => {
 export const Guitar = () => {
   return (
     <>
-      <ListOfPostsHeader topic="guitar" route="guitar" blogPosts={blogPosts} />
+      <ListOfPostsHeader topic="guitar" blogPosts={blogPosts} />
     </>
   );
 };

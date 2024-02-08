@@ -100,7 +100,7 @@ export const Navbar = () => {
               </div>
               <div className="hover:bg-slate-100 rounded-lg mt-2">
                 <Link
-                  to="/carbon"
+                  to="/climate/2"
                   className="text-black md:px-4 p-2 flex hover:bg-slate-100 bg-white rounded-lg"
                 >
                   <FaUtensilSpoon />

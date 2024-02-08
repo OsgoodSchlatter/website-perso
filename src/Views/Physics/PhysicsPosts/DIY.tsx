@@ -22,7 +22,7 @@ export const blogPosts = {
 
 const DIY = () => (
 
-    <ListOfPostsHeader topic="DIY" route="physics/DIY" blogPosts={blogPosts} />
+    <ListOfPostsHeader topic="DIY" blogPosts={blogPosts} />
 
 );
 

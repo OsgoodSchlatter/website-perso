@@ -11,7 +11,7 @@ type GHGArray = [string, number, number, number];
 type generalArray = [ElecArray[], GHGArray[]]
 
 type OOMProps = {
-  dataArray: generalArray;
+  dataArray?: generalArray;
   title: string;
   date: string
 };
@@ -19,8 +19,8 @@ type OOMProps = {
 
 
 const OOM = ({ dataArray, title }: OOMProps) => {
-  const [myElecArray, setMyElecArray] = useState<ElecArray[]>(dataArray[0]);
-  const [myGHGArray, setMyGHGArray] = useState<GHGArray[]>(dataArray[1]);
+  const [myElecArray, setMyElecArray] = useState<ElecArray[]>(dataArray?.[0] || []);
+  const [myGHGArray, setMyGHGArray] = useState<GHGArray[]>(dataArray?.[1] || []);
 
 
   const [sortOrder, setSortOrder] = useState<
