@@ -46,7 +46,6 @@ export enum BlogCategory {
   Sport = "sport",
   Books = "books",
   Trips = "trips",
-  DIY = "diy",
   Publi = "publi",
 
 }
@@ -64,7 +63,6 @@ export enum BlogRoute {
   Sport = "sport",
   Books = "books",
   Trips = "trips",
-  DIY = "DIY",
   Publi = "publi_talks",
 
 }
@@ -176,26 +174,18 @@ export const blogPostsArray: BlogPostType[] = [
   },
   {
     id: 5,
-    date: "19/01/2024",
-    title: "DIY",
-    category: BlogCategory.Physics,
-    route: BlogRoute.Physics,
-    content: DIY,
-  },
-  {
-    id: 1,
     date: "2024",
     title: "Electrolyser",
-    category: BlogCategory.DIY,
-    route: BlogRoute.DIY,
+    category: BlogCategory.Physics,
+    route: BlogRoute.Physics,
     content: Electrolysis,
   },
   {
-    id: 2,
+    id: 6,
     date: "2024",
     title: "Geiger Muller",
-    category: BlogCategory.DIY,
-    route: BlogRoute.DIY,
+    category: BlogCategory.Physics,
+    route: BlogRoute.Physics,
     content: Geiger,
   },
   {
@@ -266,7 +256,6 @@ export const Pages2 = new Map<string, string>([
   ["sport", "sport"],
   ["books", "books"],
   ["physics", "physics"],
-  ["physics/DIY", "diy"],
   ["climate", "climate"],
   ["languages", "languages"],
   ["publi_talks", "publi"],
@@ -282,10 +271,8 @@ export const Main = () => {
           <>
             <Route key={route} path={`/${route}`} element={<CategoryDisplayer blogPosts={blogPostsArray} route={route} />} />
             <Route key={route} path={`/${route}/:postID`} element={<PostDisplayer blogPosts={blogPostsArray} route={route} />} />
-
           </>
         ))}
-        {/* <Route path="/physics/DIY/:postID" element={<DIYPosts />} /> */}
       </Routes>
     </>
   );
