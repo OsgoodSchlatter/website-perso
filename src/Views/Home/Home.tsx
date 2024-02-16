@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ListOfPostsHeader } from "../../Single/ListOfPostsHeader";
-import { blogPostsArray } from "../Main";
+import { blogPostsArray } from "./Data";
 import "./Home.css";
 
 // todo, do a struct that contains each article in one subdomain
@@ -18,14 +19,14 @@ export const Pages = new Map<string, string>([
   ["/climate", "climate"],
   ["/languages", "languages"],
   ["/publi_talks", "publi"],
-
-
 ]);
 
 
 
 
+
 export const Home = () => {
+  const [sort, setSort] = useState("");
   return (
     <div className="flex bg-white justify-center">
       <div className="w-3/4 items-center">
@@ -37,11 +38,11 @@ export const Home = () => {
             .map(([key, value]) => (
               <div className="px-4 pt-1 hover:underline">
                 {value == "climate" ? (
-                  <Link to={key} className="text-green-400 text-lg my-link">
+                  <Link to={key} className="text-green-400 text-lg my-link" onClick={() => setSort(value)}>
                     {value}
                   </Link>
                 ) : (
-                  <Link to={key} className="text-black text-lg my-link">
+                  <Link to={key} className="text-black text-lg my-link" onClick={() => setSort(value)}>
                     {value}
                   </Link>
                 )}
