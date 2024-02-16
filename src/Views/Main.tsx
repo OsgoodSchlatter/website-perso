@@ -23,6 +23,7 @@ import { Trips } from "./Trips/Trips";
 import { Sport } from "./Sport/Sport";
 import Electrolysis from "./Physics/PhysicsPosts/Electrolysis";
 import Geiger from "./Physics/PhysicsPosts/Geiger";
+import { Books } from "./Books/Books";
 
 
 export type BlogPostType = {
@@ -75,6 +76,14 @@ export type ContentProps = {
 
 
 export const blogPostsArray: BlogPostType[] = [
+  {
+    id: 1,
+    date: "2023",
+    title: "Books",
+    category: BlogCategory.Books,
+    route: BlogRoute.Books,
+    content: Books,
+  },
   {
     id: 1,
     date: "17/07/2023",

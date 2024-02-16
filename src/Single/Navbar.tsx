@@ -92,7 +92,7 @@ export const Navbar = () => {
             >
               <div className="hover:bg-slate-100 rounded-lg">
                 <Link
-                  to="/chess"
+                  to="/chess/1"
                   className="text-black md:px-4 p-2 flex hover:bg-slate-100 bg-white rounded-lg"
                 >
                   <SiLichess />

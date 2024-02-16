@@ -29,7 +29,7 @@ export const Home = () => {
   return (
     <div className="flex bg-white justify-center">
       <div className="w-3/4 items-center">
-        <div className="p-10 font-bold text-4xl text-center" >topics</div>
+        <div className="p-10 font-bold text-4xl text-center" >Osgood's website</div>
         <div className="border-b-2 border-blue-500 rounded" />
         <div className="flex flex-wrap justify-evenly p-10 font-bold">
           {Array.from(Pages.entries())

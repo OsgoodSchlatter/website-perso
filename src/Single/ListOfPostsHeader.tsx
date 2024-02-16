@@ -16,11 +16,6 @@ export const ListOfPostsHeader = ({
     main?: boolean;
 }) => {
 
-    // const navigate = useNavigate();
-
-    // const handleClick = (postId: number, route: string) => {
-    //     navigate(`/${route}/${postId}`);
-    // };
     return (
         <>
             {main ?? <Header name={topic ?? ""} posts={Object.keys(blogPosts).length} />}
@@ -36,7 +31,7 @@ export const ListOfPostsHeader = ({
                                 CO2={post.C02}
                             />
                         );
-                    }) : Object.keys(blogPosts).map((postID) => {
+                    }) : Object.keys(blogPosts).sort(() => Math.random() - 0.5).map((postID) => {
                         const post = blogPosts[postID as keyof typeof blogPosts];
                         return (
                             <HeaderPost
