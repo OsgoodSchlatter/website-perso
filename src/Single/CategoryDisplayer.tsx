@@ -3,10 +3,6 @@ import { Pages2 } from '../Views/Main';
 import { BlogPostType } from '../Views/Home/Data';
 import { ListOfPostsHeader } from './ListOfPostsHeader';
 
-
-
-
-// ce truc doit prendre en argument la route et afficher les posts en lien avec la route 
 export const CategoryDisplayer = ({ blogPosts, route }: { blogPosts: BlogPostType[], route: string }) => {
 
     const toDisplayBlogPosts = Object.values(blogPosts)

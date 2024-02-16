@@ -43,7 +43,6 @@ export enum BlogCategory {
     Books = "books",
     Trips = "trips",
     Publi = "publi",
-
 }
 
 

@@ -19,7 +19,7 @@ export const ListOfPostsHeader = ({
     return (
         <>
             {main ?? <Header name={topic ?? ""} posts={Object.keys(blogPosts).length} />}
-            <div className="flex justify-center py-12 m-2">
+            <div className={main?.valueOf() ? "flex py-12 m-2" : "flex py-12 m-2 justify-center"}>
                 <div className="grid grid-rows-4 gap-4">
                     {trips ? Object.keys(blogPosts).map((postID) => {
                         const post = blogPosts[postID as keyof typeof blogPosts];
