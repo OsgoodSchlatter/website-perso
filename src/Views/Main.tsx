@@ -2,8 +2,8 @@
 import DisplayIngredients from "./CarbonCalculator/DisplayIngredients";
 import { Home } from "./Home/Home";
 import { Route, Routes } from "react-router-dom";
-import { PubliArticle, PubliPosts } from "./Publi/PublicationsPosts";
-import DIY, { DIYPosts } from "./Physics/PhysicsPosts/DIY";
+import { PubliArticle } from "./Publi/PublicationsPosts";
+import DIY from "./Physics/PhysicsPosts/DIY";
 import { CategoryDisplayer, PostDisplayer } from "../Single/CategoryDisplayer";
 import OOM from "./Climate/ClimatePosts/OOM";
 import FHE from "./CS/CSPosts/FHE";
@@ -21,6 +21,8 @@ import { Chess } from "./Chess/Chess";
 import { Maths } from "./Maths/Maths";
 import { Trips } from "./Trips/Trips";
 import { Sport } from "./Sport/Sport";
+import Electrolysis from "./Physics/PhysicsPosts/Electrolysis";
+import Geiger from "./Physics/PhysicsPosts/Geiger";
 
 
 export type BlogPostType = {
@@ -44,6 +46,8 @@ export enum BlogCategory {
   Sport = "sport",
   Books = "books",
   Trips = "trips",
+  DIY = "diy",
+  Publi = "publi",
 
 }
 
@@ -59,7 +63,9 @@ export enum BlogRoute {
   Maths = "maths",
   Sport = "sport",
   Books = "books",
-  Trips = "trips"
+  Trips = "trips",
+  DIY = "DIY",
+  Publi = "publi_talks",
 
 }
 
@@ -67,6 +73,8 @@ export type ContentProps = {
   title: string;
   date: string;
 };
+
+
 
 export const blogPostsArray: BlogPostType[] = [
   {
@@ -176,6 +184,22 @@ export const blogPostsArray: BlogPostType[] = [
   },
   {
     id: 1,
+    date: "2024",
+    title: "Electrolyser",
+    category: BlogCategory.DIY,
+    route: BlogRoute.DIY,
+    content: Electrolysis,
+  },
+  {
+    id: 2,
+    date: "2024",
+    title: "Geiger Muller",
+    category: BlogCategory.DIY,
+    route: BlogRoute.DIY,
+    content: Geiger,
+  },
+  {
+    id: 1,
     date: "02/05/2023",
     title: "Piano Songs",
     category: BlogCategory.Piano,
@@ -222,6 +246,14 @@ export const blogPostsArray: BlogPostType[] = [
     route: BlogRoute.Sport,
     content: Sport,
   },
+  {
+    id: 1,
+    date: "2023",
+    title: "Publications",
+    category: BlogCategory.Publi,
+    route: BlogRoute.Publi,
+    content: PubliArticle,
+  },
 ];
 
 export const Pages2 = new Map<string, string>([
@@ -234,9 +266,10 @@ export const Pages2 = new Map<string, string>([
   ["sport", "sport"],
   ["books", "books"],
   ["physics", "physics"],
+  ["physics/DIY", "diy"],
   ["climate", "climate"],
   ["languages", "languages"],
-
+  ["publi_talks", "publi"],
 ]);
 
 export const Main = () => {

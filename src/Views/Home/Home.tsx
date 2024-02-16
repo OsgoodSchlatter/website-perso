@@ -17,23 +17,12 @@ export const Pages = new Map<string, string>([
   ["/physics", "physics"],
   ["/climate", "climate"],
   ["/languages", "languages"],
+  ["/publi_talks", "publi"],
+
 
 ]);
 
-export const Pages2 = new Map<string, string>([
-  ["chess", "chess"],
-  ["trips", "trips"],
-  ["maths", "maths"],
-  ["guitar", "guitar"],
-  ["cs", "computer science"],
-  ["piano", "piano"],
-  ["sport", "sport"],
-  ["books", "books"],
-  ["physics", "physics"],
-  ["climate", "climate"],
-  ["languages", "languages"],
 
-]);
 
 
 export const Home = () => {

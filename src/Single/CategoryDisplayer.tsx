@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { Pages2 } from '../Views/Home/Home';
+import { Pages2 } from '../Views/Main';
 import { BlogPostType } from '../Views/Main';
 import { ListOfPostsHeader } from './ListOfPostsHeader';
 
