@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import { Header } from "./Header";
 import { HeaderPost } from "./HeaderPost";
 import { HeaderPostTrips } from "./HeaderPostTrips";
@@ -19,8 +18,8 @@ export const ListOfPostsHeader = ({
     return (
         <>
             {main ?? <Header name={topic ?? ""} posts={Object.keys(blogPosts).length} />}
-            <div className={main?.valueOf() ? "flex py-12 m-2" : "flex py-12 m-2 justify-center"}>
-                <div className="grid grid-rows-4 gap-4">
+            <div className={main?.valueOf() ? "flex m-2" : "flex m-2 justify-center"}>
+                <div className="grid grid-rows-4 gap-1">
                     {trips ? Object.keys(blogPosts).map((postID) => {
                         const post = blogPosts[postID as keyof typeof blogPosts];
                         return (

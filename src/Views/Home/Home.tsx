@@ -48,15 +48,15 @@ export const Home = () => {
         </div>
         <div className="border-b-2 border-blue-500 rounded" />
         <div className="justify-between flex items-align">
+          <div className="font-bold rounded w-fit p-1 mt-2">
+            {value}
+          </div>
           <button
             type="button"
             className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 p-1 mt-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
             onClick={() => { (setSortedPosts(blogPostsArray)); setValue("") }}>
-            Reset
+            Display all
           </button>
-          <div className="font-bold rounded w-fit p-1 mt-2">
-            {value}
-          </div>
         </div>
         <ListOfPostsHeader main={true} blogPosts={sortedPosts} />
         <div className="fixed bottom-4 right-4 text-gray-500 text-sm">
