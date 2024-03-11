@@ -74,7 +74,7 @@ const SchroEq = ({ title, date }: { title: string, date: string }) => {
                         back={`/physics/`}
                     />
                     <div className="my-20 justify-center m-2">
-                        <div className="flex  font-bold text-xl">
+                        <div className="flex font-bold text-xl">
                             <div className="font-bold text-xl underline">Hamiltonian </div>
                             <div className="px-2">
                                 <Latex>{"$\\hat{H}$"}</Latex>

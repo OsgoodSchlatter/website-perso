@@ -6,7 +6,7 @@ import 'katex/dist/katex.min.css';
 const Radio = ({ title, date }: { title: string, date: string }) => {
     return (
         <>
-            <div className="flex justify-center m-2">
+            <div className="flex justify-center m-2 ">
                 <div className="max-w-4xl">
                     <HeaderCategory
                         name={title}
