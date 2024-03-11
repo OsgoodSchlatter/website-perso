@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { ListOfPostsHeader } from "../../Single/ListOfPostsHeader";
 import { BlogCategory, blogPostsArray, BlogPostType } from "./Data";
 import "./Home.css";

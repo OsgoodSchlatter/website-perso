@@ -218,7 +218,7 @@ export const blogPostsArray: BlogPostType[] = [
     {
         id: 1,
         date: "2024",
-        title: "Maths",
+        title: "Calculus",
         category: BlogCategory.Maths,
         route: BlogRoute.Maths,
         content: Maths,
