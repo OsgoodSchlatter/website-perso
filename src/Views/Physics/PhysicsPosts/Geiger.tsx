@@ -1,24 +1,120 @@
-import { HeaderCategory } from "../../../Single/HeaderCategory"
+import { HeaderCategory } from "../../../Single/HeaderCategory";
 import { Title1, Title2 } from "../../../Single/Styles";
-import diy from "./diy-hydrogen2.png"
-
-
-const Electrolysis = ({ title, date }: { title: string, date: string }) => {
+import boost from "./Ideal-Boost-Converter-Circuit.jpg"
+const Electrolysis = ({ title, date }: { title: string; date: string }) => {
     return (
         <>
             <div className="flex justify-center m-2">
-                <div className="w-full sm:w-2/3 md:w-2/3 lg:max-w-4xl xl:max-w-5xl mx-4">
-                    <HeaderCategory
-                        name={title}
-                        date={date}
-                        back={`/physics/6`}
-                    />
+                <div className="w-full sm:w-2/3 md:w-2/3 lg:max-w-4xl xl:max- xl mx-4">
+                    <HeaderCategory name={title} date={date} back={`/physics/`} />
                     <Title1 text="How to build a Geiger Counter" />
-                    <Title2 text="Electronic parts" mt={0} />
+                    <div className="font-bold text-lg">1 - Electronic part</div>
+                    <div className="underline mt-2">1.1 - General structure</div>
+                    <div className="mt-4 grid grid-cols-15 sm:text-sm font-semibold items-center text-center border-2 p-2 border-300-slate rounded flex-wrap">
+                        <div className="text-black col-start-1 col-end-3 cold-span-2">
+                            {" "}
+                            1. Boost Converter
+                        </div>
+                        <div className="  text-black col-start-3 col-end-4 cold-span-1  ">
+                            {" "}
+                            {"=>"}{" "}
+                        </div>
+                        <div className="  text-black col-start-4 col-end-6 cold-span-2  ">
+                            {" "}
+                            2. GM Tube
+                        </div>
+                        <div className="  text-black col-start-6 col-end-7 cold-span-1  ">
+                            {" "}
+                            {"=>"}{" "}
+                        </div>
+                        <div className="  text-black col-start-7 col-end-9 cold-span-2  ">
+                            {" "}
+                            3. Inverter
+                        </div>
+                        <div className="  text-black col-start-9 col-end-10 cold-span-1  ">
+                            {" "}
+                            {"=>"}{" "}
+                        </div>
+
+                        <div className="  text-black col-start-10 col-end-12 cold-span-2  ">
+                            {" "}
+                            4. Pulse stretcher
+                        </div>
+                        <div className="  text-black col-start-12 col-end-13 cold-span-1  ">
+                            {" "}
+                            {"=>"}{" "}
+                        </div>
+
+                        <div className="  text-black col-start-13 col-end-15 cold-span-2   ">
+                            {" "}
+                            5. Piezo speaker{" "}
+                        </div>
+                        <div className="  text-black col-start-10 col-end-12 cold-span-2  ">
+                            {" "}
+                            v{" "}
+                        </div>
+
+                        <div className="  text-black col-start-10 col-end-12 cold-span-2  ">
+                            {" "}
+                            6. Filter{" "}
+                        </div>
+                        <div className="  text-black col-start-10 col-end-12 cold-span-2  ">
+                            {" "}
+                            v{" "}
+                        </div>
+                        <div className="  text-black col-start-10 col-end-12 cold-span-2  ">
+                            {" "}
+                            7. Red Pump{" "}
+                        </div>
+                        <div className="text-black col-start-12 col-end-13 cold-span-1  ">
+                            {" "}
+                            {"=>"}{" "}
+                        </div>
+                        <div className="text-black col-start-13 col-end-15 cold-span-2  ">
+                            {" "}
+                            8. Led{" "}
+                        </div>
+                    </div>
+                    <div className="mt-4 font-bold"> Description</div>
+                    <div >
+                        1) Converts low voltage (9V) into high voltage (400V)
+                    </div>
+                    <div>
+                        2) A short current is emitted as soon as a particle interacts with the medium (gaz here), plus the dead-time.
+                    </div>
+                    <div>
+                        3) Converts current into voltage, and inverts it. (i.e. current {"=>"} lower voltage, no current {"=>"} normal voltage)
+                    </div>
+                    <div>
+                        4) Converts brief lowering of voltage into longer one (1,5ms).
+                    </div>
+                    <div>
+                        5) Emits a sound at each particle interaction that is detected.
+                    </div>
+                    <div>
+                        6) Ensures proportionnality between count rate and voltage to feed the led.
+                    </div>
+                    <div>
+                        7) Convert voltage in current
+                    </div>
+                    <div>
+                        8) Emits light
+                    </div>
+                    <div className="underline mt-4">1.2 - High Tension detailed description</div>
+                    <div>
+                        <img src={boost} className="mt-2 border-2 border-300-slate rounded" width="200" alt="Image" />
+                        <div className="mt-2 underline"> fig 2,1: boost converter </div>
+                    </div>
+                    <div>
+                        1) When the switch is closed, the current doesnt feed the diode but remains in the circuit (lower resistance). The coil L accumulates energy under magnetic nature.
+                    </div>
+                    <div>
+                        2) Then when we open the swithc, then the coil, being in series with the generator, releases its magnetic energy. Its electromagnetic force adds up to the generator's and this energy is transfered to the capacitor C.
+                    </div>
+                    <div className="font-bold"> Relation between Vs and Vr</div>
                 </div>
             </div>
-
         </>
-    )
-}
+    );
+};
 export default Electrolysis;
