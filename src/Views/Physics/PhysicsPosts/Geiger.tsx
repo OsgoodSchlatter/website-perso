@@ -1,3 +1,4 @@
+import Latex from "react-latex-next";
 import { HeaderCategory } from "../../../Single/HeaderCategory";
 import { Title1, Title2 } from "../../../Single/Styles";
 import boost from "./Ideal-Boost-Converter-Circuit.jpg"
@@ -102,16 +103,84 @@ const Electrolysis = ({ title, date }: { title: string; date: string }) => {
                     </div>
                     <div className="underline mt-4">1.2 - High Tension detailed description</div>
                     <div>
-                        <img src={boost} className="mt-2 border-2 border-300-slate rounded" width="200" alt="Image" />
-                        <div className="mt-2 underline"> fig 2,1: boost converter </div>
+                        <img src={boost} className="mt-8 ml-4 border-2 border-300-slate rounded" width="200" alt="Image" />
+                        <div className="mt-2 mb-4 ml-4 underline"> fig 2,1: boost converter </div>
                     </div>
                     <div>
-                        1) When the switch is closed, the current doesnt feed the diode but remains in the circuit (lower resistance). The coil L accumulates energy under magnetic nature.
+                        1) When the switch is closed, the current does not feed the diode but remains in the circuit (lower resistance). The coil L accumulates energy under magnetic nature.
                     </div>
                     <div>
-                        2) Then when we open the swithc, then the coil, being in series with the generator, releases its magnetic energy. Its electromagnetic force adds up to the generator's and this energy is transfered to the capacitor C.
+                        2) Then when we open the switch, then the coil, being in series with the generator, releases its magnetic energy. Its electromagnetic force adds up to the generator's and this energy is transfered to the capacitor C.
                     </div>
-                    <div className="font-bold"> Relation between Vs and Vr</div>
+                    <div className="font-bold mt-2"> Relation between Vs and Vr</div>
+                    - When the switch is closed, the current varies this way:
+                    <Latex>
+                        {`$$ V_L =V_{in} = L \\frac{dI_L}{dt} $$`}
+                    </Latex>
+                    <div className="flex flex-wrap text-center items-center">
+                        <div className="pr-2">
+                            At the end of the passing state,
+                        </div>
+                        <div className="pr-2">
+                            <Latex>
+                                {`$$  I_L  $$`}
+                            </Latex>
+                        </div>
+                        <div className="pr-2">
+                            has grown by
+                        </div>
+                        <Latex>
+                            {`$$  \\Delta I_{L_{on}} = \\int_{0}^{T_{on}} \\frac{V_{in} dt}{L} = \\frac{V_{in}T_{on}}{L}$$`}
+                        </Latex>
+                    </div>
+                    - When the switch is open (blocking state), the current going through the coil now runs through the diode. Now,
+                    <Latex>
+                        {`$$ V_{in} = V_L + V_{R} $$`}
+                    </Latex>
+                    <div className="flex items-center flex-wrap">
+                        with   <div className="ml-2 mr-2">
+                            <Latex>
+                                {`$$ V_{R} $$`}
+                            </Latex>
+                        </div>
+                        being the voltage applied on the load R.
+                        <div className=" ml-2 flex flex-wrap text-center items-center">
+                            <div className="pr-2">
+                                We have
+                            </div>
+                            <Latex>
+                                {`$$  V_L = V_{in} - V_R = L \\frac{dI_{off}}{dt}$$`}
+                            </Latex>
+                        </div>
+                    </div>
+                    <div className="flex flex-wrap text-center items-center">
+                        <div className="pr-2">
+                            At the end of the blocking state, we have
+                        </div>
+                        <Latex>
+                            {`$$  \\Delta I_{L_{off}} = \\int_{0}^{T_{off}} \\frac{(V_{in} - V_R)}{L} dt = \\frac{(V_{in} - V_R) T_{off}}{L} $$`}
+                        </Latex>
+                    </div>
+                    In steady-state: the current goes through the coil and is the same at the end of each communication cycle.
+                    <Latex>
+                        {`$$  \\Delta I_{L_{on}} + \\Delta I_{L_{off}} = 0 => \\frac{V_{in} T_{on}}{L} + \\frac{(V_{in} - V_R)T_{off}}{L} =0$$`}
+                    </Latex>
+                    <div className="flex flex-wrap text-center items-center">
+                        <div className="mr-2">
+                            Therefore
+                        </div>
+                        <Latex>
+                            {`$$  V_R = \\frac{V_{in}}{1-D} $$`}
+                        </Latex>
+                        <div className="mr-2">
+                            with</div>
+                        <div className="border b-slate-100 rounded p-1 mb-2">
+                            <Latex>
+                                {`$$  D = \\frac{T_{on}}{T_{on}+T_{off}} $$`}
+                            </Latex>
+                        </div>
+                    </div>
+                    Finally, the boost converter enables us to increase a low continuous voltage (9V) to a higher continuous voltage (400V) by modifiying parameter D.
                 </div>
             </div>
         </>
