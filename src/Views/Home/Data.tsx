@@ -19,6 +19,7 @@ import { PubliArticle } from "../Publi/PublicationsPosts";
 import { Sport } from "../Sport/Sport";
 import { Trips } from "../Trips/Trips";
 import { Books } from "../Books/Books";
+import { Recruiter } from "../Recruiter/Recruiter";
 
 
 export type BlogPostType = {
@@ -43,6 +44,7 @@ export enum BlogCategory {
     Books = "books",
     Trips = "trips",
     Publi = "publi",
+    Recruiter = "recruiter"
 }
 
 
@@ -59,6 +61,7 @@ export enum BlogRoute {
     Books = "books",
     Trips = "trips",
     Publi = "publi_talks",
+    Recruiter = "recruiter",
 
 }
 
@@ -246,6 +249,14 @@ export const blogPostsArray: BlogPostType[] = [
         category: BlogCategory.Publi,
         route: BlogRoute.Publi,
         content: PubliArticle,
+    },
+    {
+        id: 1,
+        date: "2023",
+        title: "Recruiter",
+        category: BlogCategory.Recruiter,
+        route: BlogRoute.Recruiter,
+        content: Recruiter,
     },
 ];
 

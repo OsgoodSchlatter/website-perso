@@ -167,7 +167,7 @@ export const Navbar = () => {
                 </a>
               </div>
               <div className="hover:bg-slate-100 rounded-lg">
-                <Link to="/publi_talks">
+                <Link to="/publi_talks/1">
 
                   <div className="flex p-1 justify-between">
                     <span className="px-2 mt-1 font-bold">Publications</span>{" "}
@@ -189,7 +189,7 @@ export const Navbar = () => {
               </div>
               <div className="rounded-lg hover:bg-slate-100">
 
-                <Link to={"/recruiter"}>
+                <Link to={"/recruiter/1"}>
                   <div className="flex p-1 justify-between">
                     <span className="px-2 mt-1 font-bold">Contact</span>
                     <TfiWrite size={30} />

@@ -16,11 +16,11 @@ export const PubliArticle = ({ title, date }: { title: string, date: string }) =
 
                     <div className="p-4 my-20 justify-center">
                         <div className="flex">
-                            <a href="https://hal.science/hal-04145599/file/Manuscript__trustworthy_auctions_june_th.pdf" className="hover:underline"> <div className="text-xl font-bold">(1) Publication on HAL </div>  <div className="font-bold">Towards trustworthy and privacy preserving decentralized auctions.
-                            </div> Tiphaine Henry, Julien Hatin, Eloi Besnard, Nassim Laga, Walid Gaaloul. 2023. ffhal-04145599f</a>
+                            <a href="https://link.springer.com/article/10.1007/s42786-024-00051-0" className="hover:underline"> <div className="text-xl font-bold">(1) Towards trustworthy and privacy preserving decentralized auctions. </div>  <div className="font-bold">
+                            </div>Henry, T., Hatin, J., Besnard, E. et al. Towards trustworthy and privacy-preserving decentralized auctions. J BANK FINANC TECHNOL (2024). </a>
                         </div>
                         <div className="mt-4 hover:underline">
-                            <a href={Pdf2} target="_blank">  <div className="text-xl font-bold">(2) My Master Thesis </div> <div className="font-bold"> Green Tracking: decentralized and private electricity tokens matching
+                            <a href={Pdf2} target="_blank">  <div className="text-xl font-bold">(2) Green Tracking: decentralized and private electricity tokens matching </div> <div className="font-bold">
                             </div>
                                 Tutors: Antonella DelPozzo, Sara Tucci; Intern: Eloi Besnard. 2023
                             </a>

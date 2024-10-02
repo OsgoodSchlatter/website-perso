@@ -1,5 +1,4 @@
 import { HeaderCategory } from "../../Single/HeaderCategory";
-import Pdf2 from "../../Green_Tracking_Article.pdf";
 
 export const Recruiter = () => {
   return (
