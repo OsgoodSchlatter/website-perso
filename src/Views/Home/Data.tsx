@@ -14,7 +14,7 @@ import Neutronics from "../Physics/PhysicsPosts/Neutronics";
 import Radio from "../Physics/PhysicsPosts/Radioactivity";
 import SchroEq from "../Physics/PhysicsPosts/SchroEq";
 import PianoChords from "../Piano/PianoPosts/PianoChords";
-import PianoSongs from "../Piano/PianoPosts/PianoChords";
+import PianoSongs from "../Piano/PianoPosts/PianoSongs";
 import { PubliArticle } from "../Publi/PublicationsPosts";
 import { Sport } from "../Sport/Sport";
 import { Trips } from "../Trips/Trips";
