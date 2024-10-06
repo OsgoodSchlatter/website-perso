@@ -42,19 +42,20 @@ export const blogPosts = [
     date: "2012",
     title: "Turkey 🇹🇷",
     locations: ["Turkey"],
-    GPS: [39.9334, 32.8597], // Example coordinates for Turkey (Ankara)
+    GPS: [38.41885, 27.12872], // Example coordinates for Turkey (Ankara)
     C02: 1000,
     content: Turkey,
   },
   {
     id: 3,
     date: "2015",
-    title: "Greece 🇬🇷 and Bulgaria 🇧🇬",
+    title: "Greece 🇬🇷 ",
     locations: ["Greece", "Bulgaria"],
     GPS: [37.9838, 23.7275], // Example coordinates for Greece (Athens)
     C02: 600,
     content: Greece,
   },
+
   {
     id: 4,
     date: "2016",
@@ -66,11 +67,11 @@ export const blogPosts = [
   },
   {
     id: 5,
-    date: "2016",
-    title: "USA 🇺🇸 & Canada 🇨🇦",
-    locations: ["USA", "Canada"],
+    date: "2018",
+    title: "San Francisco 🇺🇸 ",
+    locations: ["USA", "San F"],
     GPS: [37.7749, -122.4194], // Example coordinates for USA (San Francisco)
-    C02: 1800,
+    C02: 3000,
     content: USA1,
   },
   {
@@ -85,10 +86,10 @@ export const blogPosts = [
   {
     id: 7,
     date: "2018",
-    title: "USA 🇺🇸",
+    title: "New York City 🇺🇸",
     locations: ["USA"],
     GPS: [40.7128, -74.0060], // Example coordinates for USA (New York City)
-    C02: 3000,
+    C02: 1800,
     content: USA2,
   },
   {
@@ -247,12 +248,146 @@ export const blogPosts = [
   {
     id: 25,
     date: "2023",
-    title: "Sweden 🇸🇪 & Denmark 🇩🇰",
+    title: "Sweden 🇸🇪 ",
     locations: ["Sweden", "Denmark"],
     C02: 60,
     GPS: [59.3293, 18.0686],
     content: SweDen,
   },
+  {
+    id: 26,
+    date: "2023",
+    title: "Uppsala 🇸🇪 ",
+    locations: ["Sweden", "Denmark"],
+    C02: 60,
+    GPS: [59.858, 17.686],
+    content: SweDen,
+  },
+  {
+    id: 26,
+    date: "2023",
+    title: "Denmark 🇩🇰",
+    locations: ["Sweden", "Denmark"],
+    C02: 60,
+    GPS: [55.6, 12.5686],
+    content: SweDen,
+  },
+  // recheck CO2
+  {
+    id: 27,
+    date: "2023",
+    title: "Berlin 🇩🇪",
+    locations: ["Germany", "Berlin"],
+    C02: 60,
+    GPS: [52.520007, 13.404954],
+  },
+  {
+    id: 28,
+    date: "2022",
+    title: "Frankfurt 🇩🇪",
+    locations: ["Germany", "Frankfurt"],
+    C02: 60,
+    GPS: [50.1109221, 8.6821267],
+  },
+  {
+    id: 29,
+    date: "2023",
+    title: "Münster 🇩🇪",
+    locations: ["Germany", "Münster"],
+    C02: 60,
+    GPS: [51.961563, 7.628202],
+  },
+  {
+    id: 30,
+    date: "2023",
+    title: "Amsterdam 🇳🇱",
+    locations: ["Amsterdam", "Netherlands"],
+    C02: 60,
+    GPS: [52.3730796, 4.89],
+  },
+  {
+    id: 31,
+    date: "2023",
+    title: "Den Haag 🇳🇱",
+    locations: ["Den Haag", "Netherlands"],
+    C02: 60,
+    GPS: [52.0799838, 4.3113461],
+  },
+  {
+    id: 32,
+    date: "2024",
+    title: "Milano 🇮🇹",
+    locations: ["Milano", "Italy"],
+    C02: 60,
+    GPS: [45.4654219, 9.1859243],
+  },
+  {
+    id: 33,
+    date: "2024",
+    title: "Venise 🇮🇹",
+    locations: ["Venise", "Italy"],
+    C02: 60,
+    GPS: [45.4408474, 12.3155151],
+  },
+  {
+    id: 34,
+    date: "2024",
+    title: "Porto Venere 🇮🇹",
+    locations: ["Porto Venere", "Italy"],
+    C02: 60,
+    GPS: [44.0519, 9.8352],
+  },
+  {
+    id: 35,
+    date: "2015",
+    title: " Sofia 🇧🇬",
+    locations: ["Sofia", "Bulgaria"],
+    C02: 600,
+    GPS: [42.6977082, 23.3218675],
+  },
+
+  {
+    id: 36,
+    date: "2016",
+    title: " Montreal 🇨🇦",
+    locations: ["Montreal", "Canda"],
+    C02: 1800,
+    GPS: [45.5016889, -73.567256],
+  },
+  {
+    id: 38,
+    date: "2016",
+    title: " Boston 🇺🇸 ",
+    locations: ["Boston", "USA"],
+    C02: 1800,
+    GPS: [42.3600825, - 71.0588801],
+  },
+  {
+    id: 39,
+    date: "2018",
+    title: " Los Angeles 🇺🇸 ",
+    locations: ["Los Angeles", "USA"],
+    C02: 3000,
+    GPS: [34.052234, - 118.243685],
+  },
+  {
+    id: 40,
+    date: "2018",
+    title: " Las Vegas 🇺🇸 ",
+    locations: ["Las Vegas", "USA"],
+    C02: 3000,
+    GPS: [36.169941, -115.139830],
+  },
+  {
+    id: 41,
+    date: "2024",
+    title: "Geneve 🇨🇭",
+    locations: ["Geneve", "Suisse"],
+    C02: 50,
+    GPS: [46.2043907, 6.1431577],
+  }
+
+
 ];
 
 // SVG for red pin
@@ -282,7 +417,7 @@ export const Trips = () => {
       <Header name={"Trips"} posts={1} />
       <div className="flex bg-white justify-center p-2 mt-4 rounded">
         {/* @ts-ignore */}
-        <MapContainer center={[48.505, -3.5]} zoom={10} scrollWheelZoom={false}>
+        <MapContainer center={[47.65, -2.7608]} zoom={5} scrollWheelZoom={false}>
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
@@ -309,6 +444,12 @@ export const Trips = () => {
           <Marker position={[47.65, -2.7608]} icon={createCustomIcon("blue")}>
             <Popup>
               Vannes <br /> My hometown
+            </Popup>
+          </Marker>
+          {/* @ts-ignore */}
+          <Marker position={[48.866669, 2.33333]} icon={createCustomIcon("blue")}>
+            <Popup>
+              Paris <br /> My studies
             </Popup>
           </Marker>
         </MapContainer>
