@@ -1,4 +1,3 @@
-import { useParams } from "react-router-dom";
 import { Annecy } from "./TripsPosts/Annecy";
 import { Biarritz } from "./TripsPosts/Biarritz";
 import { Greece } from "./TripsPosts/Greece";
@@ -24,7 +23,7 @@ import { Albi } from "./TripsPosts/Albi";
 import { BxHayAmst23 } from "./TripsPosts/BxHayAmst23";
 import { Bordeaux } from "./TripsPosts/Bordeaux";
 import { SweDen } from "./TripsPosts/SweDen";
-import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { Header } from "../../Single/Header";
 import L from "leaflet";
 
@@ -292,9 +291,14 @@ export const Trips = () => {
               .map(([key, value]) => (
                 <>
                   {/* @ts-ignore */}
-                  < Marker position={value.GPS} icon={createCustomIcon("blue")} >
+                  < Marker position={value.GPS} icon={createCustomIcon("red")} >
                     <Popup>
-                      {value.title + " - " + value.date}
+
+                      <div className=" font-bold text-lg">
+                        {value.title + " - " + value.date}
+                      </div>
+                      <br /> {value.C02 + " kg CO2eq"}
+
                     </Popup>
                   </Marker>
                 </>
