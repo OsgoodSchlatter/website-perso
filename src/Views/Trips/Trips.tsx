@@ -28,222 +28,233 @@ import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from 'react-leaf
 import { Header } from "../../Single/Header";
 import L from "leaflet";
 
-export const blogPosts = {
-  "1": {
+export const blogPosts = [
+  {
     id: 1,
     date: "2005",
     title: "Tunisia 🇹🇳",
     locations: ["Tunisia"],
+    GPS: [36.47, 10.09],
     C02: 600,
     content: Tunisia,
   },
-  "2": {
+  {
     id: 2,
     date: "2012",
     title: "Turkey 🇹🇷",
     locations: ["Turkey"],
+    GPS: [39.9334, 32.8597], // Example coordinates for Turkey (Ankara)
     C02: 1000,
     content: Turkey,
   },
-
-  "3": {
+  {
     id: 3,
     date: "2015",
     title: "Greece 🇬🇷 and Bulgaria 🇧🇬",
     locations: ["Greece", "Bulgaria"],
+    GPS: [37.9838, 23.7275], // Example coordinates for Greece (Athens)
     C02: 600,
     content: Greece,
   },
-  "4": {
+  {
     id: 4,
     date: "2016",
     title: "Norway 🇳🇴",
     locations: ["Norway"],
+    GPS: [59.9139, 10.7522], // Example coordinates for Norway (Oslo)
     C02: 500,
     content: Norway,
   },
-  "5": {
+  {
     id: 5,
     date: "2016",
     title: "USA 🇺🇸 & Canada 🇨🇦",
     locations: ["USA", "Canada"],
+    GPS: [37.7749, -122.4194], // Example coordinates for USA (San Francisco)
     C02: 1800,
     content: USA1,
   },
-  "6": {
+  {
     id: 6,
     date: "2017",
     title: "Indonesia 🇮🇩",
     locations: ["Indonesia"],
+    GPS: [-6.2088, 106.8456], // Example coordinates for Indonesia (Jakarta)
     C02: 4000,
     content: Indonesia,
   },
-  "7": {
+  {
     id: 7,
     date: "2018",
     title: "USA 🇺🇸",
     locations: ["USA"],
+    GPS: [40.7128, -74.0060], // Example coordinates for USA (New York City)
     C02: 3000,
     content: USA2,
   },
-  "8": {
+  {
     id: 8,
     date: "2019",
     title: "Marseille 🇫🇷",
     locations: ["Marseille", "France"],
+    GPS: [43.2965, 5.3698], // Coordinates for Marseille, France
     C02: 150,
     content: Marseille,
   },
-  "9": {
+  {
     id: 9,
     date: "2019",
     title: "Malaga 🇪🇸",
     locations: ["Malaga", "Spain"],
+    GPS: [36.7213, -4.4214], // Coordinates for Malaga, Spain
     C02: 400,
     content: Malaga,
   },
-  "10": {
+  {
     id: 10,
     date: "2019",
     title: "Mauritius Island 🇲🇺",
     locations: ["Mauritius"],
+    GPS: [-20.3484, 57.5522], // Coordinates for Mauritius Island
     C02: 3100,
     content: Mauritius,
   },
-  "11": {
+  {
     id: 11,
     date: "2019",
     title: "London 🇬🇧",
     locations: ["London", "UK", "Great-Britain", "GB", "Angleterre"],
+    GPS: [51.5074, -0.1278], // Coordinates for London, UK
     C02: 240,
     content: London,
   },
-  "12": {
+  {
     id: 12,
     date: "2019",
     title: "Santorini 🇬🇷",
     locations: ["Greece", "Santorini"],
+    GPS: [36.3932, 25.4615], // Coordinates for Santorini, Greece
     C02: 800,
     content: Santorini,
   },
-  "13": {
+  {
     id: 13,
     date: "2020",
     title: "Annecy 🇫🇷",
     locations: ["Annecy", "France"],
+    GPS: [45.8992, 6.1294], // Coordinates for Annecy, France
     C02: 278,
     content: Annecy,
   },
-  "14": {
+  {
     id: 14,
     date: "2020",
     title: "Royan 🇫🇷",
     locations: ["Royan", "France"],
+    GPS: [45.628, -1.0289],
     C02: 90,
     content: Royan,
   },
-  "15": {
+  {
     id: 15,
     date: "2020",
     title: "Biarritz 🇫🇷 & San Sebastian 🇪🇸",
     locations: ["Biarritz", "France", "San Sebastian", "Spain"],
+    GPS: [43.4832, -1.5586],
     C02: 200,
     content: Biarritz,
   },
-  "16": {
+  {
     id: 16,
     date: "2021",
     title: "Ile d'Yeu 🇫🇷",
     locations: ["Ile d'Yeu", "Yeu", "France"],
+    GPS: [46.7189, -2.3484],
     C02: 10,
     content: Yeu,
   },
-  "17": {
+  {
     id: 17,
     date: "2021",
     title: "Nice 🇫🇷",
     locations: ["Nice", "France"],
+    GPS: [43.7102, 7.2620],
     C02: 50,
     content: Nice,
   },
-  "18": {
+  {
     id: 18,
     date: "2022",
     title: "Luxembourg 🇱🇺, Germany 🇩🇪 & The Netherlands 🇳🇱",
     locations: ["Luxembourg", "Germany", "The Netherlands", "Netherlands"],
+    GPS: [50.8503, 4.3517],
     C02: 20,
     content: LuxGerNeth2022,
   },
-  "19": {
+  {
     id: 19,
     date: "2022",
     title: "Lyon",
     locations: ["Lyon", "France"],
+    GPS: [45.7640, 4.8357],
     C02: 5,
     content: Lyon,
   },
-  "20": {
+  {
     id: 20,
     date: "2022",
     title: "Anglet 🇫🇷 & San Sebastian 🇪🇸",
     locations: ["Anglet", "France", "San Sebastian", "Spain"],
+    GPS: [43.4789, -1.5330],
     C02: 10,
     content: Anglet,
   },
-  "21": {
+  {
     id: 21,
     date: "2022",
     title: "Nice 🇫🇷",
     locations: ["Nice", "France"],
+    GPS: [43.7102, 7.2620],
     C02: 5,
     content: Nice2,
   },
-  "22": {
+  {
     id: 22,
     date: "2023",
     title: "Albi 🇫🇷",
     locations: ["Albi", "France"],
+    GPS: [43.9298, 2.1480],
     C02: 30,
     content: Albi,
   },
-  "23": {
+  {
     id: 23,
     date: "2023",
     title: "Bruxelles 🇧🇪, The Hague 🇳🇱, Amsterdam 🇳🇱",
     locations: ["Bruxelles", "Belgium", "The Hague", "Amsterdam", "Netherlands"],
+    GPS: [50.8503, 4.3517],
     C02: 10,
     content: BxHayAmst23,
   },
-  "24": {
+  {
     id: 24,
     date: "2023",
     title: "Bordeaux 🇫🇷",
-    locations: ["Albi", "France"],
+    locations: ["Bordeaux", "France"],
+    GPS: [44.8378, -0.5792],
     C02: 5,
     content: Bordeaux,
   },
-  "25": {
+  {
     id: 25,
     date: "2023",
     title: "Sweden 🇸🇪 & Denmark 🇩🇰",
     locations: ["Sweden", "Denmark"],
     C02: 60,
+    GPS: [59.3293, 18.0686],
     content: SweDen,
   },
-};
-
-export const TripsPosts = () => {
-  const { postID } = useParams<{ postID: string }>();
-
-  const post = blogPosts[postID as keyof typeof blogPosts];
-  const Component = post ? post.content : null;
-
-  if (!Component) {
-    return <div>Loading...</div>;
-  }
-
-  return <Component title={post.title} date={post.date} />;
-};
+];
 
 // SVG for red pin
 const PinSVG = (color: string) => `
@@ -262,7 +273,7 @@ const createCustomIcon = (color: string) => {
     iconAnchor: [12, 24], // Point of the icon which will correspond to marker's location
     popupAnchor: [0, -24], // Point from which the popup should open relative to the iconAnchor
     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-    shadowSize: [41, 41], // Size of the shadow
+    shadowSize: [20, 20], // Size of the shadow
   });
 };
 
@@ -276,6 +287,20 @@ export const Trips = () => {
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
+          <div className="flex flex-wrap justify-evenly p-10 font-bold">
+            {Array.from(blogPosts.entries())
+              .map(([key, value]) => (
+                <>
+                  {/* @ts-ignore */}
+                  < Marker position={value.GPS} icon={createCustomIcon("blue")} >
+                    <Popup>
+                      {value.title + " - " + value.date}
+                    </Popup>
+                  </Marker>
+                </>
+
+              ))}
+          </div>
           {/* @ts-ignore */}
           <Marker position={[47.65, -2.7608]} icon={createCustomIcon("blue")}>
             <Popup>
@@ -283,7 +308,7 @@ export const Trips = () => {
             </Popup>
           </Marker>
         </MapContainer>
-      </div>
+      </div >
     </>
   );
 };
