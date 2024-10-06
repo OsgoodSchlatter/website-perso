@@ -25,7 +25,6 @@ import { BxHayAmst23 } from "./TripsPosts/BxHayAmst23";
 import { Bordeaux } from "./TripsPosts/Bordeaux";
 import { SweDen } from "./TripsPosts/SweDen";
 import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
 import { Header } from "../../Single/Header";
 import L from "leaflet";
 
