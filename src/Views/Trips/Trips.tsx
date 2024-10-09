@@ -550,7 +550,7 @@ export const Trips = () => {
       <Header name={"Trips"} posts={1} />
       <div className="flex bg-white justify-center p-2 mt-4 rounded">
         {/* @ts-ignore */}
-        <MapContainer center={[47.65, -2.7608]} zoom={5} scrollWheelZoom={false}  >
+        <MapContainer center={[47.65, -2.7608]} zoom={2} scrollWheelZoom={false}  >
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
