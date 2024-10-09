@@ -8,7 +8,7 @@ export const GuitarSongs = ({ title, date }: { title: string, date: string }) =>
                     <HeaderCategory
                         name={title}
                         date={date}
-                        back={`/guitar/`}
+                        back={`/music/`}
                     />
                     <div className="p-4 my-20 justify-center">
                         <div>- 17 going under - Sam Fender</div>

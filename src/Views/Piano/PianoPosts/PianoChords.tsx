@@ -1,8 +1,5 @@
 import { HeaderCategory } from "../../../Single/HeaderCategory";
 import "katex/dist/katex.min.css";
-import React from "react";
-import Latex from "react-latex-next";
-import "katex/dist/katex.min.css";
 
 const PianoSongs = ({ title, date }: { title: string, date: string }) => {
     return (
@@ -12,7 +9,7 @@ const PianoSongs = ({ title, date }: { title: string, date: string }) => {
                     <HeaderCategory
                         name={title}
                         date={date}
-                        back={`/piano/`}
+                        back={`/music/`}
                     />
                     <div className="p-4 my-20 justify-center">
                         <div>

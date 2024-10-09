@@ -12,7 +12,7 @@ const PianoSongs = ({ title, date }: { title: string, date: string }) => {
           <HeaderCategory
             name={title}
             date={date}
-            back={`/piano/`}
+            back={`/music/`}
           />
           <div className="p-4 my-20 justify-center">
             <div>

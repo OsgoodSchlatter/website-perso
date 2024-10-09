@@ -16,7 +16,7 @@ export const blogPosts = {
   "2": {
     id: 2,
     date: "2024",
-    title: "Guitar Scales",
+    title: " Scales",
     content: Scales,
   },
 };
@@ -37,7 +37,7 @@ export const GuitarPosts = () => {
 export const Guitar = () => {
   return (
     <>
-      <ListOfPostsHeader topic="guitar" blogPosts={blogPosts} />
+      <ListOfPostsHeader topic="music" blogPosts={blogPosts} />
     </>
   );
 };

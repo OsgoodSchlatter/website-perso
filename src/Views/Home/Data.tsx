@@ -15,6 +15,8 @@ import Radio from "../Physics/PhysicsPosts/Radioactivity";
 import SchroEq from "../Physics/PhysicsPosts/SchroEq";
 import PianoChords from "../Piano/PianoPosts/PianoChords";
 import PianoSongs from "../Piano/PianoPosts/PianoSongs";
+import { Gigs } from "../Gigs/Gigs";
+
 import { PubliArticle } from "../Publi/PublicationsPosts";
 import { Sport } from "../Sport/Sport";
 import { Trips } from "../Trips/Trips";
@@ -34,10 +36,9 @@ export type BlogPostType = {
 export enum BlogCategory {
     Climate = "climate",
     ComputerScience = "computer science",
-    Guitar = "guitar",
+    Music = "music",
     Languages = "languages",
     Physics = "physics",
-    Piano = "piano",
     Chess = "chess",
     Maths = "maths",
     Sport = "sport",
@@ -51,10 +52,9 @@ export enum BlogCategory {
 export enum BlogRoute {
     Climate = "climate",
     ComputerScience = "cs",
-    Guitar = "guitar",
+    Music = "music",
     Languages = "languages",
     Physics = "physics",
-    Piano = "piano",
     Chess = "chess",
     Maths = "maths",
     Sport = "sport",
@@ -125,17 +125,41 @@ export const blogPostsArray: BlogPostType[] = [
         id: 1,
         date: "10/08/2023",
         title: "Guitar Songs",
-        category: BlogCategory.Guitar,
-        route: BlogRoute.Guitar,
+        category: BlogCategory.Music,
+        route: BlogRoute.Music,
         content: GuitarSongs,
     },
     {
         id: 2,
         date: "2024",
-        title: "Guitar Scales",
-        category: BlogCategory.Guitar,
-        route: BlogRoute.Guitar,
+        title: "Scales",
+        category: BlogCategory.Music,
+        route: BlogRoute.Music,
         content: Scales,
+    },
+    {
+        id: 3,
+        date: "02/05/2023",
+        title: "Piano Songs",
+        category: BlogCategory.Music,
+        route: BlogRoute.Music,
+        content: PianoSongs,
+    },
+    {
+        id: 4,
+        date: "02/05/2023",
+        title: "Chords",
+        category: BlogCategory.Music,
+        route: BlogRoute.Music,
+        content: PianoChords,
+    },
+    {
+        id: 5,
+        date: "2024",
+        title: "Gigs and Concert",
+        category: BlogCategory.Music,
+        route: BlogRoute.Music,
+        content: Gigs,
     },
     {
         id: 1,
@@ -193,22 +217,6 @@ export const blogPostsArray: BlogPostType[] = [
         category: BlogCategory.Physics,
         route: BlogRoute.Physics,
         content: Geiger,
-    },
-    {
-        id: 1,
-        date: "02/05/2023",
-        title: "Piano Songs",
-        category: BlogCategory.Piano,
-        route: BlogRoute.Piano,
-        content: PianoSongs,
-    },
-    {
-        id: 2,
-        date: "02/05/2023",
-        title: "Chords of songs",
-        category: BlogCategory.Piano,
-        route: BlogRoute.Piano,
-        content: PianoChords,
     },
     {
         id: 1,
