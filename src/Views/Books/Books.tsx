@@ -1,33 +1,59 @@
-import { Header } from "../../Single/Header";
 import { HeaderCategory } from "../../Single/HeaderCategory";
 import ptef from "./ptef.jpeg";
+import kafka from "./kafka.jpg"
+import Sidd from "./siddharta.jpg"
+import neutron from "./Neutron_P.jpg"
+import jerusalem from "./jerusalem.jpeg"
+interface BookEntry {
+  title: string;
+  author: string;
+  date: string;
+  comment?: string;
+  pic?: string;
+}
 
-type BooksType = [string, number, string, string];
+const BooksArray: BookEntry[] = [
+  { title: "Plan de Transformation de l'Economie Française ", author: " The Shift Project", date: "2020", pic: ptef, comment: "A book that explains how we can slowly (but steadily) re-plan and shifts our economy towards a more sustainable one" },
+  { title: "Le Procès ", author: " Kafka", date: "2024", pic: kafka, comment: " A book that takes you through an imaginary and helpless trial and fills you with frustration. " },
+  { title: "Siddharta ", author: " Hermann Hesse", date: "2024", pic: Sidd, comment: "A book that guides through different lifes embodied by the young Siddharta, who is seeking for the Nirvana" },
+  { title: "Neutron Physics ", author: " Paul Reuss", date: "2024", pic: neutron, comment: "Physics of neutron in a nuclear reactor" },
+  { title: "Histoire de Jérusalem ", author: " Vincent Lemire - Christophe Gaultier", date: "2024", pic: jerusalem, comment: "A comic that retraces the story of Jerusalem from -2000 to now. Good reading in order to understand today's issues in Middle East" },
 
-const BooksArray: BooksType[] = [
-  ["Plan de Transformation de l'Economie Française, The Shift Project  ", 2020, "ptef", "climate"],
 
 ];
+
 export const Books = () => {
   return (
     <>
-      <div className="flex justify-center ">
-        <div className="max-w-4xl">
+      <div className="flex justify-center">
+        <div className="justify-center max-w-2xl">
           <HeaderCategory
             name={"Books"}
             date={"2023"}
             back={`/home/`}
           />
-
-          <div className="p-4 my-20 justify-center">
-
-            <a className="flex items-center text-xl p-2 hover:underline" href="https://theshiftproject.org/article/ptef-livre-et-site-web/">
-              Plan de Transformation de l'Economie Française, The Shift Project 2023
-              <img src={ptef} className="px-2 border-b-2" width="100" alt="Image" /> </a>
-
+          <div className="p-2 text-xl font-bold justify-center ">
+            Some books I have had the opportunity to read and that I may suggest.
+          </div>
+          <div className="my-10 justify-center">
+            {Array.from(BooksArray.entries())
+              .map(([key, value]) => (
+                <>
+                  <div className="bg-slate-100 p-2 rounded my-2 ">
+                    <a className="items-center text-l font-bold " >
+                      {value.title + ", " + value.author + ", " + value.date}
+                    </a>
+                    <div className="grid grid-cols-[100px_1fr] items-center justify-between my-2">
+                      <img src={value.pic} className="px-2 border-b-2 col-start-1" width="100" alt="Image" />
+                      <div className="text-sm">
+                        {value.comment}
+                      </div>
+                    </div>
+                  </div>
+                </>
+              ))}
           </div>
         </div>
-
       </div>
     </>
   );

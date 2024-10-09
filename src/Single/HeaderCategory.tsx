@@ -16,10 +16,10 @@ export const HeaderCategory = ({
     navigate(back);
   };
   return (
-    <div className="p-4">
+    <div className="p-2 justify-center">
       <div className="pt-10 text-4xl font-bold text-center break-all">
         {name}
-        <div className="py-2 border-b-2 border-slate-500" />
+        <div className="py-2 border-b-2 border-slate-500 " />
       </div>
       <div className="flex justify-between">
         {date}
