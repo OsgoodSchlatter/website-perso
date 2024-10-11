@@ -14,6 +14,8 @@ import ski3 from "./ski.jpg"
 import ski4 from "./ski2.jpeg"
 import ski5 from "./ski3.jpg"
 
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 
 
@@ -239,14 +241,20 @@ export const Sport = () => {
               <img src={planche} className="px-2 border-b-2 m-2" width="200" alt="Image" />
             </div>
             Here is me surfing :
-            <div className="flex justify-center">
-              <img src={surf1} className="px-2 border-b-2 m-2" width="300" alt="Image" />
-              <img src={surf2} className="px-2 border-b-2 m-2" width="300" alt="Image" />
-            </div>
-            <div className="flex justify-center">
-              <img src={surf3} className="px-2 border-b-2 m-2" width="450" alt="Image" />
-              <img src={surf4} className="px-2 border-b-2 m-2" width="200" alt="Image" />
-            </div>
+            <Carousel>
+              <div>
+                <img src={surf1} className="px-2 border-b-2 m-2" width="300" alt="Image" />
+              </div>
+              <div>
+                <img src={surf2} className="px-2 border-b-2 m-2" width="300" alt="Image" />
+              </div>
+              <div>
+                <img src={surf3} className="px-2 border-b-2 m-2" width="450" alt="Image" />
+              </div>
+              <div >
+                <img src={surf4} className="px-2 border-b-2 m-2" width="200" alt="Image" />
+              </div>
+            </Carousel>
           </div>
         );
 
@@ -276,14 +284,20 @@ export const Sport = () => {
               </MapContainer>
             </div>
             Here is me skiing :
-            <div className="flex justify-center">
-              <img src={ski1} className="px-2 border-b-2 m-2" width="300" alt="Image" />
-              <img src={ski2} className="px-2 border-b-2 m-2" width="200" alt="Image" />
-            </div>
-            <div className="flex justify-center">
-              <img src={ski3} className="px-2 border-b-2 m-2" width="150" alt="Image" />
-              <img src={ski4} className="px-2 border-b-2 m-2" width="300" alt="Image" />
-            </div>
+            <Carousel>
+              <div>
+                <img src={ski1} className="px-2 border-b-2 m-2" width="300" alt="Image" />
+              </div>
+              <div>
+                <img src={ski2} className="px-2 border-b-2 m-2" width="200" alt="Image" />
+              </div>
+              <div >
+                <img src={ski3} className="px-2 border-b-2 m-2" width="150" alt="Image" />
+              </div>
+              <div>
+                <img src={ski4} className="px-2 border-b-2 m-2" width="300" alt="Image" />
+              </div>
+            </Carousel>
           </div>
         );
 
