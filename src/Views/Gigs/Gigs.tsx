@@ -12,12 +12,8 @@ import gre3 from "./gig-gre/gre3.jpg"
 
 import boussay from "./boussay.jpeg"
 
-
-
-
-
-
-
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import 'leaflet/dist/leaflet.css';
 
 type Locations = "Saclay" | "Grenoble" | "Boussay";
@@ -61,19 +57,22 @@ export const Gigs = () => {
                         </div>
 
                         Here is a couple of pics :
-                        <div className="flex justify-center">
+                        <Carousel>
+                            <div>
+                                <img src={saclay3} className="px-2 border-b-2 m-2" width="450" alt="Image1" />
+                            </div>
 
-                            <img src={saclay3} className="px-2 border-b-2 m-2" width="450" alt="Image" />
-                        </div>
-                        <div className="flex justify-center">
-                            <img src={saclay2} className="px-2 border-b-2 m-2" width="300" alt="Image" />
-                            <img src={saclay4} className="px-2 border-b-2 m-2" width="200" alt="Image" />
-                        </div>
-                        <div className="flex justify-center">
-                            <img src={saclay7} className="px-2 border-b-2 m-2" width="300" alt="Image" />
-
-                        </div>
-                    </div>
+                            <div>
+                                <img src={saclay2} className="px-2 border-b-2 m-2" width="300" alt="Image2" />
+                            </div>
+                            <div>
+                                <img src={saclay4} className="px-2 border-b-2 m-2" width="200" alt="Image3" />
+                            </div>
+                            <div>
+                                <img src={saclay7} className="px-2 border-b-2 m-2" width="300" alt="Image4" />
+                            </div>
+                        </Carousel>
+                    </div >
                 );
 
             case "Grenoble":
@@ -102,13 +101,17 @@ export const Gigs = () => {
                             5 - ZZ TOP - La Grange
                         </div>
                         Here is a couple of pics :
-                        <div className="flex justify-center">
-                            <img src={gre2} className="px-2 border-b-2 m-2" width="500" alt="Image" />
-                        </div>
-                        <div className="flex justify-center">
-                            <img src={gre1} className="px-2 border-b-2 m-2" width="200" alt="Image" />
-                            <img src={gre3} className="px-2 border-b-2 m-2" width="400" alt="Image" />
-                        </div>
+                        <Carousel>
+                            <div >
+                                <img src={gre2} className="px-2 border-b-2 m-2" width="500" alt="Image" />
+                            </div>
+                            <div >
+                                <img src={gre1} className="px-2 border-b-2 m-2" width="200" alt="Image" />
+                            </div>
+                            <div>
+                                <img src={gre3} className="px-2 border-b-2 m-2" width="400" alt="Image" />
+                            </div>
+                        </Carousel >
                     </div>
                 );
 
