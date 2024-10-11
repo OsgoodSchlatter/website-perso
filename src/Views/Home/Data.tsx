@@ -106,14 +106,6 @@ export const blogPostsArray: BlogPostType[] = [
         content: FHE,
     },
     {
-        id: 2,
-        date: "2023",
-        title: "Publications",
-        category: BlogCategory.ComputerScience,
-        route: BlogRoute.ComputerScience,
-        content: PubliArticle,
-    },
-    {
         id: 3,
         date: "2023",
         title: "Tuto",
