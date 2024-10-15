@@ -189,7 +189,7 @@ export const blogPostsArray: BlogPostType[] = [
     {
         id: 4,
         date: "17/11/2023",
-        title: "Neutronics",
+        title: "Neutron Physics",
         category: BlogCategory.Physics,
         route: BlogRoute.Physics,
         content: Neutronics,

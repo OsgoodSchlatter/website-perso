@@ -3,7 +3,9 @@ import "katex/dist/katex.min.css";
 import Latex from "react-latex-next";
 import Tooltip2 from "../../../Single/Tooltip_chatgpt";
 import React, { useState } from "react";
-import PWR from "./PWR.png"
+import PWR from "./PWR.png";
+import coulomb from "./coulomb_vs_strong_interaction.png"
+import valley from "./valley_of_stability.png"
 
 const UO2 = <Latex>{"$UO_2$"}</Latex>;
 const CO2 = <Latex>{"$CO_2$"}</Latex>;
@@ -113,10 +115,43 @@ const Neutronics = ({ title, date }: { title: string; date: string }) => {
             case 1:
                 return (
                     <>
-                        <div className="font-bold text-lg mt-2">
-                            1 - General facts about nuclear energy
+                        <div className="text-4xl font-bold">
+                            Chapter 1
                         </div>
-                        <div className="mt-2 italic underline">1.1 - History of Fermi's Pile</div>
+                        <div className="font-bold text-lg mt-2">
+                            General facts about nuclear energy
+                        </div>
+                        <div className="text-lg font-bold mt-2">
+                            Summary
+                        </div>
+                        <div className="italic underline">
+                            1.1 - History of Fermi's Pile
+                        </div>
+                        <div className="italic underline">
+                            1.2 - Principle of nuclear power plant
+                        </div>
+                        <div className=" italic underline">
+                            1.3 - Overview of nuclear power plant structure (of type PWR)
+                        </div>
+                        <div className=" italic underline">
+                            1.4 - Fission
+                        </div>
+                        <div className="italic underline">
+                            1.5 - Principle of chain reactions
+                        </div>
+                        <div className=" italic underline">
+                            1.6 - Main moderator and coolants
+                        </div>
+                        <div className=" italic underline">
+                            1.7 - Nuclear fuel cycles
+                        </div>
+
+                        <div className="text-lg font-bold mt-6">
+                            Work
+                        </div>
+                        <div className=" italic underline">
+                            1.1 - History of Fermi's Pile
+                        </div>
                         In 1942, Fermi and his team achieved the first chain fission
                         reaction. The neutron population increased even after that the
                         initial source was removed. It meant that a chain reaction was
@@ -137,25 +172,78 @@ const Neutronics = ({ title, date }: { title: string; date: string }) => {
                         down and gets cycled back to the heat source. The efficiency of the
                         conversion of heat to mechanical energy cannot exceed a value known
                         as the Carnot Efficiency.
-                        <Latex>
-                            {`$$ \\eta = 1- \\frac{T_{cold}}{T_{hot}} $$`}
-                        </Latex>
-                        Where T(cold) is the temperature of the cold source and T(hot) is the temperature of the heat source. In a nuclear reactor, the heat source is not a reaction of combustion between a fossil fuel (combustile) and oxygen (comburant). Rather, it is a controlled chain reaction of fission of atoms, which, when slowing down in water, heat it.
+                        <Latex>{`$$ \\eta = 1- \\frac{T_{cold}}{T_{hot}} $$`}</Latex>
+                        Where T(cold) is the temperature of the cold source and T(hot) is
+                        the temperature of the heat source. In a nuclear reactor, the heat
+                        source is not a reaction of combustion between a fossil fuel
+                        (combustile) and oxygen (comburant). Rather, it is a controlled
+                        chain reaction of fission of atoms, which, when slowing down in
+                        water, heat it.
                         <div className="mt-4 italic underline">
                             1.3 - Overview of nuclear power plant structure (of type PWR)
                         </div>
-                        There are different types of reactor, with different advantages and drawbacks. In France, all nuclear power plants are of type PWR. This acronym means Pressurized Water Reactor.
-                        It refers to the fact that water is heated to high temperatures (between 280 °C to 320 °C) but remains in liquid state, because of high pressure (155 bars or MPa).
+                        There are different types of reactor, with different advantages and
+                        drawbacks. In France, all nuclear power plants are of type PWR. This
+                        acronym means Pressurized Water Reactor. It refers to the fact that
+                        water is heated to high temperatures (between 280 °C to 320 °C) but
+                        remains in liquid state, because of high pressure (155 bars or MPa).
                         <div className="mt-4 mb-4 text-center">
                             <img className="rounded" src={PWR} alt="" />
                             <h3 className="underline">Figure: Diagram of PWR</h3>
                         </div>
-                        The part where the fission occurs is the core. The water flows inside and outside the core in what is called the vessel. It can withstand pressures of 155 bars. The water that flows in the core is contained in a closed loop. The pressure of 155 bars is maintained by the pressurizer. As said, this pressure helps to maintain the water in liquid state, which is of high temperature (around 280 °C at the core inlet, and 320 °C at the core outlet.)
-                        There are 3 or 4 loops in which water goes out of the vessel. Each contains a steam generator and a pump. One of them only contains a pressurizer.
+                        The part where the fission occurs is the core. The water flows
+                        inside and outside the core in what is called the vessel. It can
+                        withstand pressures of 155 bars. The water that flows in the core is
+                        contained in a closed loop. The pressure of 155 bars is maintained
+                        by the pressurizer. As said, this pressure helps to maintain the
+                        water in liquid state, which is of high temperature (around 280 °C
+                        at the core inlet, and 320 °C at the core outlet.) There are 3 or 4
+                        loops in which water goes out of the vessel. Each contains a steam
+                        generator and a pump. One of them only contains a pressurizer.
                         <br />
-                        The steam generators (SG) are there to extract the heat of the water from the primary circuit to heat the water of the secondary circuit. The water of the secondary circuit is not exposed to high pressures and therefore, when in contact of the water of the primary circuit (always through pipes, not direct contact), it heats and becomes vapor. This vapor then goes up in the SG. At the top of the SG are several drums whose role is to get rid of most of the moisture. The moisture and droplets of vapor are condensed and get back in the SG.
+                        The steam generators (SG) are there to extract the heat of the water
+                        from the primary circuit to heat the water of the secondary circuit.
+                        The water of the secondary circuit is not exposed to high pressures
+                        and therefore, when in contact of the water of the primary circuit
+                        (always through pipes, not direct contact), it heats and becomes
+                        vapor. This vapor then goes up in the SG. At the top of the SG are
+                        several drums whose role is to get rid of most of the moisture. The
+                        moisture and droplets of vapor are condensed and get back in the SG.
                         <br />
-                        This vapor is sent to the turbines and makes them spin. Afterwards the steam is condensed and cooled by a condenser which also acts as a heat exchanger. The third circuit gets involved to cool the steam and transform it back to liquid state. Then the water is sent back to the SG to finish the cycle.
+                        This vapor is sent to the turbines and makes them spin. Afterwards
+                        the steam is condensed and cooled by a condenser which also acts as
+                        a heat exchanger. The third circuit gets involved to cool the steam
+                        and transform it back to liquid state. Then the water is sent back
+                        to the SG to finish the cycle.
+                        <div className="mt-4 italic underline">
+                            1.4 - Forces at stakes in a nucleus and fission
+                        </div>
+                        The nucleus puts forward a balance between Coulomb forces and the nuclear force.
+                        The Coulomb force (or electromagnetic interaction) acts between charged particles only.
+                        In the nucleus, it therefore only involves protons. It is a long-range force and is proportional
+                        to the inverse of the square of the distance between two considered objects. It acts attractively on bodies of opposite charge
+                        but repulsively on bodies of same size. Therefore, in a nucleus, protons could not be confined in a such a small place if only the Coulomb force was involved.
+                        The strong force can explain the balance of the nucleus.
+                        It is a force that acts on any nucleons (regardless of charge) at very-short range (1 fm) but of great intensity.
+                        It is actually a force that comprises the strong nuclear force and the weak nuclear force.
+                        It acts as a strong glue that ties nucleons together.
+                        <div className="mt-4 mb-4 justify-center flex">
+                            <img className="rounded w-60" src={coulomb} alt="" />
+                        </div>
+                        <div className="text-center">
+                            <h3 className="underline">Figure: Coulomb and strong interactions in nucleus</h3>
+                        </div>
+                        The number of protons and neutrons in a nucleus puts forward the best balance between the Coulomb interaction
+                        and the nuclear force. If the proportion is not optimal, then the nucleus is radioactive. The ratio of neutron to protons
+                        is about 1 for light nuclei. For heavier nuclei, it gradually reaches 1.5. This can be seen in a valley of stability curve
+                        <div className="mt-4 mb-4 justify-center flex">
+                            <img className="rounded w-60" src={valley} alt="" />
+                        </div>
+                        <div className="text-center">
+                            <h3 className="underline">Figure: Valley of stability (Wikipedia)</h3>
+                        </div>
+                        Since the repelling of each protons is correlated to the square of the number of charges, it is easier
+                        for light nuclei to hold themselves together than for larger nuclei.
                     </>
                 );
             case 2:
@@ -303,8 +391,11 @@ const Neutronics = ({ title, date }: { title: string; date: string }) => {
             <div className="flex justify-center m-2">
                 <div className="w-full sm:w-2/3 md:w-2/3 lg:max-w-4xl xl:max-w-5xl mx-4">
                     <HeaderCategory name={title} date={date} back={`/physics/`} />
-                    <div className="flex justify-between items-center mt-2">
-                        <div className="font-bold text-4xl"> Neutron physics</div>
+                    <div className="flex justify-between items-center mt-8">
+                        <div className="mt-2">
+                            This knowledge is mostly taken from the book "Neutron Physics" of
+                            Paul Reuss.
+                        </div>
                         <select
                             value={selectedNumber}
                             onChange={handleChange}
@@ -317,10 +408,7 @@ const Neutronics = ({ title, date }: { title: string; date: string }) => {
                             ))}
                         </select>
                     </div>
-                    <div className="mt-2">
-                        This knowledge is mostly taken from the book "Neutron Physics" of
-                        Paul Reuss.
-                    </div>
+
                     <div className="flex justify-between"></div>
                     <div className="bg-slate-200 p-2 mt-4 rounded">{renderContent()}</div>
                 </div>

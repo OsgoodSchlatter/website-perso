@@ -30,7 +30,7 @@ export const blogPosts = {
     "5": {
         id: 5,
         date: "17/11/2023",
-        title: "Neutronics",
+        title: "Neutron Physics",
         content: Neutronics,
     },
     "2": {
