@@ -15,12 +15,8 @@ body {
   color: #000; /* Set font color to black */
 }
 
-code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
-}
-
 html,
 body {
   min-height: 100vh; /* Set minimum height to 100% of the viewport height */
+  font-family: system-ui;
 }

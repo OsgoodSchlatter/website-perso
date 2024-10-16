@@ -22,6 +22,7 @@ import { Sport } from "../Sport/Sport";
 import { Trips } from "../Trips/Trips";
 import { Books } from "../Books/Books";
 import { Recruiter } from "../Recruiter/Recruiter";
+import GreenTracking from "../CS/CSPosts/GreenTracking";
 
 export type BlogPostType = {
     id: number;
@@ -94,19 +95,27 @@ export const blogPostsArray: BlogPostType[] = [
     },
     {
         id: 1,
-        date: "19/03/2023",
+        date: "2023",
         title: "Fully Homomorphic Encryption Tool",
         category: BlogCategory.ComputerScience,
         route: BlogRoute.ComputerScience,
         content: FHE,
     },
     {
-        id: 3,
+        id: 2,
         date: "2023",
-        title: "Tuto",
+        title: "Tuto C++",
         category: BlogCategory.ComputerScience,
         route: BlogRoute.ComputerScience,
         content: Tuto,
+    },
+    {
+        id: 3,
+        date: "2023",
+        title: "Green Tracking",
+        category: BlogCategory.ComputerScience,
+        route: BlogRoute.ComputerScience,
+        content: GreenTracking,
     },
     {
         id: 1,
