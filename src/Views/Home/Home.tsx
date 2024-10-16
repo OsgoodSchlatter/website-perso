@@ -25,7 +25,7 @@ export const Home = () => {
 
 
   const handleSort = (category: BlogCategory) => {
-    const filteredPosts = blogPostsArray.filter(post => post.category === category);
+    const filteredPosts = blogPostsArray.filter(post => post.category === category );
     setSortedPosts(filteredPosts);
   };
   return (

@@ -25,7 +25,7 @@ export const HeaderPost = ({
                 <>
                     {date}
                 </>
-                {main?.valueOf() ? ` - ${category?.valueOf()}` : ""}
+
                 <div
                     className="text-3xl text-blue-700 hover:underline"
                     onClick={() => handleClick(choice)}

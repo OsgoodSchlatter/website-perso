@@ -1,8 +1,5 @@
-import { Position } from "@react-pdf-viewer/core";
-import { map, mode } from "d3";
 import { useState } from "react";
-import { start } from "repl";
-import { HeaderCategory } from "../../../Single/HeaderCategory";
+import { HeaderCategory } from "../../Single/HeaderCategory";
 
 export const Scales = ({ title, date }: { title: string, date: string }) => {
 

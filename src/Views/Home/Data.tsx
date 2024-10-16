@@ -3,8 +3,8 @@ import { Chess } from "../Chess/Chess";
 import OOM from "../Climate/ClimatePosts/OOM";
 import FHE from "../CS/CSPosts/FHE";
 import Tuto from "../CS/CSPosts/Tuto";
-import { GuitarSongs } from "../Guitar/GuitarPosts/GuitarSongs";
-import { Scales } from "../Guitar/GuitarPosts/Scales";
+
+import { Scales } from "../Music/Scales";
 import { Russian } from "../Languages/LanguagesPosts/Russian";
 import { Maths } from "../Maths/Maths";
 import Battery_Fuel_Cell from "../Physics/PhysicsPosts/Battery_Fuel_Cell";
@@ -13,8 +13,8 @@ import Geiger from "../Physics/PhysicsPosts/Geiger";
 import Neutronics from "../Physics/PhysicsPosts/Neutronics";
 import Radio from "../Physics/PhysicsPosts/Radioactivity";
 import SchroEq from "../Physics/PhysicsPosts/SchroEq";
-import PianoChords from "../Piano/PianoPosts/PianoChords";
-import PianoSongs from "../Piano/PianoPosts/PianoSongs";
+import PianoChords from "../Music/MusicRep";
+
 import { Gigs } from "../Gigs/Gigs";
 
 import { PubliArticle } from "../Publi/PublicationsPosts";
@@ -22,7 +22,6 @@ import { Sport } from "../Sport/Sport";
 import { Trips } from "../Trips/Trips";
 import { Books } from "../Books/Books";
 import { Recruiter } from "../Recruiter/Recruiter";
-
 
 export type BlogPostType = {
     id: number;
@@ -45,9 +44,8 @@ export enum BlogCategory {
     Books = "books",
     Trips = "trips",
     Publi = "publi",
-    Recruiter = "recruiter"
+    Recruiter = "recruiter",
 }
-
 
 export enum BlogRoute {
     Climate = "climate",
@@ -62,15 +60,12 @@ export enum BlogRoute {
     Trips = "trips",
     Publi = "publi_talks",
     Recruiter = "recruiter",
-
 }
 
 export type ContentProps = {
     title: string;
     date: string;
 };
-
-
 
 export const blogPostsArray: BlogPostType[] = [
     {
@@ -115,11 +110,11 @@ export const blogPostsArray: BlogPostType[] = [
     },
     {
         id: 1,
-        date: "10/08/2023",
-        title: "Guitar Songs",
+        date: "2024",
+        title: "Gigs and Concert",
         category: BlogCategory.Music,
         route: BlogRoute.Music,
-        content: GuitarSongs,
+        content: Gigs,
     },
     {
         id: 2,
@@ -131,28 +126,13 @@ export const blogPostsArray: BlogPostType[] = [
     },
     {
         id: 3,
-        date: "02/05/2023",
-        title: "Piano Songs",
-        category: BlogCategory.Music,
-        route: BlogRoute.Music,
-        content: PianoSongs,
-    },
-    {
-        id: 4,
-        date: "02/05/2023",
-        title: "Chords",
+        date: "2023",
+        title: "Songs directory",
         category: BlogCategory.Music,
         route: BlogRoute.Music,
         content: PianoChords,
     },
-    {
-        id: 5,
-        date: "2024",
-        title: "Gigs and Concert",
-        category: BlogCategory.Music,
-        route: BlogRoute.Music,
-        content: Gigs,
-    },
+
     {
         id: 1,
         date: "02/05/2023",
@@ -259,4 +239,3 @@ export const blogPostsArray: BlogPostType[] = [
         content: Recruiter,
     },
 ];
-
