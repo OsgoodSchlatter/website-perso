@@ -216,7 +216,7 @@ const Neutronics = ({ title, date }: { title: string; date: string }) => {
                         and transform it back to liquid state. Then the water is sent back
                         to the SG to finish the cycle.
                         <div className="mt-4 italic underline">
-                            1.4 - Forces at stakes in a nucleus and fission
+                            1.4 - Fission and forces at stakes in a nucleus
                         </div>
                         The nucleus puts forward a balance between Coulomb forces and the nuclear force.
                         The Coulomb force (or electromagnetic interaction) acts between charged particles only.
@@ -243,7 +243,26 @@ const Neutronics = ({ title, date }: { title: string; date: string }) => {
                             <h3 className="underline">Figure: Valley of stability (Wikipedia)</h3>
                         </div>
                         Since the repelling of each protons is correlated to the square of the number of charges, it is easier
-                        for light nuclei to hold themselves together than for larger nuclei.
+                        for light nuclei to hold themselves together than for larger nuclei. Hence, heavy nuclei are less strongly bonded than other smaller nuclei.
+                        The fission of a heavy nuclei into two fragments increases the bond energy [To be completed (add detail about fission)].
+                        Energy released when undergoing fission is around 200 Mev whereas in chemical reactions it is around several eV.
+                        <div className="mt-4 italic underline">
+                            1.5 - Chain reactions
+                        </div>
+                        Chain reactions are a concept that is more familiar that it may sound. For example a fire is a chain reaction.
+                        Fire is an oxydation reaction that takes place between a combustible (wood) and a comburant (<Latex>{`$O_2$`}</Latex>), but that intially needs some energy to occur (provided by a lighter for instance).
+                        It then produces heat which can exceed the oxydation energy threshold and allow further oxydation reaction etc. <br /> A fission reaction is about the same. The chain takes place in the fact that a neutron can induce a fission, which releases energy and other neutrons which themselves can trigger other fissions... as long as there is a fissile element around.
+                        In order to control the chain reaction and not make a bomb out of it, one needs to check factor <Latex>{`$K$`}</Latex>.
+                        <br />
+                        Let <Latex>{`$\\omega$`}</Latex> be the probability that a neutron causes a fission, and  <Latex>{`$\\nu$`}</Latex> the average number of neutrons that are emitted for one fission.
+                        Then <Latex>{`$K = \\omega * \\nu$`}</Latex> is the average number of neutrons that are emitted for one initial neutron that triggered a fission.
+                        <br />
+                        If we have <Latex>{`$N$`}</Latex> fission at time <Latex>{`$T=0$`}</Latex> <Latex>{`$$ N fissions => NK fissions => NK^2 fissions=> NK^3 fissions => ... $$`}</Latex>
+                        <br />
+                        Then if <Latex>{`$K=1$`}</Latex>, naturally we see that the number of fissions is always <Latex>{`$N$`}</Latex>. We call this state a <a className="font-bold">critical state</a>. Critical does not mean anything more than being <a className="font-bold">stable</a>.
+                        If <Latex>{`$K>1$`}</Latex>, the reaction accelerates, it is called a <a className="font-bold">super critical state</a>.
+                        If <Latex>{`$K<1$`}</Latex>, the reaction decelerates, it is called a <a className="font-bold">sub critical state</a>.
+
                     </>
                 );
             case 2:
