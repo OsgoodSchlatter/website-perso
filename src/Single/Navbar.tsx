@@ -67,7 +67,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <header className="h-20 px-4 bg-slate-100 flex items-center overflow-hidden justify-between">
+      <header className="h-20 px-4 flex items-center overflow-hidden justify-between">
         <div className="flex md:text-3xl">
           <Tooltip2 text="Home">
             <Link
@@ -119,6 +119,7 @@ export const Navbar = () => {
 
           )}
         </div>
+        <div className="p-10 font-bold text-4xl text-center" >Osgood's website</div>
         <div className="flex items-center">
           <div
             className={`${"hover:bg-green-400 bg-green-500 flex gap-2 m-2 p-2 rounded-md items-end"} ${window.innerWidth <= 768

@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="app-container">
       <Navbar />
-      <div className="content h-full">
+      <div className="content h-full bg-white">
         <hr />
         <Main />
       </div>

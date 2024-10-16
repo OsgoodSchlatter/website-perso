@@ -7,12 +7,12 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: black;
-  background-color: #ffff;
+  background-color: rgb(255, 255, 255);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  color: #000; /* Set font color to black */
+  color: rgb(116, 112, 112); /* Set font color to black */
 }
 
 code {
