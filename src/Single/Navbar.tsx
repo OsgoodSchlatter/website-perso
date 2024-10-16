@@ -119,7 +119,7 @@ export const Navbar = () => {
 
           )}
         </div>
-        <div className="p-10 font-bold text-4xl text-center" >Osgood's website</div>
+        <div className="p-10 font-bold text-2xl text-center" >Osgood's website</div>
         <div className="flex items-center">
           <div
             className={`${"hover:bg-green-400 bg-green-500 flex gap-2 m-2 p-2 rounded-md items-end"} ${window.innerWidth <= 768
