@@ -101,13 +101,13 @@ export const Navbar = () => {
             <button
               ref={buttonRef}
               onClick={toggleMenu}
-              className="text-black focus:outline-none"
+              className="text-black md:px-2 p-2 mb-1 mr-2 md:text-3xl text-xl flex bg-white rounded-lg hover:underline"
             >
-              <GmailButton />
+              contact
             </button>
             {menuVisible && (
               <div ref={menuRef}
-                className="absolute bg-white p-2 top-20 right-4 shadow-lg px-4 border-2 border-slate-100 rounded-lg text-right"
+                className="absolute bg-white p-2 top-20 right-4 md:right-80 shadow-lg px-4 border-2 border-slate-100 rounded-lg text-right"
                 style={{ display: menuVisible ? "block" : "none" }}
               >
                 <div className="hover:bg-slate-100 rounded-lg">
