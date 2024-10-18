@@ -5,12 +5,7 @@ export const Maths = ({ title, date }: { title: string, date: string }) => {
   return (
     <div>
       <div className="flex justify-center">
-        <div className="w-full sm:w-2/3 md:w-2/3 lg:max-w-2xl xl:max-w-2xl mx-4">
-          <HeaderCategory
-            name={title}
-            date={date}
-            back={`/physics/`}
-          />
+        <div className="w-full sm:w-2/3 md:w-1/2 lg:max-w-2xl xl:max-w-2xl mx-4">
           <div className="flex justify-center">
             <div className="mt-4">
               <div className="flex items-center p-2">

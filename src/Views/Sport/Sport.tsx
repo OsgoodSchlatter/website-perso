@@ -340,9 +340,8 @@ export const Sport = () => {
 
   return (
     <>
-      <div className="flex justify-center ">
-        <div className="w-full sm:w-2/3 md:w-2/3 lg:max-w-2xl xl:max-w-2xl mx-4 ">
-          <Header name={"sport"} posts={0} />
+      <div className="flex justify-center mt-4">
+        <div className="w-full sm:w-2/3 md:w-1/2 lg:max-w-2xl xl:max-w-2xl mx-4 ">
           {/* Sport Selection Buttons */}
           <div className="flex justify-center space-x-4 mb-4">
             <button onClick={() => setSelectedSport("Surf")} className="bg-blue-500 text-white px-4 py-2 rounded">Surf</button>

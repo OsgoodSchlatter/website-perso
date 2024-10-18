@@ -41,14 +41,6 @@ export const Chess = () => {
     <>
       <div className="flex justify-center p-4">
         <div className="max-w-4xl">
-          <HeaderCategory
-            name={"Chess Elo comparator"}
-            date={"2023"}
-            back={`/chess/`}
-          />
-
-
-
           <div className='p-2'>
             <div className='border border-gray-200'>
               <div className='p-2 grid grid-cols-2 gap-2'>

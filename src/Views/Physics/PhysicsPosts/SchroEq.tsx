@@ -17,7 +17,7 @@ const LineWithCurvedLine = () => {
     const curvedLineEndX = 10 + 3 * legendSpacing;
 
     return (
-        <svg width={svgWidth} height={svgHeight} className="w-full sm:w-2/3 md:w-2/3 lg:max-w-2xl xl:max-w-2xl mx-4">
+        <svg width={svgWidth} height={svgHeight} className="w-full sm:w-2/3 md:w-1/2 lg:max-w-2xl xl:max-w-2xl mx-4">
             <defs>
                 <marker
                     id="arrow"
@@ -67,12 +67,7 @@ const SchroEq = ({ title, date }: { title: string, date: string }) => {
     return (
         <>
             <div className="flex justify-center">
-                <div className="w-full sm:w-2/3 md:w-2/3 lg:max-w-2xl xl:max-w-2xl mx-4">
-                    <HeaderCategory
-                        name={title}
-                        date={date}
-                        back={`/physics/`}
-                    />
+                <div className="w-full sm:w-2/3 md:w-1/2 lg:max-w-2xl xl:max-w-2xl mx-4">
                     <div className="my-20 justify-center m-2">
                         <div className="flex font-bold text-xl">
                             <div className="font-bold text-xl underline">Hamiltonian </div>

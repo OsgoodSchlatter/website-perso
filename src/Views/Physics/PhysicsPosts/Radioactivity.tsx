@@ -8,12 +8,7 @@ const Radio = ({ title, date }: { title: string, date: string }) => {
         <>
             <div className="flex justify-center m-2 ">
                 <div className="max-w-4xl">
-                    <HeaderCategory
-                        name={title}
-                        date={date}
-                        back={`/physics/`}
-                    />
-                    <div className="my-20 justify-center">
+                    <div className="my-4 justify-center">
                         <div className="font-bold text-xl mb-3 underline">
                             Decay Processes
                         </div>

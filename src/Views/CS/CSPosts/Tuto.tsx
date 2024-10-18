@@ -5,7 +5,6 @@ const Tuto = ({ title, date }: { title: string, date: string }) => {
     return (
         <div className="flex justify-center ">
             <div className="p-4 max-w-4xl">
-                <HeaderCategory name={title} date={date} back={`/cs/`} />
                 <div className="mt-2">
                     <div className="font-bold text-3xl">
                         1 - RESSOURCES:

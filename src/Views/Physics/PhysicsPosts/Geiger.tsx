@@ -1,13 +1,11 @@
 import Latex from "react-latex-next";
-import { HeaderCategory } from "../../../Single/HeaderCategory";
-import { Title1, Title2 } from "../../../Single/Styles";
+import { Title1 } from "../../../Single/Styles";
 import boost from "./Ideal-Boost-Converter-Circuit.jpg"
 const Electrolysis = ({ title, date }: { title: string; date: string }) => {
     return (
         <>
             <div className="flex justify-center m-2">
-                <div className="w-full sm:w-2/3 md:w-2/3 lg:max-w-4xl xl:max- xl mx-4">
-                    <HeaderCategory name={title} date={date} back={`/physics/`} />
+                <div className="w-full sm:w-2/3 md:w-1/2 lg:max-w-4xl xl:max- xl mx-4">
                     <Title1 text="How to build a Geiger Counter" />
                     <div className="font-bold text-lg">1 - Electronic part</div>
                     <div className="underline mt-2">1.1 - General structure</div>

@@ -6,11 +6,6 @@ const PianoSongs = ({ title, date }: { title: string, date: string }) => {
         <>
             <div className="flex justify-center ">
                 <div className="max-w-4xl">
-                    <HeaderCategory
-                        name={title}
-                        date={date}
-                        back={`/music/`}
-                    />
                     <div className="p-4 my-20 justify-center">
                         <div>
                             <a href="https://tabs.ultimate-guitar.com/tab/red-hot-chili-peppers/dark-necessities-chords-1842513" className="hover:underline">Dark Necessities - Red Hot Chili Pepper</a>

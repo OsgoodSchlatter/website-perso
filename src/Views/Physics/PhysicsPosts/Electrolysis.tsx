@@ -45,12 +45,7 @@ const Electrolysis = ({ title, date }: { title: string, date: string }) => {
     return (
         <>
             <div className="flex justify-center m-2">
-                <div className="w-full sm:w-2/3 md:w-2/3 lg:max-w-4xl xl:max-w-5xl mx-4">
-                    <HeaderCategory
-                        name={title}
-                        date={date}
-                        back={`/physics/6`}
-                    />
+                <div className="w-full sm:w-2/3 md:w-1/2 lg:max-w-4xl xl:max-w-5xl mx-4">
                     <Title1 text="Hydrogen Generator" />
                     In this post, I want to share my own creation of a {H2} generator.
                     <div className="grid grid-cols-2 gap-2 mt-4">

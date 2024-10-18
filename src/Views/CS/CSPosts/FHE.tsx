@@ -12,11 +12,6 @@ const FHE = ({ title, date }: { title: string, date: string }) => {
     <>
       <div className="flex justify-center ">
         <div className="max-w-2xl">
-          <HeaderCategory
-            name={title}
-            date={date}
-            back={`/cs/`}
-          />
           <div className="p-4 my-20 justify-center">
             <div className="text-3xl pt-8 pb-2">[DISCLAIMER]</div>
             <div>

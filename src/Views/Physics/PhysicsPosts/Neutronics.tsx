@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import PWR from "./PWR.png";
 import coulomb from "./coulomb_vs_strong_interaction.png"
 import valley from "./valley_of_stability.png"
+import { Title1 } from "../../../Single/Styles";
 
 const UO2 = <Latex>{"$UO_2$"}</Latex>;
 const CO2 = <Latex>{"$CO_2$"}</Latex>;
@@ -408,9 +409,11 @@ const Neutronics = ({ title, date }: { title: string; date: string }) => {
     return (
         <>
             <div className="flex justify-center m-2">
-                <div className="w-full sm:w-2/3 md:w-2/3 lg:max-w-4xl xl:max-w-5xl mx-4">
-                    <HeaderCategory name={title} date={date} back={`/physics/`} />
-                    <div className="flex justify-between items-center mt-8">
+                <div className="w-full sm:w-2/3 md:w-1/2 lg:max-w-4xl xl:max-w-5xl mx-4 mt-8">
+                    <div className="text-5xl font-bold">
+                        Neutron Physics
+                    </div>
+                    <div className="flex justify-between items-center">
                         <div className="mt-2">
                             This knowledge is mostly taken from the book "Neutron Physics" of
                             Paul Reuss.

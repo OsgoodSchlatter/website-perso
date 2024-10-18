@@ -1,20 +1,13 @@
 import { Bold } from "../../../Single/Bold";
-import { HeaderCategory } from "../../../Single/HeaderCategory";
 import "katex/dist/katex.min.css";
-import React from "react";
 import Latex from "react-latex-next";
 import "katex/dist/katex.min.css";
 
-const NuclEnergy = ({ title, date }: { title: string, date: string }) => {
+const NuclEnergy = () => {
   return (
     <>
       <div className="flex justify-center ">
         <div className="max-w-2xl">
-          <HeaderCategory
-            name={title}
-            date={date}
-            back={`/physics/`}
-          />
           <div className="p-4 my-20 justify-center">
             <div className="text-3xl pt-8 pb-2">Intro</div>
             <div>

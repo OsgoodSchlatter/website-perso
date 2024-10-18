@@ -123,13 +123,8 @@ const OOM = ({ title, date }: { title: string, date: string }) => {
   return (
     <>
       <div className="flex justify-center p-4">
-        <div className="max-w-4xl">
-          <HeaderCategory
-            name={title}
-            date={"2023"}
-            back={`/climate/`}
-          />
-          <div className="my-20 justify-center">
+        <div className="max-w-4xl md:w-1/2">
+          <div className="my-8 justify-center">
             <div className="font-bold text-2xl mb-4">
               Carbon intensity of electricity production (gC02eq/kWh) (2023)
             </div>

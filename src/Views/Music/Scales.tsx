@@ -95,11 +95,6 @@ export const Scales = ({ title, date }: { title: string, date: string }) => {
         <>
             <div className="flex justify-center ">
                 <div className="w-fit">
-                    <HeaderCategory
-                        name={title}
-                        date={date}
-                        back={`/music/`}
-                    />
                     <div className="p-4 my-20 justify-center">
                         <div className="flex">
                             <select

@@ -1,4 +1,3 @@
-import { HeaderCategory } from "../../Single/HeaderCategory";
 import ptef from "./ptef.jpeg";
 import kafka from "./kafka.jpg"
 import Sidd from "./siddharta.jpg"
@@ -25,17 +24,12 @@ const BooksArray: BookEntry[] = [
 export const Books = () => {
   return (
     <>
-      <div className="flex justify-center">
+      <div className="flex justify-center mt-2">
         <div className="justify-center max-w-2xl">
-          <HeaderCategory
-            name={"Books"}
-            date={"2023"}
-            back={`/home/`}
-          />
           <div className="p-2 text-xl font-bold justify-center ">
             Some books I have had the opportunity to read and that I may suggest.
           </div>
-          <div className="my-10 justify-center">
+          <div className="my-4 justify-center">
             {Array.from(BooksArray.entries())
               .map(([key, value]) => (
                 <>

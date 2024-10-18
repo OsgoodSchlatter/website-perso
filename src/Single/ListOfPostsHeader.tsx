@@ -21,7 +21,7 @@ export const ListOfPostsHeader = ({
             {main ?? <Header name={topic ?? ""} posts={Object.keys(blogPosts).length} />}
             <div className={main?.valueOf() ? "flex m-2" : "flex m-2 justify-center"}>
                 <div className="grid grid-rows-4 gap-1">
-                    {Object.keys(blogPosts).sort(() => Math.random() - 0.5).filter((postID) => blogPosts[postID as keyof typeof blogPosts].category !== BlogCategory.Recruiter).map((postID) => {
+                    {Object.keys(blogPosts).filter((postID) => blogPosts[postID as keyof typeof blogPosts].category !== BlogCategory.Recruiter).map((postID) => {
                         const post = blogPosts[postID as keyof typeof blogPosts];
                         return (
                             <HeaderPost
