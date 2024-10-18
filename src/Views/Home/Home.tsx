@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ListOfPostsHeader } from "../../Single/ListOfPostsHeader";
 import { BlogCategory, blogPostsArray, BlogPostType } from "./Data";
 import "./Home.css";
@@ -23,11 +23,21 @@ export const Home = () => {
   const [sortedPosts, setSortedPosts] = useState<BlogPostType[]>(blogPostsArray);
   const [value, setValue] = useState<string>(" ");
 
-
+  useEffect(() => {
+    // Get the saved filter value from localStorage when the component mounts
+    const savedFilter = localStorage.getItem('selectedFilter');
+    if (savedFilter) {
+      setValue(savedFilter);
+      handleSort(savedFilter as BlogCategory);
+    }
+  }, []);
 
   const handleSort = (category: BlogCategory) => {
+    // Save the filter value to localStorage
+    localStorage.setItem('selectedFilter', category);
     const filteredPosts = blogPostsArray.filter(post => post.category === category);
     setSortedPosts(filteredPosts);
+    setValue(category);
   };
   return (
     <div className="flex bg-white justify-center">
