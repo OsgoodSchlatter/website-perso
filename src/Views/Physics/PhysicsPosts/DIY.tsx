@@ -1,7 +1,7 @@
 import { ListOfPostsHeader } from "../../../Single/ListOfPostsHeader";
 import { useParams } from "react-router-dom";
 import Electrolysis from "./Electrolysis";
-import Geiger from "./Geiger";
+import Geiger from "./ParticleDetector";
 
 
 export const blogPosts = {

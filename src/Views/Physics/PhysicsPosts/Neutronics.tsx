@@ -138,13 +138,13 @@ const Neutronics = ({ title, date }: { title: string; date: string }) => {
                             1.4 - Fission
                         </div>
                         <div className="italic underline">
-                            1.5 - Principle of chain reactions
+                            1.5 - Chain reactions
                         </div>
                         <div className=" italic underline">
-                            1.6 - Main moderator and coolants
+                            1.6 - Types of reactors
                         </div>
                         <div className=" italic underline">
-                            1.7 - Nuclear fuel cycles
+                            1.7 - Choice of moderator
                         </div>
 
                         <div className="text-lg font-bold mt-6">
@@ -395,6 +395,10 @@ const Neutronics = ({ title, date }: { title: string; date: string }) => {
                             <Latex>{"$n+A \\rightarrow \\alpha + C  $"}</Latex>
 
                         </div>
+                        <div className="italic underline">
+                            3.2 - Cross sections
+                        </div>
+                        Cross-section is measure of the probability of an interaction between two particles.
 
 
 

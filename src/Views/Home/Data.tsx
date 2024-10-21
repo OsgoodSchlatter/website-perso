@@ -9,7 +9,7 @@ import { Russian } from "../Languages/LanguagesPosts/Russian";
 import { Maths } from "../Maths/Maths";
 import Battery_Fuel_Cell from "../Physics/PhysicsPosts/Battery_Fuel_Cell";
 import Electrolysis from "../Physics/PhysicsPosts/Electrolysis";
-import Geiger from "../Physics/PhysicsPosts/Geiger";
+import ParticleDetector from "../Physics/PhysicsPosts/ParticleDetector";
 import Neutronics from "../Physics/PhysicsPosts/Neutronics";
 import Radio from "../Physics/PhysicsPosts/Radioactivity";
 import SchroEq from "../Physics/PhysicsPosts/SchroEq";
@@ -194,10 +194,10 @@ export const blogPostsArray: BlogPostType[] = [
     {
         id: 6,
         date: "2024",
-        title: "Geiger Muller",
+        title: "Particle Detectors",
         category: BlogCategory.Physics,
         route: BlogRoute.Physics,
-        content: Geiger,
+        content: ParticleDetector,
     },
     {
         id: 1,
