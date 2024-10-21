@@ -40,13 +40,13 @@ export const Home = () => {
     setValue(category);
   };
   return (
-    <div className="flex bg-white justify-center">
+    <div className="flex  justify-center w-100%">
       <div className="md:w-1/2 w-3/4 items-center">
         <div className="flex flex-wrap justify-evenly p-10 font-bold">
           {Array.from(Pages.entries())
             .map(([key, value]) => (
               <div className="px-4 pt-1 hover:underline" >
-                <div className={value == "climate" ? 'text-green-400 text-lg' : 'text-lg text-blue-500'} onClick={() => { handleSort(value as BlogCategory); setValue(value); }}>
+                <div className={value == "climate" ? 'text-green-400 text-lg' : 'text-lg  -500'} onClick={() => { handleSort(value as BlogCategory); setValue(value); }}>
                   {value}
                 </div>
 
@@ -61,7 +61,7 @@ export const Home = () => {
           </div>
           <button
             type="button"
-            className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 p-1 mt-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+            className="inline-flex justify-center rounded-md border border-transparent bg-slate-400 p-1 mt-2 text-sm font-medium  -900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
             onClick={() => { (setSortedPosts(blogPostsArray)); setValue("") }}>
             Remove filter
           </button>

@@ -543,7 +543,7 @@ const Neutronics = ({ title, date }: { title: string; date: string }) => {
                         <select
                             value={selectedNumber}
                             onChange={handleChange}
-                            className="bg-gray-200 text-black p-8 py-2 rounded max-h-10"
+                            className=" p-8 py-2 rounded max-h-10"
                         >
                             {Array.from({ length: 14 }, (_, i) => i + 1).map((number) => (
                                 <option key={number} value={number}>
@@ -554,7 +554,7 @@ const Neutronics = ({ title, date }: { title: string; date: string }) => {
                     </div>
 
                     <div className="flex justify-between"></div>
-                    <div className="bg-slate-200 p-2 mt-4 rounded">{renderContent()}</div>
+                    <div className=" p-2 mt-4 rounded">{renderContent()}</div>
                 </div>
             </div>
         </>

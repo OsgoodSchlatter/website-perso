@@ -81,8 +81,8 @@ export const Scales = ({ title, date }: { title: string, date: string }) => {
                 {showNotes ? (
 
                     <div className="absolute ml-4 top-full grid grid-flow-row-dense grid-cols-2 gap-x-10 gap-y-2 z-10" style={{ top: '-12px' }}>
-                        <div className="text-slate-400 w-6 h-fit rounded-full bg-red-200 text-sm">{allGuitarNeckNotes[2 * index]}</div>
-                        <div className="text-slate-400 w-6 h-fit rounded-full bg-red-200 text-sm">{allGuitarNeckNotes[2 * index + 1]}</div>
+                        <div className="text-slate-400 w-6 h-fit rounded-full bg-red-700 text-sm">{allGuitarNeckNotes[2 * index]}</div>
+                        <div className="text-slate-400 w-6 h-fit rounded-full bg-red-700 text-sm">{allGuitarNeckNotes[2 * index + 1]}</div>
                     </div>
 
                 ) : null}
@@ -113,7 +113,7 @@ export const Scales = ({ title, date }: { title: string, date: string }) => {
                                     return <option key={mode} value={mode}> {mode}</option>;
                                 })}
                             </select>
-                            <div className="text-black mb-2 ml-2 p-2 flex hover:bg-slate-300 bg-slate-100 rounded-lg" onClick={() => setShowNotes(!showNotes)}>
+                            <div className=" mb-2 ml-2 p-2 flex hover:bg-slate-300 bg-slate-100 rounded-lg" onClick={() => setShowNotes(!showNotes)}>
                                 Show notes
                             </div>
 

@@ -29,6 +29,9 @@ const ParticleDetector = () => {
                     <div className="italic underline">
                         2. Operating regions
                     </div>
+                    <div className="italic underline">
+                        3. Operating modes
+                    </div>
                     <br />
                     <br />
 
@@ -92,66 +95,66 @@ const ParticleDetector = () => {
                         <div className="font-bold text-lg mt-2">1.2 - Electronic part</div>
                         <div className="underline ">1.2.1 - General structure</div>
                         <div className="mt-4 grid grid-cols-15 sm:text-sm font-semibold items-center text-center border-2 p-2 border-300-slate rounded flex-wrap">
-                            <div className="text-black col-start-1 col-end-3 cold-span-2">
+                            <div className=" col-start-1 col-end-3 cold-span-2">
                                 {" "}
                                 1. Boost Converter
                             </div>
-                            <div className="  text-black col-start-3 col-end-4 cold-span-1  ">
+                            <div className="   col-start-3 col-end-4 cold-span-1  ">
                                 {" "}
                                 {"=>"}{" "}
                             </div>
-                            <div className="  text-black col-start-4 col-end-6 cold-span-2  ">
+                            <div className="   col-start-4 col-end-6 cold-span-2  ">
                                 {" "}
                                 2. GM Tube
                             </div>
-                            <div className="  text-black col-start-6 col-end-7 cold-span-1  ">
+                            <div className="   col-start-6 col-end-7 cold-span-1  ">
                                 {" "}
                                 {"=>"}{" "}
                             </div>
-                            <div className="  text-black col-start-7 col-end-9 cold-span-2  ">
+                            <div className="   col-start-7 col-end-9 cold-span-2  ">
                                 {" "}
                                 3. Inverter
                             </div>
-                            <div className="  text-black col-start-9 col-end-10 cold-span-1  ">
+                            <div className="   col-start-9 col-end-10 cold-span-1  ">
                                 {" "}
                                 {"=>"}{" "}
                             </div>
 
-                            <div className="  text-black col-start-10 col-end-12 cold-span-2  ">
+                            <div className="   col-start-10 col-end-12 cold-span-2  ">
                                 {" "}
                                 4. Pulse stretcher
                             </div>
-                            <div className="  text-black col-start-12 col-end-13 cold-span-1  ">
+                            <div className="   col-start-12 col-end-13 cold-span-1  ">
                                 {" "}
                                 {"=>"}{" "}
                             </div>
 
-                            <div className="  text-black col-start-13 col-end-15 cold-span-2   ">
+                            <div className="   col-start-13 col-end-15 cold-span-2   ">
                                 {" "}
                                 5. Piezo speaker{" "}
                             </div>
-                            <div className="  text-black col-start-10 col-end-12 cold-span-2  ">
+                            <div className="   col-start-10 col-end-12 cold-span-2  ">
                                 {" "}
                                 v{" "}
                             </div>
 
-                            <div className="  text-black col-start-10 col-end-12 cold-span-2  ">
+                            <div className="   col-start-10 col-end-12 cold-span-2  ">
                                 {" "}
                                 6. Filter{" "}
                             </div>
-                            <div className="  text-black col-start-10 col-end-12 cold-span-2  ">
+                            <div className="   col-start-10 col-end-12 cold-span-2  ">
                                 {" "}
                                 v{" "}
                             </div>
-                            <div className="  text-black col-start-10 col-end-12 cold-span-2  ">
+                            <div className="   col-start-10 col-end-12 cold-span-2  ">
                                 {" "}
                                 7. Red Pump{" "}
                             </div>
-                            <div className="text-black col-start-12 col-end-13 cold-span-1  ">
+                            <div className=" col-start-12 col-end-13 cold-span-1  ">
                                 {" "}
                                 {"=>"}{" "}
                             </div>
-                            <div className="text-black col-start-13 col-end-15 cold-span-2  ">
+                            <div className=" col-start-13 col-end-15 cold-span-2  ">
                                 {" "}
                                 8. Led{" "}
                             </div>
@@ -271,17 +274,14 @@ const ParticleDetector = () => {
         <>
             <div className="flex justify-center m-2">
                 <div className="w-full sm:w-2/3 md:w-1/2 lg:max-w-4xl xl:max- xl mx-4">
-                    <Title1 text="Particle Detectors" />
-                    <div className="flex justify-between">
-                        <div>
-                            <div className="font-bold text-lg">1 - Theory behind gaseous-filled particle detector</div>
-                            <div className="font-bold text-lg">2 - Charged particle detector</div>
-                            <div className="font-bold text-lg">3 - Neutron detector</div>
+                    <div className="flex justify-between items-center mt-8">
+                        <div className="font-bold text-3xl ">
+                            Particle Detectors
                         </div>
                         <select
                             value={selectedNumber}
                             onChange={handleChange}
-                            className="bg-gray-200 text-black p-8 py-2 rounded max-h-10"
+                            className="p-8 py-2 rounded max-h-10"
                         >
                             {Array.from({ length: 3 }, (_, i) => i + 1).map((number) => (
                                 <option key={number} value={number}>
@@ -290,7 +290,7 @@ const ParticleDetector = () => {
                             ))}
                         </select>
                     </div>
-                    <div className="bg-slate-100 px-2 rounded"> {renderContent()}</div>
+                    <div className=" px-2 rounded"> {renderContent()}</div>
                 </div>
             </div>
 

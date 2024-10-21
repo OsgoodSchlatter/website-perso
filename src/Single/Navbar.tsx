@@ -6,8 +6,6 @@ import { BiSpreadsheet } from "react-icons/bi";
 import Pdf from "../../src/CV_EN.pdf";
 import { TfiWrite } from "react-icons/tfi";
 
-
-
 import { Link } from "react-router-dom";
 import Tooltip2 from "./Tooltip_chatgpt";
 import GmailButton from "./Gmailbutton";
@@ -61,24 +59,22 @@ export const Navbar = () => {
     };
   }, []);
 
-
   return (
     <>
-      <div className="md:flex md:justify-center">
-        <header className="h-20 md:w-1/2 px-1 bg-white flex items-center overflow-hidden justify-between">
+      <div className="md:flex md:justify-center w-full bg-slate-700">
+        <header className="h-20 md:w-1/2 px-1   flex items-center overflow-hidden justify-between">
           <div className="flex md:text-3xl text-xl">
             <Link
               to="/"
-              className="text-black md:px-4 p-2 flex bg-white rounded-lg hover:underline"
+              className="text-amber-200	 md:px-4 p-2 flex rounded-lg hover:underline"
             >
               osgood
             </Link>
-
           </div>
           <div className="flex items-center">
             <Link
               to="/"
-              className="text-black md:px-4 p-2 mb-1 mr-2 md:text-3xl text-xl flex bg-white rounded-lg hover:underline"
+              className=" md:px-4 p-2 mb-1 mr-2 md:text-3xl text-xl flex   rounded-lg hover:underline"
             >
               about
             </Link>
@@ -90,82 +86,71 @@ export const Navbar = () => {
             >
               {" "}
               <Tooltip2 text="Website CO2">
-                <a className="text-black" href="https://www.websitecarbon.com/website/osgood-pro/">
+                <a className="" href="https://www.websitecarbon.com/website/osgood-pro/">
                   {" "}
                   0.08 gCO2eq
                 </a>
               </Tooltip2>
             </div> */}
 
-
             <button
               ref={buttonRef}
               onClick={toggleMenu}
-              className="text-black md:px-2 p-2 mb-1 mr-2 md:text-3xl text-xl flex bg-white rounded-lg hover:underline"
+              className=" md:px-2 p-2 mb-1 mr-2 md:text-3xl text-xl flex   rounded-lg hover:underline"
             >
               contact
             </button>
             {menuVisible && (
-              <div ref={menuRef}
-                className="absolute bg-white p-2 top-20 right-4 md:right-80 shadow-lg px-4 border-2 border-slate-100 rounded-lg text-right"
+              <div
+                ref={menuRef}
+                className="absolute bg-slate-700  p-2 top-20 right-4 md:right-80 shadow-lg px-4 border-2 border-slate-100 rounded-lg text-right"
                 style={{ display: menuVisible ? "block" : "none" }}
               >
                 <div className="hover:bg-slate-100 rounded-lg">
-                  <a href={"https://www.linkedin.com/in/eloi-besnard-489a69170/"}>
-
+                  <a
+                    href={"https://www.linkedin.com/in/eloi-besnard-489a69170/"}
+                  >
                     <div className="flex p-1 justify-between">
                       <span className="px-2 mt-1 font-bold">LinkedIn</span>{" "}
                       <GrLinkedin size={30} />
                     </div>
-
                   </a>
                 </div>
                 <div className="hover:bg-slate-100 rounded-lg">
                   <a href={"https://github.com/OsgoodSchlatter"}>
-
                     <div className="flex p-1 justify-between">
                       <span className="px-2 mt-1 font-bold">GitHub</span>{" "}
                       <GrGithub size={30} />
                     </div>
-
                   </a>
                 </div>
-                <div>
-
-                </div>
+                <div></div>
                 <div className="hover:bg-slate-100 rounded-lg">
                   <Link to="/publi_talks/1">
-
                     <div className="flex p-1 justify-between">
                       <span className="px-2 mt-1 font-bold">Publications</span>{" "}
                       <FaBookOpen size={30} />
                     </div>
-
                   </Link>
                 </div>
                 <div className="rounded-lg hover:bg-slate-100">
-
-                  {" "} <a href={Pdf} target="_blank">
+                  {" "}
+                  <a href={Pdf} target="_blank">
                     <div className="flex p-1 justify-between">
                       <span className="px-2 mt-1 font-bold">Resume</span>{" "}
-
-                      {" "}
                       <BiSpreadsheet size={30} />
                     </div>
                   </a>
                 </div>
                 <div className="rounded-lg hover:bg-slate-100">
-
                   <Link to={"/recruiter/1"}>
                     <div className="flex p-1 justify-between">
                       <span className="px-2 mt-1 font-bold">Contact</span>
                       <TfiWrite size={30} />
                     </div>
                   </Link>
-
                 </div>
               </div>
-
             )}
           </div>
         </header>

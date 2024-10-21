@@ -33,7 +33,7 @@ export const Books = () => {
             {Array.from(BooksArray.entries())
               .map(([key, value]) => (
                 <>
-                  <div className="bg-slate-100 p-2 rounded my-2 ">
+                  <div className=" p-2 rounded my-2 ">
                     <a className="items-center text-l font-bold " >
                       {value.title + ", " + value.author + ", " + value.date}
                     </a>

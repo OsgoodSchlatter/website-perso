@@ -21,7 +21,7 @@ export const HeaderPost = ({
     };
     return (
         <div
-            className="text-3xl text-blue-500 hover:underline"
+            className="text-3xl hover:underline"
             onClick={() => handleClick(choice)}
         >
             {title}

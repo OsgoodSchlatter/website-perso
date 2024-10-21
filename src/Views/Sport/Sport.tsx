@@ -213,7 +213,7 @@ export const Sport = () => {
     switch (selectedSport) {
       case "Surf":
         return (
-          <div className="p-2 mt-4 rounded bg-slate-100 ">
+          <div className="p-2 mt-4 rounded  ">
             <div className="text-xl font-bold ">Surf 🏄</div>
             Here are a couple of surf spots I have had the opportunity to go.
             <div className="flex items-center justify-center my-2">
@@ -260,7 +260,7 @@ export const Sport = () => {
 
       case "Ski":
         return (
-          <div className="p-2 mt-4 rounded bg-slate-100 ">
+          <div className="p-2 mt-4 rounded  ">
             <div className="text-xl font-bold ">Ski ⛷️</div>
             Here are a couple of ski spots I have had the opportunity to go.
             <div className="flex items-center justify-center my-2">
@@ -303,7 +303,7 @@ export const Sport = () => {
 
       case "Paragliding":
         return (
-          <div className="p-2 mt-4 rounded bg-slate-100 ">
+          <div className="p-2 mt-4 rounded ">
             <div className="text-xl font-bold ">Paragliding 🪂</div>
             Here is me paragliding just after I finished prepa (2020):
             <div className="flex justify-center">

@@ -171,7 +171,7 @@ const OOM = ({ title, date }: { title: string, date: string }) => {
                         ? "text-orange-400"
                         : number1 <= 700
                           ? "text-red-400"
-                          : "text-black-400"
+                          : "-400"
                   )}
                 >
                   {number1}
@@ -219,7 +219,7 @@ const OOM = ({ title, date }: { title: string, date: string }) => {
                         ? "text-orange-400"
                         : number1 <= 700
                           ? "text-red-400"
-                          : "text-black-400"
+                          : "-400"
                   )}
                 >
                   {number1}

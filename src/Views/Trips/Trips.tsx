@@ -527,7 +527,7 @@ const getColorForTransport = (transport: TransportType): string => {
 export const Trips = () => {
   return (
     <>
-      <div className="flex bg-white justify-center p-2 mt-4 rounded">
+      <div className="flex bg-slate-700 justify-center p-2 mt-4 rounded">
         {/* @ts-ignore */}
         <MapContainer center={[47.65, -2.7608]} zoom={2} scrollWheelZoom={false}  >
           <TileLayer

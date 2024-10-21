@@ -23,7 +23,7 @@ export const HeaderPostTrips = ({
             <div>
                 {date}
                 <div
-                    className="text-4xl text-blue-700 hover:underline"
+                    className="text-4xl  -700 hover:underline"
                     onClick={() => handleClick(choice, "trips")}
                 >
                     {title}

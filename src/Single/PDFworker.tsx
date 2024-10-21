@@ -11,7 +11,7 @@ const PdfViewer: React.FC<{ fileUrl: string }> = ({ fileUrl }) => {
 
     return (
         <div className="flex justify-center items-center h-screen bg-gray-100">
-            <div className="w-full h-full p-4 bg-white rounded shadow">
+            <div className="w-full h-full p-4 bg-slate-700 rounded shadow">
                 <Worker workerUrl={`https://unpkg.com/pdfjs-dist@2.16.105/build/pdf.worker.min.js`}>
                     <Viewer
                         fileUrl={fileUrl}

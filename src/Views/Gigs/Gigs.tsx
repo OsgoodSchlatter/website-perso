@@ -26,7 +26,7 @@ export const Gigs = () => {
         switch (selectedSport) {
             case "Saclay":
                 return (
-                    <div className="p-2 mt-4 rounded bg-violet-100 ">
+                    <div className="p-2 mt-4 rounded bg-violet-700 ">
                         <div className="text-xl font-bold ">Saclay - 2024 </div>
                         <div className="border-b-2 border-slate-500 rounded mb-2" />
 
@@ -76,7 +76,7 @@ export const Gigs = () => {
 
             case "Grenoble":
                 return (
-                    <div className="p-2 mt-4 rounded bg-green-100 ">
+                    <div className="p-2 mt-4 rounded bg-green-700 ">
                         <div className="text-xl font-bold ">Grenoble - 2024⛷️</div>
                         <div className="border-b-2 border-slate-500 rounded mb-2" />
 
@@ -116,7 +116,7 @@ export const Gigs = () => {
 
             case "Boussay":
                 return (
-                    <div className="p-2 mt-4 rounded bg-red-100 ">
+                    <div className="p-2 mt-4 rounded bg-orange-700 ">
                         <div className="text-xl font-bold ">Boussay 2024</div>
                         <div className="border-b-2 border-slate-500 rounded mb-2" />
 
@@ -139,7 +139,7 @@ export const Gigs = () => {
                 <div className="w-full sm:w-2/3 md:w-1/2 lg:max-w-2xl xl:max-w-2xl mx-4 ">
                     {/* Music Selection Buttons */}
                     <div className="flex justify-center space-x-4 mb-4">
-                        <button onClick={() => setSelectedSport("Saclay")} className="bg-violet-300 text-white px-4 py-2 rounded">Saclay 2024</button>
+                        <button onClick={() => setSelectedSport("Saclay")} className="bg-violet-700 text-white px-4 py-2 rounded">Saclay 2024</button>
                         <button onClick={() => setSelectedSport("Grenoble")} className="bg-green-500 text-white px-4 py-2 rounded">Grenoble 2024</button>
                         <button onClick={() => setSelectedSport("Boussay")} className="bg-orange-500 text-white px-4 py-2 rounded">Boussay 2024</button>
                     </div>
