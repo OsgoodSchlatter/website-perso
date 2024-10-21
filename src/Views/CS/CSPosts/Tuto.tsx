@@ -4,7 +4,7 @@ import { HeaderCategory } from "../../../Single/HeaderCategory";
 const Tuto = ({ title, date }: { title: string, date: string }) => {
     return (
         <div className="flex justify-center ">
-            <div className="p-4 max-w-4xl">
+            <div className="p-4 md:w-1/2 max-w-4xl">
                 <div className="mt-2">
                     <div className="font-bold text-3xl">
                         1 - RESSOURCES:

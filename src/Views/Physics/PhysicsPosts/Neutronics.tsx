@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import PWR from "./PWR.png";
 import coulomb from "./coulomb_vs_strong_interaction.png"
 import valley from "./valley_of_stability.png"
-import { Title1 } from "../../../Single/Styles";
+import schematic from "./schematic_neutron_reactions.png"
 
 const UO2 = <Latex>{"$UO_2$"}</Latex>;
 const CO2 = <Latex>{"$CO_2$"}</Latex>;
@@ -263,7 +263,42 @@ const Neutronics = ({ title, date }: { title: string; date: string }) => {
                         Then if <Latex>{`$K=1$`}</Latex>, naturally we see that the number of fissions is always <Latex>{`$N$`}</Latex>. We call this state a <a className="font-bold">critical state</a>. Critical does not mean anything more than being <a className="font-bold">stable</a>.
                         If <Latex>{`$K>1$`}</Latex>, the reaction accelerates, it is called a <a className="font-bold">super critical state</a>.
                         If <Latex>{`$K<1$`}</Latex>, the reaction decelerates, it is called a <a className="font-bold">sub critical state</a>.
-
+                        <div className="mt-4 italic underline">
+                            1.6 - Types of reactors
+                        </div>
+                        Since <Latex>{`$\\nu$`}</Latex> is around 2.4 for Uranium 235, then in order to have k=1, we need to have <Latex>{`$\\omega$`}</Latex> =1/2.4 = 42%. Let's put forward several informations in order to understand the process better.
+                        <br />
+                        1. Uranium is the only element that can undergo fission and that is found naturally on Earth, not created artificially.
+                        <br />
+                        2. Uranium has two isotopes, U235 and U238. U238 cannot generally undergo fission with an incident neutron except if it is very energetic. On the other hand, U235 can undergo fission with neutrons of any energy (which is the definition of being fissile).
+                        <br />
+                        3. U235 consists of 0.72% of the total uranium (1/139).
+                        <br />
+                        4. Neutrons are emitted at an energy of around 2 MeV (20000 km/s) when released by a fission.
+                        At this energy, both the cross sections of U238 and U235 are of the same OOM.
+                        <br />
+                        5. The cross section of U235 is much larger (250 times more) than that of U238 at energies around 1/40 eV. These energies can be reached by neutrons by successive scatterings with elements of low capture probability.
+                        <br />
+                        <div className="font-bold">
+                            Thus, two designs of reactor are highlighted:
+                        </div>
+                        - Fast reactors, enriched Uranium and fast neutrons. In those reactors, the neutrons are used at their birth energy (200 MeV) and the uranium is highly enriched.
+                        <br />
+                        - Natural Uranium and thermal neutrons. In those reactors, the neutrons are decelerated to thermal energies (some meV) thanks to moderators. The uranium does not have to be highly enriched since the cross sections difference between U235 and U238 (x250) at thermal energies compensate for the low presence ratio of U235 against U238 (x1/139) in natural Uranium.
+                        <div className="mt-4 italic underline">
+                            1.7 - Choice of moderator
+                        </div>
+                        In a reactor that does not feature enriched Uranium, we need to add a moderator to slow down neutrons to thermal energies. The moderator element should be close in terms of size to that of a neutron so that the elastic scattering is most effective. Moreover, it should only scatter neutrons but not absorb them, otherwise leading to a decrease of fission rate. The moderator should also be sufficiently dense in order to effectively slow down neutrons. Therefore liquid or solid states are prefered over gaseous states.
+                        Only a couple of element have these 3 criterias:
+                        <br />
+                        1. Liquid or solid hydrogenated element (element that contains hydrogen), such as water.
+                        <br />
+                        2. Heavy water (water but hydrogen has a neutron)
+                        <br />
+                        3. Beryllium
+                        <br />
+                        4. Carbon (as graphite)
+                        Water has an absorption cross section higher than the other 3 so if water is used as a moderator, then Uranium needs to be slightly enriched (2.5%) in order to reach criticality. Since it is very cheap, it is often considered a good tradeoff to enrich a bit Uranium and use water as a coolant and moderator at the same time (this is the case in PWR or BWR reactors, which make up more than 70% of all reactors).
                     </>
                 );
             case 2:
@@ -277,9 +312,89 @@ const Neutronics = ({ title, date }: { title: string; date: string }) => {
             case 3:
                 return (
                     <>
-                        <div className="font-bold text-lg mt-2">
-                            3 - Introduction to neutron physics
+                        <div className="text-4xl font-bold">
+                            Chapter 3
                         </div>
+                        <div className="font-bold text-lg mt-2">
+                            Introduction to neutron physics
+                        </div>
+                        <div className="text-lg font-bold mt-2">
+                            Summary
+                        </div>
+                        <div className="italic underline">
+                            3.1 - Neutron-matter interaction
+                        </div>
+                        <div className="italic underline mt-4">
+                            3.1 - Neutron-matter interaction
+                        </div>
+                        There exists multiple interactions of neutrons with the nucleus. Indeed, since the neutron is not a charged particle, it only interacts with the nucleus and not with the electron cloud. To determine how likely is an interaction to happen, we can talk about cross-sections. The cross-section <Latex>{"$\\sigma$"}</Latex>;
+                        is a measure of the probability of an interaction between different particles. Here is a summary of all the interactions neutrons can have in a medium.
+                        <img src={schematic} alt="" />
+                        <div className="text-center"> Figure: Neutron interactions</div>
+                        <br />
+                        <div className="font-bold">
+                            - Scattering:
+                        </div>
+                        <div className="font-bold">
+                            1. Elastic:
+                        </div>
+                        Elastic scattering implies that the total kinetic energy of the system (neutron + nucleus) is conserved. A little part of the neutron energy is transferred from the incident neutron to the nucleus.
+                        <br />
+                        <div className="text-center">
+                            <Latex>{"$n+A \\rightarrow n+A$"}</Latex>
+                        </div>
+                        <div className="font-bold">
+                            2. Inelastic:
+                        </div> Inelastic scattering implies that there is a loss of kinetic energy in the system (neutron + nucleus). The incident neutron excites the nucleus and bounces away with far less energy than in elastic scattering. This can happen only if the incident neutron carries enough energy to reach the excited levels of the nucleus. Being in an excited state, the nucleus deexcites by emitting a <Latex>{"$\\gamma$"}</Latex> ray. This emission is linked with a loss of kinetic energy of the system (neutron + nucleus), transformed in another type of energy (radiation, thermal energy, ionization,...).
+                        <div className="text-center">
+                            <Latex>{"$n+A \\rightarrow n+A^*$"}</Latex>,
+                            <br />
+                            <Latex>{"$A^* \\rightarrow A + \\gamma$"}</Latex>
+                        </div>
+                        <br />
+                        <div className="font-bold">
+                            - Absorption:
+                        </div>
+                        When a neutron is completely absorbed by the nucleus and forms a new compound nucleus. Then multiple emission and decay modes exist to come back to a more stable level.
+                        <br />
+                        <div className="font-bold">
+                            1. Fission:
+                        </div>
+                        For fissionable nuclei, an interaction with an incident neutron may lead to a fission event.
+                        <br />
+                        <div className="text-center">
+                            <Latex>{"$n+A \\rightarrow FF_1 + FF_2 + \\nu n$"}</Latex>
+                        </div>
+                        (FF = fission fragments)
+                        <br />
+                        This reaction has no threshold for odd number of neutrons, but has a threshold for even number of neutrons (tunnel effect)
+                        <div className="font-bold">
+                            2. Capture:
+                        </div>
+                        A neutron is absorbed by the nucleus. Then, to deexcite, the nucleus emits a <Latex>{"$\\gamma$"}</Latex> ray. This reaction is denoted by (n,<Latex>{"$\\gamma$"}</Latex>).
+                        <div className="text-center">
+                            <Latex>{"$n+A \\rightarrow \\gamma + (A+1) $"}</Latex>
+                        </div>
+                        <div className="font-bold">
+                            3. n,kn:
+                        </div>
+                        <div className="text-center">
+                            <Latex>{"$n+A \\rightarrow kn + (A-k) $"}</Latex>
+                        </div>
+                        This reaction has a threshold: the energy separation of k neutron from the nucleus.
+                        <div className="font-bold">
+                            4. others
+                        </div>
+                        <div className="text-center">
+                            <Latex>{"$n+A \\rightarrow p + B $"}</Latex>
+                            <br />
+
+                            <Latex>{"$n+A \\rightarrow \\alpha + C  $"}</Latex>
+
+                        </div>
+
+
+
                     </>
                 );
             case 4:
