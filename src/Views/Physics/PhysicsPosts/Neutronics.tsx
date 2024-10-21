@@ -324,6 +324,9 @@ const Neutronics = ({ title, date }: { title: string; date: string }) => {
                         <div className="italic underline">
                             3.1 - Neutron-matter interaction
                         </div>
+                        <div className="italic underline">
+                            3.2 - Cross sections
+                        </div>
                         <div className="italic underline mt-4">
                             3.1 - Neutron-matter interaction
                         </div>
