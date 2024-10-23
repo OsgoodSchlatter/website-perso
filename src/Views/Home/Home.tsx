@@ -40,9 +40,9 @@ export const Home = () => {
     setValue(category);
   };
   return (
-    <div className="flex  justify-center w-100%">
+    <div className="flex  justify-center">
       <div className="md:w-1/2 w-3/4 items-center">
-        <div className="flex flex-wrap justify-evenly p-10 font-bold">
+        <div className="flex flex-wrap justify-evenly p-10 font-bold px-2">
           {Array.from(Pages.entries())
             .map(([key, value]) => (
               <div className="px-4 pt-1 hover:underline" >

@@ -20,11 +20,17 @@ export const HeaderPost = ({
         navigate(`/${route}/${postId}`);
     };
     return (
-        <div
-            className="text-3xl hover:underline"
-            onClick={() => handleClick(choice)}
-        >
-            {title}
+        <div className="justify-between flex">
+
+            <div
+                className="text-xl hover:underline"
+                onClick={() => handleClick(choice)}
+            >
+                {title}
+            </div>
+            <div>
+                {date}
+            </div>
         </div>
     );
 };

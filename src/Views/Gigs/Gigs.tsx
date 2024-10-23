@@ -129,7 +129,7 @@ export const Gigs = () => {
                 );
 
             default:
-                return null; // or a message saying "Select a sport"
+                return null;
         }
     };
 

@@ -532,18 +532,14 @@ const Neutronics = ({ title, date }: { title: string; date: string }) => {
         <>
             <div className="flex justify-center m-2">
                 <div className="w-full sm:w-2/3 md:w-1/2 lg:max-w-4xl xl:max-w-5xl mx-4 mt-8">
-                    <div className="text-5xl font-bold">
-                        Neutron Physics
-                    </div>
                     <div className="flex justify-between items-center">
-                        <div className="mt-2">
-                            This knowledge is mostly taken from the book "Neutron Physics" of
-                            Paul Reuss.
+                        <div className="text-5xl font-bold">
+                            Neutron Physics
                         </div>
                         <select
                             value={selectedNumber}
                             onChange={handleChange}
-                            className=" p-8 py-2 rounded max-h-10"
+                            className=" p-8 py-2 rounded max-h-10 bg-slate-500"
                         >
                             {Array.from({ length: 14 }, (_, i) => i + 1).map((number) => (
                                 <option key={number} value={number}>
@@ -551,6 +547,10 @@ const Neutronics = ({ title, date }: { title: string; date: string }) => {
                                 </option>
                             ))}
                         </select>
+                    </div>
+                    <div className="mt-2">
+                        This knowledge is mostly taken from the book "Neutron Physics" of
+                        Paul Reuss.
                     </div>
 
                     <div className="flex justify-between"></div>

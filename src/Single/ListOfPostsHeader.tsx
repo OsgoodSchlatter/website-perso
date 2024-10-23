@@ -1,7 +1,6 @@
 import { BlogCategory } from "../Views/Home/Data";
 import { Header } from "./Header";
 import { HeaderPost } from "./HeaderPost";
-import { HeaderPostTrips } from "./HeaderPostTrips";
 
 
 export const ListOfPostsHeader = ({
@@ -20,7 +19,7 @@ export const ListOfPostsHeader = ({
         <>
             {main ?? <Header name={topic ?? ""} posts={Object.keys(blogPosts).length} />}
             <div className={main?.valueOf() ? "flex m-2" : "flex m-2 justify-center"}>
-                <div className="grid grid-rows-4 gap-1">
+                <div className="grid grid-rows-4 gap-1 w-full">
                     {Object.keys(blogPosts).filter((postID) => blogPosts[postID as keyof typeof blogPosts].category !== BlogCategory.Recruiter).map((postID) => {
                         const post = blogPosts[postID as keyof typeof blogPosts];
                         return (

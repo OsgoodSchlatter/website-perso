@@ -62,11 +62,11 @@ export const Navbar = () => {
   return (
     <>
       <div className="md:flex md:justify-center w-full bg-slate-700">
-        <header className="h-20 md:w-1/2 px-1   flex items-center overflow-hidden justify-between">
+        <header className="h-20 md:w-1/2 px-1 flex items-center overflow-hidden justify-between">
           <div className="flex md:text-3xl text-xl">
             <Link
               to="/"
-              className="text-amber-200	 md:px-4 p-2 flex rounded-lg hover:underline"
+              className="text-green-400 md:px-2 flex rounded-lg hover:underline"
             >
               osgood
             </Link>
@@ -96,7 +96,7 @@ export const Navbar = () => {
             <button
               ref={buttonRef}
               onClick={toggleMenu}
-              className=" md:px-2 p-2 mb-1 mr-2 md:text-3xl text-xl flex   rounded-lg hover:underline"
+              className=" md:px-2 p-2 mb-1 md:text-3xl text-xl flex   rounded-lg hover:underline"
             >
               contact
             </button>

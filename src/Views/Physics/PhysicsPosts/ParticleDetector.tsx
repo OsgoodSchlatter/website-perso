@@ -281,7 +281,7 @@ const ParticleDetector = () => {
                         <select
                             value={selectedNumber}
                             onChange={handleChange}
-                            className="p-8 py-2 rounded max-h-10"
+                            className="p-8 py-2 rounded max-h-10 bg-slate-500"
                         >
                             {Array.from({ length: 3 }, (_, i) => i + 1).map((number) => (
                                 <option key={number} value={number}>
