@@ -1,4 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
+import lastModifiedDates from '../lastModifiedDates.json';
+
+interface LastModifiedDates {
+    [key: string]: string;
+}
 
 export const HeaderPost = ({
     date,
@@ -7,18 +12,31 @@ export const HeaderPost = ({
     category,
     main,
     route,
+    content_name,
 }: {
     choice: number;
     date: string;
     title: string;
     category?: string,
     main?: Boolean,
-    route: string
+    route: string,
+    content_name?: string,
 }) => {
     const navigate = useNavigate();
     const handleClick = (postId: number) => {
         navigate(`/${route}/${postId}`);
     };
+    const typedLastModifiedDates = lastModifiedDates as LastModifiedDates;
+
+    const lastModified = typedLastModifiedDates[content_name + ".tsx"] || "Unknown";
+    const formattedDate = lastModified !== "Unknown"
+        ? new Date(lastModified).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+        })
+        : lastModified;
+
     return (
         <div className="justify-between flex">
 
@@ -29,7 +47,7 @@ export const HeaderPost = ({
                 {title}
             </div>
             <div>
-                {date}
+                {formattedDate}
             </div>
         </div>
     );

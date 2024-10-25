@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ListOfPostsHeader } from "../../Single/ListOfPostsHeader";
 import { BlogCategory, blogPostsArray, BlogPostType } from "./Data";
 import "./Home.css";
-import wp1 from "../../img/wallpaper/wp4.jpg"
+
 
 // todo, do a struct that contains each article in one subdomain
 

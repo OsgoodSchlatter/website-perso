@@ -40,7 +40,7 @@ const GHGArray: GHGArray[] = [
   ["Nuclear", 12, -1, -1],
 ];
 
-const OOM = ({ title, date }: { title: string, date: string }) => {
+const OOM = () => {
   const [myElecArray, setMyElecArray] = useState<ElecArray[]>(electricalArray);
   const [myGHGArray, setMyGHGArray] = useState<GHGArray[]>(GHGArray);
 

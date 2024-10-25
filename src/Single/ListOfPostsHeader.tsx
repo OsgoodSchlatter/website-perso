@@ -22,6 +22,8 @@ export const ListOfPostsHeader = ({
                 <div className="grid grid-rows-4 gap-1 w-full">
                     {Object.keys(blogPosts).filter((postID) => blogPosts[postID as keyof typeof blogPosts].category !== BlogCategory.Recruiter).map((postID) => {
                         const post = blogPosts[postID as keyof typeof blogPosts];
+                        const contentName = post.content.displayName || post.content.name || "Unknown Component";
+
                         return (
                             <HeaderPost
                                 choice={post.id}
@@ -29,6 +31,7 @@ export const ListOfPostsHeader = ({
                                 title={post.title}
                                 category={post.category}
                                 route={post.route}
+                                content_name={contentName}
                                 main={main?.valueOf()}
                             />
                         );

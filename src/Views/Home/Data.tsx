@@ -17,7 +17,7 @@ import PianoChords from "../Music/MusicRep";
 
 import { Gigs } from "../Gigs/Gigs";
 
-import { PubliArticle } from "../Publi/PublicationsPosts";
+import { PubliArticle } from "../Publi/PubliArticle";
 import { Sport } from "../Sport/Sport";
 import { Trips } from "../Trips/Trips";
 import { Books } from "../Books/Books";

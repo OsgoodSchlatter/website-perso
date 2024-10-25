@@ -1,4 +1,4 @@
-import { blogPosts } from "./PublicationsPosts";
+import { blogPosts } from "./PubliArticle";
 import { ListOfPostsHeader } from "../../Single/ListOfPostsHeader";
 
 
