@@ -66,7 +66,7 @@ export const Navbar = () => {
           <div className="flex md:text-3xl text-xl">
             <Link
               to="/"
-              className="text-green-400 md:px-2 flex rounded-lg hover:underline"
+              className="text-green-400 md:px-2 p-4 flex rounded-lg hover:underline"
             >
               osgood
             </Link>

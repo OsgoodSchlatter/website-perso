@@ -4,6 +4,8 @@ import { Title1 } from "../../../Single/Styles";
 import boost from "./Ideal-Boost-Converter-Circuit.jpg"
 import neutron_det from "./neutron_detector.png"
 import oper_reg from "./operating_voltage.png"
+import oper_mode from "./operating_modes.png"
+
 
 
 
@@ -17,7 +19,10 @@ const ParticleDetector = () => {
         switch (selectedNumber) {
             case 1:
                 return (<>
-                    <div className="font-bold text-xl mt-8">
+                    <div className="font-bold text-3xl mt-8">
+                        Chapter 1
+                    </div>
+                    <div className="font-bold text-xl">
                         Gaseous-filled detectors working principle
                     </div>
                     <div className="text-lg font-bold mt-2">
@@ -40,7 +45,7 @@ const ParticleDetector = () => {
                     </div>
                     There are three main kinds of radiation detectors: scintillation detectors, semi-conductors detectors and gaseous-filled detectors.  In this part, we will only showcase gaseous-filled detectors. Detecting a directly ionizing or indirectly ionizing radiation consists in measuring the energy of that radiation by converting it into an electric signal. In short, this is done in a chamber where the incident radiation ionizes directly or indirectly a gaseous medium. The created charges, while being adrift under the action of the electrical field, induce a movement of the electrons in the anode. This movement of
                     charges is then amplified in an external electric circuit to form a measurable signal. In our case, we want to measure neutrons, which are not directly ionizing particles. Therefore, we can use the reactions found in part in order to ”convert” them into ionizing particles. Not all gaseous detectors work under the same operating electric field. The voltage induced by this field can vary and yields different designs of detectors.
-                    <img className="mt-2 " src={neutron_det} alt="" />
+                    <img className="mt-2" src={neutron_det} alt="" />
                     <div className="text-center"> Figure: Working principle of gaseous detector (Lyoussi,2010)</div>
                     <br />
                     <div className="italic underline">
@@ -79,7 +84,70 @@ const ParticleDetector = () => {
                     <div className="font-bold">
                         - Region F:
                     </div> In this region, the discharge is unstable.
-                    <img src={oper_reg} alt="" />
+                    <div className="text-center">
+                        <img src={oper_reg} alt="" className="mt-2" />
+                        Figure: operating regions
+                    </div>
+                    <br />
+                    <div className="italic underline">
+                        3. Operating modes
+                    </div>
+                    Depending on the incident neutron flux, different modes can be used to best quantify the electric signal in output. They are described hereafter. In the following figure, we can see 3 different regions of increasing flux: region 1, 2 and 3. In region 1, we consider a low flux of neutrons. The counting rate lies between 1 to roughly <Latex>{"$10^{6}A$"}</Latex> cps (counts per second). It is low enough to discriminate and treat pulses. Pulse mode operates in this region. At around <Latex>{"$10^{5}A$"}</Latex> cps and more, pulses start overlapping each other to form a more compact and fluctuating signal (region 2). The fluctuating mode is relevant there. Above <Latex>{"$10^{8}A$"}</Latex> cps, a distinct continuous current becomes noticeable (region 3). The current mode is run there.
+                    <div className="justify-center flex ">
+                        <img src={oper_mode} alt="" className="w-[500px] mt-2" />
+                    </div>
+                    <div className="text-center">
+                        Figure: Operating modes
+                    </div>
+                    <br />
+                    <div className="italic underline">
+                        3a-Operation in pulse mode
+                    </div>
+                    This mode is linked with low neutronic flux. In this mode, we focus on individual pulses by reading the voltage on a resistor R, linked to a capacity C. The pulse is linked with a collected charge Q and a duration T. CPNB work solely in this mode. Two cases are relevant to highlight:
+                    <br />
+                    <br />
+                    If <Latex>{"$RC << T$"}</Latex> : the measure circuit is very fast and transmits the initial pulse precisely. The drawbacks of this type of measure is that measuring the maximum voltage is tricky. Indeed, since RC is quite short, then the voltage does not have enough time to reach the maximum. Furthermore, the sensitivity to the fluctuation of the pulses is quite limited.
+                    <br />
+                    <br />
+                    If <Latex>{"$RC >> T$"}</Latex>:the charge Q goes through R slowly and reaches a peak <Latex>{"$V_{max}=\\frac{Q}{C} $"}</Latex> at <Latex>{"$t=T $"}</Latex>. Then it RC
+                    decreases in <Latex>{"$e^{-\\frac{t}{RC}}$"}</Latex> . Measuring the maximum voltage is easier; it is proportional to Q, itself linearly dependent with the energy deposited by the incoming particle. Nonetheless, if there is a high rate of particles, there could be a staking of pulses due to the long exponential decrease.
+                    <br />
+                    <br />
+
+                    <div className="italic underline">
+                        3b-Operation in Campbell mode
+                    </div>
+                    For a counting rate above <Latex>{"$10^5$"}</Latex> cps, pulses are less and less discernible. Campbell sampling theorem [Campbell, 1909] can be used to describe the signal. Depending on the order of the Campbell theorem, several modes of operation can be highligthed.
+                    <br />
+                    <br />
+
+                    In current mode, we only take the continuous part into account. Using Campbell sampling theorem of order 1, we can show [Buisson, 1978], [Fanet, 2002] that the average continuous current is proportional to the incident neutronic flux:
+                    <div className="text-center">
+                        <Latex>{"$<I>= KI ∗ \\Phi$"}</Latex>
+                    </div>
+
+                    where
+                    <br />
+                    <Latex>{"$<I>$"}</Latex> is the average of the continuous current in A,
+                    <br />
+                    <Latex>{"$KI$"}</Latex> is the sensitivity of the detector in A per unitary thermal neutronic flux,
+                    <br />
+                    and <Latex>{"$\\Phi$"}</Latex> is the thermal neutronic flux () <Latex>{"$n.cm^{−2}.s^{−1}$"}</Latex>.
+                    <br />
+                    <br />
+                    In fluctuation mode, we focus on the fluctuating part of the signal. Using Campbell sampling theorem of order 2, we can show that the variance of the current (i.e. fluctuations) is proportional to the incident neutronic flux:
+                    <div className="text-center mt-3">
+                        <Latex>{"$Var(I) = KF ∗ Φ ∗ Cste$"}</Latex>
+                    </div>
+                    where <br />
+                    <Latex>{"$Var(I) $"}</Latex> is the variance of the current (<Latex>{"$A^2 $"}</Latex>),
+                    <br />
+
+                    <Latex>{"$KF $"}</Latex>  is the sensitivity of the detector in fluctuation mode in <Latex>{"$A^2.s $"}</Latex> per unitary thermal neutronic flux,
+                    <br />
+                    <Latex>{"$Cste $"}</Latex>, constant linked to the pulse response of the detector in <Latex>{"$s^{-1}$"}</Latex>
+                    <br />
+                    <Latex>{"$\\Phi$"}</Latex> is the thermal neutronic flux (<Latex>{"$n.cm^{−2}.s^{-1}$"}</Latex>)
 
                 </>)
             case 2:
@@ -275,7 +343,7 @@ const ParticleDetector = () => {
             <div className="flex justify-center m-2">
                 <div className="w-full sm:w-2/3 md:w-1/2 lg:max-w-4xl xl:max- xl mx-4">
                     <div className="flex justify-between items-center mt-8">
-                        <div className="font-bold text-3xl ">
+                        <div className="font-bold text-4xl ">
                             Particle Detectors
                         </div>
                         <select
@@ -290,7 +358,7 @@ const ParticleDetector = () => {
                             ))}
                         </select>
                     </div>
-                    <div className=" px-2 rounded"> {renderContent()}</div>
+                    <div className="rounded"> {renderContent()}</div>
                 </div>
             </div>
 
