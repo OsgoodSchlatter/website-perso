@@ -1,0 +1,483 @@
+diff --git a/node_modules/react-dev-utils/FileSizeReporter.js b/node_modules/react-dev-utils/FileSizeReporter.js
+index b2b4cc6..24c460a 100644
+--- a/node_modules/react-dev-utils/FileSizeReporter.js
++++ b/node_modules/react-dev-utils/FileSizeReporter.js
+@@ -12,7 +12,7 @@ var path = require('path');
+ var chalk = require('chalk');
+ var filesize = require('filesize');
+ var recursive = require('recursive-readdir');
+-var stripAnsi = require('strip-ansi');
++var stripAnsi = await import('strip-ansi').then(mod => mod.default);
+ var gzipSize = require('gzip-size').sync;
+ 
+ function canReadAsset(asset) {
+diff --git a/node_modules/react-dev-utils/ForkTsCheckerWarningWebpackPlugin.js b/node_modules/react-dev-utils/ForkTsCheckerWarningWebpackPlugin.js
+deleted file mode 100644
+index cc091db..0000000
+--- a/node_modules/react-dev-utils/ForkTsCheckerWarningWebpackPlugin.js
++++ /dev/null
+@@ -1,25 +0,0 @@
+-/**
+- * Copyright (c) 2015-present, Facebook, Inc.
+- *
+- * This source code is licensed under the MIT license found in the
+- * LICENSE file in the root directory of this source tree.
+- */
+-
+-'use strict';
+-
+-// References:
+-// - https://github.com/TypeStrong/fork-ts-checker-webpack-plugin#plugin-hooks
+-// - https://github.com/TypeStrong/fork-ts-checker-webpack-plugin/issues/232#issuecomment-645543747
+-const ForkTsCheckerWebpackPlugin = require('./ForkTsCheckerWebpackPlugin');
+-
+-module.exports = class ForkTsCheckerWarningWebpackPlugin {
+-  apply(compiler) {
+-    new ForkTsCheckerWebpackPlugin().apply(compiler);
+-
+-    const hooks = ForkTsCheckerWebpackPlugin.getCompilerHooks(compiler);
+-
+-    hooks.issues.tap('ForkTsCheckerWarningWebpackPlugin', issues =>
+-      issues.map(issue => ({ ...issue, severity: 'warning' }))
+-    );
+-  }
+-};
+diff --git a/node_modules/react-dev-utils/ModuleNotFoundPlugin.js b/node_modules/react-dev-utils/ModuleNotFoundPlugin.js
+index da8eed0..55705fd 100644
+--- a/node_modules/react-dev-utils/ModuleNotFoundPlugin.js
++++ b/node_modules/react-dev-utils/ModuleNotFoundPlugin.js
+@@ -100,7 +100,9 @@ class ModuleNotFoundPlugin {
+     const { prettierError } = this;
+     compiler.hooks.make.intercept({
+       register(tap) {
+-        if (!(tap.name === 'MultiEntryPlugin' || tap.name === 'EntryPlugin')) {
++        if (
++          !(tap.name === 'MultiEntryPlugin' || tap.name === 'SingleEntryPlugin')
++        ) {
+           return tap;
+         }
+         return Object.assign({}, tap, {
+diff --git a/node_modules/react-dev-utils/ModuleScopePlugin.js b/node_modules/react-dev-utils/ModuleScopePlugin.js
+index e2c16ff..e84d2b3 100644
+--- a/node_modules/react-dev-utils/ModuleScopePlugin.js
++++ b/node_modules/react-dev-utils/ModuleScopePlugin.js
+@@ -15,7 +15,6 @@ class ModuleScopePlugin {
+   constructor(appSrc, allowedFiles = []) {
+     this.appSrcs = Array.isArray(appSrc) ? appSrc : [appSrc];
+     this.allowedFiles = new Set(allowedFiles);
+-    this.allowedPaths = [...allowedFiles].map(path.dirname).filter(p => path.relative(p, process.cwd()) !== '');
+   }
+ 
+   apply(resolver) {
+@@ -54,11 +53,6 @@ class ModuleScopePlugin {
+         if (this.allowedFiles.has(requestFullPath)) {
+           return callback();
+         }
+-        if (this.allowedPaths.some((allowedFile) => {
+-          return requestFullPath.startsWith(allowedFile);
+-        })) {
+-          return callback();
+-        }
+         // Find path from src to the requested file
+         // Error if in a parent directory of all given appSrcs
+         if (
+diff --git a/node_modules/react-dev-utils/README.md b/node_modules/react-dev-utils/README.md
+index 4f7185b..6a6ab28 100644
+--- a/node_modules/react-dev-utils/README.md
++++ b/node_modules/react-dev-utils/README.md
+@@ -111,6 +111,31 @@ module.exports = {
+ };
+ ```
+ 
++#### `new WatchMissingNodeModulesPlugin(nodeModulesPath: string)`
++
++This webpack plugin ensures `npm install <library>` forces a project rebuild.<br>
++We’re not sure why this isn't webpack's default behavior.<br>
++See [#186](https://github.com/facebook/create-react-app/issues/186) for details.
++
++```js
++var path = require('path');
++var WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
++
++// webpack config
++module.exports = {
++  // ...
++  plugins: [
++    // ...
++    // If you require a missing module and then `npm install` it, you still have
++    // to restart the development server for webpack to discover it. This plugin
++    // makes the discovery automatic so you don't have to restart.
++    // See https://github.com/facebook/create-react-app/issues/186
++    new WatchMissingNodeModulesPlugin(path.resolve('node_modules')),
++  ],
++  // ...
++};
++```
++
+ #### `checkRequiredFiles(files: Array<string>): boolean`
+ 
+ Makes sure that all passed files exist.<br>
+@@ -206,11 +231,11 @@ var formatWebpackMessages = require('react-dev-utils/formatWebpackMessages');
+ 
+ var compiler = webpack(config);
+ 
+-compiler.hooks.invalid.tap('invalid', function () {
++compiler.hooks.invalid.tap('invalid', function() {
+   console.log('Compiling...');
+ });
+ 
+-compiler.hooks.done.tap('done', function (stats) {
++compiler.hooks.done.tap('done', function(stats) {
+   var rawMessages = stats.toJson({}, true);
+   var messages = formatWebpackMessages(rawMessages);
+   if (!messages.errors.length && !messages.warnings.length) {
+@@ -313,9 +338,11 @@ The `args` object accepts a number of properties:
+ 
+ - **appName** `string`: The name that will be printed to the terminal.
+ - **config** `Object`: The webpack configuration options to be provided to the webpack constructor.
++- **devSocket** `Object`: Required if `useTypeScript` is `true`. This object should include `errors` and `warnings` which are functions accepting an array of errors or warnings emitted by the type checking. This is useful when running `fork-ts-checker-webpack-plugin` with `async: true` to report errors that are emitted after the webpack build is complete.
+ - **urls** `Object`: To provide the `urls` argument, use `prepareUrls()` described below.
+ - **useYarn** `boolean`: If `true`, yarn instructions will be emitted in the terminal instead of npm.
+ - **useTypeScript** `boolean`: If `true`, TypeScript type checking will be enabled. Be sure to provide the `devSocket` argument above if this is set to `true`.
++- **tscCompileOnError** `boolean`: If `true`, errors in TypeScript type checking will not prevent start script from running app, and will not cause build script to exit unsuccessfully. Also downgrades all TypeScript type checking error messages to warning messages.
+ - **webpack** `function`: A reference to the webpack constructor.
+ 
+ ##### `prepareProxy(proxySetting: string, appPublicFolder: string, servedPathname: string): Object`
+diff --git a/node_modules/react-dev-utils/WatchMissingNodeModulesPlugin.js b/node_modules/react-dev-utils/WatchMissingNodeModulesPlugin.js
+new file mode 100644
+index 0000000..97759a7
+--- /dev/null
++++ b/node_modules/react-dev-utils/WatchMissingNodeModulesPlugin.js
+@@ -0,0 +1,33 @@
++/**
++ * Copyright (c) 2015-present, Facebook, Inc.
++ *
++ * This source code is licensed under the MIT license found in the
++ * LICENSE file in the root directory of this source tree.
++ */
++
++// This webpack plugin ensures `npm install <library>` forces a project rebuild.
++// We’re not sure why this isn't webpack's default behavior.
++// See https://github.com/facebook/create-react-app/issues/186.
++
++'use strict';
++
++class WatchMissingNodeModulesPlugin {
++  constructor(nodeModulesPath) {
++    this.nodeModulesPath = nodeModulesPath;
++  }
++
++  apply(compiler) {
++    compiler.hooks.emit.tap('WatchMissingNodeModulesPlugin', compilation => {
++      var missingDeps = Array.from(compilation.missingDependencies);
++      var nodeModulesPath = this.nodeModulesPath;
++
++      // If any missing files are expected to appear in node_modules...
++      if (missingDeps.some(file => file.includes(nodeModulesPath))) {
++        // ...tell webpack to watch node_modules recursively until they appear.
++        compilation.contextDependencies.add(nodeModulesPath);
++      }
++    });
++  }
++}
++
++module.exports = WatchMissingNodeModulesPlugin;
+diff --git a/node_modules/react-dev-utils/WebpackDevServerUtils.js b/node_modules/react-dev-utils/WebpackDevServerUtils.js
+index d9eea34..6a56f66 100644
+--- a/node_modules/react-dev-utils/WebpackDevServerUtils.js
++++ b/node_modules/react-dev-utils/WebpackDevServerUtils.js
+@@ -17,6 +17,7 @@ const prompts = require('prompts');
+ const clearConsole = require('./clearConsole');
+ const formatWebpackMessages = require('./formatWebpackMessages');
+ const getProcessForPort = require('./getProcessForPort');
++const typescriptFormatter = require('./typescriptFormatter');
+ const forkTsCheckerWebpackPlugin = require('./ForkTsCheckerWebpackPlugin');
+ 
+ const isInteractive = process.stdout.isTTY;
+@@ -103,9 +104,11 @@ function printInstructions(appName, urls, useYarn) {
+ function createCompiler({
+   appName,
+   config,
++  devSocket,
+   urls,
+   useYarn,
+   useTypeScript,
++  tscCompileOnError,
+   webpack,
+ }) {
+   // "Compiler" is a low-level interface to webpack.
+@@ -134,16 +137,28 @@ function createCompiler({
+ 
+   let isFirstCompile = true;
+   let tsMessagesPromise;
++  let tsMessagesResolver;
+ 
+   if (useTypeScript) {
++    compiler.hooks.beforeCompile.tap('beforeCompile', () => {
++      tsMessagesPromise = new Promise(resolve => {
++        tsMessagesResolver = msgs => resolve(msgs);
++      });
++    });
++
+     forkTsCheckerWebpackPlugin
+       .getCompilerHooks(compiler)
+-      .waiting.tap('awaitingTypeScriptCheck', () => {
+-        console.log(
+-          chalk.yellow(
+-            'Files successfully emitted, waiting for typecheck results...'
+-          )
+-        );
++      .receive.tap('afterTypeScriptCheck', (diagnostics, lints) => {
++        const allMsgs = [...diagnostics, ...lints];
++        const format = message =>
++          `${message.file}\n${typescriptFormatter(message, true)}`;
++
++        tsMessagesResolver({
++          errors: allMsgs.filter(msg => msg.severity === 'error').map(format),
++          warnings: allMsgs
++            .filter(msg => msg.severity === 'warning')
++            .map(format),
++        });
+       });
+   }
+ 
+@@ -165,6 +180,48 @@ function createCompiler({
+       errors: true,
+     });
+ 
++    if (useTypeScript && statsData.errors.length === 0) {
++      const delayedMsg = setTimeout(() => {
++        console.log(
++          chalk.yellow(
++            'Files successfully emitted, waiting for typecheck results...'
++          )
++        );
++      }, 100);
++
++      const messages = await tsMessagesPromise;
++      clearTimeout(delayedMsg);
++      if (tscCompileOnError) {
++        statsData.warnings.push(...messages.errors);
++      } else {
++        statsData.errors.push(...messages.errors);
++      }
++      statsData.warnings.push(...messages.warnings);
++
++      // Push errors and warnings into compilation result
++      // to show them after page refresh triggered by user.
++      if (tscCompileOnError) {
++        stats.compilation.warnings.push(...messages.errors);
++      } else {
++        stats.compilation.errors.push(...messages.errors);
++      }
++      stats.compilation.warnings.push(...messages.warnings);
++
++      if (messages.errors.length > 0) {
++        if (tscCompileOnError) {
++          devSocket.warnings(messages.errors);
++        } else {
++          devSocket.errors(messages.errors);
++        }
++      } else if (messages.warnings.length > 0) {
++        devSocket.warnings(messages.warnings);
++      }
++
++      if (isInteractive) {
++        clearConsole();
++      }
++    }
++
+     const messages = formatWebpackMessages(statsData);
+     const isSuccessful = !messages.errors.length && !messages.warnings.length;
+     if (isSuccessful) {
+@@ -320,7 +377,7 @@ function prepareProxy(proxy, appPublicFolder, servedPathname) {
+   // If proxy is specified, let it handle any request except for
+   // files in the public folder and requests to the WebpackDevServer socket endpoint.
+   // https://github.com/facebook/create-react-app/issues/6720
+-  const sockPath = process.env.WDS_SOCKET_PATH || '/ws';
++  const sockPath = process.env.WDS_SOCKET_PATH || '/sockjs-node';
+   const isDefaultSockHost = !process.env.WDS_SOCKET_HOST;
+   function mayProxy(pathname) {
+     const maybePublicPath = path.resolve(
+diff --git a/node_modules/react-dev-utils/evalSourceMapMiddleware.js b/node_modules/react-dev-utils/evalSourceMapMiddleware.js
+index 2e6c9a1..dee6370 100644
+--- a/node_modules/react-dev-utils/evalSourceMapMiddleware.js
++++ b/node_modules/react-dev-utils/evalSourceMapMiddleware.js
+@@ -14,9 +14,7 @@ function base64SourceMap(source) {
+ }
+ 
+ function getSourceById(server, id) {
+-  const module = Array.from(server._stats.compilation.modules).find(
+-    (m) => server._stats.compilation.chunkGraph.getModuleId(m) == id,
+-  );
++  const module = server._stats.compilation.modules.find(m => m.id == id);
+   return module.originalSource();
+ }
+ 
+diff --git a/node_modules/react-dev-utils/formatWebpackMessages.js b/node_modules/react-dev-utils/formatWebpackMessages.js
+index 1d0f7c5..f459ea9 100644
+--- a/node_modules/react-dev-utils/formatWebpackMessages.js
++++ b/node_modules/react-dev-utils/formatWebpackMessages.js
+@@ -15,19 +15,7 @@ function isLikelyASyntaxError(message) {
+ 
+ // Cleans up webpack error messages.
+ function formatMessage(message) {
+-  let lines = [];
+-
+-  if (typeof message === 'string') {
+-    lines = message.split('\n');
+-  } else if ('message' in message) {
+-    lines = message['message'].split('\n');
+-  } else if (Array.isArray(message)) {
+-    message.forEach(message => {
+-      if ('message' in message) {
+-        lines = message['message'].split('\n');
+-      }
+-    });
+-  }
++  let lines = message.split('\n');
+ 
+   // Strip webpack-added headers off errors/warnings
+   // https://github.com/webpack/webpack/blob/master/lib/ModuleError.js
+@@ -85,10 +73,10 @@ function formatMessage(message) {
+   }
+ 
+   // Add helpful message for users trying to use Sass for the first time
+-  if (lines[1] && lines[1].match(/Cannot find module.+sass/)) {
+-    lines[1] = 'To import Sass files, you first need to install sass.\n';
++  if (lines[1] && lines[1].match(/Cannot find module.+node-sass/)) {
++    lines[1] = 'To import Sass files, you first need to install node-sass.\n';
+     lines[1] +=
+-      'Run `npm install sass` or `yarn add sass` inside your workspace.';
++      'Run `npm install node-sass` or `yarn add node-sass` inside your workspace.';
+   }
+ 
+   message = lines.join('\n');
+diff --git a/node_modules/react-dev-utils/noopServiceWorkerMiddleware.js b/node_modules/react-dev-utils/noopServiceWorkerMiddleware.js
+index 0ca939a..4e660b5 100644
+--- a/node_modules/react-dev-utils/noopServiceWorkerMiddleware.js
++++ b/node_modules/react-dev-utils/noopServiceWorkerMiddleware.js
+@@ -11,7 +11,7 @@ const path = require('path');
+ 
+ module.exports = function createNoopServiceWorkerMiddleware(servedPath) {
+   return function noopServiceWorkerMiddleware(req, res, next) {
+-    if (req.url === path.posix.join(servedPath, 'service-worker.js')) {
++    if (req.url === path.join(servedPath, 'service-worker.js')) {
+       res.setHeader('Content-Type', 'text/javascript');
+       res.send(
+         `// This service worker file is effectively a 'no-op' that will reset any
+diff --git a/node_modules/react-dev-utils/redirectServedPathMiddleware.js b/node_modules/react-dev-utils/redirectServedPathMiddleware.js
+index 2fda106..a71578f 100644
+--- a/node_modules/react-dev-utils/redirectServedPathMiddleware.js
++++ b/node_modules/react-dev-utils/redirectServedPathMiddleware.js
+@@ -19,7 +19,7 @@ module.exports = function createRedirectServedPathMiddleware(servedPath) {
+     ) {
+       next();
+     } else {
+-      const newPath = path.posix.join(servedPath, req.path !== '/' ? req.path : '');
++      const newPath = path.join(servedPath, req.path !== '/' ? req.path : '');
+       res.redirect(newPath);
+     }
+   };
+diff --git a/node_modules/react-dev-utils/typescriptFormatter.js b/node_modules/react-dev-utils/typescriptFormatter.js
+new file mode 100644
+index 0000000..1fb1276
+--- /dev/null
++++ b/node_modules/react-dev-utils/typescriptFormatter.js
+@@ -0,0 +1,45 @@
++/**
++ * Copyright (c) 2015-present, Facebook, Inc.
++ *
++ * This source code is licensed under the MIT license found in the
++ * LICENSE file in the root directory of this source tree.
++ */
++
++'use strict';
++
++const os = require('os');
++const codeFrame = require('@babel/code-frame').codeFrameColumns;
++const chalk = require('chalk');
++const fs = require('fs');
++
++const issueOrigins = {
++  typescript: 'TypeScript',
++  internal: 'fork-ts-checker-webpack-plugin',
++};
++
++function formatter(issue) {
++  const { origin, severity, file, line, message, code, character } = issue;
++
++  const colors = new chalk.constructor();
++  const messageColor = severity === 'warning' ? colors.yellow : colors.red;
++  const fileAndNumberColor = colors.bold.cyan;
++
++  const source = file && fs.existsSync(file) && fs.readFileSync(file, 'utf-8');
++  const frame = source
++    ? codeFrame(source, { start: { line: line, column: character } })
++        .split('\n')
++        .map(str => '  ' + str)
++        .join(os.EOL)
++    : '';
++
++  return [
++    messageColor.bold(`${issueOrigins[origin]} ${severity.toLowerCase()} in `) +
++      fileAndNumberColor(`${file}(${line},${character})`) +
++      messageColor(':'),
++    message + '  ' + messageColor.underline(`TS${code}`),
++    '',
++    frame,
++  ].join(os.EOL);
++}
++
++module.exports = formatter;
+diff --git a/node_modules/react-dev-utils/webpackHotDevClient.js b/node_modules/react-dev-utils/webpackHotDevClient.js
+index f91965d..db87aba 100644
+--- a/node_modules/react-dev-utils/webpackHotDevClient.js
++++ b/node_modules/react-dev-utils/webpackHotDevClient.js
+@@ -63,7 +63,7 @@ var connection = new WebSocket(
+     hostname: process.env.WDS_SOCKET_HOST || window.location.hostname,
+     port: process.env.WDS_SOCKET_PORT || window.location.port,
+     // Hardcoded in WebpackDevServer
+-    pathname: process.env.WDS_SOCKET_PATH || '/ws',
++    pathname: process.env.WDS_SOCKET_PATH || '/sockjs-node',
+     slashes: true,
+   })
+ );
+@@ -230,18 +230,6 @@ function canApplyUpdates() {
+   return module.hot.status() === 'idle';
+ }
+ 
+-function canAcceptErrors() {
+-  // NOTE: This var is injected by Webpack's DefinePlugin, and is a boolean instead of string.
+-  const hasReactRefresh = process.env.FAST_REFRESH;
+-
+-  const status = module.hot.status();
+-  // React refresh can handle hot-reloading over errors.
+-  // However, when hot-reload status is abort or fail,
+-  // it indicates the current update cannot be applied safely,
+-  // and thus we should bail out to a forced reload for consistency.
+-  return hasReactRefresh && ['abort', 'fail'].indexOf(status) === -1;
+-}
+-
+ // Attempt to update code on the fly, fall back to a hard reload.
+ function tryApplyUpdates(onHotUpdateSuccess) {
+   if (!module.hot) {
+@@ -255,13 +243,11 @@ function tryApplyUpdates(onHotUpdateSuccess) {
+   }
+ 
+   function handleApplyUpdates(err, updatedModules) {
+-    const haveErrors = err || hadRuntimeError;
+-    // When there is no error but updatedModules is unavailable,
+-    // it indicates a critical failure in hot-reloading,
+-    // e.g. server is not ready to serve new bundle,
+-    // and hence we need to do a forced reload.
+-    const needsForcedReload = !err && !updatedModules;
+-    if ((haveErrors && !canAcceptErrors()) || needsForcedReload) {
++    // NOTE: This var is injected by Webpack's DefinePlugin, and is a boolean instead of string.
++    const hasReactRefresh = process.env.FAST_REFRESH;
++    const wantsForcedReload = err || !updatedModules || hadRuntimeError;
++    // React refresh can handle hot-reloading over errors.
++    if (!hasReactRefresh && wantsForcedReload) {
+       window.location.reload();
+       return;
+     }
