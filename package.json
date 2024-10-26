@@ -92,5 +92,10 @@
     "tailwindcss": "^3.1.6",
     "ts-node": "^10.9.2",
     "typescript": "^5.0.2"
+  },
+  "resolutions": {
+    "string-width": "4.2.3",
+    "strip-ansi": "6.0.1",
+    "wide-align": "1.1.5"
   }
 }
