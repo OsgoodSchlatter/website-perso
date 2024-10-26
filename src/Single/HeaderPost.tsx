@@ -1,16 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
-import lastModifiedDates from '../lastModifiedDates.json';
+
+const lastModifiedDates = require("../lastModifiedDates.json");
 
 interface LastModifiedDates {
     [key: string]: string;
 }
 
 export const HeaderPost = ({
-    date,
     title,
     choice,
-    category,
-    main,
     route,
     content_name,
 }: {
