@@ -1,10 +1,6 @@
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const lastModifiedDates = require("../lastModifiedDates.json");
-
-interface LastModifiedDates {
-    [key: string]: string;
-}
 
 export const HeaderPost = ({
     title,
@@ -24,6 +20,18 @@ export const HeaderPost = ({
     const handleClick = (postId: number) => {
         navigate(`/${route}/${postId}`);
     };
+    const [lastModifiedDates, setLastModifiedDates] = useState({});
+
+    useEffect(() => {
+        fetch(`${process.env.PUBLIC_URL}/lastModifiedDates.json`)
+            .then((response) => response.json())
+            .then((data) => setLastModifiedDates(data))
+            .catch((error) => console.error("Error fetching lastModifiedDates:", error));
+    }, []);
+    interface LastModifiedDates {
+        [key: string]: string;
+    }
+
     const typedLastModifiedDates = lastModifiedDates as LastModifiedDates;
 
     const lastModified = typedLastModifiedDates[content_name + ".tsx"] || "Unknown";
