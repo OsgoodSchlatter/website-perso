@@ -23,7 +23,7 @@ export const HeaderPost = ({
     const [lastModifiedDates, setLastModifiedDates] = useState({});
 
     useEffect(() => {
-        fetch(`${process.env.PUBLIC_URL}/lastModifiedDates.json`)
+        fetch(`${process.env.PUBLIC_URL}/lastmodifieddates.json`)
             .then((response) => response.json())
             .then((data) => setLastModifiedDates(data))
             .catch((error) => console.error("Error fetching lastModifiedDates:", error));
