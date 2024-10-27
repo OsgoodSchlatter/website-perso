@@ -62,7 +62,7 @@ export const Home = () => {
           <button
             type="button"
             className="inline-flex justify-center rounded-md border border-transparent bg-slate-400 p-1 mt-2 text-sm font-medium  -900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-            onClick={() => { (setSortedPosts(blogPostsArray)); setValue("") }}>
+            onClick={() => { (setSortedPosts(blogPostsArray)); setValue(""); console.log(blogPostsArray[1].content.displayName || blogPostsArray[1].content.name) }}>
             Remove filter
           </button>
 
