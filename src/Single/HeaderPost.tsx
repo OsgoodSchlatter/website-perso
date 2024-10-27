@@ -36,12 +36,16 @@ export const HeaderPost = ({
 
     const lastModified = typedLastModifiedDates[content_name + ".tsx"] || "Unknown";
     const formattedDate = lastModified !== "Unknown"
-        ? new Date(lastModified).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric',
-        })
+        ? (() => {
+            const date = new Date(lastModified);
+            const currentYear = new Date().getFullYear();
+
+            return date.getFullYear() === currentYear
+                ? date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) // Format as "Oct 27" if it's the current year
+                : date.toLocaleDateString('en-US', { year: 'numeric' }); // Format as "2023" if it's a past year
+        })()
         : lastModified;
+
 
     return (
         <div className="justify-between flex">
