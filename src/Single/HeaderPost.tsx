@@ -38,7 +38,7 @@ export const HeaderPost = ({
     const formattedDate = lastModified !== "Unknown"
         ? new Date(lastModified).toLocaleDateString('en-US', {
             year: 'numeric',
-            month: 'long',
+            month: 'short',
             day: 'numeric',
         })
         : lastModified;

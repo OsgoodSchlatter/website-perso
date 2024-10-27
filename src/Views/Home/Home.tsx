@@ -22,7 +22,11 @@ export const Pages = new Map<string, string>([
 export const Home = () => {
   const [sortedPosts, setSortedPosts] = useState<BlogPostType[]>(blogPostsArray);
   const [value, setValue] = useState<string>(" ");
-
+  // useEffect(() => {
+  //   // Clear the saved filter value in localStorage when the component mounts
+  //   localStorage.removeItem('selectedFilter');
+  //   setValue(""); // Reset value if needed
+  // }, []);
   useEffect(() => {
     // Get the saved filter value from localStorage when the component mounts
     const savedFilter = localStorage.getItem('selectedFilter');
@@ -42,7 +46,18 @@ export const Home = () => {
   return (
     <div className="flex  justify-center">
       <div className="md:w-1/2 w-3/4 items-center">
-        <div className="flex flex-wrap justify-evenly p-10 font-bold px-2">
+        <div className="flex justify-between items-center items-align px-1 mt-8">
+          <div className="font-bold rounded w-fit p-1 ">
+            {value ? "filter: " + value : "filter: "}
+          </div>
+          <button
+            type="button"
+            className="inline-flex justify-center rounded-md border border-transparent bg-slate-400 p-1 mt-2 text-sm font-medium  -900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+            onClick={() => { (setSortedPosts(blogPostsArray)); setValue(""); }}>
+            Remove filter
+          </button>
+        </div>
+        <div className="flex flex-wrap justify-evenly mt-2 font-bold px-2">
           {Array.from(Pages.entries())
             .map(([key, value]) => (
               <div className="px-4 pt-1 hover:underline" >
@@ -52,17 +67,15 @@ export const Home = () => {
               </div>
             ))}
         </div>
-        <div className="justify-between flex items-align">
-          <div className="font-bold rounded w-fit p-1 mt-2" onClick={() => { console.log(value) }}>
-            {value ? "filter: " + value : "filter: "}
-          </div>
-          <button
-            type="button"
-            className="inline-flex justify-center rounded-md border border-transparent bg-slate-400 p-1 mt-2 text-sm font-medium  -900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-            onClick={() => { (setSortedPosts(blogPostsArray)); setValue(""); }}>
-            Remove filter
-          </button>
 
+
+        <div className="justify-between flex items-align px-2 mt-10">
+          <div className="font-bold text-lg">
+            Post name
+          </div>
+          <div className="font-bold text-lg">
+            Last updated
+          </div>
         </div>
         <ListOfPostsHeader main={true} blogPosts={sortedPosts} />
         <div className="fixed bottom-4 right-4 text-gray-500 text-sm">
