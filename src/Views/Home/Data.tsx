@@ -248,3 +248,4 @@ export const blogPostsArray: BlogPostType[] = [
         content: Recruiter,
     },
 ];
+console.log("data content name " + blogPostsArray[1].content.name)
