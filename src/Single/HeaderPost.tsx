@@ -48,7 +48,7 @@ export const HeaderPost = ({
 
             <div
                 className="text-xl hover:underline"
-                onClick={() => { handleClick(choice); console.log(content_name); }}
+                onClick={() => { handleClick(choice); console.log("content name " + content_name); }}
             >
                 {title}
             </div>

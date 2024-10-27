@@ -23,7 +23,6 @@ export const ListOfPostsHeader = ({
                     {Object.keys(blogPosts).filter((postID) => blogPosts[postID as keyof typeof blogPosts].category !== BlogCategory.Recruiter).map((postID) => {
                         const post = blogPosts[postID as keyof typeof blogPosts];
                         const contentName = post && post.content ? (post.content.displayName || post.content.name || "Unknown Component") : "Unknown Component";
-                        console.log(contentName)
                         return (
                             <HeaderPost
                                 choice={post.id}
