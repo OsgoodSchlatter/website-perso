@@ -34,8 +34,8 @@ export const HeaderPost = ({
 
     const typedLastModifiedDates = lastModifiedDates as LastModifiedDates;
 
-    const lastModified = typedLastModifiedDates[content_name + ".tsx"] || "Unknown";
-    const formattedDate = lastModified !== "Unknown"
+    const lastModified = typedLastModifiedDates[content_name + ".tsx"] || "-";
+    const formattedDate = lastModified !== "-"
         ? (() => {
             const date = new Date(lastModified);
             const currentYear = new Date().getFullYear();
@@ -49,9 +49,8 @@ export const HeaderPost = ({
 
     return (
         <div className="justify-between flex">
-
             <div
-                className="text-xl hover:underline"
+                className="text-xl hover:underline w-2/3"
                 onClick={() => { handleClick(choice); console.log("content name " + content_name); }}
             >
                 {title}

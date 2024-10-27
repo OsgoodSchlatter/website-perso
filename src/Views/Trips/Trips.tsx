@@ -527,18 +527,18 @@ const getColorForTransport = (transport: TransportType): string => {
 export const Trips = () => {
   return (
     <>
-      <div className="flex bg-slate-700 justify-center p-2 mt-4 rounded">
+      <div className="flex bg-slate-700 justify-center rounded">
         {/* @ts-ignore */}
         <MapContainer center={[47.65, -2.7608]} zoom={2} scrollWheelZoom={false}  >
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <div className="flex flex-wrap justify-evenly p-10 font-bold">
+          <div className="flex flex-wrap justify-evenly font-bold">
             {Array.from(blogPosts.entries())
               .map(([key, value]) => (
                 <>
                   {/* @ts-ignore */}
-                  < Marker position={value.GPS} icon={createCustomIcon(getColorForTransport(value.transport))} >
+                  <Marker position={value.GPS} icon={createCustomIcon(getColorForTransport(value.transport))} >
                     <Popup>
                       <div className=" font-bold text-lg">
                         {value.title + " - " + value.date}

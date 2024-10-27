@@ -72,15 +72,6 @@ export type ContentProps = {
 export const blogPostsArray: BlogPostType[] = [
     {
         id: 1,
-        date: "2023",
-        title: "Books",
-        content_name: "Books",
-        category: BlogCategory.Books,
-        route: BlogRoute.Books,
-        content: Books,
-    },
-    {
-        id: 1,
         date: "17/07/2023",
         title: "Orders of magnitude",
         content_name: "OOM",
@@ -269,5 +260,14 @@ export const blogPostsArray: BlogPostType[] = [
         category: BlogCategory.Recruiter,
         route: BlogRoute.Recruiter,
         content: Recruiter,
+    },
+    {
+        id: 1,
+        date: "2023",
+        title: "Books",
+        content_name: "Books",
+        category: BlogCategory.Books,
+        route: BlogRoute.Books,
+        content: Books,
     },
 ];

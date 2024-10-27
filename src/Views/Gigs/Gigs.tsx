@@ -2,7 +2,6 @@ import { Header } from "../../Single/Header";
 import { useState } from "react";
 import saclay2 from "./music-saclay/saclay2.jpg"
 import saclay4 from "./music-saclay/saclay4.jpg"
-import saclay5 from "./music-saclay/saclay5.jpg"
 import saclay3 from "./music-saclay/saclay7.jpg"
 import saclay7 from "./music-saclay/saclay8.jpg"
 
