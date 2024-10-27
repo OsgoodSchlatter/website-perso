@@ -53,7 +53,7 @@ export const HeaderPost = ({
                 {title}
             </div>
             <div>
-                {formattedDate}
+                {lastModified}
             </div>
         </div>
     );
