@@ -49,20 +49,17 @@ export const Home = () => {
                 <div className={value == "climate" ? 'text-green-400 text-lg' : 'text-lg  -500'} onClick={() => { handleSort(value as BlogCategory); setValue(value); }}>
                   {value}
                 </div>
-
               </div>
             ))}
         </div>
-
         <div className="justify-between flex items-align">
           <div className="font-bold rounded w-fit p-1 mt-2" onClick={() => { console.log(value) }}>
             {value ? "filter: " + value : "filter: "}
-
           </div>
           <button
             type="button"
             className="inline-flex justify-center rounded-md border border-transparent bg-slate-400 p-1 mt-2 text-sm font-medium  -900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-            onClick={() => { (setSortedPosts(blogPostsArray)); setValue(""); console.log("Home content name = " + blogPostsArray[4].content.name) }}>
+            onClick={() => { (setSortedPosts(blogPostsArray)); setValue(""); }}>
             Remove filter
           </button>
 

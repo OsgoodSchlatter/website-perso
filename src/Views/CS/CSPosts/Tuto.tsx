@@ -1,7 +1,7 @@
 import React from "react";
 import { HeaderCategory } from "../../../Single/HeaderCategory";
 
-const Tuto = ({ title, date }: { title: string, date: string }) => {
+const Tuto = () => {
     return (
         <div className="flex justify-center ">
             <div className="p-4 md:w-1/2 max-w-4xl">
