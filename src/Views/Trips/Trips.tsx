@@ -528,29 +528,31 @@ export const Trips = () => {
   return (
     <>
       <div className="flex bg-slate-700 justify-center rounded">
-        {/* @ts-ignore */}
-        <MapContainer center={[47.65, -2.7608]} zoom={2} scrollWheelZoom={false}  >
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          <div className="flex flex-wrap justify-evenly font-bold">
-            {Array.from(blogPosts.entries())
-              .map(([key, value]) => (
-                <>
-                  {/* @ts-ignore */}
-                  <Marker position={value.GPS} icon={createCustomIcon(getColorForTransport(value.transport))} >
-                    <Popup>
-                      <div className=" font-bold text-lg">
-                        {value.title + " - " + value.date}
-                      </div>
-                      <br /> {value.C02 + " kg CO2eq"}
-                    </Popup>
-                  </Marker>
-                </>
+        <div>
+          {/* @ts-ignore */}
+          <MapContainer center={[47.65, -2.7608]} zoom={2} scrollWheelZoom={false}  >
+            <TileLayer
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <div className="flex flex-wrap justify-evenly font-bold">
+              {Array.from(blogPosts.entries())
+                .map(([key, value]) => (
+                  <>
+                    {/* @ts-ignore */}
+                    <Marker position={value.GPS} icon={createCustomIcon(getColorForTransport(value.transport))} >
+                      <Popup>
+                        <div className=" font-bold text-lg">
+                          {value.title + " - " + value.date}
+                        </div>
+                        <br /> {value.C02 + " kg CO2eq"}
+                      </Popup>
+                    </Marker>
+                  </>
+                ))}
+            </div>
+          </MapContainer>
+        </div>
 
-              ))}
-          </div>
-        </MapContainer>
       </div >
     </>
   );

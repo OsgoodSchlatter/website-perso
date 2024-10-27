@@ -44,7 +44,7 @@ export const Home = () => {
     setValue(category);
   };
   return (
-    <div className="flex  justify-center">
+    <div className="flex justify-center">
       <div className="md:w-1/2 w-3/4 items-center">
         <div className="flex justify-between items-center items-align px-1 mt-8">
           <div className="font-bold rounded w-fit p-1 ">
@@ -52,7 +52,7 @@ export const Home = () => {
           </div>
           <button
             type="button"
-            className="inline-flex justify-center rounded-md border border-transparent bg-slate-400 p-1 mt-2 text-sm font-medium  -900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+            className="inline-flex justify-center rounded-md border border-transparent bg-slate-400 p-1 text-sm font-medium  -900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
             onClick={() => { (setSortedPosts(blogPostsArray)); setValue(""); }}>
             Remove filter
           </button>
