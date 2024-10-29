@@ -24,7 +24,7 @@ export const LanguagesPosts = () => {
         return <div>Loading...</div>;
     }
 
-    return <Component title={post.title} date={post.date} />;
+    return <Component />;
 };
 
 export const Languages = () => (

@@ -7,8 +7,6 @@ import Pdf from "../../src/CV_EN.pdf";
 import { TfiWrite } from "react-icons/tfi";
 
 import { Link } from "react-router-dom";
-import Tooltip2 from "./Tooltip_chatgpt";
-import GmailButton from "./Gmailbutton";
 
 export const Navbar = () => {
   const [menuVisible, setMenuVisible] = useState(false);
@@ -62,11 +60,11 @@ export const Navbar = () => {
   return (
     <>
       <div className="md:flex md:justify-center w-full bg-slate-700">
-        <header className="h-20 md:w-1/2 px-1 flex items-center overflow-hidden justify-between">
+        <header className="h-20 md:w-1/2 flex items-center overflow-hidden justify-between">
           <div className="flex md:text-3xl text-xl">
             <Link
               to="/"
-              className="text-green-400 md:px-2 p-4 flex rounded-lg hover:underline"
+              className="text-green-400 px-2 flex rounded-lg hover:underline"
             >
               osgood
             </Link>

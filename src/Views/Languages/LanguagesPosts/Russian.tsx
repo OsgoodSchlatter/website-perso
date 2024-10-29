@@ -2,27 +2,20 @@ import { HeaderCategory } from "../../../Single/HeaderCategory";
 
 
 
-export const Russian = ({ title, date }: { title: string, date: string }) => {
+export const Russian = () => {
     return (
         <>
-            <div className="flex justify-center m-2">
-                <div className="max-w-4xl">
-                    <HeaderCategory
-                        name={title}
-                        date={"09/08/2023"}
-                        back={`/languages/`}
-                    />
-                    <div className="my-20 justify-center">
-                        <div className="text-3xl pt-8 pb-2 underline">Vocabulary</div>
-                        <div> Are you coming ? = Ты пойдешь?</div>
-                        <div> I am late = Я опоздаю</div>
-                        <div> Как это мило = how nice</div>
-                        <div>Сильно=very</div>
-                        <div>Xочу спать=I want to sleep</div>
-
-                    </div>
+            <div className="flex justify-center mt-8 ">
+                <div className="md:w-1/2 w-3/4 items-center">
+                    <div className="text-3xl underline">Vocabulary</div>
+                    <div> Are you coming ? = Ты пойдешь?</div>
+                    <div> I am late = Я опоздаю</div>
+                    <div> Как это мило = how nice</div>
+                    <div>Xочу спать=I want to sleep</div>
+                    <div>Сильно=very</div>
                 </div>
             </div>
+
         </>
     );
 };

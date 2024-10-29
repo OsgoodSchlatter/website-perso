@@ -6,6 +6,7 @@ import { Tableau } from "../../../Single/Tableau";
 import pem from "./pem.png";
 import leadacid from "./leadacid.png";
 import { Title2 } from "../../../Single/Styles";
+import { StandardHeader } from "../../../Single/StandardHeader";
 
 const batteryData: string[][] = [
   ["Li-ion", "4000", "500"],
@@ -129,204 +130,213 @@ const fuelCellData: (string | JSX.Element | JSX.Element[])[][] = [
   ],
 ];
 
+const intro = <div>
+  Most of the content on this page comes from the course
+  of Didier Dalmazzonne, although I may have added other information on
+  top.
+</div>
+
+const content =
+  <>
+
+    <div className="font-bold text-3xl mt-8 mb-3">Battery overview </div>
+    First battery created by Volta in 1782.
+    <Title2 text="Lead-acid battery" mt={0}></Title2>
+    Invented by Gaston Planté in 1859, represents 80% of installed
+    capacities.
+    <img src={leadacid} width="500" className="mt-2" />
+    <div className="mt-2">Balance: {reactionLeadAcid}</div>
+    <Tableau
+      content={batteryData}
+      headers={[
+        "Battery type",
+        "Nb of cycles (at 100% discharge)",
+        "Cost: e/kWh",
+      ]}
+      title={"Comparison of battery technologies"}
+    />
+    <Tableau
+      content={LithitumData}
+      headers={[
+        "Battery type",
+        "Cathode",
+        "Anode",
+        "Cell Voltage",
+        "Cost",
+        "Energy Density",
+        "Cycle Life",
+        "Discharge Rate",
+      ]}
+      title={"Battery: Lithium-ion technologies"}
+    />
+    <div className="font-bold text-3xl mt-8 mb-3">Hydrogen overview </div>
+    <div className="font-bold text-xl mb-3 underline">
+      Hydrogen today:{" "}
+    </div>
+    <div className="font-bold text-l ">Data</div>
+    <div className="mt-1 flex">
+      {" "}
+      World production: <div className="font-bold px-1">75 Mt</div>
+    </div>
+    <div className="mt-1 flex break-keep">
+      {" "}
+      Energy equivalent of the H2 production:{" "}
+      <div className="font-bold px-1">0.2 Gtoe/year</div>
+    </div>
+    <div className="mt-1 flex break-keep">
+      {" "}
+      For oil: <div className="font-bold px-1">4.4 Gt/year</div>
+    </div>
+    <div className="mt-1 flex break-keep">
+      {" "}
+      World primary energy consumption:{" "}
+      <div className="font-bold px-1">14,5 Gtoe/year</div>
+    </div>
+    <div className="mt-1 flex break-keep">
+      {" "}
+      % of hydrogen produced by reforming of fossil fuel:{" "}
+      <div className="font-bold px-1">95 %</div>
+    </div>
+    <div className="mt-1 flex break-keep">
+      Fossil fuels reforming and gasification:{" "}
+      <div className="font-bold px-1">1 GtCO2/year</div>
+    </div>
+    <div className="mt-1 flex break-keep">
+      Human CO2 emissions:{" "}
+      <div className="font-bold px-1">35-40 GtCO2/year</div>
+    </div>
+    <div className="font-bold text-l mt-2">
+      Main current utilization of {H2}
+    </div>
+    <div className="mt-1 flex">
+      {" "}
+      Oil refining: <div className="font-bold px-1">44%</div>
+    </div>
+    <div className="mt-1 flex">
+      {" "}
+      Ammonia for fertilizers: <div className="font-bold px-1">38%</div>
+    </div>
+    <div className="mt-1 flex">
+      {" "}
+      Food industry: <div className="font-bold px-1">9%</div>
+    </div>
+    <div className="mt-1 flex">
+      {" "}
+      Methanol, chemicals: <div className="font-bold px-1">8%</div>
+    </div>
+    <div className="mt-1 flex">
+      {" "}
+      Space propulsion: <div className="font-bold px-1">1%</div>
+    </div>
+    <div className="font-bold text-l ">Pros and cons</div>- Pros
+    <ul className="list-disc ml-6">
+      <li>Raw material abundant and 100% regenerated </li>
+      <li>High energy density per mass unit</li>
+      <li>Variety of sources, modes of production and usages </li>
+      <li>
+        No direct greenhouse effect, but interacts with other molecules
+        which can lead to increase of green house effect.
+      </li>
+    </ul>
+    - Cons
+    <ul className="list-disc ml-6">
+      <li> Costs </li>
+      <li>Low density per volume unit (40kg/m^3, oil: 800kg/m^3)</li>
+      <li>Uneasy to store </li>
+      <li>No real facility or distribution transport</li>
+      <li>Risk acceptance</li>
+    </ul>
+    <div className="font-bold text-xl mt-3 mb-3 underline">
+      Converting Hydrogen to energy:{" "}
+    </div>
+    <ul className="list-disc ml-6">
+      <li> Direct Combustion </li>
+      <li> Fuel Cells </li>
+    </ul>
+    <Tableau
+      content={fuelCellData}
+      headers={[
+        "Type",
+        "Electrolyte",
+        "Temp°C",
+        "Fuel",
+        "Efficiency",
+        "Power",
+        "Maturity",
+      ]}
+      title={`Main hydrogen fuel cell technologies`}
+    />
+    <div className="font-bold text-xl mb-3 mt-3 underline">
+      Proton Exchange Membrane{" "}
+    </div>
+    <div className="mt-2">
+      {" "}
+      A proton exchange membrane is a semipermeable membrane designed to
+      let protons go through but block reactants (for example {
+        H2
+      } and {O2}). It can be used as a fuel cell following this reaction:{" "}
+      {reaction}{" "}
+    </div>
+    <div className="mt-4">
+      <img
+        src={pem}
+        className="px-2 border-b-2 bg-white"
+        width="200"
+        alt="Image"
+      />
+      <div className="text-sm">source: wikipédia</div>
+    </div>
+    <div className="font-bold text-xl mt-3 mb-3 underline">
+      Perspectives for Hydrogen:{" "}
+    </div>
+    <div className="mt-1 flex">
+      {" "}
+      Hydrogen production should be multiplied by 12 to meet 20% of
+      today's requirements.
+    </div>
+    <div className="mt-1 flex">
+      {" "}
+      Production's costs of hydrogen (DOE 2013):{" "}
+    </div>
+    <ul className="list-disc ml-6">
+      <li>
+        Large scale SMR: <div className="font-bold"> 1.5$/kg </div>
+      </li>
+      <li>
+        Small scale SMR: <div className="font-bold">3-6$/kg</div>
+      </li>
+      <li>
+        Electrolysis:<div className="font-bold">6-15$/kg</div>{" "}
+      </li>
+      <li>
+        Carriage costs: <div className="font-bold">1.25$/kg</div>
+      </li>
+      <li className="font-bold">
+        Global costs (H2): <div className="font-bold">22-135$/GJ</div>
+      </li>
+      <li className="font-bold">
+        Global costs (oil): <div className="font-bold">7$/GJ</div>
+      </li>
+    </ul>
+    <div className="font-bold text-xl mt-3 mb-3 underline">
+      {" "}
+      Conclusion:{" "}
+    </div>
+    <div className="mt-1 flex text-red-500">
+      {" "}
+      Hydrogen is regarded as a solution for long term storage of energy
+      produced from low-carbon sources
+    </div>
+  </>
+const title =
+  "Battery and fuel cell technologies"
+
 const Battery_Fuel_Cell = () => {
   return (
     <>
-      <div className="flex justify-center m-2">
-        <div className="w-full sm:w-2/3 md:w-1/2 lg:max-w-4xl xl:max-w-5xl mx-4 mt-4">
-          [Disclaimer]: Most of the content on this page comes from the course
-          of Didier Dalmazzonne, although I may have added other information on
-          top.
-          <div className="font-bold text-3xl mt-8 mb-3">Battery overview </div>
-          First battery created by Volta in 1782.
-          <Title2 text="Lead-acid battery" mt={0}></Title2>
-          Invented by Gaston Planté in 1859, represents 80% of installed
-          capacities.
-          <img src={leadacid} width="500" alt="" />
-          <div>Balance: {reactionLeadAcid}</div>
-          <Tableau
-            content={batteryData}
-            headers={[
-              "Battery type",
-              "Nb of cycles (at 100% discharge)",
-              "Cost: e/kWh",
-            ]}
-            title={"Comparison of battery technologies"}
-          />
-          <Tableau
-            content={LithitumData}
-            headers={[
-              "Battery type",
-              "Cathode",
-              "Anode",
-              "Cell Voltage",
-              "Cost",
-              "Energy Density",
-              "Cycle Life",
-              "Discharge Rate",
-            ]}
-            title={"Battery: Lithium-ion technologies"}
-          />
-          <div className="font-bold text-3xl mt-8 mb-3">Hydrogen overview </div>
-          <div className="font-bold text-xl mb-3 underline">
-            Hydrogen today:{" "}
-          </div>
-          <div className="font-bold text-l ">Data</div>
-          <div className="mt-1 flex">
-            {" "}
-            World production: <div className="font-bold px-1">75 Mt</div>
-          </div>
-          <div className="mt-1 flex break-keep">
-            {" "}
-            Energy equivalent of the H2 production:{" "}
-            <div className="font-bold px-1">0.2 Gtoe/year</div>
-          </div>
-          <div className="mt-1 flex break-keep">
-            {" "}
-            For oil: <div className="font-bold px-1">4.4 Gt/year</div>
-          </div>
-          <div className="mt-1 flex break-keep">
-            {" "}
-            World primary energy consumption:{" "}
-            <div className="font-bold px-1">14,5 Gtoe/year</div>
-          </div>
-          <div className="mt-1 flex break-keep">
-            {" "}
-            % of hydrogen produced by reforming of fossil fuel:{" "}
-            <div className="font-bold px-1">95 %</div>
-          </div>
-          <div className="mt-1 flex break-keep">
-            Fossil fuels reforming and gasification:{" "}
-            <div className="font-bold px-1">1 GtCO2/year</div>
-          </div>
-          <div className="mt-1 flex break-keep">
-            Human CO2 emissions:{" "}
-            <div className="font-bold px-1">35-40 GtCO2/year</div>
-          </div>
-          <div className="font-bold text-l mt-2">
-            Main current utilization of {H2}
-          </div>
-          <div className="mt-1 flex">
-            {" "}
-            Oil refining: <div className="font-bold px-1">44%</div>
-          </div>
-          <div className="mt-1 flex">
-            {" "}
-            Ammonia for fertilizers: <div className="font-bold px-1">38%</div>
-          </div>
-          <div className="mt-1 flex">
-            {" "}
-            Food industry: <div className="font-bold px-1">9%</div>
-          </div>
-          <div className="mt-1 flex">
-            {" "}
-            Methanol, chemicals: <div className="font-bold px-1">8%</div>
-          </div>
-          <div className="mt-1 flex">
-            {" "}
-            Space propulsion: <div className="font-bold px-1">1%</div>
-          </div>
-          <div className="font-bold text-l ">Pros and cons</div>- Pros
-          <ul className="list-disc ml-6">
-            <li>Raw material abundant and 100% regenerated </li>
-            <li>High energy density per mass unit</li>
-            <li>Variety of sources, modes of production and usages </li>
-            <li>
-              No direct greenhouse effect, but interacts with other molecules
-              which can lead to increase of green house effect.
-            </li>
-          </ul>
-          - Cons
-          <ul className="list-disc ml-6">
-            <li> Costs </li>
-            <li>Low density per volume unit (40kg/m^3, oil: 800kg/m^3)</li>
-            <li>Uneasy to store </li>
-            <li>No real facility or distribution transport</li>
-            <li>Risk acceptance</li>
-          </ul>
-          <div className="font-bold text-xl mt-3 mb-3 underline">
-            Converting Hydrogen to energy:{" "}
-          </div>
-          <ul className="list-disc ml-6">
-            <li> Direct Combustion </li>
-            <li> Fuel Cells </li>
-          </ul>
-          <Tableau
-            content={fuelCellData}
-            headers={[
-              "Type",
-              "Electrolyte",
-              "Temp°C",
-              "Fuel",
-              "Efficiency",
-              "Power",
-              "Maturity",
-            ]}
-            title={`Main hydrogen fuel cell technologies`}
-          />
-          <div className="font-bold text-xl mb-3 mt-3 underline">
-            Proton Exchange Membrane{" "}
-          </div>
-          <div className="mt-2">
-            {" "}
-            A proton exchange membrane is a semipermeable membrane designed to
-            let protons go through but block reactants (for example {
-              H2
-            } and {O2}). It can be used as a fuel cell following this reaction:{" "}
-            {reaction}{" "}
-          </div>
-          <div className="mt-4">
-            <img
-              src={pem}
-              className="px-2 border-b-2"
-              width="200"
-              alt="Image"
-            />
-            <div className="text-sm">source: wikipédia</div>
-          </div>
-          <div className="font-bold text-xl mt-3 mb-3 underline">
-            Perspectives for Hydrogen:{" "}
-          </div>
-          <div className="mt-1 flex">
-            {" "}
-            Hydrogen production should be multiplied by 12 to meet 20% of
-            today's requirements.
-          </div>
-          <div className="mt-1 flex">
-            {" "}
-            Production's costs of hydrogen (DOE 2013):{" "}
-          </div>
-          <ul className="list-disc ml-6">
-            <li>
-              Large scale SMR: <div className="font-bold"> 1.5$/kg </div>
-            </li>
-            <li>
-              Small scale SMR: <div className="font-bold">3-6$/kg</div>
-            </li>
-            <li>
-              Electrolysis:<div className="font-bold">6-15$/kg</div>{" "}
-            </li>
-            <li>
-              Carriage costs: <div className="font-bold">1.25$/kg</div>
-            </li>
-            <li className="font-bold">
-              Global costs (H2): <div className="font-bold">22-135$/GJ</div>
-            </li>
-            <li className="font-bold">
-              Global costs (oil): <div className="font-bold">7$/GJ</div>
-            </li>
-          </ul>
-          <div className="font-bold text-xl mt-3 mb-3 underline">
-            {" "}
-            Conclusion:{" "}
-          </div>
-          <div className="mt-1 flex text-red-500">
-            {" "}
-            Hydrogen is regarded as a solution for long term storage of energy
-            produced from low-carbon sources
-          </div>
-        </div>
-      </div>
+      <StandardHeader title={title} date={"2023"} comment={intro} content={content} />
+
+
     </>
   );
 };
