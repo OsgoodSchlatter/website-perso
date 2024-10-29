@@ -7,6 +7,8 @@ import PWR from "./PWR.png";
 import coulomb from "./coulomb_vs_strong_interaction.png"
 import valley from "./valley_of_stability.png"
 import schematic from "./schematic_neutron_reactions.png"
+import { StandardHeader } from "../../../Single/StandardHeader";
+import { divIcon } from "leaflet";
 
 const UO2 = <Latex>{"$UO_2$"}</Latex>;
 const CO2 = <Latex>{"$CO_2$"}</Latex>;
@@ -104,7 +106,7 @@ const fuelData: Content_Tooltip[][] = [
     ],
 ];
 
-const Neutronics = ({ title, date }: { title: string; date: string }) => {
+const NeutronicsData = () => {
     const [selectedNumber, setSelectedNumber] = useState(1);
 
     const handleChange = (event: any) => {
@@ -116,7 +118,7 @@ const Neutronics = ({ title, date }: { title: string; date: string }) => {
             case 1:
                 return (
                     <>
-                        <div className="text-4xl font-bold">
+                        <div className="text-2xl font-bold">
                             Chapter 1
                         </div>
                         <div className="font-bold text-lg mt-2">
@@ -312,7 +314,7 @@ const Neutronics = ({ title, date }: { title: string; date: string }) => {
             case 3:
                 return (
                     <>
-                        <div className="text-4xl font-bold">
+                        <div className="text-2xl font-bold">
                             Chapter 3
                         </div>
                         <div className="font-bold text-lg mt-2">
@@ -528,37 +530,40 @@ const Neutronics = ({ title, date }: { title: string; date: string }) => {
         }
     };
 
+
+
     return (
         <>
-            <div className="flex justify-center m-2">
-                <div className="w-full sm:w-2/3 md:w-1/2 lg:max-w-4xl xl:max-w-5xl mx-4 mt-8">
-                    <div className="flex justify-between items-center">
-                        <div className="text-5xl font-bold">
-                            Neutron Physics
-                        </div>
-                        <select
-                            value={selectedNumber}
-                            onChange={handleChange}
-                            className=" p-8 py-2 rounded max-h-10 bg-slate-500"
-                        >
-                            {Array.from({ length: 14 }, (_, i) => i + 1).map((number) => (
-                                <option key={number} value={number}>
-                                    {number}
-                                </option>
-                            ))}
-                        </select>
+            <div className="flex justify-between">
+                <div>
+                </div>
+                <div className="flex items-center">
+                    <div className="text-xl px-2">
+                        Chapters
                     </div>
-                    <div className="mt-2">
-                        This knowledge is mostly taken from the book "Neutron Physics" of
-                        Paul Reuss.
-                    </div>
-
-                    <div className="flex justify-between"></div>
-                    <div className=" p-2 mt-4 rounded">{renderContent()}</div>
+                    <select
+                        value={selectedNumber}
+                        onChange={handleChange}
+                        className=" p-4 py-2 rounded max-h-10 bg-slate-500"
+                    >
+                        {Array.from({ length: 14 }, (_, i) => i + 1).map((number) => (
+                            <option key={number} value={number}>
+                                {number}
+                            </option>
+                        ))}
+                    </select>
                 </div>
             </div>
+            <div className="mt-2">
+            </div>
+            <div className="flex justify-between"></div>
+            <div className="rounded">{renderContent()}</div>
         </>
     );
 };
 
+const Neutronics = () => {
+    return (<StandardHeader title={"Neutron Physics"} date={"2024"}
+        content={< NeutronicsData />} />)
+}
 export default Neutronics;
