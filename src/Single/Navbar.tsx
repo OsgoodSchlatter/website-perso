@@ -64,7 +64,7 @@ export const Navbar = () => {
           <div className="flex md:text-3xl text-xl">
             <Link
               to="/"
-              className="text-green-400 px-2 flex rounded-lg hover:underline"
+              className="text-green-400 px-6 md:px-2  flex rounded-lg hover:underline"
             >
               osgood
             </Link>
@@ -72,7 +72,7 @@ export const Navbar = () => {
           <div className="flex items-center">
             <Link
               to="/"
-              className=" md:px-4 p-2 mb-1 mr-2 md:text-3xl text-xl flex   rounded-lg hover:underline"
+              className=" md:px-4 mb-1 md:text-3xl text-xl flex   rounded-lg hover:underline"
             >
               about
             </Link>
@@ -94,7 +94,7 @@ export const Navbar = () => {
             <button
               ref={buttonRef}
               onClick={toggleMenu}
-              className=" md:px-2 p-2 mb-1 md:text-3xl text-xl flex   rounded-lg hover:underline"
+              className=" md:px-2 px-6 mb-1 md:text-3xl text-xl flex   rounded-lg hover:underline"
             >
               contact
             </button>
