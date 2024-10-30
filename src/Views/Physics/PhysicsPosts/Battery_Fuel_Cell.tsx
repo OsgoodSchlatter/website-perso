@@ -335,8 +335,6 @@ const Battery_Fuel_Cell = () => {
   return (
     <>
       <StandardHeader title={title} date={"2023"} comment={intro} content={content} />
-
-
     </>
   );
 };
