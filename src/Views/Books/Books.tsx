@@ -3,6 +3,7 @@ import kafka from "./kafka.jpg"
 import Sidd from "./siddharta.jpg"
 import neutron from "./Neutron_P.jpg"
 import jerusalem from "./jerusalem.jpeg"
+import { StandardHeader } from "../../Single/StandardHeader";
 interface BookEntry {
   title: string;
   author: string;
@@ -21,34 +22,35 @@ const BooksArray: BookEntry[] = [
 
 ];
 
-export const Books = () => {
+const BooksContent = () => {
   return (
     <>
-      <div className="flex justify-center mt-2">
-        <div className="justify-center max-w-2xl">
-          <div className="p-2 text-xl font-bold justify-center ">
-            Some books I have had the opportunity to read and that I may suggest.
-          </div>
-          <div className="my-4 justify-center">
-            {Array.from(BooksArray.entries())
-              .map(([key, value]) => (
-                <>
-                  <div className=" p-2 rounded my-2 ">
-                    <a className="items-center text-l font-bold " >
-                      {value.title + ", " + value.author + ", " + value.date}
-                    </a>
-                    <div className="grid grid-cols-[100px_1fr] items-center justify-between my-2">
-                      <img src={value.pic} className="px-2 border-b-2 col-start-1" width="100" alt="Image" />
-                      <div className="text-sm">
-                        {value.comment}
-                      </div>
-                    </div>
+      <div >
+        {Array.from(BooksArray.entries())
+          .map(([key, value]) => (
+            <>
+              <div className="py-2 rounded my-2 ">
+                <a className="items-center text-l font-bold " >
+                  {value.title + ", " + value.author + ", " + value.date}
+                </a>
+                <div className="grid grid-cols-[100px_1fr] items-center justify-between my-2">
+                  <img src={value.pic} className="px-2 border-b-2 col-start-1" width="100" alt="Image" />
+                  <div className="text-sm">
+                    {value.comment}
                   </div>
-                </>
-              ))}
-          </div>
-        </div>
+                </div>
+              </div>
+            </>
+          ))}
       </div>
     </>
   );
 };
+const intro = <div >
+  Some books I have had the opportunity to read and that I may suggest.
+</div>
+
+export const Books = () => {
+  return (<StandardHeader title={"Some Readings"} date={"2024"} comment={intro}
+    content={< BooksContent />} />)
+}

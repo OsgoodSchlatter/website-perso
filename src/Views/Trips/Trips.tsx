@@ -24,8 +24,8 @@ import { BxHayAmst23 } from "./TripsPosts/BxHayAmst23";
 import { Bordeaux } from "./TripsPosts/Bordeaux";
 import { SweDen } from "./TripsPosts/SweDen";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import { Header } from "../../Single/Header";
 import { createCustomIcon } from "../../Single/MapUtils"
+import { StandardHeader } from "../../Single/StandardHeader";
 
 
 type TransportType = "Plane" | "Car" | "Train" | "Home";
@@ -524,10 +524,10 @@ const getColorForTransport = (transport: TransportType): string => {
 };
 
 
-export const Trips = () => {
+export const TripsContent = () => {
   return (
     <>
-      <div className="flex bg-slate-700 justify-center rounded">
+      <div className="flex justify-center rounded">
         <div>
           {/* @ts-ignore */}
           <MapContainer center={[47.65, -2.7608]} zoom={2} scrollWheelZoom={false}  >
@@ -557,3 +557,11 @@ export const Trips = () => {
     </>
   );
 };
+
+const intro = <div>
+
+</div>
+export const Trips = () => {
+  return (<StandardHeader title={"A map of the destinations I went to"} date={"2024"} comment={intro}
+    content={< TripsContent />} />)
+}
