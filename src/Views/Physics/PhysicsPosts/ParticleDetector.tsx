@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Latex from "react-latex-next";
-import { Title1 } from "../../../Single/Styles";
 import boost from "./Ideal-Boost-Converter-Circuit.jpg"
 import neutron_det from "./neutron_detector.png"
 import oper_reg from "./operating_voltage.png"

@@ -2,8 +2,9 @@ import { Bold } from "../../../Single/Bold";
 import "katex/dist/katex.min.css";
 import Latex from "react-latex-next";
 import "katex/dist/katex.min.css";
+import { StandardHeader } from "../../../Single/StandardHeader";
 
-const NuclEnergy = () => {
+const NuclEnergyContent = () => {
   return (
     <>
       <div className="flex justify-center ">
@@ -169,4 +170,8 @@ const NuclEnergy = () => {
   );
 };
 
+const NuclEnergy = () => {
+  return (<StandardHeader title={"Nuclear Physics"} date={"2024"}
+    content={< NuclEnergyContent />} />)
+}
 export default NuclEnergy;

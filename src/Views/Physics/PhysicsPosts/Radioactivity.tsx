@@ -2,8 +2,9 @@ import { HeaderCategory } from "../../../Single/HeaderCategory";
 import "katex/dist/katex.min.css";
 import Latex from "react-latex-next";
 import 'katex/dist/katex.min.css';
+import { StandardHeader } from "../../../Single/StandardHeader";
 
-const Radio = ({ title, date }: { title: string, date: string }) => {
+const NuclPhyContent = () => {
     return (
         <>
             <div className="flex justify-center m-2 ">
@@ -12,8 +13,6 @@ const Radio = ({ title, date }: { title: string, date: string }) => {
                         <div className="font-bold text-xl mb-3 underline">
                             Decay Processes
                         </div>
-
-
                         <div className="mb-4">
                             <div>
                                 <div className="flex">
@@ -190,4 +189,12 @@ const Radio = ({ title, date }: { title: string, date: string }) => {
     );
 };
 
-export default Radio;
+const intro = <div>
+    This page gathers knowledge on nuclear physics.
+</div>
+
+const NuclearPhysics = () => {
+    return (<StandardHeader title={"Nuclear Physics"} date={"2024"} comment={intro}
+        content={< NuclPhyContent />} />)
+}
+export default NuclearPhysics;
