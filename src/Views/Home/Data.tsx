@@ -5,7 +5,7 @@ import FHE from "../CS/CSPosts/FHE";
 import Tuto from "../CS/CSPosts/Tuto";
 
 import { Scales } from "../Music/Scales";
-import { Russian } from "../Languages/LanguagesPosts/Russian";
+import { Russian } from "../Languages/Russian";
 import { Maths } from "../Maths/Maths";
 import Battery_Fuel_Cell from "../Physics/PhysicsPosts/Battery_Fuel_Cell";
 import Electrolysis from "../Physics/PhysicsPosts/Electrolysis";
