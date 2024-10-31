@@ -71,7 +71,7 @@ export const Navbar = () => {
           </div>
           <div className="flex items-center">
             <Link
-              to="/"
+              to="/about/1"
               className=" md:px-4 mb-1 md:text-3xl text-xl flex   rounded-lg hover:underline"
             >
               about

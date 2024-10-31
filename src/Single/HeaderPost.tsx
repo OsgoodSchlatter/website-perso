@@ -49,15 +49,17 @@ export const HeaderPost = ({
 
     return (
         <div className="justify-between flex">
-            <div
-                className="text-xl hover:underline w-2/3"
-                onClick={() => { handleClick(choice); console.log("content name " + content_name); }}
-            >
-                {title}
-            </div>
-            <div>
-                {formattedDate}
-            </div>
+            <>
+                <div
+                    className="text-xl hover:underline w-2/3"
+                    onClick={() => { handleClick(choice); console.log("content name " + content_name); }}
+                >
+                    {title}
+                </div>
+                <div>
+                    {formattedDate}
+                </div>
+            </>
         </div>
     );
 };

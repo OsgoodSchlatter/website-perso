@@ -23,13 +23,14 @@ import { Trips } from "../Trips/Trips";
 import { Books } from "../Books/Books";
 import { Recruiter } from "../Recruiter/Recruiter";
 import GreenTracking from "../CS/CSPosts/GreenTracking";
+import { About } from "../About/About";
 
 export type BlogPostType = {
     id: number;
     date: string;
     title: string;
     content_name?: string;
-    category: BlogCategory;
+    category?: BlogCategory;
     route: BlogRoute;
     content: React.ComponentType<ContentProps>;
 };
@@ -47,6 +48,7 @@ export enum BlogCategory {
     Trips = "trips",
     Publi = "publi",
     Recruiter = "recruiter",
+    About = "about"
 }
 
 export enum BlogRoute {
@@ -62,6 +64,7 @@ export enum BlogRoute {
     Trips = "trips",
     Publi = "publi_talks",
     Recruiter = "recruiter",
+    About = "about"
 }
 
 export type ContentProps = {
@@ -270,4 +273,13 @@ export const blogPostsArray: BlogPostType[] = [
         route: BlogRoute.Books,
         content: Books,
     },
+    {
+        id: 1,
+        date: "2024",
+        title: "about",
+        content_name: "about",
+        category: BlogCategory.About,
+        route: BlogRoute.About,
+        content: About,
+    }
 ];

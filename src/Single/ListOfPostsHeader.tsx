@@ -2,7 +2,6 @@ import { BlogCategory } from "../Views/Home/Data";
 import { Header } from "./Header";
 import { HeaderPost } from "./HeaderPost";
 
-
 export const ListOfPostsHeader = ({
     topic,
     blogPosts,
@@ -14,13 +13,16 @@ export const ListOfPostsHeader = ({
     trips?: boolean;
     main?: boolean;
 }) => {
-
+    const catToExclude = [BlogCategory.Recruiter, BlogCategory.About];
     return (
         <>
-            {main ?? <Header name={topic ?? ""} posts={Object.keys(blogPosts).length} />}
-            <div className={main?.valueOf() ? "flex m-2" : "flex m-2 justify-center"}>
-                <div className="grid grid-rows-4 gap-1 w-full">
-                    {Object.keys(blogPosts).filter((postID) => blogPosts[postID as keyof typeof blogPosts].category !== BlogCategory.Recruiter).map((postID) => {
+
+            <div className="grid grid-rows-4 gap-1 w-full">
+                {Object.keys(blogPosts)
+                    .filter((postID) => !catToExclude.includes(
+                        blogPosts[postID as keyof typeof blogPosts].category)
+                    )
+                    .map((postID) => {
                         const post = blogPosts[postID as keyof typeof blogPosts];
                         return (
                             <HeaderPost
@@ -34,7 +36,6 @@ export const ListOfPostsHeader = ({
                             />
                         );
                     })}
-                </div>
             </div>
         </>
     );

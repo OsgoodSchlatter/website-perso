@@ -11,7 +11,6 @@ export const CategoryDisplayer = ({ blogPosts, route }: { blogPosts: BlogPostTyp
         ));
     return (
         <ListOfPostsHeader
-            topic={toDisplayBlogPosts[0].category}
             blogPosts={toDisplayBlogPosts}
         />
     )

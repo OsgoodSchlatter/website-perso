@@ -17,28 +17,16 @@ export const Pages = new Map<string, string>([
   ["/physics", "physics"],
   ["/climate", "climate"],
   ["/languages", "languages"],
+  ["/about", "about"],
 ]);
 
 export const Home = () => {
   const [sortedPosts, setSortedPosts] = useState<BlogPostType[]>(blogPostsArray);
   const [value, setValue] = useState<string>(" ");
-  // useEffect(() => {
-  //   // Clear the saved filter value in localStorage when the component mounts
-  //   localStorage.removeItem('selectedFilter');
-  //   setValue(""); // Reset value if needed
-  // }, []);
-  useEffect(() => {
-    // Get the saved filter value from localStorage when the component mounts
-    const savedFilter = localStorage.getItem('selectedFilter');
-    if (savedFilter) {
-      setValue(savedFilter);
-      handleSort(savedFilter as BlogCategory);
-    }
-  }, []);
 
   const handleSort = (category: BlogCategory) => {
     // Save the filter value to localStorage
-    localStorage.setItem('selectedFilter', category);
+    // localStorage.setItem('selectedFilter', category);
     const filteredPosts = blogPostsArray.filter(post => post.category === category);
     setSortedPosts(filteredPosts);
     setValue(category);
@@ -46,17 +34,6 @@ export const Home = () => {
   return (
     <div className="flex justify-center">
       <div className="md:w-1/2 w-3/4 items-center">
-        <div className="flex justify-between items-center items-align px-1 mt-8">
-          <div className="font-bold rounded w-fit p-1 ">
-            {value ? "filter: " + value : "filter: "}
-          </div>
-          <button
-            type="button"
-            className="inline-flex justify-center rounded-md border border-transparent bg-slate-400 p-1 text-sm font-medium  -900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-            onClick={() => { (setSortedPosts(blogPostsArray)); setValue(""); }}>
-            Remove filter
-          </button>
-        </div>
         <div className="flex flex-wrap justify-evenly mt-2 font-bold px-2">
           {Array.from(Pages.entries())
             .map(([key, value]) => (
@@ -69,7 +46,7 @@ export const Home = () => {
         </div>
 
 
-        <div className="justify-between flex items-align px-2 mt-10">
+        <div className="justify-between flex items-align mt-10">
           <div className="font-bold text-lg">
             Post name
           </div>
@@ -77,7 +54,7 @@ export const Home = () => {
             Last updated
           </div>
         </div>
-        <ListOfPostsHeader main={true} blogPosts={sortedPosts} />
+        <ListOfPostsHeader blogPosts={sortedPosts} />
         <div className="fixed bottom-4 right-4 text-gray-500 text-sm">
           made with love by Osgood and chatgpt
         </div>

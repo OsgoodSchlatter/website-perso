@@ -22,7 +22,7 @@ export const blogPosts = {
 
 const DIY = () => (
 
-    <ListOfPostsHeader topic="DIY" blogPosts={blogPosts} />
+    <ListOfPostsHeader blogPosts={blogPosts} />
 
 );
 
