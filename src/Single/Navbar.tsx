@@ -72,13 +72,13 @@ export const Navbar = () => {
           <div className="flex items-center">
             <Link
               to="/about/1"
-              className=" md:px-4   md:text-2xl text-xl flex rounded-lg hover:underline"
+              className=" px-2 md:text-2xl text-xl flex rounded-lg hover:underline"
             >
               about
             </Link>
             <Link
               to="/gallery/1"
-              className=" md:px-4   md:text-2xl text-xl flex rounded-lg hover:underline"
+              className=" px-2  md:text-2xl text-xl flex rounded-lg hover:underline"
             >
               gallery
             </Link>
@@ -100,9 +100,9 @@ export const Navbar = () => {
             <button
               ref={buttonRef}
               onClick={toggleMenu}
-              className=" md:px-2 px-6   md:text-2xl text-xl flex   rounded-lg hover:underline"
+              className=" px-2   md:text-2xl text-xl flex   rounded-lg hover:underline"
             >
-              tl;dr
+              contact
             </button>
             {menuVisible && (
               <div
