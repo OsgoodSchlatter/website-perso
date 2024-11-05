@@ -8,11 +8,12 @@ import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 
 const PdfViewer: React.FC<{ fileUrl: string }> = ({ fileUrl }) => {
     const defaultLayoutPluginInstance = defaultLayoutPlugin();
+    const workerUrl = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.8.176/pdf.worker.min.js';
 
     return (
         <div className="flex justify-center items-center h-screen bg-gray-100">
             <div className="w-full h-full p-4 bg-slate-700 rounded shadow">
-                <Worker workerUrl={`https://unpkg.com/pdfjs-dist@2.16.105/build/pdf.worker.min.js`}>
+                <Worker workerUrl={workerUrl}>
                     <Viewer
                         fileUrl={fileUrl}
                         plugins={[defaultLayoutPluginInstance]}
