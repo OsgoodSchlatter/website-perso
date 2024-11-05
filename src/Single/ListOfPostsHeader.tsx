@@ -1,11 +1,8 @@
 import { BlogCategory } from "../Views/Home/Data";
-import { Header } from "./Header";
 import { HeaderPost } from "./HeaderPost";
 
 export const ListOfPostsHeader = ({
-    topic,
     blogPosts,
-    trips,
     main,
 }: {
     topic?: string;

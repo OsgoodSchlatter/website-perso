@@ -26,6 +26,7 @@ import { SweDen } from "./TripsPosts/SweDen";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { createCustomIcon } from "../../Single/MapUtils"
 import { StandardHeader } from "../../Single/StandardHeader";
+import { useEffect, useState } from "react";
 
 
 type TransportType = "Plane" | "Car" | "Train" | "Home";
@@ -525,12 +526,29 @@ const getColorForTransport = (transport: TransportType): string => {
 
 
 export const TripsContent = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  console.log(isMobile)
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Adjust the width as per your mobile breakpoint
+    };
+
+    handleResize(); // Call it initially to set the state
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
     <>
       <div className="flex justify-center rounded">
         <div>
           {/* @ts-ignore */}
-          <MapContainer center={[47.65, -2.7608]} zoom={2} scrollWheelZoom={false}  >
+          <MapContainer center={[47.65, -2.7608]} zoom={2} scrollWheelZoom={false} style={{
+            width: isMobile ? '300px' : '625px', // Apply 300px width on mobile, 100% otherwise
+            height: isMobile ? '300px' : '500px', // Apply 300px height on mobile, 500px otherwise
+          }} >
             <TileLayer
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
@@ -562,6 +580,6 @@ const intro = <div>
 
 </div>
 export const Trips = () => {
-  return (<StandardHeader title={"A map of the destinations I went to"} date={"2024"} comment={intro}
+  return (<StandardHeader title={"Destinations I went to"} date={"2024"} comment={intro}
     content={< TripsContent />} />)
 }

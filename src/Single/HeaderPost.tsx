@@ -23,11 +23,19 @@ export const HeaderPost = ({
     const [lastModifiedDates, setLastModifiedDates] = useState({});
 
     useEffect(() => {
-        fetch(`${process.env.PUBLIC_URL}/lastmodifieddates.json`)
-            .then((response) => response.json())
-            .then((data) => setLastModifiedDates(data))
-            .catch((error) => console.error("Error fetching lastModifiedDates:", error));
+        const fetchLastModifiedDates = async () => {
+            try {
+                const response = await fetch(`${process.env.PUBLIC_URL}/lastmodifieddates.json?timestamp=${new Date().getTime()}`);
+                const data = await response.json();
+                setLastModifiedDates(data);
+            } catch (error) {
+                console.error("Error fetching lastModifiedDates:", error);
+            }
+        };
+        fetchLastModifiedDates();
     }, []);
+
+
     interface LastModifiedDates {
         [key: string]: string;
     }
