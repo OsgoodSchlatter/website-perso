@@ -27,6 +27,7 @@ export const HeaderPost = ({
             try {
                 const response = await fetch(`${process.env.PUBLIC_URL}/lastmodifieddates.json?timestamp=${new Date().getTime()}`);
                 const data = await response.json();
+                console.log(data)
                 setLastModifiedDates(data);
             } catch (error) {
                 console.error("Error fetching lastModifiedDates:", error);
@@ -41,8 +42,9 @@ export const HeaderPost = ({
     }
 
     const typedLastModifiedDates = lastModifiedDates as LastModifiedDates;
-
     const lastModified = typedLastModifiedDates[content_name + ".tsx"] || "-";
+    console.log(lastModified)
+
     const formattedDate = lastModified !== "-"
         ? (() => {
             const date = new Date(lastModified);
@@ -53,7 +55,7 @@ export const HeaderPost = ({
                 : date.toLocaleDateString('en-US', { year: 'numeric' }); // Format as "2023" if it's a past year
         })()
         : lastModified;
-
+    console.log(formattedDate)
 
     return (
         <div className="justify-between flex">

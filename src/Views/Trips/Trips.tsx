@@ -526,16 +526,14 @@ const getColorForTransport = (transport: TransportType): string => {
 
 
 export const TripsContent = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  console.log(isMobile)
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // Check width on initial render
+
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Adjust the width as per your mobile breakpoint
+      setIsMobile(window.innerWidth <= 768); // Update state based on current width
     };
 
-    handleResize(); // Call it initially to set the state
     window.addEventListener('resize', handleResize);
-
     return () => {
       window.removeEventListener('resize', handleResize);
     };
