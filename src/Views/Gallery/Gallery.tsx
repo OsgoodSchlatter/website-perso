@@ -13,6 +13,7 @@ type ImageType = {
     id: number;
     img: string; // URL or import of the image
     date: string; // Format "MM/YYYY"
+    caption?: string;
 };
 
 // Example images array
@@ -20,30 +21,36 @@ const DatedImages: ImageType[] = [
     {
         id: 1,
         img: img1,
-        date: "11/2024"
+        date: "11/2024",
+        caption: "A peer at Starnberger see, next to Munich"
     },
     {
         id: 2,
         img: img2,
-        date: "11/2024"
+        date: "11/2024",
+        caption: "Monopteros at English Garden, in Munich"
     },
     {
         id: 3,
         img: img3,
-        date: "12/2023"
+        date: "12/2023",
+        caption: "Xmas at the coloc in saclay, 2023 "
     },
     {
         id: 4,
         img: img4,
-        date: "01/2024"
+        date: "01/2024",
+        caption: "Pink London Eye"
     }, {
         id: 5,
         img: img5,
-        date: "01/2024"
+        date: "01/2024",
+        caption: "Theatre in London, the Book of Mormons "
     }, {
         id: 6,
         img: img6,
-        date: "01/2024"
+        date: "01/2024",
+        caption: "Exotic Shop CyberDog "
     },
     // Add more images as needed
 ];
@@ -109,19 +116,24 @@ const GalleryContent: React.FC = () => {
                         <div>
                             {
                                 groupedImages[date] ?
-                                    <div className='text-right mt-4' key={date}>
-                                        {<h2 className='text-xl'>{year}</h2>}
-                                        <div className='border bg-slate-100' />
+                                    <div className='text-right ' key={date}>
+                                        {<h2 className='text-2xl'>{year}</h2>}
                                         <div className='flex flex-col justify-center'>
-                                            <h3>{monthName}</h3>
+                                            <h3 className='text-xl'>{monthName}</h3>
+                                            <div className='border bg-slate-100' />
                                             {groupedImages[date] ? (
                                                 groupedImages[date].map(image => (
-                                                    <img
-                                                        key={image.id}
-                                                        src={image.img}
-                                                        alt={`Image ${image.id}`}
-                                                        className="w-full max-w-2xl mt-2"
-                                                    />
+                                                    <>
+                                                        <img
+                                                            key={image.id}
+                                                            src={image.img}
+                                                            alt={`Image ${image.id}`}
+                                                            className="w-full max-w-2xl mt-2"
+                                                        />
+                                                        <div className='text-center'>
+                                                            {image.caption}
+                                                        </div>
+                                                    </>
 
                                                 ))
                                             ) : (
