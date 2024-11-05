@@ -47,10 +47,10 @@ const NuclPhyContent = () => {
                                 - They are moderately ionising and moderately penetrating. They are stopped by a thin sheet of aluminium.
                             </div>
                             <div className="px-3 border-solid border-2 border-sky-500 w-fit">
-                                - <Latex>{"$β^{-}$"}</Latex>: <Latex>{"$n⟶p+e^{-}+ ν^{-}$"}</Latex>
+                                - <Latex>{"$β^{-}$"}</Latex>: <Latex>{"$n⟶p+e^{-}+ \\hat{ν}$"}</Latex>
                             </div>
                             <div className="px-3 border-solid border-2 border-sky-500 w-fit">
-                                - <Latex>{"$β^{+}$"}</Latex>: <Latex>{"$n⟶p+e^{+}+ ν$"}</Latex>
+                                - <Latex>{"$β^{+}$"}</Latex>: <Latex>{"$p⟶n+e^{+}+ ν$"}</Latex>
                             </div>
                             <div className="px-3 border-solid border-2 border-sky-500 w-fit">
                                 - Electronic capture: <Latex>{"$n+e^{-}⟶n+ν$"}</Latex>

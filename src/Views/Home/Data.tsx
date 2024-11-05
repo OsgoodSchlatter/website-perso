@@ -24,6 +24,7 @@ import { Books } from "../Books/Books";
 import { Recruiter } from "../Recruiter/Recruiter";
 import GreenTracking from "../CS/CSPosts/GreenTracking";
 import { About } from "../About/About";
+import { Gallery } from "../Gallery/Gallery";
 
 export type BlogPostType = {
     id: number;
@@ -48,7 +49,8 @@ export enum BlogCategory {
     Trips = "trips",
     Publi = "publi",
     Recruiter = "recruiter",
-    About = "about"
+    About = "about",
+    Gallery = "gallery"
 }
 
 export enum BlogRoute {
@@ -64,7 +66,8 @@ export enum BlogRoute {
     Trips = "trips",
     Publi = "publi_talks",
     Recruiter = "recruiter",
-    About = "about"
+    About = "about",
+    Gallery = "gallery"
 }
 
 export type ContentProps = {
@@ -281,5 +284,14 @@ export const blogPostsArray: BlogPostType[] = [
         category: BlogCategory.About,
         route: BlogRoute.About,
         content: About,
+    },
+    {
+        id: 1,
+        date: "2024",
+        title: "gallery",
+        content_name: "Gallery",
+        category: BlogCategory.Gallery,
+        route: BlogRoute.Gallery,
+        content: Gallery,
     }
 ];

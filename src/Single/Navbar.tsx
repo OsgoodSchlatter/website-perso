@@ -72,9 +72,15 @@ export const Navbar = () => {
           <div className="flex items-center">
             <Link
               to="/about/1"
-              className=" md:px-4 mb-1 md:text-3xl text-xl flex   rounded-lg hover:underline"
+              className=" md:px-4   md:text-2xl text-xl flex rounded-lg hover:underline"
             >
               about
+            </Link>
+            <Link
+              to="/gallery/1"
+              className=" md:px-4   md:text-2xl text-xl flex rounded-lg hover:underline"
+            >
+              gallery
             </Link>
             {/* <div
               className={`${"hover:bg-green-400 bg-green-500 flex gap-2 m-2 p-2 rounded-md items-end"} ${window.innerWidth <= 768
@@ -94,9 +100,9 @@ export const Navbar = () => {
             <button
               ref={buttonRef}
               onClick={toggleMenu}
-              className=" md:px-2 px-6 mb-1 md:text-3xl text-xl flex   rounded-lg hover:underline"
+              className=" md:px-2 px-6   md:text-2xl text-xl flex   rounded-lg hover:underline"
             >
-              contact
+              tl;dr
             </button>
             {menuVisible && (
               <div

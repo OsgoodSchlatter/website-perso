@@ -19,6 +19,9 @@ export const Pages2 = new Map<string, string>([
   ["publi_talks", "publi"],
   ["recruiter", "recruiter"],
   ["about", "about"],
+  ["gallery", "gallery"],
+
+
 ]);
 
 export const Main = () => {
