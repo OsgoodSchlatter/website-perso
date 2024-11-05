@@ -5,7 +5,7 @@ const glob = require("glob");
 // Rest of your code here
 
 const postsFolderPath = path.join(__dirname, "src/Views");
-const outputFile = path.join(__dirname, "public/lastModifiedDates.json");
+const outputFile = path.join(__dirname, "public/lastmodifieddates.json");
 
 interface LastModifiedDates {
   [key: string]: string;
