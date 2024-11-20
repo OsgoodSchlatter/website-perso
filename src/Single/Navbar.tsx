@@ -110,7 +110,7 @@ export const Navbar = () => {
                 className="absolute bg-slate-700  p-2 top-20 right-4 md:right-80 shadow-lg px-4 border-2 border-slate-100 rounded-lg text-right"
                 style={{ display: menuVisible ? "block" : "none" }}
               >
-                <div className="hover:bg-slate-100 rounded-lg">
+                <div className=" hover:bg-slate-600 rounded-lg">
                   <a
                     href={"https://www.linkedin.com/in/eloi-besnard-489a69170/"}
                   >
@@ -120,7 +120,7 @@ export const Navbar = () => {
                     </div>
                   </a>
                 </div>
-                <div className="hover:bg-slate-100 rounded-lg">
+                <div className="hover:bg-slate-600 rounded-lg">
                   <a href={"https://github.com/OsgoodSchlatter"}>
                     <div className="flex p-1 justify-between">
                       <span className="px-2 mt-1 font-bold">GitHub</span>{" "}
@@ -129,7 +129,7 @@ export const Navbar = () => {
                   </a>
                 </div>
                 <div></div>
-                <div className="hover:bg-slate-100 rounded-lg">
+                <div className=" hover:bg-slate-600 rounded-lg">
                   <Link to="/publi_talks/1">
                     <div className="flex p-1 justify-between">
                       <span className="px-2 mt-1 font-bold">Publications</span>{" "}
@@ -137,7 +137,7 @@ export const Navbar = () => {
                     </div>
                   </Link>
                 </div>
-                <div className="rounded-lg hover:bg-slate-100">
+                <div className="rounded-lg  hover:bg-slate-600">
                   {" "}
                   <a href={Pdf} target="_blank">
                     <div className="flex p-1 justify-between">
@@ -146,7 +146,7 @@ export const Navbar = () => {
                     </div>
                   </a>
                 </div>
-                <div className="rounded-lg hover:bg-slate-100">
+                <div className="rounded-lg  hover:bg-slate-600">
                   <Link to={"/recruiter/1"}>
                     <div className="flex p-1 justify-between">
                       <span className="px-2 mt-1 font-bold">Contact</span>
