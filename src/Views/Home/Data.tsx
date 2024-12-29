@@ -24,6 +24,7 @@ import { Contact } from "../Contact/Contact";
 import GreenTracking from "../CS/CSPosts/GreenTracking";
 import { About } from "../About/About";
 import { Gallery } from "../Gallery/Gallery";
+import { Italian } from "../Languages/Italian";
 
 export type BlogPostType = {
     id: number;
@@ -284,5 +285,14 @@ export const blogPostsArray: BlogPostType[] = [
         category: BlogCategory.Gallery,
         route: BlogRoute.Gallery,
         content: Gallery,
-    }
+    },
+    {
+        id: 2,
+        date: "12/2024",
+        title: "Italian 🇮🇹",
+        content_name: "Italian",
+        category: BlogCategory.Languages,
+        route: BlogRoute.Languages,
+        content: Italian,
+    },
 ];

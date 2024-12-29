@@ -19,10 +19,11 @@ type ImageType = {
     img: string; // URL or import of the image
     date: string; // Format "MM/YYYY"
     caption?: string;
-    folder?: Folders;
+    folder?: Folders[];
 };
 
 export enum Folders {
+    Time = "Timeline: 10 Best of each year",
     Mun24 = "Munich November 24",
     Lon23 = "London January 23",
     Sac24 = "Saclay December 24"
@@ -35,14 +36,14 @@ const DatedImages: ImageType[] = [
         img: img1,
         date: "11/2024",
         caption: "A peer at Starnberger see, next to Munich",
-        folder: Folders.Mun24,
+        folder: [Folders.Mun24],
     },
     {
         id: 2,
         img: img2,
         date: "11/2024",
         caption: "Monopteros at English Garden, in Munich",
-        folder: Folders.Mun24,
+        folder: [Folders.Mun24],
     },
     {
         id: 3,
@@ -55,47 +56,47 @@ const DatedImages: ImageType[] = [
         img: img4,
         date: "01/2024",
         caption: "Pink London Eye",
-        folder: Folders.Lon23,
+        folder: [Folders.Lon23],
     }, {
         id: 5,
         img: img5,
         date: "01/2024",
         caption: "Theatre in London, the Book of Mormons ",
-        folder: Folders.Lon23,
+        folder: [Folders.Lon23],
     }, {
         id: 6,
         img: img6,
         date: "01/2024",
         caption: "Exotic Shop CyberDog ",
-        folder: Folders.Lon23,
+        folder: [Folders.Lon23],
     },
     {
         id: 7,
         img: img7,
         date: "11/2024",
         caption: "Snow in saclay",
-        folder: Folders.Sac24,
+        folder: [Folders.Sac24],
     },
     {
         id: 8,
         img: img8,
         date: "11/2024",
         caption: "Snow in saclay",
-        folder: Folders.Sac24,
+        folder: [Folders.Sac24],
     },
     {
         id: 9,
         img: img9,
         date: "11/2024",
         caption: "Snow in saclay",
-        folder: Folders.Sac24,
+        folder: [Folders.Sac24],
     },
     {
         id: 10,
         img: img10,
         date: "11/2024",
         caption: "Snow in saclay",
-        folder: Folders.Sac24,
+        folder: [Folders.Sac24],
     }
     // Add more images as needed
 ];
@@ -172,7 +173,7 @@ const GalleryContent: React.FC = () => {
                     if (showYear) currentYear = year;
 
                     const monthName = getMonthName(month); // Convert month number to name
-                    const filteredImages = groupedImages[date]?.filter(image => image.folder === selectedAlbum) || [];
+                    const filteredImages = groupedImages[date]?.filter(image => image.folder?.includes(selectedAlbum)) || [];
 
                     return (
                         <div>
