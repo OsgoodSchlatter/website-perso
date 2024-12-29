@@ -121,9 +121,18 @@ export const ItalianContent = () => {
                 Sono contento di essere in Italia
             </div>
             <div className="mt-2">
-                Comment puis-je vous aider ? =
+                - Comment puis-je vous aider ? =
                 Come posso aiutarti?
             </div>
+            <div className="mt-2">
+                - Quel est ton nom? =
+                Qual è il tuo nome?
+            </div>
+            <div className="mt-2">
+                - Salut Simona, je suis content d'être en Italie et de te revoir =
+                Ciao Simona, sono contento di essere in Italia e di rivederti
+            </div>
+
             <div className="text-3xl  mt-2 mb-2">Numbers </div>
             1 - uno, 2 - due, 3 - tre, 4 - quattro, 5 - cinque, <br />
             6 - sei, 7 - sette, 8 - otto, 9 - nove, 10 - dieci, <br />

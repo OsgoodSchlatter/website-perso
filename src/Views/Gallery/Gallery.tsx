@@ -9,6 +9,19 @@ import img7 from "./nov/IMG20241121131404.jpg"
 import img8 from "./nov/IMG20241121130900.jpg"
 import img9 from "./nov/IMG20241121130851.jpg"
 import img10 from "./nov/IMG20241121130609.jpg"
+import best_24_november from "./best_24/Best_2024_1.jpeg"
+import best_24_march from "./best_24/Best_2024_2.jpeg"
+import best_24_july from "./best_24/Best_2024_3.jpg"
+import best_24_feb from "./best_24/Best_2024_4.jpg"
+import best_24_oct from "./best_24/Best_2024_5.jpg"
+import best_24_march_gig from "./best_24/Best_2024_6.jpg"
+import best_24_oct_gig from "./best_24/Best_2024_7.jpeg"
+import best_24_may from "./best_24/Best_2024_8.jpg"
+import best_24_aug from "./best_24/Best_2024_9.jpg"
+import best_24_nov from "./best_24/Best_2024_10.jpg"
+import best_24_sept from "./best_24/Best_2024_11.jpg"
+import best_24_jan from "./best_24/Best_2024_12.jpg"
+
 
 
 import { StandardHeader } from '../../Single/StandardHeader';
@@ -23,7 +36,7 @@ type ImageType = {
 };
 
 export enum Folders {
-    Time = "Timeline: 10 Best of each year",
+    Time = "Timeline: 12 Best of each year",
     Mun24 = "Munich November 24",
     Lon23 = "London January 23",
     Sac24 = "Saclay December 24"
@@ -97,8 +110,92 @@ const DatedImages: ImageType[] = [
         date: "11/2024",
         caption: "Snow in saclay",
         folder: [Folders.Sac24],
-    }
-    // Add more images as needed
+    },
+    {
+        id: 11,
+        img: best_24_jan,
+        date: "01/2024",
+        caption: "Asim and I in London in january 2024",
+        folder: [Folders.Time, Folders.Lon23],
+    },
+    {
+        id: 12,
+        img: best_24_feb,
+        date: "02/2024",
+        caption: "I went to ski with a couple of friends, and this is in Chamonix",
+        folder: [Folders.Time],
+    },
+    {
+        id: 13,
+        img: best_24_march,
+        date: "03/2024",
+        caption: "Graduation from my engineering school (Telecom SudParis, MSc in computer science)",
+        folder: [Folders.Time],
+    },
+    {
+        id: 14,
+        img: best_24_march_gig,
+        date: "03/2024",
+        caption: "A gig I did with my group in my house in Saclay",
+        folder: [Folders.Time],
+    },
+    {
+        id: 15,
+        img: best_24_may,
+        date: "05/2024",
+        caption: "A great night in Biarritz with my friend on the left",
+        folder: [Folders.Time],
+    },
+    {
+        id: 16,
+        img: best_24_july,
+        date: "07/2024",
+        caption: "Great friends from Brive at Collonge-la-Rouge",
+        folder: [Folders.Time],
+    },
+    {
+        id: 17,
+        img: best_24_aug,
+        date: "08/2024",
+        caption: "Olympic game opening ceremony with my close friends from Paris",
+        folder: [Folders.Time],
+    },
+    {
+        id: 18,
+        img: best_24_sept,
+        date: "09/2024",
+        caption: "Surf at Biscarosse with good friends from Brive",
+        folder: [Folders.Time],
+    },
+    {
+        id: 19,
+        img: best_24_oct,
+        date: "11/2024",
+        caption: "A good friend from high school in Paris wearing fancy hat",
+        folder: [Folders.Time],
+    },
+    {
+        id: 20,
+        img: best_24_oct_gig,
+        date: "10/2024",
+        caption: "My sister and I singing for my grandma's 80th bday",
+        folder: [Folders.Time],
+    },
+    {
+        id: 21,
+        img: best_24_november,
+        date: "11/2024",
+        caption: "My lovely friend at Versailles in an amazing restaurant, le camaleon",
+        folder: [Folders.Time],
+    },
+    {
+        id: 22,
+        img: best_24_nov,
+        date: "11/2024",
+        caption: "My friends and I surfing in November in Britanny",
+        folder: [Folders.Time],
+    },
+
 ];
 
 // Helper function to get month name from a month number (01-12)
@@ -149,22 +246,24 @@ const GalleryContent: React.FC = () => {
     const handleChange = (event: any) => {
         setSelectedAlbum(event.target.value)
     }
-    const [selectedAlbum, setSelectedAlbum] = useState<Folders>(Folders.Sac24);
+    const [selectedAlbum, setSelectedAlbum] = useState<Folders | null>(null);
 
     return (
         <div className='flex justify-center'>
             <div>
                 <select
-                    value={selectedAlbum}
-                    onChange={handleChange}
-                    className=" p-4 py-2 rounded max-h-10 bg-slate-500"
+                    value={selectedAlbum || ""}
+                    onChange={(e) => setSelectedAlbum(e.target.value as Folders)}
+                    className="p-4 py-2 rounded max-h-10 bg-slate-500"
                 >
+                    <option value="">All albums</option> {/* Default option */}
                     {Object.values(Folders).map((album) => (
                         <option key={album} value={album}>
                             {album}
                         </option>
                     ))}
                 </select>
+
                 {dateList.map(date => {
                     const [month, year] = date.split("/");
                     console.log(groupedImages[date] ? "oui" + date : " non" + date)
@@ -173,7 +272,9 @@ const GalleryContent: React.FC = () => {
                     if (showYear) currentYear = year;
 
                     const monthName = getMonthName(month); // Convert month number to name
-                    const filteredImages = groupedImages[date]?.filter(image => image.folder?.includes(selectedAlbum)) || [];
+                    const filteredImages = groupedImages[date]?.filter(image =>
+                        selectedAlbum ? image.folder?.includes(selectedAlbum) : true
+                    ) || [];
 
                     return (
                         <div>
