@@ -1,10 +1,4 @@
 import { RefObject, useEffect, useRef, useState } from "react";
-import { GrGithub } from "react-icons/gr";
-import { GrLinkedin } from "react-icons/gr";
-import { FaBookOpen, FaHome, FaUtensilSpoon } from "react-icons/fa";
-import { BiSpreadsheet } from "react-icons/bi";
-import Pdf from "../../src/CV_EN.pdf";
-import { TfiWrite } from "react-icons/tfi";
 
 import { Link } from "react-router-dom";
 
@@ -59,103 +53,111 @@ export const Navbar = () => {
 
   return (
     <>
-      <div className="md:flex md:justify-center w-full bg-slate-700">
-        <header className="h-20 md:w-1/2 flex items-center overflow-hidden justify-between">
-          <div className="flex md:text-3xl text-xl">
-            <Link
-              to="/"
-              className="text-green-400 px-6 md:px-2  flex rounded-lg hover:underline"
-            >
-              osgood
-            </Link>
-          </div>
-          <div className="flex items-center">
-            <Link
-              to="/about/1"
-              className=" px-2 md:text-2xl text-xl flex rounded-lg hover:underline"
-            >
-              about
-            </Link>
-            <Link
-              to="/gallery/1"
-              className=" px-2  md:text-2xl text-xl flex rounded-lg hover:underline"
-            >
-              gallery
-            </Link>
-            {/* <div
+      <div className="md:flex md:justify-center w-full fixed top-0 left-0 bg-slate-700">
+        <header className="h-20 md:w-1/2 flex items-center overflow-hidden justify-center">
+          <div>
+            <div className="flex justify-center md:text-4xl text-3xl mb-1">
+              <Link
+                to="/"
+                className="text-green-400 px-6 md:px-2  flex rounded-lg hover:underline"
+              >
+                @osgood
+              </Link>
+            </div>
+            <div className="flex items-center justify-center">
+              <Link
+                to="/about/1"
+                className=" px-2 md:text-2xl text-xl flex rounded-lg hover:underline"
+              >
+                about
+              </Link>
+              <Link
+                to="/gallery/1"
+                className=" px-2  md:text-2xl text-xl flex rounded-lg hover:underline"
+              >
+                gallery
+              </Link>
+              <Link
+                to="/contact/1"
+                className=" px-2  md:text-2xl text-xl flex rounded-lg hover:underline"
+              >
+                contact
+              </Link>
+              {/* <div
               className={`${"hover:bg-green-400 bg-green-500 flex gap-2 m-2 p-2 rounded-md items-end"} ${window.innerWidth <= 768
                 ? "hidden md:block" // Hidden on screens smaller or equal to 768px
                 : ""
-                }`}
-            >
+              }`}
+              >
               {" "}
               <Tooltip2 text="Website CO2">
-                <a className="" href="https://www.websitecarbon.com/website/osgood-pro/">
-                  {" "}
-                  0.08 gCO2eq
-                </a>
+              <a className="" href="https://www.websitecarbon.com/website/osgood-pro/">
+              {" "}
+              0.08 gCO2eq
+              </a>
               </Tooltip2>
             </div> */}
 
-            <button
-              ref={buttonRef}
-              onClick={toggleMenu}
-              className=" px-2   md:text-2xl text-xl flex   rounded-lg hover:underline"
-            >
-              contact
-            </button>
-            {menuVisible && (
-              <div
-                ref={menuRef}
-                className="absolute bg-slate-700  p-2 top-20 right-4 md:right-80 shadow-lg px-4 border-2 border-slate-100 rounded-lg text-right"
-                style={{ display: menuVisible ? "block" : "none" }}
+              {/* <button
+                ref={buttonRef}
+                onClick={toggleMenu}
+                className=" px-2   md:text-2xl text-xl flex   rounded-lg hover:underline"
               >
-                <div className=" hover:bg-slate-600 rounded-lg">
-                  <a
-                    href={"https://www.linkedin.com/in/eloi-besnard-489a69170/"}
-                  >
-                    <div className="flex p-1 justify-between">
-                      <span className="px-2 mt-1 font-bold">LinkedIn</span>{" "}
-                      <GrLinkedin size={30} />
-                    </div>
-                  </a>
+                contact {"&"} more
+              </button> */}
+              {/* {menuVisible && (
+                <div
+                  ref={menuRef}
+                  className="absolute bg-slate-700  p-2 top-20 right-4 md:right-80 shadow-lg px-4 border-2 border-slate-100 rounded-lg text-right"
+                  style={{ display: menuVisible ? "block" : "none" }}
+                >
+                  <div className=" hover:bg-slate-600 rounded-lg">
+                    <a
+                      href={"https://www.linkedin.com/in/eloi-besnard-489a69170/"}
+                    >
+                      <div className="flex p-1 justify-between">
+                        <span className="px-2 mt-1 font-bold">LinkedIn</span>{" "}
+                        <GrLinkedin size={30} />
+                      </div>
+                    </a>
+                  </div>
+                  <div className="hover:bg-slate-600 rounded-lg">
+                    <a href={"https://github.com/OsgoodSchlatter"}>
+                      <div className="flex p-1 justify-between">
+                        <span className="px-2 mt-1 font-bold">GitHub</span>{" "}
+                        <GrGithub size={30} />
+                      </div>
+                    </a>
+                  </div>
+                  <div></div>
+                  <div className=" hover:bg-slate-600 rounded-lg">
+                    <Link to="/publi_talks/1">
+                      <div className="flex p-1 justify-between">
+                        <span className="px-2 mt-1 font-bold">Publications</span>{" "}
+                        <FaBookOpen size={30} />
+                      </div>
+                    </Link>
+                  </div>
+                  <div className="rounded-lg  hover:bg-slate-600">
+                    {" "}
+                    <a href={Pdf} target="_blank">
+                      <div className="flex p-1 justify-between">
+                        <span className="px-2 mt-1 font-bold">Resume</span>{" "}
+                        <BiSpreadsheet size={30} />
+                      </div>
+                    </a>
+                  </div>
+                  <div className="rounded-lg  hover:bg-slate-600">
+                    <Link to={"/contact/1"}>
+                      <div className="flex p-1 justify-between">
+                        <span className="px-2 mt-1 font-bold">Contact</span>
+                        <TfiWrite size={30} />
+                      </div>
+                    </Link>
+                  </div>
                 </div>
-                <div className="hover:bg-slate-600 rounded-lg">
-                  <a href={"https://github.com/OsgoodSchlatter"}>
-                    <div className="flex p-1 justify-between">
-                      <span className="px-2 mt-1 font-bold">GitHub</span>{" "}
-                      <GrGithub size={30} />
-                    </div>
-                  </a>
-                </div>
-                <div></div>
-                <div className=" hover:bg-slate-600 rounded-lg">
-                  <Link to="/publi_talks/1">
-                    <div className="flex p-1 justify-between">
-                      <span className="px-2 mt-1 font-bold">Publications</span>{" "}
-                      <FaBookOpen size={30} />
-                    </div>
-                  </Link>
-                </div>
-                <div className="rounded-lg  hover:bg-slate-600">
-                  {" "}
-                  <a href={Pdf} target="_blank">
-                    <div className="flex p-1 justify-between">
-                      <span className="px-2 mt-1 font-bold">Resume</span>{" "}
-                      <BiSpreadsheet size={30} />
-                    </div>
-                  </a>
-                </div>
-                <div className="rounded-lg  hover:bg-slate-600">
-                  <Link to={"/recruiter/1"}>
-                    <div className="flex p-1 justify-between">
-                      <span className="px-2 mt-1 font-bold">Contact</span>
-                      <TfiWrite size={30} />
-                    </div>
-                  </Link>
-                </div>
-              </div>
-            )}
+              )} */}
+            </div>
           </div>
         </header>
       </div>

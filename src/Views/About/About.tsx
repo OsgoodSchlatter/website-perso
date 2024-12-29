@@ -25,6 +25,6 @@ const AboutContent = () => {
 
 
 export const About = () => {
-    return (<StandardHeader title={"About"} date={"2024"}
+    return (<StandardHeader title={"about"} date={""}
         content={< AboutContent />} />)
 }

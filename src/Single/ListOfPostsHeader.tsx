@@ -10,7 +10,7 @@ export const ListOfPostsHeader = ({
     trips?: boolean;
     main?: boolean;
 }) => {
-    const catToExclude = [BlogCategory.Recruiter, BlogCategory.About];
+    const catToExclude = [BlogCategory.Contact, BlogCategory.About];
     return (
         <>
 

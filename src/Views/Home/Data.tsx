@@ -2,7 +2,6 @@ import DisplayIngredients from "../CarbonCalculator/DisplayIngredients";
 import { Chess } from "../Chess/Chess";
 import OOM from "../Climate/ClimatePosts/OOM";
 import FHE from "../CS/CSPosts/FHE";
-import Tuto from "../CS/CSPosts/Tuto";
 
 import { Scales } from "../Music/Scales";
 import { Russian } from "../Languages/Russian";
@@ -21,7 +20,7 @@ import { PubliArticle } from "../Publi/PubliArticle";
 import { Sport } from "../Sport/Sport";
 import { Trips } from "../Trips/Trips";
 import { Books } from "../Books/Books";
-import { Recruiter } from "../Recruiter/Recruiter";
+import { Contact } from "../Contact/Contact";
 import GreenTracking from "../CS/CSPosts/GreenTracking";
 import { About } from "../About/About";
 import { Gallery } from "../Gallery/Gallery";
@@ -48,7 +47,7 @@ export enum BlogCategory {
     Books = "books",
     Trips = "trips",
     Publi = "publi",
-    Recruiter = "recruiter",
+    Contact = "contact",
     About = "about",
     Gallery = "gallery"
 }
@@ -65,7 +64,7 @@ export enum BlogRoute {
     Books = "books",
     Trips = "trips",
     Publi = "publi_talks",
-    Recruiter = "recruiter",
+    Contact = "contact",
     About = "about",
     Gallery = "gallery"
 }
@@ -253,11 +252,11 @@ export const blogPostsArray: BlogPostType[] = [
     {
         id: 1,
         date: "2023",
-        title: "Recruiter",
-        content_name: "Recruiter",
-        category: BlogCategory.Recruiter,
-        route: BlogRoute.Recruiter,
-        content: Recruiter,
+        title: "Contact",
+        content_name: "Contact",
+        category: BlogCategory.Contact,
+        route: BlogRoute.Contact,
+        content: Contact,
     },
     {
         id: 1,

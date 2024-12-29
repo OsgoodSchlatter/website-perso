@@ -12,7 +12,6 @@ import ski1 from "./ski_2alpes.jpg"
 import ski2 from "./ski_2alpes2.jpg"
 import ski3 from "./ski.jpg"
 import ski4 from "./ski2.jpeg"
-import ski5 from "./ski3.jpg"
 
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';

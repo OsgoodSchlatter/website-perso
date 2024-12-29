@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import img1 from "./nov/IMG20241102161449.jpg";
 import img2 from "./nov/IMG20241101130541.jpg";
 import img3 from "./2023_dec/xmas_2023.jpg"
 import img4 from "./2024_jan/1.jpg"
 import img5 from "./2024_jan/2.jpg"
 import img6 from "./2024_jan/3.jpg"
+import img7 from "./nov/IMG20241121131404.jpg"
+import img8 from "./nov/IMG20241121130900.jpg"
+import img9 from "./nov/IMG20241121130851.jpg"
+import img10 from "./nov/IMG20241121130609.jpg"
+
 
 import { StandardHeader } from '../../Single/StandardHeader';
 
@@ -14,7 +19,14 @@ type ImageType = {
     img: string; // URL or import of the image
     date: string; // Format "MM/YYYY"
     caption?: string;
+    folder?: Folders;
 };
+
+export enum Folders {
+    Mun24 = "Munich November 24",
+    Lon23 = "London January 23",
+    Sac24 = "Saclay December 24"
+}
 
 // Example images array
 const DatedImages: ImageType[] = [
@@ -22,13 +34,15 @@ const DatedImages: ImageType[] = [
         id: 1,
         img: img1,
         date: "11/2024",
-        caption: "A peer at Starnberger see, next to Munich"
+        caption: "A peer at Starnberger see, next to Munich",
+        folder: Folders.Mun24,
     },
     {
         id: 2,
         img: img2,
         date: "11/2024",
-        caption: "Monopteros at English Garden, in Munich"
+        caption: "Monopteros at English Garden, in Munich",
+        folder: Folders.Mun24,
     },
     {
         id: 3,
@@ -40,18 +54,49 @@ const DatedImages: ImageType[] = [
         id: 4,
         img: img4,
         date: "01/2024",
-        caption: "Pink London Eye"
+        caption: "Pink London Eye",
+        folder: Folders.Lon23,
     }, {
         id: 5,
         img: img5,
         date: "01/2024",
-        caption: "Theatre in London, the Book of Mormons "
+        caption: "Theatre in London, the Book of Mormons ",
+        folder: Folders.Lon23,
     }, {
         id: 6,
         img: img6,
         date: "01/2024",
-        caption: "Exotic Shop CyberDog "
+        caption: "Exotic Shop CyberDog ",
+        folder: Folders.Lon23,
     },
+    {
+        id: 7,
+        img: img7,
+        date: "11/2024",
+        caption: "Snow in saclay",
+        folder: Folders.Sac24,
+    },
+    {
+        id: 8,
+        img: img8,
+        date: "11/2024",
+        caption: "Snow in saclay",
+        folder: Folders.Sac24,
+    },
+    {
+        id: 9,
+        img: img9,
+        date: "11/2024",
+        caption: "Snow in saclay",
+        folder: Folders.Sac24,
+    },
+    {
+        id: 10,
+        img: img10,
+        date: "11/2024",
+        caption: "Snow in saclay",
+        folder: Folders.Sac24,
+    }
     // Add more images as needed
 ];
 
@@ -100,9 +145,25 @@ const GalleryContent: React.FC = () => {
 
     let currentYear = ""; // To keep track of the last displayed year
 
+    const handleChange = (event: any) => {
+        setSelectedAlbum(event.target.value)
+    }
+    const [selectedAlbum, setSelectedAlbum] = useState<Folders>(Folders.Sac24);
+
     return (
         <div className='flex justify-center'>
             <div>
+                <select
+                    value={selectedAlbum}
+                    onChange={handleChange}
+                    className=" p-4 py-2 rounded max-h-10 bg-slate-500"
+                >
+                    {Object.values(Folders).map((album) => (
+                        <option key={album} value={album}>
+                            {album}
+                        </option>
+                    ))}
+                </select>
                 {dateList.map(date => {
                     const [month, year] = date.split("/");
                     console.log(groupedImages[date] ? "oui" + date : " non" + date)
@@ -111,18 +172,21 @@ const GalleryContent: React.FC = () => {
                     if (showYear) currentYear = year;
 
                     const monthName = getMonthName(month); // Convert month number to name
+                    const filteredImages = groupedImages[date]?.filter(image => image.folder === selectedAlbum) || [];
 
                     return (
                         <div>
+
                             {
-                                groupedImages[date] ?
-                                    <div className='text-right ' key={date}>
+                                filteredImages.length > 0 &&
+                                <div className='text-right' key={date}>
+                                    <div className='mt-2'>
                                         {<h2 className='text-2xl'>{year}</h2>}
                                         <div className='flex flex-col justify-center'>
                                             <h3 className='text-xl'>{monthName}</h3>
                                             <div className='border bg-slate-100' />
                                             {groupedImages[date] ? (
-                                                groupedImages[date].map(image => (
+                                                filteredImages.map(image => (
                                                     <>
                                                         <img
                                                             key={image.id}
@@ -141,7 +205,8 @@ const GalleryContent: React.FC = () => {
                                             )}
                                         </div>
                                     </div>
-                                    : <></>}
+                                </div>
+                            }
                         </div>
                     );
                 })}
@@ -153,7 +218,7 @@ const GalleryContent: React.FC = () => {
 export const Gallery = ({ title, date }: { title: string, date: string }) => {
     return (
         <>
-            <StandardHeader title={title} date={date}
+            <StandardHeader title={title} date={""}
                 content={<GalleryContent />} />
         </>
     );

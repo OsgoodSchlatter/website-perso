@@ -31,7 +31,7 @@ export const Home = () => {
     setValue(category);
   };
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center ">
       <div className="md:w-1/2 w-3/4 items-center">
         <div className="flex flex-wrap justify-evenly mt-2 font-bold px-2">
           {Array.from(Pages.entries())

@@ -134,7 +134,7 @@ export const Gigs = () => {
 
     return (
         <>
-            <div className="flex justify-center mt-4">
+            <div className="flex justify-center mt-2">
                 <div className="w-full sm:w-2/3 md:w-1/2 lg:max-w-2xl xl:max-w-2xl mx-4 ">
                     {/* Music Selection Buttons */}
                     <div className="flex justify-center space-x-4 mb-4">
