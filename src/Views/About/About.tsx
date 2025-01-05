@@ -1,24 +1,28 @@
 import { StandardHeader } from "../../Single/StandardHeader";
-import img1 from "./me.jpg"
+import img1 from "./about_pic.jpg"
 
 const AboutContent = () => {
     return (
         <>
-            <div className=" justify-center">
+            <div className="justify-center text-xl font-bold">
+                Hi, I am Eloi.
+                <div className="mb-2" />
                 <img src={img1} className="w-100" />
                 <div>
-                    A picture of me in Venise (2024)
+                    A picture of me in Italy
                 </div>
             </div>
             <br />
+
+            I am a French citizen born in 2000 in France.
             <br />
-            <div className="text-2xl">
-                My name is Eloi Besnard and I am the current year - 2000 years old.
-            </div>
+            I work in nuclear physics.
             <br />
-            <div className="text-lg">
-                I was born next to Paris but lived most of my life in Brittany, next to the Gulf of Morbihan.
-            </div>
+            My passions are making music, gliding sports and taking the train to go explore the world.
+            <br />
+            <br />
+            <br />
+
         </>
     );
 };
