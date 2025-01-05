@@ -526,6 +526,24 @@ export const blogPosts: TravelEntry[] = [
     transport: "Train",
     C02: 1,
     GPS: [50.62925, 3.057256],
+  },
+  {
+    id: 50,
+    date: "2025",
+    title: "Salerno",
+    locations: ["Salerno", "Italy"],
+    transport: "Train",
+    C02: 90,
+    GPS: [40.6824408, 14.7680961],
+  },
+  {
+    id: 51,
+    date: "2024",
+    title: "Luxembourg",
+    locations: ["Luxembourg", "Luxembourg"],
+    transport: "Train",
+    C02: 5,
+    GPS: [49.8157635, 6.1315139],
   }
 
 ];
@@ -559,7 +577,11 @@ export const TripsContent = () => {
   return (
     <>
       <div className="flex justify-center rounded">
+
         <div>
+          <div className="text-lg">
+            🔴: plane, 🟢: train, 🟠: car or bus, 🔵: home
+          </div>
           {/* @ts-ignore */}
           <MapContainer center={[47.65, -2.7608]} zoom={2} scrollWheelZoom={false} style={{
             width: isMobile ? '300px' : '625px', // Apply 300px width on mobile, 100% otherwise
@@ -585,8 +607,8 @@ export const TripsContent = () => {
                 ))}
             </div>
           </MapContainer>
-        </div>
 
+        </div>
       </div >
     </>
   );

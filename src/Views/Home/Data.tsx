@@ -226,7 +226,7 @@ export const blogPostsArray: BlogPostType[] = [
     {
         id: 1,
         date: "2024",
-        title: "Trips",
+        title: "Destinations I went to",
         content_name: "Trips",
         category: BlogCategory.Trips,
         route: BlogRoute.Trips,
