@@ -303,34 +303,33 @@ const NeutronicsData = () => {
                         Water has an absorption cross section higher than the other 3 so if water is used as a moderator, then Uranium needs to be slightly enriched (2.5%) in order to reach criticality. Since it is very cheap, it is often considered a good tradeoff to enrich a bit Uranium and use water as a coolant and moderator at the same time (this is the case in PWR or BWR reactors, which make up more than 70% of all reactors).
                     </>
                 );
+
             case 2:
                 return (
                     <>
-                        <div className="font-bold text-lg mt-2">
-                            2 - Nuclear physics for neutron physicists
-                        </div>
-                    </>
-                );
-            case 3:
-                return (
-                    <>
                         <div className="text-2xl font-bold">
-                            Chapter 3
+                            Chapter 2
                         </div>
                         <div className="font-bold text-lg mt-2">
-                            Introduction to neutron physics
+                            Basis of neutron physics
                         </div>
                         <div className="text-lg font-bold mt-2">
                             Summary
                         </div>
                         <div className="italic underline">
-                            3.1 - Neutron-matter interaction
+                            2.1 - Neutron-matter interaction
                         </div>
                         <div className="italic underline">
-                            3.2 - Cross sections
+                            2.2 - Cross sections
+                        </div>
+                        <div className="italic underline">
+                            2.3 - Four factors formula
+                        </div>
+                        <div className="italic underline">
+                            2.4 - Transport equation
                         </div>
                         <div className="italic underline mt-4">
-                            3.1 - Neutron-matter interaction
+                            2.1 - Neutron-matter interaction
                         </div>
                         There exists multiple interactions of neutrons with the nucleus. Indeed, since the neutron is not a charged particle, it only interacts with the nucleus and not with the electron cloud. To determine how likely is an interaction to happen, we can talk about cross-sections. The cross-section <Latex>{"$\\sigma$"}</Latex>;
                         is a measure of the probability of an interaction between different particles. Here is a summary of all the interactions neutrons can have in a medium.
@@ -397,32 +396,109 @@ const NeutronicsData = () => {
                             <Latex>{"$n+A \\rightarrow \\alpha + C  $"}</Latex>
 
                         </div>
-                        <div className="italic underline">
-                            3.2 - Cross sections
+                        <div className="italic underline mt-2">
+                            2.2 - Cross sections
                         </div>
                         Cross-section is measure of the probability of an interaction between two particles.
+                        <br />
+                        <Latex>{"$\\sigma$"}</Latex> is the microscopic cross section, in <Latex>{"$cm^2$"}</Latex> and <Latex>{"$\\Sigma=N\\sigma$"}</Latex> is the macroscopic cross section, in <Latex>{"$cm^{-1}$"}</Latex>, with <Latex>{"$N$"}</Latex> the neutrons density in <Latex>{"$cm^{-3}$"}</Latex>.
+                        There are as many <Latex>{"$\\sigma$"}</Latex> that there exists ways of interacting with the matter.
+                        <div className="italic underline mt-2">
+                            2.3 - Four factors formula
+                        </div>
+                        As seen in chapter 1, <Latex>{"$K$"}</Latex> is the number of neutrons emitted by fission that are going to create another fission.
+                        Let's introduce <Latex>{"$K_\\infty$"}</Latex> that is the <Latex>{"$K$"}</Latex> in an infinite  (= infinite dimensions, hence no loss of neutrons). <br />
+
+                        For PWR, the thermal flux (flux for neutrons of energy close to the thermal agitation) is the one we're interested in in order to create another fission. Let's therefore take a thermal neutron.
+                        <div className="text-center mt-2">
+                            <Latex>{"$1   $"}</Latex> thermal neutron
+                            <br />
+                        </div>
+                        Yet we need to take into account the fast fission phenomenon which involves fission from fast neutrons.
+                        <br />
+                        Therefore we should directly add a coefficient <Latex>{"$\\epsilon$"}</Latex> that accounts for all the fission created by neutrons from the fast part of the energy spectrum.
+                        <div className="text-center mt-2">
+                            <Latex>{"$1   $"}</Latex> thermal neutron
+                            <Latex>{"$ \\rightarrow \\epsilon $"}</Latex> neutrons
+                            <br />
+                        </div>
+                        <Latex>{"$\\epsilon$"}</Latex> is around 1.07 for PWR.
+                        <br />
+                        Then for all these neutrons, they have a probability <Latex>{"$p$"}</Latex> to reach the epithermal region.
+                        <div className="text-center mt-2">
+                            <Latex>{"$1 $"}</Latex> thermal neutron
+                            <Latex>{"$ \\rightarrow \\epsilon p $"}</Latex> neutrons
+                            <br />
+                        </div>
+                        p is around 0.75 in PWR.
+                        <br />
+                        Neutrons that have reached thermal energies have then a probability f to be captured in the fuel, rather than in the cladding or other elements.
+                        <div className="text-center mt-2">
+                            <Latex>{"$1   $"}</Latex> thermal neutron
+                            <Latex>{"$ \\rightarrow \\epsilon p f$"}</Latex> neutrons
+                            <br />
+                        </div>
+                        f is around 0.9 for PWR.
+                        <br />
+                        But being captured in the fuel doesn't mean it's a fission. We then need to introduce the probability that the absorption is a fission <Latex>{"$ \\frac{\\Sigma_f}{\\Sigma_a}$"}</Latex>.
+                        If there is a fission, then we need to multiply by the mean number of neutrons emitted by fission <Latex>{"$ \\nu $"}</Latex>.
+                        Finally:  <div className="text-center mt-2">
+                            <Latex>{"$1   $"}</Latex> thermal neutron
+                            <Latex>{"$ \\rightarrow \\epsilon p f \\frac{\\Sigma_f}{\\Sigma_a} \\nu$"}</Latex> neutrons
+                            <br />
+                            or
+                            <br />
+                            <Latex>{"$1   $"}</Latex> thermal neutron
+                            <Latex>{"$ \\rightarrow \\epsilon p f \\eta$"}</Latex> neutrons
+                            <br />
+                        </div>
+                        <br />
+                        We find that <Latex>{"$K_\\infty = \\epsilon p f \\eta$"}</Latex>
+                        <br />
 
 
-
+                    </>
+                );
+            case 3:
+                return (
+                    <>
+                        <div className="font-bold text-lg mt-2">3 - Point kinetics</div>
                     </>
                 );
             case 4:
                 return (
                     <>
-                        <div className="font-bold text-lg mt-2">4 - Point kinetics</div>
+                        <div className="font-bold text-lg mt-2">4 - Diffusion equation</div>
+                        <div className="italic underline">
+                            4.1 - Establishing diffusion equation
+                        </div>
+                        <div className="italic underline mt-2">
+                            4.1 -  Establishing diffusion equation
+                        </div>
+                        We have <Latex>{"$\\Phi(\\vec{r}, E, \\vec{\\Omega},t) = nv $"}</Latex>, which means that the neutron flux is equal to the neutron density times their velocity. <Latex>{"$\\Phi$"}</Latex> is expressed in <Latex>{"$n.cm^{-2}.s^{-1}$"}</Latex>.
+                        We want to study the evolution of the number of neutron, therefore we study the time derivative of <Latex>{"$\\frac{\\partial n}{\\partial t}=\\frac{\\partial(\\frac{1}{v}\\Phi)}{\\partial t}$"}</Latex>. Since we consider the speed doesnt change with time, then we have:
+                        <br />
+                        <div className="text-center mt-2">
+                            <Latex>{"$\\frac{\\partial n}{\\partial t}=\\frac{1}{v}\\frac{\\partial}{\\partial t}\\Phi$"}</Latex>
+                        </div>
+                        <br />
+                        Then for a volume in space where there is <Latex>{"$n $"}</Latex> neutrons, we need to take into account the factors that contribute positively to <Latex>{"$n$"}</Latex> and those which contribute negatively.
+
                     </>
                 );
             case 5:
                 return (
                     <>
-                        <div className="font-bold text-lg mt-2">5 - Diffusion equation</div>
+                        <div className="font-bold text-lg mt-2">
+                            5 - One-group/diffusion theory
+                        </div>
                     </>
                 );
             case 6:
                 return (
                     <>
                         <div className="font-bold text-lg mt-2">
-                            6 - One-group/diffusion theory
+                            6 - Neutron slowing down
                         </div>
                     </>
                 );
@@ -430,7 +506,7 @@ const NeutronicsData = () => {
                 return (
                     <>
                         <div className="font-bold text-lg mt-2">
-                            7 - Neutron slowing down
+                            7 - Resonant absorption of neutrons
                         </div>
                     </>
                 );
@@ -438,29 +514,21 @@ const NeutronicsData = () => {
                 return (
                     <>
                         <div className="font-bold text-lg mt-2">
-                            8 - Resonant absorption of neutrons
+                            8 - Thermalisation of neutrons
                         </div>
                     </>
                 );
             case 9:
                 return (
                     <>
-                        <div className="font-bold text-lg mt-2">
-                            9 - Thermalisation of neutrons
-                        </div>
+                        <div className="font-bold text-lg mt-2">9 - Multigroup theory</div>
                     </>
                 );
             case 10:
                 return (
                     <>
-                        <div className="font-bold text-lg mt-2">10 - Multigroup theory</div>
-                    </>
-                );
-            case 11:
-                return (
-                    <>
                         <div className="font-bold text-lg mt-2">
-                            11 - Poising by fission products
+                            10 - Poising by fission products
                         </div>
                     </>
                 );
