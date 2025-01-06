@@ -544,7 +544,26 @@ export const blogPosts: TravelEntry[] = [
     transport: "Train",
     C02: 5,
     GPS: [49.8157635, 6.1315139],
-  }
+  },
+  {
+    id: 52,
+    date: "2024",
+    title: "Zurich",
+    locations: ["Zurich", "Switzerland"],
+    transport: "Train",
+    C02: 10,
+    GPS: [47.3686498, 8.5391825],
+  },
+  {
+    id: 53,
+    date: "2014",
+    title: "Geneva",
+    locations: ["Geneva", "Switzerland"],
+    transport: "Car",
+    C02: 100,
+    GPS: [46.2043907, 6.1431577],
+  },
+
 
 ];
 
