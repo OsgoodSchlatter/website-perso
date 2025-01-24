@@ -27,7 +27,7 @@ export const HeaderPost = ({
             try {
                 const response = await fetch(`${process.env.PUBLIC_URL}/lastmodifieddates.json?timestamp=${new Date().getTime()}`);
                 const data = await response.json();
-
+                console.log(data);
                 setLastModifiedDates(data);
             } catch (error) {
                 console.error("Error fetching lastModifiedDates:", error);
@@ -51,8 +51,8 @@ export const HeaderPost = ({
             const currentYear = new Date().getFullYear();
 
             return date.getFullYear() === currentYear
-                ? date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) // Format as "Oct 27" if it's the current year
-                : date.toLocaleDateString('en-US', { year: 'numeric' }); // Format as "2023" if it's a past year
+                ? date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) // Format as "Oct 27" if it's the current year
+                : date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' }); // Format as "2023" if it's a past year
         })()
         : lastModified;
 
