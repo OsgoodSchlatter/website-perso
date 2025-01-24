@@ -38,7 +38,7 @@ export const Home = () => {
             Filters
           </div>
           <div onClick={() => { setSortedPosts(blogPostsArray); setValue(" "); }} className=" text-lg italic hover:bg-slate-600 bg-slate-500  rounded-md">
-            <div className="ml-2 mr-2">
+            <div className="p-1">
               Reset
             </div>
           </div>
