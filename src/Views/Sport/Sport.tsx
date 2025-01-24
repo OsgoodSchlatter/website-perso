@@ -12,6 +12,8 @@ import ski1 from "./ski_2alpes.jpg"
 import ski2 from "./ski_2alpes2.jpg"
 import ski3 from "./ski.jpg"
 import ski4 from "./ski2.jpeg"
+import chamonix from "./chamonix.jpg"
+import surf_la_guerite from "./surf_la_guerite.jpg"
 
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -20,18 +22,68 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 
 import 'leaflet/dist/leaflet.css';
+import { StandardHeader } from "../../Single/StandardHeader";
 
 type SportType = "Surf" | "Ski" | "Paragliding";
+type LocationType = "Annecy" | "Canaries" | "Los Angeles" | "Biarritz" | "Anglet" | "Le grand bornand" | "Biscarosse" | "La guerite" | "USA" | "FR" | "Val Thorens" | "Alpes d'Huez" | "Chamonix" | "Les Deux Alpes";
 
 interface SportLocationEntry {
   id: number;
   date: string;
   title: string;
-  locations?: string[];
+  locations?: LocationType[];
   sport: SportType;
   GPS: [number, number];
   C02: number;
 }
+
+interface PhotoLocationType {
+  img_source: string;
+  location: LocationType;
+}
+export const PhotoLocationEntry: PhotoLocationType[] = [
+  {
+    img_source: ski1,
+    location: "Les Deux Alpes"
+  },
+  {
+    img_source: ski2,
+    location: "Les Deux Alpes"
+  },
+  {
+    img_source: ski3,
+    location: "Le grand bornand"
+  },
+  {
+    img_source: surf1,
+    location: "Biarritz"
+  },
+  {
+    img_source: surf2,
+    location: "Biarritz"
+  },
+  {
+    img_source: surf3,
+    location: "Biarritz"
+  },
+  {
+    img_source: surf4,
+    location: "Biscarosse"
+  },
+  {
+    img_source: chamonix,
+    location: "Chamonix"
+  },
+  {
+    img_source: para,
+    location: "Annecy"
+  },
+  {
+    img_source: surf_la_guerite,
+    location: "La guerite"
+  }
+]
+
 
 const sportColors: Record<SportType, string> = {
   Paragliding: "orange",
@@ -75,7 +127,7 @@ export const SportLocations: SportLocationEntry[] = [
     id: 3,
     date: "2024",
     title: " Surf at Biarritz ",
-    locations: ["Biarritz", "Fr"],
+    locations: ["Biarritz", "FR"],
     sport: "Surf",
     C02: 10,
     GPS: [43.47114, - 1.55273],
@@ -84,7 +136,7 @@ export const SportLocations: SportLocationEntry[] = [
     id: 4,
     date: "2022",
     title: " Surf at Anglet ",
-    locations: ["Anglet", "Fr"],
+    locations: ["Anglet", "FR"],
     sport: "Surf",
     C02: 10,
     GPS: [43.4789, -1.5330],
@@ -93,7 +145,7 @@ export const SportLocations: SportLocationEntry[] = [
     id: 5,
     date: "2024",
     title: " Surf at Biscarosse ",
-    locations: ["Biscarosse", "Fr"],
+    locations: ["Biscarosse", "FR"],
     sport: "Surf",
     C02: 10,
     GPS: [44.44498, - 1.25374],
@@ -102,25 +154,25 @@ export const SportLocations: SportLocationEntry[] = [
     id: 5,
     date: "2024",
     title: " Surf at La Guérite ",
-    locations: ["La guerite", "Fr"],
+    locations: ["La guerite", "FR"],
     sport: "Surf",
     C02: 10,
     GPS: [47.59269, -3.14861],
   },
   {
     id: 6,
-    date: "2024",
+    date: "2020",
     title: " Ski at Val Thorens ",
-    locations: ["Val Thorens", "Fr"],
+    locations: ["Val Thorens", "FR"],
     sport: "Ski",
     C02: 10,
     GPS: [45.29791, 6.58227],
   },
   {
     id: 7,
-    date: "2024",
+    date: "2022",
     title: " Ski at Alpes d'Huez  ",
-    locations: ["Alpes d'Huez ", "Fr"],
+    locations: ["Alpes d'Huez", "FR"],
     sport: "Ski",
     C02: 10,
     GPS: [45.09240, 6.06994],
@@ -129,7 +181,7 @@ export const SportLocations: SportLocationEntry[] = [
     id: 8,
     date: "2024",
     title: " Ski at Chamonix  ",
-    locations: ["Chamonix ", "Fr"],
+    locations: ["Chamonix", "FR"],
     sport: "Ski",
     C02: 10,
     GPS: [45.92467, 6.87275],
@@ -138,7 +190,7 @@ export const SportLocations: SportLocationEntry[] = [
     id: 9,
     date: "2024",
     title: " Ski at Les Deux Alpes  ",
-    locations: ["Les Deux Alpes ", "Fr"],
+    locations: ["Les Deux Alpes", "FR"],
     sport: "Ski",
     C02: 10,
     GPS: [45.00999, 6.12376],
@@ -147,6 +199,7 @@ export const SportLocations: SportLocationEntry[] = [
     id: 10,
     date: "2024",
     title: " Ski at Le Grand Bornand  ",
+    locations: ["Le grand bornand"],
     sport: "Ski",
     C02: 10,
     GPS: [45.94187, 6.42715],
@@ -161,7 +214,7 @@ export const SportLocations: SportLocationEntry[] = [
   },
   {
     id: 12,
-    date: "2024",
+    date: "2018",
     title: " Ski at Les Menuires",
     sport: "Ski",
     C02: 10,
@@ -169,7 +222,7 @@ export const SportLocations: SportLocationEntry[] = [
   },
   {
     id: 13,
-    date: "2024",
+    date: "2017",
     title: " Ski at Les Saisies",
     sport: "Ski",
     C02: 10,
@@ -177,7 +230,7 @@ export const SportLocations: SportLocationEntry[] = [
   },
   {
     id: 13,
-    date: "2024",
+    date: "2019",
     title: " Ski at Les Gets",
     sport: "Ski",
     C02: 10,
@@ -185,7 +238,7 @@ export const SportLocations: SportLocationEntry[] = [
   },
   {
     id: 14,
-    date: "2024",
+    date: "2012",
     title: " Ski at Piau Engaly",
     sport: "Ski",
     C02: 10,
@@ -194,164 +247,79 @@ export const SportLocations: SportLocationEntry[] = [
   {
     id: 15,
     date: "2020",
-    title: " Paragliding at Piau Engaly",
+    title: " Paragliding at Annecy",
+    locations: ["Annecy"],
     sport: "Paragliding",
     C02: 10,
     GPS: [45.8992, 6.1294],
   },
-
-
-
-
 ];
-export const Sport = () => {
-  const [selectedSport, setSelectedSport] = useState<SportType>("Surf"); // Default to "Surf"
+const SportContent = () => {
+  const [selectedPost, setSelectedPost] = useState<SportLocationEntry | null>(SportLocations[2]); // State to store the selected post
 
+  const handleMarkerClick = (post: SportLocationEntry) => {
+    setSelectedPost(post); // Update the state with the selected post
+  };
   // Function to render content based on selected sport
   const renderSportContent = () => {
-    switch (selectedSport) {
-      case "Surf":
-        return (
-          <div className="p-2 mt-4 rounded  ">
-            <div className="text-xl font-bold ">Surf 🏄</div>
-            Here are a couple of surf spots I have had the opportunity to go.
-            <div className="flex items-center justify-center my-2">
-              {/* @ts-ignore */}
-              <MapContainer center={[40.65, -20.7608]} worldCopyJump={true} zoom={1} scrollWheelZoom={false} style={{ width: `300px`, height: `300px`, zIndex: 1 }}>
-                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                {SportLocations.filter(location => location.sport === "Surf").map((value) => (
-                  <>
-                    {/* @ts-ignore */}
-                    <Marker key={value.id} position={value.GPS} icon={createCustomIcon(getColorForSport(value.sport))}>
-                      <Popup>
-                        <div className="font-bold text-lg">
-                          {value.title + " - " + value.date}
-                        </div>
-                        <br />
-                      </Popup>
-                    </Marker>
-                  </>
-                ))}
-                <ResizeMap />
-              </MapContainer>
-            </div>
-            Here is my board (OLAIAN board Malibu 8'2 500 ):
-            <div className="flex justify-center">
-              <img src={planche} className="px-2 border-b-2 m-2" width="200" alt="Image" />
-            </div>
-            Here is me surfing :
-            <Carousel>
-              <div>
-                <img src={surf1} className="px-2 border-b-2 m-2" width="300" alt="Image" />
-              </div>
-              <div>
-                <img src={surf2} className="px-2 border-b-2 m-2" width="300" alt="Image" />
-              </div>
-              <div>
-                <img src={surf3} className="px-2 border-b-2 m-2" width="450" alt="Image" />
-              </div>
-              <div >
-                <img src={surf4} className="px-2 border-b-2 m-2" width="200" alt="Image" />
-              </div>
-            </Carousel>
+    return (
+      <div className=" rounded  ">
+        <div className="text-xl font-bold ">Surf 🏄, Ski ⛷️ and Paragliding 🪂</div>
+        Here are a couple of spots where I have had the opportunity to practise some of my favorite sports (🟢: ski, 🟠: paragliding, 🔵: surf).
+        <div className="flex items-center justify-center my-2">
+          {/* @ts-ignore */}
+          <MapContainer center={[40.65, -20.7608]} worldCopyJump={true} zoom={1} scrollWheelZoom={false} style={{ width: `600px`, height: `400px`, zIndex: 1 }}>
+            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            {SportLocations.map((value) => (
+              <>
+                {/* @ts-ignore */}
+                <Marker key={value.id} position={value.GPS} icon={createCustomIcon(getColorForSport(value.sport))} eventHandlers={{
+                  click: () => handleMarkerClick(value),
+                }}>
+                  <Popup>
+                    <div className="font-bold text-lg">
+                      {value.title + " - " + value.date}
+                    </div>
+                    <br />
+                  </Popup>
+                </Marker>
+              </>
+            ))}
+            <ResizeMap />
+          </MapContainer>
+        </div>
+        {selectedPost && (
+          <div className="mt-4 p-4 border rounded bg-gray-100">
+            <h2 className="text-xl font-bold text-black">{selectedPost.title}</h2>
+            <p className="text-black"><strong >Date:</strong> {selectedPost.date}</p>
+            <p className="text-black"><strong>Location:</strong> {selectedPost.locations?.join(", ")}</p>
+            <p className="text-black"><strong >Photos:</strong> {PhotoLocationEntry.filter(post =>
+              selectedPost.locations?.some(location => location === post.location)).map(img => (
+                <>
+                  <img
+                    src={img.img_source}
+                    className="w-full max-w-2xl mt-2"
+                  />
+                </>
+              ))}</p>
           </div>
-        );
-
-      case "Ski":
-        return (
-          <div className="p-2 mt-4 rounded  ">
-            <div className="text-xl font-bold ">Ski ⛷️</div>
-            Here are a couple of ski spots I have had the opportunity to go.
-            <div className="flex items-center justify-center my-2">
-              {/* @ts-ignore */}
-              <MapContainer center={[45.94187, 6.42715]} worldCopyJump={true} zoom={7} scrollWheelZoom={false} style={{ width: `300px`, height: `300px`, zIndex: 1 }}>
-                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                {SportLocations.filter(location => location.sport === "Ski").map((value) => (
-                  <>
-                    {/* @ts-ignore */}
-                    <Marker key={value.id} position={value.GPS} icon={createCustomIcon(getColorForSport(value.sport))}>
-                      <Popup>
-                        <div className="font-bold text-lg">
-                          {value.title + " - " + value.date}
-                        </div>
-                        <br />
-                      </Popup>
-                    </Marker>
-                  </>
-                ))}
-                <ResizeMap />
-              </MapContainer>
-            </div>
-            Here is me skiing :
-            <Carousel>
-              <div>
-                <img src={ski1} className="px-2 border-b-2 m-2" width="300" alt="Image" />
-              </div>
-              <div>
-                <img src={ski2} className="px-2 border-b-2 m-2" width="200" alt="Image" />
-              </div>
-              <div >
-                <img src={ski3} className="px-2 border-b-2 m-2" width="150" alt="Image" />
-              </div>
-              <div>
-                <img src={ski4} className="px-2 border-b-2 m-2" width="300" alt="Image" />
-              </div>
-            </Carousel>
-          </div>
-        );
-
-      case "Paragliding":
-        return (
-          <div className="p-2 mt-4 rounded ">
-            <div className="text-xl font-bold ">Paragliding 🪂</div>
-            Here is me paragliding just after I finished prepa (2020):
-            <div className="flex justify-center">
-              <img src={para} className="px-2 border-b-2 m-2" width="200" alt="Image" />
-            </div>
-            Here are a couple of paragliding spots I have had the opportunity to go.
-            <div className="flex items-center justify-center my-2">
-              {/* @ts-ignore */}
-              <MapContainer center={[45.94187, 6.42715]} worldCopyJump={true} zoom={7} scrollWheelZoom={false} style={{ width: `300px`, height: `300px`, zIndex: 1 }}>
-                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                {SportLocations.filter(location => location.sport === "Paragliding").map((value) => (
-                  <>
-                    {/* @ts-ignore */}
-                    <Marker key={value.id} position={value.GPS} icon={createCustomIcon(getColorForSport(value.sport))}>
-                      <Popup>
-                        <div className="font-bold text-lg">
-                          {value.title + " - " + value.date}
-                        </div>
-                        <br />
-                      </Popup>
-                    </Marker>
-                  </>
-                ))}
-                <ResizeMap />
-              </MapContainer>
-            </div>
-          </div>
-        );
-
-      default:
-        return null; // or a message saying "Select a sport"
-    }
+        )}
+      </div>
+    );
   };
 
   return (
     <>
-      <div className="flex justify-center mt-4">
-        <div className="w-full sm:w-2/3 md:w-1/2 lg:max-w-2xl xl:max-w-2xl mx-4 ">
-          {/* Sport Selection Buttons */}
-          <div className="flex justify-center space-x-4 mb-4">
-            <button onClick={() => setSelectedSport("Surf")} className="bg-blue-500 text-white px-4 py-2 rounded">Surf</button>
-            <button onClick={() => setSelectedSport("Ski")} className="bg-green-500 text-white px-4 py-2 rounded">Ski</button>
-            <button onClick={() => setSelectedSport("Paragliding")} className="bg-orange-500 text-white px-4 py-2 rounded">Paragliding</button>
-          </div>
+      {renderSportContent()}
+    </>
+  );
+};
 
-          {/* Render content based on selected sport */}
-          {renderSportContent()}
-        </div>
-      </div>
+export const Sport = ({ title, date }: { title: string, date: string }) => {
+  return (
+    <>
+      <StandardHeader title={title} date={""}
+        content={<SportContent />} />
     </>
   );
 };
