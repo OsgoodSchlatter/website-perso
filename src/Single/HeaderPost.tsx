@@ -51,8 +51,8 @@ export const HeaderPost = ({
             const currentYear = new Date().getFullYear();
 
             return date.getFullYear() === currentYear
-                ? date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) // Format as "Oct 27" if it's the current year
-                : date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' }); // Format as "2023" if it's a past year
+                ? date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) // Format as "Oct 27" if it's the current year
+                : `${date.toLocaleDateString('en-US', { month: 'short' })} '${date.getFullYear().toString().slice(-2)}`; // Format as "Oct '25" if it's a past year
         })()
         : lastModified;
 
