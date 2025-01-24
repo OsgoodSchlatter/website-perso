@@ -402,7 +402,7 @@ const NeutronicsData = () => {
                         Cross-section is measure of the probability of an interaction between two particles.
                         <br />
                         <Latex>{"$\\sigma$"}</Latex> is the microscopic cross section, in <Latex>{"$cm^2$"}</Latex> and <Latex>{"$\\Sigma=N\\sigma$"}</Latex> is the macroscopic cross section, in <Latex>{"$cm^{-1}$"}</Latex>, with <Latex>{"$N$"}</Latex> the neutrons density in <Latex>{"$cm^{-3}$"}</Latex>.
-                        There are as many <Latex>{"$\\sigma$"}</Latex> that there exists ways of interacting with the matter.
+                        There are as many <Latex>{"$\\sigma$"}</Latex> as there are ways of interacting with the matter.
                         <div className="italic underline mt-2">
                             2.3 - Four factors formula
                         </div>
@@ -455,25 +455,33 @@ const NeutronicsData = () => {
                         <br />
                         We find that <Latex>{"$K_\\infty = \\epsilon p f \\eta$"}</Latex>
                         <br />
-
-
+                        <br />
+                        <div className="italic underline">
+                            2.4 - Transport equation
+                        </div>
+                        The transport equation focuses on the evolution of the neutron density n. Let's imagine a volume <Latex>{"$D$"}</Latex> of neutrons of energy (or speed) <Latex>{"$v$"}</Latex>.
+                        The neutrons have multiple ways to either account positively or negatively in the whole balance. <br />
+                        First, let's mathematically write the variation of the neutron population:
+                        <div className="text-center mt-2">
+                            <Latex>{"$\\frac{\\partial}{\\partial t}n $"}</Latex>
+                        </div>
+                        <br />
+                        Then, let's write the streaming term. This term accounts for the neutron leaving or entering the box by spatial displacements.
+                        <div className="text-center mt-2">
+                            <Latex>{"$- \\vec{v}\\cdot\\vec{\\nabla}n $"}</Latex>
+                        </div>
                     </>
                 );
+
             case 3:
                 return (
                     <>
-                        <div className="font-bold text-lg mt-2">3 - Point kinetics</div>
-                    </>
-                );
-            case 4:
-                return (
-                    <>
-                        <div className="font-bold text-lg mt-2">4 - Diffusion equation</div>
+                        <div className="font-bold text-lg mt-2">3 - Diffusion equation</div>
                         <div className="italic underline">
-                            4.1 - Establishing diffusion equation
+                            3.1 - Establishing diffusion equation
                         </div>
                         <div className="italic underline mt-2">
-                            4.1 -  Establishing diffusion equation
+                            3.1 -  Establishing diffusion equation
                         </div>
                         We have <Latex>{"$\\Phi(\\vec{r}, E, \\vec{\\Omega},t) = nv $"}</Latex>, which means that the neutron flux is equal to the neutron density times their velocity. <Latex>{"$\\Phi$"}</Latex> is expressed in <Latex>{"$n.cm^{-2}.s^{-1}$"}</Latex>.
                         We want to study the evolution of the number of neutron, therefore we study the time derivative of <Latex>{"$\\frac{\\partial n}{\\partial t}=\\frac{\\partial(\\frac{1}{v}\\Phi)}{\\partial t}$"}</Latex>. Since we consider the speed doesnt change with time, then we have:
@@ -486,11 +494,19 @@ const NeutronicsData = () => {
 
                     </>
                 );
+            case 4:
+                return (
+                    <>
+                        <div className="font-bold text-lg mt-2">
+                            4 - One-group/diffusion theory
+                        </div>
+                    </>
+                );
             case 5:
                 return (
                     <>
                         <div className="font-bold text-lg mt-2">
-                            5 - One-group/diffusion theory
+                            5 - Neutron slowing down
                         </div>
                     </>
                 );
@@ -498,7 +514,7 @@ const NeutronicsData = () => {
                 return (
                     <>
                         <div className="font-bold text-lg mt-2">
-                            6 - Neutron slowing down
+                            6 - Resonant absorption of neutrons
                         </div>
                     </>
                 );
@@ -506,29 +522,21 @@ const NeutronicsData = () => {
                 return (
                     <>
                         <div className="font-bold text-lg mt-2">
-                            7 - Resonant absorption of neutrons
+                            7 - Thermalisation of neutrons
                         </div>
                     </>
                 );
             case 8:
                 return (
                     <>
-                        <div className="font-bold text-lg mt-2">
-                            8 - Thermalisation of neutrons
-                        </div>
+                        <div className="font-bold text-lg mt-2">8 - Multigroup theory</div>
                     </>
                 );
             case 9:
                 return (
                     <>
-                        <div className="font-bold text-lg mt-2">9 - Multigroup theory</div>
-                    </>
-                );
-            case 10:
-                return (
-                    <>
                         <div className="font-bold text-lg mt-2">
-                            10 - Poising by fission products
+                            9 - Poising by fission products
                         </div>
                     </>
                 );

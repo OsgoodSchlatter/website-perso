@@ -27,6 +27,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { createCustomIcon } from "../../Single/MapUtils"
 import { StandardHeader } from "../../Single/StandardHeader";
 import { useEffect, useState } from "react";
+import { BlogPostType } from "../Home/Data";
 
 
 type TransportType = "Plane" | "Car" | "Train" | "Home";
@@ -582,7 +583,11 @@ const getColorForTransport = (transport: TransportType): string => {
 
 export const TripsContent = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // Check width on initial render
+  const [selectedPost, setSelectedPost] = useState<TravelEntry | null>(null); // State to store the selected post
 
+  const handleMarkerClick = (post: TravelEntry) => {
+    setSelectedPost(post); // Update the state with the selected post
+  };
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768); // Update state based on current width
@@ -595,40 +600,73 @@ export const TripsContent = () => {
   }, []);
   return (
     <>
-      <div className="flex justify-center rounded">
+      <div className="">
 
-        <div>
-          <div className="text-lg">
-            🔴: plane, 🟢: train, 🟠: car or bus, 🔵: home
-          </div>
-          {/* @ts-ignore */}
-          <MapContainer center={[47.65, -2.7608]} zoom={2} scrollWheelZoom={false} style={{
-            width: isMobile ? '300px' : '625px', // Apply 300px width on mobile, 100% otherwise
-            height: isMobile ? '300px' : '500px', // Apply 300px height on mobile, 500px otherwise
-          }} >
-            <TileLayer
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            <div className="flex flex-wrap justify-evenly font-bold">
-              {Array.from(blogPosts.entries())
-                .map(([key, value]) => (
-                  <>
-                    {/* @ts-ignore */}
-                    <Marker position={value.GPS} icon={createCustomIcon(getColorForTransport(value.transport))} >
-                      <Popup>
-                        <div className=" font-bold text-lg">
-                          {value.title + " - " + value.date}
-                        </div>
-                        <br /> {value.C02 + " kg CO2eq"}
-                      </Popup>
-                    </Marker>
-                  </>
-                ))}
+        <div className="flex justify-center rounded">
+          <div>
+            <div className="text-lg">
+              🔴: plane, 🟢: train, 🟠: car or bus, 🔵: home
             </div>
-          </MapContainer>
+            {/* @ts-ignore */}
+            <MapContainer center={[47.65, -2.7608]} zoom={2} worldCopyJump={true} scrollWheelZoom={false} style={{
 
+              width: isMobile ? '300px' : '625px', // Apply 300px width on mobile, 100% otherwise
+              height: isMobile ? '300px' : '500px', // Apply 300px height on mobile, 500px otherwise
+              zIndex: 1,
+            }} >
+              <TileLayer
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              <div className="flex flex-wrap justify-evenly font-bold">
+                {Array.from(blogPosts.entries())
+                  .map(([key, value]) => (
+                    <>
+                      {/* @ts-ignore */}
+                      <Marker position={value.GPS} icon={createCustomIcon(getColorForTransport(value.transport))} eventHandlers={{
+                        click: () => handleMarkerClick(value), // Handle marker click
+                      }}>
+                        <Popup>
+                          <div className=" font-bold text-lg">
+                            {value.title + " - " + value.date}
+                          </div>
+                          <br /> {value.C02 + " kg CO2eq"}
+                        </Popup>
+                      </Marker>
+                    </>
+                  ))}
+              </div>
+            </MapContainer>
+
+          </div>
+        </div >
+        {/* Selected Post Details */}
+        {selectedPost && (
+          <div className="mt-4 p-4 border rounded bg-gray-100">
+            <h2 className="text-xl font-bold text-black">{selectedPost.title}</h2>
+            <p className="text-black"><strong >Date:</strong> {selectedPost.date}</p>
+            <p className="text-black"><strong>Location:</strong> {selectedPost.locations.join(", ")}</p>
+            <p className="text-black"><strong>Transport:</strong> {selectedPost.transport}</p>
+            <p className="text-black"><strong>CO2 Emissions:</strong> {selectedPost.C02} kg CO2eq</p>
+          </div>
+        )}
+      </div>
+      <div className="mt-2">
+        <div className="font-bold text-xl ">
+          List:
         </div>
-      </div >
+        {Array.from(blogPosts.entries())
+          .sort(([, a], [, b]) => new Date(b.date).getTime() - new Date(a.date).getTime())
+          .map(([key, value]) => (
+            <>
+              <div>
+                <div className=" text-lg">
+                  {value.title + " - " + value.date}
+                </div>
+              </div>
+            </>
+          ))}
+      </div>
+
     </>
   );
 };

@@ -217,7 +217,7 @@ export const Sport = () => {
             Here are a couple of surf spots I have had the opportunity to go.
             <div className="flex items-center justify-center my-2">
               {/* @ts-ignore */}
-              <MapContainer center={[40.65, -20.7608]} zoom={1} scrollWheelZoom={false} style={{ width: `300px`, height: `300px` }}>
+              <MapContainer center={[40.65, -20.7608]} worldCopyJump={true} zoom={1} scrollWheelZoom={false} style={{ width: `300px`, height: `300px`, zIndex: 1 }}>
                 <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                 {SportLocations.filter(location => location.sport === "Surf").map((value) => (
                   <>
@@ -264,7 +264,7 @@ export const Sport = () => {
             Here are a couple of ski spots I have had the opportunity to go.
             <div className="flex items-center justify-center my-2">
               {/* @ts-ignore */}
-              <MapContainer center={[45.94187, 6.42715]} zoom={7} scrollWheelZoom={false} style={{ width: `300px`, height: `300px` }}>
+              <MapContainer center={[45.94187, 6.42715]} worldCopyJump={true} zoom={7} scrollWheelZoom={false} style={{ width: `300px`, height: `300px`, zIndex: 1 }}>
                 <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                 {SportLocations.filter(location => location.sport === "Ski").map((value) => (
                   <>
@@ -311,7 +311,7 @@ export const Sport = () => {
             Here are a couple of paragliding spots I have had the opportunity to go.
             <div className="flex items-center justify-center my-2">
               {/* @ts-ignore */}
-              <MapContainer center={[45.94187, 6.42715]} zoom={7} scrollWheelZoom={false} style={{ width: `300px`, height: `300px` }}>
+              <MapContainer center={[45.94187, 6.42715]} worldCopyJump={true} zoom={7} scrollWheelZoom={false} style={{ width: `300px`, height: `300px`, zIndex: 1 }}>
                 <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                 {SportLocations.filter(location => location.sport === "Paragliding").map((value) => (
                   <>
