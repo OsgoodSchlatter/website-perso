@@ -7,7 +7,7 @@ const AboutContent = () => {
             <div className="justify-center text-xl font-bold">
                 Hi, I am Eloi.
                 <div className="mb-2" />
-                <img src={img1} className="w-100" />
+                <img src={img1} />
                 <div>
                     A picture of me in Italy
                 </div>

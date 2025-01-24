@@ -3,7 +3,7 @@ import { Chess } from "../Chess/Chess";
 import OOM from "../Climate/ClimatePosts/OOM";
 import FHE from "../CS/CSPosts/FHE";
 
-import { Scales } from "../Music/Scales";
+import { MusicUtils } from "../Music/MusicUtils"
 import { Russian } from "../Languages/Russian";
 import { Maths } from "../Maths/Maths";
 import Battery_Fuel_Cell from "../Physics/PhysicsPosts/Battery_Fuel_Cell";
@@ -12,7 +12,6 @@ import ParticleDetector from "../Physics/PhysicsPosts/ParticleDetector";
 import Neutronics from "../Physics/PhysicsPosts/Neutronics";
 import Radio from "../Physics/PhysicsPosts/Radioactivity";
 import SchroEq from "../Physics/PhysicsPosts/SchroEq";
-import PianoChords from "../Music/MusicRep";
 
 import { Gigs } from "../Gigs/Gigs";
 
@@ -76,28 +75,11 @@ export type ContentProps = {
 };
 
 export const blogPostsArray: BlogPostType[] = [
-    {
-        id: 1,
-        date: "17/07/2023",
-        title: "Orders of magnitude",
-        content_name: "OOM",
-        category: BlogCategory.Climate,
-        route: BlogRoute.Climate,
-        content: OOM,
-    },
-    {
-        id: 2,
-        date: "2024",
-        title: "Carbon Calculator",
-        content_name: "DisplayIngredients",
-        category: BlogCategory.Climate,
-        route: BlogRoute.Climate,
-        content: DisplayIngredients,
-    },
+
     {
         id: 1,
         date: "2023",
-        title: "Fully Homomorphic Encryption Tool",
+        title: "FHE Tool",
         content_name: "FHE",
         category: BlogCategory.ComputerScience,
         route: BlogRoute.ComputerScience,
@@ -125,20 +107,11 @@ export const blogPostsArray: BlogPostType[] = [
     {
         id: 2,
         date: "2024",
-        title: "Scales",
-        content_name: "Scales",
+        title: "Music Utils",
+        content_name: "Music Utils",
         category: BlogCategory.Music,
         route: BlogRoute.Music,
-        content: Scales,
-    },
-    {
-        id: 3,
-        date: "2023",
-        title: "Songs directory",
-        content_name: "PianoChords",
-        category: BlogCategory.Music,
-        route: BlogRoute.Music,
-        content: PianoChords,
+        content: MusicUtils,
     },
 
     {
@@ -294,5 +267,23 @@ export const blogPostsArray: BlogPostType[] = [
         category: BlogCategory.Languages,
         route: BlogRoute.Languages,
         content: Italian,
+    },
+    {
+        id: 1,
+        date: "17/07/2023",
+        title: "Orders of magnitude",
+        content_name: "OOM",
+        category: BlogCategory.Climate,
+        route: BlogRoute.Climate,
+        content: OOM,
+    },
+    {
+        id: 2,
+        date: "2024",
+        title: "Carbon Calculator",
+        content_name: "DisplayIngredients",
+        category: BlogCategory.Climate,
+        route: BlogRoute.Climate,
+        content: DisplayIngredients,
     },
 ];

@@ -33,31 +33,34 @@ export const Home = () => {
   return (
     <div className="flex justify-center ">
       <div className="md:w-1/2 w-3/4 items-center">
+        <div className="flex flex-wrap justify-evenly mt-2 font-bold px-2 bg-slate-500 rounded-md">
+          {Array.from(Pages.entries())
+            .map(([key, value]) => (
+              <div className="p-1">
+                <div className="px-4 hover:underline p-1" >
+                  <div className={value == "climate" ? 'text-green-400 text-lg' : 'text-lg  -500'} onClick={() => { handleSort(value as BlogCategory); setValue(value); }}>
+                    {value}
+                  </div>
+                </div>
+              </div>
+            ))}
+        </div>
         <div className="flex items-align mt-2 justify-between">
-          <div className="font-bold text-2xl ">
-            Filters
+
+          <div className="font-bold text-lg ">
+            filters: {value}
           </div>
-          <div onClick={() => { setSortedPosts(blogPostsArray); setValue(" "); }} className=" text-lg italic hover:bg-slate-600 bg-slate-500  rounded-md">
+          <div onClick={() => { setSortedPosts(blogPostsArray); setValue(" "); }} className=" text-md italic hover:bg-slate-600 bg-slate-500  rounded-md">
             <div className="p-1">
               Reset
             </div>
           </div>
         </div>
-        <div className="flex flex-wrap justify-evenly mt-2 font-bold px-2 bg-slate-500 rounded-md">
-          {Array.from(Pages.entries())
-            .map(([key, value]) => (
-              <div className="px-4 pt-1 hover:underline" >
-                <div className={value == "climate" ? 'text-green-400 text-lg' : 'text-lg  -500'} onClick={() => { handleSort(value as BlogCategory); setValue(value); }}>
-                  {value}
-                </div>
-              </div>
-            ))}
-        </div>
 
 
         <div className="justify-between flex items-align mt-10">
           <div className="font-bold text-2xl">
-            Post name
+            Post
           </div>
           <div className="font-bold text-2xl">
             Last updated
