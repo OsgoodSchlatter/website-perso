@@ -58,12 +58,6 @@ const content = <>
         "The Elephant"
     </div>
     <Foldable title="> List of items I used" content={<ListOfItems />} />
-    <Title2 text="First step: NaCl" mt={2} />
-    I did not have {KOH} or {NaOH} at first so I used salt ({NaCl}) as an electrolyte. But it did not really work out:
-    <img src={withSalt} className="border-4 border-black rounded" width="200" alt="Image" />
-    It gave out a weird green smog.
-
-
     < Title2 text="How does it work?" mt={2} />
     Two main reactions are taken into account.The first one works on one electrode, and the other one on the other electrode.
     One electrode is called the cathode and the following reaction happens at its end:
@@ -79,13 +73,25 @@ const content = <>
     This reaction is called an "oxydation of {H2O}".It releases electrons and {O2}.
     The {OH}ions are the electrolyte.They are put in the solution thanks to {NaOH}. It can also be {KOH}.
     The solution is therefore alkalyne.Similar reactions can also happen in acid solutions but we need different electrodes and electrolytes.
-    < Title2 text="Videos" mt={2} />
+
+    <Title2 text="First step: NaCl" mt={2} />
+    I did not have {KOH} or {NaOH} at first so I used salt ({NaCl}) as an electrolyte. But it did not really work out:
+    <img src={withSalt} className="border-4 border-black rounded" width="200" alt="Image" />
+    It gave out a weird green smog.
+    <Title2 text="Second step: KOH" mt={2} />
+    Then I used {KOH}. It worked beautifully. (see videos)
     <div>
         <a href="https://www.youtube.com/shorts/aCSORtpwLtA" className="hover:underline"> Video 1: creating {H2}</a>
     </div>
     <div className="mb-4">
         <a href="https://www.youtube.com/shorts/YBcWSyBs4Ro" className="hover:underline"> Video 2: setting {H2} to fire </a>
     </div>
+
+
+    < Title2 text="Conclusion" mt={2} />
+    It was a fun experiment which is not so costly (maybe the most expensive is the battery and buying {KOH}) and taught me some stuff in chemistry.
+
+
 </>
 
 
