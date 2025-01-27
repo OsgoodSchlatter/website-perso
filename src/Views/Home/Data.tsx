@@ -253,7 +253,7 @@ export const blogPostsArray: BlogPostType[] = [
     {
         id: 1,
         date: "2024",
-        title: "gallery",
+        title: "Photo gallery",
         content_name: "Gallery",
         category: BlogCategory.Gallery,
         route: BlogRoute.Gallery,

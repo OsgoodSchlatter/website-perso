@@ -4,21 +4,29 @@ import img1 from "./about_pic.jpg"
 const AboutContent = () => {
     return (
         <>
-            <div className="justify-center text-xl font-bold">
-                Hi, I am Eloi.
-                <div className="mb-2" />
-                <img src={img1} />
-                <div>
-                    A picture of me in Italy
+            <div className="flex">
+                <div className="w-1/2 items-center">
+                    <div className="justify-center text-3xl font-bold ">
+                        Hi, I am Eloi.
+                    </div>
+                    <div className="text-lg ">
+                        I am a French citizen born in 2000 in France.
+                        <br />
+                        I work in nuclear physics and computer science.
+                        <br />
+                        My passions are making music, gliding sports and taking the train to go explore the world.
+                    </div>
                 </div>
+                <div className="w-1/2">
+                    <img src={img1} className="rounded" />
+
+                    A picture of me in Salerno, Italy (2024)
+
+                </div>
+
             </div>
             <br />
 
-            I am a French citizen born in 2000 in France.
-            <br />
-            I work in nuclear physics.
-            <br />
-            My passions are making music, gliding sports and taking the train to go explore the world.
             <br />
             <br />
             <br />
