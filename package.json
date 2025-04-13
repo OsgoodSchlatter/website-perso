@@ -36,6 +36,7 @@
     "react-dev-utils": "11.0.4",
     "react-dom": "^18.3.1",
     "react-icons": "^4.7.1",
+    "react-image-lightbox": "^5.1.4",
     "react-latex": "^2.0.0",
     "react-latex-next": "^2.2.0",
     "react-leaflet": "^4.2.1",

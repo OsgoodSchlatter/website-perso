@@ -21,7 +21,20 @@ import best_24_aug from "./best_24/Best_2024_9.jpg"
 import best_24_nov from "./best_24/Best_2024_10.jpg"
 import best_24_sept from "./best_24/Best_2024_11.jpg"
 import best_24_jan from "./best_24/Best_2024_12.jpg"
-
+import amsterdam from "./summer24/pics_website-24-25/amsterdam.jpg"
+import arradon from "./summer24/pics_website-24-25/arradon.jpg"
+import biarritz from "./summer24/pics_website-24-25/biarritz.jpg"
+import biarritz2 from "./summer24/pics_website-24-25/biarritz2.jpg"
+import bigben from "./summer24/pics_website-24-25/bigben.jpg"
+import drums_normandy from "./summer24/pics_website-24-25/drums_normandy.jpg"
+import la_rochelle from "./summer24/pics_website-24-25/la_rochelle.jpg"
+import laguo_guarda from "./summer24/pics_website-24-25/laguo_di_guarda.jpg"
+import london from "./summer24/pics_website-24-25/london.jpg"
+import naples from "./summer24/pics_website-24-25/naples.jpg"
+import porto_venere from "./summer24/pics_website-24-25/porto_venere.jpg"
+import salerno_simona from "./summer24/pics_website-24-25/salerno_simona.jpg"
+import turenne from "./summer24/pics_website-24-25/turenne.jpg"
+import venezia from "./summer24/pics_website-24-25/venezia.jpg"
 
 
 import { StandardHeader } from '../../Single/StandardHeader';
@@ -39,11 +52,13 @@ export enum Folders {
     Time = "Timeline: 12 Best of each year",
     Mun24 = "Munich November 24",
     Lon23 = "London January 23",
-    Sac24 = "Saclay December 24"
+    Sac24 = "Saclay December 24",
+    Sum24 = "Summer 24",
 }
 
 // Example images array
 const DatedImages: ImageType[] = [
+
     {
         id: 1,
         img: img1,
@@ -195,6 +210,105 @@ const DatedImages: ImageType[] = [
         caption: "My friends and I surfing in November in Britanny",
         folder: [Folders.Time],
     },
+    {
+        id: 23,
+        img: amsterdam,
+        date: "11/2024",
+        caption: "Amsterdam under a rainbow",
+        folder: [Folders.Sum24],
+    },
+    {
+        id: 24,
+        img: arradon,
+        date: "04/2024",
+        caption: "My glorious hometown <3",
+        folder: [Folders.Sum24],
+    },
+    {
+        id: 25,
+        img: biarritz,
+        date: "06/2024",
+        caption: "Biarritz views",
+        folder: [Folders.Sum24],
+    },
+    {
+        id: 26,
+        img: biarritz2,
+        date: "06/2024",
+        caption: "Biarritz views 2",
+        folder: [Folders.Sum24],
+    },
+    {
+        id: 27,
+        img: bigben,
+        date: "08/2024",
+        caption: "London Baby",
+        folder: [Folders.Sum24],
+    },
+    {
+        id: 28,
+        img: london,
+        date: "08/2024",
+        caption: "London again",
+
+        folder: [Folders.Sum24],
+    },
+    {
+        id: 29,
+        img: la_rochelle,
+        date: "07/2024",
+        caption: "La Rochelle with my parents",
+        folder: [Folders.Sum24],
+    },
+    {
+        id: 30,
+        img: laguo_guarda,
+        date: "08/2024",
+        caption: "Laguo Di Guarda",
+        folder: [Folders.Sum24],
+    },
+    {
+        id: 31,
+        img: drums_normandy,
+        date: "02/2025",
+        caption: "Gig in Normandy",
+        folder: [Folders.Sum24],
+    },
+    {
+        id: 32,
+        img: naples,
+        date: "01/2025",
+        caption: "Napoli sunset",
+        folder: [Folders.Sum24],
+    },
+    {
+        id: 33,
+        img: porto_venere,
+        date: "08/2024",
+        caption: "Porto Venere at night",
+        folder: [Folders.Sum24],
+    },
+    {
+        id: 34,
+        img: salerno_simona,
+        date: "01/2025",
+        caption: "Simona in her hometown, Salerno",
+        folder: [Folders.Sum24],
+    },
+    {
+        id: 35,
+        img: turenne,
+        date: "05/2024",
+        caption: "Turenne Castle",
+        folder: [Folders.Sum24],
+    },
+    {
+        id: 36,
+        img: venezia,
+        date: "08/2024",
+        caption: "Venezia Views",
+        folder: [Folders.Sum24],
+    },
 
 ];
 
@@ -210,7 +324,7 @@ const getMonthName = (monthNumber: string) => {
 
 const generateDateList = (): string[] => {
     const dates: string[] = [];
-    const startYear = 2024;
+    const startYear = 2025;
     const endYear = 2020;
 
     for (let year = startYear; year >= endYear; year--) {
@@ -236,27 +350,38 @@ const groupImagesByDate = (images: ImageType[]): GroupedImages => {
         return acc;
     }, {} as GroupedImages);
 };
-
 const GalleryContent: React.FC = () => {
     const groupedImages = groupImagesByDate(DatedImages);
     const dateList = generateDateList();
 
     let currentYear = ""; // To keep track of the last displayed year
 
-    const handleChange = (event: any) => {
-        setSelectedAlbum(event.target.value)
-    }
     const [selectedAlbum, setSelectedAlbum] = useState<Folders | null>(null);
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+    const handleChange = (event: any) => {
+        setSelectedAlbum(event.target.value);
+    };
 
     return (
         <div className='flex justify-center'>
+            {/* Modal for showing selected image in the forefront */}
+            {selectedImage && (
+                <div
+                    className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50"
+                    onClick={() => setSelectedImage(null)}
+                >
+                    <img src={selectedImage} alt="Enlarged" className="max-w-full max-h-full" />
+                </div>
+            )}
+
             <div>
                 <select
                     value={selectedAlbum || ""}
                     onChange={(e) => setSelectedAlbum(e.target.value as Folders)}
                     className="p-4 py-2 rounded max-h-10 bg-slate-500"
                 >
-                    <option value="">All albums</option> {/* Default option */}
+                    <option value="">All albums</option>
                     {Object.values(Folders).map((album) => (
                         <option key={album} value={album}>
                             {album}
@@ -266,49 +391,40 @@ const GalleryContent: React.FC = () => {
 
                 {dateList.map(date => {
                     const [month, year] = date.split("/");
-                    console.log(groupedImages[date] ? "oui" + date : " non" + date)
-                    // Only display the year if it's different from the last year displayed
                     const showYear = year !== currentYear;
                     if (showYear) currentYear = year;
 
-                    const monthName = getMonthName(month); // Convert month number to name
+                    const monthName = getMonthName(month);
                     const filteredImages = groupedImages[date]?.filter(image =>
                         selectedAlbum ? image.folder?.includes(selectedAlbum) : true
                     ) || [];
 
                     return (
-                        <div>
-
-                            {
-                                filteredImages.length > 0 &&
-                                <div className='text-right' key={date}>
+                        <div key={date}>
+                            {filteredImages.length > 0 && (
+                                <div className='text-right'>
                                     <div className='mt-2'>
-                                        {<h2 className='text-2xl'>{year}</h2>}
+                                        <h2 className='text-2xl'>{year}</h2>
                                         <div className='flex flex-col justify-center'>
                                             <h3 className='text-xl'>{monthName}</h3>
                                             <div className='border bg-slate-100' />
-                                            {groupedImages[date] ? (
-                                                filteredImages.map(image => (
-                                                    <>
-                                                        <img
-                                                            key={image.id}
-                                                            src={image.img}
-                                                            alt={`Image ${image.id}`}
-                                                            className="w-full max-w-2xl mt-2"
-                                                        />
-                                                        <div className='text-center'>
-                                                            {image.caption}
-                                                        </div>
-                                                    </>
-
-                                                ))
-                                            ) : (
-                                                <p></p>
-                                            )}
+                                            {filteredImages.map(image => (
+                                                <div key={image.id}>
+                                                    <img
+                                                        src={image.img}
+                                                        alt={`Image ${image.id}`}
+                                                        className="w-full max-w-2xl mt-2 cursor-pointer"
+                                                        onClick={() => setSelectedImage(image.img)}
+                                                    />
+                                                    <div className='text-center'>
+                                                        {image.caption}
+                                                    </div>
+                                                </div>
+                                            ))}
                                         </div>
                                     </div>
                                 </div>
-                            }
+                            )}
                         </div>
                     );
                 })}
