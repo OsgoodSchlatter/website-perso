@@ -1,15 +1,15 @@
 import { Header } from "../../Single/Header";
 import { useState } from "react";
-import saclay2 from "./music-saclay/saclay2.jpg"
-import saclay4 from "./music-saclay/saclay4.jpg"
-import saclay3 from "./music-saclay/saclay7.jpg"
-import saclay7 from "./music-saclay/saclay8.jpg"
+import saclay2 from "../../img/music-saclay/saclay2.jpg"
+import saclay4 from "../../img/music-saclay/saclay4.jpg"
+import saclay3 from "../../img/music-saclay/saclay7.jpg"
+import saclay7 from "../../img/music-saclay/saclay8.jpg"
 
-import gre1 from "./gig-gre/gre1.jpg"
-import gre2 from "./gig-gre/gre2.jpg"
-import gre3 from "./gig-gre/gre3.jpg"
+import gre1 from "../../img/gig-gre/gre1.jpg"
+import gre2 from "../../img/gig-gre/gre2.jpg"
+import gre3 from "../../img/gig-gre/gre3.jpg"
 
-import boussay from "./boussay.jpeg"
+import boussay from "../../img/boussay.jpeg"
 
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -18,11 +18,11 @@ import 'leaflet/dist/leaflet.css';
 type Locations = "Saclay" | "Grenoble" | "Boussay";
 
 export const Gigs = () => {
-    const [selectedSport, setSelectedSport] = useState<Locations>("Saclay"); // Default to "Surf"
+    const [selectedGig, setSelectedGig] = useState<Locations>("Saclay"); // Default to "Surf"
 
-    // Function to render content based on selected sport
+    // Function to render content based on selected Gig
     const renderContent = () => {
-        switch (selectedSport) {
+        switch (selectedGig) {
             case "Saclay":
                 return (
                     <div className="p-2 mt-4 rounded bg-violet-700 ">
@@ -135,18 +135,24 @@ export const Gigs = () => {
     return (
         <>
             <div className="flex justify-center mt-2">
-                <div className="w-full sm:w-2/3 md:w-1/2 lg:max-w-2xl xl:max-w-2xl mx-4 ">
-                    {/* Music Selection Buttons */}
-                    <div className="flex justify-center space-x-4 mb-4">
-                        <button onClick={() => setSelectedSport("Saclay")} className="bg-violet-700 text-white px-4 py-2 rounded">Saclay 2024</button>
-                        <button onClick={() => setSelectedSport("Grenoble")} className="bg-green-500 text-white px-4 py-2 rounded">Grenoble 2024</button>
-                        <button onClick={() => setSelectedSport("Boussay")} className="bg-orange-500 text-white px-4 py-2 rounded">Boussay 2024</button>
+                <div className="w-full sm:w-2/3 md:w-1/2 lg:max-w-2xl xl:max-w-2xl mx-4">
+                    {/* Music Selection Dropdown */}
+                    <div className="flex justify-center mb-4">
+                        <select
+                            onChange={(e) => setSelectedGig(e.target.value as Locations)}
+                            className="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded shadow focus:outline-none focus:ring-2 focus:ring-violet-600"
+                        >
+                            <option value="">Select a Gig</option>
+                            <option value="Saclay">Saclay 2024</option>
+                            <option value="Grenoble">Grenoble 2024</option>
+                            <option value="Boussay">Boussay 2024</option>
+                        </select>
                     </div>
-
 
                     {renderContent()}
                 </div>
             </div>
+
         </>
     );
 };
