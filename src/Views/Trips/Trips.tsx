@@ -26,7 +26,7 @@ import { SweDen } from "./TripsPosts/SweDen";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { createCustomIcon } from "../../Single/MapUtils"
 import { StandardHeader } from "../../Single/StandardHeader";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BlogPostType } from "../Home/Data";
 
 
@@ -579,95 +579,181 @@ const transportColors: Record<TransportType, string> = {
 const getColorForTransport = (transport: TransportType): string => {
   return transportColors[transport];
 };
-
-
 export const TripsContent = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // Check width on initial render
-  const [selectedPost, setSelectedPost] = useState<TravelEntry | null>(null); // State to store the selected post
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [selectedPost, setSelectedPost] = useState<TravelEntry | null>(null);
+  const [viewMode, setViewMode] = useState<"map" | "posts">("map");
+  const [activePostId, setActivePostId] = useState<number | null>(null);
+  const postRefs = useRef<Record<number, HTMLDivElement | null>>({}); // to scroll to the post
 
-  const handleMarkerClick = (post: TravelEntry) => {
-    setSelectedPost(post); // Update the state with the selected post
+  const handleMarkerClick = (key: number, post: TravelEntry) => {
+    setSelectedPost(post);
+    setActivePostId(key);  // Set active post first
+    // Change to "posts" view
+
+    // Small delay to ensure the state has been updated and rendered
   };
+
+  const handlePostClick = (key: number) => {
+    // This handles clicking on post details to switch to the posts view and scroll
+    setActivePostId(key);
+    setViewMode("posts");
+    setViewMode("posts");
+
+    // Trigger scrolling with a slight delay to ensure the state has been updated
+    setTimeout(() => {
+      const element = postRefs.current[key];
+      if (element) {
+        console.log("hey there");
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        console.log(element.getBoundingClientRect().top + window.pageYOffset)
+      }
+    }, 100);
+  };
+
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Update state based on current width
+      setIsMobile(window.innerWidth <= 768);
     };
-
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
-  return (
-    <>
-      <div className="">
 
+  // Use this useEffect to trigger scrolling when viewMode or activePostId changes
+  useEffect(() => {
+    if (viewMode === "posts" && activePostId !== null) {
+      setTimeout(() => {
+        const element = postRefs.current[activePostId];
+        if (element) {
+          const yOffset = -100; // Adjust as needed
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, [viewMode, activePostId]);
+
+
+  return (
+    <div className="flex flex-col items-center">
+      {/* Toggle Button */}
+      <div className="w-full flex justify-start px-4 mb-4">
+        <div className="inline-flex rounded-md shadow overflow-hidden border border-gray-300">
+          <button
+            onClick={() => setViewMode("map")}
+            className={`px-4 py-2 font-medium text-sm transition ${viewMode === "map"
+              ? "bg-gray-500 text-white"
+              : "bg-white text-gray-700 hover:bg-gray-100"
+              }`}
+          >
+            Map
+          </button>
+          <button
+            onClick={() => setViewMode("posts")}
+            className={`px-4 py-2 font-medium text-sm transition ${viewMode === "posts"
+              ? "bg-gray-500 text-white"
+              : "bg-white text-gray-700 hover:bg-gray-100"
+              }`}
+          >
+            Posts
+          </button>
+        </div>
+      </div>
+
+      {/* MAP VIEW */}
+      {viewMode === "map" && (
         <div className="flex justify-center rounded">
           <div>
-            <div className="text-lg">
-              🔴: plane, 🟢: train, 🟠: car or bus, 🔵: home
-            </div>
             {/* @ts-ignore */}
-            <MapContainer center={[47.65, -2.7608]} zoom={2} worldCopyJump={true} scrollWheelZoom={false} style={{
-
-              width: isMobile ? '300px' : '625px', // Apply 300px width on mobile, 100% otherwise
-              height: isMobile ? '300px' : '500px', // Apply 300px height on mobile, 500px otherwise
-              zIndex: 1,
-            }} >
-              <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              />
+            <MapContainer center={[47.65, -2.7608]}
+              zoom={2}
+              worldCopyJump={true}
+              scrollWheelZoom={false}
+              style={{
+                width: isMobile ? "300px" : "625px",
+                height: isMobile ? "300px" : "500px",
+                zIndex: 1,
+              }}
+            >
+              <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
               <div className="flex flex-wrap justify-evenly font-bold">
-                {Array.from(blogPosts.entries())
-                  .map(([key, value]) => (
-                    <>
-                      {/* @ts-ignore */}
-                      <Marker position={value.GPS} icon={createCustomIcon(getColorForTransport(value.transport))} eventHandlers={{
-                        click: () => handleMarkerClick(value), // Handle marker click
-                      }}>
-                        <Popup>
-                          <div className=" font-bold text-lg">
-                            {value.title + " - " + value.date}
-                          </div>
-                          <br /> {value.C02 + " kg CO2eq"}
-                        </Popup>
-                      </Marker>
-                    </>
-                  ))}
+                {Array.from(blogPosts.entries()).map(([key, value]) => (
+                  <>
+                    {/* @ts-ignore */}
+                    <Marker key={key} position={value.GPS} icon={createCustomIcon(getColorForTransport(value.transport))} eventHandlers={{
+                      click: () => handleMarkerClick(key, value),
+                    }}>
+                      <Popup>
+                        <div className="font-bold text-lg hover:bg-slate-100 " onClick={() => {
+                          const postId = Array.from(blogPosts.entries()).find(([_, value]) => value.title === selectedPost!.title)?.[0]!;
+                          console.log("Clicked preview card, post ID:", postId);
+                          handlePostClick(postId);
+                        }}>
+                          {value.title + " - " + value.date}
+                        </div>
+                        <br /> {value.C02 + " kg CO2eq"}
+                      </Popup>
+                    </Marker>
+                  </>
+                ))}
               </div>
             </MapContainer>
-
+            <div className="text-lg mt-2 text-center">
+              🔴: plane, 🟢: train, 🟠: car or bus, 🔵: home
+            </div>
           </div>
-        </div >
-        {/* Selected Post Details */}
-        {selectedPost && (
-          <div className="mt-4 p-4 border rounded bg-gray-100">
-            <h2 className="text-xl font-bold text-black">{selectedPost.title}</h2>
-            <p className="text-black"><strong >Date:</strong> {selectedPost.date}</p>
-            <p className="text-black"><strong>Location:</strong> {selectedPost.locations.join(", ")}</p>
-            <p className="text-black"><strong>Transport:</strong> {selectedPost.transport}</p>
-            <p className="text-black"><strong>CO2 Emissions:</strong> {selectedPost.C02} kg CO2eq</p>
-          </div>
-        )}
-      </div>
-      <div className="mt-2">
-        <div className="font-bold text-xl ">
-          List:
         </div>
-        {Array.from(blogPosts.entries())
-          .sort(([, a], [, b]) => new Date(b.date).getTime() - new Date(a.date).getTime())
-          .map(([key, value]) => (
-            <>
-              <div>
-                <div className=" text-lg">
-                  {value.title + " - " + value.date}
-                </div>
-              </div>
-            </>
-          ))}
-      </div>
+      )}
 
-    </>
+      {/* POST DETAILS (from map click or post detail click) */}
+      {viewMode === "map" && selectedPost && (
+        <div
+          className="mt-4 p-4 border rounded bg-gray-100 w-full max-w-2xl cursor-pointer hover:bg-gray-200 transition"
+          title="Click to view full post"
+        >
+          <h2 className="text-xl font-bold text-black" onClick={() => {
+            const postId = Array.from(blogPosts.entries()).find(([_, value]) => value.title === selectedPost.title)?.[0]!;
+            console.log("Clicked preview card, post ID:", postId);
+            handlePostClick(postId);
+          }}>{selectedPost.title}</h2>
+          <p className="text-black">
+            <strong>Date:</strong> {selectedPost.date}
+          </p>
+          <p className="text-black">
+            <strong>Location:</strong> {selectedPost.locations.join(", ")}
+          </p>
+          <p className="text-black">
+            <strong>Transport:</strong> {selectedPost.transport}
+          </p>
+          <p className="text-black">
+            <strong>CO2 Emissions:</strong> {selectedPost.C02} kg CO2eq
+          </p>
+        </div>
+      )
+      }
+
+      {/* POSTS LIST VIEW */}
+      {
+        viewMode === "posts" && (
+          <div className="w-full max-w-2xl px-4">
+            <div className="font-bold text-xl mb-2 text-center">List of Trips</div>
+            {Array.from(blogPosts.entries())
+              .sort(([, a], [, b]) => new Date(b.date).getTime() - new Date(a.date).getTime())
+              .map(([key, value]) => (
+                <div
+                  key={key}
+                  ref={(el) => (postRefs.current[key] = el)}
+                  className={`mb-3 border-b pb-2 px-2 py-1 rounded ${activePostId === key ? "bg-yellow-100 text-black border-yellow-500" : ""}`}
+                  onClick={() => handlePostClick(key)} // Click to switch view and scroll
+                >
+                  <div className="text-lg font-medium">{value.title}</div>
+                  <div className="text-sm text-gray-600">{value.date}</div>
+                </div>
+              ))}
+          </div>
+        )
+      }
+    </div >
   );
 };
 
