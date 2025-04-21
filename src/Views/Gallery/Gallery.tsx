@@ -51,10 +51,6 @@ const GalleryContent: React.FC = () => {
     const [selectedAlbum, setSelectedAlbum] = useState<Folders | null>(null);
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-    const handleChange = (event: any) => {
-        setSelectedAlbum(event.target.value);
-    };
-
     return (
         <div className='flex justify-center'>
             {/* Modal for showing selected image in the forefront */}
@@ -88,7 +84,7 @@ const GalleryContent: React.FC = () => {
 
                     const monthName = getMonthName(month);
                     const filteredImages = groupedImages[date]?.filter(image =>
-                        selectedAlbum ? image.folder?.includes(selectedAlbum) : true
+                        selectedAlbum ? image.folder?.includes(selectedAlbum) : true && image.displayOnHome
                     ) || [];
 
                     return (

@@ -38,14 +38,18 @@ import saclay5 from "./music-saclay/saclay5.jpg";
 import saclay8 from "./music-saclay/saclay8.jpg";
 import gre1 from "./gig-gre/gre1.jpg";
 import gre2 from "./gig-gre/gre2.jpg";
-import boussay from "./boussay.jpeg";
 import alltogether from "./pics_2025_saclay/alltogether.jpg"
 import drums_eloi from "./pics_2025_saclay/drums-eloi.jpeg"
 import gros_plan from "./pics_2025_saclay/gros-plan-manue-eloi.jpeg"
 import piano from "./pics_2025_saclay/piano.jpg"
 import public_ from "./pics_2025_saclay/public.jpeg"
 import shrugged from "./pics_2025_saclay/shrugged-together.jpg"
-import { all } from "axios";
+import malaga from "./malaga/malaga.jpg"
+import malaga2 from "./malaga/malaga2.jpg"
+import malaga3 from "./malaga/malaga3.jpg"
+import malaga4 from "./malaga/malaga4.jpg"
+import malaga5 from "./malaga/malaga5.jpg"
+
 
 export type ImageType = {
     id: number;
@@ -53,6 +57,7 @@ export type ImageType = {
     date: string; // Format "MM/YYYY"
     caption?: string;
     folder?: Folders[];
+    displayOnHome: boolean;
 };
 
 export enum Folders {
@@ -62,6 +67,7 @@ export enum Folders {
     Sac24 = "Saclay December 24",
     Sum24 = "Summer 24",
     Gig = "Gigs and Concerts",
+    Malaga = "Malaga 2019",
 }
 
 // Example images array
@@ -72,6 +78,7 @@ export const DatedImages: ImageType[] = [
         date: "11/2024",
         caption: "A peer at Starnberger see, next to Munich",
         folder: [Folders.Mun24],
+        displayOnHome: true,
     },
     {
         id: 2,
@@ -79,12 +86,14 @@ export const DatedImages: ImageType[] = [
         date: "11/2024",
         caption: "Monopteros at English Garden, in Munich",
         folder: [Folders.Mun24],
+        displayOnHome: true,
     },
     {
         id: 3,
         img: img3,
         date: "12/2023",
         caption: "Xmas at the coloc in saclay, 2023 ",
+        displayOnHome: true,
     },
     {
         id: 4,
@@ -92,6 +101,7 @@ export const DatedImages: ImageType[] = [
         date: "01/2024",
         caption: "Pink London Eye",
         folder: [Folders.Lon23],
+        displayOnHome: true,
     },
     {
         id: 5,
@@ -99,6 +109,7 @@ export const DatedImages: ImageType[] = [
         date: "01/2024",
         caption: "Theatre in London, the Book of Mormons ",
         folder: [Folders.Lon23],
+        displayOnHome: true,
     },
     {
         id: 6,
@@ -106,6 +117,7 @@ export const DatedImages: ImageType[] = [
         date: "01/2024",
         caption: "Exotic Shop CyberDog ",
         folder: [Folders.Lon23],
+        displayOnHome: true,
     },
     {
         id: 7,
@@ -113,6 +125,7 @@ export const DatedImages: ImageType[] = [
         date: "11/2024",
         caption: "Snow in saclay",
         folder: [Folders.Sac24],
+        displayOnHome: true,
     },
 
     {
@@ -121,6 +134,7 @@ export const DatedImages: ImageType[] = [
         date: "11/2024",
         caption: "Snow in saclay",
         folder: [Folders.Sac24],
+        displayOnHome: true,
     },
     {
         id: 10,
@@ -128,6 +142,7 @@ export const DatedImages: ImageType[] = [
         date: "11/2024",
         caption: "Snow in saclay",
         folder: [Folders.Sac24],
+        displayOnHome: false,
     },
     {
         id: 11,
@@ -135,6 +150,7 @@ export const DatedImages: ImageType[] = [
         date: "01/2024",
         caption: "Asim and I in London in january 2024",
         folder: [Folders.Time, Folders.Lon23],
+        displayOnHome: true,
     },
     {
         id: 12,
@@ -142,6 +158,7 @@ export const DatedImages: ImageType[] = [
         date: "02/2024",
         caption: "I went to ski with a couple of friends, and this is in Chamonix",
         folder: [Folders.Time],
+        displayOnHome: true,
     },
     {
         id: 13,
@@ -150,6 +167,7 @@ export const DatedImages: ImageType[] = [
         caption:
             "Graduation from my engineering school (Telecom SudParis, MSc in computer science)",
         folder: [Folders.Time],
+        displayOnHome: true,
     },
     {
         id: 14,
@@ -157,6 +175,7 @@ export const DatedImages: ImageType[] = [
         date: "03/2024",
         caption: "A gig I did with my group in my house in Saclay",
         folder: [Folders.Time],
+        displayOnHome: true,
     },
     {
         id: 15,
@@ -164,6 +183,7 @@ export const DatedImages: ImageType[] = [
         date: "05/2024",
         caption: "A great night in Biarritz with my friend on the left",
         folder: [Folders.Time],
+        displayOnHome: true,
     },
     {
         id: 16,
@@ -171,6 +191,7 @@ export const DatedImages: ImageType[] = [
         date: "07/2024",
         caption: "Great friends from Brive at Collonge-la-Rouge",
         folder: [Folders.Time],
+        displayOnHome: true,
     },
     {
         id: 17,
@@ -178,6 +199,7 @@ export const DatedImages: ImageType[] = [
         date: "08/2024",
         caption: "Olympic game opening ceremony with my close friends from Paris",
         folder: [Folders.Time],
+        displayOnHome: true,
     },
     {
         id: 18,
@@ -185,6 +207,7 @@ export const DatedImages: ImageType[] = [
         date: "09/2024",
         caption: "Surf at Biscarosse with good friends from Brive",
         folder: [Folders.Time],
+        displayOnHome: true,
     },
     {
         id: 19,
@@ -192,6 +215,7 @@ export const DatedImages: ImageType[] = [
         date: "11/2024",
         caption: "A good friend from high school in Paris wearing fancy hat",
         folder: [Folders.Time],
+        displayOnHome: true,
     },
     {
         id: 20,
@@ -199,6 +223,7 @@ export const DatedImages: ImageType[] = [
         date: "10/2024",
         caption: "My sister and I singing for my grandma's 80th bday",
         folder: [Folders.Time, Folders.Gig],
+        displayOnHome: true,
     },
     {
         id: 21,
@@ -207,6 +232,7 @@ export const DatedImages: ImageType[] = [
         caption:
             "My lovely friend at Versailles in an amazing restaurant, le camaleon",
         folder: [Folders.Time],
+        displayOnHome: true,
     },
     {
         id: 22,
@@ -214,6 +240,7 @@ export const DatedImages: ImageType[] = [
         date: "11/2024",
         caption: "My friends and I surfing in November in Britanny",
         folder: [Folders.Time],
+        displayOnHome: true,
     },
     {
         id: 23,
@@ -221,6 +248,7 @@ export const DatedImages: ImageType[] = [
         date: "11/2024",
         caption: "Amsterdam under a rainbow",
         folder: [Folders.Sum24],
+        displayOnHome: true,
     },
     {
         id: 24,
@@ -228,6 +256,7 @@ export const DatedImages: ImageType[] = [
         date: "04/2024",
         caption: "My glorious hometown <3",
         folder: [Folders.Sum24],
+        displayOnHome: true,
     },
     {
         id: 25,
@@ -235,6 +264,7 @@ export const DatedImages: ImageType[] = [
         date: "06/2024",
         caption: "Biarritz views",
         folder: [Folders.Sum24],
+        displayOnHome: true,
     },
     {
         id: 26,
@@ -242,6 +272,7 @@ export const DatedImages: ImageType[] = [
         date: "06/2024",
         caption: "Biarritz views 2",
         folder: [Folders.Sum24],
+        displayOnHome: true,
     },
     {
         id: 27,
@@ -249,14 +280,15 @@ export const DatedImages: ImageType[] = [
         date: "08/2024",
         caption: "London Baby",
         folder: [Folders.Sum24],
+        displayOnHome: true,
     },
     {
         id: 28,
         img: london,
         date: "08/2024",
         caption: "London again",
-
         folder: [Folders.Sum24],
+        displayOnHome: true,
     },
     {
         id: 29,
@@ -264,6 +296,7 @@ export const DatedImages: ImageType[] = [
         date: "07/2024",
         caption: "La Rochelle with my parents",
         folder: [Folders.Sum24],
+        displayOnHome: true,
     },
     {
         id: 30,
@@ -271,6 +304,7 @@ export const DatedImages: ImageType[] = [
         date: "08/2024",
         caption: "Laguo Di Guarda",
         folder: [Folders.Sum24],
+        displayOnHome: true,
     },
     {
         id: 31,
@@ -278,6 +312,7 @@ export const DatedImages: ImageType[] = [
         date: "02/2025",
         caption: "Gig in Normandy",
         folder: [Folders.Sum24],
+        displayOnHome: true,
     },
     {
         id: 32,
@@ -285,6 +320,7 @@ export const DatedImages: ImageType[] = [
         date: "01/2025",
         caption: "Napoli sunset",
         folder: [Folders.Sum24],
+        displayOnHome: true,
     },
     {
         id: 33,
@@ -292,6 +328,7 @@ export const DatedImages: ImageType[] = [
         date: "08/2024",
         caption: "Porto Venere at night",
         folder: [Folders.Sum24],
+        displayOnHome: true,
     },
     {
         id: 34,
@@ -299,6 +336,7 @@ export const DatedImages: ImageType[] = [
         date: "01/2025",
         caption: "Simona in her hometown, Salerno",
         folder: [Folders.Sum24],
+        displayOnHome: true,
     },
     {
         id: 35,
@@ -306,6 +344,7 @@ export const DatedImages: ImageType[] = [
         date: "05/2024",
         caption: "Turenne Castle",
         folder: [Folders.Sum24],
+        displayOnHome: true,
     },
     {
         id: 36,
@@ -313,6 +352,7 @@ export const DatedImages: ImageType[] = [
         date: "08/2024",
         caption: "Venezia Views",
         folder: [Folders.Sum24],
+        displayOnHome: true,
     },
     {
         id: 37,
@@ -320,6 +360,7 @@ export const DatedImages: ImageType[] = [
         date: "03/2024",
         caption: "Gig at Saclay 1",
         folder: [Folders.Gig],
+        displayOnHome: true,
     },
     {
         id: 38,
@@ -327,6 +368,7 @@ export const DatedImages: ImageType[] = [
         date: "03/2024",
         caption: "Gig at Saclay 2",
         folder: [Folders.Gig],
+        displayOnHome: true,
     },
     {
         id: 39,
@@ -334,6 +376,7 @@ export const DatedImages: ImageType[] = [
         date: "03/2024",
         caption: "Gig at Saclay 3",
         folder: [Folders.Gig],
+        displayOnHome: true,
     },
     {
         id: 40,
@@ -341,6 +384,7 @@ export const DatedImages: ImageType[] = [
         date: "06/2024",
         caption: "Gig at Grenoble for Martial's sister 1",
         folder: [Folders.Gig],
+        displayOnHome: true,
     },
     {
         id: 42,
@@ -348,6 +392,7 @@ export const DatedImages: ImageType[] = [
         date: "06/2024",
         caption: "Gig at Grenoble for Martial's sister 2",
         folder: [Folders.Gig],
+        displayOnHome: true,
     },
     {
         id: 44,
@@ -355,6 +400,7 @@ export const DatedImages: ImageType[] = [
         date: "03/2025",
         caption: "The Verse in Saclay in 2025",
         folder: [Folders.Gig],
+        displayOnHome: true,
     },
     {
         id: 45,
@@ -362,6 +408,7 @@ export const DatedImages: ImageType[] = [
         date: "03/2025",
         caption: "Me drumming for The Verse in Saclay in 2025",
         folder: [Folders.Gig],
+        displayOnHome: true,
     },
     {
         id: 46,
@@ -369,6 +416,7 @@ export const DatedImages: ImageType[] = [
         date: "03/2025",
         caption: "Playing Telephone",
         folder: [Folders.Gig],
+        displayOnHome: true,
     },
     {
         id: 47,
@@ -376,6 +424,7 @@ export const DatedImages: ImageType[] = [
         date: "03/2025",
         caption: "Other point of view",
         folder: [Folders.Gig],
+        displayOnHome: true,
     },
     {
         id: 48,
@@ -383,6 +432,7 @@ export const DatedImages: ImageType[] = [
         date: "03/2025",
         caption: "The public",
         folder: [Folders.Gig],
+        displayOnHome: true,
     },
     {
         id: 49,
@@ -390,6 +440,48 @@ export const DatedImages: ImageType[] = [
         date: "03/2025",
         caption: "Warming up",
         folder: [Folders.Gig],
+        displayOnHome: true,
     },
+    {
+        id: 50,
+        img: malaga,
+        date: "06/2019",
+        caption: "Warming up",
+        folder: [Folders.Malaga],
+        displayOnHome: false,
+    },
+    {
+        id: 51,
+        img: malaga2,
+        date: "06/2019",
+        caption: "Warming up",
+        folder: [Folders.Malaga],
+        displayOnHome: false,
+    },
+    {
+        id: 52,
+        img: malaga3,
+        date: "06/2019",
+        caption: "Warming up",
+        folder: [Folders.Malaga],
+        displayOnHome: false,
+    },
+    {
+        id: 53,
+        img: malaga4,
+        date: "06/2019",
+        caption: "Warming up",
+        folder: [Folders.Malaga],
+        displayOnHome: false,
+    },
+    {
+        id: 54,
+        img: malaga5,
+        date: "06/2019",
+        caption: "Warming up",
+        folder: [Folders.Malaga],
+        displayOnHome: false,
+    },
+
 
 ];

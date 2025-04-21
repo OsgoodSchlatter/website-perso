@@ -23,12 +23,12 @@ import { Albi } from "./TripsPosts/Albi";
 import { BxHayAmst23 } from "./TripsPosts/BxHayAmst23";
 import { Bordeaux } from "./TripsPosts/Bordeaux";
 import { SweDen } from "./TripsPosts/SweDen";
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import { createCustomIcon } from "../../Single/MapUtils"
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { createCustomIcon } from "../../Single/MapUtils";
 import { StandardHeader } from "../../Single/StandardHeader";
 import { useEffect, useRef, useState } from "react";
 import { BlogPostType } from "../Home/Data";
-
+import { Folders, DatedImages } from "../../img/data_img";
 
 type TransportType = "Plane" | "Car" | "Train" | "Home";
 
@@ -42,9 +42,8 @@ interface TravelEntry {
   GPS: [number, number];
   C02: number;
   content?: TravelContentComponent;
+  picturesFolder?: Folders[];
 }
-
-
 
 export const blogPosts: TravelEntry[] = [
   {
@@ -114,7 +113,7 @@ export const blogPosts: TravelEntry[] = [
     title: "New York City 🇺🇸",
     locations: ["USA"],
     transport: "Plane",
-    GPS: [40.7128, -74.0060], // Example coordinates for USA (New York City)
+    GPS: [40.7128, -74.006], // Example coordinates for USA (New York City)
     C02: 1800,
     content: USA2,
   },
@@ -137,6 +136,7 @@ export const blogPosts: TravelEntry[] = [
     GPS: [36.7213, -4.4214], // Coordinates for Malaga, Spain
     C02: 400,
     content: Malaga,
+    picturesFolder: [Folders.Malaga],
   },
   {
     id: 10,
@@ -214,7 +214,7 @@ export const blogPosts: TravelEntry[] = [
     title: "Nice 🇫🇷",
     transport: "Train",
     locations: ["Nice", "France"],
-    GPS: [43.7102, 7.2620],
+    GPS: [43.7102, 7.262],
     C02: 50,
     content: Nice,
   },
@@ -234,7 +234,7 @@ export const blogPosts: TravelEntry[] = [
     title: "Lyon",
     transport: "Train",
     locations: ["Lyon", "France"],
-    GPS: [45.7640, 4.8357],
+    GPS: [45.764, 4.8357],
     C02: 5,
     content: Lyon,
   },
@@ -244,7 +244,7 @@ export const blogPosts: TravelEntry[] = [
     title: "Anglet 🇫🇷 & San Sebastian 🇪🇸",
     locations: ["Anglet", "France", "San Sebastian", "Spain"],
     transport: "Train",
-    GPS: [43.4789, -1.5330],
+    GPS: [43.4789, -1.533],
     C02: 10,
     content: Anglet,
   },
@@ -254,7 +254,7 @@ export const blogPosts: TravelEntry[] = [
     title: "Nice 🇫🇷",
     locations: ["Nice", "France"],
     transport: "Train",
-    GPS: [43.7102, 7.2620],
+    GPS: [43.7102, 7.262],
     C02: 5,
     content: Nice2,
   },
@@ -264,7 +264,7 @@ export const blogPosts: TravelEntry[] = [
     title: "Albi 🇫🇷",
     locations: ["Albi", "France"],
     transport: "Train",
-    GPS: [43.9298, 2.1480],
+    GPS: [43.9298, 2.148],
     C02: 30,
     content: Albi,
   },
@@ -272,7 +272,13 @@ export const blogPosts: TravelEntry[] = [
     id: 23,
     date: "2023",
     title: "Bruxelles 🇧🇪, The Hague 🇳🇱, Amsterdam 🇳🇱",
-    locations: ["Bruxelles", "Belgium", "The Hague", "Amsterdam", "Netherlands"],
+    locations: [
+      "Bruxelles",
+      "Belgium",
+      "The Hague",
+      "Amsterdam",
+      "Netherlands",
+    ],
     transport: "Train",
     GPS: [50.8503, 4.3517],
     C02: 10,
@@ -418,7 +424,7 @@ export const blogPosts: TravelEntry[] = [
     locations: ["Boston", "USA"],
     transport: "Plane",
     C02: 1800,
-    GPS: [42.3600825, - 71.0588801],
+    GPS: [42.3600825, -71.0588801],
   },
   {
     id: 39,
@@ -427,7 +433,7 @@ export const blogPosts: TravelEntry[] = [
     locations: ["Los Angeles", "USA"],
     transport: "Plane",
     C02: 3000,
-    GPS: [34.052234, - 118.243685],
+    GPS: [34.052234, -118.243685],
   },
   {
     id: 40,
@@ -436,7 +442,7 @@ export const blogPosts: TravelEntry[] = [
     locations: ["Las Vegas", "USA"],
     transport: "Plane",
     C02: 3000,
-    GPS: [36.169941, -115.139830],
+    GPS: [36.169941, -115.13983],
   },
   {
     id: 41,
@@ -454,7 +460,7 @@ export const blogPosts: TravelEntry[] = [
     locations: ["Canaries", "Spain"],
     transport: "Plane",
     C02: 200,
-    GPS: [28.291564, -16.629130],
+    GPS: [28.291564, -16.62913],
   },
   {
     id: 43,
@@ -463,7 +469,7 @@ export const blogPosts: TravelEntry[] = [
     locations: ["Barcelona", "Spain"],
     transport: "Car",
     C02: 40,
-    GPS: [41.23, 2.1540],
+    GPS: [41.23, 2.154],
   },
   {
     id: 44,
@@ -481,7 +487,7 @@ export const blogPosts: TravelEntry[] = [
     locations: ["Brive", "France"],
     transport: "Car",
     C02: 0,
-    GPS: [45.15850, 1.53324],
+    GPS: [45.1585, 1.53324],
   },
   {
     id: 46,
@@ -499,7 +505,7 @@ export const blogPosts: TravelEntry[] = [
     locations: ["Vannes", "France"],
     transport: "Home",
     C02: 0,
-    GPS: [47.65868, - 2.75991],
+    GPS: [47.65868, -2.75991],
   },
   {
     id: 48,
@@ -564,16 +570,16 @@ export const blogPosts: TravelEntry[] = [
     C02: 100,
     GPS: [46.2043907, 6.1431577],
   },
-
-
 ];
 
 const transportColors: Record<TransportType, string> = {
   Plane: "red",
   Car: "orange",
   Train: "green",
-  Home: "blue"
+  Home: "blue",
 };
+
+
 
 // Function to get the color based on the transport type
 const getColorForTransport = (transport: TransportType): string => {
@@ -585,10 +591,15 @@ export const TripsContent = () => {
   const [viewMode, setViewMode] = useState<"map" | "posts">("map");
   const [activePostId, setActivePostId] = useState<number | null>(null);
   const postRefs = useRef<Record<number, HTMLDivElement | null>>({}); // to scroll to the post
+  const [expandedPostId, setExpandedPostId] = useState<number | null>(null);
+
+  const togglePostImages = (key: number) => {
+    setExpandedPostId(prev => (prev === key ? null : key)); // collapse if same, open if different
+  };
 
   const handleMarkerClick = (key: number, post: TravelEntry) => {
     setSelectedPost(post);
-    setActivePostId(key);  // Set active post first
+    setActivePostId(key); // Set active post first
     // Change to "posts" view
 
     // Small delay to ensure the state has been updated and rendered
@@ -604,9 +615,10 @@ export const TripsContent = () => {
     setTimeout(() => {
       const element = postRefs.current[key];
       if (element) {
-        console.log("hey there");
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        console.log(element.getBoundingClientRect().top + window.pageYOffset)
+        const y =
+          element.getBoundingClientRect().top + window.pageYOffset - 100;
+        window.scrollTo({ top: y, behavior: "smooth" });
+        console.log(element.getBoundingClientRect().top + window.pageYOffset);
       }
     }, 100);
   };
@@ -626,13 +638,13 @@ export const TripsContent = () => {
         const element = postRefs.current[activePostId];
         if (element) {
           const yOffset = -100; // Adjust as needed
-          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: 'smooth' });
+          const y =
+            element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: "smooth" });
         }
       }, 100);
     }
   }, [viewMode, activePostId]);
-
 
   return (
     <div className="flex flex-col items-center">
@@ -680,15 +692,28 @@ export const TripsContent = () => {
                 {Array.from(blogPosts.entries()).map(([key, value]) => (
                   <>
                     {/* @ts-ignore */}
-                    <Marker key={key} position={value.GPS} icon={createCustomIcon(getColorForTransport(value.transport))} eventHandlers={{
-                      click: () => handleMarkerClick(key, value),
-                    }}>
+                    <Marker key={key} position={value.GPS} icon={createCustomIcon(
+                      getColorForTransport(value.transport)
+                    )}
+                      eventHandlers={{
+                        click: () => handleMarkerClick(key, value),
+                      }}
+                    >
                       <Popup>
-                        <div className="font-bold text-lg hover:bg-slate-100 " onClick={() => {
-                          const postId = Array.from(blogPosts.entries()).find(([_, value]) => value.title === selectedPost!.title)?.[0]!;
-                          console.log("Clicked preview card, post ID:", postId);
-                          handlePostClick(postId);
-                        }}>
+                        <div
+                          className="font-bold text-lg hover:bg-slate-100 "
+                          onClick={() => {
+                            const postId = Array.from(blogPosts.entries()).find(
+                              ([_, value]) =>
+                                value.title === selectedPost!.title
+                            )?.[0]!;
+                            console.log(
+                              "Clicked preview card, post ID:",
+                              postId
+                            );
+                            handlePostClick(postId);
+                          }}
+                        >
                           {value.title + " - " + value.date}
                         </div>
                         <br /> {value.C02 + " kg CO2eq"}
@@ -711,11 +736,18 @@ export const TripsContent = () => {
           className="mt-4 p-4 border rounded bg-gray-100 w-full max-w-2xl cursor-pointer hover:bg-gray-200 transition"
           title="Click to view full post"
         >
-          <h2 className="text-xl font-bold text-black" onClick={() => {
-            const postId = Array.from(blogPosts.entries()).find(([_, value]) => value.title === selectedPost.title)?.[0]!;
-            console.log("Clicked preview card, post ID:", postId);
-            handlePostClick(postId);
-          }}>{selectedPost.title}</h2>
+          <h2
+            className="text-xl font-bold text-black"
+            onClick={() => {
+              const postId = Array.from(blogPosts.entries()).find(
+                ([_, value]) => value.title === selectedPost.title
+              )?.[0]!;
+              console.log("Clicked preview card, post ID:", postId);
+              handlePostClick(postId);
+            }}
+          >
+            {selectedPost.title}
+          </h2>
           <p className="text-black">
             <strong>Date:</strong> {selectedPost.date}
           </p>
@@ -729,38 +761,64 @@ export const TripsContent = () => {
             <strong>CO2 Emissions:</strong> {selectedPost.C02} kg CO2eq
           </p>
         </div>
-      )
-      }
+      )}
 
       {/* POSTS LIST VIEW */}
-      {
-        viewMode === "posts" && (
-          <div className="w-full max-w-2xl px-4">
-            <div className="font-bold text-xl mb-2 text-center">List of Trips</div>
-            {Array.from(blogPosts.entries())
-              .sort(([, a], [, b]) => new Date(b.date).getTime() - new Date(a.date).getTime())
-              .map(([key, value]) => (
-                <div
-                  key={key}
-                  ref={(el) => (postRefs.current[key] = el)}
-                  className={`mb-3 border-b pb-2 px-2 py-1 rounded ${activePostId === key ? "bg-yellow-100 text-black border-yellow-500" : ""}`}
-                  onClick={() => handlePostClick(key)} // Click to switch view and scroll
-                >
-                  <div className="text-lg font-medium">{value.title}</div>
-                  <div className="text-sm text-gray-600">{value.date}</div>
-                </div>
-              ))}
+      {viewMode === "posts" && (
+        <div className="w-full max-w-2xl px-4">
+          <div className="font-bold text-xl mb-2 text-center">
+            List of Trips
           </div>
-        )
-      }
-    </div >
+          {Array.from(blogPosts.entries())
+            .sort(
+              ([, a], [, b]) =>
+                new Date(b.date).getTime() - new Date(a.date).getTime()
+            )
+            .map(([key, value]) => (
+              <div
+                key={key}
+                ref={(el) => (postRefs.current[key] = el)}
+                className={`mb-3 border-b pb-2 px-2 py-1 rounded ${activePostId === key
+                  ? "bg-yellow-100 text-black border-yellow-500"
+                  : ""
+                  }`}
+                onClick={() => handlePostClick(key)} // Click to switch view and scroll
+              >
+                <div className="text-lg font-medium">{value.title}</div>
+                <div className="text-sm text-gray-600">{value.date}</div>
+                <button
+                  onClick={() => togglePostImages(key)}
+                  className="mt-2 text-sm text-blue-500 underline"
+                >
+                  {expandedPostId === key ? "Hide Pictures" : "Show Pictures"}
+                </button>
+                <div>
+                  {expandedPostId === key && DatedImages?.filter(
+                    (image) =>
+                      value.picturesFolder?.some(folder => image.folder?.includes(folder))
+                  ).map((img) => (
+                    <img
+                      src={img.img}
+                      className="w-full max-w-2xl mt-2"
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
+        </div>
+      )}
+    </div>
   );
 };
 
-const intro = <div>
-
-</div>
+const intro = <div></div>;
 export const Trips = () => {
-  return (<StandardHeader title={"Destinations I went to"} date={"2024"} comment={intro}
-    content={< TripsContent />} />)
-}
+  return (
+    <StandardHeader
+      title={"Destinations I went to"}
+      date={"2024"}
+      comment={intro}
+      content={<TripsContent />}
+    />
+  );
+};
