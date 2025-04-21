@@ -604,6 +604,24 @@ export const TripsContent = () => {
 
     // Small delay to ensure the state has been updated and rendered
   };
+  const postListRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        expandedPostId !== null &&
+        postListRef.current &&
+        !postListRef.current.contains(event.target as Node)
+      ) {
+        setExpandedPostId(null); // Collapse when clicking outside
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [expandedPostId]);
 
   const handlePostClick = (key: number) => {
     // This handles clicking on post details to switch to the posts view and scroll
@@ -616,7 +634,7 @@ export const TripsContent = () => {
       const element = postRefs.current[key];
       if (element) {
         const y =
-          element.getBoundingClientRect().top + window.pageYOffset - 100;
+          element.getBoundingClientRect().top + window.pageYOffset - 200;
         window.scrollTo({ top: y, behavior: "smooth" });
         console.log(element.getBoundingClientRect().top + window.pageYOffset);
       }
@@ -637,7 +655,7 @@ export const TripsContent = () => {
       setTimeout(() => {
         const element = postRefs.current[activePostId];
         if (element) {
-          const yOffset = -100; // Adjust as needed
+          const yOffset = -200; // Adjust as needed
           const y =
             element.getBoundingClientRect().top + window.pageYOffset + yOffset;
           window.scrollTo({ top: y, behavior: "smooth" });
@@ -649,26 +667,28 @@ export const TripsContent = () => {
   return (
     <div className="flex flex-col items-center">
       {/* Toggle Button */}
-      <div className="w-full flex justify-start px-4 mb-4">
-        <div className="inline-flex rounded-md shadow overflow-hidden border border-gray-300">
-          <button
-            onClick={() => setViewMode("map")}
-            className={`px-4 py-2 font-medium text-sm transition ${viewMode === "map"
-              ? "bg-gray-500 text-white"
-              : "bg-white text-gray-700 hover:bg-gray-100"
-              }`}
-          >
-            Map
-          </button>
-          <button
-            onClick={() => setViewMode("posts")}
-            className={`px-4 py-2 font-medium text-sm transition ${viewMode === "posts"
-              ? "bg-gray-500 text-white"
-              : "bg-white text-gray-700 hover:bg-gray-100"
-              }`}
-          >
-            Posts
-          </button>
+      <div className="sticky top-32 left-full self-start z-50 ">
+        <div className="w-full flex justify-start px-4 mb-4">
+          <div className="inline-flex rounded-md shadow overflow-hidden border border-gray-300">
+            <button
+              onClick={() => setViewMode("map")}
+              className={`px-4 py-2 font-medium text-sm transition ${viewMode === "map"
+                ? "bg-gray-500 text-white"
+                : "bg-white text-gray-700 hover:bg-gray-100"
+                }`}
+            >
+              Map
+            </button>
+            <button
+              onClick={() => setViewMode("posts")}
+              className={`px-4 py-2 font-medium text-sm transition ${viewMode === "posts"
+                ? "bg-gray-500 text-white"
+                : "bg-white text-gray-700 hover:bg-gray-100"
+                }`}
+            >
+              Posts
+            </button>
+          </div>
         </div>
       </div>
 
@@ -760,15 +780,24 @@ export const TripsContent = () => {
           <p className="text-black">
             <strong>CO2 Emissions:</strong> {selectedPost.C02} kg CO2eq
           </p>
+          <div>
+            {DatedImages?.filter(
+              (image) =>
+                selectedPost.picturesFolder?.some(folder => image.folder?.includes(folder))
+            ).map((img) => (
+              <img
+                src={img.img}
+                className="w-full max-w-2xl mt-2"
+              />
+            ))}
+          </div>
         </div>
       )}
 
       {/* POSTS LIST VIEW */}
       {viewMode === "posts" && (
         <div className="w-full max-w-2xl px-4">
-          <div className="font-bold text-xl mb-2 text-center">
-            List of Trips
-          </div>
+
           {Array.from(blogPosts.entries())
             .sort(
               ([, a], [, b]) =>
@@ -777,21 +806,31 @@ export const TripsContent = () => {
             .map(([key, value]) => (
               <div
                 key={key}
-                ref={(el) => (postRefs.current[key] = el)}
-                className={`mb-3 border-b pb-2 px-2 py-1 rounded ${activePostId === key
+                ref={(el) => {
+                  postRefs.current[key] = el;
+                  if (expandedPostId === key) {
+                    postListRef.current = el;
+                  }
+                }}
+
+                className={` mb-3 border-b pb-2 px-2 py-1 rounded ${activePostId === key
                   ? "bg-yellow-100 text-black border-yellow-500"
                   : ""
                   }`}
                 onClick={() => handlePostClick(key)} // Click to switch view and scroll
               >
-                <div className="text-lg font-medium">{value.title}</div>
-                <div className="text-sm text-gray-600">{value.date}</div>
-                <button
-                  onClick={() => togglePostImages(key)}
-                  className="mt-2 text-sm text-blue-500 underline"
-                >
-                  {expandedPostId === key ? "Hide Pictures" : "Show Pictures"}
-                </button>
+                <div className="flex justify-between items-start w-full">
+                  <div>
+                    <div className="text-lg font-medium">{value.title}</div>
+                    <div className="text-sm text-gray-600">{value.date}</div>
+                  </div>
+                  <button
+                    onClick={() => togglePostImages(key)}
+                    className="mt-2 text-sm text-blue-500 underline p-1 bg-blue-100 rounded"
+                  >
+                    {expandedPostId === key ? "Hide" : "Show"}
+                  </button>
+                </div>
                 <div>
                   {expandedPostId === key && DatedImages?.filter(
                     (image) =>
