@@ -702,7 +702,7 @@ export const TripsContent = () => {
               worldCopyJump={true}
               scrollWheelZoom={false}
               style={{
-                width: isMobile ? "300px" : "625px",
+                width: isMobile ? "350px" : "625px",
                 height: isMobile ? "300px" : "500px",
                 zIndex: 1,
               }}
