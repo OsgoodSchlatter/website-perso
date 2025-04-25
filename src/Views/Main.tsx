@@ -10,7 +10,7 @@ export const Pages2 = new Map<string, string>([
   ["trips", "trips"],
   ["maths", "maths"],
   ["cs", "computer science"],
-  ["music", "music"],
+  ["music_video", "music & video"],
   ["sport", "sport"],
   ["books", "books"],
   ["physics", "physics"],
@@ -20,8 +20,6 @@ export const Pages2 = new Map<string, string>([
   ["contact", "contact"],
   ["about", "about"],
   ["gallery", "gallery"],
-
-
 ]);
 
 export const Main = () => {

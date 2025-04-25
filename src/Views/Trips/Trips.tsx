@@ -28,7 +28,7 @@ import { createCustomIcon } from "../../Single/MapUtils";
 import { StandardHeader } from "../../Single/StandardHeader";
 import { useEffect, useRef, useState } from "react";
 import { BlogPostType } from "../Home/Data";
-import { Folders, DatedImages } from "../../img/data_img";
+import { Folders, DatedImages } from "../../data/data_img";
 
 type TransportType = "Plane" | "Car" | "Train" | "Home";
 
@@ -303,6 +303,7 @@ export const blogPosts: TravelEntry[] = [
     C02: 60,
     GPS: [59.3293, 18.0686],
     content: SweDen,
+    picturesFolder: [Folders.Sweden]
   },
   {
     id: 26,
@@ -313,6 +314,7 @@ export const blogPosts: TravelEntry[] = [
     C02: 60,
     GPS: [59.858, 17.686],
     content: SweDen,
+    picturesFolder: [Folders.UppSala]
   },
   {
     id: 26,
@@ -323,6 +325,8 @@ export const blogPosts: TravelEntry[] = [
     C02: 60,
     GPS: [55.6, 12.5686],
     content: SweDen,
+    picturesFolder: [Folders.Denmark]
+
   },
   // recheck CO2
   {
@@ -854,7 +858,7 @@ const intro = <div></div>;
 export const Trips = () => {
   return (
     <StandardHeader
-      title={"Destinations I went to"}
+      title={"Destinations list"}
       date={"2024"}
       comment={intro}
       content={<TripsContent />}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StandardHeader } from '../../Single/StandardHeader';
-import { DatedImages, Folders, ImageType } from '../../img/data_img';
+import { DatedImages, Folders, ImageType } from '../../data/data_img';
 
 // Define the type for the images
 

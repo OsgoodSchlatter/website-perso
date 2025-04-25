@@ -1,15 +1,15 @@
 import { Header } from "../../Single/Header";
 import { useState } from "react";
-import saclay2 from "../../img/music-saclay/saclay2.jpg"
-import saclay4 from "../../img/music-saclay/saclay4.jpg"
-import saclay3 from "../../img/music-saclay/saclay7.jpg"
-import saclay7 from "../../img/music-saclay/saclay8.jpg"
+import saclay2 from "../../data/music-saclay/saclay2.jpg"
+import saclay4 from "../../data/music-saclay/saclay4.jpg"
+import saclay3 from "../../data/music-saclay/saclay7.jpg"
+import saclay7 from "../../data/music-saclay/saclay8.jpg"
 
-import gre1 from "../../img/gig-gre/gre1.jpg"
-import gre2 from "../../img/gig-gre/gre2.jpg"
-import gre3 from "../../img/gig-gre/gre3.jpg"
+import gre1 from "../../data/gig-gre/gre1.jpg"
+import gre2 from "../../data/gig-gre/gre2.jpg"
+import gre3 from "../../data/gig-gre/gre3.jpg"
 
-import boussay from "../../img/boussay.jpeg"
+import boussay from "../../data/boussay.jpeg"
 
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';

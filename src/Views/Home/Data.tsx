@@ -3,7 +3,7 @@ import { Chess } from "../Chess/Chess";
 import OOM from "../Climate/ClimatePosts/OOM";
 import FHE from "../CS/CSPosts/FHE";
 
-import { MusicUtils } from "../Music/MusicUtils"
+import { MusicUtils } from "../Music-and-video/MusicUtils";
 import { Russian } from "../Languages/Russian";
 import { Maths } from "../Maths/Maths";
 import Battery_Fuel_Cell from "../Physics/PhysicsPosts/Battery_Fuel_Cell";
@@ -24,6 +24,7 @@ import GreenTracking from "../CS/CSPosts/GreenTracking";
 import { About } from "../About/About";
 import { Gallery } from "../Gallery/Gallery";
 import { Italian } from "../Languages/Italian";
+import Video_Creation from "../Music-and-video/Video";
 
 export type BlogPostType = {
     id: number;
@@ -38,7 +39,7 @@ export type BlogPostType = {
 export enum BlogCategory {
     Climate = "climate",
     ComputerScience = "computer science",
-    Music = "music",
+    Music = "music & video",
     Languages = "languages",
     Physics = "physics",
     Chess = "chess",
@@ -49,13 +50,13 @@ export enum BlogCategory {
     Publi = "publi",
     Contact = "contact",
     About = "about",
-    Gallery = "gallery"
+    Gallery = "gallery",
 }
 
 export enum BlogRoute {
     Climate = "climate",
     ComputerScience = "cs",
-    Music = "music",
+    Music = "music_video",
     Languages = "languages",
     Physics = "physics",
     Chess = "chess",
@@ -66,7 +67,7 @@ export enum BlogRoute {
     Publi = "publi_talks",
     Contact = "contact",
     About = "about",
-    Gallery = "gallery"
+    Gallery = "gallery",
 }
 
 export type ContentProps = {
@@ -75,7 +76,6 @@ export type ContentProps = {
 };
 
 export const blogPostsArray: BlogPostType[] = [
-
     {
         id: 1,
         date: "2023",
@@ -112,6 +112,15 @@ export const blogPostsArray: BlogPostType[] = [
         category: BlogCategory.Music,
         route: BlogRoute.Music,
         content: MusicUtils,
+    },
+    {
+        id: 3,
+        date: "2025",
+        title: "Video Creation",
+        content_name: "Video Creation",
+        category: BlogCategory.Music,
+        route: BlogRoute.Music,
+        content: Video_Creation,
     },
 
     {
@@ -199,7 +208,7 @@ export const blogPostsArray: BlogPostType[] = [
     {
         id: 1,
         date: "2024",
-        title: "Destinations I went to",
+        title: "Destinations list",
         content_name: "Trips",
         category: BlogCategory.Trips,
         route: BlogRoute.Trips,
