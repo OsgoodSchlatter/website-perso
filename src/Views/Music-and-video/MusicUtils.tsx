@@ -44,56 +44,125 @@ const MusicUtilsContent = () => {
 
     const fretboard = generateFretboard();
 
-    return (
-        <div className="flex justify-center">
-            <div className="w-full">
-                <div className="flex">
-                    <select
-                        className="p-2 rounded-md border border-transparent bg-slate-100 hover:bg-slate-300 mb-2 text-black"
-                        onChange={(e) => setchosenNote(e.target.value)}
-                        value={chosenNote}
-                    >
-                        {allNotes.map((note) => (
-                            <option key={note} value={note}>{note}</option>
-                        ))}
-                    </select>
-                    <select
-                        className="p-2 rounded-md border border-transparent bg-slate-100 hover:bg-slate-300 mb-2 ml-2 text-black"
-                        onChange={(e) => setchosenMode(e.target.value)}
-                        value={chosenMode}
-                    >
-                        {Object.keys(scales).map((mode) => (
-                            <option key={mode} value={mode}>{mode}</option>
-                        ))}
-                    </select>
-                    <div
-                        className="mb-2 ml-2 p-2 flex hover:bg-slate-300 bg-slate-100 rounded-lg text-black cursor-pointer"
-                        onClick={() => setShowNotes(!showNotes)}
-                    >
-                        {showNotes ? "Hide Notes" : "Show Notes"}
-                    </div>
-                </div>
+    const [chosenPianoNote, setChosenPianoNote] = useState("C");
+    const [chosenPianoMode, setChosenPianoMode] = useState("major");
+    const [showPianoNotes, setShowPianoNotes] = useState(true);
 
-                <div className="overflow-x-auto">
-                    <div className="grid grid-cols-16 gap-1">
-                        {fretboard.map((stringNotes, stringIdx) => (
-                            stringNotes.map((note, fretIdx) => {
-                                const isNoteInScale = getScaleNotes(chosenNote, chosenMode).includes(note);
-                                return (
-                                    <div
-                                        key={`${stringIdx}-${fretIdx}`}
-                                        className={`w-8 h-8 flex items-center justify-center text-sm rounded 
-                                            ${showNotes && isNoteInScale ? "bg-red-500 text-white" : "bg-slate-200 text-slate-400"}`}
-                                    >
-                                        {showNotes && isNoteInScale ? note : "."}
-                                    </div>
-                                );
-                            })
-                        ))}
+
+    const whiteKeys = ["C", "D", "E", "F", "G", "A", "B"];
+
+    const scaleNotes = getScaleNotes(chosenPianoNote, chosenPianoMode);
+
+    // Generate keys (3 octaves = 36 keys)
+    const keys = [];
+    for (let octave = 1; octave <= 3; octave++) {
+        for (let i = 0; i < allNotes.length; i++) {
+            const note = allNotes[i];
+            const keyLabel = note + octave;
+            const isInScale = scaleNotes.includes(note);
+
+            const isWhite = whiteKeys.includes(note);
+            keys.push(
+                <div
+                    key={keyLabel}
+                    className={`relative border ${isWhite ? "bg-white w-10 h-40 z-10" : "bg-black w-6 h-24 z-20 absolute ml-[-12px]"} 
+                        ${showPianoNotes && isInScale ? (isWhite ? "bg-red-300" : "bg-red-700") : ""}
+                    `}
+                    title={note}
+                >
+                    {showPianoNotes && isInScale && (
+                        <div className={`absolute bottom-1 left-1/2 transform -translate-x-1/2 text-xs text-black`}>
+                            {note}
+                        </div>
+                    )}
+                </div>
+            );
+        }
+    }
+
+
+    return (
+        <>
+            <div className="flex justify-center">
+                <div className="w-full">
+                    <div className="flex">
+                        <select
+                            className="p-2 rounded-md border border-transparent bg-slate-100 hover:bg-slate-300 mb-2 text-black"
+                            onChange={(e) => setchosenNote(e.target.value)}
+                            value={chosenNote}
+                        >
+                            {allNotes.map((note) => (
+                                <option key={note} value={note}>{note}</option>
+                            ))}
+                        </select>
+                        <select
+                            className="p-2 rounded-md border border-transparent bg-slate-100 hover:bg-slate-300 mb-2 ml-2 text-black"
+                            onChange={(e) => setchosenMode(e.target.value)}
+                            value={chosenMode}
+                        >
+                            {Object.keys(scales).map((mode) => (
+                                <option key={mode} value={mode}>{mode}</option>
+                            ))}
+                        </select>
+                        <div
+                            className="mb-2 ml-2 p-2 flex hover:bg-slate-300 bg-slate-100 rounded-lg text-black cursor-pointer"
+                            onClick={() => setShowNotes(!showNotes)}
+                        >
+                            {showNotes ? "Hide Notes" : "Show Notes"}
+                        </div>
+                    </div>
+
+                    <div className="overflow-x-auto">
+                        <div className="grid grid-cols-16 gap-1">
+                            {fretboard.map((stringNotes, stringIdx) => (
+                                stringNotes.map((note, fretIdx) => {
+                                    const isNoteInScale = getScaleNotes(chosenNote, chosenMode).includes(note);
+                                    return (
+                                        <div
+                                            key={`${stringIdx}-${fretIdx}`}
+                                            className={`w-8 h-8 flex items-center justify-center text-sm rounded 
+                                    ${showNotes && isNoteInScale ? "bg-red-500 text-white" : "bg-slate-200 text-slate-400"}`}
+                                        >
+                                            {showNotes && isNoteInScale ? note : "."}
+                                        </div>
+                                    );
+                                })
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <div className="flex items-center gap-2 mb-4 mt-8">
+                <select
+                    className="p-2 rounded-md bg-slate-100 text-black"
+                    value={chosenPianoNote}
+                    onChange={(e) => setChosenPianoNote(e.target.value)}
+                >
+                    {allNotes.map((note) => (
+                        <option key={note} value={note}>{note}</option>
+                    ))}
+                </select>
+                <select
+                    className="p-2 rounded-md bg-slate-100 text-black"
+                    value={chosenPianoMode}
+                    onChange={(e) => setChosenPianoMode(e.target.value)}
+                >
+                    {Object.keys(scales).map((mode) => (
+                        <option key={mode} value={mode}>{mode}</option>
+                    ))}
+                </select>
+                <button
+                    onClick={() => setShowPianoNotes(!showPianoNotes)}
+                    className="p-2 bg-slate-100 hover:bg-slate-300 rounded text-black"
+                >
+                    {showPianoNotes ? "Hide Notes" : "Show Notes"}
+                </button>
+            </div>
+
+            <div className="relative flex">
+                {keys}
+            </div>
+        </>
     );
 };
 
