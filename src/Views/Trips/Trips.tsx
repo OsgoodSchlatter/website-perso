@@ -28,7 +28,7 @@ import { createCustomIcon } from "../../Single/MapUtils";
 import { StandardHeader } from "../../Single/StandardHeader";
 import { useEffect, useRef, useState } from "react";
 import { BlogPostType } from "../Home/Data";
-import { Folders, DatedImages } from "../../data/data_img";
+import { Folders, DatedImages } from "../../data/datatype/data_img";
 
 type TransportType = "Plane" | "Car" | "Train" | "Home";
 

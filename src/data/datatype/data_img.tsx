@@ -1,67 +1,67 @@
-import img1 from "./nov/IMG20241102161449.jpg";
-import img2 from "./nov/IMG20241101130541.jpg";
-import img3 from "./2023_dec/xmas_2023.jpg";
-import img4 from "./2024_jan/1.jpg";
-import img5 from "./2024_jan/2.jpg";
-import img6 from "./2024_jan/3.jpg";
-import img7 from "./nov/IMG20241121131404.jpg";
-import img9 from "./nov/IMG20241121130851.jpg";
-import img10 from "./nov/IMG20241121130609.jpg";
-import best_24_november from "./best_24/Best_2024_1.jpeg";
-import best_24_march from "./best_24/Best_2024_2.jpeg";
-import best_24_july from "./best_24/Best_2024_3.jpg";
-import best_24_feb from "./best_24/Best_2024_4.jpg";
-import best_24_oct from "./best_24/Best_2024_5.jpg";
-import best_24_march_gig from "./best_24/Best_2024_6.jpg";
-import best_24_oct_gig from "./best_24/Best_2024_7.jpeg";
-import best_24_may from "./best_24/Best_2024_8.jpg";
-import best_24_aug from "./best_24/Best_2024_9.jpg";
-import best_24_nov from "./best_24/Best_2024_10.jpg";
-import best_24_sept from "./best_24/Best_2024_11.jpg";
-import best_24_jan from "./best_24/Best_2024_12.jpg";
-import amsterdam from "./summer24/pics_website-24-25/amsterdam.jpg";
-import arradon from "./summer24/pics_website-24-25/arradon.jpg";
-import biarritz from "./summer24/pics_website-24-25/biarritz.jpg";
-import biarritz2 from "./summer24/pics_website-24-25/biarritz2.jpg";
-import bigben from "./summer24/pics_website-24-25/bigben.jpg";
-import drums_normandy from "./summer24/pics_website-24-25/drums_normandy.jpg";
-import la_rochelle from "./summer24/pics_website-24-25/la_rochelle.jpg";
-import laguo_guarda from "./summer24/pics_website-24-25/laguo_di_guarda.jpg";
-import london from "./summer24/pics_website-24-25/london.jpg";
-import naples from "./summer24/pics_website-24-25/naples.jpg";
-import porto_venere from "./summer24/pics_website-24-25/porto_venere.jpg";
-import salerno_simona from "./summer24/pics_website-24-25/salerno_simona.jpg";
-import turenne from "./summer24/pics_website-24-25/turenne.jpg";
-import venezia from "./summer24/pics_website-24-25/venezia.jpg";
-import saclay4 from "./music-saclay/saclay4.jpg";
-import saclay5 from "./music-saclay/saclay5.jpg";
-import saclay8 from "./music-saclay/saclay8.jpg";
-import gre1 from "./gig-gre/gre1.jpg";
-import gre2 from "./gig-gre/gre2.jpg";
-import alltogether from "./pics_2025_saclay/alltogether.jpg"
-import drums_eloi from "./pics_2025_saclay/drums-eloi.jpeg"
-import gros_plan from "./pics_2025_saclay/gros-plan-manue-eloi.jpeg"
-import piano from "./pics_2025_saclay/piano.jpg"
-import public_ from "./pics_2025_saclay/public.jpeg"
-import shrugged from "./pics_2025_saclay/shrugged-together.jpg"
-import malaga from "./malaga/malaga.jpg"
-import malaga2 from "./malaga/malaga2.jpg"
-import malaga3 from "./malaga/malaga3.jpg"
-import malaga4 from "./malaga/malaga4.jpg"
-import malaga5 from "./malaga/malaga5.jpg"
-import church from "./sweden-copenhague/church.jpg"
-import copenhagen from "./sweden-copenhague/copenhagen.jpg"
-import dannyAndI from "./sweden-copenhague/danny-and-i.jpg"
-import demolishedWall from "./sweden-copenhague/demolished-wall.jpg"
-import friendsCopenhagen from "./sweden-copenhague/friends-copenhagen.jpg"
-import guitarHouse from "./sweden-copenhague/guitar-in-front-of-house.jpg"
-import guitarLake from "./sweden-copenhague/guitar-lake.jpg"
-import DarkHouse from "./sweden-copenhague/house_dark.webp"
-import houseFood from "./sweden-copenhague/house_food.webp"
-import houseClara from "./sweden-copenhague/house-with-clara.jpg"
-import Stockholm from "./sweden-copenhague/stockholm.jpg"
-import swedenLand from "./sweden-copenhague/sweden-landscape-1.jpg"
-import windturbine from "./sweden-copenhague/windturbine.jpg"
+import img1 from "../pics/nov/IMG20241102161449.jpg";
+import img2 from "../pics/nov/IMG20241101130541.jpg";
+import img3 from "../pics/2023_dec/xmas_2023.jpg";
+import img4 from "../pics/2024_jan/1.jpg";
+import img5 from "../pics/2024_jan/2.jpg";
+import img6 from "../pics/2024_jan/3.jpg"; import img7 from "../pics/nov/IMG20241121131404.jpg";
+import img9 from "../pics/nov/IMG20241121130851.jpg";
+import img10 from "../pics/nov/IMG20241121130609.jpg";
+import best_24_november from "../pics/best_24/Best_2024_1.jpeg";
+import best_24_march from "../pics/best_24/Best_2024_2.jpeg";
+import best_24_july from "../pics/best_24/Best_2024_3.jpg";
+import best_24_feb from "../pics/best_24/Best_2024_4.jpg";
+import best_24_oct from "../pics/best_24/Best_2024_5.jpg";
+import best_24_march_gig from "../pics/best_24/Best_2024_6.jpg";
+import best_24_oct_gig from "../pics/best_24/Best_2024_7.jpeg";
+import best_24_may from "../pics/best_24/Best_2024_8.jpg";
+import best_24_aug from "../pics/best_24/Best_2024_9.jpg";
+import best_24_nov from "../pics/best_24/Best_2024_10.jpg";
+import best_24_sept from "../pics/best_24/Best_2024_11.jpg";
+import best_24_jan from "../pics/best_24/Best_2024_12.jpg";
+import amsterdam from "../pics/summer24/pics_website-24-25/amsterdam.jpg";
+import arradon from "../pics/summer24/pics_website-24-25/arradon.jpg";
+import biarritz from "../pics/summer24/pics_website-24-25/biarritz.jpg";
+import biarritz2 from "../pics/summer24/pics_website-24-25/biarritz2.jpg";
+import bigben from "../pics/summer24/pics_website-24-25/bigben.jpg";
+import drums_normandy from "../pics/summer24/pics_website-24-25/drums_normandy.jpg";
+import la_rochelle from "../pics/summer24/pics_website-24-25/la_rochelle.jpg";
+import laguo_guarda from "../pics/summer24/pics_website-24-25/laguo_di_guarda.jpg";
+import london from "../pics/summer24/pics_website-24-25/london.jpg";
+import naples from "../pics/summer24/pics_website-24-25/naples.jpg";
+import porto_venere from "../pics/summer24/pics_website-24-25/porto_venere.jpg";
+import salerno_simona from "../pics/summer24/pics_website-24-25/salerno_simona.jpg";
+import turenne from "../pics/summer24/pics_website-24-25/turenne.jpg";
+import venezia from "../pics/summer24/pics_website-24-25/venezia.jpg";
+import saclay4 from "../pics/music-saclay/saclay4.jpg";
+import saclay5 from "../pics/music-saclay/saclay5.jpg";
+import saclay8 from "../pics/music-saclay/saclay8.jpg";
+import gre1 from "../pics/gig-gre/gre1.jpg";
+import gre2 from "../pics/gig-gre/gre2.jpg";
+import alltogether from "../pics/pics_2025_saclay/alltogether.jpg";
+import drums_eloi from "../pics/pics_2025_saclay/drums-eloi.jpeg";
+import gros_plan from "../pics/pics_2025_saclay/gros-plan-manue-eloi.jpeg";
+import piano from "../pics/pics_2025_saclay/piano.jpg";
+import public_ from "../pics/pics_2025_saclay/public.jpeg";
+import shrugged from "../pics/pics_2025_saclay/shrugged-together.jpg";
+import malaga from "../pics/malaga/malaga.jpg";
+import malaga2 from "../pics/malaga/malaga2.jpg";
+import malaga3 from "../pics/malaga/malaga3.jpg";
+import malaga4 from "../pics/malaga/malaga4.jpg";
+import malaga5 from "../pics/malaga/malaga5.jpg";
+import church from "../pics/sweden-copenhague/church.jpg";
+import copenhagen from "../pics/sweden-copenhague/copenhagen.jpg";
+import dannyAndI from "../pics/sweden-copenhague/danny-and-i.jpg";
+import demolishedWall from "../pics/sweden-copenhague/demolished-wall.jpg";
+import friendsCopenhagen from "../pics/sweden-copenhague/friends-copenhagen.jpg";
+import guitarHouse from "../pics/sweden-copenhague/guitar-in-front-of-house.jpg";
+import guitarLake from "../pics/sweden-copenhague/guitar-lake.jpg";
+import DarkHouse from "../pics/sweden-copenhague/house_dark.webp";
+import houseFood from "../pics/sweden-copenhague/house_food.webp";
+import houseClara from "../pics/sweden-copenhague/house-with-clara.jpg";
+import Stockholm from "../pics/sweden-copenhague/stockholm.jpg";
+import swedenLand from "../pics/sweden-copenhague/sweden-landscape-1.jpg";
+import windturbine from "../pics/sweden-copenhague/windturbine.jpg";
+
 
 export type ImageType = {
     id: number;
@@ -79,6 +79,8 @@ export enum Folders {
     Sac24 = "Saclay December 24",
     Sum24 = "Summer 24",
     Gig = "Gigs and Concerts",
+    Gig_Saclay_25 = "Gig at Saclay 25",
+    Gig_Saclay_24 = "Gig at Saclay 24",
     Malaga = "Malaga 2019",
     Sweden = "Sweden 2023",
     Denmark = "Denmark 2023",
@@ -203,7 +205,7 @@ export const DatedImages: ImageType[] = [
         img: best_24_march_gig,
         date: "03/2024",
         caption: "A gig I did with my group in my house in Saclay",
-        folder: [Folders.Time],
+        folder: [Folders.Time, Folders.Gig],
         displayOnHome: true,
     },
     {
@@ -388,7 +390,7 @@ export const DatedImages: ImageType[] = [
         img: saclay8,
         date: "03/2024",
         caption: "Gig at Saclay 1",
-        folder: [Folders.Gig],
+        folder: [Folders.Gig, Folders.Gig_Saclay_24],
         displayOnHome: true,
     },
     {
@@ -396,7 +398,7 @@ export const DatedImages: ImageType[] = [
         img: saclay5,
         date: "03/2024",
         caption: "Gig at Saclay 2",
-        folder: [Folders.Gig],
+        folder: [Folders.Gig, Folders.Gig_Saclay_24],
         displayOnHome: true,
     },
     {
@@ -404,7 +406,7 @@ export const DatedImages: ImageType[] = [
         img: saclay4,
         date: "03/2024",
         caption: "Gig at Saclay 3",
-        folder: [Folders.Gig],
+        folder: [Folders.Gig, Folders.Gig_Saclay_24],
         displayOnHome: true,
     },
     {
@@ -427,16 +429,16 @@ export const DatedImages: ImageType[] = [
         id: 44,
         img: alltogether,
         date: "03/2025",
-        caption: "The Verse in Saclay in 2025",
-        folder: [Folders.Gig],
+        caption: "Contour in Saclay in 2025",
+        folder: [Folders.Gig, Folders.Gig_Saclay_25],
         displayOnHome: true,
     },
     {
         id: 45,
         img: drums_eloi,
         date: "03/2025",
-        caption: "Me drumming for The Verse in Saclay in 2025",
-        folder: [Folders.Gig],
+        caption: "Me drumming for Contour in Saclay in 2025",
+        folder: [Folders.Gig, Folders.Gig_Saclay_25],
         displayOnHome: true,
     },
     {
@@ -444,7 +446,7 @@ export const DatedImages: ImageType[] = [
         img: gros_plan,
         date: "03/2025",
         caption: "Playing Telephone",
-        folder: [Folders.Gig],
+        folder: [Folders.Gig, Folders.Gig_Saclay_25],
         displayOnHome: true,
     },
     {
@@ -452,7 +454,7 @@ export const DatedImages: ImageType[] = [
         img: piano,
         date: "03/2025",
         caption: "Other point of view",
-        folder: [Folders.Gig],
+        folder: [Folders.Gig, Folders.Gig_Saclay_25],
         displayOnHome: true,
     },
     {
@@ -460,7 +462,7 @@ export const DatedImages: ImageType[] = [
         img: public_,
         date: "03/2025",
         caption: "The public",
-        folder: [Folders.Gig],
+        folder: [Folders.Gig, Folders.Gig_Saclay_25],
         displayOnHome: true,
     },
     {
@@ -468,7 +470,7 @@ export const DatedImages: ImageType[] = [
         img: shrugged,
         date: "03/2025",
         caption: "Warming up",
-        folder: [Folders.Gig],
+        folder: [Folders.Gig, Folders.Gig_Saclay_25],
         displayOnHome: true,
     },
     {

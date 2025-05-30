@@ -1,158 +1,142 @@
 import { Header } from "../../Single/Header";
 import { useState } from "react";
-import saclay2 from "../../data/music-saclay/saclay2.jpg"
-import saclay4 from "../../data/music-saclay/saclay4.jpg"
-import saclay3 from "../../data/music-saclay/saclay7.jpg"
-import saclay7 from "../../data/music-saclay/saclay8.jpg"
-
-import gre1 from "../../data/gig-gre/gre1.jpg"
-import gre2 from "../../data/gig-gre/gre2.jpg"
-import gre3 from "../../data/gig-gre/gre3.jpg"
-
-import boussay from "../../data/boussay.jpeg"
-
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import 'leaflet/dist/leaflet.css';
+import { Folders, DatedImages } from "../../data/datatype/data_img";
 
-type Locations = "Saclay" | "Grenoble" | "Boussay";
+import { SetLists, Song, Songs } from "../../data/datatype/data_music"
+import { PicsHeader, StandardHeader } from "../../Single/StandardHeader";
+
+export enum Locations {
+    Saclay = "Saclay",
+    Grenoble = "Grenoble",
+    Boussay = "Boussay"
+}
+
+export type BandInfo = {
+    name: string;
+    members: string[];
+    genre: string;
+    link?: string;
+};
+
+export type Gig = {
+    id: number,
+    name: string,
+    location: Locations,
+    date: string,
+    setlist: Song[],
+    picturesFolder?: Folders[],
+    bandInfo: BandInfo,
+}
+
+export const Gigs_List: Gig[] = [
+    {
+        id: 1,
+        name: "Gig at Saclay in 24",
+        location: Locations.Saclay,
+        date: "2024-03",
+        setlist: SetLists.saclay_2024,
+        bandInfo: {
+            name: "Ladies Necessities",
+            members: ["Martial", "Colin", "Loïs", "Eloi", "François"],
+            genre: "Rock",
+        },
+        picturesFolder: [Folders.Gig_Saclay_24],
+
+    },
+    {
+        id: 2,
+        name: "Gig at Saclay in 25",
+        location: Locations.Saclay,
+        date: "2025-03",
+        setlist: SetLists.saclay_2025,
+        bandInfo: {
+            name: "Contour 📼",
+            members: ["Martial", "Emmanuelle", "Anna", "Eloi", "Léonard"],
+            genre: "Rock",
+            link: "https://www.instagram.com/contourkillerparty/",
+        },
+        picturesFolder: [Folders.Gig_Saclay_25],
+    },
+    {
+        id: 2,
+        name: "Gig at Saclay in 25",
+        location: Locations.Saclay,
+        date: "2025-03",
+        setlist: SetLists.saclay_2025,
+        bandInfo: {
+            name: "Contour 📼",
+            members: ["Martial", "Emmanuelle", "Anna", "Eloi", "Léonard"],
+            genre: "Rock",
+            link: "https://www.instagram.com/contourkillerparty/",
+        },
+        picturesFolder: [Folders.Gig_Saclay_25],
+    }
+
+]
 
 export const Gigs = () => {
-    const [selectedGig, setSelectedGig] = useState<Locations>("Saclay"); // Default to "Surf"
-
-    // Function to render content based on selected Gig
-    const renderContent = () => {
-        switch (selectedGig) {
-            case "Saclay":
-                return (
-                    <div className="p-2 mt-4 rounded bg-violet-700 ">
-                        <div className="text-xl font-bold ">Saclay - 2024 </div>
-                        <div className="border-b-2 border-slate-500 rounded mb-2" />
-
-                        This was a gig I organised in my house (with my roomates) in Saclay, 2024. The group was called Ladies Necessities and was formed of:
-                        <div className="font-bold text-center">
-                            Loïs-singer,<br /> Colin-Bass,<br />Martial-Drums/guitar,<br /> Francois-Guitar,<br /> Eloi-Keys/Guitar/Drums.
-                        </div>
-                        The set-list was:
-                        <div className="font-bold text-center">
-                            1 - Muse - I belong to you
-                            <br />
-                            2 - Tom Misch - Disco yes
-                            <br />
-                            3 - RHCP - Dark Necessities
-                            <br />
-                            4 - Sam Fender - Spit of You
-                            <br />
-                            5 - Dire Straits - Lady Writer
-                            <br />
-                            6 - Clara Luciani - Respire Encore
-                            <br />
-                            7 - Skorpions - Still loving you
-                        </div>
-
-                        <div className="flex items-center justify-center my-2">
-                            {/* @ts-ignore */}
-
-                        </div>
-
-                        Here is a couple of pics :
-                        <Carousel className="carousel-container">
-                            <div className="carousel-slide">
-                                <img src={saclay3} alt="Image 3" />
-                            </div>
-                            <div className="carousel-slide">
-                                <img src={saclay2} alt="Image 2" />
-                            </div>
-                            <div className="carousel-slide">
-                                <img src={saclay4} alt="Image 4" />
-                            </div>
-                            <div className="carousel-slide">
-                                <img src={saclay7} alt="Image 7" />
-                            </div>
-                        </Carousel>
-                    </div >
-                );
-
-            case "Grenoble":
-                return (
-                    <div className="p-2 mt-4 rounded bg-green-700 ">
-                        <div className="text-xl font-bold ">Grenoble - 2024⛷️</div>
-                        <div className="border-b-2 border-slate-500 rounded mb-2" />
-
-                        Here are a couple of pictures from a gig in Grenoble 2024.
-                        <div className="flex items-center justify-center my-2">
-                            <div className="font-bold text-center">
-                                Martial-singer/guitar/drums,<br /> Tanguy-Guitar/Drums,<br /> Eloi-Guitar/Drums.
-                            </div>
-                        </div>
-
-                        The set-list was:
-                        <div className="font-bold text-center">
-                            1 - Dire Straits - Money for nothing
-                            <br />
-                            2 - AC/DC - Hells Bells
-                            <br />
-                            3 - Dire Straits - Lady Writer
-                            <br />
-                            4 - Johnny Halliday - Allumer le feu
-                            <br />
-                            5 - ZZ TOP - La Grange
-                        </div>
-                        Here is a couple of pics :
-                        <Carousel className="carousel-container">
-                            <div className="carousel-slide">
-                                <img src={gre2} className="px-2 border-b-2 m-2 items-center" alt="Image" />
-                            </div>
-                            <div className="carousel-slide">
-                                <img src={gre1} className="px-2 border-b-2 m-2" alt="Image" />
-                            </div>
-                            <div className="carousel-slide">
-                                <img src={gre3} className="px-2 border-b-2 m-2" alt="Image" />
-                            </div>
-                        </Carousel >
-                    </div>
-                );
-
-            case "Boussay":
-                return (
-                    <div className="p-2 mt-4 rounded bg-orange-700 ">
-                        <div className="text-xl font-bold ">Boussay 2024</div>
-                        <div className="border-b-2 border-slate-500 rounded mb-2" />
-
-                        Here is my sister and I singing "Bonne idée" from Jean Jacques Goldman to my grandma for her 80 bday:
-                        <div className="flex justify-center">
-                            <img src={boussay} className="px-2 border-b-2 m-2" width="400" alt="Image" />
-                        </div>
-
-                    </div>
-                );
-
-            default:
-                return null;
-        }
-    };
+    const [selectedGig, setSelectedGig] = useState<Gig>(Gigs_List[1]);
 
     return (
         <>
             <div className="flex justify-center mt-2">
-                <div className="w-full sm:w-2/3 md:w-1/2 lg:max-w-2xl xl:max-w-2xl mx-4">
+                <div className="w-full sm:w-2/3 md:max-w-4xl lg:max-w-4xl xl:max-w-4xl mx-4">
                     {/* Music Selection Dropdown */}
-                    <div className="flex justify-center mb-4">
-                        <select
-                            onChange={(e) => setSelectedGig(e.target.value as Locations)}
-                            className="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded shadow focus:outline-none focus:ring-2 focus:ring-violet-600"
-                        >
-                            <option value="">Select a Gig</option>
-                            <option value="Saclay">Saclay 2024</option>
-                            <option value="Grenoble">Grenoble 2024</option>
-                            <option value="Boussay">Boussay 2024</option>
-                        </select>
-                    </div>
+                    <div className="sticky top-32 left-full self-start z-50">
+                        <div className="w-full flex justify-end px-4 mb-4">
+                            <div className="inline-flex rounded-md shadow overflow-hidden border border-gray-300">
+                                <select
+                                    value={selectedGig.id}
+                                    onChange={(e) => {
+                                        const selected = Gigs_List.find(g => g.id === Number(e.target.value));
+                                        if (selected) setSelectedGig(selected);
+                                    }}
+                                >
+                                    {Gigs_List.map((gig) => (
+                                        <option key={gig.id} value={gig.id}>
+                                            {gig.location} {gig.date}
+                                        </option>
+                                    ))}
+                                </select>
 
-                    {renderContent()}
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+
+                        <div className="p-2 px-4 mt-4 rounded bg-violet-800 ">
+                            <div className="text-5xl font-bold">{selectedGig.name} </div>
+                            <div className="text-2xl font-bold mt-8">Groupe: </div>
+                            <div className="text-center font-bold text-3xl">
+                                <a href={selectedGig.bandInfo.link}>
+                                    {selectedGig.bandInfo.name}
+                                </a>
+                            </div>
+                            <div className="text-2xl font-bold">Setlist: </div>
+
+                            <div className="flex flex-wrap justify-evenly p-1">
+                                {selectedGig?.setlist?.map((song, index) => (
+                                    <a className="bg-violet-600 rounded w-fit p-1 font-bold mb-1 mt-1 hover:bg-violet-400" href={song?.url}>{song?.title}</a>
+                                ))}
+                            </div>
+                            <div>
+                                {DatedImages?.filter(
+                                    (image) =>
+                                        selectedGig.picturesFolder?.some(folder => image.folder?.includes(folder))
+                                ).map((img) => (
+                                    <img
+                                        src={img.img}
+                                        className="w-full mt-2"
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
         </>
     );
 };
+

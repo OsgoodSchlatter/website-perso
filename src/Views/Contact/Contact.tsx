@@ -4,7 +4,7 @@ import { GrGithub } from "react-icons/gr";
 import { GrLinkedin } from "react-icons/gr";
 import { FaBookOpen, FaHome, FaUtensilSpoon } from "react-icons/fa";
 import { BiSpreadsheet } from "react-icons/bi";
-import Pdf from "../../CV_EN.pdf";
+import Pdf from "../../CV-2025.pdf";
 import { TfiWrite } from "react-icons/tfi";
 
 const ContactContent = () => {

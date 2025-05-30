@@ -2,7 +2,7 @@ import "katex/dist/katex.min.css";
 import Latex from "react-latex-next";
 import "katex/dist/katex.min.css";
 import { StandardHeader } from "../../Single/StandardHeader";
-import { videos } from "../../data/data_img";
+import { videos } from "../../data/datatype/data_img";
 
 const content =
     <>

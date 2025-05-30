@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { StandardHeader } from '../../Single/StandardHeader';
-import { DatedImages, Folders, ImageType } from '../../data/data_img';
+import { PicsHeader, StandardHeader } from '../../Single/StandardHeader';
+import { DatedImages, Folders, ImageType } from '../../data/datatype/data_img';
 
 // Define the type for the images
 
@@ -101,7 +101,7 @@ const GalleryContent: React.FC = () => {
                                                     <img
                                                         src={image.img}
                                                         alt={`Image ${image.id}`}
-                                                        className="w-full max-w-2xl mt-2 cursor-pointer"
+                                                        className="w-full max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-4xl mt-2 cursor-pointer"
                                                         onClick={() => setSelectedImage(image.img)}
                                                     />
                                                     <div className='text-center'>
@@ -124,7 +124,7 @@ const GalleryContent: React.FC = () => {
 export const Gallery = ({ title, date }: { title: string, date: string }) => {
     return (
         <>
-            <StandardHeader title={title} date={""}
+            <PicsHeader title={title} date={""}
                 content={<GalleryContent />} />
         </>
     );
