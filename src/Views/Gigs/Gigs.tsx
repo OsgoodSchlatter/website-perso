@@ -80,12 +80,12 @@ export const Gigs = () => {
 
     return (
         <>
-            <div className="flex justify-center mt-2">
+            <div className="flex justify-center mt-4">
                 <div className="w-full sm:w-2/3 md:max-w-4xl lg:max-w-4xl xl:max-w-4xl mx-4">
                     {/* Music Selection Dropdown */}
-                    <div className="sticky top-32 left-full self-start z-50">
+                    <div className="sticky top-24 left-full self-start z-50">
                         <div className="w-full flex justify-end px-4 mb-4">
-                            <div className="inline-flex rounded-md shadow overflow-hidden border border-gray-300">
+                            <div className="inline-flex rounded-md shadow overflow-hidden border border-gray-300 p-2 bg-black">
                                 <select
                                     value={selectedGig.id}
                                     onChange={(e) => {
