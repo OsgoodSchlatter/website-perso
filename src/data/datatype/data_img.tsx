@@ -61,6 +61,10 @@ import houseClara from "../pics/sweden-copenhague/house-with-clara.jpg";
 import Stockholm from "../pics/sweden-copenhague/stockholm.jpg";
 import swedenLand from "../pics/sweden-copenhague/sweden-landscape-1.jpg";
 import windturbine from "../pics/sweden-copenhague/windturbine.jpg";
+import nantes1 from "../pics/nantes/nantes-1.jpg"
+import nantes2 from "../pics/nantes/nantes-2.jpg"
+import nantes3 from "../pics/nantes/nantes-3.jpg"
+import nantes4 from "../pics/nantes/nantes-4.jpg"
 
 
 export type ImageType = {
@@ -81,6 +85,7 @@ export enum Folders {
     Gig = "Gigs and Concerts",
     Gig_Saclay_25 = "Gig at Saclay 25",
     Gig_Saclay_24 = "Gig at Saclay 24",
+    Gig_Nantes_25 = "Gig at Nantes 25",
     Malaga = "Malaga 2019",
     Sweden = "Sweden 2023",
     Denmark = "Denmark 2023",
@@ -615,6 +620,38 @@ export const DatedImages: ImageType[] = [
         date: "08/2023",
         caption: "Windmill in Copenhagen",
         folder: [Folders.Denmark],
+        displayOnHome: false,
+    },
+    {
+        id: 67,
+        img: nantes1,
+        date: "05/2025",
+        caption: "Contour à Nantes",
+        folder: [Folders.Gig_Nantes_25],
+        displayOnHome: false,
+    },
+    {
+        id: 68,
+        img: nantes2,
+        date: "05/2025",
+        caption: "Contour à Nantes",
+        folder: [Folders.Gig_Nantes_25],
+        displayOnHome: false,
+    },
+    {
+        id: 69,
+        img: nantes3,
+        date: "05/2025",
+        caption: "Contour à Nantes",
+        folder: [Folders.Gig_Nantes_25],
+        displayOnHome: false,
+    },
+    {
+        id: 70,
+        img: nantes4,
+        date: "05/2025",
+        caption: "Contour à Nantes",
+        folder: [Folders.Gig_Nantes_25],
         displayOnHome: false,
     },
 

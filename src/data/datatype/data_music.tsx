@@ -119,6 +119,18 @@ export const Songs: Song[] = [
         title: "Message in a Bottle",
         author: "The Police",
         url: "https://youtu.be/MbXWrmQW-OE?si=cGGsIA2PhecLZAQ-"
+    },
+    {
+        id: 20,
+        title: "Un autre monde",
+        author: "Téléphone",
+        url: "https://www.youtube.com/watch?v=NrQnuMnL2ac"
+    },
+    {
+        id: 21,
+        title: "Modern Love",
+        author: "Zaho de Sagazan",
+        url: "https://www.youtube.com/watch?v=nNRN74-HoU4"
     }
 ]
 
@@ -147,5 +159,19 @@ export const SetLists = {
         Songs[18],
 
     ],
-
+    nantes_2025: [
+        Songs[8],
+        Songs[9],
+        Songs[10],
+        Songs[11],
+        Songs[12],
+        Songs[13],
+        Songs[14],
+        Songs[15],
+        Songs[16],
+        Songs[17],
+        Songs[18],
+        Songs[19],
+        Songs[20]
+    ],
 };

@@ -1,5 +1,5 @@
 import { Header } from "../../Single/Header";
-import { useState } from "react";
+import React, { useState } from "react";
 import 'leaflet/dist/leaflet.css';
 import { Folders, DatedImages } from "../../data/datatype/data_img";
 
@@ -9,7 +9,8 @@ import { PicsHeader, StandardHeader } from "../../Single/StandardHeader";
 export enum Locations {
     Saclay = "Saclay",
     Grenoble = "Grenoble",
-    Boussay = "Boussay"
+    Boussay = "Boussay",
+    Nantes = "Nantes"
 }
 
 export type BandInfo = {
@@ -27,12 +28,13 @@ export type Gig = {
     setlist: Song[],
     picturesFolder?: Folders[],
     bandInfo: BandInfo,
+    colorInfo?: string[]
 }
 
 export const Gigs_List: Gig[] = [
     {
         id: 1,
-        name: "Gig at Saclay in 24",
+        name: "Saclay, 24",
         location: Locations.Saclay,
         date: "2024-03",
         setlist: SetLists.saclay_2024,
@@ -42,11 +44,11 @@ export const Gigs_List: Gig[] = [
             genre: "Rock",
         },
         picturesFolder: [Folders.Gig_Saclay_24],
-
+        colorInfo: ["#a924c1"]
     },
     {
         id: 2,
-        name: "Gig at Saclay in 25",
+        name: "Saclay, 25",
         location: Locations.Saclay,
         date: "2025-03",
         setlist: SetLists.saclay_2025,
@@ -57,20 +59,22 @@ export const Gigs_List: Gig[] = [
             link: "https://www.instagram.com/contourkillerparty/",
         },
         picturesFolder: [Folders.Gig_Saclay_25],
+        colorInfo: ["#a924c1"]
     },
     {
-        id: 2,
-        name: "Gig at Saclay in 25",
-        location: Locations.Saclay,
-        date: "2025-03",
-        setlist: SetLists.saclay_2025,
+        id: 3,
+        name: "Nantes, 25",
+        location: Locations.Nantes,
+        date: "2025-05",
+        setlist: SetLists.nantes_2025,
         bandInfo: {
             name: "Contour 📼",
             members: ["Martial", "Emmanuelle", "Anna", "Eloi", "Léonard"],
             genre: "Rock",
             link: "https://www.instagram.com/contourkillerparty/",
         },
-        picturesFolder: [Folders.Gig_Saclay_25],
+        picturesFolder: [Folders.Gig_Nantes_25],
+        colorInfo: ['#e86f1b']
     }
 
 ]
@@ -105,19 +109,18 @@ export const Gigs = () => {
                     </div>
                     <div>
 
-                        <div className="p-2 px-4 mt-4 rounded bg-violet-800 ">
-                            <div className="text-5xl font-bold">{selectedGig.name} </div>
-                            <div className="text-2xl font-bold mt-8">Groupe: </div>
-                            <div className="text-center font-bold text-3xl">
-                                <a href={selectedGig.bandInfo.link}>
+                        <div className="p-2 px-4 mt-4 rounded bg-[var(--bg)]" style={{ '--bg': selectedGig.colorInfo } as React.CSSProperties}>
+                            <div>
+                                <div className="text-5xl font-bold">
                                     {selectedGig.bandInfo.name}
+                                </div>
+                                <a className="italic" href={selectedGig.bandInfo.link}>
+                                    {selectedGig.name}
                                 </a>
                             </div>
-                            <div className="text-2xl font-bold">Setlist: </div>
-
                             <div className="flex flex-wrap justify-evenly p-1">
                                 {selectedGig?.setlist?.map((song, index) => (
-                                    <a className="bg-violet-600 rounded w-fit p-1 font-bold mb-1 mt-1 hover:bg-violet-400" href={song?.url}>{song?.title}</a>
+                                    <a className="rounded w-fit p-1 font-medium hover:font-extrabold mb-1 mt-1" href={song?.url}>{song?.title}</a>
                                 ))}
                             </div>
                             <div>
