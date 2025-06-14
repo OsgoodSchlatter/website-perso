@@ -25,6 +25,7 @@ import { About } from "../About/About";
 import { Gallery } from "../Gallery/Gallery";
 import { Italian } from "../Languages/Italian";
 import Video_Creation from "../Music-and-video/Video";
+import GuitarPaint from "../Music-and-video/PaintGuitar";
 
 export type BlogPostType = {
     id: number;
@@ -121,6 +122,15 @@ export const blogPostsArray: BlogPostType[] = [
         category: BlogCategory.Music,
         route: BlogRoute.Music,
         content: Video_Creation,
+    },
+    {
+        id: 4,
+        date: "2025",
+        title: "Painting my old guitar",
+        content_name: "Painting my old guitar",
+        category: BlogCategory.Music,
+        route: BlogRoute.Music,
+        content: GuitarPaint,
     },
 
     {
