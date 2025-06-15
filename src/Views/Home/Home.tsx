@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ListOfPostsHeader } from "../../Single/ListOfPostsHeader";
 import { BlogCategory, blogPostsArray, BlogPostType } from "./Data";
 import "./Home.css";
-import wallpaper from "../../data/pics/wallpaper/wp5.jpg"
+import bg from "../../data/pics/wallpaper/wp4.jpg"
 
 
 // todo, do a struct that contains each article in one subdomain
@@ -32,9 +32,10 @@ export const Home = () => {
     setValue(category);
   };
   return (
-    <div className="flex justify-center" style={{
-      backgroundImage: `url(${wallpaper})`,
+    <div className="flex justify-center " style={{
+      backgroundImage: `url(${bg})`,
       backgroundSize: 'cover',
+      backgroundPosition: 'center',
       minHeight: '100vh',
     }}>
       <div className="md:w-1/2 w-3/4 items-center">

@@ -14,6 +14,9 @@ const comment = <div>
 
 const content = <>
     <div>
+        <img src={og} alt="" />
+    </div>
+    <div>
         <div className="text-5xl font-bold mt-4">
             Step 1
         </div>
@@ -49,24 +52,6 @@ const content = <>
         </div>
         <div className="flex justify-center p-2">
             <img src={final} className="w-2/3" />
-        </div>
-        <div className="text-5xl font-bold mt-8">
-            Before / After
-        </div>
-        <div className="flex items-center justify-center">
-            <div className="p-2">
-                <img src={og} className="h-70" />
-                <div className="text-3xl text-center">
-                    before
-                </div>
-            </div>
-            <div className="font-bold text-5xl">{"==\>"}</div>
-            <div className="p-2">
-                <img src={final} className="h-80" />
-                <div className="text-3xl text-center">
-                    after
-                </div>
-            </div>
         </div>
         <div className="text-2xl">
             So happy with the result!
