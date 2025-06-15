@@ -65,6 +65,15 @@ import nantes1 from "../pics/nantes/nantes-1.jpg"
 import nantes2 from "../pics/nantes/nantes-2.jpg"
 import nantes3 from "../pics/nantes/nantes-3.jpg"
 import nantes4 from "../pics/nantes/nantes-4.jpg"
+import us1 from "../pics/usa/us1.jpg"
+import us2 from "../pics/usa/us2.jpg"
+import us3 from "../pics/usa/us3.jpg"
+import us4 from "../pics/usa/us4.jpg"
+import us5 from "../pics/usa/us5.jpg"
+import us6 from "../pics/usa/us6.jpg"
+import us7 from "../pics/usa/us7.jpg"
+
+
 
 
 export type ImageType = {
@@ -89,7 +98,8 @@ export enum Folders {
     Malaga = "Malaga 2019",
     Sweden = "Sweden 2023",
     Denmark = "Denmark 2023",
-    UppSala = "Uppsala 2023"
+    UppSala = "Uppsala 2023",
+    USA_18 = "West coast of the USA in 2018",
 }
 
 
@@ -652,6 +662,62 @@ export const DatedImages: ImageType[] = [
         date: "05/2025",
         caption: "Contour à Nantes",
         folder: [Folders.Gig_Nantes_25],
+        displayOnHome: false,
+    },
+    {
+        id: 71,
+        img: us1,
+        date: "08/2018",
+        caption: "Dead Horse ",
+        folder: [Folders.USA_18],
+        displayOnHome: false,
+    },
+    {
+        id: 72,
+        img: us2,
+        date: "08/2018",
+        caption: "USA",
+        folder: [Folders.USA_18],
+        displayOnHome: false,
+    },
+    {
+        id: 73,
+        img: us3,
+        date: "08/2018",
+        caption: "USA",
+        folder: [Folders.USA_18],
+        displayOnHome: false,
+    },
+    {
+        id: 74,
+        img: us4,
+        date: "08/2018",
+        caption: "Monument Valley",
+        folder: [Folders.USA_18],
+        displayOnHome: true,
+    },
+    {
+        id: 75,
+        img: us5,
+        date: "08/2018",
+        caption: "USA",
+        folder: [Folders.USA_18],
+        displayOnHome: false,
+    },
+    {
+        id: 76,
+        img: us6,
+        date: "08/2018",
+        caption: "USA",
+        folder: [Folders.USA_18],
+        displayOnHome: false,
+    },
+    {
+        id: 77,
+        img: us7,
+        date: "08/2018",
+        caption: "USA",
+        folder: [Folders.USA_18],
         displayOnHome: false,
     },
 

@@ -17,7 +17,7 @@ const getMonthName = (monthNumber: string) => {
 const generateDateList = (): string[] => {
     const dates: string[] = [];
     const startYear = 2025;
-    const endYear = 2020;
+    const endYear = 0;
 
     for (let year = startYear; year >= endYear; year--) {
         for (let month = 11; month >= 0; month--) {

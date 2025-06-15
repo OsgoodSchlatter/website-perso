@@ -96,6 +96,7 @@ export const blogPosts: TravelEntry[] = [
     GPS: [37.7749, -122.4194], // Example coordinates for USA (San Francisco)
     C02: 3000,
     content: USA1,
+    picturesFolder: [Folders.USA_18]
   },
   {
     id: 6,
@@ -438,6 +439,7 @@ export const blogPosts: TravelEntry[] = [
     transport: "Plane",
     C02: 3000,
     GPS: [34.052234, -118.243685],
+    picturesFolder: [Folders.USA_18]
   },
   {
     id: 40,
@@ -447,6 +449,7 @@ export const blogPosts: TravelEntry[] = [
     transport: "Plane",
     C02: 3000,
     GPS: [36.169941, -115.13983],
+    picturesFolder: [Folders.USA_18]
   },
   {
     id: 41,
@@ -706,7 +709,7 @@ export const TripsContent = () => {
               worldCopyJump={true}
               scrollWheelZoom={false}
               style={{
-                width: isMobile ? "350px" : "625px",
+                width: isMobile ? "350px" : "700px",
                 height: isMobile ? "300px" : "500px",
                 zIndex: 1,
               }}

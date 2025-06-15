@@ -263,12 +263,10 @@ const SportContent = () => {
   // Function to render content based on selected sport
   const renderSportContent = () => {
     return (
-      <div className=" rounded  ">
-        <div className="text-xl font-bold ">Surf 🏄, Ski ⛷️ and Paragliding 🪂</div>
-        Here are a couple of spots where I have had the opportunity to practise some of my favorite sports (🟢: ski, 🟠: paragliding, 🔵: surf).
-        <div className="flex items-center justify-center my-2">
+      <>
+        <div className="flex items-center justify-center">
           {/* @ts-ignore */}
-          <MapContainer center={[40.65, -20.7608]} worldCopyJump={true} zoom={1} scrollWheelZoom={false} style={{ width: `600px`, height: `400px`, zIndex: 1 }}>
+          <MapContainer center={[40.65, -20.7608]} worldCopyJump={true} zoom={1} scrollWheelZoom={false} style={{ width: `700px`, height: `400px`, zIndex: 1 }}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             {SportLocations.map((value) => (
               <>
@@ -288,23 +286,26 @@ const SportContent = () => {
             <ResizeMap />
           </MapContainer>
         </div>
-        {selectedPost && (
-          <div className="mt-4 p-4 border rounded bg-gray-100">
-            <h2 className="text-xl font-bold text-black">{selectedPost.title}</h2>
-            <p className="text-black"><strong >Date:</strong> {selectedPost.date}</p>
-            <p className="text-black"><strong>Location:</strong> {selectedPost.locations?.join(", ")}</p>
-            <p className="text-black"><strong >Photos:</strong> {PhotoLocationEntry.filter(post =>
-              selectedPost.locations?.some(location => location === post.location)).map(img => (
-                <>
-                  <img
-                    src={img.img_source}
-                    className="w-full max-w-2xl mt-2"
-                  />
-                </>
-              ))}</p>
-          </div>
-        )}
-      </div>
+        (🟢: ski, 🟠: paragliding, 🔵: surf)
+        {
+          selectedPost && (
+            <div className="mt-4 p-4 border rounded bg-gray-100">
+              <h2 className="text-xl font-bold text-black">{selectedPost.title}</h2>
+              <p className="text-black"><strong >Date:</strong> {selectedPost.date}</p>
+              <p className="text-black"><strong>Location:</strong> {selectedPost.locations?.join(", ")}</p>
+              <p className="text-black"><strong >Photos:</strong> {PhotoLocationEntry.filter(post =>
+                selectedPost.locations?.some(location => location === post.location)).map(img => (
+                  <>
+                    <img
+                      src={img.img_source}
+                      className="w-full max-w-2xl mt-2"
+                    />
+                  </>
+                ))}</p>
+            </div>
+          )
+        }
+      </>
     );
   };
 

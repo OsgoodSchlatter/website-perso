@@ -72,6 +72,7 @@ export const Home = () => {
             Last updated
           </div>
         </div>
+        <div className="h-px bg-slate-300 w-full" />
         <ListOfPostsHeader blogPosts={sortedPosts} />
         <div className="fixed bottom-4 right-4 text-gray-500 text-sm">
           made with love by Osgood and chatgpt
