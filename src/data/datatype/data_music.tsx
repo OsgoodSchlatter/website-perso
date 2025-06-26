@@ -174,4 +174,19 @@ export const SetLists = {
         Songs[19],
         Songs[20]
     ],
+    paris_2025: [
+        Songs[8],
+        Songs[9],
+        Songs[10],
+        Songs[11],
+        Songs[12],
+        Songs[13],
+        Songs[14],
+        Songs[15],
+        Songs[16],
+        Songs[17],
+        Songs[18],
+        Songs[19],
+        Songs[20]
+    ],
 };

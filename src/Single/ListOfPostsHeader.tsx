@@ -14,7 +14,7 @@ export const ListOfPostsHeader = ({
     return (
         <>
 
-            <div className="grid grid-rows-4 gap-1 w-full">
+            <div className="grid grid-rows-4 gap-1 w-full text-white-400">
                 {Object.keys(blogPosts)
                     .filter((postID) => !catToExclude.includes(
                         blogPosts[postID as keyof typeof blogPosts].category)

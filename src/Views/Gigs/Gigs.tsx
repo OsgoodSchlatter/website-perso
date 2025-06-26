@@ -10,7 +10,8 @@ export enum Locations {
     Saclay = "Saclay",
     Grenoble = "Grenoble",
     Boussay = "Boussay",
-    Nantes = "Nantes"
+    Nantes = "Nantes",
+    Paris = "Paris"
 }
 
 export type BandInfo = {
@@ -75,7 +76,23 @@ export const Gigs_List: Gig[] = [
         },
         picturesFolder: [Folders.Gig_Nantes_25],
         colorInfo: ['#e86f1b']
+    },
+    {
+        id: 4,
+        name: "Paris, 25",
+        location: Locations.Paris,
+        date: "2025-05",
+        setlist: SetLists.paris_2025,
+        bandInfo: {
+            name: "Contour 📼",
+            members: ["Martial", "Emmanuelle", "Anna", "Eloi", "Léonard"],
+            genre: "Rock",
+            link: "https://www.instagram.com/contourkillerparty/",
+        },
+        picturesFolder: [Folders.Gig_Fete_de_la_Musique],
+        colorInfo: ['#FFFFF0']
     }
+
 
 ]
 
@@ -111,16 +128,17 @@ export const Gigs = () => {
 
                         <div className="p-2 px-4 mt-4 rounded bg-[var(--bg)]" style={{ '--bg': selectedGig.colorInfo } as React.CSSProperties}>
                             <div>
-                                <div className="text-5xl font-bold">
+                                <div className={`text-5xl font-bold ${selectedGig.id === 4 ? "text-black" : ""}`}>
                                     {selectedGig.bandInfo.name}
                                 </div>
-                                <a className="italic" href={selectedGig.bandInfo.link}>
+                                <a className={`italic ${selectedGig.id === 4 ? "text-black" : ""}`} href={selectedGig.bandInfo.link}>
                                     {selectedGig.name}
                                 </a>
                             </div>
                             <div className="flex flex-wrap justify-evenly p-1">
                                 {selectedGig?.setlist?.map((song, index) => (
-                                    <a className="rounded w-fit p-1 font-medium hover:font-extrabold mb-1 mt-1" href={song?.url}>{song?.title}</a>
+                                    <a className={`rounded w-fit p-1 font-medium hover:font-extrabold mb-1 mt-1 ${selectedGig.id === 4 ? "text-black" : ""}`}
+                                        href={song?.url}>{song?.title}</a>
                                 ))}
                             </div>
                             <div>
@@ -138,7 +156,6 @@ export const Gigs = () => {
                     </div>
                 </div>
             </div>
-
         </>
     );
 };

@@ -72,9 +72,8 @@ import us4 from "../pics/usa/us4.jpg"
 import us5 from "../pics/usa/us5.jpg"
 import us6 from "../pics/usa/us6.jpg"
 import us7 from "../pics/usa/us7.jpg"
-
-
-
+import fete1dos from "../pics/fete-de-la-musique/feteDos.jpg"
+import fete2front from "../pics/fete-de-la-musique/fete-front.jpg"
 
 export type ImageType = {
     id: number;
@@ -92,6 +91,7 @@ export enum Folders {
     Sac24 = "Saclay December 24",
     Sum24 = "Summer 24",
     Gig = "Gigs and Concerts",
+    Gig_Fete_de_la_Musique = "Fête de la musique à paris en 2025",
     Gig_Saclay_25 = "Gig at Saclay 25",
     Gig_Saclay_24 = "Gig at Saclay 24",
     Gig_Nantes_25 = "Gig at Nantes 25",
@@ -470,7 +470,7 @@ export const DatedImages: ImageType[] = [
         date: "03/2025",
         caption: "Other point of view",
         folder: [Folders.Gig, Folders.Gig_Saclay_25],
-        displayOnHome: true,
+        displayOnHome: false,
     },
     {
         id: 48,
@@ -718,6 +718,22 @@ export const DatedImages: ImageType[] = [
         date: "08/2018",
         caption: "USA",
         folder: [Folders.USA_18],
+        displayOnHome: false,
+    },
+    {
+        id: 78,
+        img: fete1dos,
+        date: "06/2025",
+        caption: "Fête de la musique à Vavin",
+        folder: [Folders.Gig, Folders.Gig_Fete_de_la_Musique],
+        displayOnHome: true,
+    },
+    {
+        id: 79,
+        img: fete2front,
+        date: "06/2025",
+        caption: "Fête de la musique à Vavin",
+        folder: [Folders.Gig],
         displayOnHome: false,
     },
 

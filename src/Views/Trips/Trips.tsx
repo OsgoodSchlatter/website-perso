@@ -861,8 +861,8 @@ const intro = <div></div>;
 export const Trips = () => {
   return (
     <StandardHeader
-      title={"Destinations list"}
-      date={"2024"}
+      title={" "}
+      date={""}
       comment={intro}
       content={<TripsContent />}
     />

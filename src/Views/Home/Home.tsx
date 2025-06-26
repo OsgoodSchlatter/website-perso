@@ -38,7 +38,7 @@ export const Home = () => {
       backgroundPosition: 'center',
       minHeight: '100vh',
     }}>
-      <div className="md:w-1/2 w-3/4 items-center">
+      <div className="md:w-1/2 w-3/4 items-center mb-2">
         <div className="flex flex-wrap justify-evenly mt-2 font-bold px-2 bg-slate-500 rounded-md">
           {Array.from(Pages.entries())
             .map(([key, value]) => (
