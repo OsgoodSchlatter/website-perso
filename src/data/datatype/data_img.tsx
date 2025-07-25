@@ -740,7 +740,7 @@ export const DatedImages: ImageType[] = [
     {
         id: 80,
         img: contour_les_disquaires,
-        date: "07/25",
+        date: "07/2025",
         caption: "our post for our gig at Les Disquaires, in Paris",
         folder: [Folders.Gig],
         displayOnHome: true,
