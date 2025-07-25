@@ -74,6 +74,7 @@ import us6 from "../pics/usa/us6.jpg"
 import us7 from "../pics/usa/us7.jpg"
 import fete1dos from "../pics/fete-de-la-musique/feteDos.jpg"
 import fete2front from "../pics/fete-de-la-musique/fete-front.jpg"
+import contour_les_disquaires from "../pics/contour.jpeg"
 
 export type ImageType = {
     id: number;
@@ -736,5 +737,13 @@ export const DatedImages: ImageType[] = [
         folder: [Folders.Gig],
         displayOnHome: false,
     },
+    {
+        id: 80,
+        img: contour_les_disquaires,
+        date: "07/25",
+        caption: "our post for our gig at Les Disquaires, in Paris",
+        folder: [Folders.Gig],
+        displayOnHome: true,
+    }
 
 ];
