@@ -66,7 +66,7 @@ const LineWithCurvedLine = () => {
 
 const SchroEq = () => {
     return (
-        <>
+        <div className="mb-4">
             <div className="flex font-bold text-xl">
                 <div className="font-bold text-xl underline">Hamiltonian </div>
                 <div className="px-2">
@@ -140,7 +140,7 @@ const SchroEq = () => {
                 After integrating, we find <Latex>{"$\\frac{m\\omega}{2\\hbar}x^2 =  ln(\\psi_0(x)) + K$"}</Latex>.
                 Finally, we have: <div className="border-solid border-2 border-sky-500 w-fit text-xl"><Latex>{"$Ae^{-\\frac{m\\omega}{2\\hbar}x^2} =  \\psi_0(x)$"}</Latex> </div>Which is of gaussian shape
             </div>
-        </>
+        </div>
     );
 };
 

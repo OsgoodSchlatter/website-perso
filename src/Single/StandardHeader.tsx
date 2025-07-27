@@ -3,7 +3,7 @@ export const StandardHeader = ({ title, date, comment, content }: { title: strin
         <>
             <div className="md:flex md:justify-center w-full items-center">
                 <div className="px-2 md:w-1/2 flex justify-between items-end mt-4">
-                    <div className="md:text-4xl text-3xl font-bold"> {title} </div>
+                    <div className="md:text-4xl text-3xl font-bold italic"> {title} </div>
                     <div className="text-xl font-bold"> {date} </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@ export const PicsHeader = ({
             {/* Title + Date */}
             <div className="md:flex md:justify-center w-full items-center">
                 <div className="px-2 md:w-2/3 flex justify-between items-end mt-4">
-                    <div className="md:text-4xl text-3xl font-bold">{title}</div>
+                    <div className="md:text-4xl text-3xl font-bold italic">{title}</div>
                     <div className="text-xl font-bold">{date}</div>
                 </div>
             </div>

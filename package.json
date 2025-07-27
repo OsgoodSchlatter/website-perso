@@ -60,7 +60,7 @@
     "eject": "react-scripts eject",
     "update-dates": "yarn ts-node updateLastModifiedDates.ts",
     "build": "yarn update-dates && react-scripts build",
-    "watch-dates": "nodemon --watch src/Views/* --exec 'yarn ts-node updateLastModifiedDates.ts'"
+    "watch-dates": "nodemon --watch src/Views --ext ts,tsx --exec yarn ts-node updateLastModifiedDates.ts"
   },
   "eslintConfig": {
     "extends": [

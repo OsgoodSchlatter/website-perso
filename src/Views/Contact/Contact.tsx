@@ -16,7 +16,7 @@ const ContactContent = () => {
             href={"https://www.linkedin.com/in/eloi-besnard-489a69170/"}
           >
             <div className="flex p-1 justify-between">
-              <span className="px-2 mt-1 font-bold">LinkedIn</span>{" "}
+              <span className="px-2 mt-1 font-bold text-2xl">LinkedIn</span>{" "}
               <GrLinkedin size={30} />
             </div>
           </a>
@@ -24,7 +24,7 @@ const ContactContent = () => {
         <div className="hover:bg-slate-600 rounded-lg">
           <a href={"https://github.com/OsgoodSchlatter"}>
             <div className="flex p-1 justify-between">
-              <span className="px-2 mt-1 font-bold">GitHub</span>{" "}
+              <span className="px-2 mt-1 font-bold text-2xl">GitHub</span>{" "}
               <GrGithub size={30} />
             </div>
           </a>
@@ -33,7 +33,7 @@ const ContactContent = () => {
         <div className=" hover:bg-slate-600 rounded-lg">
           <Link to="/publi_talks/1">
             <div className="flex p-1 justify-between">
-              <span className="px-2 mt-1 font-bold">Publications</span>{" "}
+              <span className="px-2 mt-1 font-bold text-2xl">Publications</span>{" "}
               <FaBookOpen size={30} />
             </div>
           </Link>
@@ -42,7 +42,7 @@ const ContactContent = () => {
           {" "}
           <a href={Pdf} target="_blank">
             <div className="flex p-1 justify-between">
-              <span className="px-2 mt-1 font-bold">Resume</span>{" "}
+              <span className="px-2 mt-1 font-bold text-2xl">Resume</span>{" "}
               <BiSpreadsheet size={30} />
             </div>
           </a>

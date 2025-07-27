@@ -6,17 +6,12 @@ const AboutContent = () => {
         <>
             <div>
 
-                <div className="flex justify-between items-center">
-
-                    <div className="text-3xl font-bold w-2/3">
-                        Hi, I am Eloi.
-                    </div>
-                    <div className="mb-4 flex justify-center items-center w-1/3">
-                        <div className="text-center">
-                            <img src={img1} className="rounded mx-auto w-3/4" />
-                            <p>A picture of me in Salerno, Italy (2024)</p>
-                        </div>
-                    </div>
+                <div className="text-center">
+                    <img src={img1} className=" w-full max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-4xl rounded mx-auto w-3/4" />
+                    <p>A picture of me in Salerno, Italy (2024)</p>
+                </div>
+                <div className="text-3xl font-bold w-2/3 mt-4">
+                    Hi, I am Eloi.
                 </div>
                 <div className="text-lg mb-4">
                     I am a French citizen born in 2000 in France.
