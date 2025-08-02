@@ -3,7 +3,8 @@ import img2 from "../pics/nov/IMG20241101130541.jpg";
 import img3 from "../pics/2023_dec/xmas_2023.jpg";
 import img4 from "../pics/2024_jan/1.jpg";
 import img5 from "../pics/2024_jan/2.jpg";
-import img6 from "../pics/2024_jan/3.jpg"; import img7 from "../pics/nov/IMG20241121131404.jpg";
+import img6 from "../pics/2024_jan/3.jpg";
+import img7 from "../pics/nov/IMG20241121131404.jpg";
 import img9 from "../pics/nov/IMG20241121130851.jpg";
 import img10 from "../pics/nov/IMG20241121130609.jpg";
 import best_24_november from "../pics/best_24/Best_2024_1.jpeg";
@@ -61,20 +62,28 @@ import houseClara from "../pics/sweden-copenhague/house-with-clara.jpg";
 import Stockholm from "../pics/sweden-copenhague/stockholm.jpg";
 import swedenLand from "../pics/sweden-copenhague/sweden-landscape-1.jpg";
 import windturbine from "../pics/sweden-copenhague/windturbine.jpg";
-import nantes1 from "../pics/nantes/nantes-1.jpg"
-import nantes2 from "../pics/nantes/nantes-2.jpg"
-import nantes3 from "../pics/nantes/nantes-3.jpg"
-import nantes4 from "../pics/nantes/nantes-4.jpg"
-import us1 from "../pics/usa/us1.jpg"
-import us2 from "../pics/usa/us2.jpg"
-import us3 from "../pics/usa/us3.jpg"
-import us4 from "../pics/usa/us4.jpg"
-import us5 from "../pics/usa/us5.jpg"
-import us6 from "../pics/usa/us6.jpg"
-import us7 from "../pics/usa/us7.jpg"
-import fete1dos from "../pics/fete-de-la-musique/feteDos.jpg"
-import fete2front from "../pics/fete-de-la-musique/fete-front.jpg"
-import contour_les_disquaires from "../pics/contour.jpeg"
+import nantes1 from "../pics/nantes/nantes-1.jpg";
+import nantes2 from "../pics/nantes/nantes-2.jpg";
+import nantes3 from "../pics/nantes/nantes-3.jpg";
+import nantes4 from "../pics/nantes/nantes-4.jpg";
+import us1 from "../pics/usa/us1.jpg";
+import us2 from "../pics/usa/us2.jpg";
+import us3 from "../pics/usa/us3.jpg";
+import us4 from "../pics/usa/us4.jpg";
+import us5 from "../pics/usa/us5.jpg";
+import us6 from "../pics/usa/us6.jpg";
+import us7 from "../pics/usa/us7.jpg";
+import fete1dos from "../pics/fete-de-la-musique/feteDos.jpg";
+import fete2front from "../pics/fete-de-la-musique/fete-front.jpg";
+import contour_les_disquaires from "../pics/contour.jpeg";
+import les_disq from "../pics/pics-nice-disquaires/les-disq.jpg";
+import les_disquaires_warmingup from "../pics/pics-nice-disquaires/les-disquaires-warmingup.jpg";
+import les_disq_2 from "../pics/pics-nice-disquaires/les-dsiq-2.jpg";
+import nice_baignade from "../pics/pics-nice-disquaires/nice-baignade.jpg";
+import nice_martial_eloi from "../pics/pics-nice-disquaires/nice-martial-eloi.jpg";
+import plongeon from "../pics/pics-nice-disquaires/nice-plongeon.jpg";
+import plage from "../pics/pics-nice-disquaires/plage.jpg";
+import resto_contour from "../pics/pics-nice-disquaires/resto-contour.jpg";
 
 export type ImageType = {
     id: number;
@@ -101,20 +110,74 @@ export enum Folders {
     Denmark = "Denmark 2023",
     UppSala = "Uppsala 2023",
     USA_18 = "West coast of the USA in 2018",
+    Nice_25 = "Nice, 2025",
 }
 
-
 export const videos = [
-    { id: "94dJKTOfHKg", date: "2025", title: "Southern Italy Blues", comment: "This video is from my trip to Italy for 2025's new year's eve. I went to Salerno and Napoli. Sound on! 🔊" },
-    { id: "5VS3EUYDpAY", date: "2025", title: "Hike in Cantal", comment: "A video I shot from a hike I did wih friends in Cantal region. Sound on! 🔊" },
-    { id: "Nw0rUunmBdI", date: "2025", title: "Wide Bliss", comment: "A song I composed on the piano !" },
-    { id: "vPcW3HeGJmA", date: "2025", title: "Late Nite Blues", comment: "Some chord progression I stole from Mercy Mercy Me (the ecology) by Marvin Gaye " },
-    { id: "vsF1SeE4L5o", date: "2024", title: "Message in a Bottle ", comment: "A guitar cover that I did in Brive La Gaillarde on the song Message in a Bottle from the Police" },
-    { id: "mIwkXvxOwhw", date: "2023", title: "Viva la Vida Piano", comment: "A piano cover of Viva la Vida from Coldplay" },
-    { id: "GPMvlTYbns0", date: "2023", title: "Every breath you take", comment: "A piano cover of every breath you take from the Police " },
-    { id: "ZFbCH9DfzuU", date: "2023", title: "Lost in yesterday", comment: "A cover with my friend Martial from this song by Tame Impala" },
-    { id: "aCSORtpwLtA", date: "2024", title: "H2 generator", comment: "a H2 generator I created" },
-    { id: "YBcWSyBs4Ro", date: "2024", title: " Igniting the H2 generator ", comment: "Igniting the H2 generated" }
+    {
+        id: "94dJKTOfHKg",
+        date: "2025",
+        title: "Southern Italy Blues",
+        comment:
+            "This video is from my trip to Italy for 2025's new year's eve. I went to Salerno and Napoli. Sound on! 🔊",
+    },
+    {
+        id: "5VS3EUYDpAY",
+        date: "2025",
+        title: "Hike in Cantal",
+        comment:
+            "A video I shot from a hike I did wih friends in Cantal region. Sound on! 🔊",
+    },
+    {
+        id: "Nw0rUunmBdI",
+        date: "2025",
+        title: "Wide Bliss",
+        comment: "A song I composed on the piano !",
+    },
+    {
+        id: "vPcW3HeGJmA",
+        date: "2025",
+        title: "Late Nite Blues",
+        comment:
+            "Some chord progression I stole from Mercy Mercy Me (the ecology) by Marvin Gaye ",
+    },
+    {
+        id: "vsF1SeE4L5o",
+        date: "2024",
+        title: "Message in a Bottle ",
+        comment:
+            "A guitar cover that I did in Brive La Gaillarde on the song Message in a Bottle from the Police",
+    },
+    {
+        id: "mIwkXvxOwhw",
+        date: "2023",
+        title: "Viva la Vida Piano",
+        comment: "A piano cover of Viva la Vida from Coldplay",
+    },
+    {
+        id: "GPMvlTYbns0",
+        date: "2023",
+        title: "Every breath you take",
+        comment: "A piano cover of every breath you take from the Police ",
+    },
+    {
+        id: "ZFbCH9DfzuU",
+        date: "2023",
+        title: "Lost in yesterday",
+        comment: "A cover with my friend Martial from this song by Tame Impala",
+    },
+    {
+        id: "aCSORtpwLtA",
+        date: "2024",
+        title: "H2 generator",
+        comment: "a H2 generator I created",
+    },
+    {
+        id: "YBcWSyBs4Ro",
+        date: "2024",
+        title: " Igniting the H2 generator ",
+        comment: "Igniting the H2 generated",
+    },
 ];
 
 // Example images array
@@ -181,7 +244,7 @@ export const DatedImages: ImageType[] = [
         date: "11/2024",
         caption: "Snow in saclay",
         folder: [Folders.Sac24],
-        displayOnHome: true,
+        displayOnHome: false,
     },
     {
         id: 10,
@@ -744,6 +807,69 @@ export const DatedImages: ImageType[] = [
         caption: "our post for our gig at Les Disquaires, in Paris",
         folder: [Folders.Gig],
         displayOnHome: true,
-    }
-
+    },
+    {
+        id: 81,
+        img: les_disq,
+        date: "07/2025",
+        caption: "our post for our gig at Les Disquaires, in Paris",
+        folder: [Folders.Gig],
+        displayOnHome: true,
+    },
+    {
+        id: 82,
+        img: les_disquaires_warmingup,
+        date: "07/2025",
+        caption: "Warming up at les Disquaires",
+        folder: [Folders.Gig],
+        displayOnHome: true,
+    },
+    {
+        id: 83,
+        img: les_disq_2,
+        date: "07/2025",
+        caption: "our post for our gig at Les Disquaires, in Paris",
+        folder: [Folders.Gig],
+        displayOnHome: true,
+    },
+    {
+        id: 84,
+        img: nice_baignade,
+        date: "06/2025",
+        caption: "Swimming in Nice with my friend Martial",
+        folder: [Folders.Nice_25],
+        displayOnHome: true,
+    },
+    {
+        id: 85,
+        img: nice_martial_eloi,
+        date: "06/2025",
+        caption: "One of my best friend Martial",
+        folder: [Folders.Nice_25],
+        displayOnHome: true,
+    },
+    {
+        id: 86,
+        img: plongeon,
+        date: "06/2025",
+        caption: "Diving",
+        folder: [Folders.Nice_25],
+        displayOnHome: true,
+    },
+    {
+        id: 87,
+        img: plage,
+        date: "06/2025",
+        caption: "St Jean Cap Ferrat",
+        folder: [Folders.Nice_25],
+        displayOnHome: true,
+    },
+    {
+        id: 88,
+        img: resto_contour,
+        date: "06/2025",
+        caption: "Contour at Vannes",
+        folder: [Folders.Gig],
+        displayOnHome: true,
+    },
 ];
