@@ -131,7 +131,33 @@ export const Songs: Song[] = [
         title: "Modern Love",
         author: "Zaho de Sagazan",
         url: "https://www.youtube.com/watch?v=nNRN74-HoU4"
+    },
+    {
+        id: 22,
+        title: "Quand la musique est bonne",
+        author: "Jean Jacques Goldman",
+        url: "https://www.youtube.com/watch?v=-boDeijWuOY"
+    },
+    {
+        id: 23,
+        title: "SuperModel",
+        author: "Maneskin",
+        url: "https://www.youtube.com/watch?v=jODrVofka54"
+    },
+    {
+        id: 24,
+        title: "Are you gonna be my girl",
+        author: "Jet",
+        url: "https://www.youtube.com/watch?v=tuK6n2Lkza0"
+    },
+    {
+        id: 25,
+        title: "2 be loved",
+        author: "Lizzo",
+        url: "https://www.youtube.com/watch?v=krdQLzzAeZU"
     }
+
+
 ]
 
 
@@ -188,5 +214,19 @@ export const SetLists = {
         Songs[18],
         Songs[19],
         Songs[20]
+    ],
+    disquaires_2025: [
+        Songs[8],
+        Songs[9],
+        Songs[15],
+        Songs[16],
+        Songs[17],
+        Songs[18],
+        Songs[19],
+        Songs[21],
+        Songs[22],
+        Songs[23],
+        Songs[24],
+
     ],
 };

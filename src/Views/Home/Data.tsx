@@ -26,6 +26,7 @@ import { Gallery } from "../Gallery/Gallery";
 import { Italian } from "../Languages/Italian";
 import Video_Creation from "../Music-and-video/Video";
 import GuitarPaint from "../Music-and-video/PaintGuitar";
+import LandingPage from "./Home_tmp";
 
 export type BlogPostType = {
     id: number;
@@ -38,6 +39,7 @@ export type BlogPostType = {
 };
 
 export enum BlogCategory {
+    Tmp = "tmp",
     Climate = "climate",
     ComputerScience = "computer science",
     Music = "music & video",
@@ -55,6 +57,7 @@ export enum BlogCategory {
 }
 
 export enum BlogRoute {
+    Tmp = "tmp",
     Climate = "climate",
     ComputerScience = "cs",
     Music = "music_video",
@@ -304,5 +307,14 @@ export const blogPostsArray: BlogPostType[] = [
         category: BlogCategory.Climate,
         route: BlogRoute.Climate,
         content: DisplayIngredients,
+    },
+    {
+        id: 1,
+        date: "2025",
+        title: "Home tmp",
+        content_name: "LandingPage",
+        category: BlogCategory.Tmp,
+        route: BlogRoute.Tmp,
+        content: LandingPage,
     },
 ];

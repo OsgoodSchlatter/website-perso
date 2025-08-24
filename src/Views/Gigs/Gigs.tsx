@@ -29,7 +29,8 @@ export type Gig = {
     setlist: Song[],
     picturesFolder?: Folders[],
     bandInfo: BandInfo,
-    colorInfo?: string[]
+    colorInfo?: string[],
+    textInfo?: string[]
 }
 
 export const Gigs_List: Gig[] = [
@@ -45,7 +46,8 @@ export const Gigs_List: Gig[] = [
             genre: "Rock",
         },
         picturesFolder: [Folders.Gig_Saclay_24],
-        colorInfo: ["#a924c1"]
+        colorInfo: ["#a924c1"],
+        textInfo: ["white"]
     },
     {
         id: 2,
@@ -60,7 +62,8 @@ export const Gigs_List: Gig[] = [
             link: "https://www.instagram.com/contourkillerparty/",
         },
         picturesFolder: [Folders.Gig_Saclay_25],
-        colorInfo: ["#a924c1"]
+        colorInfo: ["#a924c1"],
+        textInfo: ["white"]
     },
     {
         id: 3,
@@ -75,7 +78,8 @@ export const Gigs_List: Gig[] = [
             link: "https://www.instagram.com/contourkillerparty/",
         },
         picturesFolder: [Folders.Gig_Nantes_25],
-        colorInfo: ['#e86f1b']
+        colorInfo: ['#e86f1b'],
+        textInfo: ["white"]
     },
     {
         id: 4,
@@ -85,12 +89,29 @@ export const Gigs_List: Gig[] = [
         setlist: SetLists.paris_2025,
         bandInfo: {
             name: "Contour 📼",
-            members: ["Martial", "Emmanuelle", "Anna", "Eloi", "Léonard"],
+            members: ["Martial", "Emmanuelle", "Anna", "Eloi", "Léonard", "Alice"],
             genre: "Rock",
             link: "https://www.instagram.com/contourkillerparty/",
         },
         picturesFolder: [Folders.Gig_Fete_de_la_Musique],
-        colorInfo: ['#FFFFF0']
+        colorInfo: ['#FFFFF0'],
+        textInfo: ["black"]
+    },
+    {
+        id: 5,
+        name: "Les Disquaires, 25",
+        location: Locations.Paris,
+        date: "2025-07",
+        setlist: SetLists.disquaires_2025,
+        bandInfo: {
+            name: "Contour 📼",
+            members: ["Martial", "Emmanuelle", "Anna", "Eloi", "Léonard", "Alice"],
+            genre: "Rock",
+            link: "https://www.instagram.com/contourkillerparty/",
+        },
+        picturesFolder: [Folders.Gig_Les_Disquaires],
+        colorInfo: ['#F5CF27'],
+        textInfo: ['black']
     }
 
 
@@ -116,7 +137,7 @@ export const Gigs = () => {
                                 >
                                     {Gigs_List.map((gig) => (
                                         <option key={gig.id} value={gig.id}>
-                                            {gig.location} {gig.date}
+                                            {gig.name}
                                         </option>
                                     ))}
                                 </select>
@@ -128,16 +149,16 @@ export const Gigs = () => {
 
                         <div className="p-2 px-4 mt-4 rounded bg-[var(--bg)]" style={{ '--bg': selectedGig.colorInfo } as React.CSSProperties}>
                             <div>
-                                <div className={`text-5xl font-bold ${selectedGig.id === 4 ? "text-black" : ""}`}>
+                                <div className={"text-5xl font-bold text-[var(--te)]"} style={{ '--te': selectedGig.textInfo } as React.CSSProperties}>
                                     {selectedGig.bandInfo.name}
                                 </div>
-                                <a className={`italic ${selectedGig.id === 4 ? "text-black" : ""}`} href={selectedGig.bandInfo.link}>
+                                <a className={"italic text-[var(--te)]"} style={{ '--te': selectedGig.textInfo } as React.CSSProperties} href={selectedGig.bandInfo.link}>
                                     {selectedGig.name}
                                 </a>
                             </div>
                             <div className="flex flex-wrap justify-evenly p-1">
                                 {selectedGig?.setlist?.map((song, index) => (
-                                    <a className={`rounded w-fit p-1 font-medium hover:font-extrabold mb-1 mt-1 ${selectedGig.id === 4 ? "text-black" : ""}`}
+                                    <a className={"rounded w-fit p-1 font-medium hover:font-extrabold mb-1 mt-1 text-[var(--te)]"} style={{ '--te': selectedGig.textInfo } as React.CSSProperties}
                                         href={song?.url}>{song?.title}</a>
                                 ))}
                             </div>

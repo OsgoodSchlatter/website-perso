@@ -7,23 +7,24 @@ import { videos } from "../../data/datatype/data_img";
 const content =
     <>
         <div className="p-4 ">
-            {videos.map((video) => (
-                <div key={video.id}>
-                    <h2 className="text-xl font-bold mb-2">{video.title + " - " + video.date}</h2>
-                    <h3 className="text-lg text-gray-400 mb-2">{video.comment}</h3>
+            {videos.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()) // newest first
+                .map((video) => (
+                    <div key={video.id}>
+                        <h2 className="text-xl font-bold mb-2">{video.title + " - " + video.date}</h2>
+                        <h3 className="text-lg text-gray-400 mb-2">{video.comment}</h3>
 
-                    <div className="w-full rounded-2xl overflow-hidden shadow-lg h-80 mb-8">
-                        <iframe
-                            className="w-full h-full"
-                            src={`https://www.youtube.com/embed/${video.id}?modestbranding=1&rel=0&controls=1`}
-                            title="YouTube video player"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                        ></iframe>
+                        <div className="w-full rounded-2xl overflow-hidden shadow-lg h-80 mb-8">
+                            <iframe
+                                className="w-full h-full"
+                                src={`https://www.youtube.com/embed/${video.id}?modestbranding=1&rel=0&controls=1`}
+                                title="YouTube video player"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            ></iframe>
 
+                        </div>
                     </div>
-                </div>
-            ))}
+                ))}
         </div>
     </>
 

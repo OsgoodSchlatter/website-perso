@@ -84,6 +84,15 @@ import nice_martial_eloi from "../pics/pics-nice-disquaires/nice-martial-eloi.jp
 import plongeon from "../pics/pics-nice-disquaires/nice-plongeon.jpg";
 import plage from "../pics/pics-nice-disquaires/plage.jpg";
 import resto_contour from "../pics/pics-nice-disquaires/resto-contour.jpg";
+import mado_pol_lg from "../pics/pics-add-august/mado-pol-lg.jpg"
+import mathis25 from "../pics/pics-add-august/mathis-25.jpg"
+import piano_pic from "../pics/pics-add-august/piano-jul.jpg"
+import ileDeRe from "../pics/pics-add-august/pol-lg-mao-moi.jpg"
+import biereIleDeRe from "../pics/pics-add-august/pol-lg-moi.jpg"
+import simo_eloi from "../pics/pics-add-august/simo-eloi.jpg"
+import st_cloud from "../pics/pics-add-august/st-cloud.jpg"
+import surf from "../pics/pics-add-august/surf.jpg"
+
 
 export type ImageType = {
     id: number;
@@ -105,12 +114,14 @@ export enum Folders {
     Gig_Saclay_25 = "Gig at Saclay 25",
     Gig_Saclay_24 = "Gig at Saclay 24",
     Gig_Nantes_25 = "Gig at Nantes 25",
+    Gig_Les_Disquaires = "Gig at Les Disquaires 25",
     Malaga = "Malaga 2019",
     Sweden = "Sweden 2023",
     Denmark = "Denmark 2023",
     UppSala = "Uppsala 2023",
     USA_18 = "West coast of the USA in 2018",
     Nice_25 = "Nice, 2025",
+    Ile_de_re = "Ile de Ré, 2025"
 }
 
 export const videos = [
@@ -147,6 +158,13 @@ export const videos = [
         title: "Message in a Bottle ",
         comment:
             "A guitar cover that I did in Brive La Gaillarde on the song Message in a Bottle from the Police",
+    },
+    {
+        id: "G223BL-0lj0",
+        date: "2025",
+        title: "Spit Of You ",
+        comment:
+            "A cover I did on this fabulous song of Sam Fender! Sound on! 🔊",
     },
     {
         id: "mIwkXvxOwhw",
@@ -805,7 +823,7 @@ export const DatedImages: ImageType[] = [
         img: contour_les_disquaires,
         date: "07/2025",
         caption: "our post for our gig at Les Disquaires, in Paris",
-        folder: [Folders.Gig],
+        folder: [Folders.Gig, Folders.Gig_Les_Disquaires],
         displayOnHome: true,
     },
     {
@@ -813,7 +831,7 @@ export const DatedImages: ImageType[] = [
         img: les_disq,
         date: "07/2025",
         caption: "During the show",
-        folder: [Folders.Gig],
+        folder: [Folders.Gig, Folders.Gig_Les_Disquaires],
         displayOnHome: true,
     },
     {
@@ -821,7 +839,7 @@ export const DatedImages: ImageType[] = [
         img: les_disquaires_warmingup,
         date: "07/2025",
         caption: "Warming up at les Disquaires",
-        folder: [Folders.Gig],
+        folder: [Folders.Gig, Folders.Gig_Les_Disquaires],
         displayOnHome: true,
     },
     {
@@ -829,7 +847,7 @@ export const DatedImages: ImageType[] = [
         img: les_disq_2,
         date: "07/2025",
         caption: "After the show",
-        folder: [Folders.Gig],
+        folder: [Folders.Gig, Folders.Gig_Les_Disquaires],
         displayOnHome: true,
     },
     {
@@ -862,7 +880,7 @@ export const DatedImages: ImageType[] = [
         date: "06/2025",
         caption: "St Jean Cap Ferrat",
         folder: [Folders.Nice_25],
-        displayOnHome: true,
+        displayOnHome: false,
     },
     {
         id: 88,
@@ -872,4 +890,53 @@ export const DatedImages: ImageType[] = [
         folder: [Folders.Gig],
         displayOnHome: true,
     },
+    {
+        id: 90,
+        img: mado_pol_lg,
+        date: "05/2025",
+        caption: "Ile de Ré with friends",
+        folder: [Folders.Ile_de_re],
+        displayOnHome: false,
+    },
+    {
+        id: 91,
+        img: ileDeRe,
+        date: "05/2025",
+        caption: "Ile de Ré with friends",
+        folder: [Folders.Ile_de_re],
+        displayOnHome: true,
+    },
+    {
+        id: 92,
+        img: biereIleDeRe,
+        date: "05/2025",
+        caption: "Ile de Ré with BEER and friends",
+        folder: [Folders.Ile_de_re],
+        displayOnHome: true,
+    },
+    {
+        id: 93,
+        img: mathis25,
+        date: "06/2025",
+        caption: "Mathis' 25",
+        folder: [],
+        displayOnHome: true,
+    },
+    {
+        id: 94,
+        img: piano_pic,
+        date: "07/2025",
+        caption: "Playing piano for my family",
+        folder: [Folders.Gig],
+        displayOnHome: true,
+    },
+    {
+        id: 95,
+        img: st_cloud,
+        date: "07/2025",
+        caption: "St Cloud",
+        folder: [],
+        displayOnHome: true,
+    },
+
 ];
