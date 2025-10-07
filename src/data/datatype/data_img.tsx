@@ -125,6 +125,28 @@ export enum Folders {
 }
 
 export const videos = [
+
+    {
+        id: "-GvGfR_BaV0",
+        date: "2025",
+        title: "Au bout de mes rêves",
+        comment:
+            "A cover of an old song from Jean-Jacques Goldman! Sound on! 🔊",
+    },
+    {
+        id: "gvlV9ZjdaBI",
+        date: "2025",
+        title: "Man I Need",
+        comment:
+            "A cover of Olivia Dean's great song on her last album! Sound on! 🔊",
+    },
+    {
+        id: "khm6P9dm7Ak",
+        date: "2025",
+        title: "Rein me In",
+        comment:
+            "A cover of Sam Fender and Olivia Dean's fabulous song! Sound on! 🔊",
+    },
     {
         id: "94dJKTOfHKg",
         date: "2025",
