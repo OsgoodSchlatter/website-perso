@@ -9,6 +9,7 @@ import zweig from "./zweig.jpg"
 import sagan from "./bonjour_tristesse.jpeg"
 import andrei from "./andrei.jpeg"
 import remarque from "./remarque.jpg"
+import lattentat from "./lattentat.jpg"
 import { StandardHeader } from "../../Single/StandardHeader";
 interface BookEntry {
   title: string;
@@ -30,6 +31,7 @@ const BooksArray: BookEntry[] = [
   { title: "Bonjour Tristesse ", author: " Françoise Sagan", date: "2018", pic: sagan, comment: "A girl Cécile, her father Raymond and his mistress Elsa are on vacation in the South of France. The girl likes to spend some time with Elsa but suddenly Raymond brings Anne at home. Her seriousness and discipline impacts and impress the little trio. Her influence makes Raymond leave elsa for her. But things are not as simple. " },
   { title: "L'archipel d'une autre vie ", author: " Andrei Makine", date: "2023", pic: andrei, comment: "A Russian soldier is sent into the depths of Russia and tries to escape the army. Beautiful sceneries." },
   { title: " A l'ouest rien de nouveau ", author: " Erich Maria Remarque", date: "2013", pic: remarque, comment: "Erich Maria Remarque enlightens us on how life's like in the trenches during WWI. " },
+  { title: " L'Attentat ", author: " Yasmina Khadra", date: "2025", pic: lattentat, comment: "This books takes place in Israel and depicts the life of an Arab surgeon that witnesses a terrorist attack. But the terrorist turns out to be his wife... What led her to do so? A great story that puts forward the difficulty to be integrated as an Arab in Israel. " },
 
 ];
 
@@ -58,7 +60,7 @@ const BooksContent = () => {
   );
 };
 const intro = <div >
-  Some books I have had the opportunity to read and that I may suggest.
+  Some books I have had the opportunity to read and that I may suggest. The date refers to when I read them.
 </div>
 
 export const Books = () => {
