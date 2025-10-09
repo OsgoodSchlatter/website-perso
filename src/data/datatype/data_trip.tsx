@@ -27,6 +27,8 @@ import { Folders } from "./data_img";
 
 type TransportType = "Plane" | "Car" | "Train" | "Home";
 
+type CollectionsTrips = "Australia-Asia-2025-2026";
+
 export type TravelContentComponent = React.FC<{ title: string; date: string }>;
 export interface TravelEntry {
     id: number;
@@ -37,6 +39,7 @@ export interface TravelEntry {
     GPS: [number, number];
     C02: number;
     content?: TravelContentComponent;
+    collection?: CollectionsTrips[];
     picturesFolder?: Folders[];
 }
 
@@ -572,5 +575,75 @@ export const blogPosts: TravelEntry[] = [
         transport: "Car",
         C02: 100,
         GPS: [46.2043907, 6.1431577],
+    },
+    {
+        id: 2,
+        date: "December 2025",
+        title: "Sydney 🇦🇺",
+        locations: ["Sydney", "Australia"],
+        transport: "Plane",
+        GPS: [-33.8688, 151.2093],
+        C02: 3900,
+        collection: ["Australia-Asia-2025-2026"]
+    },
+    {
+        id: 3,
+        date: "January 2026",
+        title: "Brisbane 🇦🇺",
+        locations: ["Brisbane", "Australia"],
+        transport: "Train",
+        GPS: [-27.4698, 153.0251],
+        C02: 0, // ? CO2, unknown,
+        collection: ["Australia-Asia-2025-2026"]
+    },
+    {
+        id: 4,
+        date: "June 2026",
+        title: "Seoul 🇰🇷",
+        locations: ["Seoul", "South Korea"],
+        transport: "Plane",
+        GPS: [37.5665, 126.978],
+        C02: 3200,
+        collection: ["Australia-Asia-2025-2026"]
+    },
+    {
+        id: 5,
+        date: "July 2026",
+        title: "Beijing 🇨🇳",
+        locations: ["Beijing", "China"],
+        transport: "Plane",
+        GPS: [39.9042, 116.4074],
+        C02: 500,
+        collection: ["Australia-Asia-2025-2026"]
+    },
+    {
+        id: 6,
+        date: "July 2026",
+        title: "Shanghai 🇨🇳",
+        locations: ["Shanghai", "China"],
+        transport: "Train",
+        GPS: [31.2304, 121.4737],
+        C02: 0, // ? CO2
+        collection: ["Australia-Asia-2025-2026"]
+    },
+    {
+        id: 7,
+        date: "July 2026",
+        title: "Chongqing 🇨🇳",
+        locations: ["Chongqing", "China"],
+        transport: "Train",
+        GPS: [29.563, 106.5516],
+        C02: 0, // ? CO2
+        collection: ["Australia-Asia-2025-2026"]
+    },
+    {
+        id: 8,
+        date: "July 2026",
+        title: "Hong Kong 🇭🇰 ",
+        locations: ["Hong Kong", "China"],
+        transport: "Train",
+        GPS: [22.3193, 114.1694],
+        C02: 0, // ? CO2
+        collection: ["Australia-Asia-2025-2026"]
     },
 ];

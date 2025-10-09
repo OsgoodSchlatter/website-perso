@@ -2,7 +2,6 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { createCustomIcon } from "../../Single/MapUtils";
 import { StandardHeader } from "../../Single/StandardHeader";
 import { useEffect, useRef, useState } from "react";
-import { BlogPostType } from "../Home/Data";
 import { Folders, DatedImages } from "../../data/datatype/data_img";
 import { blogPosts, TravelEntry } from "../../data/datatype/data_trip";
 
@@ -18,6 +17,32 @@ const transportColors: Record<TransportType, string> = {
 const getColorForTransport = (transport: TransportType): string => {
   return transportColors[transport];
 };
+
+// assuming TravelEntry and blogPosts are already defined above
+
+// Utility: convert "Month Year" or "Month YYYY" to a real Date
+function parseTravelDate(dateStr: string): Date {
+  // Examples handled: "December 2025", "Jan 2026", "2005"
+  const parts = dateStr.split(" ");
+  if (parts.length === 1) {
+    // only year
+    return new Date(parseInt(parts[0]), 0, 1);
+  }
+  const [monthStr, yearStr] = parts;
+  const year = parseInt(yearStr);
+  const month = new Date(`${monthStr} 1, ${year}`).getMonth(); // 0–11
+  return new Date(year, month, 1);
+}
+
+// Today’s date
+const today = new Date();
+
+// Filter posts that already happened
+export const alreadyHappenedBlogPosts: TravelEntry[] = blogPosts.filter(post => {
+  const postDate = parseTravelDate(post.date);
+  return postDate < today;
+});
+
 
 export const TripsContent = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -164,7 +189,7 @@ export const TripsContent = () => {
             >
               <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
               <div className="flex flex-wrap justify-evenly font-bold">
-                {Array.from(blogPosts.entries()).map(([key, value]) => {
+                {Array.from(alreadyHappenedBlogPosts.entries()).map(([key, value]) => {
                   // collect images for this post
                   const imagesForPost = (DatedImages?.filter((image) =>
                     value.picturesFolder?.some((folder) =>
@@ -294,7 +319,7 @@ export const TripsContent = () => {
             className="text-xl font-bold text-black"
             onClick={() => {
               // find id by matching selectedPost (blogPosts is a Map)
-              const arr = Array.from(blogPosts.entries()) as [number, TravelEntry][];
+              const arr = Array.from(alreadyHappenedBlogPosts.entries()) as [number, TravelEntry][];
               const postId = arr.find(([, v]) => v.title === selectedPost.title)?.[0];
               if (postId !== undefined) handlePostClick(postId);
             }}
@@ -328,7 +353,7 @@ export const TripsContent = () => {
       {/* POSTS LIST VIEW */}
       {viewMode === "posts" && (
         <div className="w-full max-w-2xl px-4">
-          {Array.from(blogPosts.entries())
+          {Array.from(alreadyHappenedBlogPosts.entries())
             .sort(
               ([, a], [, b]) =>
                 new Date(b.date).getTime() - new Date(a.date).getTime()
