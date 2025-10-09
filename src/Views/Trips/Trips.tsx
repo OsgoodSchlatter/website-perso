@@ -157,8 +157,8 @@ export const TripsContent = () => {
               worldCopyJump={true}
               scrollWheelZoom={false}
               style={{
-                width: isMobile ? "350px" : "700px",
-                height: isMobile ? "300px" : "500px",
+                width: isMobile ? "350px" : "900px",
+                height: isMobile ? "300px" : "600px",
                 zIndex: 1,
               }}
             >
@@ -245,39 +245,41 @@ export const TripsContent = () => {
               </div>
             </MapContainer>
             {/* Legend Overlay */}
-            <div className="absolute bottom-14 right-2 bg-white/90 backdrop-blur-md p-3 rounded-lg shadow-md text-sm z-[1000] border border-gray-300">
-              <div className="font-semibold mb-1 text-gray-800 text-center">Legend</div>
-              <div className="flex flex-col gap-1 text-gray-700">
-                <div className="flex items-center gap-2">
-                  <span
-                    className="w-3 h-3 rounded-full"
-                    style={{ backgroundColor: transportColors.Plane }}
-                  ></span>
-                  Plane
-                </div>
-                <div className="flex items-center gap-2">
-                  <span
-                    className="w-3 h-3 rounded-full"
-                    style={{ backgroundColor: transportColors.Car }}
-                  ></span>
-                  Car / Bus
-                </div>
-                <div className="flex items-center gap-2">
-                  <span
-                    className="w-3 h-3 rounded-full"
-                    style={{ backgroundColor: transportColors.Train }}
-                  ></span>
-                  Train
-                </div>
-                <div className="flex items-center gap-2">
-                  <span
-                    className="w-3 h-3 rounded-full"
-                    style={{ backgroundColor: transportColors.Home }}
-                  ></span>
-                  Home
+            {!showCarousel && (
+              <div className="absolute bottom-14 right-2 bg-white/90 backdrop-blur-md p-3 rounded-lg shadow-md text-sm z-[1000] border border-gray-300">
+                <div className="font-semibold mb-1 text-gray-800 text-center">Legend</div>
+                <div className="flex flex-col gap-1 text-gray-700">
+                  <div className="flex items-center gap-2">
+                    <span
+                      className="w-3 h-3 rounded-full"
+                      style={{ backgroundColor: transportColors.Plane }}
+                    ></span>
+                    Plane
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span
+                      className="w-3 h-3 rounded-full"
+                      style={{ backgroundColor: transportColors.Car }}
+                    ></span>
+                    Car / Bus
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span
+                      className="w-3 h-3 rounded-full"
+                      style={{ backgroundColor: transportColors.Train }}
+                    ></span>
+                    Train
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span
+                      className="w-3 h-3 rounded-full"
+                      style={{ backgroundColor: transportColors.Home }}
+                    ></span>
+                    Home
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       )}
