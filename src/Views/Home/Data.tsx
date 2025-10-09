@@ -18,6 +18,7 @@ import { Gigs } from "../Gigs/Gigs";
 import { PubliArticle } from "../Publi/PubliArticle";
 import { Sport } from "../Sport/Sport";
 import { Trips } from "../Trips/Trips";
+import { Australia } from "../Trips/Australia";
 import { Books } from "../Books/Books";
 import { Contact } from "../Contact/Contact";
 import GreenTracking from "../CS/CSPosts/GreenTracking";
@@ -26,7 +27,7 @@ import { Gallery } from "../Gallery/Gallery";
 import { Italian } from "../Languages/Italian";
 import Video_Creation from "../Music-and-video/Video";
 import GuitarPaint from "../Music-and-video/PaintGuitar";
-import LandingPage from "./Home_tmp";
+
 
 export type BlogPostType = {
     id: number;
@@ -226,6 +227,15 @@ export const blogPostsArray: BlogPostType[] = [
         category: BlogCategory.Trips,
         route: BlogRoute.Trips,
         content: Trips,
+    },
+    {
+        id: 2,
+        date: "2025",
+        title: "Gap year in Australia 🇦🇺",
+        content_name: "Trips",
+        category: BlogCategory.Trips,
+        route: BlogRoute.Trips,
+        content: Australia,
     },
     {
         id: 1,
