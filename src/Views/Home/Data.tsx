@@ -308,13 +308,13 @@ export const blogPostsArray: BlogPostType[] = [
         route: BlogRoute.Climate,
         content: DisplayIngredients,
     },
-    {
-        id: 1,
-        date: "2025",
-        title: "Home tmp",
-        content_name: "LandingPage",
-        category: BlogCategory.Tmp,
-        route: BlogRoute.Tmp,
-        content: LandingPage,
-    },
+    // {
+    //     id: 1,
+    //     date: "2025",
+    //     title: "Home tmp",
+    //     content_name: "LandingPage",
+    //     category: BlogCategory.Tmp,
+    //     route: BlogRoute.Tmp,
+    //     content: LandingPage,
+    // },
 ];
