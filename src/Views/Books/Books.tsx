@@ -10,6 +10,10 @@ import sagan from "./bonjour_tristesse.jpeg"
 import andrei from "./andrei.jpeg"
 import remarque from "./remarque.jpg"
 import lattentat from "./lattentat.jpg"
+import assemblee from "./assemblee.jpg"
+import complot_roth from "./complot_roth.jpg"
+import banquet from "./Le-Banquet.jpg"
+import midsummer from "./midsummer-nights-dream.webp"
 import { StandardHeader } from "../../Single/StandardHeader";
 interface BookEntry {
   title: string;
@@ -32,6 +36,10 @@ const BooksArray: BookEntry[] = [
   { title: "L'archipel d'une autre vie ", author: " Andrei Makine", date: "2023", pic: andrei, comment: "A Russian soldier is sent into the depths of Russia and tries to escape the army. Beautiful sceneries." },
   { title: " A l'ouest rien de nouveau ", author: " Erich Maria Remarque", date: "2013", pic: remarque, comment: "Erich Maria Remarque enlightens us on how life's like in the trenches during WWI. " },
   { title: " L'Attentat ", author: " Yasmina Khadra", date: "2025", pic: lattentat, comment: "This books takes place in Israel and depicts the life of an Arab surgeon that witnesses a terrorist attack. But the terrorist turns out to be his wife... What led her to do so? A great story that puts forward the difficulty to be integrated as an Arab in Israel. " },
+  { title: "L'Assemblée des Femmes ", author: " Aristophane", date: "2020", pic: assemblee, comment: "This books depicts a city that tries to change social norms. A group of women takes power and enforces new rules, notably a share of all goods and a right for the least pleasing women to choose a partner. " },
+  { title: "Songe d'une Nuit d'Ete / Midsummer night's dream ", author: " Shakespeare", date: "2020", pic: midsummer, comment: "Confusion and love in Antic Greece" },
+  { title: "Le Banquet ", author: " Platon", date: "2020", pic: banquet, comment: "Several guests explore the nature of Love during a feast. " },
+  { title: "Plot against America ", author: " Philip Roth", date: "2020", pic: complot_roth, comment: "This books puts forward the rise of fascism and antisemitism in the US of 1940s, under the uchronia where Charles Lindbergh becomes president of the US. " },
 
 ];
 
