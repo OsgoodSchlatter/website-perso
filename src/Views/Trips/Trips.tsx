@@ -3,7 +3,7 @@ import { createCustomIcon } from "../../Single/MapUtils";
 import { StandardHeader } from "../../Single/StandardHeader";
 import { useEffect, useRef, useState } from "react";
 import { Folders, DatedImages } from "../../data/datatype/data_img";
-import { blogPosts, TravelEntry } from "../../data/datatype/data_trip";
+import { blogPosts, MapEntry } from "../../data/datatype/data_maps";
 
 type TransportType = "Plane" | "Car" | "Train" | "Home";
 
@@ -18,7 +18,7 @@ const getColorForTransport = (transport: TransportType): string => {
   return transportColors[transport];
 };
 
-// assuming TravelEntry and blogPosts are already defined above
+// assuming MapEntry and blogPosts are already defined above
 
 // Utility: convert "Month Year" or "Month YYYY" to a real Date
 function parseTravelDate(dateStr: string): Date {
@@ -38,7 +38,7 @@ function parseTravelDate(dateStr: string): Date {
 const today = new Date();
 
 // Filter posts that already happened
-export const alreadyHappenedBlogPosts: TravelEntry[] = blogPosts.filter(post => {
+export const alreadyHappenedBlogPosts: MapEntry[] = blogPosts.filter(post => {
   const postDate = parseTravelDate(post.date);
   return postDate < today;
 });
@@ -46,7 +46,7 @@ export const alreadyHappenedBlogPosts: TravelEntry[] = blogPosts.filter(post => 
 
 export const TripsContent = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-  const [selectedPost, setSelectedPost] = useState<TravelEntry | null>(null);
+  const [selectedPost, setSelectedPost] = useState<MapEntry | null>(null);
   const [viewMode, setViewMode] = useState<"map" | "posts">("map");
   const [activePostId, setActivePostId] = useState<number | null>(null);
   const postRefs = useRef<Record<number, HTMLDivElement | null>>({});
@@ -66,7 +66,7 @@ export const TripsContent = () => {
     setExpandedPostId((prev) => (prev === key ? null : key));
   };
 
-  const handleMarkerClick = (key: number, post: TravelEntry) => {
+  const handleMarkerClick = (key: number, post: MapEntry) => {
     setSelectedPost(post);
     setActivePostId(key);
   };
@@ -319,7 +319,7 @@ export const TripsContent = () => {
             className="text-xl font-bold text-black"
             onClick={() => {
               // find id by matching selectedPost (blogPosts is a Map)
-              const arr = Array.from(alreadyHappenedBlogPosts.entries()) as [number, TravelEntry][];
+              const arr = Array.from(alreadyHappenedBlogPosts.entries()) as [number, MapEntry][];
               const postId = arr.find(([, v]) => v.title === selectedPost.title)?.[0];
               if (postId !== undefined) handlePostClick(postId);
             }}
@@ -330,7 +330,12 @@ export const TripsContent = () => {
             <strong>Date:</strong> {selectedPost.date}
           </p>
           <p className="text-black">
-            <strong>Location:</strong> {selectedPost.locations.join(", ")}
+            {selectedPost.locations?.length ? (
+              <>
+                <strong>Location:</strong> {selectedPost.locations.join(", ")}
+              </>
+            ) : null}
+
           </p>
           <p className="text-black">
             <strong>Transport:</strong> {selectedPost.transport}

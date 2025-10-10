@@ -27,30 +27,38 @@ import { Folders } from "./data_img";
 
 type TransportType = "Plane" | "Car" | "Train" | "Home";
 
-type CollectionsTrips = "Australia-Asia-2025-2026";
+type CollectionsTrips = "GapYear2026";
 
 export type TravelContentComponent = React.FC<{ title: string; date: string }>;
-export interface TravelEntry {
+export interface MapEntry {
     id: number;
     date: string;
     title: string;
-    locations: string[];
-    transport: TransportType;
+    locations?: string[];
+    transport?: TransportType;
     GPS: [number, number];
-    C02: number;
+    C02?: number;
     content?: TravelContentComponent;
     collection?: CollectionsTrips[];
     picturesFolder?: Folders[];
+    description?: string;
+    color?: string;
 }
 
+export const tripTransportColors = {
+    Plane: "red",
+    Car: "orange",
+    Train: "green",
+};
 
-export const blogPosts: TravelEntry[] = [
+export const blogPosts: MapEntry[] = [
     {
         id: 1,
         date: "2005",
         title: "Tunisia 🇹🇳",
         locations: ["Tunisia"],
         transport: "Plane",
+        color: tripTransportColors.Plane,
         GPS: [36.47, 10.09],
         C02: 600,
         content: Tunisia,
@@ -61,6 +69,7 @@ export const blogPosts: TravelEntry[] = [
         title: "Turkey 🇹🇷",
         locations: ["Turkey"],
         transport: "Plane",
+        color: tripTransportColors.Plane,
         GPS: [38.41885, 27.12872], // Example coordinates for Turkey (Ankara)
         C02: 1000,
         content: Turkey,
@@ -71,6 +80,7 @@ export const blogPosts: TravelEntry[] = [
         title: "Greece 🇬🇷 ",
         locations: ["Greece", "Bulgaria"],
         transport: "Plane",
+        color: tripTransportColors.Plane,
         GPS: [37.9838, 23.7275], // Example coordinates for Greece (Athens)
         C02: 600,
         content: Greece,
@@ -82,6 +92,7 @@ export const blogPosts: TravelEntry[] = [
         title: "Norway 🇳🇴",
         locations: ["Norway"],
         transport: "Plane",
+        color: tripTransportColors.Plane,
         GPS: [59.9139, 10.7522], // Example coordinates for Norway (Oslo)
         C02: 500,
         content: Norway,
@@ -92,6 +103,7 @@ export const blogPosts: TravelEntry[] = [
         title: "San Francisco 🇺🇸 ",
         locations: ["USA", "San F"],
         transport: "Plane",
+        color: tripTransportColors.Plane,
         GPS: [37.7749, -122.4194], // Example coordinates for USA (San Francisco)
         C02: 3000,
         content: USA1,
@@ -103,6 +115,7 @@ export const blogPosts: TravelEntry[] = [
         title: "Indonesia 🇮🇩",
         locations: ["Indonesia"],
         transport: "Plane",
+        color: tripTransportColors.Plane,
         GPS: [-6.2088, 106.8456], // Example coordinates for Indonesia (Jakarta)
         C02: 4000,
         content: Indonesia,
@@ -113,6 +126,7 @@ export const blogPosts: TravelEntry[] = [
         title: "New York City 🇺🇸",
         locations: ["USA"],
         transport: "Plane",
+        color: tripTransportColors.Plane,
         GPS: [40.7128, -74.006], // Example coordinates for USA (New York City)
         C02: 1800,
         content: USA2,
@@ -123,6 +137,7 @@ export const blogPosts: TravelEntry[] = [
         title: "Marseille 🇫🇷",
         locations: ["Marseille", "France"],
         transport: "Plane",
+        color: tripTransportColors.Plane,
         GPS: [43.2965, 5.3698], // Coordinates for Marseille, France
         C02: 150,
         content: Marseille,
@@ -133,6 +148,7 @@ export const blogPosts: TravelEntry[] = [
         title: "Malaga 🇪🇸",
         locations: ["Malaga", "Spain"],
         transport: "Plane",
+        color: tripTransportColors.Plane,
         GPS: [36.7213, -4.4214], // Coordinates for Malaga, Spain
         C02: 400,
         content: Malaga,
@@ -144,6 +160,7 @@ export const blogPosts: TravelEntry[] = [
         title: "Mauritius Island 🇲🇺",
         locations: ["Mauritius"],
         transport: "Plane",
+        color: tripTransportColors.Plane,
         GPS: [-20.3484, 57.5522], // Coordinates for Mauritius Island
         C02: 3100,
         content: Mauritius,
@@ -153,6 +170,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2019",
         title: "London 🇬🇧",
         transport: "Train",
+        color: tripTransportColors.Train,
         locations: ["London", "UK", "Great-Britain", "GB", "Angleterre"],
         GPS: [51.5074, -0.1278], // Coordinates for London, UK
         C02: 20,
@@ -164,6 +182,7 @@ export const blogPosts: TravelEntry[] = [
         title: "Santorini 🇬🇷",
         locations: ["Greece", "Santorini"],
         transport: "Plane",
+        color: tripTransportColors.Plane,
         GPS: [36.3932, 25.4615], // Coordinates for Santorini, Greece
         C02: 800,
         content: Santorini,
@@ -173,6 +192,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2020",
         title: "Annecy 🇫🇷",
         transport: "Plane",
+        color: tripTransportColors.Plane,
         locations: ["Annecy", "France"],
         GPS: [45.8992, 6.1294], // Coordinates for Annecy, France
         C02: 278,
@@ -183,6 +203,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2020",
         title: "Royan 🇫🇷",
         transport: "Train",
+        color: tripTransportColors.Train,
         locations: ["Royan", "France"],
         GPS: [45.628, -1.0289],
         C02: 90,
@@ -193,6 +214,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2020",
         title: "Biarritz 🇫🇷 & San Sebastian 🇪🇸",
         transport: "Train",
+        color: tripTransportColors.Train,
         locations: ["Biarritz", "France", "San Sebastian", "Spain"],
         GPS: [43.4832, -1.5586],
         C02: 200,
@@ -203,6 +225,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2021",
         title: "Ile d'Yeu 🇫🇷",
         transport: "Train",
+        color: tripTransportColors.Train,
         locations: ["Ile d'Yeu", "Yeu", "France"],
         GPS: [46.7189, -2.3484],
         C02: 10,
@@ -213,6 +236,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2021",
         title: "Nice 🇫🇷",
         transport: "Train",
+        color: tripTransportColors.Train,
         locations: ["Nice", "France"],
         GPS: [43.7102, 7.262],
         C02: 50,
@@ -223,6 +247,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2022",
         title: "Luxembourg 🇱🇺, Germany 🇩🇪 & The Netherlands 🇳🇱",
         transport: "Train",
+        color: tripTransportColors.Train,
         locations: ["Luxembourg", "Germany", "The Netherlands", "Netherlands"],
         GPS: [50.8503, 4.3517],
         C02: 20,
@@ -233,6 +258,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2022",
         title: "Lyon",
         transport: "Train",
+        color: tripTransportColors.Train,
         locations: ["Lyon", "France"],
         GPS: [45.764, 4.8357],
         C02: 5,
@@ -243,7 +269,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2022",
         title: "Anglet 🇫🇷 & San Sebastian 🇪🇸",
         locations: ["Anglet", "France", "San Sebastian", "Spain"],
-        transport: "Train",
+        transport: "Train", color: tripTransportColors.Train,
         GPS: [43.4789, -1.533],
         C02: 10,
         content: Anglet,
@@ -253,7 +279,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2022",
         title: "Nice 🇫🇷",
         locations: ["Nice", "France"],
-        transport: "Train",
+        transport: "Train", color: tripTransportColors.Train,
         GPS: [43.7102, 7.262],
         C02: 5,
         content: Nice2,
@@ -263,7 +289,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2023",
         title: "Albi 🇫🇷",
         locations: ["Albi", "France"],
-        transport: "Train",
+        transport: "Train", color: tripTransportColors.Train,
         GPS: [43.9298, 2.148],
         C02: 30,
         content: Albi,
@@ -279,7 +305,7 @@ export const blogPosts: TravelEntry[] = [
             "Amsterdam",
             "Netherlands",
         ],
-        transport: "Train",
+        transport: "Train", color: tripTransportColors.Train,
         GPS: [50.8503, 4.3517],
         C02: 10,
         content: BxHayAmst23,
@@ -289,7 +315,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2023",
         title: "Bordeaux 🇫🇷",
         locations: ["Bordeaux", "France"],
-        transport: "Train",
+        transport: "Train", color: tripTransportColors.Train,
         GPS: [44.8378, -0.5792],
         C02: 5,
         content: Bordeaux,
@@ -299,7 +325,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2023",
         title: "Sweden 🇸🇪 ",
         locations: ["Sweden", "Denmark"],
-        transport: "Train",
+        transport: "Train", color: tripTransportColors.Train,
         C02: 60,
         GPS: [59.3293, 18.0686],
         content: SweDen,
@@ -310,7 +336,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2023",
         title: "Uppsala 🇸🇪 ",
         locations: ["Sweden", "Denmark"],
-        transport: "Train",
+        transport: "Train", color: tripTransportColors.Train,
         C02: 60,
         GPS: [59.858, 17.686],
         content: SweDen,
@@ -321,7 +347,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2023",
         title: "Denmark 🇩🇰",
         locations: ["Sweden", "Denmark"],
-        transport: "Train",
+        transport: "Train", color: tripTransportColors.Train,
         C02: 60,
         GPS: [55.6, 12.5686],
         content: SweDen,
@@ -334,7 +360,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2023",
         title: "Berlin 🇩🇪",
         locations: ["Germany", "Berlin"],
-        transport: "Train",
+        transport: "Train", color: tripTransportColors.Train,
         C02: 60,
         GPS: [52.520007, 13.404954],
         content: SweDen,
@@ -344,7 +370,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2022",
         title: "Frankfurt 🇩🇪",
         locations: ["Germany", "Frankfurt"],
-        transport: "Train",
+        transport: "Train", color: tripTransportColors.Train,
         C02: 20,
         GPS: [50.1109221, 8.6821267],
     },
@@ -353,7 +379,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2023",
         title: "Münster 🇩🇪",
         locations: ["Germany", "Münster"],
-        transport: "Train",
+        transport: "Train", color: tripTransportColors.Train,
         C02: 30,
         GPS: [51.961563, 7.628202],
     },
@@ -362,7 +388,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2023",
         title: "Amsterdam 🇳🇱",
         locations: ["Amsterdam", "Netherlands"],
-        transport: "Train",
+        transport: "Train", color: tripTransportColors.Train,
         C02: 20,
         GPS: [52.3730796, 4.89],
     },
@@ -371,7 +397,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2023",
         title: "Den Haag 🇳🇱",
         locations: ["Den Haag", "Netherlands"],
-        transport: "Train",
+        transport: "Train", color: tripTransportColors.Train,
         C02: 20,
         GPS: [52.0799838, 4.3113461],
     },
@@ -380,7 +406,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2024",
         title: "Milano 🇮🇹",
         locations: ["Milano", "Italy"],
-        transport: "Car",
+        transport: "Car", color: tripTransportColors.Car,
         C02: 120,
         GPS: [45.4654219, 9.1859243],
     },
@@ -389,7 +415,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2024",
         title: "Venise 🇮🇹",
         locations: ["Venise", "Italy"],
-        transport: "Car",
+        transport: "Car", color: tripTransportColors.Car,
         C02: 120,
         GPS: [45.4408474, 12.3155151],
     },
@@ -398,7 +424,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2024",
         title: "Porto Venere 🇮🇹",
         locations: ["Porto Venere", "Italy"],
-        transport: "Car",
+        transport: "Car", color: tripTransportColors.Car,
         C02: 120,
         GPS: [44.0519, 9.8352],
     },
@@ -455,7 +481,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2024",
         title: "Geneve 🇨🇭",
         locations: ["Geneve", "Suisse"],
-        transport: "Train",
+        transport: "Train", color: tripTransportColors.Train,
         C02: 50,
         GPS: [46.2043907, 6.1431577],
     },
@@ -473,7 +499,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2012",
         title: "Barcelona 🇪🇸",
         locations: ["Barcelona", "Spain"],
-        transport: "Car",
+        transport: "Car", color: tripTransportColors.Car,
         C02: 40,
         GPS: [41.23, 2.154],
     },
@@ -482,7 +508,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2010",
         title: "Portugual 🇵🇹",
         locations: ["Portugual", "Porto"],
-        transport: "Car",
+        transport: "Car", color: tripTransportColors.Car,
         C02: 100,
         GPS: [41.14945, -8.61079],
     },
@@ -491,7 +517,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2024",
         title: "Brive-la-Gaillarde",
         locations: ["Brive", "France"],
-        transport: "Car",
+        transport: "Car", color: tripTransportColors.Car,
         C02: 0,
         GPS: [45.1585, 1.53324],
     },
@@ -527,7 +553,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2024",
         title: "Munich",
         locations: ["Munich", "Germany"],
-        transport: "Train",
+        transport: "Train", color: tripTransportColors.Train,
         C02: 7,
         GPS: [48.1351253, 11.5819806],
     },
@@ -536,7 +562,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2024",
         title: "Lille",
         locations: ["Lille", "France"],
-        transport: "Train",
+        transport: "Train", color: tripTransportColors.Train,
         C02: 1,
         GPS: [50.62925, 3.057256],
     },
@@ -545,7 +571,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2025",
         title: "Salerno",
         locations: ["Salerno", "Italy"],
-        transport: "Train",
+        transport: "Train", color: tripTransportColors.Train,
         C02: 90,
         GPS: [40.6824408, 14.7680961],
     },
@@ -554,7 +580,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2024",
         title: "Luxembourg",
         locations: ["Luxembourg", "Luxembourg"],
-        transport: "Train",
+        transport: "Train", color: tripTransportColors.Train,
         C02: 5,
         GPS: [49.8157635, 6.1315139],
     },
@@ -563,7 +589,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2024",
         title: "Zurich",
         locations: ["Zurich", "Switzerland"],
-        transport: "Train",
+        transport: "Train", color: tripTransportColors.Train,
         C02: 10,
         GPS: [47.3686498, 8.5391825],
     },
@@ -572,7 +598,7 @@ export const blogPosts: TravelEntry[] = [
         date: "2014",
         title: "Geneva",
         locations: ["Geneva", "Switzerland"],
-        transport: "Car",
+        transport: "Car", color: tripTransportColors.Car,
         C02: 100,
         GPS: [46.2043907, 6.1431577],
     },
@@ -584,17 +610,17 @@ export const blogPosts: TravelEntry[] = [
         transport: "Plane",
         GPS: [-33.8688, 151.2093],
         C02: 3900,
-        collection: ["Australia-Asia-2025-2026"]
+        collection: ["GapYear2026"]
     },
     {
         id: 3,
         date: "January 2026",
         title: "Brisbane 🇦🇺",
         locations: ["Brisbane", "Australia"],
-        transport: "Train",
+        transport: "Train", color: tripTransportColors.Train,
         GPS: [-27.4698, 153.0251],
         C02: 0, // ? CO2, unknown,
-        collection: ["Australia-Asia-2025-2026"]
+        collection: ["GapYear2026"]
     },
     {
         id: 4,
@@ -604,7 +630,7 @@ export const blogPosts: TravelEntry[] = [
         transport: "Plane",
         GPS: [37.5665, 126.978],
         C02: 3200,
-        collection: ["Australia-Asia-2025-2026"]
+        collection: ["GapYear2026"]
     },
     {
         id: 5,
@@ -614,36 +640,195 @@ export const blogPosts: TravelEntry[] = [
         transport: "Plane",
         GPS: [39.9042, 116.4074],
         C02: 500,
-        collection: ["Australia-Asia-2025-2026"]
+        collection: ["GapYear2026"]
     },
     {
         id: 6,
         date: "July 2026",
         title: "Shanghai 🇨🇳",
         locations: ["Shanghai", "China"],
-        transport: "Train",
+        transport: "Train", color: tripTransportColors.Train,
         GPS: [31.2304, 121.4737],
         C02: 0, // ? CO2
-        collection: ["Australia-Asia-2025-2026"]
+        collection: ["GapYear2026"]
     },
     {
         id: 7,
         date: "July 2026",
         title: "Chongqing 🇨🇳",
         locations: ["Chongqing", "China"],
-        transport: "Train",
+        transport: "Train", color: tripTransportColors.Train,
         GPS: [29.563, 106.5516],
         C02: 0, // ? CO2
-        collection: ["Australia-Asia-2025-2026"]
+        collection: ["GapYear2026"]
     },
     {
         id: 8,
         date: "July 2026",
         title: "Hong Kong 🇭🇰 ",
         locations: ["Hong Kong", "China"],
-        transport: "Train",
+        transport: "Train", color: tripTransportColors.Train,
         GPS: [22.3193, 114.1694],
         C02: 0, // ? CO2
-        collection: ["Australia-Asia-2025-2026"]
+        collection: ["GapYear2026"]
+    },
+];
+
+export const sportColors = {
+    Surf: "blue",
+    Ski: "gray",
+};
+
+
+export const sportEntries: MapEntry[] = [
+    {
+        id: 1,
+        date: "2015",
+        title: "Surf at Canaries",
+        locations: ["Canaries"],
+        GPS: [28.291564, -16.629130],
+        C02: 600,
+        color: sportColors.Surf
+    },
+    {
+        id: 2,
+        date: "2018",
+        title: " Surf at Los Angeles 🇺🇸 ",
+        locations: ["Los Angeles", "USA"],
+        C02: 3000,
+        GPS: [33.767510, -118.236940],
+        color: sportColors.Surf
+    },
+    {
+        id: 3,
+        date: "2024",
+        title: " Surf at Biarritz ",
+        locations: ["Biarritz", "FR"],
+        C02: 10,
+        GPS: [43.47114, - 1.55273],
+        color: sportColors.Surf
+    },
+    {
+        id: 4,
+        date: "2022",
+        title: " Surf at Anglet ",
+        locations: ["Anglet", "FR"],
+        C02: 10,
+        GPS: [43.4789, -1.5330],
+        color: sportColors.Surf
+    },
+
+    {
+        id: 5,
+        date: "2024",
+        title: " Surf at Biscarosse ",
+        locations: ["Biscarosse", "FR"],
+        C02: 10,
+        GPS: [44.44498, - 1.25374],
+        color: sportColors.Surf
+    },
+    {
+        id: 5,
+        date: "2024",
+        title: " Surf at La Guérite ",
+        locations: ["La guerite", "FR"],
+        C02: 10,
+        GPS: [47.59269, -3.14861],
+        color: sportColors.Surf
+    },
+    {
+        id: 6,
+        date: "2020",
+        title: " Ski at Val Thorens ",
+        locations: ["Val Thorens", "FR"],
+        C02: 10,
+        GPS: [45.29791, 6.58227],
+        color: sportColors.Ski
+    },
+    {
+        id: 7,
+        date: "2022",
+        title: " Ski at Alpes d'Huez  ",
+        locations: ["Alpes d'Huez", "FR"],
+        C02: 10,
+        GPS: [45.09240, 6.06994],
+        color: sportColors.Ski
+    },
+    {
+        id: 8,
+        date: "2024",
+        title: " Ski at Chamonix  ",
+        locations: ["Chamonix", "FR"],
+        C02: 10,
+        GPS: [45.92467, 6.87275],
+        color: sportColors.Ski
+    },
+    {
+        id: 9,
+        date: "2024",
+        title: " Ski at Les Deux Alpes  ",
+        locations: ["Les Deux Alpes", "FR"],
+        C02: 10,
+        GPS: [45.00999, 6.12376],
+        color: sportColors.Ski
+    },
+    {
+        id: 10,
+        date: "2024",
+        title: " Ski at Le Grand Bornand  ",
+        locations: ["Le grand bornand"],
+        C02: 10,
+        GPS: [45.94187, 6.42715],
+        color: sportColors.Ski
+    },
+    {
+        id: 11,
+        date: "2024",
+        title: " Ski at La Plagne",
+        C02: 10,
+        GPS: [45.50430, 6.70491],
+        color: sportColors.Ski
+    },
+    {
+        id: 12,
+        date: "2018",
+        title: " Ski at Les Menuires",
+        C02: 10,
+        GPS: [45.32427, 6.53890],
+        color: sportColors.Ski
+    },
+    {
+        id: 13,
+        date: "2017",
+        title: " Ski at Les Saisies",
+        C02: 10,
+        GPS: [45.75733, 6.53945],
+        color: sportColors.Ski
+    },
+    {
+        id: 13,
+        date: "2019",
+        title: " Ski at Les Gets",
+        C02: 10,
+        GPS: [46.15510, 6.66333],
+        color: sportColors.Ski
+
+    },
+    {
+        id: 14,
+        date: "2012",
+        title: " Ski at Piau Engaly",
+        C02: 10,
+        GPS: [42.78021, 0.15861],
+        color: sportColors.Ski
+    },
+    {
+        id: 15,
+        date: "2020",
+        title: " Paragliding at Annecy",
+        locations: ["Annecy"],
+        C02: 10,
+        GPS: [45.8992, 6.1294],
+        color: sportColors.Ski
     },
 ];

@@ -2,12 +2,12 @@ import { Header } from "../../Single/Header";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import { createCustomIcon } from "../../Single/MapUtils";
 import { useEffect, useState } from "react";
-import { blogPosts } from "../../data/datatype/data_trip"
+import { blogPosts } from "../../data/datatype/data_maps"
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import 'leaflet/dist/leaflet.css';
 import { StandardHeader } from "../../Single/StandardHeader";
 import { BlogPostType } from "../Home/Data";
-import { TravelEntry } from "../../data/datatype/data_trip";
+import { MapEntry } from "../../data/datatype/data_maps";
 
 
 const ResizeMap = () => {
@@ -116,7 +116,7 @@ const AustraliaContent = () => {
         // Filter trips belonging to the "Australia-Asia-2025-2026" collection
         const filteredTrips = blogPosts.filter(
             (trip) =>
-                trip.collection?.includes("Australia-Asia-2025-2026") ?? false
+                trip.collection?.includes("GapYear2026") ?? false
         );
 
         return (

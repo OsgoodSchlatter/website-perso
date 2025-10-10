@@ -20,6 +20,7 @@ export const Pages2 = new Map<string, string>([
   ["contact", "contact"],
   ["about", "about"],
   ["gallery", "gallery"],
+  ["maps", "maps"],
   ["tmp", "tmp"],
 ]);
 

@@ -62,20 +62,23 @@ const GalleryContent: React.FC = () => {
                     <img src={selectedImage} alt="Enlarged" className="max-w-full max-h-full" />
                 </div>
             )}
-
             <div>
-                <select
-                    value={selectedAlbum || ""}
-                    onChange={(e) => setSelectedAlbum(e.target.value as Folders)}
-                    className="p-4 py-2 rounded max-h-10 bg-slate-500"
-                >
-                    <option value="">All albums</option>
-                    {Object.values(Folders).map((album) => (
-                        <option key={album} value={album}>
-                            {album}
-                        </option>
-                    ))}
-                </select>
+
+                <div className='flex justify-between'>
+                    <div className="md:text-4xl text-3xl font-bold italic">{"photo gallery"}</div>
+                    <select
+                        value={selectedAlbum || ""}
+                        onChange={(e) => setSelectedAlbum(e.target.value as Folders)}
+                        className="p-4 py-2 rounded max-h-10 bg-slate-500"
+                    >
+                        <option value="">All albums</option>
+                        {Object.values(Folders).map((album) => (
+                            <option key={album} value={album}>
+                                {album}
+                            </option>
+                        ))}
+                    </select>
+                </div>
 
                 {dateList.map(date => {
                     const [month, year] = date.split("/");
@@ -124,7 +127,7 @@ const GalleryContent: React.FC = () => {
 export const Gallery = ({ title, date }: { title: string, date: string }) => {
     return (
         <>
-            <PicsHeader title={title} date={""}
+            <PicsHeader title={""} date={""}
                 content={<GalleryContent />} />
         </>
     );

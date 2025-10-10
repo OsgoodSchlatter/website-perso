@@ -72,6 +72,12 @@ export const Navbar = () => {
                 about
               </Link>
               <Link
+                to="/maps/1"
+                className=" px-2  md:text-2xl text-xl flex rounded-lg hover:underline"
+              >
+                maps
+              </Link>
+              <Link
                 to="/gallery/1"
                 className=" px-2  md:text-2xl text-xl flex rounded-lg hover:underline"
               >

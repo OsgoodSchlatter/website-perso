@@ -14,6 +14,7 @@ import assemblee from "./assemblee.jpg"
 import complot_roth from "./complot_roth.jpg"
 import banquet from "./Le-Banquet.jpg"
 import midsummer from "./midsummer-nights-dream.webp"
+import orwell from "./1984.jpeg"
 import { StandardHeader } from "../../Single/StandardHeader";
 interface BookEntry {
   title: string;
@@ -40,35 +41,37 @@ const BooksArray: BookEntry[] = [
   { title: "Songe d'une Nuit d'Ete / Midsummer night's dream ", author: " Shakespeare", date: "2020", pic: midsummer, comment: "Confusion and love in Antic Greece" },
   { title: "Le Banquet ", author: " Platon", date: "2020", pic: banquet, comment: "Several guests explore the nature of Love during a feast. " },
   { title: "Plot against America ", author: " Philip Roth", date: "2020", pic: complot_roth, comment: "This books puts forward the rise of fascism and antisemitism in the US of 1940s, under the uchronia where Charles Lindbergh becomes president of the US. " },
-
+  { title: "1984 ", author: " George Orwell", date: "2022", pic: orwell, comment: "This books tries to depict a society in which an entity called Big Brother watches over everymove you can make. And beyond moves, it also analyses every thoughts you can have. History is also being rewritten and some words become forbidden." },
 ];
-
 const BooksContent = () => {
+  const sortedBooks = [...BooksArray].sort((a, b) => Number(b.date) - Number(a.date));
+
   return (
     <>
-      <div >
-        {Array.from(BooksArray.entries())
-          .map(([key, value]) => (
-            <>
-              <div className="py-2 rounded my-2 ">
-                <a className="items-center text-l font-bold " >
-                  {value.title + ", " + value.author + ", " + value.date}
-                </a>
-                <div className="grid grid-cols-[100px_1fr] items-center justify-between my-2">
-                  <img src={value.pic} className="px-2 border-b-2 col-start-1" width="100" alt="Image" />
-                  <div className="text-sm">
-                    {value.comment}
-                  </div>
-                </div>
-              </div>
-            </>
-          ))}
+      <div>
+        {sortedBooks.map((value, index) => (
+          <div key={index} className="py-2 rounded my-2">
+            <a className="items-center text-l font-bold">
+              {`${value.title}, ${value.author}, ${value.date}`}
+            </a>
+            <div className="grid grid-cols-[100px_1fr] items-center justify-between my-2">
+              <img
+                src={value.pic}
+                className="px-2 border-b-2 col-start-1"
+                width="100"
+                alt={value.title}
+              />
+              <div className="text-sm">{value.comment}</div>
+            </div>
+          </div>
+        ))}
       </div>
     </>
   );
 };
+
 const intro = <div >
-  Some books I have had the opportunity to read and that I may suggest. The date refers to when I read them.
+  Some books I have had the opportunity to read and that I may suggest. The date refers to when I read them (from most recent to oldest).
 </div>
 
 export const Books = () => {

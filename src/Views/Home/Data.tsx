@@ -27,6 +27,7 @@ import { Gallery } from "../Gallery/Gallery";
 import { Italian } from "../Languages/Italian";
 import Video_Creation from "../Music-and-video/Video";
 import GuitarPaint from "../Music-and-video/PaintGuitar";
+import { MapsMain } from "../Maps/MapsMain"
 
 
 export type BlogPostType = {
@@ -55,6 +56,7 @@ export enum BlogCategory {
     Contact = "contact",
     About = "about",
     Gallery = "gallery",
+    Maps = "maps"
 }
 
 export enum BlogRoute {
@@ -73,6 +75,7 @@ export enum BlogRoute {
     Contact = "contact",
     About = "about",
     Gallery = "gallery",
+    Maps = "maps"
 }
 
 export type ContentProps = {
@@ -327,4 +330,13 @@ export const blogPostsArray: BlogPostType[] = [
     //     route: BlogRoute.Tmp,
     //     content: LandingPage,
     // },
+    {
+        id: 1,
+        date: "2025",
+        title: "Maps",
+        content_name: "Maps",
+        category: BlogCategory.Maps,
+        route: BlogRoute.Maps,
+        content: MapsMain,
+    },
 ];
