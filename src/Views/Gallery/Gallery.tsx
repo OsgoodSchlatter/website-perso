@@ -69,7 +69,7 @@ const GalleryContent: React.FC = () => {
                     <select
                         value={selectedAlbum || ""}
                         onChange={(e) => setSelectedAlbum(e.target.value as Folders)}
-                        className="p-4 py-2 rounded max-h-10 bg-slate-500"
+                        className="p-4 py-2 rounded max-h-10 w-1/3 bg-slate-500"
                     >
                         <option value="">All albums</option>
                         {Object.values(Folders).map((album) => (
