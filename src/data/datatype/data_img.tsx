@@ -92,7 +92,9 @@ import biereIleDeRe from "../pics/pics-add-august/pol-lg-moi.jpg"
 import simo_eloi from "../pics/pics-add-august/simo-eloi.jpg"
 import st_cloud from "../pics/pics-add-august/st-cloud.jpg"
 import surf from "../pics/pics-add-august/surf.jpg"
-
+import building_paris_25 from "../pics/paris-fall-25/building-day.jpg"
+import sign_paris_25 from "../pics/paris-fall-25/sign.jpg"
+import building_night_paris_25_2 from "../pics/paris-fall-25/building_night_paris_2.png"
 
 export type ImageType = {
     id: number;
@@ -957,6 +959,30 @@ export const DatedImages: ImageType[] = [
         img: st_cloud,
         date: "07/2025",
         caption: "St Cloud",
+        folder: [],
+        displayOnHome: true,
+    },
+    {
+        id: 96,
+        img: sign_paris_25,
+        date: "10/2025",
+        caption: "Cool Sign in Paris",
+        folder: [],
+        displayOnHome: true,
+    },
+    {
+        id: 97,
+        img: building_night_paris_25_2,
+        date: "10/2025",
+        caption: "Buildings at night in Paris",
+        folder: [],
+        displayOnHome: true,
+    },
+    {
+        id: 98,
+        img: building_paris_25,
+        date: "10/2025",
+        caption: "Cool building aerial view in Boulogne Billancourt",
         folder: [],
         displayOnHome: true,
     },
