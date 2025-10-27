@@ -96,6 +96,30 @@ import building_paris_25 from "../pics/paris-fall-25/building-day.jpg"
 import sign_paris_25 from "../pics/paris-fall-25/sign.jpg"
 import building_night_paris_25_2 from "../pics/paris-fall-25/building_night_paris_2.png"
 import contour_nov_2025 from "../pics/contour_10_25.png"
+import boat_dad_indo from "../pics/mauritius/boat_dad.jpg"
+import sea_umbrella from "../pics/mauritius/sea_umbrella.jpg"
+import sailing_mauritius from "../pics/mauritius/sailing_mauritius.jpg"
+import crew_indo from "../pics/indo/crew_indo.jpg"
+import foot from "../pics/indo/foot_indo.jpg"
+import kids from "../pics/indo/kids.jpg"
+import landscape_mount from "../pics/indo/landscape_mount.jpg"
+import sails from "../pics/indo/sails_at_sea-2.jpg"
+import boat_indo from "../pics/indo/our_boat_indo.jpg"
+import mum from "../pics/indo/mum_washing.jpg"
+import random_boat from "../pics/indo/rand_boat.jpg"
+import morning from "../pics/indo/mornings_in_indo.jpg"
+import boston from "../pics/usa/boston.jpg"
+import boston_dad from "../pics/usa/dad_and_i_in_boston.jpg"
+import close_ny from "../pics/usa/close-ny.jpg"
+import parents_ny from "../pics/usa/parents_ny.jpg"
+import ferry from "../pics/usa/ny_with_ferry.jpg"
+import newport from "../pics/usa/newport.jpg"
+import inside_ny from "../pics/usa/inside_ny.jpg"
+import scenery_ny from "../pics/usa/scenery-ny.jpg"
+import ny_style from "../pics/usa/ny_style.jpg"
+import cops from "../pics/usa/cops.jpg"
+import flag_me from "../pics/usa/flag_me.jpg"
+
 
 export type ImageType = {
     id: number;
@@ -124,7 +148,10 @@ export enum Folders {
     UppSala = "Uppsala 2023",
     USA_18 = "West coast of the USA in 2018",
     Nice_25 = "Nice, 2025",
-    Ile_de_re = "Ile de Ré, 2025"
+    Ile_de_re = "Ile de Ré, 2025",
+    USA_16 = "East coast of the USA in 2016",
+    Mauritius = "Mauritius Island in 2019",
+    Indonesia = "Indonesia on a boat in 2017"
 }
 
 export const videos = [
@@ -993,6 +1020,191 @@ export const DatedImages: ImageType[] = [
         date: "11/2025",
         caption: "Photo shoot for our next gig with Contour",
         folder: [Folders.Gig],
+        displayOnHome: true,
+    },
+    {
+        id: 100,
+        img: boat_dad_indo,
+        date: "08/2019",
+        caption: "Doing a little sailing race with my dad",
+        folder: [Folders.Mauritius],
+        displayOnHome: true,
+    },
+    {
+        id: 101,
+        img: sailing_mauritius,
+        date: "08/2019",
+        caption: "Me sailing at Mauritius",
+        folder: [Folders.Mauritius],
+        displayOnHome: true,
+    },
+    {
+        id: 102,
+        img: sea_umbrella,
+        date: "08/2019",
+        caption: "The view of our resort",
+        folder: [Folders.Mauritius],
+        displayOnHome: true,
+    },
+    {
+        id: 103,
+        img: crew_indo,
+        date: "08/2017",
+        caption: "Crew of the ship",
+        folder: [Folders.Indonesia],
+        displayOnHome: false,
+    },
+    {
+        id: 104,
+        img: foot,
+        date: "08/2017",
+        caption: "Playing football next to Bali",
+        folder: [Folders.Indonesia],
+        displayOnHome: true,
+    },
+    {
+        id: 105,
+        img: kids,
+        date: "08/2017",
+        caption: "Beautiful indonesian kids",
+        folder: [Folders.Indonesia],
+        displayOnHome: true,
+    },
+    {
+        id: 106,
+        img: landscape_mount,
+        date: "08/2017",
+        caption: "Scenery",
+        folder: [Folders.Indonesia],
+        displayOnHome: true,
+    },
+    {
+        id: 107,
+        img: sails,
+        date: "08/2017",
+        caption: "Sails at sea",
+        folder: [Folders.Indonesia],
+        displayOnHome: true,
+    },
+    {
+        id: 108,
+        img: boat_indo,
+        date: "08/2017",
+        caption: "Our boat",
+        folder: [Folders.Indonesia],
+        displayOnHome: true,
+    },
+    {
+        id: 109,
+        img: mum,
+        date: "08/2017",
+        caption: "My mom brushing her teeth on the boat",
+        folder: [Folders.Indonesia],
+        displayOnHome: true,
+    },
+    {
+        id: 110,
+        img: random_boat,
+        date: "08/2017",
+        caption: "Beautiful boat",
+        folder: [Folders.Indonesia],
+        displayOnHome: true,
+    },
+    {
+        id: 110,
+        img: morning,
+        date: "08/2017",
+        caption: "Mornings in Indonesia",
+        folder: [Folders.Indonesia],
+        displayOnHome: false,
+    },
+    {
+        id: 111,
+        img: boston,
+        date: "08/2016",
+        caption: "Boston ",
+        folder: [Folders.USA_16],
+        displayOnHome: true,
+    },
+    {
+        id: 112,
+        img: boston_dad,
+        date: "08/2016",
+        caption: "My dad and I in Boston ",
+        folder: [Folders.USA_16],
+        displayOnHome: false,
+    },
+    {
+        id: 113,
+        img: ferry,
+        date: "08/2016",
+        caption: "New York",
+        folder: [Folders.USA_16],
+        displayOnHome: true,
+    },
+    {
+        id: 114,
+        img: close_ny,
+        date: "08/2016",
+        caption: "Special view of NY ",
+        folder: [Folders.USA_16],
+        displayOnHome: true,
+    },
+    {
+        id: 115,
+        img: parents_ny,
+        date: "08/2016",
+        caption: "My parents in NY ",
+        folder: [Folders.USA_16],
+        displayOnHome: false,
+    },
+    {
+        id: 116,
+        img: inside_ny,
+        date: "08/2016",
+        caption: "Street view of NY",
+        folder: [Folders.USA_16],
+        displayOnHome: true,
+    },
+    {
+        id: 117,
+        img: scenery_ny,
+        date: "08/2016",
+        caption: "Scenery view of NY",
+        folder: [Folders.USA_16],
+        displayOnHome: true,
+    },
+    {
+        id: 118,
+        img: ny_style,
+        date: "08/2016",
+        caption: "NY from a movie",
+        folder: [Folders.USA_16],
+        displayOnHome: true,
+    },
+    {
+        id: 119,
+        img: cops,
+        date: "08/2016",
+        caption: "Me with US cops",
+        folder: [Folders.USA_16],
+        displayOnHome: false,
+    },
+    {
+        id: 120,
+        img: flag_me,
+        date: "08/2016",
+        caption: "My dad and I in TimeSquare",
+        folder: [Folders.USA_16],
+        displayOnHome: true,
+    },
+
+    {
+        id: 122,
+        img: newport,
+        date: "08/2016",
+        caption: "Newport ",
+        folder: [Folders.USA_16],
         displayOnHome: true,
     },
 
