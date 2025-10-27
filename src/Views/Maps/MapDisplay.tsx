@@ -26,7 +26,7 @@ export const MapDisplay = ({
     getColor,
     onClickMarker,
     initialCenter = [20, 0],
-    initialZoom = 2,
+    initialZoom = 5,
 }: MapDisplayProps) => {
     const [hovered, setHovered] = useState<number | null>(null);
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -133,15 +133,16 @@ export const MapDisplay = ({
         <>
             <div className="relative flex flex-col items-center">
                 {title && <h2 className="text-xl font-bold mb-4">{title}</h2>}
-
                 {/* @ts-ignore */}
                 <MapContainer center={initialCenter}
                     zoom={initialZoom}
                     worldCopyJump={true}
                     scrollWheelZoom={false}
                     style={{
-                        width: isMobile ? "350px" : "900px",
-                        height: isMobile ? "300px" : "600px",
+                        width: "100vw",        // full viewport width
+                        height: "100vh",       // full viewport height
+                        maxWidth: "100%",      // prevent overflow
+                        maxHeight: "100%",     // prevent overflow
                         zIndex: 1,
                     }}
                 >
