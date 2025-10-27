@@ -5,10 +5,6 @@ import { useEffect, useRef, useState } from "react";
 import { StandardHeader } from "../../Single/StandardHeader";
 import { blogPosts, MapEntry } from "../../data/datatype/data_maps"
 import { Folders, DatedImages } from "../../data/datatype/data_img";
-
-
-
-
 interface MapDisplayProps {
     entries: MapEntry[];
     title?: string;
@@ -140,7 +136,7 @@ export const MapDisplay = ({
                     scrollWheelZoom={false}
                     style={{
                         width: "100vw",        // full viewport width
-                        height: "100vh",       // full viewport height
+                        height: "calc(100vh - 80px)",      // full viewport height
                         maxWidth: "100%",      // prevent overflow
                         maxHeight: "100%",     // prevent overflow
                         zIndex: 1,
@@ -232,7 +228,7 @@ export const MapDisplay = ({
 
                 {
                     legend && (
-                        <div className="absolute bottom-4 right-4 bg-white/90 p-3 rounded-lg shadow-md border text-sm">
+                        <div className="absolute bottom-4 right-4 bg-white/90 p-3 rounded-lg shadow-md border text-sm z-50">
                             <div className="font-semibold mb-1 text-gray-800 text-center">Legend</div>
                             {Object.entries(legend).map(([label, color]) => (
                                 <div key={label} className="flex items-center gap-2 text-gray-700">
