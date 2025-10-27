@@ -95,6 +95,7 @@ import surf from "../pics/pics-add-august/surf.jpg"
 import building_paris_25 from "../pics/paris-fall-25/building-day.jpg"
 import sign_paris_25 from "../pics/paris-fall-25/sign.jpg"
 import building_night_paris_25_2 from "../pics/paris-fall-25/building_night_paris_2.png"
+import contour_nov_2025 from "../pics/contour_10_25.png"
 
 export type ImageType = {
     id: number;
@@ -984,6 +985,14 @@ export const DatedImages: ImageType[] = [
         date: "10/2025",
         caption: "Cool building aerial view in Boulogne Billancourt",
         folder: [],
+        displayOnHome: true,
+    },
+    {
+        id: 99,
+        img: contour_nov_2025,
+        date: "11/2025",
+        caption: "Photo shoot for our next gig with Contour",
+        folder: [Folders.Gig],
         displayOnHome: true,
     },
 
