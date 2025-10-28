@@ -1034,7 +1034,7 @@ export const DatedImages: ImageType[] = [
         id: 101,
         img: sailing_mauritius,
         date: "08/2019",
-        caption: "Me sailing at Mauritius",
+        caption: "Sailing at Mauritius",
         folder: [Folders.Mauritius],
         displayOnHome: true,
     },
