@@ -120,6 +120,14 @@ import ny_style from "../pics/usa/ny_style.jpg"
 import cops from "../pics/usa/cops.jpg"
 import flag_me from "../pics/usa/flag_me.jpg"
 
+import close_up_food from "../pics/oct-nov-25/close-up-food.jpg"
+import eloi_leo from "../pics/oct-nov-25/eloi-and-leonie.jpg"
+import penthievre from "../pics/oct-nov-25/penthievre.jpg"
+import anna_eloi from "../pics/oct-nov-25/anna_eloi.jpg"
+import buttes from "../pics/oct-nov-25/butteschaum.jpg"
+import parigi from "../pics/oct-nov-25/parigi.png"
+import sea_britanny from "../pics/oct-nov-25/sea-britanny.jpg"
+import mart_eloi from "../pics/oct-nov-25/mart_eloi.jpg"
 
 export type ImageType = {
     id: number;
@@ -151,7 +159,8 @@ export enum Folders {
     Ile_de_re = "Ile de Ré, 2025",
     USA_16 = "East coast of the USA in 2016",
     Mauritius = "Mauritius Island in 2019",
-    Indonesia = "Indonesia on a boat in 2017"
+    Indonesia = "Indonesia on a boat in 2017",
+    fall_25 = "Fall 25"
 }
 
 export const videos = [
@@ -1017,7 +1026,7 @@ export const DatedImages: ImageType[] = [
     {
         id: 99,
         img: contour_nov_2025,
-        date: "11/2025",
+        date: "10/2025",
         caption: "Photo shoot for our next gig with Contour",
         folder: [Folders.Gig],
         displayOnHome: true,
@@ -1207,5 +1216,66 @@ export const DatedImages: ImageType[] = [
         folder: [Folders.USA_16],
         displayOnHome: true,
     },
+    {
+        id: 123,
+        img: mart_eloi,
+        date: "11/2025",
+        caption: "My friend Martial and I in the subway",
+        folder: [Folders.fall_25],
+        displayOnHome: true,
+    },
+
+    {
+        id: 124,
+        img: anna_eloi,
+        date: "11/2025",
+        caption: "Anna and I during rehearsals ",
+        folder: [Folders.fall_25],
+        displayOnHome: true,
+    },
+    {
+        id: 125,
+        img: close_up_food,
+        date: "11/2025",
+        caption: "Street market near Republique",
+        folder: [Folders.fall_25],
+        displayOnHome: true,
+    },
+    {
+        id: 126,
+        img: penthievre,
+        date: "11/2025",
+        caption: "Went surfing with a bunch of friends at Penthievre",
+        folder: [Folders.fall_25],
+        displayOnHome: true,
+    },
+    {
+        id: 127,
+        img: sea_britanny,
+        date: "11/2025",
+        caption: "Sea close-up",
+        folder: [Folders.fall_25],
+        displayOnHome: true,
+    },
+    {
+        id: 128,
+        img: eloi_leo,
+        date: "11/2025",
+        caption: "My friend Eloi and his girlfriend Léonie",
+        folder: [Folders.fall_25],
+        displayOnHome: true,
+    },
+    {
+        id: 129,
+        img: parigi,
+        date: "11/2025",
+        caption: "Parisian sidewalk",
+        folder: [Folders.fall_25],
+        displayOnHome: true,
+    },
+
+
+
+
 
 ];
