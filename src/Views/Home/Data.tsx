@@ -28,6 +28,7 @@ import { Italian } from "../Languages/Italian";
 import Video_Creation from "../Music-and-video/Video";
 import GuitarPaint from "../Music-and-video/PaintGuitar";
 import { MapsMain } from "../Maps/MapsMain"
+import { Misc } from "./Misc";
 
 
 export type BlogPostType = {
@@ -56,7 +57,8 @@ export enum BlogCategory {
     Contact = "contact",
     About = "about",
     Gallery = "gallery",
-    Maps = "maps"
+    Maps = "maps",
+    Misc = "misc",
 }
 
 export enum BlogRoute {
@@ -75,7 +77,8 @@ export enum BlogRoute {
     Contact = "contact",
     About = "about",
     Gallery = "gallery",
-    Maps = "maps"
+    Maps = "maps",
+    Misc = "misc"
 }
 
 export type ContentProps = {

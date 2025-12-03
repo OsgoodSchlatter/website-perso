@@ -1,5 +1,8 @@
+import { Link } from "react-router-dom";
 import { StandardHeader } from "../../Single/StandardHeader";
 import img1 from "./about_pic.jpg"
+import logo from "../../data/pics/wallpaper/osgood_trimmed.png"
+
 
 const AboutContent = () => {
     return (

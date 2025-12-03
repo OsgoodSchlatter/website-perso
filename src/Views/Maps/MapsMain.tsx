@@ -7,7 +7,9 @@ import {
   tripTransportColors,
   MapEntry,
 } from "../../data/datatype/data_maps";
-import { PicsHeader, StandardHeader } from "../../Single/StandardHeader";
+import { Link } from "react-router-dom";
+import logo from "../../data/pics/wallpaper/osgood_trimmed.png"
+
 
 // Utility: convert "Month Year" or "Month YYYY" to a real Date
 function parseTravelDate(dateStr: string): Date {
@@ -80,11 +82,10 @@ export const MapSelector = ({
                   setCurrentMode(option);
                   setOpen(false);
                 }}
-                className={`block w-full text-left px-4 py-2 text-sm ${
-                  currentMode === option
-                    ? "bg-slate-500 text-white-900 font-semibold"
-                    : "text-white hover:bg-gray-600"
-                }`}
+                className={`block w-full text-left px-4 py-2 text-sm ${currentMode === option
+                  ? "bg-slate-500 text-white-900 font-semibold"
+                  : "text-white hover:bg-gray-600"
+                  }`}
               >
                 {option.charAt(0).toUpperCase() + option.slice(1)}
               </button>
@@ -138,31 +139,43 @@ export const MapsMain = () => {
   };
 
   return (
-    <div className="relative w-full flex flex-col items-center">
-      {/* Map display (base layer) */}
-      <MapDisplay
-        title=""
-        entries={getEntries()}
-        legend={getLegend()}
-        initialCenter={[31, -7]}
-        initialZoom={3}
-      />
-
-      {/* Overlay content */}
-      <div className="absolute top-4 right-4 z-10">
-        <MapSelector
-          currentMode={category.toLowerCase() as any}
-          setCurrentMode={(mode) =>
-            setCategory(
-              (mode.charAt(0).toUpperCase() + mode.slice(1)) as MapMode
-            )
-          }
+    <>
+      <Link
+        to="/"
+        className="absolute top-4 left-2 z-10"
+      >
+        <img
+          src={logo}
+          alt="Logo"
+          className="w-1/4 h-auto"
         />
+      </Link>
+      <div className="relative w-full flex items-center">
+        {/* Map display (base layer) */}
+        <MapDisplay
+          title=""
+          entries={getEntries()}
+          legend={getLegend()}
+          initialCenter={[31, -7]}
+          initialZoom={3}
+        />
+
+        {/* Overlay content */}
+        <div className="absolute top-4 right-4 z-10">
+          <MapSelector
+            currentMode={category.toLowerCase() as any}
+            setCurrentMode={(mode) =>
+              setCategory(
+                (mode.charAt(0).toUpperCase() + mode.slice(1)) as MapMode
+              )
+            }
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
 // export const MapsMain = () => {
-//     return <PicsHeader title={" "} date={""} content={<MapsMainComponent />} />;
-// };
+  //     return <PicsHeader title={" "} date={""} content={<MapsMainComponent />} />;
+  // };

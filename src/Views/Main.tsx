@@ -7,7 +7,7 @@ import { CategoryDisplayer, PostDisplayer } from "../Single/CategoryDisplayer";
 
 export const Pages2 = new Map<string, string>([
   ["chess", "chess"],
-  ["trips", "trips"],
+  ["trips", "maps"],
   ["maths", "maths"],
   ["cs", "computer science"],
   ["music_video", "music & video"],
@@ -22,6 +22,7 @@ export const Pages2 = new Map<string, string>([
   ["gallery", "gallery"],
   ["maps", "maps"],
   ["tmp", "tmp"],
+  ["misc", "misc"],
 ]);
 
 export const Main = () => {

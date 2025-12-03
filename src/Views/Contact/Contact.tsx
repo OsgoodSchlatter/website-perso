@@ -3,7 +3,7 @@ import { StandardHeader } from "../../Single/StandardHeader";
 import { GrGithub } from "react-icons/gr";
 import { GrLinkedin } from "react-icons/gr";
 import { FaBookOpen, FaHome, FaUtensilSpoon } from "react-icons/fa";
-import { BiSpreadsheet } from "react-icons/bi";
+import { BiLogoYoutube, BiSpreadsheet } from "react-icons/bi";
 import Pdf from "../../CV-2025.pdf";
 import { TfiWrite } from "react-icons/tfi";
 
@@ -44,6 +44,15 @@ const ContactContent = () => {
             <div className="flex p-1 justify-between">
               <span className="px-2 mt-1 font-bold text-2xl">Resume</span>{" "}
               <BiSpreadsheet size={30} />
+            </div>
+          </a>
+        </div>
+        <div className="rounded-lg  hover:bg-slate-600">
+          {" "}
+          <a href={"https://www.youtube.com/@osgoodSchlatter16"}>
+            <div className="flex p-1 justify-between">
+              <span className="px-2 mt-1 font-bold text-2xl">YouTube</span>{" "}
+              <BiLogoYoutube size={30} />
             </div>
           </a>
         </div>

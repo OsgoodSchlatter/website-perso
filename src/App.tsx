@@ -6,8 +6,7 @@ import { Main } from "./Views/Main";
 function App() {
   return (
     <div className="app-container">
-      <Navbar />
-      <div className="content mt-20">
+      <div className="content">
         <hr />
         <Main />
       </div>

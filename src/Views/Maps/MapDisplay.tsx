@@ -1,5 +1,5 @@
 // components/MapDisplay.tsx
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, ZoomControl } from "react-leaflet";
 import { createCustomIcon } from "../../Single/MapUtils";
 import { useEffect, useRef, useState } from "react";
 import { StandardHeader } from "../../Single/StandardHeader";
@@ -132,17 +132,19 @@ export const MapDisplay = ({
                 {/* @ts-ignore */}
                 <MapContainer center={initialCenter}
                     zoom={initialZoom}
+                    zoomControl={false}
                     worldCopyJump={true}
                     scrollWheelZoom={false}
                     style={{
                         width: "100vw",        // full viewport width
-                        height: "calc(100vh - 80px)",      // full viewport height
+                        height: "100vh",      // full viewport height
                         maxWidth: "100%",      // prevent overflow
                         maxHeight: "100%",     // prevent overflow
                         zIndex: 1,
                     }}
                 >
                     <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                    <ZoomControl position="bottomleft" zoomInText="+" zoomOutText="-" />
                     {Array.from((entries).entries()).map(([key, entry]) => {
                         // collect images for this post
                         const imagesForPost = (DatedImages?.filter((image) =>

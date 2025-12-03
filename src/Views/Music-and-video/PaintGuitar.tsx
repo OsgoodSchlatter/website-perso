@@ -13,50 +13,65 @@ const comment = <div>
 
 
 const content = <>
-    <div>
-        <img src={og} alt="" />
+    <div className="flex w-full justify-between items-end">
+
+        {/* LEFT GROUP */}
+        <div className=" items-center gap-4 flex-shrink-0">
+            <img src={og} alt="" className=" w-32 md:w-64" />
+            <span className="text-xl">before</span>
+        </div>
+
+        {/* RIGHT GROUP */}
+        <div className=" items-center gap-4 flex-shrink-0 ml-2 mr-2">
+            <img src={final} alt="" className=" w-24 md:w-64" />
+            <span className="text-xl">after</span>
+        </div>
+
     </div>
+
+
+
     <div>
-        <div className="text-5xl font-bold mt-4">
+        <div className="text-3xl font-bold mt-4">
             Step 1
         </div>
         <div className="text-2xl mt-2">
             Polish and strap.
         </div>
         <div className="flex justify-center p-2">
-            <img src={pose} className="w-2/3" />
+            <img src={pose} className="w-2/5  " />
         </div>
-        <div className="text-5xl font-bold mt-8">
+        <div className="text-3xl font-bold mt-8">
             Step 2
         </div>
         <div className="text-2xl mt-2">
             Start painting.
         </div>
         <div className="flex justify-center p-2">
-            <img src={half} className="w-2/3" />
+            <img src={half} className="w-2/5  " />
         </div>
-        <div className="text-5xl font-bold mt-8">
+        <div className="text-3xl font-bold mt-8">
             Step 3
         </div>
         <div className="text-2xl mt-2">
             Add extra layer of coating.
         </div>
         <div className="flex justify-center p-2">
-            <img src={finished} className="w-2/3" />
+            <img src={finished} className="w-2/5  " />
         </div>
-        <div className="text-5xl font-bold mt-8">
+        <div className="text-3xl font-bold mt-8">
             Step 4
         </div>
         <div className="text-2xl mt-2">
             Finished.
         </div>
         <div className="flex justify-center p-2">
-            <img src={final} className="w-2/3" />
+            <img src={final} className="w-2/5  " />
         </div>
         <div className="text-2xl">
             So happy with the result!
         </div>
-        <div className="text-5xl font-bold mt-8">
+        <div className="text-3xl font-bold mt-8">
             In Boulogne
         </div>
         <div className="flex justify-center p-2 mt-2">

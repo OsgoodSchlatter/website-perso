@@ -1,8 +1,21 @@
-export const StandardHeader = ({ title, date, comment, content }: { title: string, date: string, comment?: JSX.Element, content?: JSX.Element }) => {
+import { Link } from "react-router-dom";
+import logo from "../data/pics/wallpaper/osgood_trimmed.png"
+export const StandardHeader = ({ title, date, comment, content }: { title?: string, date?: string, comment?: JSX.Element, content?: JSX.Element }) => {
     return (
         <>
-            <div className="md:flex md:justify-center w-full items-center">
-                <div className="px-2 md:w-1/2 flex justify-between items-end mt-4">
+            <Link
+                to="/"
+                className="absolute top-3 left-1/2 -translate-x-1/2"
+            >
+                <img
+                    src={logo}
+                    alt="Logo"
+                    className="w-64 h-auto"
+                />
+            </Link>
+
+            <div className="md:flex md:justify-center w-full items-center mt-12">
+                <div className="px-2 md:w-1/2 flex justify-between items-end md:mt-4 mt-8">
                     <div className="md:text-4xl text-3xl font-bold italic"> {title} </div>
                     <div className="text-xl font-bold"> {date} </div>
                 </div>
@@ -26,15 +39,25 @@ export const PicsHeader = ({
     comment,
     content,
 }: {
-    title: string;
-    date: string;
+    title?: string;
+    date?: string;
     comment?: JSX.Element;
     content?: JSX.Element;
 }) => {
     return (
         <>
             {/* Title + Date */}
-            <div className="md:flex md:justify-center w-full items-center">
+            <Link
+                to="/"
+                className="absolute top-3 left-1/2 -translate-x-1/2"
+            >
+                <img
+                    src={logo}
+                    alt="Logo"
+                    className="w-64 h-auto"
+                />
+            </Link>
+            <div className="md:flex md:justify-center w-full items-center mt-8">
                 <div className="px-2 md:w-2/3 flex justify-between items-end mt-4">
                     <div className="md:text-4xl text-3xl font-bold italic">{title}</div>
                     <div className="text-xl font-bold">{date}</div>

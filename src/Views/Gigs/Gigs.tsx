@@ -117,37 +117,32 @@ export const Gigs_List: Gig[] = [
 
 ]
 
-export const Gigs = () => {
+const GigsContent = () => {
     const [selectedGig, setSelectedGig] = useState<Gig>(Gigs_List[1]);
 
     return (
         <>
-            <div className="flex justify-center mt-4">
-                <div className="w-full sm:w-2/3 md:max-w-4xl lg:max-w-4xl xl:max-w-4xl mx-4">
-                    {/* Music Selection Dropdown */}
-                    <div className="sticky top-24 left-full self-start z-50">
-                        <div className="w-full flex justify-end px-4 mb-4">
-                            <div className="inline-flex rounded-md shadow overflow-hidden border border-gray-300 p-2 bg-black">
-                                <select
-                                    value={selectedGig.id}
-                                    onChange={(e) => {
-                                        const selected = Gigs_List.find(g => g.id === Number(e.target.value));
-                                        if (selected) setSelectedGig(selected);
-                                    }}
-                                >
-                                    {Gigs_List.map((gig) => (
-                                        <option key={gig.id} value={gig.id}>
-                                            {gig.name}
-                                        </option>
-                                    ))}
-                                </select>
-
-                            </div>
-                        </div>
+            <div className="flex justify-center">
+                <div className="max-w-full mx-4 ">
+                    <div className="flex justify-end">
+                        <select
+                            value={selectedGig.id}
+                            onChange={(e) => {
+                                const selected = Gigs_List.find(g => g.id === Number(e.target.value));
+                                if (selected) setSelectedGig(selected);
+                            }}
+                            className="p-4 py-2 rounded md:max-h-12 md:w-1/3 bg-black right-0"
+                        >
+                            {Gigs_List.map((gig) => (
+                                <option key={gig.id} value={gig.id}>
+                                    {gig.name}
+                                </option>
+                            ))}
+                        </select>
                     </div>
                     <div>
 
-                        <div className="p-2 px-4 mt-4 rounded bg-[var(--bg)]" style={{ '--bg': selectedGig.colorInfo } as React.CSSProperties}>
+                        <div className="max-w-full p-2 px-4 mt-4 rounded bg-[var(--bg)]" style={{ '--bg': selectedGig.colorInfo } as React.CSSProperties}>
                             <div>
                                 <div className={"text-5xl font-bold text-[var(--te)]"} style={{ '--te': selectedGig.textInfo } as React.CSSProperties}>
                                     {selectedGig.bandInfo.name}
@@ -162,7 +157,7 @@ export const Gigs = () => {
                                         href={song?.url}>{song?.title}</a>
                                 ))}
                             </div>
-                            <div>
+                            <div className="max-w-full">
                                 {DatedImages?.filter(
                                     (image) =>
                                         selectedGig.picturesFolder?.some(folder => image.folder?.includes(folder))
@@ -181,3 +176,10 @@ export const Gigs = () => {
     );
 };
 
+export const Gigs = ({ title, date }: { title: string, date: string }) => {
+    return (
+        <>
+            <PicsHeader content={<GigsContent />} />
+        </>
+    )
+}
