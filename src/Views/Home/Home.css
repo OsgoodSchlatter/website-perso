@@ -1,15 +1,18 @@
 .my-link {
-    font-size: 1.25rem; /* equivalent to 20px */
+  font-size: 1.25rem; /* equivalent to 20px */
 }
 
 @media (max-width: 640px) {
-    .my-link {
-        font-size: 0.6rem; /* equivalent to 16px */
-    }
+  .my-link {
+    font-size: 0.6rem; /* equivalent to 16px */
+  }
 }
 
 @media (max-width: 480px) {
-    .my-link {
-        font-size: 0.7rem; /* equivalent to 14px */
-    }
+  .my-link {
+    font-size: 0.7rem; /* equivalent to 14px */
+  }
+}
+.text-3d {
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
 }

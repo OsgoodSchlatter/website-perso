@@ -38,17 +38,23 @@ export const PicsHeader = ({
     date,
     comment,
     content,
+    logo,
+    link,
 }: {
     title?: string;
     date?: string;
     comment?: JSX.Element;
     content?: JSX.Element;
+    logo?: string;
+    link: string;
 }) => {
     return (
         <>
             {/* Title + Date */}
+
+
             <Link
-                to="/"
+                to={link}
                 className="absolute top-3 left-1/2 -translate-x-1/2"
             >
                 <img
@@ -57,28 +63,85 @@ export const PicsHeader = ({
                     className="w-64 h-auto"
                 />
             </Link>
-            <div className="md:flex md:justify-center w-full items-center mt-8">
-                <div className="px-2 md:w-2/3 flex justify-between items-end mt-4">
+
+            <div className="md:flex md:justify-center w-full md:max-w-full items-center mt-12">
+
+                <div className="px-2 flex justify-between items-end mt-4">
                     <div className="md:text-4xl text-3xl font-bold italic">{title}</div>
                     <div className="text-xl font-bold">{date}</div>
                 </div>
-            </div>
 
-            {/* Comment */}
-            <div className="w-full md:flex md:justify-center">
-                <div className="px-2 md:w-2/3 flex justify-between mt-4">
+
+                {/* Comment */}
+
+                <div className="px-2 flex justify-between mt-4">
                     <div>{comment}</div>
                     <div className="invisible"></div>
                 </div>
-            </div>
 
-            {/* Content */}
-            <div className="w-full md:flex md:justify-center">
-                <div className="px-2 md:w-2/3 flex justify-between mt-4">
+
+                {/* Content */}
+
+                <div className="px-2  flex justify-between mt-4">
                     <div>{content}</div>
                     <div className="invisible"></div>
                 </div>
             </div>
+        </>
+
+    );
+};
+
+export const PicsHeaderContour = ({
+    title,
+    date,
+    comment,
+    content,
+    link,
+}: {
+    title?: string;
+    date?: string;
+    comment?: JSX.Element;
+    content?: JSX.Element;
+    link: string;
+}) => {
+    return (
+        <>
+            {/* Title + Date */}
+
+
+
+            <Link
+                to={link}
+                className=" font-fatkat text-yellow-300 flex justify-center rounded-lg  md:text-[70px] text-[60px] text-shadow"
+            >
+                Contour
+            </Link>
+
+            <div className="md:flex md:justify-center w-full md:max-w-full items-center ">
+
+                <div className="px-2 flex justify-between items-end">
+                    <div className="md:text-4xl text-3xl font-bold italic">{title}</div>
+                    <div className="text-xl font-bold">{date}</div>
+                </div>
+
+
+                {/* Comment */}
+
+                <div className="px-2 flex justify-between mt-4">
+                    <div>{comment}</div>
+                    <div className="invisible"></div>
+                </div>
+
+
+                {/* Content */}
+
+                <div className="px-2  flex justify-between mt-4">
+                    <div>{content}</div>
+                    <div className="invisible"></div>
+                </div>
+            </div>
+
         </>
 
     );

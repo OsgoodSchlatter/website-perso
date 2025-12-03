@@ -21,8 +21,7 @@ export const Pages2 = new Map<string, string>([
   ["about", "about"],
   ["gallery", "gallery"],
   ["maps", "maps"],
-  ["tmp", "tmp"],
-  ["misc", "misc"],
+  ["contour", "contour"],
 ]);
 
 export const Main = () => {

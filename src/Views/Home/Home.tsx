@@ -51,7 +51,7 @@ export const Home = () => {
         <div className="flex justify-center md:text-4xl text-3xl mb-1 mt-48 items-center">
           <Link
             to="/"
-            className="text-green-400 px-6 md:px-2 flex justify-center rounded-lg hover:underline"
+            className=" px-6 md:px-2 flex justify-center rounded-lg hover:underline"
           >
             <img src={logo} alt="Logo" className="w-4/5 h-auto" />
           </Link>

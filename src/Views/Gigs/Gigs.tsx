@@ -2,7 +2,7 @@ import { Header } from "../../Single/Header";
 import React, { useState } from "react";
 import 'leaflet/dist/leaflet.css';
 import { Folders, DatedImages } from "../../data/datatype/data_img";
-
+import logo from "../../data/pics/wallpaper/osgood_trimmed.png"
 import { SetLists, Song, Songs } from "../../data/datatype/data_music"
 import { PicsHeader, StandardHeader } from "../../Single/StandardHeader";
 
@@ -179,7 +179,7 @@ const GigsContent = () => {
 export const Gigs = ({ title, date }: { title: string, date: string }) => {
     return (
         <>
-            <PicsHeader content={<GigsContent />} />
+            <PicsHeader link={"/"} logo={logo} content={<GigsContent />} />
         </>
     )
 }

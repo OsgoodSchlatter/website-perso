@@ -1,0 +1,26 @@
+.my-link {
+  font-size: 1.25rem; /* equivalent to 20px */
+}
+
+@media (max-width: 640px) {
+  .my-link {
+    font-size: 0.6rem; /* equivalent to 16px */
+  }
+}
+
+@media (max-width: 480px) {
+  .my-link {
+    font-size: 0.7rem; /* equivalent to 14px */
+  }
+}
+
+.text-3d {
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5);
+  text-shadow: 8px 8px 0px rgba(0, 0, 0, 0.5);
+  text-shadow: 12px 12px 0px rgba(0, 0, 0, 0.5);
+}
+
+.text-shadow {
+  text-shadow: -8px -8px 0 #000, 4px -4px 0 #000, -4px 4px 0 #000,
+    4px 4px 0 #000;
+}

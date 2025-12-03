@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PicsHeader, StandardHeader } from '../../Single/StandardHeader';
 import { DatedImages, Folders, ImageType } from '../../data/datatype/data_img';
+import logo from "../../data/pics/wallpaper/osgood_trimmed.png"
 
 // Define the type for the images
 
@@ -127,7 +128,7 @@ const GalleryContent: React.FC = () => {
 export const Gallery = ({ title, date }: { title: string, date: string }) => {
     return (
         <>
-            <PicsHeader title={""} date={""}
+            <PicsHeader link={"/"} logo={logo} title={""} date={""}
                 content={<GalleryContent />} />
         </>
     );

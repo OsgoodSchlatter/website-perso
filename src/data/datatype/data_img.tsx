@@ -160,8 +160,14 @@ export enum Folders {
     USA_16 = "East coast of the USA in 2016",
     Mauritius = "Mauritius Island in 2019",
     Indonesia = "Indonesia on a boat in 2017",
-    fall_25 = "Fall 25"
+    fall_25 = "Fall 25",
+    Contour = "Contour"
 }
+
+export enum FoldersContour {
+    
+}
+
 
 export const videos = [
 
@@ -500,7 +506,7 @@ export const DatedImages: ImageType[] = [
         img: drums_normandy,
         date: "02/2025",
         caption: "Gig in Normandy",
-        folder: [Folders.Sum24],
+        folder: [Folders.Sum24, Folders.Contour],
         displayOnHome: true,
     },
     {
@@ -588,7 +594,7 @@ export const DatedImages: ImageType[] = [
         img: alltogether,
         date: "03/2025",
         caption: "Contour in Saclay in 2025",
-        folder: [Folders.Gig, Folders.Gig_Saclay_25],
+        folder: [Folders.Gig, Folders.Gig_Saclay_25, Folders.Contour],
         displayOnHome: true,
     },
     {
@@ -596,7 +602,7 @@ export const DatedImages: ImageType[] = [
         img: drums_eloi,
         date: "03/2025",
         caption: "Me drumming for Contour in Saclay in 2025",
-        folder: [Folders.Gig, Folders.Gig_Saclay_25],
+        folder: [Folders.Gig, Folders.Gig_Saclay_25, Folders.Contour],
         displayOnHome: true,
     },
     {
@@ -604,7 +610,7 @@ export const DatedImages: ImageType[] = [
         img: gros_plan,
         date: "03/2025",
         caption: "Playing Telephone",
-        folder: [Folders.Gig, Folders.Gig_Saclay_25],
+        folder: [Folders.Gig, Folders.Gig_Saclay_25, Folders.Contour],
         displayOnHome: true,
     },
     {
@@ -612,7 +618,7 @@ export const DatedImages: ImageType[] = [
         img: piano,
         date: "03/2025",
         caption: "Other point of view",
-        folder: [Folders.Gig, Folders.Gig_Saclay_25],
+        folder: [Folders.Gig, Folders.Gig_Saclay_25, Folders.Contour],
         displayOnHome: false,
     },
     {
@@ -620,7 +626,7 @@ export const DatedImages: ImageType[] = [
         img: public_,
         date: "03/2025",
         caption: "The public",
-        folder: [Folders.Gig, Folders.Gig_Saclay_25],
+        folder: [Folders.Gig, Folders.Gig_Saclay_25, Folders.Contour],
         displayOnHome: true,
     },
     {
@@ -628,7 +634,7 @@ export const DatedImages: ImageType[] = [
         img: shrugged,
         date: "03/2025",
         caption: "Warming up",
-        folder: [Folders.Gig, Folders.Gig_Saclay_25],
+        folder: [Folders.Gig, Folders.Gig_Saclay_25, Folders.Contour],
         displayOnHome: true,
     },
     {
@@ -780,7 +786,7 @@ export const DatedImages: ImageType[] = [
         img: nantes1,
         date: "05/2025",
         caption: "Contour à Nantes",
-        folder: [Folders.Gig_Nantes_25],
+        folder: [Folders.Gig_Nantes_25, Folders.Contour],
         displayOnHome: false,
     },
     {
@@ -788,7 +794,7 @@ export const DatedImages: ImageType[] = [
         img: nantes2,
         date: "05/2025",
         caption: "Contour à Nantes",
-        folder: [Folders.Gig_Nantes_25],
+        folder: [Folders.Gig_Nantes_25, Folders.Contour],
         displayOnHome: false,
     },
     {
@@ -796,7 +802,7 @@ export const DatedImages: ImageType[] = [
         img: nantes3,
         date: "05/2025",
         caption: "Contour à Nantes",
-        folder: [Folders.Gig_Nantes_25],
+        folder: [Folders.Gig_Nantes_25, Folders.Contour],
         displayOnHome: false,
     },
     {
@@ -804,7 +810,7 @@ export const DatedImages: ImageType[] = [
         img: nantes4,
         date: "05/2025",
         caption: "Contour à Nantes",
-        folder: [Folders.Gig_Nantes_25],
+        folder: [Folders.Gig_Nantes_25, Folders.Contour],
         displayOnHome: false,
     },
     {
@@ -868,7 +874,7 @@ export const DatedImages: ImageType[] = [
         img: fete1dos,
         date: "06/2025",
         caption: "Fête de la musique à Vavin",
-        folder: [Folders.Gig, Folders.Gig_Fete_de_la_Musique],
+        folder: [Folders.Gig, Folders.Gig_Fete_de_la_Musique, Folders.Contour],
         displayOnHome: true,
     },
     {
@@ -876,7 +882,7 @@ export const DatedImages: ImageType[] = [
         img: fete2front,
         date: "06/2025",
         caption: "Fête de la musique à Vavin",
-        folder: [Folders.Gig],
+        folder: [Folders.Gig, Folders.Contour],
         displayOnHome: false,
     },
     {
@@ -884,7 +890,7 @@ export const DatedImages: ImageType[] = [
         img: contour_les_disquaires,
         date: "07/2025",
         caption: "our post for our gig at Les Disquaires, in Paris",
-        folder: [Folders.Gig, Folders.Gig_Les_Disquaires],
+        folder: [Folders.Gig, Folders.Gig_Les_Disquaires, Folders.Contour],
         displayOnHome: true,
     },
     {
@@ -892,7 +898,7 @@ export const DatedImages: ImageType[] = [
         img: les_disq,
         date: "07/2025",
         caption: "During the show",
-        folder: [Folders.Gig, Folders.Gig_Les_Disquaires],
+        folder: [Folders.Gig, Folders.Gig_Les_Disquaires, Folders.Contour],
         displayOnHome: true,
     },
     {
@@ -900,7 +906,7 @@ export const DatedImages: ImageType[] = [
         img: les_disquaires_warmingup,
         date: "07/2025",
         caption: "Warming up at les Disquaires",
-        folder: [Folders.Gig, Folders.Gig_Les_Disquaires],
+        folder: [Folders.Gig, Folders.Gig_Les_Disquaires, Folders.Contour],
         displayOnHome: true,
     },
     {
@@ -908,7 +914,7 @@ export const DatedImages: ImageType[] = [
         img: les_disq_2,
         date: "07/2025",
         caption: "After the show",
-        folder: [Folders.Gig, Folders.Gig_Les_Disquaires],
+        folder: [Folders.Gig, Folders.Gig_Les_Disquaires, Folders.Contour],
         displayOnHome: true,
     },
     {
@@ -1028,7 +1034,7 @@ export const DatedImages: ImageType[] = [
         img: contour_nov_2025,
         date: "10/2025",
         caption: "Photo shoot for our next gig with Contour",
-        folder: [Folders.Gig],
+        folder: [Folders.Gig, Folders.Contour],
         displayOnHome: true,
     },
     {
@@ -1221,7 +1227,7 @@ export const DatedImages: ImageType[] = [
         img: mart_eloi,
         date: "11/2025",
         caption: "My friend Martial and I in the subway",
-        folder: [Folders.fall_25],
+        folder: [Folders.fall_25, Folders.Contour],
         displayOnHome: true,
     },
 
@@ -1230,7 +1236,7 @@ export const DatedImages: ImageType[] = [
         img: anna_eloi,
         date: "11/2025",
         caption: "Anna and I during rehearsals ",
-        folder: [Folders.fall_25],
+        folder: [Folders.fall_25, Folders.Contour],
         displayOnHome: true,
     },
     {

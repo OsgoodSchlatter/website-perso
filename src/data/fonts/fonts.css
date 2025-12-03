@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "Fatkat";
+  src: url("fatkat.ttf") format("truetype");
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Sg";
+  src: url("sg.ttf") format("truetype");
+  font-style: bold;
+}

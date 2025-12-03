@@ -14,6 +14,8 @@ import Radio from "../Physics/PhysicsPosts/Radioactivity";
 import SchroEq from "../Physics/PhysicsPosts/SchroEq";
 
 import { Gigs } from "../Gigs/Gigs";
+import { GigsContour } from "../Gigs/GigsContour";
+
 
 import { PubliArticle } from "../Publi/PubliArticle";
 import { Sport } from "../Sport/Sport";
@@ -24,11 +26,13 @@ import { Contact } from "../Contact/Contact";
 import GreenTracking from "../CS/CSPosts/GreenTracking";
 import { About } from "../About/About";
 import { Gallery } from "../Gallery/Gallery";
+import { GalleryContour } from "../Gallery/Gallery_Contour";
+
 import { Italian } from "../Languages/Italian";
 import Video_Creation from "../Music-and-video/Video";
 import GuitarPaint from "../Music-and-video/PaintGuitar";
-import { MapsMain } from "../Maps/MapsMain"
-import { Misc } from "./Misc";
+import { MapsMain } from "../Maps/MapsMain";
+import { ContourHome } from "../Contour/Contour";
 
 
 export type BlogPostType = {
@@ -58,7 +62,7 @@ export enum BlogCategory {
     About = "about",
     Gallery = "gallery",
     Maps = "maps",
-    Misc = "misc",
+    Contour = "contour"
 }
 
 export enum BlogRoute {
@@ -78,7 +82,8 @@ export enum BlogRoute {
     About = "about",
     Gallery = "gallery",
     Maps = "maps",
-    Misc = "misc"
+    Contour = "contour"
+
 }
 
 export type ContentProps = {
@@ -106,6 +111,7 @@ export const blogPostsArray: BlogPostType[] = [
         route: BlogRoute.ComputerScience,
         content: GreenTracking,
     },
+
     {
         id: 1,
         date: "2024",
@@ -141,6 +147,15 @@ export const blogPostsArray: BlogPostType[] = [
         category: BlogCategory.Music,
         route: BlogRoute.Music,
         content: GuitarPaint,
+    },
+    {
+        id: 5,
+        date: "2025",
+        title: "Gigs and Concert",
+        content_name: "Gigs",
+        category: BlogCategory.Music,
+        route: BlogRoute.Music,
+        content: GigsContour,
     },
 
     {
@@ -299,6 +314,15 @@ export const blogPostsArray: BlogPostType[] = [
     },
     {
         id: 2,
+        date: "2025",
+        title: "Contour photo gallery",
+        content_name: "Gallery",
+        category: BlogCategory.Gallery,
+        route: BlogRoute.Gallery,
+        content: GalleryContour,
+    },
+    {
+        id: 2,
         date: "12/2024",
         title: "Italian 🇮🇹",
         content_name: "Italian",
@@ -324,15 +348,15 @@ export const blogPostsArray: BlogPostType[] = [
         route: BlogRoute.Climate,
         content: DisplayIngredients,
     },
-    // {
-    //     id: 1,
-    //     date: "2025",
-    //     title: "Home tmp",
-    //     content_name: "LandingPage",
-    //     category: BlogCategory.Tmp,
-    //     route: BlogRoute.Tmp,
-    //     content: LandingPage,
-    // },
+    {
+        id: 1,
+        date: "2025",
+        title: "Contour",
+        content_name: "Contour",
+        category: BlogCategory.Contour,
+        route: BlogRoute.Contour,
+        content: ContourHome,
+    },
     {
         id: 1,
         date: "2025",
