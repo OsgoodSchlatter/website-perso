@@ -1,5 +1,27 @@
 import { Link } from "react-router-dom";
 import logo from "../data/pics/wallpaper/osgood_trimmed.png"
+import logo_contour from "../data/pics/wallpaper/logo_contour.svg"
+
+export const StandardHeaderContour = ({ title, date, comment, content, link }: { title?: string, date?: string, comment?: JSX.Element, content?: JSX.Element, link: string }) => {
+    return (
+        <>
+            <Link
+                to={link}
+                className=" font-fatkat text-yellow-300 flex justify-center rounded-lg  md:text-[70px] text-[60px] text-shadow items-center"
+            >
+                Contour
+                <img src={logo_contour} alt="Logo" className="w-16 md:w-20 rounded-xl" />
+
+            </Link>
+            <div className=" w-full md:flex md:justify-center">
+                <div className="px-2 md:w-1/2 mt-4">
+                    {content}
+                </div>
+            </div>
+        </>
+    )
+}
+
 export const StandardHeader = ({ title, date, comment, content }: { title?: string, date?: string, comment?: JSX.Element, content?: JSX.Element }) => {
     return (
         <>
@@ -33,6 +55,7 @@ export const StandardHeader = ({ title, date, comment, content }: { title?: stri
         </>
     )
 }
+
 export const PicsHeader = ({
     title,
     date,
@@ -113,9 +136,11 @@ export const PicsHeaderContour = ({
 
             <Link
                 to={link}
-                className=" font-fatkat text-yellow-300 flex justify-center rounded-lg  md:text-[70px] text-[60px] text-shadow"
+                className=" font-fatkat text-yellow-300 flex justify-center rounded-lg  md:text-[70px] text-[60px] text-shadow items-center"
             >
                 Contour
+                <img src={logo_contour} alt="Logo" className="w-16 md:w-20 rounded-xl" />
+
             </Link>
 
             <div className="md:flex md:justify-center w-full md:max-w-full items-center ">

@@ -2,7 +2,7 @@ export type Song = {
     id: number,
     title: string,
     author: string,
-    url: string,
+    url?: string,
 }
 
 export const Songs: Song[] = [
@@ -155,7 +155,42 @@ export const Songs: Song[] = [
         title: "2 be loved",
         author: "Lizzo",
         url: "https://www.youtube.com/watch?v=krdQLzzAeZU"
-    }
+    },
+    {
+        id: 26,
+        title: "Girl With One Eye",
+        author: "Florence and the Machine",
+    },
+    {
+        id: 27,
+        title: "Mourir Sur Scène",
+        author: "Dalida",
+    },
+    {
+        id: 28,
+        title: "Encore et Encore",
+        author: "Francis Cabrel",
+    },
+    {
+        id: 29,
+        title: "Stable",
+        author: "Contour",
+    },
+    {
+        id: 30,
+        title: "Little Miss Perfect",
+        author: "Contour",
+    },
+    {
+        id: 31,
+        title: "Modern Dating",
+        author: "Contour",
+    },
+    {
+        id: 32,
+        title: "Lauriers",
+        author: "Contour",
+    },
 
 
 ]
@@ -227,6 +262,26 @@ export const SetLists = {
         Songs[22],
         Songs[23],
         Songs[24],
+
+    ],
+    disquaires_2_2025: [
+        Songs[15],
+        Songs[23],
+        Songs[28],
+        Songs[12],
+        Songs[9],
+        Songs[16],
+        Songs[29],
+        Songs[21],
+        Songs[8],
+        Songs[26],
+        Songs[25],
+        Songs[19],
+        Songs[30],
+        Songs[31],
+        Songs[27],
+        Songs[22],
+        Songs[18],
 
     ],
 };

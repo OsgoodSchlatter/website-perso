@@ -129,6 +129,20 @@ import parigi from "../pics/oct-nov-25/parigi.png"
 import sea_britanny from "../pics/oct-nov-25/sea-britanny.jpg"
 import mart_eloi from "../pics/oct-nov-25/mart_eloi.jpg"
 
+import alice from "../pics/disquaires_2/alice.jpg"
+import anna from "../pics/disquaires_2/anna.jpg"
+import eloi from "../pics/disquaires_2/eloi.jpg"
+import leo from "../pics/disquaires_2/leo.jpg"
+import mart from "../pics/disquaires_2/martial.jpg"
+import fin2 from "../pics/disquaires_2/fin2.jpg"
+import guitares from "../pics/disquaires_2/guitares.jpg"
+import contour_off from "../pics/disquaires_2/contour_off.jpg"
+
+
+
+
+
+
 export type ImageType = {
     id: number;
     img: string; // URL or import of the image
@@ -149,7 +163,8 @@ export enum Folders {
     Gig_Saclay_25 = "Gig at Saclay 25",
     Gig_Saclay_24 = "Gig at Saclay 24",
     Gig_Nantes_25 = "Gig at Nantes 25",
-    Gig_Les_Disquaires = "Gig at Les Disquaires 25",
+    Gig_Les_Disquaires = "Gig at Les Disquaires Jul 25",
+    Gig_Les_Disquaires_2 = "Gig at Les Disquaires Nov 25",
     Malaga = "Malaga 2019",
     Sweden = "Sweden 2023",
     Denmark = "Denmark 2023",
@@ -165,7 +180,7 @@ export enum Folders {
 }
 
 export enum FoldersContour {
-    
+
 }
 
 
@@ -1278,6 +1293,65 @@ export const DatedImages: ImageType[] = [
         caption: "Parisian sidewalk",
         folder: [Folders.fall_25],
         displayOnHome: true,
+    },
+    {
+        id: 131,
+        img: contour_off,
+        date: "11/2025",
+        caption: "Our 2nd gig",
+        folder: [Folders.Contour, Folders.Gig, Folders.Gig_Les_Disquaires_2],
+        displayOnHome: false,
+    },
+    {
+        id: 131,
+        img: fin2,
+        date: "11/2025",
+        caption: "the end of the show",
+        folder: [Folders.Contour, Folders.Gig, Folders.Gig_Les_Disquaires_2],
+        displayOnHome: false,
+    }, {
+        id: 130,
+        img: guitares,
+        date: "11/2025",
+        caption: "Leo Martial and Eloi",
+        folder: [Folders.Contour, Folders.Gig, Folders.Gig_Les_Disquaires_2],
+        displayOnHome: true,
+    },
+    {
+        id: 136,
+        img: alice,
+        date: "11/2025",
+        caption: "Alice playing for Contour",
+        folder: [Folders.Contour, Folders.Gig, Folders.Gig_Les_Disquaires_2],
+        displayOnHome: false,
+    }, {
+        id: 135,
+        img: anna,
+        date: "11/2025",
+        caption: "The singer of my band Contour",
+        folder: [Folders.Contour, Folders.Gig, Folders.Gig_Les_Disquaires_2],
+        displayOnHome: false,
+    }, {
+        id: 132,
+        img: mart,
+        date: "11/2025",
+        caption: "Martial playing at les Disquaires",
+        folder: [Folders.Contour, Folders.Gig, Folders.Gig_Les_Disquaires_2],
+        displayOnHome: false,
+    }, {
+        id: 133,
+        img: eloi,
+        date: "11/2025",
+        caption: "Eloi playing at les Disquaires",
+        folder: [Folders.Contour, Folders.Gig, Folders.Gig_Les_Disquaires_2],
+        displayOnHome: false,
+    }, {
+        id: 134,
+        img: leo,
+        date: "11/2025",
+        caption: "Leo playing at Les Disquaires",
+        folder: [Folders.Contour, Folders.Gig, Folders.Gig_Les_Disquaires_2],
+        displayOnHome: false,
     },
 
 
