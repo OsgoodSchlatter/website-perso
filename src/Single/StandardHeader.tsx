@@ -1,16 +1,26 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../data/pics/wallpaper/osgood_trimmed.png"
 import logo_contour from "../data/pics/wallpaper/logo_contour.svg"
 
 export const StandardHeaderContour = ({ title, date, comment, content, link }: { title?: string, date?: string, comment?: JSX.Element, content?: JSX.Element, link: string }) => {
+    const navigate = useNavigate();
     return (
         <>
+            <button
+                onClick={() => navigate(-1)}
+                className="fixed top-2 left-4 z-50 flex items-center gap-2 cursor-pointer"
+            >
+                <img
+                    src={logo_contour}
+                    alt="Return"
+                    className="md:w-20 md:h-20 w-14 h-14 hover:scale-110 transition-transform"
+                />
+            </button>
             <Link
                 to={link}
-                className=" font-fatkat text-yellow-300 flex justify-center rounded-lg  md:text-[70px] text-[60px] text-shadow items-center"
+                className=" font-fatkat text-yellow-300 flex justify-center rounded-lg  md:text-[70px] text-[50px] text-shadow items-center"
             >
                 Contour
-                <img src={logo_contour} alt="Logo" className="w-16 md:w-20 rounded-xl" />
 
             </Link>
             <div className=" w-full md:flex md:justify-center">
@@ -128,18 +138,28 @@ export const PicsHeaderContour = ({
     content?: JSX.Element;
     link: string;
 }) => {
+    const navigate = useNavigate();
     return (
         <>
             {/* Title + Date */}
 
-
+            <button
+                onClick={() => navigate(-1)}
+                className="fixed top-2 left-4 z-50 flex items-center gap-2 cursor-pointer"
+            >
+                <img
+                    src={logo_contour}
+                    alt="Return"
+                    className="md:w-20 md:h-20 w-14 h-14 hover:scale-110 transition-transform"
+                />
+            </button>
 
             <Link
                 to={link}
-                className=" font-fatkat text-yellow-300 flex justify-center rounded-lg  md:text-[70px] text-[60px] text-shadow items-center"
+                className=" font-fatkat text-yellow-300 flex justify-center rounded-lg  md:text-[70px] text-[50px] text-shadow items-center"
             >
                 Contour
-                <img src={logo_contour} alt="Logo" className="w-16 md:w-20 rounded-xl" />
+
 
             </Link>
 
