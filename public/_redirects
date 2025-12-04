@@ -1,5 +1,15 @@
-https://osgood.pro/_ /index.html 200
-https://www.osgood.pro/_ /index.html 200
+# Contour domain
 
-https://contour-music.com/_ /contour/1 200
-https://www.contour-music.com/_ /contour/1 200
+/\* /contour/1 200
+Domain=contour-music.com
+
+/\* /contour/1 200
+Domain=www.contour-music.com
+
+# Osgood domain
+
+/\* /index.html 200
+Domain=osgood.pro
+
+/\* /index.html 200
+Domain=www.osgood.pro
