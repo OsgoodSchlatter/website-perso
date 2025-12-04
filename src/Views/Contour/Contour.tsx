@@ -43,7 +43,6 @@ export const ContourHome = () => {
                             className=" font-fatkat text-yellow-300 px-6 md:px-2 flex justify-center rounded-lg  md:text-[100px] text-[60px] text-shadow items-center"
                         >
                             Contour
-                            <img src={logo_contour} alt="Logo" className="w-16 md:w-24 rounded-xl" />
 
                         </Link>
                     </div>
