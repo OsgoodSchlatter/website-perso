@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import "./HomeContour.css";
 import "../../data/fonts/fonts.css";
 import bg from "../../data/pics/wallpaper/contour_10_25.png";
-import logo_contour from "../../data/pics/wallpaper/logo_contour.svg"
+import bgMobile from "../../data/pics/wallpaper/wpContour.jpg";
+
 
 import { Link } from "react-router-dom";
 import { GrInstagram, GrSpotify, GrYoutube } from "react-icons/gr";
@@ -24,13 +25,16 @@ export const Pages = new Map<string, string>([
 ]);
 
 export const ContourHome = () => {
+    const isMobile = window.innerWidth < 768;
     return (
         <>
 
             <div
                 className=" w-screen h-screen overflow-x-hidden"
                 style={{
-                    backgroundImage: `url(${bg})`,
+                    backgroundImage: isMobile
+                        ? `url(${bgMobile})`
+                        : `url(${bg})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                 }}
@@ -103,16 +107,8 @@ export const ContourHome = () => {
                                 S
                             </a>
                         </div>
-
-
-
                     </div>
-
                 </div>
-
-
-
-
                 <div className="fixed bottom-4 right-4 text-gray-500 text-sm ">
                     Made with love by Contour and ChatGPT
                 </div>
