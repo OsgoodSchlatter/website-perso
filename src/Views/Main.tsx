@@ -4,6 +4,7 @@ import { Home } from "./Home/Home";
 import { blogPostsArray } from "./Home/Data"
 import { Route, Routes } from "react-router-dom";
 import { CategoryDisplayer, PostDisplayer } from "../Single/CategoryDisplayer";
+import { ContourHome } from "./Contour/Contour";
 
 export const Pages2 = new Map<string, string>([
   ["chess", "chess"],
@@ -30,6 +31,7 @@ export const Main = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/contour/1" element={<ContourHome />} />
         {Array.from(Pages2.entries()).map(([route]) => (
           <>
             <Route key={route} path={`/${route}`} element={<CategoryDisplayer blogPosts={blogPostsArray} route={route} />} />
