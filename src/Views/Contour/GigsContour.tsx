@@ -251,16 +251,27 @@ const GigsContent = () => {
 
                                     {/* Setlist */}
                                     <div className="mb-4">
-                                        <h3 className="text-2xl font-fatkat">Setlist</h3>
-                                        {selectedGig?.setlist?.map((song, index) => (
-                                            <a className={"rounded w-fit mr-2 font-medium hover:font-extrabold mb-1 mt-1 text-[var(--te)] flex"}
-                                                href={song?.url}>{song?.title}</a>
-                                        ))}
+                                        <h3 className="text-2xl font-fatkat mb-2">Setlist</h3>
+
+                                        <div className="max-h-60 overflow-y-auto pr-2">
+                                            {selectedGig?.setlist?.map((song, index) => (
+                                                <a
+                                                    key={index}
+                                                    href={song?.url}
+                                                    className="rounded w-fit mr-2 font-medium hover:font-extrabold mb-1 mt-1 text-[var(--te)] flex"
+                                                >
+                                                    {song?.title}
+                                                </a>
+                                            ))}
+                                        </div>
                                     </div>
 
                                 </div>
+
+
                             </div>
-                        )}
+                        )
+                        }
 
                     </>
                 );
