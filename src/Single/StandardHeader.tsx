@@ -144,21 +144,11 @@ export const PicsHeaderContour = ({
             <div className="bg-yellow-400 w-screen min-h-screen flex flex-col">
                 <NavbarContour />
                 {/* Content below */}
-                <div className="flex-1 w-full md:flex md:justify-center mt-24">
-                    <div className="px-2 md:w-1/2 mt-2">{content}</div>
-                </div>
-            </div>
-
-            <div className="md:flex md:justify-center w-full md:max-w-full items-center ">
-
-                <div className="px-2 flex justify-between items-end">
-                    <div className="md:text-4xl text-3xl font-bold italic">{title}</div>
-                    <div className="text-xl font-bold">{date}</div>
-                </div>
-
-                <div className="px-2  flex justify-between mt-4">
-                    <div>{content}</div>
-                    <div className="invisible"></div>
+                <div className="flex-1 w-full md:flex md:justify-center mt-24 md:max-w-full items-center">
+                    <div className="px-2  flex justify-between mt-4">
+                        <div>{content}</div>
+                        <div className="invisible"></div>
+                    </div>
                 </div>
             </div>
 

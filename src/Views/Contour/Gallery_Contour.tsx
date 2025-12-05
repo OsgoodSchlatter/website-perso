@@ -50,11 +50,7 @@ const GalleryContent: React.FC = () => {
 
     let currentYear = ""; // To keep track of the last displayed year
 
-    const [selectedAlbum, setSelectedAlbum] = useState<Folders | null>(null);
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
-    const [selectedGig, setSelectedGig] = useState<Gig>(Gigs_List[1]);
-
 
     return (
 
