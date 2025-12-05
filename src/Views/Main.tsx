@@ -1,10 +1,9 @@
-
-
 import { Home } from "./Home/Home";
 import { blogPostsArray } from "./Home/Data"
 import { Route, Routes } from "react-router-dom";
 import { CategoryDisplayer, PostDisplayer } from "../Single/CategoryDisplayer";
 import { ContourHome } from "./Contour/Contour";
+import React from "react";
 
 export const Pages2 = new Map<string, string>([
   ["chess", "chess"],
@@ -26,19 +25,39 @@ export const Pages2 = new Map<string, string>([
 ]);
 
 export const Main = () => {
+  const site = process.env.REACT_APP_SITE;
+
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/contour/1" element={<ContourHome />} />
-        {Array.from(Pages2.entries()).map(([route]) => (
-          <>
-            <Route key={route} path={`/${route}`} element={<CategoryDisplayer blogPosts={blogPostsArray} route={route} />} />
-            <Route key={route} path={`/${route}/:postID`} element={<PostDisplayer blogPosts={blogPostsArray} route={route} />} />
-          </>
-        ))}
-      </Routes>
-    </>
+    <Routes>
+      {site === "contour" ? (
+        <>
+          {/* Contour homepage */}
+          <Route path="/" element={<ContourHome />} />
+          {/* Optional sub-pages for Contour */}
+          {Array.from(Pages2.entries()).map(([route]) => (
+            <React.Fragment key={route}>
+              <Route path={`/${route}`} element={<CategoryDisplayer blogPosts={blogPostsArray} route={route} />} />
+              <Route path={`/${route}/:postID`} element={<PostDisplayer blogPosts={blogPostsArray} route={route} />} />
+            </React.Fragment>
+          ))}
+          {/* Fallback */}
+          <Route path="*" element={<ContourHome />} />
+        </>
+      ) : (
+        <>
+          {/* Personal homepage */}
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          {Array.from(Pages2.entries()).map(([route]) => (
+            <React.Fragment key={route}>
+              <Route path={`/${route}`} element={<CategoryDisplayer blogPosts={blogPostsArray} route={route} />} />
+              <Route path={`/${route}/:postID`} element={<PostDisplayer blogPosts={blogPostsArray} route={route} />} />
+            </React.Fragment>
+          ))}
+          {/* Fallback */}
+          <Route path="*" element={<Home />} />
+        </>
+      )}
+    </Routes>
   );
 };
