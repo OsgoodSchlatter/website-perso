@@ -53,7 +53,7 @@ export const NavbarContour = () => {
 
   return (
     <>
-      <div className="md:flex md:justify-center w-full fixed top-0 left-0 bg-yellow-400 z-[1000]">
+      <div className="md:flex md:justify-center w-full fixed top-0 left-0 bg-yellow-400 z-20">
         <header className="h-24 md:w-1/2 flex items-center overflow-hidden justify-center">
           <div>
             <div className="flex justify-center md:text-4xl text-3xl mb-1">
