@@ -43,8 +43,8 @@ const Form = () => {
 
 export const FormContour = () => {
     return (
-        <div className="bg-yellow-400 w-screen min-h-screen">
-            <StandardHeaderContour link={"/contour/1"} content={<Form />} />
-        </div>
+
+        <StandardHeaderContour link={"/contour/1"} content={<Form />} />
+
     );
 };

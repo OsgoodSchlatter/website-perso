@@ -1,36 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../data/pics/wallpaper/osgood_trimmed.png"
 import logo_contour from "../data/pics/wallpaper/logo_contour.svg"
+import { Navbar } from "./Navbar";
+import { NavbarContour } from "./NavbarContour";
 
-export const StandardHeaderContour = ({ title, date, comment, content, link }: { title?: string, date?: string, comment?: JSX.Element, content?: JSX.Element, link: string }) => {
-    const navigate = useNavigate();
-    return (
-        <>
-            <button
-                onClick={() => navigate(-1)}
-                className="fixed top-2 left-4 z-50 flex items-center gap-2 cursor-pointer"
-            >
-                <img
-                    src={logo_contour}
-                    alt="Return"
-                    className="md:w-20 md:h-20 w-14 h-14 hover:scale-110 transition-transform"
-                />
-            </button>
-            <Link
-                to={link}
-                className=" font-fatkat text-yellow-300 flex justify-center rounded-lg  md:text-[70px] text-[50px] text-shadow items-center"
-            >
-                Contour
-
-            </Link>
-            <div className=" w-full md:flex md:justify-center">
-                <div className="px-2 md:w-1/2 mt-4">
-                    {content}
-                </div>
-            </div>
-        </>
-    )
-}
 
 export const StandardHeader = ({ title, date, comment, content }: { title?: string, date?: string, comment?: JSX.Element, content?: JSX.Element }) => {
     return (
@@ -125,6 +98,31 @@ export const PicsHeader = ({
     );
 };
 
+export const StandardHeaderContour = ({
+    title,
+    date,
+    comment,
+    content,
+    link,
+}: {
+    title?: string;
+    date?: string;
+    comment?: JSX.Element;
+    content?: JSX.Element;
+    link: string;
+}) => {
+    return (
+        <div className="bg-yellow-400 w-screen min-h-screen flex flex-col">
+            <NavbarContour />
+            {/* Content below */}
+            <div className="flex-1 w-full md:flex md:justify-center mt-24">
+                <div className="px-2 md:w-1/2 mt-2">{content}</div>
+            </div>
+        </div>
+    );
+};
+
+
 export const PicsHeaderContour = ({
     title,
     date,
@@ -143,25 +141,13 @@ export const PicsHeaderContour = ({
         <>
             {/* Title + Date */}
 
-            <button
-                onClick={() => navigate(-1)}
-                className="fixed top-2 left-4 z-50 flex items-center gap-2 cursor-pointer"
-            >
-                <img
-                    src={logo_contour}
-                    alt="Return"
-                    className="md:w-20 md:h-20 w-14 h-14 hover:scale-110 transition-transform"
-                />
-            </button>
-
-            <Link
-                to={link}
-                className=" font-fatkat text-yellow-300 flex justify-center rounded-lg  md:text-[70px] text-[50px] text-shadow items-center"
-            >
-                Contour
-
-
-            </Link>
+            <div className="bg-yellow-400 w-screen min-h-screen flex flex-col">
+                <NavbarContour />
+                {/* Content below */}
+                <div className="flex-1 w-full md:flex md:justify-center mt-24">
+                    <div className="px-2 md:w-1/2 mt-2">{content}</div>
+                </div>
+            </div>
 
             <div className="md:flex md:justify-center w-full md:max-w-full items-center ">
 
@@ -169,17 +155,6 @@ export const PicsHeaderContour = ({
                     <div className="md:text-4xl text-3xl font-bold italic">{title}</div>
                     <div className="text-xl font-bold">{date}</div>
                 </div>
-
-
-                {/* Comment */}
-
-                <div className="px-2 flex justify-between mt-4">
-                    <div>{comment}</div>
-                    <div className="invisible"></div>
-                </div>
-
-
-                {/* Content */}
 
                 <div className="px-2  flex justify-between mt-4">
                     <div>{content}</div>
