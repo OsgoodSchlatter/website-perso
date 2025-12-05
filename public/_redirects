@@ -1,10 +1,7 @@
 # Contour domain
 
-/\* /contour/1 200
+/\* /index.html 200
 Domain=contour-music.com
-
-/\* /contour/1 200
-Domain=www.contour-music.com
 
 # Osgood domain
 
