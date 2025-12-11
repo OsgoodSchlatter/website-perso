@@ -3,10 +3,9 @@ import "./HomeContour.css";
 import "../../data/fonts/fonts.css";
 import bg from "../../data/pics/wallpaper/contour_10_25.png";
 import bgMobile from "../../data/pics/wallpaper/wpContour.jpg";
-
-
 import { Link } from "react-router-dom";
 import { GrInstagram, GrSpotify, GrYoutube } from "react-icons/gr";
+
 
 export const ContourHome = () => {
     const isMobile = window.innerWidth < 768;

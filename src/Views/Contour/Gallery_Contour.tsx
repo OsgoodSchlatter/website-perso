@@ -91,6 +91,7 @@ const GalleryContent: React.FC = () => {
                                                     <img
                                                         src={image.img}
                                                         alt={`Image ${image.id}`}
+                                                        loading="lazy"
                                                         className="w-full max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-4xl mt-2 cursor-pointer"
                                                         onClick={() => setSelectedImage(image.img)}
                                                     />
