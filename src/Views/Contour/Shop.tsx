@@ -4,6 +4,7 @@ import { StandardHeaderContour } from "../../Single/StandardHeader";
 import hoodie from "../../data/pics/contour-shop/hoodie.jpg";
 import tshirt from "../../data/pics/contour-shop/tshirt.jpg";
 import pantalon from "../../data/pics/contour-shop/fut.jpg";
+import { CheckoutButton } from "../../Single/CheckoutButton";
 
 
 // src/data/productTypes.ts
@@ -79,10 +80,9 @@ const ShopContent = () => {
                             <div className=" text-center text-yellow-500 font-bold">
                                 {product.price}€
                             </div>
+                            <CheckoutButton />
 
-                            <button className=" w-full p-3 bg-yellow-500 text-black text-xl font-fatkat rounded-lg hover:bg-yellow-600">
-                                Add to cart
-                            </button>
+
                         </div>
                     </div>
                 ))}
@@ -123,9 +123,7 @@ const ShopContent = () => {
                             {selectedProduct.price}€
                         </div>
 
-                        <button className="mt-4 w-full p-3 bg-yellow-500 text-black text-xl font-fatkat rounded-lg hover:bg-yellow-600">
-                            Add to cart
-                        </button>
+                        <CheckoutButton />
                     </div>
                 </div>
             )}

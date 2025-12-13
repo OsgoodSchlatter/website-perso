@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ListOfPostsHeader } from "../../Single/ListOfPostsHeader";
 import { BlogCategory, blogPostsArray, BlogPostType } from "./Data";
 import "./Home.css";
-import bg from "../../data/pics/wallpaper/wp4.jpg";
+import bg from "../../data/pics/wallpaper/wp4.webp";
 import logo from "../../data/pics/wallpaper/osgood_trimmed.png";
 
 import { Link } from "react-router-dom";

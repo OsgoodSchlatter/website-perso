@@ -108,6 +108,7 @@ const GalleryContent: React.FC = () => {
                                                         className="w-full max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-4xl mt-2 cursor-pointer"
                                                         onClick={() => setSelectedImage(image.img)}
                                                         loading="lazy"
+                                                        decoding="async"
                                                     />
                                                     <div className='text-center italic text-lg font-bold mt-2 mb-10'>
                                                         {image.caption}

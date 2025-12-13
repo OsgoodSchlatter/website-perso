@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import "./HomeContour.css";
 import "../../data/fonts/fonts.css";
-import bg from "../../data/pics/wallpaper/contour_10_25.png";
-import bgMobile from "../../data/pics/wallpaper/wpContour.jpg";
+import bg from "../../data/pics/wallpaper/contour_10_25.webp";
+import bgMobile from "../../data/pics/wallpaper/wpContour.webp";
 
 
 import { Link } from "react-router-dom";

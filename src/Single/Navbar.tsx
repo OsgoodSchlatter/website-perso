@@ -1,4 +1,5 @@
 import { RefObject, useEffect, useRef, useState } from "react";
+import logo from "../data/pics/wallpaper/osgood_trimmed.png";
 
 import { Link } from "react-router-dom";
 
@@ -53,39 +54,40 @@ export const Navbar = () => {
 
   return (
     <>
-      <div className="md:flex md:justify-center w-full fixed top-0 left-0 bg-slate-700 z-[1000]">
-        <header className="h-20 md:w-1/2 flex items-center overflow-hidden justify-center">
+      <div className="md:flex md:justify-center w-full fixed top-0 left-0 bg-slate-400 z-20">
+        <header className="h-32 md:w-1/2 flex items-center overflow-hidden justify-center">
           <div>
             <div className="flex justify-center md:text-4xl text-3xl mb-1">
               <Link
-                to="/"
-                className="text-green-400 px-6 md:px-2 flex rounded-lg hover:underline"
+                to={"/"}
+                className="   text-slate-300 flex justify-center rounded-lg  md:text-[50px] text-[30px] text-shadow items-center mt-4"
               >
-                @osgood
+                <img src={logo} alt="Logo" className="w-2/5 h-auto" />
               </Link>
             </div>
-            <div className="flex items-center justify-center">
+
+            <div className="flex flex-wrap items-center justify-center text-slate-100   mt-2">
               <Link
                 to="/about/1"
-                className=" px-2 md:text-2xl text-xl flex rounded-lg hover:underline"
+                className=" px-2 font-bold md:text-2xl text-lg flex rounded-lg hover:bg-black"
               >
                 about
               </Link>
               <Link
                 to="/maps/1"
-                className=" px-2  md:text-2xl text-xl flex rounded-lg hover:underline"
+                className=" px-2 font-bold md:text-2xl text-lg flex rounded-lg hover:bg-black"
               >
                 maps
               </Link>
               <Link
                 to="/gallery/1"
-                className=" px-2  md:text-2xl text-xl flex rounded-lg hover:underline"
+                className=" px-2 font-bold md:text-2xl text-lg flex rounded-lg hover:bg-black"
               >
                 gallery
               </Link>
               <Link
                 to="/contact/1"
-                className=" px-2  md:text-2xl text-xl flex rounded-lg hover:underline"
+                className=" px-2 font-bold md:text-2xl text-lg flex rounded-lg hover:bg-black"
               >
                 contact
               </Link>
