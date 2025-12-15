@@ -1,5 +1,11 @@
 [build]
   node_version = "20"
+  command = "yarn build"
+  publish = "build"
+[dev]
+  command = "react-scripts start"
+  framework = "create-react-app"
+  port = 3001
 [[redirects]]
   from="*"
   to="/index.html"
