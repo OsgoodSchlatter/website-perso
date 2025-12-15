@@ -89,6 +89,7 @@ const GalleryContent: React.FC = () => {
                                             {filteredImages.map(image => (
                                                 <div key={image.id}>
                                                     <img
+                                                        onClick={() => setSelectedImage(image.img)}
                                                         src={`${image.img}?w=1200`}
                                                         loading="lazy"
                                                         decoding="async"

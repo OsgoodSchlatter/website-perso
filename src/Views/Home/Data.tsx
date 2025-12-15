@@ -36,6 +36,9 @@ import { MapsMain } from "../Maps/MapsMain";
 import { ContourHome } from "../Contour/Contour";
 import { ShopPage } from "../Contour/Shop";
 import { FormContour } from "../Contour/Contact";
+import { SuccessShopContour } from "../Contour/Success";
+import { CancelShopContour } from "../Contour/Cancel";
+
 
 
 
@@ -68,6 +71,8 @@ export enum BlogCategory {
     Gallery = "gallery",
     Maps = "maps",
     Contour = "contour",
+    Success = "success",
+    Cancel = "cancel"
 }
 
 export enum BlogRoute {
@@ -87,7 +92,9 @@ export enum BlogRoute {
     About = "about",
     Gallery = "gallery",
     Maps = "maps",
-    Contour = "contour"
+    Contour = "contour",
+    Success = "success",
+    Cancel = "cancel"
 
 }
 
@@ -389,5 +396,23 @@ export const blogPostsArray: BlogPostType[] = [
         category: BlogCategory.Contour,
         route: BlogRoute.Contour,
         content: FormContour,
+    },
+    {
+        id: 1,
+        date: "2025",
+        title: "Success",
+        content_name: "Success",
+        category: BlogCategory.Success,
+        route: BlogRoute.Success,
+        content: SuccessShopContour,
+    },
+    {
+        id: 1,
+        date: "2025",
+        title: "Cancel",
+        content_name: "Cancel",
+        category: BlogCategory.Cancel,
+        route: BlogRoute.Cancel,
+        content: CancelShopContour,
     },
 ];
