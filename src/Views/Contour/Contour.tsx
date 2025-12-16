@@ -65,7 +65,7 @@ export const ContourHome = () => {
 
                         <div className=" hover:bg-black rounded-lg p-1">
                             <a
-                                href={"https://www.youtube.com/shorts/khm6P9dm7Ak"}
+                                href={"https://www.youtube.com/@CONTOUR-music"}
                             >
                                 <GrYoutube size={30} />
                             </a>
