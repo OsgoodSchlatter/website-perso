@@ -138,6 +138,15 @@ import fin2 from "../pics/disquaires_2/fin2.jpg"
 import guitares from "../pics/disquaires_2/guitares.jpg"
 import contour_off from "../pics/disquaires_2/contour_off.jpg"
 
+import last_drink from "../pics/disquaires_2/contour-last-drink.jpg"
+import metro from "../pics/disquaires_2/mart-anna-eloi-metro.jpg"
+import antoine from "../pics/disquaires_2/antoine.jpg"
+
+import julie from "../pics/decembre25/julie.jpg"
+import chien from "../pics/decembre25/chien.jpg"
+import clem from "../pics/decembre25/clem.jpg"
+import studio from "../pics/decembre25/studio.jpg"
+import douarnenezsurf from "../pics/decembre25/surf.jpg"
 
 
 
@@ -1246,14 +1255,7 @@ export const DatedImages: ImageType[] = [
         displayOnHome: true,
     },
 
-    {
-        id: 124,
-        img: anna_eloi,
-        date: "11/2025",
-        caption: "Anna and I during rehearsals ",
-        folder: [Folders.fall_25, Folders.Contour],
-        displayOnHome: true,
-    },
+
     {
         id: 125,
         img: close_up_food,
@@ -1318,17 +1320,18 @@ export const DatedImages: ImageType[] = [
         displayOnHome: true,
     },
     {
-        id: 136,
-        img: alice,
-        date: "11/2025",
-        caption: "Alice playing for Contour",
-        folder: [Folders.Contour, Folders.Gig, Folders.Gig_Les_Disquaires_2],
-        displayOnHome: false,
-    }, {
         id: 135,
         img: anna,
         date: "11/2025",
         caption: "The singer of my band Contour",
+        folder: [Folders.Contour, Folders.Gig, Folders.Gig_Les_Disquaires_2],
+        displayOnHome: false,
+    },
+    {
+        id: 136,
+        img: alice,
+        date: "11/2025",
+        caption: "Alice playing for Contour",
         folder: [Folders.Contour, Folders.Gig, Folders.Gig_Les_Disquaires_2],
         displayOnHome: false,
     }, {
@@ -1353,6 +1356,70 @@ export const DatedImages: ImageType[] = [
         folder: [Folders.Contour, Folders.Gig, Folders.Gig_Les_Disquaires_2],
         displayOnHome: false,
     },
+    {
+        id: 135,
+        img: antoine,
+        date: "11/2025",
+        caption: "Antoine taking pics with us",
+        folder: [Folders.Contour, Folders.Gig, Folders.Gig_Les_Disquaires_2],
+        displayOnHome: false,
+    },
+    {
+        id: 124,
+        img: anna_eloi,
+        date: "11/2025",
+        caption: "Anna and I during rehearsals ",
+        folder: [Folders.fall_25, Folders.Contour],
+        displayOnHome: true,
+    },
+    {
+        id: 136,
+        img: metro,
+        date: "11/2025",
+        caption: "Anna Eloi and Martial in the sub",
+        folder: [Folders.Contour, Folders.Gig, Folders.Gig_Les_Disquaires_2],
+        displayOnHome: false,
+    },
+    {
+        id: 137,
+        img: last_drink,
+        date: "12/2025",
+        caption: "Last Drink before not seeing each other for 6 months :(",
+        folder: [Folders.Contour, Folders.Gig, Folders.Gig_Les_Disquaires_2],
+        displayOnHome: false,
+    },
+    {
+        id: 138,
+        img: julie,
+        date: "12/2025",
+        caption: "Julie",
+        displayOnHome: true,
+    },
+    {
+        id: 138,
+        img: clem,
+        date: "12/2025",
+        caption: "clem",
+        displayOnHome: true,
+    },
+    {
+        id: 138,
+        img: studio,
+        date: "12/2025",
+        caption: "studio",
+        displayOnHome: true,
+    },
+
+    {
+        id: 138,
+        img: douarnenezsurf,
+        date: "12/2025",
+        caption: "Surf",
+        displayOnHome: true,
+    },
+
+
+
 
 
 
