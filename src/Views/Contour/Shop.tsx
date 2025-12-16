@@ -35,18 +35,18 @@ const ProductList: Product[] = [
 
     {
         id: 5,
-        name: "Contour T-Shirt - Les Disquaires Edition",
+        name: " T-Shirt - Classic Edition",
         price: 25,
         image: [tshirt_special],
         category: "Clothes",
-        description: "Premium cotton T-shirt with Anna's face.",
+        description: "Premium cotton T-shirt with Contour Writings.",
         sizes: ["S", "M", "L", "XL"],
         colors: ["White"],
         priceId: "price_1SeifqD7dKcn0q5142yWxI5n"
     },
     {
         id: 1,
-        name: "Contour T-Shirt - Classic Edition",
+        name: " T-Shirt - Logo Edition",
         price: 25,
         image: [tshirt],
         category: "Clothes",
@@ -57,7 +57,7 @@ const ProductList: Product[] = [
     },
     {
         id: 4,
-        name: "Contour T-Shirt - Tournee Edition",
+        name: " T-Shirt - Tournee Edition",
         price: 35,
         image: [tshirt_tournee, tshirt_tournee_2],
         category: "Clothes",
@@ -68,7 +68,7 @@ const ProductList: Product[] = [
     },
     {
         id: 5,
-        name: "Contour T-Shirt - Anna Edition",
+        name: " T-Shirt - Anna Edition",
         price: 35,
         image: [tshirt_anna, tshirt_special],
         category: "Clothes",
@@ -79,7 +79,7 @@ const ProductList: Product[] = [
     },
     {
         id: 6,
-        name: "Contour T-Shirt - Martial Edition",
+        name: " T-Shirt - Martial Edition",
         price: 35,
         image: [tshirt_martial, tshirt_special],
         category: "Clothes",
@@ -90,7 +90,7 @@ const ProductList: Product[] = [
     },
     {
         id: 7,
-        name: "Contour T-Shirt - Alice Edition",
+        name: " T-Shirt - Alice Edition",
         price: 35,
         image: [tshirt_alice, tshirt_special],
         category: "Clothes",
@@ -101,7 +101,7 @@ const ProductList: Product[] = [
     },
     {
         id: 8,
-        name: "Contour T-Shirt - Leonard Edition",
+        name: " T-Shirt - Leonard Edition",
         price: 35,
         image: [tshirt_leo, tshirt_special],
         category: "Clothes",
@@ -112,7 +112,7 @@ const ProductList: Product[] = [
     },
     {
         id: 10,
-        name: "Contour T-Shirt - Eloi Edition",
+        name: " T-Shirt - Eloi Edition",
         price: 35,
         image: [tshirt_eloi, tshirt_special],
         category: "Clothes",
@@ -124,7 +124,7 @@ const ProductList: Product[] = [
 
     {
         id: 2,
-        name: "Contour Logo Hoodie",
+        name: "Logo Contour Hoodie",
         price: 45,
         image: [hoodie],
         category: "Clothes",
@@ -168,8 +168,11 @@ const ShopContent = () => {
                     <div
                         key={product.id}
                         onClick={() => setSelectedProduct(product)}
-                        className="bg-white rounded-lg shadow-md p-3 cursor-pointer hover:shadow-xl flex flex-col w-fit"
+                        className="bg-white rounded-lg shadow-md p-3 cursor-pointer hover:shadow-xl flex flex-col"
                     >
+                        <div className="text-center mt-2 font-fatkat text-black mb-4">
+                            {product.name}
+                        </div>
                         <div className="flex overflow-x-auto">
 
                             <img
@@ -191,16 +194,16 @@ const ShopContent = () => {
 
                         </div>
                         {product.image.length > 1 &&
+
                             <div className="text-xs text-black text-center">
-                                scrolle l'image horizontallement pour voir les deux côtés !
-                            </div>}
+                                Scroll pour voir les deux côtés
+                            </div>
+                        }
 
 
                         <div className="mt-auto">
 
-                            <div className=" text-center mt-2 font-fatkat text-black">
-                                {product.name}
-                            </div>
+
 
                             <div className=" text-center text-yellow-500 font-bold">
                                 {product.price}€
@@ -239,11 +242,18 @@ const ShopContent = () => {
                             ×
                         </button>
                         <div className="flex justify-center">
+                            {selectedProduct.image.map((img) =>
+                                <img
+                                    src={img}
+                                    onClick={(e) => {
+                                        e.stopPropagation(); // stops the click from reaching parent
+                                        setSelectedImage(selectedProduct.image[0]); // only set the image
+                                    }}
+                                    className="rounded-md mb-4 w-3/5 h-[130px] md:h-[190px] object-contain p-1"
+                                />
+                            )
 
-                            <img
-                                src={selectedProduct.image[0]}
-                                className="rounded-md mb-4 w-1/3 object-contain"
-                            />
+                            }
                         </div>
 
                         <h2 className="text-3xl font-fatkat mb-2 text-black">
