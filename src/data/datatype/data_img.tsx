@@ -1315,7 +1315,7 @@ export const DatedImages: ImageType[] = [
         id: 130,
         img: guitares,
         date: "11/2025",
-        caption: "Leo Martial and Eloi",
+        caption: "Leo Martial and Eloi tuning their guitar",
         folder: [Folders.Contour, Folders.Gig, Folders.Gig_Les_Disquaires_2],
         displayOnHome: true,
     },
