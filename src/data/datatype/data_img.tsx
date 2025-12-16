@@ -1392,21 +1392,21 @@ export const DatedImages: ImageType[] = [
         id: 138,
         img: julie,
         date: "12/2025",
-        caption: "Julie",
+        caption: "A friend of Clem, Julie, in her car on the port of Douarnenez",
         displayOnHome: true,
     },
     {
         id: 138,
         img: clem,
         date: "12/2025",
-        caption: "clem",
+        caption: "My friend Clem",
         displayOnHome: true,
     },
     {
         id: 138,
         img: studio,
         date: "12/2025",
-        caption: "studio",
+        caption: "Studio at Douarnenez",
         displayOnHome: true,
     },
 
@@ -1414,7 +1414,7 @@ export const DatedImages: ImageType[] = [
         id: 138,
         img: douarnenezsurf,
         date: "12/2025",
-        caption: "Surf",
+        caption: "Surf at Douarnenez",
         displayOnHome: true,
     },
 
