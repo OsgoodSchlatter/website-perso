@@ -70,25 +70,25 @@ export const NavbarContour = () => {
             <div className="flex flex-wrap items-center justify-center text-yellow-100 font-fatkat mt-2">
 
               <Link
-                to="/contour/2"
+                to="/agenda/2"
                 className=" px-2 font-bold md:text-2xl text-lg flex rounded-lg hover:bg-black"
               >
                 agenda
               </Link>
               <Link
-                to="/contour/3"
+                to="/shop/3"
                 className=" px-2 font-bold md:text-2xl text-lg flex rounded-lg hover:bg-black"
               >
                 shop
               </Link>
               <Link
-                to="/contour/4"
+                to="/pictures/4"
                 className=" px-2 font-bold md:text-2xl text-lg flex rounded-lg hover:bg-black"
               >
                 gallery
               </Link>
               <Link
-                to="/contour/5"
+                to="/form/5"
                 className=" px-2 font-bold md:text-2xl text-lg flex rounded-lg hover:bg-black"
               >
                 contact

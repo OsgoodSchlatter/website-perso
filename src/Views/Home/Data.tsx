@@ -72,7 +72,11 @@ export enum BlogCategory {
     Maps = "maps",
     Contour = "contour",
     Success = "success",
-    Cancel = "cancel"
+    Cancel = "cancel",
+    Agenda = "agenda",
+    Shop = "shop",
+    GalleryContour = "pictures",
+    Form = "form"
 }
 
 export enum BlogRoute {
@@ -94,10 +98,12 @@ export enum BlogRoute {
     Maps = "maps",
     Contour = "contour",
     Success = "success",
-    Cancel = "cancel"
-
+    Cancel = "cancel",
+    Agenda = "agenda",
+    Shop = "shop",
+    GalleryContour = "pictures",
+    Form = "form"
 }
-
 export type ContentProps = {
     title: string;
     date: string;
@@ -366,8 +372,8 @@ export const blogPostsArray: BlogPostType[] = [
         date: "2025",
         title: "Agenda",
         content_name: "Agenda",
-        category: BlogCategory.Contour,
-        route: BlogRoute.Contour,
+        category: BlogCategory.Agenda,
+        route: BlogRoute.Agenda,
         content: GigsContour,
     },
     {
@@ -375,8 +381,8 @@ export const blogPostsArray: BlogPostType[] = [
         date: "2025",
         title: "Contour Shop",
         content_name: "ContourShop",
-        category: BlogCategory.Contour,
-        route: BlogRoute.Contour,
+        category: BlogCategory.Shop,
+        route: BlogRoute.Shop,
         content: ShopPage,
     },
     {
@@ -384,8 +390,8 @@ export const blogPostsArray: BlogPostType[] = [
         date: "2025",
         title: "Contour photo gallery",
         content_name: "Gallery",
-        category: BlogCategory.Contour,
-        route: BlogRoute.Contour,
+        category: BlogCategory.GalleryContour,
+        route: BlogRoute.GalleryContour,
         content: GalleryContour,
     },
     {
@@ -393,8 +399,8 @@ export const blogPostsArray: BlogPostType[] = [
         date: "2025",
         title: "Form",
         content_name: "Form",
-        category: BlogCategory.Contour,
-        route: BlogRoute.Contour,
+        category: BlogCategory.Form,
+        route: BlogRoute.Form,
         content: FormContour,
     },
     {

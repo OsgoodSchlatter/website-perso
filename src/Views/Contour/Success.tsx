@@ -12,7 +12,7 @@ const ShopContourS = () => {
                     Thanks for shopping with us!
                 </div>
                 <div className="mt-24 text-center">
-                    <Link to="/contour/3" className="hover:bg-yellow-600 bg-yellow-500 p-2 rounded text-center text-3xl hover:underline italic text-black font-fatkat"> back to shop</Link>
+                    <Link to="/shop/3" className="hover:bg-yellow-600 bg-yellow-500 p-2 rounded text-center text-3xl hover:underline italic text-black font-fatkat"> back to shop</Link>
 
                 </div>
             </div>
