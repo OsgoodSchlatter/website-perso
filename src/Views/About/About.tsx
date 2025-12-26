@@ -21,7 +21,13 @@ const AboutContent = () => {
                     <br />
                     I work in nuclear physics and computer science.
                     <br />
-                    My passions are making music, gliding sports and taking the train to go explore the world.
+                    My passions are making
+                    <a className="ml-1 underline"
+                        href={"https://soundcloud.com/eloi-poseidon"}
+                    >
+                        music
+                    </a>
+                    , gliding sports and taking the train to go explore the world.
                     <br />
                     This website summarizes all of the things I enjoy doing in my life. I hope you can like it too !
                     <br />

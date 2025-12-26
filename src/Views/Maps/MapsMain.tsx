@@ -8,8 +8,7 @@ import {
   MapEntry,
 } from "../../data/datatype/data_maps";
 import { Link } from "react-router-dom";
-import logo from "../../data/pics/wallpaper/osgood_trimmed.png"
-
+import logo from "../../data/pics/wallpaper/osgood_trimmed.png";
 
 // Utility: convert "Month Year" or "Month YYYY" to a real Date
 function parseTravelDate(dateStr: string): Date {
@@ -83,8 +82,8 @@ export const MapSelector = ({
                   setOpen(false);
                 }}
                 className={`block w-full text-left px-4 py-2 text-sm ${currentMode === option
-                  ? "bg-slate-500 text-white-900 font-semibold"
-                  : "text-white hover:bg-gray-600"
+                    ? "bg-slate-500 text-white-900 font-semibold"
+                    : "text-white hover:bg-gray-600"
                   }`}
               >
                 {option.charAt(0).toUpperCase() + option.slice(1)}
@@ -140,44 +139,37 @@ export const MapsMain = () => {
 
   return (
     <>
-      <Link
-        to="/"
-        className="absolute top-4 left-8 md:left-2 z-10"
-      >
-        <img
-          src={logo}
-          alt="Logo"
-          className="w-1/4 h-auto"
-        />
+      <Link to="/" className="absolute top-4 left-8 md:left-2 z-10">
+        <img src={logo} alt="Logo" className="w-1/4 h-auto" />
       </Link>
       <div className="text-black absolute md:top-6 top-8 md:left-60 z-10 flex flex-wrap items-center justify-center w-40 md:w-max">
         <Link
           to="/about/1"
-          className=" md:px-2 px-1 font-bold md:text-xl text-xs flex rounded-lg hover:underline"
+          className=" md:px-2 px-1 font-bold md:text-xl text-xs flex rounded-lg hover:bg-slate-400"
         >
           about
         </Link>
         <Link
           to="/maps/1"
-          className=" md:px-2 px-1 font-bold md:text-xl text-xs flex rounded-lg hover:underline"
+          className=" md:px-2 px-1 font-bold md:text-xl text-xs flex rounded-lg hover:bg-slate-400"
         >
           maps
         </Link>
         <Link
           to="/gallery/1"
-          className=" md:px-2 px-1 font-bold md:text-xl text-xs flex rounded-lg hover:underline"
+          className=" md:px-2 px-1 font-bold md:text-xl text-xs flex rounded-lg hover:bg-slate-400"
         >
           gallery
         </Link>
         <Link
           to="/music/1"
-          className=" md:px-2 px-1 font-bold md:text-xl text-xs flex rounded-lg hover:underline"
+          className=" md:px-2 px-1 font-bold md:text-xl text-xs flex rounded-lg hover:bg-slate-400"
         >
           music
         </Link>
         <Link
           to="/contact/1"
-          className=" md:px-2 px-1 font-bold md:text-xl text-xs flex rounded-lg hover:underline"
+          className=" md:px-2 px-1 font-bold md:text-xl text-xs flex rounded-lg hover:bg-slate-400"
         >
           contact
         </Link>
@@ -209,5 +201,5 @@ export const MapsMain = () => {
 };
 
 // export const MapsMain = () => {
-  //     return <PicsHeader title={" "} date={""} content={<MapsMainComponent />} />;
-  // };
+//     return <PicsHeader title={" "} date={""} content={<MapsMainComponent />} />;
+// };
