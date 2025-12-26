@@ -3,3 +3,4 @@ declare module "*.jpeg";
 declare module "*.png";
 declare module "*.pdf";
 declare module "*.webp";
+declare module "*.heic";

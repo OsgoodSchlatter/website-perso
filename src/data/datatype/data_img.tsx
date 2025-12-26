@@ -84,73 +84,70 @@ import nice_martial_eloi from "../pics/pics-nice-disquaires/nice-martial-eloi.jp
 import plongeon from "../pics/pics-nice-disquaires/nice-plongeon.jpg";
 import plage from "../pics/pics-nice-disquaires/plage.jpg";
 import resto_contour from "../pics/pics-nice-disquaires/resto-contour.jpg";
-import mado_pol_lg from "../pics/pics-add-august/mado-pol-lg.jpg"
-import mathis25 from "../pics/pics-add-august/mathis-25.jpg"
-import piano_pic from "../pics/pics-add-august/piano-jul.jpg"
-import ileDeRe from "../pics/pics-add-august/pol-lg-mao-moi.jpg"
-import biereIleDeRe from "../pics/pics-add-august/pol-lg-moi.jpg"
-import simo_eloi from "../pics/pics-add-august/simo-eloi.jpg"
-import st_cloud from "../pics/pics-add-august/st-cloud.jpg"
-import surf from "../pics/pics-add-august/surf.jpg"
-import building_paris_25 from "../pics/paris-fall-25/building-day.jpg"
-import sign_paris_25 from "../pics/paris-fall-25/sign.jpg"
-import building_night_paris_25_2 from "../pics/paris-fall-25/building_night_paris_2.png"
-import contour_nov_2025 from "../pics/wallpaper/contour_10_25.webp"
-import boat_dad_indo from "../pics/mauritius/boat_dad.jpg"
-import sea_umbrella from "../pics/mauritius/sea_umbrella.jpg"
-import sailing_mauritius from "../pics/mauritius/sailing_mauritius.jpg"
-import crew_indo from "../pics/indo/crew_indo.jpg"
-import foot from "../pics/indo/foot_indo.jpg"
-import kids from "../pics/indo/kids.jpg"
-import landscape_mount from "../pics/indo/landscape_mount.jpg"
-import sails from "../pics/indo/sails_at_sea-2.jpg"
-import boat_indo from "../pics/indo/our_boat_indo.jpg"
-import mum from "../pics/indo/mum_washing.jpg"
-import random_boat from "../pics/indo/rand_boat.jpg"
-import morning from "../pics/indo/mornings_in_indo.jpg"
-import boston from "../pics/usa/boston.jpg"
-import boston_dad from "../pics/usa/dad_and_i_in_boston.jpg"
-import close_ny from "../pics/usa/close-ny.jpg"
-import parents_ny from "../pics/usa/parents_ny.jpg"
-import ferry from "../pics/usa/ny_with_ferry.jpg"
-import newport from "../pics/usa/newport.jpg"
-import inside_ny from "../pics/usa/inside_ny.jpg"
-import scenery_ny from "../pics/usa/scenery-ny.jpg"
-import ny_style from "../pics/usa/ny_style.jpg"
-import cops from "../pics/usa/cops.jpg"
-import flag_me from "../pics/usa/flag_me.jpg"
+import mado_pol_lg from "../pics/pics-add-august/mado-pol-lg.jpg";
+import mathis25 from "../pics/pics-add-august/mathis-25.jpg";
+import piano_pic from "../pics/pics-add-august/piano-jul.jpg";
+import ileDeRe from "../pics/pics-add-august/pol-lg-mao-moi.jpg";
+import biereIleDeRe from "../pics/pics-add-august/pol-lg-moi.jpg";
+import simo_eloi from "../pics/pics-add-august/simo-eloi.jpg";
+import st_cloud from "../pics/pics-add-august/st-cloud.jpg";
+import surf from "../pics/pics-add-august/surf.jpg";
+import building_paris_25 from "../pics/paris-fall-25/building-day.jpg";
+import sign_paris_25 from "../pics/paris-fall-25/sign.jpg";
+import building_night_paris_25_2 from "../pics/paris-fall-25/building_night_paris_2.png";
+import contour_nov_2025 from "../pics/wallpaper/contour_10_25.webp";
+import boat_dad_indo from "../pics/mauritius/boat_dad.jpg";
+import sea_umbrella from "../pics/mauritius/sea_umbrella.jpg";
+import sailing_mauritius from "../pics/mauritius/sailing_mauritius.jpg";
+import crew_indo from "../pics/indo/crew_indo.jpg";
+import foot from "../pics/indo/foot_indo.jpg";
+import kids from "../pics/indo/kids.jpg";
+import landscape_mount from "../pics/indo/landscape_mount.jpg";
+import sails from "../pics/indo/sails_at_sea-2.jpg";
+import boat_indo from "../pics/indo/our_boat_indo.jpg";
+import mum from "../pics/indo/mum_washing.jpg";
+import random_boat from "../pics/indo/rand_boat.jpg";
+import morning from "../pics/indo/mornings_in_indo.jpg";
+import boston from "../pics/usa/boston.jpg";
+import boston_dad from "../pics/usa/dad_and_i_in_boston.jpg";
+import close_ny from "../pics/usa/close-ny.jpg";
+import parents_ny from "../pics/usa/parents_ny.jpg";
+import ferry from "../pics/usa/ny_with_ferry.jpg";
+import newport from "../pics/usa/newport.jpg";
+import inside_ny from "../pics/usa/inside_ny.jpg";
+import scenery_ny from "../pics/usa/scenery-ny.jpg";
+import ny_style from "../pics/usa/ny_style.jpg";
+import cops from "../pics/usa/cops.jpg";
+import flag_me from "../pics/usa/flag_me.jpg";
 
-import close_up_food from "../pics/oct-nov-25/close-up-food.jpg"
-import eloi_leo from "../pics/oct-nov-25/eloi-and-leonie.jpg"
-import penthievre from "../pics/oct-nov-25/penthievre.jpg"
-import anna_eloi from "../pics/oct-nov-25/anna_eloi.jpg"
-import buttes from "../pics/oct-nov-25/butteschaum.jpg"
-import parigi from "../pics/oct-nov-25/parigi.png"
-import sea_britanny from "../pics/oct-nov-25/sea-britanny.jpg"
-import mart_eloi from "../pics/oct-nov-25/mart_eloi.jpg"
+import close_up_food from "../pics/oct-nov-25/close-up-food.jpg";
+import eloi_leo from "../pics/oct-nov-25/eloi-and-leonie.jpg";
+import penthievre from "../pics/oct-nov-25/penthievre.jpg";
+import anna_eloi from "../pics/oct-nov-25/anna_eloi.jpg";
+import buttes from "../pics/oct-nov-25/butteschaum.jpg";
+import parigi from "../pics/oct-nov-25/parigi.png";
+import sea_britanny from "../pics/oct-nov-25/sea-britanny.jpg";
+import mart_eloi from "../pics/oct-nov-25/mart_eloi.jpg";
 
-import alice from "../pics/disquaires_2/alice.jpg"
-import anna from "../pics/disquaires_2/anna.jpg"
-import eloi from "../pics/disquaires_2/eloi.jpg"
-import leo from "../pics/disquaires_2/leo.jpg"
-import mart from "../pics/disquaires_2/martial.jpg"
-import fin2 from "../pics/disquaires_2/fin2.jpg"
-import guitares from "../pics/disquaires_2/guitares.jpg"
-import contour_off from "../pics/disquaires_2/contour_off.jpg"
+import alice from "../pics/disquaires_2/alice.jpg";
+import anna from "../pics/disquaires_2/anna.jpg";
+import eloi from "../pics/disquaires_2/eloi.jpg";
+import leo from "../pics/disquaires_2/leo.jpg";
+import mart from "../pics/disquaires_2/martial.jpg";
+import fin2 from "../pics/disquaires_2/fin2.jpg";
+import guitares from "../pics/disquaires_2/guitares.jpg";
+import contour_off from "../pics/disquaires_2/contour_off.jpg";
 
-import last_drink from "../pics/disquaires_2/contour-last-drink.jpg"
-import metro from "../pics/disquaires_2/mart-anna-eloi-metro.jpg"
-import antoine from "../pics/disquaires_2/antoine.jpg"
+import last_drink from "../pics/disquaires_2/contour-last-drink.jpg";
+import metro from "../pics/disquaires_2/mart-anna-eloi-metro.jpg";
+import antoine from "../pics/disquaires_2/antoine.jpg";
 
-import julie from "../pics/decembre25/julie.jpg"
-import chien from "../pics/decembre25/chien.jpg"
-import clem from "../pics/decembre25/clem.jpg"
-import studio from "../pics/decembre25/studio.jpg"
-import douarnenezsurf from "../pics/decembre25/surf.jpg"
-
-
-
-
+import julie from "../pics/decembre25/julie.jpg";
+import chien from "../pics/decembre25/chien.jpg";
+import clem from "../pics/decembre25/clem.jpg";
+import studio from "../pics/decembre25/studio.jpg";
+import douarnenezsurf from "../pics/decembre25/surf.jpg";
+import building_paris from "../pics/decembre25/building_paris.jpg";
 
 export type ImageType = {
     id: number;
@@ -185,22 +182,17 @@ export enum Folders {
     Mauritius = "Mauritius Island in 2019",
     Indonesia = "Indonesia on a boat in 2017",
     fall_25 = "Fall 25",
-    Contour = "Contour"
+    Contour = "Contour",
 }
 
-export enum FoldersContour {
-
-}
-
+export enum FoldersContour { }
 
 export const videos = [
-
     {
         id: "-GvGfR_BaV0",
         date: "2025",
         title: "Au bout de mes rêves",
-        comment:
-            "A cover of an old song from Jean-Jacques Goldman! Sound on! 🔊",
+        comment: "A cover of an old song from Jean-Jacques Goldman! Sound on! 🔊",
     },
     {
         id: "gvlV9ZjdaBI",
@@ -254,8 +246,7 @@ export const videos = [
         id: "G223BL-0lj0",
         date: "2025",
         title: "Spit Of You ",
-        comment:
-            "A cover I did on this fabulous song of Sam Fender! Sound on! 🔊",
+        comment: "A cover I did on this fabulous song of Sam Fender! Sound on! 🔊",
     },
     {
         id: "mIwkXvxOwhw",
@@ -1250,11 +1241,10 @@ export const DatedImages: ImageType[] = [
         id: 123,
         img: mart_eloi,
         date: "11/2025",
-        caption: "My friend Martial and Eloi in the subway",
+        caption: "Martial and Eloi in the subway",
         folder: [Folders.fall_25, Folders.Contour],
         displayOnHome: true,
     },
-
 
     {
         id: 125,
@@ -1311,7 +1301,8 @@ export const DatedImages: ImageType[] = [
         caption: "the end of the show",
         folder: [Folders.Contour, Folders.Gig, Folders.Gig_Les_Disquaires_2],
         displayOnHome: false,
-    }, {
+    },
+    {
         id: 130,
         img: guitares,
         date: "11/2025",
@@ -1334,21 +1325,24 @@ export const DatedImages: ImageType[] = [
         caption: "Alice playing for Contour",
         folder: [Folders.Contour, Folders.Gig, Folders.Gig_Les_Disquaires_2],
         displayOnHome: false,
-    }, {
+    },
+    {
         id: 132,
         img: mart,
         date: "11/2025",
         caption: "Martial playing at les Disquaires",
         folder: [Folders.Contour, Folders.Gig, Folders.Gig_Les_Disquaires_2],
         displayOnHome: false,
-    }, {
+    },
+    {
         id: 133,
         img: eloi,
         date: "11/2025",
         caption: "Eloi playing at les Disquaires",
         folder: [Folders.Contour, Folders.Gig, Folders.Gig_Les_Disquaires_2],
         displayOnHome: false,
-    }, {
+    },
+    {
         id: 134,
         img: leo,
         date: "11/2025",
@@ -1389,6 +1383,13 @@ export const DatedImages: ImageType[] = [
         displayOnHome: false,
     },
     {
+        id: 139,
+        img: building_paris,
+        date: "12/2025",
+        caption: "Cool pic I took in Paris the day after Christmas",
+        displayOnHome: true,
+    },
+    {
         id: 138,
         img: julie,
         date: "12/2025",
@@ -1417,12 +1418,5 @@ export const DatedImages: ImageType[] = [
         caption: "Surf at Douarnenez",
         displayOnHome: true,
     },
-
-
-
-
-
-
-
 
 ];
