@@ -20,7 +20,7 @@ export const StandardHeader = ({
         <div className="bg-slate-400 w-screen min-h-screen flex flex-col">
             <Navbar />
             {/* Content below */}
-            <div className="flex-1 w-full md:flex md:justify-center mt-32">
+            <div className="flex-1 w-full md:flex md:justify-center mt-24">
                 <div className="px-2 md:w-1/2 mt-2">{content}</div>
             </div>
         </div>
