@@ -24,20 +24,14 @@ export const Pages = new Map<string, string>([
 ]);
 
 export const Home = () => {
+  const filteredPosts = blogPostsArray.filter(
+    (post) => post.toDisplay
+  );
   const [sortedPosts, setSortedPosts] =
-    useState<BlogPostType[]>(blogPostsArray);
-  const [value, setValue] = useState<string>(" ");
+    useState<BlogPostType[]>(filteredPosts);
   const [misc, setMisc] = useState(false);
 
-  const handleSort = (category: BlogCategory) => {
-    // Save the filter value to localStorage
-    // localStorage.setItem('selectedFilter', category);
-    const filteredPosts = blogPostsArray.filter(
-      (post) => post.category === category
-    );
-    setSortedPosts(filteredPosts);
-    setValue(category);
-  };
+
   return (
     <div
       className=" w-screen h-screen overflow-x-hidden"

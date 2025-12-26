@@ -15,7 +15,7 @@ export const Misc = () => {
     const handleSort = (category: BlogCategory) => {
         // Save the filter value to localStorage
         // localStorage.setItem('selectedFilter', category);
-        const filteredPosts = blogPostsArray.filter(post => post.category === category);
+        const filteredPosts = blogPostsArray.filter(post => post.category === category && post.toDisplay === true);
         setSortedPosts(filteredPosts);
         setValue(category);
     };
@@ -38,7 +38,7 @@ export const Misc = () => {
                 </Link>
 
 
-                
+
                 <div className="fixed bottom-4 right-4 text-gray-500 text-sm">
                     made with love by Osgood and chatgpt
                 </div>

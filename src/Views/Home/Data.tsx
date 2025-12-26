@@ -50,6 +50,7 @@ export type BlogPostType = {
     content_name?: string;
     category?: BlogCategory;
     route: BlogRoute;
+    toDisplay: boolean;
     content: React.ComponentType<ContentProps>;
 };
 
@@ -117,6 +118,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "FHE",
         category: BlogCategory.ComputerScience,
         route: BlogRoute.ComputerScience,
+        toDisplay: true,
         content: FHE,
     },
 
@@ -127,6 +129,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "GreenTracking",
         category: BlogCategory.ComputerScience,
         route: BlogRoute.ComputerScience,
+        toDisplay: true,
         content: GreenTracking,
     },
 
@@ -137,6 +140,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "Gigs",
         category: BlogCategory.Music,
         route: BlogRoute.Music,
+        toDisplay: true,
         content: Gigs,
     },
     {
@@ -146,6 +150,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "Music Utils",
         category: BlogCategory.Music,
         route: BlogRoute.Music,
+        toDisplay: true,
         content: MusicUtils,
     },
     {
@@ -155,6 +160,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "Video Creation",
         category: BlogCategory.Music,
         route: BlogRoute.Music,
+        toDisplay: true,
         content: Video_Creation,
     },
     {
@@ -164,6 +170,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "Painting my old guitar",
         category: BlogCategory.Music,
         route: BlogRoute.Music,
+        toDisplay: true,
         content: GuitarPaint,
     },
 
@@ -174,6 +181,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "Russian",
         category: BlogCategory.Languages,
         route: BlogRoute.Languages,
+        toDisplay: true,
         content: Russian,
     },
     {
@@ -183,6 +191,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "Radio",
         category: BlogCategory.Physics,
         route: BlogRoute.Physics,
+        toDisplay: true,
         content: Radio,
     },
 
@@ -193,6 +202,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "SchroEq",
         category: BlogCategory.Physics,
         route: BlogRoute.Physics,
+        toDisplay: true,
         content: SchroEq,
     },
     {
@@ -202,6 +212,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "Battery_Fuel_Cell",
         category: BlogCategory.Physics,
         route: BlogRoute.Physics,
+        toDisplay: true,
         content: Battery_Fuel_Cell,
     },
     {
@@ -211,6 +222,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "Neutronics",
         category: BlogCategory.Physics,
         route: BlogRoute.Physics,
+        toDisplay: true,
         content: Neutronics,
     },
     {
@@ -220,6 +232,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "Electrolysis",
         category: BlogCategory.Physics,
         route: BlogRoute.Physics,
+        toDisplay: true,
         content: Electrolysis,
     },
     {
@@ -229,6 +242,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "ParticleDetector",
         category: BlogCategory.Physics,
         route: BlogRoute.Physics,
+        toDisplay: true,
         content: ParticleDetector,
     },
     {
@@ -238,6 +252,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "Chess",
         category: BlogCategory.Chess,
         route: BlogRoute.Chess,
+        toDisplay: true,
         content: Chess,
     },
     {
@@ -247,6 +262,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "Maths",
         category: BlogCategory.Maths,
         route: BlogRoute.Maths,
+        toDisplay: true,
         content: Maths,
     },
     {
@@ -256,6 +272,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "Trips",
         category: BlogCategory.Trips,
         route: BlogRoute.Trips,
+        toDisplay: true,
         content: Trips,
     },
     {
@@ -265,6 +282,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "Trips",
         category: BlogCategory.Trips,
         route: BlogRoute.Trips,
+        toDisplay: false,
         content: Australia,
     },
     {
@@ -274,6 +292,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "Sport",
         category: BlogCategory.Sport,
         route: BlogRoute.Sport,
+        toDisplay: false,
         content: Sport,
     },
     {
@@ -283,6 +302,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "PubliArticle",
         category: BlogCategory.Publi,
         route: BlogRoute.Publi,
+        toDisplay: true,
         content: PubliArticle,
     },
     {
@@ -292,6 +312,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "Contact",
         category: BlogCategory.Contact,
         route: BlogRoute.Contact,
+        toDisplay: false,
         content: Contact,
     },
     {
@@ -301,6 +322,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "Books",
         category: BlogCategory.Books,
         route: BlogRoute.Books,
+        toDisplay: true,
         content: Books,
     },
     {
@@ -310,6 +332,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "about",
         category: BlogCategory.About,
         route: BlogRoute.About,
+        toDisplay: false,
         content: About,
     },
     {
@@ -319,6 +342,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "Gallery",
         category: BlogCategory.Gallery,
         route: BlogRoute.Gallery,
+        toDisplay: false,
         content: Gallery,
     },
 
@@ -329,6 +353,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "Italian",
         category: BlogCategory.Languages,
         route: BlogRoute.Languages,
+        toDisplay: true,
         content: Italian,
     },
     {
@@ -338,6 +363,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "OOM",
         category: BlogCategory.Climate,
         route: BlogRoute.Climate,
+        toDisplay: true,
         content: OOM,
     },
     {
@@ -347,6 +373,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "DisplayIngredients",
         category: BlogCategory.Climate,
         route: BlogRoute.Climate,
+        toDisplay: true,
         content: DisplayIngredients,
     },
     {
@@ -356,6 +383,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "Contour",
         category: BlogCategory.Contour,
         route: BlogRoute.Contour,
+        toDisplay: false,
         content: ContourHome,
     },
     {
@@ -365,6 +393,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "Maps",
         category: BlogCategory.Maps,
         route: BlogRoute.Maps,
+        toDisplay: false,
         content: MapsMain,
     },
     {
@@ -374,6 +403,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "Agenda",
         category: BlogCategory.Agenda,
         route: BlogRoute.Agenda,
+        toDisplay: false,
         content: GigsContour,
     },
     {
@@ -383,6 +413,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "ContourShop",
         category: BlogCategory.Shop,
         route: BlogRoute.Shop,
+        toDisplay: false,
         content: ShopPage,
     },
     {
@@ -392,6 +423,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "Gallery",
         category: BlogCategory.GalleryContour,
         route: BlogRoute.GalleryContour,
+        toDisplay: false,
         content: GalleryContour,
     },
     {
@@ -401,6 +433,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "Form",
         category: BlogCategory.Form,
         route: BlogRoute.Form,
+        toDisplay: false,
         content: FormContour,
     },
     {
@@ -410,6 +443,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "Success",
         category: BlogCategory.Success,
         route: BlogRoute.Success,
+        toDisplay: false,
         content: SuccessShopContour,
     },
     {
@@ -419,6 +453,7 @@ export const blogPostsArray: BlogPostType[] = [
         content_name: "Cancel",
         category: BlogCategory.Cancel,
         route: BlogRoute.Cancel,
+        toDisplay: false,
         content: CancelShopContour,
     },
 ];
