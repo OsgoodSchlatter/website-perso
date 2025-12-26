@@ -28,6 +28,8 @@ export const Pages2 = new Map<string, string>([
   ["shop", "shop"],
   ["pictures", "pictures"],
   ["form", "form"],
+  ["music", "music"],
+
 
 ]);
 

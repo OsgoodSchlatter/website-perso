@@ -45,7 +45,7 @@ export const Home = () => {
         <div className="flex justify-center md:text-4xl text-3xl mb-1 mt-48 items-center">
           <Link
             to="/"
-            className=" px-6 md:px-2 flex justify-center rounded-lg hover:underline"
+            className=" px-6 md:px-2 flex justify-center rounded-lg"
           >
             <img src={logo} alt="Logo" className="w-4/5 h-auto" />
           </Link>
@@ -53,25 +53,31 @@ export const Home = () => {
         <div className="flex flex-wrap items-center justify-center">
           <Link
             to="/about/1"
-            className=" px-2 font-bold md:text-2xl text-lg flex rounded-lg hover:underline"
+            className=" px-2 font-bold md:text-2xl text-lg flex rounded-lg hover:bg-black"
           >
             about
           </Link>
           <Link
             to="/maps/1"
-            className=" px-2 font-bold md:text-2xl text-lg flex rounded-lg hover:underline"
+            className=" px-2 font-bold md:text-2xl text-lg flex rounded-lg hover:bg-black"
           >
             maps
           </Link>
           <Link
             to="/gallery/1"
-            className=" px-2 font-bold md:text-2xl text-lg flex rounded-lg hover:underline"
+            className=" px-2 font-bold md:text-2xl text-lg flex rounded-lg hover:bg-black"
           >
             gallery
           </Link>
           <Link
+            to="/music/1"
+            className=" px-2 font-bold md:text-2xl text-lg flex rounded-lg hover:bg-black"
+          >
+            music
+          </Link>
+          <Link
             to="/contact/1"
-            className=" px-2 font-bold md:text-2xl text-lg flex rounded-lg hover:underline"
+            className=" px-2 font-bold md:text-2xl text-lg flex rounded-lg hover:bg-black"
           >
             contact
           </Link>

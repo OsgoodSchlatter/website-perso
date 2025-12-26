@@ -142,7 +142,7 @@ export const MapsMain = () => {
     <>
       <Link
         to="/"
-        className="absolute top-4 left-2 z-10"
+        className="absolute top-4 left-8 md:left-2 z-10"
       >
         <img
           src={logo}
@@ -150,6 +150,38 @@ export const MapsMain = () => {
           className="w-1/4 h-auto"
         />
       </Link>
+      <div className="text-black absolute md:top-6 top-8 md:left-60 z-10 flex flex-wrap items-center justify-center w-40 md:w-max">
+        <Link
+          to="/about/1"
+          className=" md:px-2 px-1 font-bold md:text-xl text-xs flex rounded-lg hover:underline"
+        >
+          about
+        </Link>
+        <Link
+          to="/maps/1"
+          className=" md:px-2 px-1 font-bold md:text-xl text-xs flex rounded-lg hover:underline"
+        >
+          maps
+        </Link>
+        <Link
+          to="/gallery/1"
+          className=" md:px-2 px-1 font-bold md:text-xl text-xs flex rounded-lg hover:underline"
+        >
+          gallery
+        </Link>
+        <Link
+          to="/music/1"
+          className=" md:px-2 px-1 font-bold md:text-xl text-xs flex rounded-lg hover:underline"
+        >
+          music
+        </Link>
+        <Link
+          to="/contact/1"
+          className=" md:px-2 px-1 font-bold md:text-xl text-xs flex rounded-lg hover:underline"
+        >
+          contact
+        </Link>
+      </div>
       <div className="relative w-full flex items-center">
         {/* Map display (base layer) */}
         <MapDisplay

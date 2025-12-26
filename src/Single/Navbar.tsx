@@ -86,6 +86,12 @@ export const Navbar = () => {
                 gallery
               </Link>
               <Link
+                to="/music/1"
+                className=" px-2 font-bold md:text-2xl text-lg flex rounded-lg hover:bg-black"
+              >
+                music
+              </Link>
+              <Link
                 to="/contact/1"
                 className=" px-2 font-bold md:text-2xl text-lg flex rounded-lg hover:bg-black"
               >

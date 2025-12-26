@@ -38,6 +38,7 @@ import { ShopPage } from "../Contour/Shop";
 import { FormContour } from "../Contour/Contact";
 import { SuccessShopContour } from "../Contour/Success";
 import { CancelShopContour } from "../Contour/Cancel";
+import { AboutMusic } from "../Music_Presentation/AboutMusic";
 
 
 
@@ -77,10 +78,12 @@ export enum BlogCategory {
     Agenda = "agenda",
     Shop = "shop",
     GalleryContour = "pictures",
-    Form = "form"
+    Form = "form",
+    Music_about = "music",
 }
 
 export enum BlogRoute {
+    Music_about = "music",
     Tmp = "tmp",
     Climate = "climate",
     ComputerScience = "cs",
@@ -455,5 +458,15 @@ export const blogPostsArray: BlogPostType[] = [
         route: BlogRoute.Cancel,
         toDisplay: false,
         content: CancelShopContour,
+    },
+    {
+        id: 1,
+        date: "2025",
+        title: "Music",
+        content_name: "Music",
+        category: BlogCategory.Music_about,
+        route: BlogRoute.Music_about,
+        toDisplay: false,
+        content: AboutMusic,
     },
 ];
