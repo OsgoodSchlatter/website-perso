@@ -140,7 +140,7 @@ export const MapsMain = () => {
   return (
     <>
       <Link to="/" className="absolute top-4 left-8 md:left-2 z-10 justify-center">
-        <div className="font-pinco text-2xl md:text-5xl text-blue-400 text-3d">Osgood</div>
+        <div className="font-pinco text-2xl md:text-5xl text-blue-400">Osgood</div>
       </Link>
       <div className="text-black absolute md:top-6 top-10 md:left-36 z-10 flex flex-wrap items-center justify-center w-40 md:w-max">
         <Link

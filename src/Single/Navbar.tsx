@@ -59,13 +59,13 @@ export const Navbar = () => {
           <div>
 
 
-            <div className="flex items-center text-center justify-between p-2 mt-2">
+            <div className="flex items-center text-center justify-between mt-2">
 
               <Link
                 to={"/"}
                 className=""
               >
-                <div className="font-pinco text-3xl text-blue-400 text-3d text-center mt-2">Osgood</div>
+                <div className="font-pinco text-3xl text-black text-center mt-2">Osgood</div>
               </Link>
 
               <div className="flex items-center justify-center ml-4 ">

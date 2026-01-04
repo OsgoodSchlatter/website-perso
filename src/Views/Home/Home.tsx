@@ -47,7 +47,7 @@ export const Home = () => {
             to="/"
             className=" px-6 md:px-2 flex justify-center rounded-lg"
           >
-            <div className="font-pinco text-8xl text-blue-400 text-3d">Osgood</div>
+            <div className="font-pinco text-8xl text-blue-400 text-shadow">Osgood</div>
           </Link>
         </div>
         <div className="flex flex-wrap items-center justify-center">
