@@ -9,6 +9,7 @@ module.exports = {
       },
       fontFamily: {
         fatkat: ["Fatkat"],
+        pinco: ["Pinco"],
         sg: ["sg"],
       },
     },
