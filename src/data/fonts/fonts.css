@@ -9,3 +9,9 @@
   src: url("sg.ttf") format("truetype");
   font-style: bold;
 }
+
+@font-face {
+  font-family: "Pinco";
+  src: url("pinco.otf") format("truetype");
+  font-style: bold;
+}

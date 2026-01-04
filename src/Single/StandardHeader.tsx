@@ -19,7 +19,7 @@ export const StandardHeader = ({
     <div className="bg-slate-400 w-screen min-h-screen flex flex-col">
       <Navbar />
       {/* Content below */}
-      <div className="flex-1 w-full md:flex md:justify-center mt-24">
+      <div className="flex-1 w-full md:flex md:justify-center mt-16">
         <div className="px-2 md:w-1/2 mt-2">{content}</div>
       </div>
     </div>
@@ -48,7 +48,7 @@ export const PicsHeader = ({
       <div className="bg-slate-400 w-screen min-h-screen flex flex-col">
         <Navbar />
         {/* Content below */}
-        <div className="flex-1 w-full md:flex md:justify-center mt-32 md:max-w-full items-center">
+        <div className="flex-1 w-full md:flex md:justify-center mt-20 md:max-w-full items-center">
           <div className="px-2  flex justify-between mt-4">
             <div>{content}</div>
             <div className="invisible"></div>
