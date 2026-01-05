@@ -139,10 +139,10 @@ export const MapsMain = () => {
 
   return (
     <>
-      <Link to="/" className="absolute top-4 left-8 md:left-2 z-10 justify-center">
-        <div className="font-pinco text-2xl md:text-5xl text-blue-400">Osgood</div>
+      <Link to="/" className="absolute top-2 left-4 md:left-2 z-10 justify-center">
+        <div className="font-pinco text-2xl md:text-5xl text-blue-400 text-d">Osgood</div>
       </Link>
-      <div className="text-black absolute md:top-6 top-10 md:left-36 z-10 flex flex-wrap items-center justify-center w-40 md:w-max">
+      <div className="text-black absolute top-4 left-32 md:left-40 z-10 flex items-center justify-center w-40 md:w-max">
         <Link
           to="/about/1"
           className=" md:px-2 px-1 font-bold md:text-xl text-xs flex rounded-lg hover:bg-slate-400"
@@ -185,7 +185,7 @@ export const MapsMain = () => {
         />
 
         {/* Overlay content */}
-        <div className="absolute top-4 right-4 z-10">
+        <div className="absolute top-8 right-4 z-10">
           <MapSelector
             currentMode={category.toLowerCase() as any}
             setCurrentMode={(mode) =>

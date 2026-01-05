@@ -65,7 +65,7 @@ export const Navbar = () => {
                 to={"/"}
                 className=""
               >
-                <div className="font-pinco text-3xl text-black text-center mt-2">Osgood</div>
+                <div className="font-pinco text-3xl text-blue-400 text-center text-d mt-2">Osgood</div>
               </Link>
 
               <div className="flex items-center justify-center ml-4 ">

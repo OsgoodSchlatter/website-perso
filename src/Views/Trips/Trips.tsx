@@ -386,7 +386,7 @@ export const TripsContent = () => {
                       e.stopPropagation();
                       togglePostImages(key);
                     }}
-                    className="mt-2 text-sm text-blue-500 underline p-1 bg-blue-100 rounded"
+                    className="mt-2 text-sm text-blue-400 underline p-1 bg-blue-100 rounded"
                   >
                     {expandedPostId === key ? "Hide" : "Show"}
                   </button>

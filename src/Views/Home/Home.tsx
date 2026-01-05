@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ListOfPostsHeader } from "../../Single/ListOfPostsHeader";
-import { BlogCategory, blogPostsArray, BlogPostType } from "./Data";
+import { blogPostsArray, BlogPostType } from "./Data";
 import "./Home.css";
 import bg from "../../data/pics/wallpaper/wp4.webp";
-import logo from "../../data/pics/wallpaper/osgood_trimmed.png";
 
 import { Link } from "react-router-dom";
 
@@ -98,8 +97,6 @@ export const Home = () => {
           )}
         </div>
       </div>
-
-
       <div className="fixed bottom-4 right-4 text-gray-500 text-sm">
         made with love by Osgood and chatgpt
       </div>
