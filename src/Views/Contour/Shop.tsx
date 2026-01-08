@@ -176,7 +176,7 @@ const ShopContent = () => {
                     <img src={selectedImage} alt="Enlarged" className="max-w-full max-h-full" />
                 </div>
             )}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
                 {ProductList.map(product => (
                     <div
                         key={product.id}
@@ -209,7 +209,7 @@ const ShopContent = () => {
                         {product.image.length > 1 &&
 
                             <div className="text-xs text-black text-center">
-                                Scroll pour voir les deux côtés
+                                Swipe pour voir les deux côtés du produit
                             </div>
                         }
 
