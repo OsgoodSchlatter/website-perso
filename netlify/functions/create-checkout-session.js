@@ -18,8 +18,8 @@ exports.handler = async (event) => {
         quantity: 1,
       },
     ],
-    success_url: "https://contour-music.com/success",
-    cancel_url: "https://contour-music.com/cancel",
+    success_url: "https://contour-music.com/success/1",
+    cancel_url: "https://contour-music.com/cancel/1",
   });
 
   return {
