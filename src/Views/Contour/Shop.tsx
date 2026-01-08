@@ -144,6 +144,19 @@ const ProductList: Product[] = [
         colors: ["Black"],
         priceId: "price_1SnFrrEZGx65GhvGbsffpnkh"
     },
+    {
+        id: 9,
+        name: "test",
+        price: 1,
+        image: [pantalon],
+        category: "Clothes",
+        description: "test",
+        sizes: ["M", "L", "XL"],
+        colors: ["Black"],
+        priceId: "price_1SnKaWEZGx65GhvGIt8uBmch"
+    },
+
+
 ];
 
 const ShopContent = () => {
