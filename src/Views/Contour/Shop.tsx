@@ -36,24 +36,24 @@ const ProductList: Product[] = [
     {
         id: 5,
         name: " T-Shirt - Classic Edition",
-        price: 25,
+        price: 30,
         image: [tshirt_special],
         category: "Clothes",
         description: "Premium cotton T-shirt with Contour Writings.",
         sizes: ["S", "M", "L", "XL"],
         colors: ["White"],
-        priceId: "price_1SeifqD7dKcn0q5142yWxI5n"
+        priceId: "price_1SnFfeEZGx65GhvGGFVHWRqU"
     },
     {
         id: 1,
         name: " T-Shirt - Logo Edition",
-        price: 25,
+        price: 30,
         image: [tshirt],
         category: "Clothes",
         description: "Premium cotton T-shirt with Contour logo.",
         sizes: ["S", "M", "L", "XL"],
         colors: ["Yellow"],
-        priceId: "price_1SeifqD7dKcn0q5142yWxI5n"
+        priceId: "price_1SnFheEZGx65GhvGNcfUEl1J"
     },
     {
         id: 4,
@@ -64,7 +64,7 @@ const ProductList: Product[] = [
         description: "Premium cotton T-shirt with Contour tour.",
         sizes: ["S", "M", "L", "XL"],
         colors: ["White"],
-        priceId: "price_1SeifqD7dKcn0q5142yWxI5n"
+        priceId: "price_1SnFitEZGx65GhvGuOvcrRnV"
     },
     {
         id: 5,
@@ -75,7 +75,7 @@ const ProductList: Product[] = [
         description: "Premium cotton T-shirt with Anna's face.",
         sizes: ["S", "M", "L", "XL"],
         colors: ["White"],
-        priceId: "price_1SeifqD7dKcn0q5142yWxI5n"
+        priceId: "price_1SnFk4EZGx65GhvGJT4F5rZD"
     },
     {
         id: 6,
@@ -86,7 +86,7 @@ const ProductList: Product[] = [
         description: "Premium cotton T-shirt with Martial's face.",
         sizes: ["S", "M", "L", "XL"],
         colors: ["White"],
-        priceId: "price_1SeifqD7dKcn0q5142yWxI5n"
+        priceId: "price_1SnFlXEZGx65GhvG5ayTlKkm"
     },
     {
         id: 7,
@@ -97,7 +97,7 @@ const ProductList: Product[] = [
         description: "Premium cotton T-shirt with Alice's face.",
         sizes: ["S", "M", "L", "XL"],
         colors: ["White"],
-        priceId: "price_1SeifqD7dKcn0q5142yWxI5n"
+        priceId: "price_1SnFmhEZGx65GhvGjk7LQgpT"
     },
     {
         id: 8,
@@ -108,7 +108,7 @@ const ProductList: Product[] = [
         description: "Premium cotton T-shirt with Leo's face.",
         sizes: ["S", "M", "L", "XL"],
         colors: ["White"],
-        priceId: "price_1SeifqD7dKcn0q5142yWxI5n"
+        priceId: "price_1SnFnqEZGx65GhvGZ447CW9P"
     },
     {
         id: 10,
@@ -119,7 +119,7 @@ const ProductList: Product[] = [
         description: "Premium cotton T-shirt with eloi's face.",
         sizes: ["S", "M", "L", "XL"],
         colors: ["White"],
-        priceId: "price_1SeifqD7dKcn0q5142yWxI5n"
+        priceId: "price_1SnFowEZGx65GhvG1VOtVKUW"
     },
 
     {
@@ -131,7 +131,7 @@ const ProductList: Product[] = [
         description: "Soft fleece hoodie with chest print.",
         sizes: ["M", "L", "XL"],
         colors: ["Black"],
-        priceId: "price_1SejaqD7dKcn0q51Zy5ben9k"
+        priceId: "price_1SnFpxEZGx65GhvGuBkJ8NFb"
     },
     {
         id: 3,
@@ -142,7 +142,7 @@ const ProductList: Product[] = [
         description: "Un beau futal",
         sizes: ["M", "L", "XL"],
         colors: ["Black"],
-        priceId: "price_1SejYRD7dKcn0q51o8r1hiiX"
+        priceId: "price_1SnFrrEZGx65GhvGbsffpnkh"
     },
 ];
 
