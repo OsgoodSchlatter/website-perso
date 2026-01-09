@@ -77,7 +77,7 @@ export const travelChecklist: ChecklistSection[] = [
             "Petit miroir",
             "Un coupe-ongles + pince à épiler",
             "Déodorant",
-            "Gel douche / shampoing à acheter à l’arrivée",
+            "Gel douche / shampoing à Acheter à l’arrivée",
             "Désinfectant",
             "Aspirine",
             "Anti diarrhétique",
