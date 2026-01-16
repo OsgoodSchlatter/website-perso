@@ -10,7 +10,7 @@ import { TfiWrite } from "react-icons/tfi";
 const ContactContent = () => {
   return (
     <>
-      <div className=" justify-center">
+      <div className=" justify-center mt-2">
         <div className=" hover:bg-slate-600 rounded-lg">
           <a
             href={"https://www.linkedin.com/in/eloi-besnard-489a69170/"}

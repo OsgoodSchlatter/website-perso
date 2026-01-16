@@ -54,7 +54,7 @@ export const AboutMusic = () => {
             >
 
                 <div className="text-3xl font-bold  mt-4 mb-2 ">
-                    <a href="https://contour-music.com" className="text-yellow-400 font-bold font-fatkat text-7xl hover:text-8xl text-d"> Contour </a>
+                    <a href="https://contour-music.com" className="text-yellow-400 font-bold font-fatkat text-7xl text-d"> Contour </a>
                     <div className="flex flex-wrap items-center justify-center text-yellow-100 font-fatkat">
 
                         <div className=" hover:bg-black rounded-lg p-1">
@@ -97,7 +97,7 @@ export const AboutMusic = () => {
                 }}
             >
                 <div >
-                    <div className="font-pinco text-8xl text-blue-400 text-shadow hover:text-9xl">
+                    <div className="font-pinco text-8xl text-blue-400 text-shadow">
                         Osgood
                     </div>
                     <div className="flex flex-wrap items-center justify-center text-yellow-100 font-fatkat">
