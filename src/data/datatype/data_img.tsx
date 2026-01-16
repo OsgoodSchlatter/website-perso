@@ -149,6 +149,14 @@ import studio from "../pics/decembre25/studio.jpg";
 import douarnenezsurf from "../pics/decembre25/surf.jpg";
 import building_paris from "../pics/decembre25/building_paris.jpg";
 
+import contre_jour from "../pics/jan26/contre_jour.jpg"
+import maison_jaune from "../pics/jan26/maison_jaune.jpg"
+import miroir from "../pics/jan26/mirror.jpg"
+import miroir2 from "../pics/jan26/mirror2.jpg"
+import napoli from "../pics/jan26/napoli.jpg"
+import NYE from "../pics/jan26/NYE.jpg"
+
+
 export type ImageType = {
     id: number;
     img: string; // URL or import of the image
@@ -1416,6 +1424,48 @@ export const DatedImages: ImageType[] = [
         img: douarnenezsurf,
         date: "12/2025",
         caption: "Surf at Douarnenez",
+        displayOnHome: true,
+    },
+    {
+        id: 139,
+        img: contre_jour,
+        date: "01/2026",
+        caption: "Struscio at Salerno",
+        displayOnHome: true,
+    },
+    {
+        id: 140,
+        img: maison_jaune,
+        date: "01/2026",
+        caption: "Nice building at Salerno by the lungo mare",
+        displayOnHome: true,
+    },
+    {
+        id: 141,
+        img: miroir,
+        date: "01/2026",
+        caption: "Napoli mirror",
+        displayOnHome: true,
+    },
+    {
+        id: 142,
+        img: miroir2,
+        date: "01/2026",
+        caption: "Struscio",
+        displayOnHome: true,
+    },
+    {
+        id: 143,
+        img: napoli,
+        date: "01/2026",
+        caption: "Napoli",
+        displayOnHome: true,
+    },
+    {
+        id: 144,
+        img: NYE,
+        date: "01/2026",
+        caption: "New Year Eve at Simona's with Italian friends ",
         displayOnHome: true,
     },
 
