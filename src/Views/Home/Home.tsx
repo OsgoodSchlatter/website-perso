@@ -26,8 +26,6 @@ export const Home = () => {
   const filteredPosts = blogPostsArray.filter(
     (post) => post.toDisplay
   );
-  const [sortedPosts, setSortedPosts] =
-    useState<BlogPostType[]>(filteredPosts);
   const [misc, setMisc] = useState(false);
 
 

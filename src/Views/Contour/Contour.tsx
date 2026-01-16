@@ -1,7 +1,7 @@
 import "./HomeContour.css";
 import "../../data/fonts/fonts.css";
 import bg from "../../data/pics/wallpaper/contour_10_25.webp";
-import bgMobile from "../../data/pics/wallpaper/wpContour.webp";
+import bgMobile from "../../data/pics/wallpaper/wpContour.jpg";
 
 
 import { Link } from "react-router-dom";
