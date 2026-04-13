@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import { PicsHeader, StandardHeader } from '../../Single/StandardHeader';
-import { DatedImages, Folders, ImageType } from '../../data/datatype/data_img';
-import logo from "../../data/pics/wallpaper/osgood_trimmed.png"
-import { LazyImage } from '../../Single/LazyObserver';
-
-// Define the type for the images
+import { DatedImages, Folders } from '../data/datatype/data_img';
+import type { ImageType } from '../data/datatype/data_img';
 
 // Helper function to get month name from a month number (01-12)
 const getMonthName = (monthNumber: string) => {
@@ -44,52 +40,68 @@ const groupImagesByDate = (images: ImageType[]): GroupedImages => {
         return acc;
     }, {} as GroupedImages);
 };
-const GalleryContent: React.FC = () => {
+
+export const ContentGrid: React.FC = () => {
     const groupedImages = groupImagesByDate(DatedImages);
     const dateList = generateDateList();
 
     let currentYear = ""; // To keep track of the last displayed year
+    // Define the type for the images
 
-    const [selectedAlbum, setSelectedAlbum] = useState<Folders | null>(null);
+    const [selectedAlbum] = useState<Folders | null>(null);
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
+    const [selectedImageInfo, setSelectedImageInfo] = useState<ImageType | null>(null);
 
     return (
         <div className='flex justify-center'>
             {/* Modal for showing selected image in the forefront */}
             {selectedImage && (
                 <div
-                    className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50"
+                    className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
                     onClick={() => setSelectedImage(null)}
                 >
-                    <img src={selectedImage} alt="Enlarged" className="max-w-full max-h-full" />
+                    <div
+                        className="bg-white rounded-xl overflow-hidden max-w-4xl w-full flex flex-col md:flex-row shadow-2xl"
+                        onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside
+                    >
+                        {/* Image Section */}
+                        <div className="md:w-2/3 bg-black flex items-center justify-center">
+                            <img
+                                src={selectedImage}
+                                alt="Selected"
+                                className="max-h-[80vh] w-auto object-contain"
+                            />
+                        </div>
+
+                        {/* Caption / Info Section */}
+                        <div className="md:w-1/3 p-4 flex flex-col">
+                            <h3 className="font-semibold mb-2">Caption</h3>
+                            <p className="text-sm text-gray-700 flex-1 overflow-y-auto">
+                                {selectedImageInfo?.caption}
+                            </p>
+
+                            <button
+                                onClick={() => setSelectedImage(null)}
+                                className="mt-4 text-sm text-gray-500 hover:text-black self-end"
+                            >
+                                Close
+                            </button>
+                        </div>
+                    </div>
                 </div>
             )}
+
             <div>
 
-                {/* <div className='flex justify-between'>
-                    <div className="md:text-4xl text-3xl font-bold italic">{"photo gallery"}</div>
-                    <select
-                        value={selectedAlbum || ""}
-                        onChange={(e) => setSelectedAlbum(e.target.value as Folders)}
-                        className="p-4 py-2 rounded max-h-10 w-1/3 bg-slate-500"
-                    >
-                        <option value="">All albums</option>
-                        {Object.values(Folders).map((album) => (
-                            <option key={album} value={album}>
-                                {album}
-                            </option>
-                        ))}
-                    </select>
-                </div> */}
+
 
                 {dateList.map(date => {
-                    const [month, year] = date.split("/");
+                    const [year] = date.split("/");
                     const showYear = year !== currentYear;
                     if (showYear) currentYear = year;
 
-                    const monthName = getMonthName(month);
                     const filteredImages = groupedImages[date]?.filter(image =>
-                        selectedAlbum ? image.folder?.includes(selectedAlbum) : true && image.displayOnHome
+                        image.displayOnHome && (selectedAlbum ? image.folder?.includes(selectedAlbum) : true)
                     ) || [];
 
                     return (
@@ -97,22 +109,21 @@ const GalleryContent: React.FC = () => {
                             {filteredImages.length > 0 && (
                                 <div className='text-right'>
                                     <div className='mt-2'>
-                                        <h2 className='text-2xl'>{year}</h2>
-                                        <div className='flex flex-col justify-center'>
-                                            <h3 className='text-xl'>{monthName}</h3>
-                                            <div className='border bg-slate-100' />
+                                        <div className="grid grid-cols-3 gap-6 mt-4">
+
                                             {filteredImages.map(image => (
-                                                <div key={image.id}>
-                                                    <LazyImage
+                                                <div key={image.id} className="relative w-full aspect-square overflow-hidden rounded-lg">
+                                                    <img
                                                         src={image.img}
                                                         alt={`Image ${image.id}`}
-                                                        onClick={() => setSelectedImage(image.img)}
+                                                        className="w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
+                                                        onClick={() => { setSelectedImage(image.img); setSelectedImageInfo(image) }}
+                                                        loading="lazy"
+                                                        decoding="async"
                                                     />
-                                                    <div className='text-center italic text-lg font-bold mt-2 mb-10'>
-                                                        {image.caption}
-                                                    </div>
                                                 </div>
                                             ))}
+
                                         </div>
                                     </div>
                                 </div>
@@ -125,11 +136,3 @@ const GalleryContent: React.FC = () => {
     );
 };
 
-export const Gallery = ({ title, date }: { title: string, date: string }) => {
-    return (
-        <>
-            <PicsHeader link={"/"} logo={logo} title={""} date={""}
-                content={<GalleryContent />} />
-        </>
-    );
-};
