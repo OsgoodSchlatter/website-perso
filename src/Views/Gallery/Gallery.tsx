@@ -53,6 +53,14 @@ const GalleryContent: React.FC = () => {
     const [selectedAlbum, setSelectedAlbum] = useState<Folders | null>(null);
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
+    const activeDates = Object.keys(groupedImages)
+        .filter(date => groupedImages[date].some(img => img.displayOnHome))
+        .sort((a, b) => {
+            const [mA, yA] = a.split('/')
+            const [mB, yB] = b.split('/')
+            return yB !== yA ? Number(yB) - Number(yA) : Number(mB) - Number(mA)
+        })
+
     return (
         <div className='flex justify-center'>
             {/* Modal for showing selected image in the forefront */}
@@ -82,7 +90,7 @@ const GalleryContent: React.FC = () => {
                     </select>
                 </div> */}
 
-                {dateList.map(date => {
+                {activeDates.map(date => {
                     const [month, year] = date.split("/");
                     const showYear = year !== currentYear;
                     if (showYear) currentYear = year;
